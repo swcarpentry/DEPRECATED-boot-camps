@@ -80,8 +80,8 @@ don't know:
 
 In a dictionary, the keys must be unique: assigning a second value to a key overwrites whatever was stored there. What if we  want to store a list of unique items? There are two options using what we know about so far:
 
-  1. Use a list, but every time we add an element, check whether it is already there.
-  2. Use a dictionary to store the object as a key to some dummy value.
+1. Use a list, but every time we add an element, check whether it is already there.
+2. Use a dictionary to store the object as a key to some dummy value.
 
 It turns out there is a third type of container in Python that only stores unique things: it's called a set.
 
@@ -113,7 +113,7 @@ There are two methods to add element(s) to a list: append and update. Likewise, 
 
 What is the difference between the appended list and the updated list? Why did this happen?
 
-   1. Try the same thing with the add() and update() functions on a set.
+1. Try the same thing with the add() and update() functions on a set.
 
 The key is that containers can hold other containers.
 
@@ -153,23 +153,19 @@ building blocks of the entire language.
 .........................................................................
 
 
-When you start using data types that are more complicated than numbers or 
-strings, you'll encounter a seemingly annoying feature in Python that I want to 
-warn you about. Try the following example:
+Simple data types like integers and strings behave slightly differently than more complicated objects. To see one unexpected example, try these commands:
 
 ::
 
-  #!CodeExample
-  #!python
-  list1 = [1, 5, 9, 13]
-  list2 = list1
-  list2[0] = -1
-  print list1, list2
+ > list1 = [1, 5, 9, 13]
+ > list2 = list1
+ > list2[0] = -1
+ > print list1, list2
 
 
 What happens? You'll notice that modifying list2 also modifies list1! This is 
-because line 2 does not copy list1, instead list2 is set to reference the same 
-data as list1. Thus, after line 2 is executed, list1 and list2 refer to the same 
+because line 2 does not copy list1, instead list2 is set to *reference* the same 
+data as list1. After line 2 is executed, list1 and list2 refer to the same 
 data. Modifying one list also modifies the other. This was not the case when we 
 were dealing with simple numbers. This behavior can be very annoying and can 
 lead to a lot of bugs, so be careful. We can force python to copy list1 as shown 
@@ -181,3 +177,5 @@ in the example below:
  > list2 = list1[:] # <--- Notice the colon!
  > list2[0] = -1
  > print list1, list2
+
+Why would Python variables be references rather than copied instances? Let's think about a list file handles or some other complicated data type. In two lectures, we will talk a lot more about file handles. If you've ever done file I/O, you know that the file handle has a *state*: it stores the location of the next readable byte in the file as well as a lot of other information. When we copy the list, we probably want to maintain the same set of file handles rather than reinitialize them all. Python made the decision that the default should be to pass the reference to the list rather than create a copy of each element. 
