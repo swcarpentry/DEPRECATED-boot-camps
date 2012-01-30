@@ -1,3 +1,4 @@
 Welcome to the PyTrieste wiki!
 
-[[Lecture 3: Lists, dictionaries, sets, and tuples|Session-3:---Lists,-Dictionaries,-Sets,-Tuples]]
+- [[Lecture 3: Lists, dictionaries, sets, and tuples|Session-3:---Lists,-Dictionaries,-Sets,-Tuples]]
+- [[Lecture 4: Code Structure: Functions and Modules|Session-4---Functions-and-Standard-Modules]]
