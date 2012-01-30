@@ -1,5 +1,5 @@
 .........................................................................
-Session 3:   Lists, Dictionaries, Sets, Tuples
+Python 3:   Lists, Dictionaries, Sets, Tuples
 .........................................................................
 
 Most languages have some kind of simple syntax for making lists of things. In 
