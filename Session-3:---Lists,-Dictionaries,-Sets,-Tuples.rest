@@ -54,10 +54,10 @@ Accomplish the following tasks using Python. Each task should take only one
 line. You may need to use the help and dir functions to figure out parts you 
 don't know:
 
-  1. Create a string and initialize it to "Milad Matt Nico Anthony Jim Katy"
-  2. Split the string into a list whose elements are the names Milad, Matt, 
-     Nico, Anthony, Jim, and Katy
-  3. Sort and print the list
+1. Create a string and initialize it to "Milad Matt Nico Anthony Jim Katy"
+2. Split the string into a list whose elements are the names Milad, Matt, 
+   Nico, Anthony, Jim, and Katy
+3. Sort and print the list
 
 
 **Hands-on Example**
@@ -66,17 +66,17 @@ Accomplish the following tasks using Python. Each task should take only one
 line. You may need to use the help and dir functions to figure out parts you 
 don't know:
 
-  1. Create a dictionary containing the key, value pairs: * "Red", 5
+1. Create a dictionary containing the key, value pairs: * "Red", 5
     * "Green", 3
     * "Purple", 3
     * "Orange", 1
     * "Blue", 3
     * "Teal", 3
-  2. Extract a list of values from the dictionary (i.e. get a list containing 
-     [3,3,3,3,1,5] from the dictionary, don't make the list on your own)
-  3. Find and use a list method to count the number of times the value 3 appears 
-     (Use the list you produced on step 2, the correct answer is that the value 
-     3 appears four times)
+2. Extract a list of values from the dictionary (i.e. get a list containing 
+   [3,3,3,3,1,5] from the dictionary, don't make the list on your own)
+3. Find and use a list method to count the number of times the value 3 appears 
+   (Use the list you produced on step 2, the correct answer is that the value 
+   3 appears four times)
 
 In a dictionary, the keys must be unique: assigning a second value to a key overwrites whatever was stored there. What if we  want to store a list of unique items? There are two options using what we know about so far:
 
