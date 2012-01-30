@@ -1,4 +1,4 @@
 Welcome to the PyTrieste wiki!
 
 - [[Python 3: Lists, dictionaries, sets, and tuples|Python-3:---Lists,-Dictionaries,-Sets,-Tuples]]
-- [[Python 4: Code Structure: Functions and Modules|Python-4:---Functions-and-Standard-Modules]]
+- [[Python 4: Code Structure: Functions and Modules|Python-4:-Functions-and-Standard-Modules]]
