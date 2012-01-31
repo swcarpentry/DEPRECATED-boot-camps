@@ -1,0 +1,16 @@
+...........................................
+Python 1: shell and variables
+...........................................
+
+Special thanks to [[Jonathan Dursi|http://www.cita.utoronto.ca/~ljdursi/]] with SciNet in Toronto, ON, from whom this material is adapted.
+
+------------------------------------------
+Motivation: Data Storage and Manipulation
+------------------------------------------
+
+The thehackerwithin Github account has a folder shellExample/data/ that has data from a study on [[Cochlear implants|http://en.wikipedia.org/wiki/Cochlear_implant]]. The data is a simulation of the kind of study that one might run when fitting an implant to a new patient, and there are folders corresponding to 7 simulated patients. The first step in analysing this data is to:
+1) Identify and label files with missing data
+2) Normalize all the data
+3) Load the data into a database to make more easy to work with later.
+
+In total, there are over 300 files.

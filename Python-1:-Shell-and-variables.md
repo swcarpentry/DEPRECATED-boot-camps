@@ -1,1 +1,0 @@
-This is where information about the shell will go.
