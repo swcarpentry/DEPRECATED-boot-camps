@@ -77,3 +77,14 @@ We can see that there are 6 listings in ~/Research, but it isn't clear whether t
 The -l is a flag, which means it gives more information to the ls command. In this case, it means print the "long form" of what is in the directory. The first letter "d" in each line means that the item on that line is a directory. We'll talk about what the other symbols mean later.
 
 Almost all shell command have flags that help you customize what the program is doing.
+
+(mv,cp,mkdir here)
+
+
+**Hand's On Example**
+
+Download the data for the rest of this lecture from [[our github repository|https://github.com/thehackerwithin/PyTrieste/downloads]]. Move the directory to a the ~/PyTrieste directory that we created above using the mv command. Finally, use cd to enter that directory. If you are in the right place, ls should show you:
+
+::
+
+  put it here
