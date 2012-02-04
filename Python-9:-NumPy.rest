@@ -1,20 +1,13 @@
-**Other Wiki Pages:**
-
-[[PyBc | PYBCPyBc]], [[Session01|PyBCSession01]], [[Session02|PyBCSession02]], 
-[[Session03|PyBCSession03]], [[Session04|PyBCSession04]], 
-[[Session05|PyBCSession05]], [[Session06|PyBCSession06]], 
-[[Session07|PyBCSession07]], [[Session08|PyBCSession08]], 
-[[Session09|PyBCSession09]], [[f2py|PyBCf2py]], [[swig|PyBCswig]], 
-[[Cpython|PyBCCpython]], [[Cython|PyBCCython]], [[PyTables|PyBCPyTables]], 
-[[PyTaps|PyBCPyTaps]], [[PythonBots|PyBCPythonBots]], [[Django|PyBCDjango]], 
-[[GIS|PyBCGIS]], [[AdvancedPython|PyBCAdvancedPython]], 
-[[WxPython|PyBCWxPython]], [[standardlib|PyBCstandardlib]],  
-
 ______________________________________________________________________
- Using NumPy 
+ NumPy 
 ______________________________________________________________________
 
-**Python Boot Camp 2010 - Session 5 - January 13**
+**Presented By : Katy Huff**
+
+**Based on Lecture Materials By **
+
+
+
 
 This class will cover a broad overview of NumPy with brief illustrative examples 
 geared towards getting people familiar with the basic use cases. Since NumPy has 
