@@ -1,6 +1,3 @@
-...........................................
-Lesson 1: The Unix Shell
-...........................................
 
 Special thanks to [[Jonathan Dursi|http://www.cita.utoronto.ca/~ljdursi/]] with SciNet in Toronto, ON, from whom this material is adapted.
 
