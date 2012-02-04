@@ -1,1 +1,637 @@
-Coming Soon
+[[<< Back | ]] - [[Next >>| ]]
+______________________________________________________________________
+ Basic Data Types 
+ ______________________________________________________________________
+
+**Python Boot Camp 2010 - Session 2 - January 12** 
+
+----
+
+**Presented By: Katy Huff**
+**Based on Lecture Materials By: Milad Fatenejad**
+
+During this session you are going to learn about some of the built-in Python 
+data types. Built-in data types are the basic building blocks of Python 
+programs. They are really basic things like strings and numbers (either 
+integers, complex or floating point numbers). There are simple containers like 
+lists (think of lists as arrays or vectors), tuples and dictionaries. 
+
+For this lesson, we will use python ''interactively''. This means 
+that we will type commands directly into iPython. Once we start performing more 
+complicated tasks we will start writing Python scripts and programs in a text 
+editor, outside of the interpreter. 
+
+----------------------------------------------------------------------
+ Turn off Autocall 
+----------------------------------------------------------------------
+ 
+
+Before we get started, I want you to enter the "%autocall" command into ipython 
+to disable the autocall feature:
+
+::
+
+  > %autocall
+    Automatic calling is: OFF
+
+
+You should see the message that automatic calling is off. Automatic calling is a 
+feature that may prevent you from copying and pasting code snippets into 
+ipython, so just turn it off with this simple command when you start up ipython. 
+
+----------------------------------------------------------------------
+ Strings and Numbers 
+----------------------------------------------------------------------
+
+
+It is really easy to make variables in python. For example, to create a string, 
+`s`, and print its value, simply type the following into iPython:
+
+::
+
+  > s = "Hello World!"
+  > print s
+
+
+If you want to see what the type of a variable is, you can use the built-in 
+python function, `type`. Just enter `print type(s)` into iPython and you should 
+see something like this:
+
+::
+
+   > print type(s)
+     <type 'str'>
+
+
+This tells us that `s` is of type **str** (i.e. that `s` is a string). Making 
+numeric variables is equally easy and intuitive. Try entering the following into 
+IPython. Notice that the # symbol is used to start comments so everything after 
+the pound sign is ignored.
+
+::
+
+ > i,r,c = -10, 3.5, 1.0 + 2j  # set i to -10, r to 3.5 and c to 1.0+2j
+
+
+This one line sets the variable `i` to the integer -10 , `r` to the floating 
+point value 3.5 (a floating point number is just a real/non-integer number) and 
+`c` to the value  1.0 + 2j (Notice, how easy and intuitive it is in python to 
+set multiple variables to something. You'll discover a lot of similar syntax 
+that is designed to make your life easier). Lets use the built-in type function 
+to determine the type of each of the three variables we just created:
+
+::
+
+ > print type(i), type(r), type(c) 
+   <type 'int'> <type 'float'> <type 'complex'>
+
+
+This tells us that "i" is an integer, "r" is a floating point number, and "c" is 
+a complex number. As you can see, Python has built-in support for imaginary 
+numbers! 
+
+**Aside: Long integers**
+Another way python makes our lives easier is by allowing integers to be 
+arbitrary large. In languages like C/C++ and FORTRAN integer variables can only 
+store values up to a certain size. But entering and manipulating the following 
+forty digit number with iPython is no problem:
+
+::
+
+  > i = 1234567890123456789012345678901234567890  
+  > print i * 6
+   7407407340740740734074074073407407407340
+  
+Operations in Python are defined by their type. For instance, look the difference between these operations:
+
+::
+
+ > 1 + 3
+   4
+ > 1.0 + 3
+   4.0  # This is a float
+ > "Hello " + "world!"
+   'Hello world!'
+ > 1 + "Hello"
+ Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+ TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+In the first two cases, addition between numbers meant that 1 was added to 3 using the standard type rules (float plus int = float). In the third case, the command was string addition, which concatenates two strings. The final case broke because an 'int' type can not be added to a 'str' type. This is because it's unclear how to interpret an int as a string: should it be the string representation, the ASCII character code, or something else entirely?
+
+One way to handle this is to explicitly convert the int into a string:
+
+::
+
+ > str(1) + "Hello"
+ '1Hello'
+
+Basic data types in Python have a lot of functionality already built in. For 
+example, lets say that you are reading names from a file one line at a time and 
+that sometimes the names have leading and trailing spaces that we want to strip 
+away. We can just use the `strip` string method to accomplish this. For example, 
+type the following into iPython:
+
+::
+
+ > name = "   Milad    "
+ > print name + "is here"
+       Milad     is here
+  
+Now enter `name.strip()` instead of `name`:
+
+::
+  
+ > print name.strip() + " is here"
+  Milad is here
+
+
+Notice that the extra spaces are gone. We used the `strip()` method, which 
+removes leading and trailing white space from strings. You can think of a method 
+as being a function that is attached to a particular variable. You call methods 
+by typing: `<variable>.<method name>`.
+
+----------------------------------------------------------------------
+ Getting Help 
+----------------------------------------------------------------------
+
+One of the really nice features in Python is that a lot of the help and 
+documentation is built into the code. Practically, this means that much of the 
+time you don't have to go digging through some web site to find help. You can 
+get help in Python using the `help` function. Lets look at an example - enter 
+"
+
+:: 
+
+  > help(str.strip) 
+
+into IPython. You should then see documentation for the 
+strip method pop up. (NOTE: if you don't automatically return to the python 
+interpreter, just hit "`q`" to exit the help screen). You can also use the 
+question mark, "`?`", character to display the documentation as well. For 
+example, enter 
+
+::
+
+  > str.strip?
+  
+into IPython to view the documentation. 
+
+Now try entering 
+
+::
+
+  > help(str)
+
+You should see documentation for the entire 
+string type, including all of the string methods. This can be useful when you 
+are trying to perform a specific task, but you don't know the right function to 
+call. For example, lets say we want to convert the string "cooper" to uppercase, 
+and we want to know if there is a string method which can do the job for us. 
+Start by typing "`help(str)`" to pull up the string documentation. You can 
+scroll through the string methods until you find a method called "upper" which 
+has documentation that looks like:
+
+::
+
+ |  upper(...)
+ |      S.upper() -> string
+ |      |      Return a copy of the string S converted to uppercase.
+
+
+These lines tell us that the string class has a method called "upper" which can 
+be used to convert strings to uppercase. Now enter:
+
+::
+
+ > name = "cooper"
+ > print name.upper()
+
+
+At which point, you should see the word "COOPER" printed to the screen. 
+
+
+**Aside: Using Methods Directly on Data**
+
+----
+
+In the previous example, we first created a string variable, `name`, assigned it 
+the value "cooper", then used the `upper` string method to obtain the uppercased 
+version of the string. We didn't have to create a variable, however. We could 
+simply enter:
+
+::
+
+ > print "cooper".upper()
+
+To generate the uppercased version.
+
+As we saw above, the **str** type has a lot of documentation associated with it, 
+and we had to sift through most of it to find the upper method. If we had a way 
+to simply print all of the **str** methods, we could have probably figured out 
+that the `upper` method is what we wanted by the name and in a lot less time. 
+Luckily, python has a built in function, "`dir`", for just this situation. The 
+`dir` function takes a type name and prints all of the methods associated. Try 
+entering "`print dir(str)`" to see a list of every method and variable 
+associated with the string class. You can ignore the methods that start and end 
+with double underscores for now. Try printing the methods associated with the 
+**int**, and **complex** types.
+
+Finally, there are some really basic functions that are built right into python 
+that we have been using. For example, we used the "float" function above to 
+convert a string to a floating point number. You can see a list of built in 
+functions by entering `dir(__builtins__)`. If you see something interesting, 
+such as the `zip` function, you can examine what it does using help(zip). 
+
+
+**Hands-on Example**
+
+Use the basic data types we've learned about along with the `help` and `dir` 
+functions to figure out how to do the following using either one function or one 
+method call:
+
+  * Take the absolute value of the number -1.4
+  * Take the string "a MaN and His DOG" and create the string "A man and his 
+    dog"
+  * Return the position of the character 'e' in the string "my test string" (The 
+    answer is 4, since `m` is  is at position 0 not position 1)
+
+
+
+----------------------------------------------------------------------
+ Compound Data Types 
+----------------------------------------------------------------------
+
+
+Most languages have some kind of simple syntax for making lists of things. In 
+python it is extremely easy and intuitive to make a list of things, for example:
+
+::
+  
+ > mylist = [] # Make an empty list
+ > mylist = [1, 2, "Milad", "book"] # Make a list containing four entities
+
+
+Using lists is easy and intuitive. Notice that lists can contain objects of any 
+data type. Try entering the following lines. 
+
+::
+
+ > mylist = [1,2,3,4]
+ > mylist[2] = 1.0 + 2j # Modify an element
+ > mylist.append("test") # Add an element to the end of a the list
+ > print len(mylist) # print the length of mylist (5)
+  
+ > mylist = [1,2,3,4]
+ > del(mylist[2]) # Remove element 2 from the list
+  
+ > mylist = [1,5,4,2]; mylist.sort() # Sort the list
+  
+ > mylist = [2, 4, 6, 8, 10]
+ > print mylist[1:4] # Prints a list containing elements 1 2 and 3 from mylist 
+  
+Remember that there is an element 0, so this prints [4, 6, 8]
+  
+::
+
+ > print mylist[-2] # Print the second element from the end of the list (8)
+  
+  
+Lists aren't the only compound data type. Another really useful one is a 
+dictionary (referred to as a map in many other languages). Dictionaries allow 
+you to set/access elements using a key value relationship. You can create 
+dictionaries as shown below:
+
+::
+
+ > mydictionary = {} # Make an empty dictionary
+ > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary with some values
+  
+ > print type(mydictionary) # Tells you mydictionary is of type "dict"
+ > print mydictionary["one"] # Prints the number 1
+ > print mydictionary["two"] # Prints the number 2
+ > mydictionary["four"] = 4 # Insert an element into the dictionary
+ > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing the numbers 1, 2, and 3
+  
+**Hands-on Example**
+
+Accomplish the following tasks using Python. Each task should take only one 
+line. You may need to use the help and dir functions to figure out parts you 
+don't know:
+
+  1. Create a string and initialize it to "Milad Matt Nico Anthony Jim Katy"
+  2. Split the string into a list whose elements are the names Milad, Matt, 
+     Nico, Anthony, Jim, and Katy
+  3. Sort and print the list
+
+
+**Hands-on Example**
+
+Accomplish the following tasks using Python. Each task should take only one 
+line. You may need to use the help and dir functions to figure out parts you 
+don't know:
+
+  1. Create a dictionary containing the key, value pairs: * "Red", 5
+    * "Green", 3
+    * "Purple", 3
+    * "Orange", 1
+    * "Blue", 3
+    * "Teal", 3
+  2. Extract a list of values from the dictionary (i.e. get a list containing 
+     [3,3,3,3,1,5] from the dictionary, don't make the list on your own)
+  3. Find and use a list method to count the number of times the value 3 appears 
+     (Use the list you produced on step 2, the correct answer is that the value 
+     3 appears four times)
+
+In a dictionary, the keys must be unique: assigning a second value to a key overwrites whatever was stored there. What if we  want to store a list of unique items? There are two options using what we know about so far:
+
+  1. Use a list, but every time we add an element, check whether it is already there.
+  2. Use a dictionary to store the object as a key to some dummy value.
+
+It turns out there is a third type of container in Python that only stores unique things: it's called a set.
+
+::
+
+ > s = set([1,1,2,3,4]) # Note that there are 2 1's in the input list.
+ > print s
+ set([1, 2, 3, 4])
+ > 1 in s
+ True
+ > 5 in s
+ False
+ > s.add(5)
+ > 5 in s
+ True
+ > anotherSet = set([1,2,"hello"])
+ > s.intersection(anotherSet)
+ set([1, 2])
+
+**Hand's on example**
+
+There are two methods to add element(s) to a list: append and update. Likewise, there are two methods to add element(s) to a set: add and update. What is the difference? 
+
+::
+
+ > myList = [1,2,3]
+ > myAppendedList = myList.append([4,5])
+ > myUpdatedList = myList.update([4,5])
+
+What is the difference between the appended list and the updated list? Why did this happen?
+
+   1. Try the same thing with the add() and update() functions on a set.
+
+The key is that containers can hold other containers.
+
+
+There is one other compound data type - the tuple. Think of a tuple as a list 
+that you can't change. The example below demonstrates how to create and use 
+tuples:
+
+::
+  
+ > (1,2,3,4) # Create a four element tuple
+ > mytuple[2] = 4 # ERROR - tuples can't be modified
+ > print mytuple[2], len(mytuple)
+  
+ > myonetuple = ("hello",) # Create a tuple containing only one element (note the trailing comma)
+
+
+You might be asking yourself, why do we need tuples if we have lists? The answer 
+is that tuples are used internally in Python in a lot of places. One of the basic differences is that dictionaries can not use a list as a key, but they can use a tuple: 
+
+::
+
+ > d = {}
+ > d[(1,2)] = 'numbers'
+ > d
+ {(1, 2): 'numbers'}
+ > d[ [1,2] ] = 'listOnumbers'
+  Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+  TypeError: unhashable type: 'list'
+
+As you learn more about python you'll see how lists, tuples and dictionaries are the basic 
+building blocks of the entire language. 
+
+.........................................................................
+ Copy or Reference?  
+.........................................................................
+
+
+When you start using data types that are more complicated than numbers or 
+strings, you'll encounter a seemingly annoying feature in Python that I want to 
+warn you about. Try the following example:
+
+::
+
+  #!CodeExample
+  #!python
+  list1 = [1, 5, 9, 13]
+  list2 = list1
+  list2[0] = -1
+  print list1, list2
+
+
+What happens? You'll notice that modifying list2 also modifies list1! This is 
+because line 2 does not copy list1, instead list2 is set to reference the same 
+data as list1. Thus, after line 2 is executed, list1 and list2 refer to the same 
+data. Modifying one list also modifies the other. This was not the case when we 
+were dealing with simple numbers. This behavior can be very annoying and can 
+lead to a lot of bugs, so be careful. We can force python to copy list1 as shown 
+in the example below:
+
+::
+
+ > list1 = [1, 5, 9, 13]
+ > list2 = list1[:] # <--- Notice the colon!
+ > list2[0] = -1
+ > print list1, list2
+
+
+----------------------------------------------------------------------
+ Conditionals 
+----------------------------------------------------------------------
+
+
+Conditionals (if statements) are also really easy to use in python. Take a look 
+at the following examples:
+
+::
+
+ > i = 4
+ > sign = "zero"
+  
+ > if i < 0:
+ >    sign = "negative"
+ > elif i > 0:
+ >    sign = "positive"
+ > else:
+ >    print "Sign must be zero"
+ >    print "Have a nice day"
+  
+ > print sign
+  
+  
+The behavior of this code snippet should be pretty clear, but there is something 
+peculiar. How does Python know where the if-statement ends? Other languages, 
+like FORTRAN, !MatLab, and C/C++ all have some way of delimiting blocks of code. 
+For example, in !MatLab you begin an if statement with the word "if" and you end 
+it with "end if". In C/C++ you delimit blocks with curly braces. Python uses 
+''indentation'' to delimit code blocks. The indentation above is NOT just to 
+make things look pretty - it tells Python what the body of the if-statement is. 
+This is true when ever we create any code blocks, such as the bodies of loops, 
+functions or classes.
+
+
+**Aside: Compact if-statement:**
+
+Python has an easy to use if-syntax for setting the value of a variable. Try 
+entering this into IPython:
+::
+  
+  #!CodeExample
+  #!python
+  i = 5
+  sign = "positive" if i > 0 else "negative"
+  
+
+
+----------------------------------------------------------------------
+ Loops 
+----------------------------------------------------------------------
+
+
+Lets start by looking at while loops since they function like while loops in 
+many other language. The example below takes a list of integers and computes the 
+product of each number in the list up to the -1 element. 
+
+::
+
+  #!Lineno
+  #!python
+  mult = 1
+  sequence = [1, 5, 7, 9, 3, -1, 5, 3]
+  while sequence[0] is not -1:
+     mult = mult * sequence[0]
+     del sequence[0]
+  
+  print mult
+  
+
+Some new syntax has been introduced in this example. We begin the while loop on 
+line 3. Notice that instead of using the not-equals symbol, !=, we can simply 
+enter "is not" which is easier to read. On line 4, we compute the product of the 
+elements. On line 5, we use the `del` keyword to remove the first element of the 
+list, shifting every element down one.
+
+For loops in python operate a little differently from other languages. Lets 
+start with a simple example which prints all of the numbers from 0 to 9:
+
+::
+  
+  #!CodeExample
+  #!python
+  for i in range(10):
+     print i
+
+
+You may be wondering how this works. Start by using help(range) to see what the 
+range function does.
+
+::
+  
+  Help on built-in function range in module __builtin__:
+  
+  range(...)
+      range([start,] stop[, step]) -> list of integers
+      
+      Return a list containing an arithmetic progression of integers.
+      range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+      When step is given, it specifies the increment (or decrement).
+      For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+      These are exactly the valid indices for a list of 4 elements.
+  
+
+Range is a function that returns a list containing a sequence of integers. So, 
+range(10) returns the list [0,1,2,3,4,5,6,7,8,9]. The for loop then simply 
+iterates over that list, setting i to each value. So for loops in python are 
+really used to iterate over sequences of things (they can be used for much more, 
+but for now this definition will do). Try entering the following to see what 
+happens:
+
+::
+  
+  #!CodeExample
+  #!python
+  for c in ["one", 2, "three", 4, "five"]
+     print c
+
+
+this is equivalent to:
+
+::
+  
+  #!CodeExample
+  #!python
+  sequence = ["one", 2, "three", 4, "five"]
+  for i in range(len(sequence)):
+   print sequence[i]
+
+
+----------------------------------------------------------------------
+ Final Example 
+----------------------------------------------------------------------
+
+
+We've seen a lot so far. Lets work through a slightly lengthier example 
+together. I'll use some of the concepts we already saw and introduce a few new 
+concepts. To run the example, you'll need to download a short file containing 
+phone numbers TO YOUR DESKTOP. The file can be acquired 
+[http://hackerwithin.org/cgi-bin/hackerwithin.fcgi/raw-attachment/wiki/[[Session02/phonenums.txt 
+here]. Now we have to move ipython to the desktop so it can find the 
+phonenums.txt file by entering "cd" then "cd 
+Desktop".|PyBCSession02/phonenums.txt here]. Now we have to move ipython to the 
+desktop so it can find the phonenums.txt file by entering "cd" then "cd 
+Desktop".]]
+
+This example opens a text file containing a list of phone numbers. The phone 
+numbers are in the format ###-###-####, one to a line. The example code loops 
+through each line in the file and counts the number of times each area code 
+appears. The answer is stored in a dictionary, where the area code is the key 
+and the number of times it occurs is the value.
+
+::
+  
+  #!CodeExample
+  #!python
+  areacodes = {} # Create an empty dictionary
+  f = open("phonenums.txt") # Open the text file
+  for line in f: # iterate through the text file, one line at a time (think of the 
+  file as a list of lines)
+     ac = line.split('-')[0] # Split each phone number by hyphens, the first 
+     element is the area code
+     if not ac in areacodes: # Check to see if this area code is already in the 
+     dictionary
+        areacodes[ac] = 1 # If not, add it to the dictionary
+     else:
+        areacodes[ac] += 1 # Add one to the dictionary entry
+  
+  print areacodes # Print the answer
+  
+**Hands-on Example**
+
+Use the iteritems dictionary method in combination with a for loop to print the 
+keys/values of the areacodes dictionary one to a line. In other words, the goal 
+is to write a loop that prints:
+
+::
+  
+  203 4
+  800 4
+  608 8
+  773 3
+
+
+This example is a little tricky to figure out, but give it a shot. 
+
