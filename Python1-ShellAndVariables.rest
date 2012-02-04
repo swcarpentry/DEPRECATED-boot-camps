@@ -2,7 +2,7 @@ ______________________________________________________________________
  Basic Data Types 
 ______________________________________________________________________
 
-[[Back To Version Control|Lesson-2:-Version-Control]] - [[Forward to Lists, dictionaries, sets, and tuples >>|Python-2:-Lists,-Dictionaries,-Sets,-Tuples]]
+[[Back To Version Control|Lesson2-VersionControl]] - [[Forward to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]
 
 ----
 
