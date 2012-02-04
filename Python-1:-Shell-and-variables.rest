@@ -1,7 +1,7 @@
-[[<< Back | ]] - [[Next >>| ]]
+[[<< Back To Version Control|Lesson-2:-Version-Control]] - [[Forward to Lists, dictionaries, sets, and tuples >>|Python-2:-Lists,-Dictionaries,-Sets,-Tuples]]
 ______________________________________________________________________
  Basic Data Types 
- ______________________________________________________________________
+______________________________________________________________________
 
 **Python Boot Camp 2010 - Session 2 - January 12** 
 
