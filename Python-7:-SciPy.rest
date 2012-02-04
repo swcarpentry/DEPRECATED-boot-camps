@@ -1,24 +1,24 @@
-**Other Wiki Pages:**
-PyBc, [[Session01|PyBCSession01]], [[Session02|PyBCSession02]], [[Session03|PyBCSession03]], [[Session04|PyBCSession04]], [[Session05|PyBCSession05]], [[Session06|PyBCSession06]], [[Session07|PyBCSession07]], [[Session08|PyBCSession08]], [[Session09|PyBCSession09]], [[f2py|PyBCf2py]], [[swig|PyBCswig]], [[Cpython|PyBCCpython]], [[Cython|PyBCCython]], [[PyTables|PyBCPyTables]], [[PyTaps|PyBCPyTaps]], [[PythonBots|PyBCPythonBots]], [[Django|PyBCDjango]], [[GIS|PyBCGIS]], [[AdvancedPython|PyBCAdvancedPython]], [[WxPython|PyBCWxPython]], [[standardlib|PyBCstandardlib]],  
-
+[[Back To Lesson 6|Lesson-6:]] - [[Forward to MatPlotLib|Python-8:-MatPlotLib]]
 ______________________________________________________________________
  Using Scipy 
 ______________________________________________________________________
 
-**Python Boot Camp 2010 - Session 7 - January 13**
+**Presented By: Katy Huff**
 
-''Presented by Anthony Scopatz''
+**Based on Lecture Materials By Anthony Scopatz**
 
 Scientific Python (SciPy) is a very robust package.  It encompasses several modules ranging from the eternally practical to the quirky and cool.  No matter what your discipline is, you can probably find a pre-made short cut using SciPy.  With its considerable scope, there is no way we can cover all of its functionality in a single tutorial. That is what documentation is for (http://docs.scipy.org/doc/)!   However, we can talk about the basics, show off some of its neater features, and generally teach the 'SciPy-way of doing things.'
 
 The presentation on SciPy will follow five sections:
-  1. SciPy Constants,
-  1. Special Functions, 
-  1. Integration & ODEs, 
-  1. Pade Approximates, 
-  1. and Image Tricks.
+
+  # SciPy Constants,
+  # Special Functions, 
+  # Integration & ODEs, 
+  # Pade Approximates, 
+  # and Image Tricks.
 
 In general, you can grab SciPy functionality via
+
 ::
 
   #!python
@@ -26,6 +26,7 @@ In general, you can grab SciPy functionality via
 
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
+
    * Clustering package (**scipy.cluster**)
    * Constants (**scipy.constants**)
    * Fourier transforms (**scipy.fftpack**)
@@ -49,7 +50,7 @@ What you get is (from http://docs.scipy.org/doc/scipy/reference/):
 
 
 ----------------------------------------------------------------------
- __SciPy Constants__, crawl before you walk! 
+SciPy Constants, crawl before you walk! 
 ----------------------------------------------------------------------
 
 A plethora of important, fundamental constants can be found in '::
@@ -115,7 +116,7 @@ Check http://docs.scipy.org/doc/scipy/reference/constants.html for a complete co
 The above code is reproduced concisely in [attachment:PyBC_S7_constants.py].
 
 ----------------------------------------------------------------------
- __SciPy Special Functions__, walk before you run! 
+SciPy Special Functions, walk before you run! 
 ----------------------------------------------------------------------
 
 Code that numerically approximates common (and some not-so-common) special functions can be found in '::
@@ -157,7 +158,7 @@ The above code is reproduced concisely in [attachment:PyBC_S7_special_functions.
 
 
 ----------------------------------------------------------------------
- __SciPy Integration__, run before you glide! 
+ SciPy Integration, run before you glide! 
 ----------------------------------------------------------------------
 
 Tools used to calculate numerical, definite integrals may be found in the '::
@@ -375,7 +376,7 @@ The above code is reproduced concisely in [attachment:PyBC=S7=integrate.py].
 
 
 ----------------------------------------------------------------------
- __SciPy Pade__, glide before you fly! 
+ SciPy Pade, glide before you fly! 
 ----------------------------------------------------------------------
 
 As you have seen, SciPy has some really neat functionality that comes stock. Oddly, some of the best stuff is in the '::
@@ -492,7 +493,7 @@ Check out http://docs.scipy.org/doc/scipy/reference/misc.html#scipy.misc.pade fo
 
 
 ----------------------------------------------------------------------
- __SciPy Image Tricks__, fly before you....You can do that?! 
+ SciPy Image Tricks, fly before you....You can do that?! 
 ----------------------------------------------------------------------
 
 For some reason that has yet to be explained to me, SciPy has the ability to treat 2D & 3D arrays as images.  You can even convert PIL images or read in external files as numpy arrays! From here, you can fool around with the raw image data at will.  Naturally, this functionality is buried (again) within the '::
