@@ -1,0 +1,127 @@
+...........................................
+Lesson 1: The Unix Shell
+...........................................
+
+Special thanks to [[Jonathan Dursi|http://www.cita.utoronto.ca/~ljdursi/]] with SciNet in Toronto, ON, from whom this material is adapted.
+
+------------------------------------------
+Motivation: Data Storage and Manipulation
+------------------------------------------
+
+The thehackerwithin Github account has a folder shellExample/data/ that has data from a study on [[Cochlear implants|http://en.wikipedia.org/wiki/Cochlear_implant]]. The data is a simulation of the kind of study that one might run when fitting an implant to a new patient, and there are folders corresponding to 7 simulated patients. The first step in analysing this data is to:
+1) Identify and label files with missing data
+2) Normalize all the data
+3) Load the data into a database to make more easy to work with later.
+
+In total, there are over 300 files spread across multiple directories. We want to put all of our data in one folder and standardize the file names by including a ".txt" at the end of every file.
+
+-------------------------------------------
+Getting Around in the Shell
+-------------------------------------------
+
+Let's open a shell. Depending on your platform, you'll need to do one of three things:
+1) On a Mac go to Applications/Utilities and click on Terminal.
+2) On Windows, install and use Cygwin, which provides a shell that is compatible with these instructions.
+3) On Linux it varies. On Ubuntu it is under Applications/Accessories. 
+
+When you open a shell, you'll see a window with a line that looks like this (yours will be a little different):
+
+::
+
+  guy@urglinux:~$ 
+
+This is called the prompt, and we can control our computer by typing commands at the prompt. Two very helpful commands to type are ls and pwd, which tell you where you are.
+
+::
+
+  guy@urglinux:~$ pwd
+  /home/guy
+  guy@urglinus:~$ ls
+  myThesis.pdf       Documents
+  Research           Music
+
+The first command means "print my working directory". This tells you where you are in the file directory. Right now, I am in a special folder called my home folder. On Linux, your home folder is probably /home/<your user name>. On OSX, it is probably /Users/<your user name>. 
+
+The second command means "list files" and it lists all of the files and directories in this location. On a GUI, directories are really folders, and they can contain other directories or other files. This means the file system is *recursive*. Some terminals will color code the items in your directory so it's easy to see what items are files and what are directories.
+
+ls identified a folder called Research on my home directory. To change to that directory, we use the cd command:
+
+::
+
+   guy@urglinux:~$ cd Research
+   guy@urglinux:~/Research$ pwd
+
+The first command changed the working directory to Research. That means any command I type acts on that directory. You can see that the working directory has changed by typing pwd or by looking at the prompt, which shows that I'm at ~/Research. The ~ character is shorthand for your home directory.
+
+Let's explore this new directory.
+
+::
+
+   guy@urglinux:~/Research$ ls
+   Android  HCI  oneLine  TweetMap  VV  WFUBMC
+
+We can see that there are 6 listings in ~/Research, but it isn't clear whether they are directories or files. Pass the -l flag to ls to see more information.
+
+::
+
+  guy@urglinux:~/Research$ ls -l
+  total 24
+  drwxr-xr-x  4 guy guy 4096 2011-07-11 10:42 Android
+  drwxr-xr-x 11 guy guy 4096 2011-11-04 14:16 HCI
+  drwxr-xr-x  3 guy guy 4096 2011-11-16 15:47 oneLine
+  drwxr-xr-x  7 guy guy 4096 2011-06-03 09:21 TweetMap
+  drwxr-xr-x  5 guy guy 4096 2012-02-01 12:18 VV
+  drwxr-xr-x  7 guy guy 4096 2012-02-01 14:07 WFUBMC
+
+
+The -l is a flag, which means it gives more information to the ls command. In this case, it means print the "long form" of what is in the directory. The first letter "d" in each line means that the item on that line is a directory. We'll talk about what the other symbols mean later. Almost all shell command have flags that help you customize what the program is doing. We'll talk more about these later when we discuss how to get help about a shell command.
+
+-------------------------------------------------------
+Making and Moving Files and Directories
+-------------------------------------------------------
+
+There are three primary commands to make or move files and directories in the shell. First are the commands mv and cp, which move and copy files respectively.
+
+:: 
+
+  guy@urglinux:~/Sandbox$ ls
+  file1.txt
+  guy@urglinux:~/Sandbox$ cp file1.txt
+  guy@urglinux:~/Sandbox$ ls
+  file1.txt file2.txt
+  guy@urglinux:~/Sandbox$ mv file1.txt file3.txt
+  guy@urglinux:~/Sandbox$ ls
+  file2.txt file3.txt
+
+You can see that cp makes a perfect copy of the file while mv renames the file. mv can operate on files or directories, and you can pass whole paths to either argument like this:
+
+::
+
+  guy@urglinux:~/Sandbox$ mv ~/Research/tempFile.txt .
+
+This command says to move the file tempFile.txt in directory /home/guy/Research to the current directory. The . is a shorthand for the current directory, while .. is a shorthand for the current directory's parent.
+
+**Hand's On Example**
+
+What if we use ls to examine the "." directory? What about the ".." directory?
+
+cp can copy directories as well as files, but we have to pass it the -r flag, which tells it to recursively copy all files in the directory. This means that the directory and all files and sub-directories in it (and all files and sub-directories in sub-directories...) are copied to the new name.
+
+Finally, we can create new directories using the mkdir command:
+
+::
+
+  guy@urglinux:~/Sandbox$ mkdir FinalFiles
+  guy@urglinux:~/Sandbox$ ls
+  file2.txt file3.txt FinalFiles
+
+
+
+
+**Hand's On Example**
+
+Download the data for the rest of this lecture from [[our github repository|https://github.com/thehackerwithin/PyTrieste/downloads]]. Move the directory to a the ~/PyTrieste directory that we created above using the mv command. Finally, use cd to enter that directory. If you are in the right place, ls should show you:
+
+::
+
+  put it here
