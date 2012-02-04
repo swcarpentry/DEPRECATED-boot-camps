@@ -1,3 +1,199 @@
-.......................................
-Python 3: Flow Control
-.......................................
+______________________________________________________________________
+Flow Control : Loops, Conditionals, etc.
+______________________________________________________________________
+
+[[Back to Lists, dictionaries, sets, and tuples |Python-2:-Lists,-Dictionaries,-Sets,-Tuples]]
+[[Back to Lists, dictionaries, sets, and tuples |Python-4:-Functions-and-Standard-Modules.rest]]
+
+----
+
+**Presented By: Katy Huff**
+
+**Based on Lecture Materials By: Milad Fatenejad**
+
+----------------------------------------------------------------------
+ Conditionals 
+----------------------------------------------------------------------
+
+
+Conditionals (if statements) are also really easy to use in python. Take a look 
+at the following examples:
+
+::
+
+ > i = 4
+ > sign = "zero"
+  
+ > if i < 0:
+ >    sign = "negative"
+ > elif i > 0:
+ >    sign = "positive"
+ > else:
+ >    print "Sign must be zero"
+ >    print "Have a nice day"
+  
+ > print sign
+  
+  
+The behavior of this code snippet should be pretty clear, but there is something 
+peculiar. How does Python know where the if-statement ends? Other languages, 
+like FORTRAN, !MatLab, and C/C++ all have some way of delimiting blocks of code. 
+For example, in !MatLab you begin an if statement with the word "if" and you end 
+it with "end if". In C/C++ you delimit blocks with curly braces. Python uses 
+''indentation'' to delimit code blocks. The indentation above is NOT just to 
+make things look pretty - it tells Python what the body of the if-statement is. 
+This is true when ever we create any code blocks, such as the bodies of loops, 
+functions or classes.
+
+
+**Aside: Compact if-statement:**
+
+Python has an easy to use if-syntax for setting the value of a variable. Try 
+entering this into IPython:
+::
+  
+  #!CodeExample
+  #!python
+  i = 5
+  sign = "positive" if i > 0 else "negative"
+  
+
+
+----------------------------------------------------------------------
+ Loops 
+----------------------------------------------------------------------
+
+
+Lets start by looking at while loops since they function like while loops in 
+many other language. The example below takes a list of integers and computes the 
+product of each number in the list up to the -1 element. 
+
+::
+
+  #!Lineno
+  #!python
+  mult = 1
+  sequence = [1, 5, 7, 9, 3, -1, 5, 3]
+  while sequence[0] is not -1:
+     mult = mult * sequence[0]
+     del sequence[0]
+  
+  print mult
+  
+
+Some new syntax has been introduced in this example. We begin the while loop on 
+line 3. Notice that instead of using the not-equals symbol, !=, we can simply 
+enter "is not" which is easier to read. On line 4, we compute the product of the 
+elements. On line 5, we use the `del` keyword to remove the first element of the 
+list, shifting every element down one.
+
+For loops in python operate a little differently from other languages. Lets 
+start with a simple example which prints all of the numbers from 0 to 9:
+
+::
+  
+  #!CodeExample
+  #!python
+  for i in range(10):
+     print i
+
+
+You may be wondering how this works. Start by using help(range) to see what the 
+range function does.
+
+::
+  
+  Help on built-in function range in module __builtin__:
+  
+  range(...)
+      range([start,] stop[, step]) -> list of integers
+      
+      Return a list containing an arithmetic progression of integers.
+      range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+      When step is given, it specifies the increment (or decrement).
+      For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+      These are exactly the valid indices for a list of 4 elements.
+  
+
+Range is a function that returns a list containing a sequence of integers. So, 
+range(10) returns the list [0,1,2,3,4,5,6,7,8,9]. The for loop then simply 
+iterates over that list, setting i to each value. So for loops in python are 
+really used to iterate over sequences of things (they can be used for much more, 
+but for now this definition will do). Try entering the following to see what 
+happens:
+
+::
+  
+  #!CodeExample
+  #!python
+  for c in ["one", 2, "three", 4, "five"]
+     print c
+
+
+this is equivalent to:
+
+::
+  
+  #!CodeExample
+  #!python
+  sequence = ["one", 2, "three", 4, "five"]
+  for i in range(len(sequence)):
+   print sequence[i]
+
+
+----------------------------------------------------------------------
+ Final Example 
+----------------------------------------------------------------------
+
+
+We've seen a lot so far. Lets work through a slightly lengthier example 
+together. I'll use some of the concepts we already saw and introduce a few new 
+concepts. To run the example, you'll need to download a short file containing 
+phone numbers TO YOUR DESKTOP. The file can be acquired 
+[http://hackerwithin.org/cgi-bin/hackerwithin.fcgi/raw-attachment/wiki/[[Session02/phonenums.txt 
+here]. Now we have to move ipython to the desktop so it can find the 
+phonenums.txt file by entering "cd" then "cd 
+Desktop".|PyBCSession02/phonenums.txt here]. Now we have to move ipython to the 
+desktop so it can find the phonenums.txt file by entering "cd" then "cd 
+Desktop".]]
+
+This example opens a text file containing a list of phone numbers. The phone 
+numbers are in the format ###-###-####, one to a line. The example code loops 
+through each line in the file and counts the number of times each area code 
+appears. The answer is stored in a dictionary, where the area code is the key 
+and the number of times it occurs is the value.
+
+::
+  
+  #!CodeExample
+  #!python
+  areacodes = {} # Create an empty dictionary
+  f = open("phonenums.txt") # Open the text file
+  for line in f: # iterate through the text file, one line at a time (think of the 
+  file as a list of lines)
+     ac = line.split('-')[0] # Split each phone number by hyphens, the first 
+     element is the area code
+     if not ac in areacodes: # Check to see if this area code is already in the 
+     dictionary
+        areacodes[ac] = 1 # If not, add it to the dictionary
+     else:
+        areacodes[ac] += 1 # Add one to the dictionary entry
+  
+  print areacodes # Print the answer
+  
+**Hands-on Example**
+
+Use the iteritems dictionary method in combination with a for loop to print the 
+keys/values of the areacodes dictionary one to a line. In other words, the goal 
+is to write a loop that prints:
+
+::
+  
+  203 4
+  800 4
+  608 8
+  773 3
+
+
+This example is a little tricky to figure out, but give it a shot. 
+
