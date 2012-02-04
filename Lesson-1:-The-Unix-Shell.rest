@@ -76,7 +76,19 @@ The -l is a flag, which means it gives more information to the ls command. In th
 Making and Moving Files and Directories
 -------------------------------------------------------
 
-There are three primary commands to make or move files and directories in the shell. First are the commands mv and cp, which move and copy files respectively.
+We can create directories using the mkdir command:
+
+::
+
+  guy@urglinux:~$ mkdir Sandbox
+  guy@urglinux:~$ ls
+  myThesis.pdf       Documents
+  Research           Music
+  Sandbox
+  guy@urglinux:~$ cd Sandbox
+
+
+Use the commands mv and cp, to move and copy files, respectively.
 
 :: 
 
@@ -103,20 +115,9 @@ What if we use ls to examine the "." directory? What about the ".." directory?
 
 cp can copy directories as well as files, but we have to pass it the -r flag, which tells it to recursively copy all files in the directory. This means that the directory and all files and sub-directories in it (and all files and sub-directories in sub-directories...) are copied to the new name.
 
-Finally, we can create new directories using the mkdir command:
-
-::
-
-  guy@urglinux:~/Sandbox$ mkdir FinalFiles
-  guy@urglinux:~/Sandbox$ ls
-  file2.txt file3.txt FinalFiles
-
-
-
-
 **Hand's On Example**
 
-Download the data for the rest of this lecture from [[our github repository|https://github.com/thehackerwithin/PyTrieste/downloads]]. Move the directory to a the ~/PyTrieste directory that we created above using the mv command. Finally, use cd to enter that directory. If you are in the right place, ls should show you:
+Download the data for the rest of this lecture from [[our github repository|https://github.com/thehackerwithin/PyTrieste/downloads]]. Create a directory PyTrieste in your home directory and move the downloaded files to ~/PyTrieste using the mv command. Finally, use cd to enter that ~/PyTrieste. If you are in the right place, ls should show you:
 
 ::
 
