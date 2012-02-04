@@ -4,7 +4,7 @@ ______________________________________________________________________
 
 **Presented By : Katy Huff**
 
-**Based on Lecture Materials By **
+**Based on Lecture Materials By Matthew Terry**
 
 
 
@@ -12,9 +12,8 @@ ______________________________________________________________________
 This class will cover a broad overview of NumPy with brief illustrative examples 
 geared towards getting people familiar with the basic use cases. Since NumPy has 
 many advanced features that may be useful to experienced programmers, these 
-notes will occasionally link to more [wiki:[[Session05/Advanced advanced 
-examples] that readers can peruse on their own time.|PyBCSession05/Advanced 
-advanced examples] that readers can peruse on their own time.]]
+notes will occasionally link to more 
+advanced examples that readers can peruse on their own time.
 
 
 **Aside: Code Examples**
