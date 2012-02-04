@@ -272,13 +272,18 @@ The options are many :
  
 ::
 
-  (p) postpone - mark the conflict to be resolved later (df) diff-full - show
-  all changes made to merged file (e) edit - change merged file in an editor (r)
-  resolved - accept merged version of file (mf) mine-full - accept my version of
-  entire file (ignore their changes) (tf) theirs-full - accept their version of
-  entire file (lose my changes) (l) launch - launch external tool to resolve
-  conflict (h) help - show this list For now, you want to do some analysis, so
-  press p to postpone.
+  (p) postpone - mark the conflict to be resolved later 
+  (df) diff-full - show all changes made to merged file 
+  (e) edit - change merged file in an editor 
+  (r) resolved - accept merged version of file 
+  (mf) mine-full - accept my version of entire file (ignore their changes) 
+  (tf) theirs-full - accept their version of entire file (lose my changes) 
+  (l) launch - launch external tool to resolve conflict 
+  (h) help - show this list 
+
+For now, you want to do some analysis, so press p to postpone.
+
+::
 
   $ p
 
