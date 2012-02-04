@@ -1,6 +1,7 @@
 Welcome to the PyTrieste wiki!
 
 - [[The Unix Shell|Lesson-1:-The-Unix-Shell]]
+- [[Version Control|Lesson-2:-Version-Control]]
 - [[Python 1: The Shell and Variables|Python 1:-Shell-and-variables]]
 - [[Python 2: Lists, dictionaries, sets, and tuples|Python-2:-Lists,-Dictionaries,-Sets,-Tuples]]
 - [[Python 3: Flow Control|Python-3:-Flow-Control]]
