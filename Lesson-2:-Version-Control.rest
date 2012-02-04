@@ -1,0 +1,320 @@
+
+----------------------------------------------------------------------------------
+What is Version Control
+---------------------------------------------------------------------------------- 
+
+Very briefly, version control is a way to keep a backup of changing files, to
+store a history of those changes, and most importantly to allow many people in
+a collaboration to make changes to the same files concurrently. There are a lot
+of verson control systems. Wikipedia provides both a nice vocabulary list and a
+fairly complete table of some popular version control systems and their
+equivalent commands.
+
+Today, we'll be using SVN. Perhaps someday we'll have a second section of this
+experiment to go over distributed version control systems like mercurial.
+
+---------------------------------------------------------------------------------- 
+Checking Out The Code
+---------------------------------------------------------------------------------- 
+
+The Hacker Within has its own online code repository. You can check out code
+from it at any time, from anywhere. You checked out some code this morning from
+it at googlecode http://code.google.com/p/scbc-2011 in smartsvn. If you gave me
+a google id, you are a fully fledged reading writing member today. Remember,
+with great power comes great responsibility.
+
+Today, we'll check out an svn type repository at scbc-2011.googlecode.com/svn/
+.
+
+********************************************************************************** 
+Exercise : Checking out the code
+********************************************************************************** 
+
+Step 1 : Open up an internet browser and log in to google.
+
+Step 2 : Now go to the Checkout the source tab and click on the Password link.
+Take Note.
+
+Step 3 : Either do this in SmartSVN or crack open a terminal. In SmartSVN,
+click on the radio button that says check out project from repository. The
+repository location is https://scbc-2011.googlecode.com/svn/ .
+
+In the terminal, if your google user name is buckybadger, do this:
+
+::
+
+  ~$ svn checkout https://scbc-2011.googlecode.com/svn/ \
+  scbc-2011 --username buckybadger
+
+Step 4 : You should see many files download themselves onto your machine. Let's
+make sure it worked. Either browse in SmartSVN or change directories to the
+source code and list the contents.
+
+::
+
+  ~$ cd scbc-2011 ~/scbc-2011$ ls 
+
+
+---------------------------------------------------------------------------------- 
+Checking The Status of Your Local Copy
+---------------------------------------------------------------------------------- 
+
+The files you've created on your machine are your local "working" copy. The
+changes your make in this local copy aren't backed up online automatically.
+Until you commit them, the changes you make are local changes. When you change
+anything, your set of files becomes different from the files in the official
+repository copy. To find out what's different about them in the terminal, try:
+
+::
+
+  ~/scbc-2011$ svn status 
+
+
+The null result means that you're up to date with the
+current version of the repository online! There are a few other responses you
+might get if you or your collaborators have been active. We'll see what they
+are as we go along.
+
+---------------------------------------------------------------------------------- 
+Updating
+---------------------------------------------------------------------------------- 
+
+Updating is like voting. You should update early and often , and particularly
+before you make or commit any changes. This will ensure you're working with the
+most up-to-date version of the repository. Updating won't overwrite any changes
+you've made locally without asking, so don't get nervous. When in doubt,
+update.
+
+:: 
+
+  ~/scbc-2011$ svn update 
+  At revision 19.
+
+---------------------------------------------------------------------------------- 
+Adding New Files to Version Control
+---------------------------------------------------------------------------------- 
+
+This is great. You can make some changes, and commit them to version control.
+But, what if you want to add something totally new? How do you make changes to
+a file that doesn't exist yet?
+
+********************************************************************************** 
+Exercise : Adding files to Version Control
+********************************************************************************** 
+
+Step 1: Create a wiki page about yourself. Please tell us about yourself. Save
+a file to the folder called wiki. Call it something unique, like
+buckybadger.wiki. Take your time.
+
+:: 
+
+  ~/scbc-2011$ vi buckybadger.wiki
+
+Step 2: Check the status of your local copy For kicks, let's see what SVN
+thinks of this.
+
+::
+
+  ~/scbc-2011$ svn status
+
+SVN should report that it hasn't yet been officially introduced to your file.
+
+::
+
+  ? buckybadger.wiki
+
+Step 3: Add the file to version control Now, introduce your file to svn by
+adding it to version control.
+
+::
+
+  ~/scbc-2011$ svn add wiki/buckybadger.wiki
+  A wiki/buckybadger.wiki
+
+If you want to, commit that change. Your wiki page will be available for anyone
+to see on the repo. When your done, give it a look online at
+scbc-2011.googlecode.com/wiki.
+
+::
+
+  ~/scbc-2011$ svn commit -m "In commit messages, we usually explain what we've \
+  done. Here, we've added a wiki page." 
+  Adding wiki/buckybadger.wiki 
+  Transmitting file data . 
+  Committed revision 86.
+
+---------------------------------------------------------------------------------- 
+Removing Files from Version Control
+---------------------------------------------------------------------------------- 
+
+But, let's say you're shy and change your mind about adding this to version
+control. Not all pretty faces belong on the internet, after all. If you change
+your mind, and would rather not add this wiki page, try svn remove. You can
+also just say rm. Be careful, this will delete your local copy of the file.
+
+::
+
+  ~/scbc-2011/wiki$ svn remove buckybadger.wiki 
+  D buckybadger.wiki 
+  ~/scbc-2011/wiki$ svn commit -m "a log message" 
+
+Deleting hacker-poke/data/myPic.png Committed revision 87.
+
+Making and Committing a Change
+
+Now, recall the software-carpentry.org tutorial. You're Wolfman. The guy next
+to you, he's Dracula. I'll be the Mummy. Please pick a random place in one of
+the files and insert a comment, like an easter egg.
+
+********************************************************************************** 
+Exercise : Making Changes
+********************************************************************************** 
+
+Step 1 : Insert something
+
+If you're not in the terminal, just open up the ReadMe.wiki file.
+
+If you're new to the command line, you can open the best text editor like so:
+
+::
+
+  ~/scbc-2011$ cd wiki 
+  ~/scbc-2011/wiki$ vi ReadMe.wiki
+
+Once it's open, you'll see some text. Just type the letter 'i' and place a line
+anywhere you like. The line is a comment if it begins with a pound sign #, like
+so:
+
+::
+
+  #summary A Readme for the Repository
+  =Read Me=
+
+  #KATY'S COMMENT
+  ==Software Dependencies== 
+  * Python 2.71 (or greater?) 
+  * Nose 
+  * Idle 
+  * sqlite (3?) 
+  * Smart SVN ? 
+  * add more here...  
+
+
+To save it, press 'ESC', then ':wq' .
+
+Step 2 : Check the status of your local copy
+
+Now that you've changed a file, let's see what SVN thinks about your local
+status.
+
+::
+
+  ~/scbc-2011$ svn status 
+
+  M ReadMe.wiki
+
+ 
+
+If you want, try committing your change. If it's a comment, it won't break
+anything. If you think someone else has committed recently, don't forget to
+update first.
+
+:: 
+  
+  ~/scbc-2011$ svn update
+
+ 
+
+If SVN lets you know that someone else has committed changes to the same file
+recently, hang on and watch until the next section on conflicts. If svn doesn't
+complain, commit.
+
+Step 3 : Commit
+
+::
+
+  ~/scbc-2011$ svn commit -m "The m flag indicates that you'd like to leave a log \
+  message saying what you've done. Here, we each added a comment."
+
+The m flag allows you to add a comment that will be stored in the repository to
+help your collaborators keep track of the changes.
+
+---------------------------------------------------------------------------------- 
+Resolving Conflicts
+---------------------------------------------------------------------------------- 
+
+Some of you may have received an error message about a conflict.
+
+********************************************************************************** 
+Exercise: Resolving Conflicts
+********************************************************************************** 
+
+Step 1 : Update Before Committing
+
+:: 
+
+  $ svn update 
+
+  U ReadMe.wiki
+
+  Conflict discovered in 'ReadMe.wiki'. 
+
+  Select: (p) postpone, (df) diff-full, (e) edit, (h) help for more options:
+
+Step 2 : Postpone 
+
+
+The options are many :
+ 
+::
+
+  (p) postpone - mark the conflict to be resolved later (df) diff-full - show
+  all changes made to merged file (e) edit - change merged file in an editor (r)
+  resolved - accept merged version of file (mf) mine-full - accept my version of
+  entire file (ignore their changes) (tf) theirs-full - accept their version of
+  entire file (lose my changes) (l) launch - launch external tool to resolve
+  conflict (h) help - show this list For now, you want to do some analysis, so
+  press p to postpone.
+
+  $ p
+
+Step 3 : Check the Differences
+
+Try diff (or meld if you have it).
+
+::
+
+  $ diff myfile1.py myfile2.py Step 4 : Resolve the Conflict
+
+The svn command resolve in combination with --accept and one of the choices
+from before will automatically delete the right files. Alternatively, you could
+delete all of the files that you don't like, move the correct one to the right
+filename, and try committing again. For now, we'll do it the clean way. For
+example, pretend you'd like to accept yours rather than the other.
+
+::
+
+  $ svn resolve --accept ReadMe.wiki.mine Resolved conflicted state of
+  'ReadMe.wiki'
+
+Importantly, if you decide to neglect all of your changes instead, you can
+choose to revert. Try svn help revert to find out how to do that.
+
+::
+
+  $ svn revert ReadMe.wiki
+
+ 
+
+---------------------------------------------------------------------------------- 
+A test
+---------------------------------------------------------------------------------- 
+
+Okay Wolfmen, open up KatyHuff.wiki and replace my name with your own (or
+someone else's, in case you're shy).
+
+Now, clearly we've all just tried to change the same thing at once. The first
+one of us to update and commit will have no problems. However, when the rest of
+us try, SVN won't let us merge our changes. We have to talk this one over and
+decide who gets to commit. The rest of us will have to resolve conflicts as we
+learned. Try it!
