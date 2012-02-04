@@ -1,7 +1,8 @@
-[[Back To Lesson 6|Lesson-6:]] - [[Forward to MatPlotLib|Python-8:-MatPlotLib]]
 ______________________________________________________________________
  Using Scipy 
 ______________________________________________________________________
+
+[[Back To Lesson 6|Lesson-6:]] - [[Forward to MatPlotLib|Python-8:-MatPlotLib]]
 
 **Presented By: Katy Huff**
 
