@@ -160,4 +160,61 @@ Python has a built-in function called "open()" that can be used to manipulate fi
     Open a file using the file() type, returns a file object.  This is the
     preferred way to open a file.
 
-The main two parameters we'll need to worry about are the name of the file and the mode, which determines whether we can read from or write to the file. open returns a file object, acts like a pointer into the file. 
+The main two parameters we'll need to worry about are the name of the file and the mode, which determines whether we can read from or write to the file. open returns a file object, acts like a pointer into the file. An example will make this clear. In the code below, I've opened a file that contains one line:
+
+::
+
+  (unix shell) $ cat testFile.txt
+  abcde
+  fghij
+
+Now let's open this file in Python:
+
+::
+
+ > fileHandle = open('testFile.txt','r')
+
+The second input, 'r' means I want to open the file for reading only. I can not write to this handle. The read() command will read a specified number of bytes:
+
+::
+
+ > s = fileHandle.read(3)
+ > print s
+ abc
+
+We read the first three characters, where each character is a byte long. We can see that the file handle points to the 4th byte (index number 3) in the file:
+
+::
+
+ > fileHandle.tell()
+ 3L
+ > fileHandle.read(1)
+ 'd'
+
+The file we are using is a long series of characters, but two of the characters are new line characters. If we looked at the file in sequence, it would look like "abcde\nfghij\n". Separating a file into lines is popular enough that there are two ways to read whole lines in a file. The first is to use the readlines() method:
+
+::
+
+ > fileHandle.close() # close the old handle
+ > fileHandle = open('testFile.txt','r')
+ > lineArr = fileHandle.readlines()
+ > lineArr
+ ['abcde\n', 'fghij\n']
+
+A very important point about the readline method is that it *keeps* the newline character at the end of each line. You can use the strip() method to get rid of the string. 
+
+File handles are also iterable, which means we can use them in for loops or list extensions:
+
+::
+
+  > f = open('testFile.txt','r')
+  > l = [s.strip() for s in f]
+  > l
+  ['abcde', 'fghij']
+  > f.close()
+  > l = []
+  > f = open('testFile.txt','r')
+  > for s in f:
+       l.append(s.strip())
+
+These are equivalent operations. It's often best to handle a file one line at a time, particularly when the file is so large it might not fit in memory.
