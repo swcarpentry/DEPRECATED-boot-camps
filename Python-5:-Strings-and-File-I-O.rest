@@ -128,3 +128,36 @@ In the help screen, which we looked at above, there are lots of functions that l
 These are special Python functions that interpret operations like < and + . We'll talk more about these in the next lecture on Classes.
 
 Some special functions introduce handy text functions. 
+
+**Hands on example**
+
+Try each of the following functions on a few strings. What does the function do? 
+
+::
+
+ > s = "This is a string"
+ > s.startswith("This")
+ > s.split(" ")
+ > s.strip() # This won't change every string!
+ > s.capitalize()
+ > s.capwords()
+ > s.lower()
+ > s.upper()
+
+---------------------------------------
+File I/O
+---------------------------------------
+Python has a built-in function called "open()" that can be used to manipulate files. The help information for open is below:
+
+::
+
+ > help(open)
+  Help on built-in function open in module __builtin__:
+
+  open(...)
+    open(name[, mode[, buffering]]) -> file object
+    
+    Open a file using the file() type, returns a file object.  This is the
+    preferred way to open a file.
+
+The main two parameters we'll need to worry about are the name of the file and the mode, which determines whether we can read from or write to the file. open returns a file object, acts like a pointer into the file. 
