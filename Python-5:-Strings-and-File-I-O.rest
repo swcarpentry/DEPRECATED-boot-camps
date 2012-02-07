@@ -2,7 +2,9 @@
 Python 5: Strings and File I/O
 ............................................
 
-Goals:
-1) Look at the String class
-2) Use the open() function to open, read, and write files.
+Lesson goals:
+
+1) Examine the string class in greater detail.
+
+2) Use open() to open, read, and write to files.
 
