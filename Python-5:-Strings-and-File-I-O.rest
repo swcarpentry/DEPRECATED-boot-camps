@@ -8,3 +8,123 @@ Lesson goals:
 
 2) Use open() to open, read, and write to files.
 
+--------------------------------------------
+Strings
+--------------------------------------------
+
+To start understanding the String class, let's use the built in help system.
+
+::
+
+  > help(str)
+ Help on class str in module __builtin__:
+
+ class str(basestring)
+  |  str(object) -> string
+  |  
+  |  Return a nice string representation of the object.
+  |  If the argument is a string, the return value is the same object.
+  |  
+  |  Method resolution order:
+  |      str
+  |      basestring
+  |      object
+  |  
+  |  Methods defined here:
+  |  
+  |  __add__(...)
+  |      x.__add__(y) <==> x+y
+  |  
+  |  __contains__(...)
+  |      x.__contains__(y) <==> y in x
+  |  
+  |  __eq__(...)
+  |      x.__eq__(y) <==> x==y
+  |  
+  |  __format__(...)
+  |      S.__format__(format_spec) -> unicode
+  |  
+  |   __ge__(...)
+  |      x.__ge__(y) <==> x>=y
+  |  
+  |  __getattribute__(...)
+  |      x.__getattribute__('name') <==> x.name
+  |  
+  |  __getitem__(...)
+  |      x.__getitem__(y) <==> x[y]
+  |  
+  |  __getnewargs__(...)
+  |  
+  |  __getslice__(...)
+  |      x.__getslice__(i, j) <==> x[i:j]
+  |      
+  |      Use of negative indices is not supported.
+  |  
+  ...
+
+The help page for string is very long, and it may be easier to keep it open in a browser window by going to the [[online Python documentation|http://docs.python.org/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange]] while we talk about its properties.
+
+At its heart, a string is just a sequence of characters. Basic strings are defined using single or double quotes.
+
+::
+
+ > s = "This is a string."
+ > s2 = 'This is another string that uses single quotes'
+
+The reason for having two types of quotes to define a string is emphasized in these examples:
+
+::
+
+ > s = "Bob's mom called to say hello."
+ > s = 'Bob's mom called to say hello.'
+
+The second one should be an error: Python interprets it as s = 'Bob' then the rest of the line breaks the language standard.
+
+Characters in literal strings must come from the ASCII character set, which is a set of 127 character codes that is used by all modern programming languages and computers. Unfortunately, ASCII does not have room for non-Roman characters like accents or Eastern scripts. Unicode strings in Python are specified with a leading u:
+
+::
+
+ > u = u'abcdé'
+
+For the rest of this lecture, we will deal with ASCII strings, because most scientific data that is stored as text is stored with ASCII. 
+
+-----------------------------------------
+Working with Strings
+-----------------------------------------
+
+Strings are iterables, which means many of the ideas from lists can also be applied directly to string manipulation. For instance, characters can be accessed individually or in sequences:
+
+::
+
+  > s = 'abcdefghijklmnopqrstuvwxyz'
+  > s[0]
+  'a'
+  > s[-1]
+  'z'
+  > s[1:4]
+  'bcd'
+
+They can also be compared using sort and equals.
+
+::
+
+  > 'str1' == 'str2'
+  False
+  > 'str1' == 'str1'
+  True
+  > 'str1' < 'str2'
+  True
+
+In the help screen, which we looked at above, there are lots of functions that look like this:
+
+::
+
+  |  __add__(...)
+  |      x.__add__(y) <==> x+y
+
+  |  __le__(...)
+  |      x.__le__(y) <==> x<y
+
+These are special Python functions that interpret operations like < and + . We'll talk more about these in the next lecture on Classes.
+
+Some special functions introduce handy text functions. 
