@@ -22,7 +22,7 @@ distinction clear later, but for now, the table below will suffice.
 +--------------------------+----------------------------------+
 |  Version Control System Tool Options                        |
 +==========================+==================================+
-| Distributed              | Centralized                      |
+| **Distributed**          | **Centralized**                  |
 +--------------------------+----------------------------------+
 | Decentralized CVS (dcvs) | concurrent versions system (cvs) | 
 +--------------------------+----------------------------------+
