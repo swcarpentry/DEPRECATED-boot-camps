@@ -2,7 +2,8 @@ ________________________________________________________________________________
 Version Control
 __________________________________________________________________________________
 
-[[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Python Shell and Variables | Python1-ShellAndVariables]]
+[[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Python Shell 
+and Variables | Python1-ShellAndVariables]]
 
 ----------------------------------------------------------------------------------
 git : What is Version Control ?
@@ -103,10 +104,17 @@ git init : Creating a Local Repository
 ---------------------------------------------------------------------------------- 
 
 To keep track of numerous versions of your work without saving numerous copies, 
-you can make a local repoitory for it on your computer. To do this, you must 
+you can make a local repoitory for it on your computer. What git does is to save  
+the first version, then for each subsequent version it saves only the changes.  
+That is, git only records the difference between the new version and the one 
+before it. With this compact information, git is able to recreate any version on 
+demand by adding the changes to the original in order up to the version of 
+interest. 
+
+To create your own local (on your own machine) repository, you must 
 initialize the repository with the infrastructure git needs in order to keep a 
 record of things within the repsitory that you're concerned about. The command 
-to do this is **git init** .
+to do this is **git init** .  
 
 ********************************************************************************** 
 Exercise : Create a Local Repository
@@ -119,7 +127,7 @@ Exercise : Create a Local Repository
   $ mkdir good_science
   $ cd good_science
   $ git init
-  Initialized empty Git repository in /Users/khuff/Documents/hacker/some_science/.git/
+  Initialized empty Git repository in /Users/khuff/Documents/hacker/good_science/.git/
 
 
 2.) Browse the directory's hidden files to see what happened here. Open 
@@ -153,7 +161,7 @@ we'll learn the **git add** command.
 
 
 ********************************************************************************** 
-Exercise : Create a Local Repository
+Exercise : Add a File to Your Local Repository
 ********************************************************************************** 
 
 1.) Create a file to add to your repository.
@@ -247,6 +255,12 @@ member today. Remember, with great power comes great responsibility.
 
 Today, we'll check out a git type repository at 
 www.github.com/thehackerwithin/PyTrieste ..
+
+
+
+
+
+
 
 ********************************************************************************** 
 Exercise : Checking out the code
