@@ -247,10 +247,18 @@ Exercise : Commit Your Changes
 git diff : Viewing the Differences
 ---------------------------------------------------------------------------------- 
 
+There are many diff tools. 
+
+If you have a favorite you can set your default git diff tool to execute that 
+one. 
 
 
+Let's recall the behavior of the diff command on the command line. 
 
 
+The only difference between the command line diff tool and git's diff tool is 
+that the git tool is aware of all of the revisions in your repository, allowing 
+each revision of each file to be treated as a full file. 
 
 
 ---------------------------------------------------------------------------------- 
