@@ -103,8 +103,10 @@ git init : Creating a Local Repository
 ---------------------------------------------------------------------------------- 
 
 To keep track of numerous versions of your work without saving numerous copies, 
-you can make a local repoitory for it on your computer.
-
+you can make a local repoitory for it on your computer. To do this, you must 
+initialize the repository with the infrastructure git needs in order to keep a 
+record of things within the repsitory that you're concerned about. The command 
+to do this is **git init** .
 
 ********************************************************************************** 
 Exercise : Create a Local Repository
@@ -120,7 +122,8 @@ Exercise : Create a Local Repository
   Initialized empty Git repository in /Users/khuff/Documents/hacker/some_science/.git/
 
 
-2.) Browse the directory's hidden files to see what happened here.
+2.) Browse the directory's hidden files to see what happened here. Open 
+directories, browse file contents. Learn what you can in a minute.
 
 :: 
 
@@ -130,9 +133,10 @@ Exercise : Create a Local Repository
   $ ls -A
   HEAD        config      description hooks       info        objects     refs 
 
-3.) Describe your repository by opening the description file and replacing the 
-text with a name for the repository. Mine will be called "Reproducible Science". 
-Call yours anything you like. 
+3.) Use what you've learned. You may have noticed the file called description. 
+You can escribe your repository by opening the description file and replacing 
+the text with a name for the repository. Mine will be called "Reproducible 
+Science". You may call yours anything you like. 
 
 ::
   
