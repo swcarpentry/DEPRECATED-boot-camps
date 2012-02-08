@@ -54,35 +54,31 @@ It is not very difficult to use modules - you just have to know the module name 
 
 Python has a lot of really cool modules built in. One of them is called urllib, which can be used to get files from the Internet. In this example, you will generate a list of the first 1000 prime numbers by downloading a text file and parsing it in python. Remember to use the help and dir functions to learn more about the functions/modules you are using:
 
-  1. Import the urllib module
-  1. Use the urlretrieve function in the urllib module to download the text file stored at: http://hackerwithin.org/1000.txt to the file 1000.txt
-  1. Open the file 1000.txt
-  1. Read the contents of the file into a single string using the file read method
-  1. Turn the single string into a list using the string split method
+1. Import the urllib module
+2. Use the urlretrieve function in the urllib module to download the text file stored at: http://hackerwithin.org/1000.txt to the file 1000.txt
+3. Open the file 1000.txt
+4. Read the contents of the file into a single string using the file read method
+5. Turn the single string into a list using the string split method
 
 You should now have a list of strings. Each element of the list is a ''string'' representation of a single prime number. What we want is a list that contains actual integers. You saw in session 1 that we could convert strings to integers using the int function: "i = int(s)". So we can convert this list of strings to a list of integers by doing something like:
 
 ::
   
-  #!CodeExample
-  #!python
-  int_list = []
-  for s in string_list:
-     int_list.append(int(s))
+ > int_list = []
+ > for s in string_list:
+      int_list.append(int(s))
 
 
 Python has something called a list-comprehension that allows us to perform operations like this one in a single line of code. Here is how you would implement the same loop using a list comprehension:
 
 ::
 
-  #!CodeExample
-  #!python
-  int_list = [int(s) for s in string_list]
+  > int_list = [int(s) for s in string_list]
 
 
 This line tells python to create a new list by converting each string in string_list into an int. In other words, list comprehensions are useful when you want to make a new list from a preexisting list by performing some operation on each element. 
 
-  1. Finish this exercise by taking your list of prime numbers and making a new list which contains each prime number squared.
+1. Finish this exercise by taking your list of prime numbers and making a new list which contains each prime number squared.
 
 
 
@@ -108,22 +104,18 @@ The keyword "`def`" is used to define a function. As in the case of conditionals
 
 ::
 
-  #!CodeExample
-  #!python
-  def triangle_perimeter(a, b, c):
-     return a + b + c
-  
-  p = triangle_perimeter(3,4,5)
-  print p
+ > def triangle_perimeter(a, b, c):
+ >    return a + b + c
+ > 
+ > p = triangle_perimeter(3,4,5)
+ > print p
   
   
-  Python functions can return multiple values:
+Python functions can return multiple values:
   
 ::
 
-  #!CodeExample
-  #!python
-  def rgb(color_name):
+ def rgb(color_name):
   
      if color_name is "red":
         return 1,0,0
@@ -154,8 +146,6 @@ In the last example, you wrote a function, called `perimeter`, that you have to 
 
 ::
 
-  #!CodeExample
-  #!python
   print perimeter((1,2,3,4,5))
 
 
@@ -163,8 +153,6 @@ You need the extra set of parentheses, because the function takes only one argum
 
 ::
 
-  #!CodeExample
-  #!python
   def perimeter(\*args):
      return sum(args)
   
@@ -187,8 +175,6 @@ Consider the following function, whose arguments represent the model year, milea
 
 ::
 
-  #!CodeExample
-  #!python
   def carvalue(year, mileage, nacc):
      return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
   
@@ -199,10 +185,7 @@ In order to use the `carvalue` function, we have to remember that `year` is the 
 
 ::
 
-  #!CodeExample
-  #!python
-  print carvalue(year=
-  2001, mileage = 100000, nacc=2)
+  print carvalue(year=2001, mileage = 100000, nacc=2)
   print carvalue(mileage= 100000, year = 2001, nacc=2) # Also produces the correct answer!
   print carvalue(2001, nacc= 2, mileage = 100000) # Sets the year to 2001, the mileage to 100000, and nacc to 2
   print carvalue(year= 2001, mileage = 100000, 2) # ERROR: Keyword arguments must precede non-keyword arguments
@@ -217,8 +200,6 @@ Suppose I did a study that showed that the average number of car accidents a par
 
 ::
 
-  #!CodeExample
-  #!python
   def carvalue(year, mileage, nacc=2):
      return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
   
@@ -237,8 +218,6 @@ Earlier, we called the `carvalue` function using keyword arguments:
 
 ::
 
-  #!CodeExample
-  #!python
   print carvalue(year= 2001, mileage = 100000, nacc=2)
 
 
@@ -246,8 +225,6 @@ Python has a really cool feature which allows you to bundle the keyword argument
 
 ::
   
-  #!CodeExample
-  #!python
   def carvalue(**kwargs):
      return 30000 - kwargs["mileage"]/10 - kwargs["nacc"]*1000 - (2010-kwargs["year"])*1000
   
@@ -263,8 +240,6 @@ First, you need to download [http://hackerwithin.org/cgi-bin/hackerwithin.fcgi/r
 
 ::
 
-  #!CodeExample
-  #!python
   def readrgb(fn="rgb.txt"):
      # fn is the file name, defaults to rgb.txt
      f = open(fn)
@@ -290,10 +265,10 @@ First, you need to download [http://hackerwithin.org/cgi-bin/hackerwithin.fcgi/r
   
   
 1. Copy this function into a python script
-1. Run the function and store the result
-1. Use the dictionary returned by `readrgb` to print the RGB values for the colors: red, violet, and cadet blue
-1. Write a function called 'getrgb' which takes a variable number of arguments. These arguments will be color names. Return a list containing the RGB values of each color. For example, if I call the function using: `getrgb('red', 'blue') I should get the list: [(255,0,0),(0,0,255)]
-1. Add a default value argument called "`rgbtype`" which defaults to the string "int". If `rgbtype` is set to the string "int", then the RGB values should be tuples of integers (this is what the function already does). If `rgbtype` is set to the string "hex", then the RGB values should be tuples of hexadecimal values (use dir to find the built in function which converts integers to hexadecimal values).  
+2. Run the function and store the result
+3. Use the dictionary returned by `readrgb` to print the RGB values for the colors: red, violet, and cadet blue
+4. Write a function called 'getrgb' which takes a variable number of arguments. These arguments will be color names. Return a list containing the RGB values of each color. For example, if I call the function using: `getrgb('red', 'blue') I should get the list: [(255,0,0),(0,0,255)]
+5. Add a default value argument called "`rgbtype`" which defaults to the string "int". If `rgbtype` is set to the string "int", then the RGB values should be tuples of integers (this is what the function already does). If `rgbtype` is set to the string "hex", then the RGB values should be tuples of hexadecimal values (use dir to find the built in function which converts integers to hexadecimal values).  
 
 
 By combining all of the features that have been introduced in this session, such as ordinary arguments, default value arguments, variable numbers of arguments and keyword arguments, it is possible to make functions that are extremely powerful.
