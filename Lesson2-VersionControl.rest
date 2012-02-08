@@ -16,8 +16,23 @@ fairly complete table of some popular version control systems and their
 equivalent commands.
 
 Today, we'll be using git. Git is an example of a distributed version control 
-system. Other distributed version control system is called mercurial. An 
-alternative to distributed version control is centralized version control.
+system, distinct from centralized verson control systems. I'll make the 
+distinction clear later, but for now, the table below will suffice. 
+
+
++--------------------------+----------------------------------+
+|  Version Control System Tool Options                        |
++==========================+==================================+
+| Distributed i            | Centralized                      |
++==========================+==================================+
+| Decentralized CVS (dcvs) | concurrent versions system (cvs) | 
++--------------------------+----------------------------------+
+| mercurial (hg)           | subversion (svn)                 |
++--------------------------+----------------------------------+
+| git (git)                |                                  |
++--------------------------+----------------------------------+
+| bazaar (bzr)             |                                  |
++--------------------------+----------------------------------+
 
 ---------------------------------------------------------------------------------- 
 git --help : Getting Help
@@ -43,7 +58,7 @@ Let's see what happens when we type
 
 :: 
 
-  git --help
+  $ git --help
 
 
 Excellent, it gives a list of commands it is able to help with, as well as their 
