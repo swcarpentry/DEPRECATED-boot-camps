@@ -53,7 +53,7 @@ and then hit enter. It looks like the syntax for getting help with git is **git
  
 To exit the manual page, type q. 
 
-Let's see what happens when we type 
+Let's see what happens when we type : 
 
 :: 
 
@@ -62,6 +62,41 @@ Let's see what happens when we type
 
 Excellent, it gives a list of commands it is able to help with, as well as their 
 descriptions. 
+
+::
+
+  $ git --help
+  usage: git [--version] [--exec-path[=<path>]] [--html-path]
+             [-p|--paginate|--no-pager] [--no-replace-objects]
+             [--bare] [--git-dir=<path>] [--work-tree=<path>]
+             [-c name=value] [--help]
+             <command> [<args>]
+  
+  The most commonly used git commands are:
+     add        Add file contents to the index
+     bisect     Find by binary search the change that introduced a bug
+     branch     List, create, or delete branches
+     checkout   Checkout a branch or paths to the working tree
+     clone      Clone a repository into a new directory
+     commit     Record changes to the repository
+     diff       Show changes between commits, commit and working tree, etc
+     fetch      Download objects and refs from another repository
+     grep       Print lines matching a pattern
+     init       Create an empty git repository or reinitialize an existing one
+     log        Show commit logs
+     merge      Join two or more development histories together
+     mv         Move or rename a file, a directory, or a symlink
+     pull       Fetch from and merge with another repository or a local branch
+     push       Update remote refs along with associated objects
+     rebase     Forward-port local commits to the updated upstream head
+     reset      Reset current HEAD to the specified state
+     rm         Remove files from the working tree and from the index
+     show       Show various types of objects
+     status     Show the working tree status
+     tag        Create, list, delete or verify a tag object signed with GPG
+  
+  See 'git help <command>' for more information on a specific command.
+
 
 ---------------------------------------------------------------------------------- 
 git init : Creating a Local Repository
