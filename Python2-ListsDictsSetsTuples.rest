@@ -152,9 +152,9 @@ is that tuples are used internally in Python in a lot of places. One of the basi
 As you learn more about python you'll see how lists, tuples and dictionaries are the basic 
 building blocks of the entire language. 
 
-.........................................................................
+----------------------------------------------------
  Copy or Reference?  
-.........................................................................
+----------------------------------------------------
 
 
 Simple data types like integers and strings behave slightly differently than more complicated objects. To see one unexpected example, try these commands:
