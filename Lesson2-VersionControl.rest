@@ -6,7 +6,7 @@ ________________________________________________________________________________
 and Variables | Python1-ShellAndVariables]]
 
 ----------------------------------------------------------------------------------
-**git** : What is Version Control ?
+git : What is Version Control ?
 ---------------------------------------------------------------------------------- 
 
 Very briefly, version control is a way to keep a backup of changing files, to
@@ -268,17 +268,26 @@ git log : Viewing the History
 The commit messages are kept intact within the repository
 
 ---------------------------------------------------------------------------------- 
-git branch : Listing, Creating, and Switching Between Branches
+git branch : Listing, Creating, and Deleting Branches 
 ---------------------------------------------------------------------------------- 
+
+Branches are parallel instances of a repository that can be edited and version 
+controlled in parallel. They are useful for pursuing various implementations 
+experimentally or maintaining a stable core while developing separate sections 
+of a code base.
+
+Without an argument, the **branch** command lists the branches that exist in 
+your repository.
 
 ::
 
   $ git branch
   * master
 
-
-Without an argument, the **branch** command lists the branches that exist in 
-your repository. 
+The master branch is created when the repository is initialized.
+The asterisk indicates which branch you're currently in.
+With an argument, the **branch** command creates a new branch with the given 
+name. 
 
 :: 
 
@@ -288,7 +297,13 @@ your repository.
     experimental
 
 
+To delete a branch, use the **-d** flag. 
 
+::
+  
+  $ git branch -d experimental
+  $ git branch
+  * master
 
 
 ---------------------------------------------------------------------------------- 
