@@ -392,46 +392,48 @@ Today, we'll check out a git type repository at
 www.github.com/thehackerwithin/PyTrieste .
 
 When you clone the Original repository, the one that is created on your local 
-machine is a copy, and will behave as a fully fledged local repository locally, 
-but, with the right configuration, will be able to pull changes from 
-collaboratorson your local machine will be a copy of the 
-original repository, 
-
+machine is a copy, and will behave as a fully fledged local repository locally. 
+However, with the right configuration, it will be able to pull changes from 
+collaborators to your local machine and push your changes to the Original 
+repository. We'll get to that soon, but for now, let's **fork** the repository 
+from GitHub.
 
 ********************************************************************************** 
-Exercise : Clonging a Repository from GitHub
+Exercise : Cloning a Repository from GitHub
 ********************************************************************************** 
 
-Step 1 : Open up an internet browser and log in to google.
+Step 1 : Pick any repository you like. There are many cool projects hosted on 
+github. Take a few minutes here, and pick a piece of code. May I recommend the 
+cyclus repository or the  github.com/cyclus/core.
 
-Step 2 : Now go to the Checkout the source tab and click on the Password link.
-Take Note.
-
-Step 3 : Either do this in SmartSVN or crack open a terminal. In SmartSVN,
-click on the radio button that says check out project from repository. The
-repository location is https://scbc-2011.googlecode.com/svn/ .
-
-In the terminal, if your google user name is buckybadger, do this:
+Step 2 : Clone it. If you didn't find anything cool, you can chose the 
+"instructional" Spoon-Knife repository:
 
 ::
 
-  ~$ svn checkout https://scbc-2011.googlecode.com/svn/ \
-  scbc-2011 --username buckybadger
+  $ git clone git@github.com/octocat/Spoon-Knife.git
+  Cloning into Spoon-Knife...
+  remote: Counting objects: 24, done.
+  remote: Compressing objects: 100% (21/21), done.
+  remote: Total 24 (delta 7), reused 17 (delta 1)
+  Receiving objects: 100% (24/24), 74.36 KiB, done.
+  Resolving deltas: 100% (7/7), done.
 
-Step 4 : You should see many files download themselves onto your machine. Let's
-make sure it worked. Either browse in SmartSVN or change directories to the
-source code and list the contents.
+Step 3 : You should see many files download themselves onto your machine. Let's
+make sure it worked. Change directories to the source code and list the contents.
 
 ::
 
-  ~$ cd scbc-2011 ~/scbc-2011$ ls 
+  $ cd Spoon-Knife
+  $ ls 
 
 
 ---------------------------------------------------------------------------------- 
-Updating
+git pull : Pulling updates from the Original Repository 
 ---------------------------------------------------------------------------------- 
 
-Updating is like voting. You should update early and often , and particularly
+Updating your repository is like voting. You should update early and often
+especially if you intend to contribute back to the upstream repository and particularly
 before you make or commit any changes. This will ensure you're working with the
 most up-to-date version of the repository. Updating won't overwrite any changes
 you've made locally without asking, so don't get nervous. When in doubt,
@@ -439,157 +441,10 @@ update.
 
 :: 
 
-  ~/scbc-2011$ svn update 
-  At revision 19.
-
----------------------------------------------------------------------------------- 
-Adding New Files to Version Control
----------------------------------------------------------------------------------- 
-
-This is great. You can make some changes, and commit them to version control.
-But, what if you want to add something totally new? How do you make changes to
-a file that doesn't exist yet?
-
-********************************************************************************** 
-Exercise : Adding files to Version Control
-********************************************************************************** 
-
-Step 1: Create a wiki page about yourself. Please tell us about yourself. Save
-a file to the folder called wiki. Call it something unique, like
-buckybadger.wiki. Take your time.
-
-:: 
-
-  ~/scbc-2011$ vi buckybadger.wiki
-
-Step 2: Check the status of your local copy For kicks, let's see what SVN
-thinks of this.
-
-::
-
-  ~/scbc-2011$ svn status
-
-SVN should report that it hasn't yet been officially introduced to your file.
-
-::
-
-  ? buckybadger.wiki
-
-Step 3: Add the file to version control Now, introduce your file to svn by
-adding it to version control.
-
-::
-
-  ~/scbc-2011$ svn add wiki/buckybadger.wiki
-  A wiki/buckybadger.wiki
-
-If you want to, commit that change. Your wiki page will be available for anyone
-to see on the repo. When your done, give it a look online at
-scbc-2011.googlecode.com/wiki.
-
-::
-
-  ~/scbc-2011$ svn commit -m "In commit messages, we usually explain what we've \
-  done. Here, we've added a wiki page." 
-  Adding wiki/buckybadger.wiki 
-  Transmitting file data . 
-  Committed revision 86.
-
----------------------------------------------------------------------------------- 
-Removing Files from Version Control
----------------------------------------------------------------------------------- 
-
-But, let's say you're shy and change your mind about adding this to version
-control. Not all pretty faces belong on the internet, after all. If you change
-your mind, and would rather not add this wiki page, try svn remove. You can
-also just say rm. Be careful, this will delete your local copy of the file.
-
-::
-
-  ~/scbc-2011/wiki$ svn remove buckybadger.wiki 
-  D buckybadger.wiki 
-  ~/scbc-2011/wiki$ svn commit -m "a log message" 
-
-Deleting hacker-poke/data/myPic.png Committed revision 87.
-
-Making and Committing a Change
-
-Now, recall the software-carpentry.org tutorial. You're Wolfman. The guy next
-to you, he's Dracula. I'll be the Mummy. Please pick a random place in one of
-the files and insert a comment, like an easter egg.
-
-********************************************************************************** 
-Exercise : Making Changes
-********************************************************************************** 
-
-Step 1 : Insert something
-
-If you're not in the terminal, just open up the ReadMe.wiki file.
-
-If you're new to the command line, you can open the best text editor like so:
-
-::
-
-  ~/scbc-2011$ cd wiki 
-  ~/scbc-2011/wiki$ vi ReadMe.wiki
-
-Once it's open, you'll see some text. Just type the letter 'i' and place a line
-anywhere you like. The line is a comment if it begins with a pound sign #, like
-so:
-
-::
-
-  #summary A Readme for the Repository
-  =Read Me=
-
-  #KATY'S COMMENT
-  ==Software Dependencies== 
-  * Python 2.71 (or greater?) 
-  * Nose 
-  * Idle 
-  * sqlite (3?) 
-  * Smart SVN ? 
-  * add more here...  
+  $ git pull 
+  Already up-to-date.
 
 
-To save it, press 'ESC', then ':wq' .
-
-Step 2 : Check the status of your local copy
-
-Now that you've changed a file, let's see what SVN thinks about your local
-status.
-
-::
-
-  ~/scbc-2011$ svn status 
-
-  M ReadMe.wiki
-
- 
-
-If you want, try committing your change. If it's a comment, it won't break
-anything. If you think someone else has committed recently, don't forget to
-update first.
-
-:: 
-  
-  ~/scbc-2011$ svn update
-
- 
-
-If SVN lets you know that someone else has committed changes to the same file
-recently, hang on and watch until the next section on conflicts. If svn doesn't
-complain, commit.
-
-Step 3 : Commit
-
-::
-
-  ~/scbc-2011$ svn commit -m "The m flag indicates that you'd like to leave a log \
-  message saying what you've done. Here, we each added a comment."
-
-The m flag allows you to add a comment that will be stored in the repository to
-help your collaborators keep track of the changes.
 
 ---------------------------------------------------------------------------------- 
 Resolving Conflicts
