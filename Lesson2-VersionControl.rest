@@ -6,7 +6,7 @@ ________________________________________________________________________________
 and Variables | Python1-ShellAndVariables]]
 
 ----------------------------------------------------------------------------------
-git : What is Version Control ?
+**git** : What is Version Control ?
 ---------------------------------------------------------------------------------- 
 
 Very briefly, version control is a way to keep a backup of changing files, to
@@ -120,7 +120,7 @@ to do this is **git init** .
 Exercise : Create a Local Repository
 ********************************************************************************** 
 
-1.) Initialize your repository.
+Step 1 : Initialize your repository.
 
 ::
 
@@ -130,7 +130,7 @@ Exercise : Create a Local Repository
   Initialized empty Git repository in /Users/khuff/Documents/hacker/good_science/.git/
 
 
-2.) Browse the directory's hidden files to see what happened here. Open 
+Step 2 : Browse the directory's hidden files to see what happened here. Open 
 directories, browse file contents. Learn what you can in a minute.
 
 :: 
@@ -141,7 +141,7 @@ directories, browse file contents. Learn what you can in a minute.
   $ ls -A
   HEAD        config      description hooks       info        objects     refs 
 
-3.) Use what you've learned. You may have noticed the file called description. 
+Step 3 : Use what you've learned. You may have noticed the file called description. 
 You can escribe your repository by opening the description file and replacing 
 the text with a name for the repository. Mine will be called "Reproducible 
 Science". You may call yours anything you like. 
@@ -164,13 +164,13 @@ we'll learn the **git add** command.
 Exercise : Add a File to Your Local Repository
 ********************************************************************************** 
 
-1.) Create a file to add to your repository.
+Step 1 : Create a file to add to your repository.
 
 :: 
   
   $ nano readme.rst
 
-2.) Inform git that you would like to keep track of future changes in this file.
+Step 2 : Inform git that you would like to keep track of future changes in this file.
 
 :: 
   
@@ -225,7 +225,7 @@ commits increase the granularity of your **undo** button.
 Exercise : Commit Your Changes
 ********************************************************************************** 
 
-1.) Commit the file you've added to your repository.
+Step 1 : Commit the file you've added to your repository.
 
 :: 
   
@@ -234,7 +234,7 @@ Exercise : Commit Your Changes
    1 files changed, 2 insertions(+), 0 deletions(-)
    create mode 100644 readme.rst
 
-2.) Admire your work.
+Step 2 : Admire your work.
 
 ::
 
@@ -262,6 +262,43 @@ each revision of each file to be treated as a full file.
 
 
 ---------------------------------------------------------------------------------- 
+git log : Viewing the History
+---------------------------------------------------------------------------------- 
+
+The commit messages are kept intact within the repository
+
+---------------------------------------------------------------------------------- 
+git branch : Listing, Creating, and Switching Between Branches
+---------------------------------------------------------------------------------- 
+
+::
+
+  $ git branch
+  * master
+
+
+Without an argument, the **branch** command lists the branches that exist in 
+your repository. 
+
+:: 
+
+  $ git branch experimental
+  $ git branch
+  * master
+    experimental
+
+
+
+
+
+---------------------------------------------------------------------------------- 
+git merge : Merging Branches
+---------------------------------------------------------------------------------- 
+
+
+
+
+---------------------------------------------------------------------------------- 
 git clone : Copying a Repository
 ---------------------------------------------------------------------------------- 
 
@@ -275,12 +312,15 @@ member today. Remember, with great power comes great responsibility.
 Today, we'll check out a git type repository at 
 www.github.com/thehackerwithin/PyTrieste .
 
-
-
+When you clone the Original repository, the one that is created on your local 
+machine is a copy, and will behave as a fully fledged local repository locally, 
+but, with the right configuration, will be able to pull changes from 
+collaboratorson your local machine will be a copy of the 
+original repository, 
 
 
 ********************************************************************************** 
-Exercise : Checking out the code
+Exercise : Clonging a Repository from GitHub
 ********************************************************************************** 
 
 Step 1 : Open up an internet browser and log in to google.
