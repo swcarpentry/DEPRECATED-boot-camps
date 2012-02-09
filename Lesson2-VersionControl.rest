@@ -338,6 +338,8 @@ Step 1 : Create two new branches and list them
 
 Step 2 : Make changes in each new branch and commit them.
   
+::
+
   $ git checkout first
   Switched to branch 'first'
   $ touch firstnewfile
