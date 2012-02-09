@@ -6,8 +6,12 @@ ________________________________________________________________________________
 and Variables | Python1-ShellAndVariables]]
 
 ----------------------------------------------------------------------------------
-git : What is Version Control ?
+git
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+What is Version Control ?
+.................................................................................. 
 
 Very briefly, version control is a way to keep a backup of changing files, to
 store a history of those changes, and most importantly to allow many people in
@@ -35,8 +39,12 @@ distinction clear later, but for now, the table below will suffice.
 +--------------------------+----------------------------------+
 
 ---------------------------------------------------------------------------------- 
-git --help : Getting Help
+git --help 
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Getting Help
+.................................................................................. 
 
 The first thing I like to know about any tool is how to get help. From the 
 command line type 
@@ -100,8 +108,12 @@ descriptions.
 
 
 ---------------------------------------------------------------------------------- 
-git init : Creating a Local Repository
+git init 
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Creating a Local Repository
+.................................................................................. 
 
 To keep track of numerous versions of your work without saving numerous copies, 
 you can make a local repoitory for it on your computer. What git does is to save  
@@ -152,8 +164,12 @@ Science". You may call yours anything you like.
 
  
 ---------------------------------------------------------------------------------- 
-git add : Adding a File To Version Control
+git add 
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Adding a File To Version Control
+.................................................................................. 
 
 For the git repository to know which files within this directory you would like 
 to keep track of, you must add them. First, you'll need to create one, then 
@@ -177,8 +193,12 @@ Exercise : Add a File to Your Local Repository
   $ git add readme.rst
 
 ---------------------------------------------------------------------------------- 
-Checking The Status of Your Local Copy
+git status
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Checking The Status of Your Local Copy
+.................................................................................. 
 
 The files you've created on your machine are your local "working" copy. The
 changes your make in this local copy aren't backed up online automatically.
@@ -206,8 +226,12 @@ good_science directory is this new readme.rst file.
 
   
 ---------------------------------------------------------------------------------- 
-git commit : Saving a Snapshot
+git commit 
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Saving a Snapshot
+.................................................................................. 
 
 In order to save a snapshot of the current state (revision) of the repository, 
 we use the commit command.  This command is always associated with a message 
@@ -244,8 +268,12 @@ Exercise : Commit Your Changes
 
 
 ---------------------------------------------------------------------------------- 
-git diff : Viewing the Differences
+git diff 
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Comparing Revisions
+.................................................................................. 
 
 There are many diff tools. 
 
@@ -262,8 +290,12 @@ each revision of each file to be treated as a full file.
 
 
 ---------------------------------------------------------------------------------- 
-git clone : Copying a Repository
+git clone 
 ---------------------------------------------------------------------------------- 
+
+.................................................................................. 
+Copying a Repository
+.................................................................................. 
 
 The Hacker Within has its own online code repositories. You can check out code
 from them  at any time, from anywhere. You checked out some code this morning 
