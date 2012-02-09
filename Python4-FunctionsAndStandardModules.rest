@@ -47,40 +47,25 @@ It is not very difficult to use modules - you just have to know the module name 
 
 
 
-----------------------------------------------------------------------
- Hands-on Example
-----------------------------------------------------------------------
+-----------------------------------------
+A running example
+-----------------------------------------
 
-
-Python has a lot of really cool modules built in. One of them is called urllib, which can be used to get files from the Internet. In this example, you will generate a list of the first 1000 prime numbers by downloading a text file and parsing it in python. Remember to use the help and dir functions to learn more about the functions/modules you are using:
-
-1. Import the urllib module
-2. Use the urlretrieve function in the urllib module to download the text file stored at: http://hackerwithin.org/1000.txt to the file 1000.txt
-3. Open the file 1000.txt
-4. Read the contents of the file into a single string using the file read method
-5. Turn the single string into a list using the string split method
-
-You should now have a list of strings. Each element of the list is a ''string'' representation of a single prime number. What we want is a list that contains actual integers. You saw in session 1 that we could convert strings to integers using the int function: "i = int(s)". So we can convert this list of strings to a list of integers by doing something like:
-
-::
-  
- > int_list = []
- > for s in string_list:
-      int_list.append(int(s))
-
-
-Python has something called a list-comprehension that allows us to perform operations like this one in a single line of code. Here is how you would implement the same loop using a list comprehension:
+The goal of this lecture is to use Python to read a series of strings from the command line, convert them into numbers, and list whether they are prime. A single run of this program will look like this:
 
 ::
 
-  > int_list = [int(s) for s in string_list]
+ (unix shell)$ python findPrimes.py 2 4 3 9 7
+ 2 is prime
+ 4 is not prime
+ 3 is prime
+ 9 is not prime
+ 7 is prime
 
-
-This line tells python to create a new list by converting each string in string_list into an int. In other words, list comprehensions are useful when you want to make a new list from a preexisting list by performing some operation on each element. 
-
-1. Finish this exercise by taking your list of prime numbers and making a new list which contains each prime number squared.
-
-
+We'll split this problem into a few pieces:
+1) Process the command line arguments using the sys module.
+2) Write a function to determine whether a number is prime.
+3) Combine the two and test it.
 
 ----------------------------------------------------------------------
  Writing Python Scripts 
@@ -94,6 +79,35 @@ To open IDLE in Windows, simply use the run box in the start menu and enter "idl
 **Aside: IDLE**
 IDLE can do a lot more that write simple python scripts. It contains its own python interpreter, so you can run python scripts directly within IDLE by hitting f5. It also contains a debugger. We're not going to use these features in this boot camp - instead we will write the scripts in IDLE and run them in ipython since we are already familiar with it. However, running writing and running scripts in IDLE has its advantages and I encourage you to learn more about it.
 
+-----------------------------------------
+Using the sys module
+-----------------------------------------
+
+The sys module gives you access to the Python interpreter. Some important objects in this module are:
+1) sys.argv is a list of command line arguments. The first argument is always the name of the file.
+2) sys.path gives a list of all paths on your computer where Python will look for modules
+2) sys.modules gives a dictionary of all currently loaded modules.
+
+Put the following text in a file findPrimes.py in your current working directory.
+
+::
+
+  ''' findPrimes.py
+  List whether the numbers passed in the command line are prime.
+  '''
+
+  from sys import argv
+
+  for i in xrange(1,len(argv)):
+      print argv[i]
+
+
+This program should print each input on its own line. 
+
+** Hands on example **
+How could you alter the for loop to not use xrange and element indexing? 
+
+Now, let's work on the next piece of the program, which is a function to compute whether a number is prime. To do that, we'll need to detour to talk about functions in general.
 
 ----------------------------------------------------------------------
  Using Functions 
@@ -196,7 +210,7 @@ In order to use the `carvalue` function, we have to remember that `year` is the 
 .........................................................................
 
 
-Suppose I did a study that showed that the average number of car accidents a particular vehicle experienced was two. Now I want to modify the `carvalue` function so that if the user doesn't know the number of accidents, the function will use two by default. Again, this is really easy with python (I just have to modify one line):
+Suppose I did a study that showed that the average number of car accidents a particular vehicle experienced was two. Now I want to modify the `carvalue` function so that if the user doesn't know the number of accidents, the function will use two by default. I can do this by providing a default value in the function definition.
 
 ::
 
@@ -209,66 +223,34 @@ Suppose I did a study that showed that the average number of car accidents a par
 
 You cannot mix default value arguments and variable numbers of arguments in the same function. 
 
-.........................................................................
- kwargs 
-.........................................................................
+-----------------------------
+Back to Prime Numbers
+-----------------------------
 
-
-Earlier, we called the `carvalue` function using keyword arguments:
-
-::
-
-  print carvalue(year= 2001, mileage = 100000, nacc=2)
-
-
-Python has a really cool feature which allows you to bundle the keyword arguments into a ''dictionary''. Take a look at the function below:
-
-::
-  
-  def carvalue(**kwargs):
-     return 30000 - kwargs["mileage"]/10 - kwargs["nacc"]*1000 - (2010-kwargs["year"])*1000
-  
-  print carvalue(year= 2001, mileage = 100000, nacc=2) # Works fine
-  print carvalue(year= 2001, mileage = 100000) # ERROR: we use kwargs["nacc"] but we never assign nacc
-  print carvalue(2001, 10000, 2) # ERROR, now carvalue takes only keyword arguments
-   
-This feature is really useful for writing functions that take large numbers of keyword arguments. It also gives you a way of mixing variable argument lists with default arguments. It may not be clear right now why this is such a cool feature, but it will be in later sessions.  
-
-**Hands-on Example**
-
-First, you need to download [http://hackerwithin.org/cgi-bin/hackerwithin.fcgi/raw-attachment/wiki/[[Session03/rgb.txt this] attachment TO YOUR DESKTOP and enter the commands "`cd`" and "`cd Desktop`" into ipython. The file|PyBCSession03/rgb.txt this] attachment TO YOUR DESKTOP and enter the commands "`cd`" and "`cd Desktop`" into ipython. The file]], "rgb.txt", contains a list of RGB color values and their associated color names. Below, I've written a function which reads the file into a dictionary.
+Let's write a function in findPrimes.py to find prime numbers. Recall that a prime number is a number that has no divisors other than 1 and the number itself. In the code below, I'm using the sqrt function, which can be imported from the math module.
 
 ::
 
-  def readrgb(fn="rgb.txt"):
-     # fn is the file name, defaults to rgb.txt
-     f = open(fn)
-  
-     rgbvals = {} # Create an empty dict to store all of the RGB values
-  
-     # Read each line of the file:
-     for line in f:
-         words = line.split() # Split the line into words
-  
-         # The first three words are the RGB values:
-         red = int(words[0])
-         green = int(words[1])
-         blue = int(words[2])
-  
-         # Any remaining words form the color name, so join the remaining words
-         # into a string with spaces in between each word:
-         colorname = " ".join(words[3:])
-  
-         rgbvals[colorname] = (red, green, blue)
-  
-     return rgbvals
-  
-  
-1. Copy this function into a python script
-2. Run the function and store the result
-3. Use the dictionary returned by `readrgb` to print the RGB values for the colors: red, violet, and cadet blue
-4. Write a function called 'getrgb' which takes a variable number of arguments. These arguments will be color names. Return a list containing the RGB values of each color. For example, if I call the function using: `getrgb('red', 'blue') I should get the list: [(255,0,0),(0,0,255)]
-5. Add a default value argument called "`rgbtype`" which defaults to the string "int". If `rgbtype` is set to the string "int", then the RGB values should be tuples of integers (this is what the function already does). If `rgbtype` is set to the string "hex", then the RGB values should be tuples of hexadecimal values (use dir to find the built in function which converts integers to hexadecimal values).  
+  def isPrime(n):
+    ''' Return True iff a number is prime. '''
+
+    if n <= 0:
+       return False
+    if n <= 2:
+       return True
+
+    if n % 2 == 0:
+      return False
+
+    cntr = 3 # The first odd divisor is 2.
+    stopPoint = sqrt(n)
+    while cntr <= stopPoint:
+       if n % cntr == 0: return False
+       cntr += 2
+
+    return True
 
 
-By combining all of the features that have been introduced in this session, such as ordinary arguments, default value arguments, variable numbers of arguments and keyword arguments, it is possible to make functions that are extremely powerful.
+** Hand's on example ** 
+Devise a few tests for this function. Are there any special cases you've forgotten? Are there any checks for data validity that we should add?
+
