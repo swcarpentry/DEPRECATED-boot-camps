@@ -2,7 +2,7 @@ ________________________________________________________________________________
 Version Control : Collaborative Workflow on GitHub
 __________________________________________________________________________________
 
-[[Back To Local Version Control| Lesson2-VersionControl]] - [[Forward to Python Shell 
+[[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python Shell 
 and Variables | Python1-ShellAndVariables]]
 
 ----------------------------------------------------------------------------------
