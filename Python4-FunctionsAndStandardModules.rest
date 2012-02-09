@@ -1,3 +1,274 @@
 ...................................................
 Python 4: Functions and Standard Modules
 ...................................................
+
+**Original material by Milad Fatenejad**
+
+During the last session we saw how to use some of the built-in data types. During this session, we are going to learn about writing functions and using modules.
+
+----------------------------------------------------------------------
+ Using modules 
+----------------------------------------------------------------------
+
+Python has a lot of useful data type and functions built into the language. We've see some of these already, and we'll see more over the next few lectures. For a full list, you can type `dir(__builtins__)`. However, most of the useful function are stored in modules. An example is the sine function, which is stored in the math module. In order  to access mathematical functions, like `sin`, we need to ''import'' the math module. Lets take a look at a simple example:
+
+::
+
+  > print sin(3)    # Error! Python doesn't know what sin is...yet
+  > import math     # Import the math module
+  > print math.sin(3)
+  > print dir(math) # See a list of everything in the math module
+  > help(math)      # Get help information for the math module
+
+
+It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Lets take a look at an example:
+
+::
+
+  > from math import *  # import everything from math into the global namespace (A BAD IDEA IN GENERAL)
+  > print sin(3)        # notice that we don't need to type math.sin anymore
+  > print tan(3)        # the tangent function was also in math, so we can use that too
+ 
+
+::
+
+  > reset                 # Clear everything from IPython
+  > from math import sin  # Import just sin from the math module. This is a good idea.
+  > print sin(3)          # We can use sin because we just imported it
+  > print tan(3)          # Error: We only imported sin - not tan
+
+
+
+::
+
+  > reset                 # Clear everything
+  > import math as m      # Same as import math, except we are renaming the module m
+  > print m.sin(3)        # This is really handy if you have module names that are long
+
+
+
+----------------------------------------------------------------------
+ Hands-on Example
+----------------------------------------------------------------------
+
+
+Python has a lot of really cool modules built in. One of them is called urllib, which can be used to get files from the Internet. In this example, you will generate a list of the first 1000 prime numbers by downloading a text file and parsing it in python. Remember to use the help and dir functions to learn more about the functions/modules you are using:
+
+1. Import the urllib module
+2. Use the urlretrieve function in the urllib module to download the text file stored at: http://hackerwithin.org/1000.txt to the file 1000.txt
+3. Open the file 1000.txt
+4. Read the contents of the file into a single string using the file read method
+5. Turn the single string into a list using the string split method
+
+You should now have a list of strings. Each element of the list is a ''string'' representation of a single prime number. What we want is a list that contains actual integers. You saw in session 1 that we could convert strings to integers using the int function: "i = int(s)". So we can convert this list of strings to a list of integers by doing something like:
+
+::
+  
+ > int_list = []
+ > for s in string_list:
+      int_list.append(int(s))
+
+
+Python has something called a list-comprehension that allows us to perform operations like this one in a single line of code. Here is how you would implement the same loop using a list comprehension:
+
+::
+
+  > int_list = [int(s) for s in string_list]
+
+
+This line tells python to create a new list by converting each string in string_list into an int. In other words, list comprehensions are useful when you want to make a new list from a preexisting list by performing some operation on each element. 
+
+1. Finish this exercise by taking your list of prime numbers and making a new list which contains each prime number squared.
+
+
+
+----------------------------------------------------------------------
+ Writing Python Scripts 
+----------------------------------------------------------------------
+
+
+Python scripts are simply files ending in ".py" that contain python instructions. You can write them using any text editor such as emacs, vi, nano, notepad, etc... If you don't have a text editor you like to use to write computer programs then you are in luck because it turns out that all of you installed a decent and easy to use python editor called IDLE. So far, we have been feeding commands directly to the python interpreter, ipython. This starts to become very tedious once we want to write longer programs. So from now on we are going to write python scripts instead using IDLE. You can run the scripts you wrote using the "%run" command in ipython. 
+
+To open IDLE in Windows, simply use the run box in the start menu and enter "idle". Similarly on Mac OSX enter "idle" into spotlight, or enter "idle" into a terminal if you are on Linux. Once idle is open, click on File -> New Window to start a new python script. For the rest of this session I will assume that you are saving the scripts to the Desktop. Enter the command: print "Hello World!" into the new script then save it to the Desktop with the name "hello.py". Now, we have to move ipython to the Desktop using the commands "cd" followed by "cd Desktop". You can now run the script by entering "%run hello.py" in ipython. We'll learn more about writing python files ourselves in the next session. 
+
+**Aside: IDLE**
+IDLE can do a lot more that write simple python scripts. It contains its own python interpreter, so you can run python scripts directly within IDLE by hitting f5. It also contains a debugger. We're not going to use these features in this boot camp - instead we will write the scripts in IDLE and run them in ipython since we are already familiar with it. However, running writing and running scripts in IDLE has its advantages and I encourage you to learn more about it.
+
+
+----------------------------------------------------------------------
+ Using Functions 
+----------------------------------------------------------------------
+ 
+
+The keyword "`def`" is used to define a function. As in the case of conditionals and loops, whitespace is used to define the body of a function. Try entering the following into iPython:
+
+::
+
+ > def triangle_perimeter(a, b, c):
+ >    return a + b + c
+ > 
+ > p = triangle_perimeter(3,4,5)
+ > print p
+  
+  
+Python functions can return multiple values:
+  
+::
+
+ def rgb(color_name):
+  
+     if color_name is "red":
+        return 1,0,0
+     if color_name is "green":
+        return 1,0,0
+     if color_name is "blue":
+        return 1,0,0
+     if color_name is "yellow":
+        return 1,1,0
+  
+     print "ERROR: Unknown color"
+  
+  r,g,b = rgb("yellow")
+  print r,g,b
+  
+
+**Hands-on Example**
+
+Write a function, "`perimeter`" that takes one argument - a tuple containing the lengths of each side of a polygon. Have the function return the perimeter of the polygon. So, for example to find the area of a square with side length 3, the function call would be: perimeter((3,3,3,3)) and the function would return 12. Use the `help` and `dir` functions to figure out how to write this function in one line. 
+
+
+.........................................................................
+ Variable Number of Arguments 
+.........................................................................
+
+
+In the last example, you wrote a function, called `perimeter`, that you have to call like this:
+
+::
+
+  print perimeter((1,2,3,4,5))
+
+
+You need the extra set of parentheses, because the function takes only one argument - a single tuple. Wouldn't it be nice if we didn't have to have the extra parentheses? It turns out that this is easy in python:
+
+::
+
+  def perimeter(\*args):
+     return sum(args)
+  
+  print perimeter(1,2,3,4,5)
+  
+
+Notice that little star on the first line. That star tells python to take all of the arguments and bundle them into a single tuple called args. This feature allows us to create functions that take a variable number of arguments. The function calls do not require the extra set of parentheses we saw earlier.
+
+**Hands-on Example**
+
+Write a function that takes a variable number of floating point arguments and returns their average.
+
+
+.........................................................................
+ Keyword Arguments 
+.........................................................................
+
+
+Consider the following function, whose arguments represent the model year, mileage, and number of accidents that a car has had. The function attempts to use this information to compute the value of the car.
+
+::
+
+  def carvalue(year, mileage, nacc):
+     return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
+  
+  print carvalue(2001, 100000, 2)
+
+
+In order to use the `carvalue` function, we have to remember that `year` is the first argument, `mileage` is the second, and `nacc` is the third. If we accidentally put the wrong argument in the wrong place then we will compute the wrong answer. Luckily, we can be explicit when calling functions using the following syntax:
+
+::
+
+  print carvalue(year=2001, mileage = 100000, nacc=2)
+  print carvalue(mileage= 100000, year = 2001, nacc=2) # Also produces the correct answer!
+  print carvalue(2001, nacc= 2, mileage = 100000) # Sets the year to 2001, the mileage to 100000, and nacc to 2
+  print carvalue(year= 2001, mileage = 100000, 2) # ERROR: Keyword arguments must precede non-keyword arguments
+  
+  
+.........................................................................
+ Default Value Arguments 
+.........................................................................
+
+
+Suppose I did a study that showed that the average number of car accidents a particular vehicle experienced was two. Now I want to modify the `carvalue` function so that if the user doesn't know the number of accidents, the function will use two by default. Again, this is really easy with python (I just have to modify one line):
+
+::
+
+  def carvalue(year, mileage, nacc=2):
+     return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
+  
+  print carvalue(2001, 100000, 2) # Works just like before
+  print carvalue(2001, 100000) # Since nacc is not specified, it defaults to 2
+    
+
+You cannot mix default value arguments and variable numbers of arguments in the same function. 
+
+.........................................................................
+ kwargs 
+.........................................................................
+
+
+Earlier, we called the `carvalue` function using keyword arguments:
+
+::
+
+  print carvalue(year= 2001, mileage = 100000, nacc=2)
+
+
+Python has a really cool feature which allows you to bundle the keyword arguments into a ''dictionary''. Take a look at the function below:
+
+::
+  
+  def carvalue(**kwargs):
+     return 30000 - kwargs["mileage"]/10 - kwargs["nacc"]*1000 - (2010-kwargs["year"])*1000
+  
+  print carvalue(year= 2001, mileage = 100000, nacc=2) # Works fine
+  print carvalue(year= 2001, mileage = 100000) # ERROR: we use kwargs["nacc"] but we never assign nacc
+  print carvalue(2001, 10000, 2) # ERROR, now carvalue takes only keyword arguments
+   
+This feature is really useful for writing functions that take large numbers of keyword arguments. It also gives you a way of mixing variable argument lists with default arguments. It may not be clear right now why this is such a cool feature, but it will be in later sessions.  
+
+**Hands-on Example**
+
+First, you need to download [http://hackerwithin.org/cgi-bin/hackerwithin.fcgi/raw-attachment/wiki/[[Session03/rgb.txt this] attachment TO YOUR DESKTOP and enter the commands "`cd`" and "`cd Desktop`" into ipython. The file|PyBCSession03/rgb.txt this] attachment TO YOUR DESKTOP and enter the commands "`cd`" and "`cd Desktop`" into ipython. The file]], "rgb.txt", contains a list of RGB color values and their associated color names. Below, I've written a function which reads the file into a dictionary.
+
+::
+
+  def readrgb(fn="rgb.txt"):
+     # fn is the file name, defaults to rgb.txt
+     f = open(fn)
+  
+     rgbvals = {} # Create an empty dict to store all of the RGB values
+  
+     # Read each line of the file:
+     for line in f:
+         words = line.split() # Split the line into words
+  
+         # The first three words are the RGB values:
+         red = int(words[0])
+         green = int(words[1])
+         blue = int(words[2])
+  
+         # Any remaining words form the color name, so join the remaining words
+         # into a string with spaces in between each word:
+         colorname = " ".join(words[3:])
+  
+         rgbvals[colorname] = (red, green, blue)
+  
+     return rgbvals
+  
+  
+1. Copy this function into a python script
+2. Run the function and store the result
+3. Use the dictionary returned by `readrgb` to print the RGB values for the colors: red, violet, and cadet blue
+4. Write a function called 'getrgb' which takes a variable number of arguments. These arguments will be color names. Return a list containing the RGB values of each color. For example, if I call the function using: `getrgb('red', 'blue') I should get the list: [(255,0,0),(0,0,255)]
+5. Add a default value argument called "`rgbtype`" which defaults to the string "int". If `rgbtype` is set to the string "int", then the RGB values should be tuples of integers (this is what the function already does). If `rgbtype` is set to the string "hex", then the RGB values should be tuples of hexadecimal values (use dir to find the built in function which converts integers to hexadecimal values).  
+
+
+By combining all of the features that have been introduced in this session, such as ordinary arguments, default value arguments, variable numbers of arguments and keyword arguments, it is possible to make functions that are extremely powerful.
