@@ -444,89 +444,10 @@ update.
   $ git pull 
   Already up-to-date.
 
+Since we just pulled the repository down, we will be up to date unless there has 
+been a commit by someone else to the Original repository in the meantime.
 
 
----------------------------------------------------------------------------------- 
-Resolving Conflicts
----------------------------------------------------------------------------------- 
-
-Some of you may have received an error message about a conflict.
-
-********************************************************************************** 
-Exercise: Resolving Conflicts
-********************************************************************************** 
-
-Step 1 : Update Before Committing
-
-:: 
-
-  $ svn update 
-
-  U ReadMe.wiki
-
-  Conflict discovered in 'ReadMe.wiki'. 
-
-  Select: (p) postpone, (df) diff-full, (e) edit, (h) help for more options:
-
-Step 2 : Postpone 
 
 
-The options are many :
- 
-::
 
-  (p) postpone - mark the conflict to be resolved later 
-  (df) diff-full - show all changes made to merged file 
-  (e) edit - change merged file in an editor 
-  (r) resolved - accept merged version of file 
-  (mf) mine-full - accept my version of entire file (ignore their changes) 
-  (tf) theirs-full - accept their version of entire file (lose my changes) 
-  (l) launch - launch external tool to resolve conflict 
-  (h) help - show this list 
-
-For now, you want to do some analysis, so press p to postpone.
-
-::
-
-  $ p
-
-Step 3 : Check the Differences
-
-Try diff (or meld if you have it).
-
-::
-
-  $ diff myfile1.py myfile2.py Step 4 : Resolve the Conflict
-
-The svn command resolve in combination with --accept and one of the choices
-from before will automatically delete the right files. Alternatively, you could
-delete all of the files that you don't like, move the correct one to the right
-filename, and try committing again. For now, we'll do it the clean way. For
-example, pretend you'd like to accept yours rather than the other.
-
-::
-
-  $ svn resolve --accept ReadMe.wiki.mine Resolved conflicted state of
-  'ReadMe.wiki'
-
-Importantly, if you decide to neglect all of your changes instead, you can
-choose to revert. Try svn help revert to find out how to do that.
-
-::
-
-  $ svn revert ReadMe.wiki
-
- 
-
----------------------------------------------------------------------------------- 
-A test
----------------------------------------------------------------------------------- 
-
-Okay Wolfmen, open up KatyHuff.wiki and replace my name with your own (or
-someone else's, in case you're shy).
-
-Now, clearly we've all just tried to change the same thing at once. The first
-one of us to update and commit will have no problems. However, when the rest of
-us try, SVN won't let us merge our changes. We have to talk this one over and
-decide who gets to commit. The rest of us will have to resolve conflicts as we
-learned. Try it!
