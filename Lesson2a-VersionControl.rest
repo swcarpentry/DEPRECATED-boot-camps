@@ -265,7 +265,18 @@ each revision of each file to be treated as a full file.
 git log : Viewing the History
 ---------------------------------------------------------------------------------- 
 
-The commit messages are kept intact within the repository
+A log of the commit messages is kept by the repository and can be reviewed with 
+the log command. 
+
+::
+
+  $ git log
+  commit 1863aefd7db752f58226264e5f4282bda641ddb3
+  Author: Katy Huff <katyhuff@gmail.com>
+  Date:   Wed Feb 8 16:08:08 2012 -0600
+ 
+      This is the first commit. It adds a readme file.
+
 
 ---------------------------------------------------------------------------------- 
 git branch : Listing, Creating, and Deleting Branches 

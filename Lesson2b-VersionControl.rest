@@ -56,3 +56,21 @@ doesn't know about it yet. You'll need to tell github you want to have an
 official fork of this repository.  
 
 
+Step 1 : Go to our [[repository | 
+https://github.com/thehackerwithin/PyTrieste/]] from your browser, and click on 
+the Fork button. Choose to fork it to your username rather than any 
+organizations.
+
+Step 2 : Clone it. From your terminal :
+
+::
+
+  $ git clone git@github.com:username/PyTrieste.git
+  $ cd PyTrieste
+
+Step 3 :  
+
+::
+  $ git remote add upstream git://github.com/thehackerwithin/PyTrieste.git
+  $ git fetch upstream
+
