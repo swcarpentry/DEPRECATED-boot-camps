@@ -277,6 +277,13 @@ the log command.
  
       This is the first commit. It adds a readme file.
 
+There are some useful flags for this command, such as 
+
+::
+
+  -n
+  --oneline
+  --graph
 
 ---------------------------------------------------------------------------------- 
 git branch : Listing, Creating, and Deleting Branches 
@@ -296,7 +303,6 @@ your repository.
   * master
 
 The master branch is created when the repository is initialized.
-The asterisk indicates which branch you're currently in.
 With an argument, the **branch** command creates a new branch with the given 
 name. 
 
@@ -317,11 +323,25 @@ To delete a branch, use the **-d** flag.
   * master
 
 
+
 ---------------------------------------------------------------------------------- 
 git checkout : Switching Between Branches, Abandoning Local Changes
 ---------------------------------------------------------------------------------- 
 
-The **git checkout** command 
+The **git checkout** command allows context switching between branches as well 
+as abandoning local changes. 
+
+To switch between branches, try
+
+::
+  $ git branch newbranch
+  $ git checkout newbranch 
+  $ git branch 
+
+How can you tell we've switched between branches? When we used the branch 
+command before there was an asterisk next to the master branch. That's because 
+the asterisk indicates which branch you're currently in.
+
 
 
 ---------------------------------------------------------------------------------- 
