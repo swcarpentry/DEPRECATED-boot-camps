@@ -1,5 +1,5 @@
 __________________________________________________________________________________
-Version Control : Collaborative Workflow on GitHub
+Version Control : Collaboration on GitHub
 __________________________________________________________________________________
 
 [[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python Shell 
