@@ -9,8 +9,9 @@ and Variables | Python1-ShellAndVariables]]
 github.com?
 ---------------------------------------------------------------------------------- 
 
-GitHub is a place where many people store their open (and not open) source 
-code repositories.
+GitHub is a site where many people store their open (and closed) source 
+code repositories. It provides tools for browsing, collaborating on and 
+documenting code.
 
 
 Setting up github at first requires [[some setup | 
@@ -36,12 +37,15 @@ verbatim. Make the appropriate substitutions.
 If you did this properly, you'll have a file in your home **(~)** directory 
 that's called **.gitconfig** . It's contents should look like : 
 
-
 ::
-  [user]
-          name = Katy Huff
-          email = southside@gmail.com
 
+  [user]
+        name = Katy Huff
+        email = southside@gmail.com
+
+This configuration step allows github to properly credit the authorship of 
+changes you make in your repository. For projects with numerous authors, this is 
+essential.
 
 ---------------------------------------------------------------------------------- 
 Forking
@@ -71,6 +75,7 @@ Step 2 : Clone it. From your terminal :
 Step 3 :  
 
 ::
+
   $ git remote add upstream git://github.com/thehackerwithin/PyTrieste.git
   $ git fetch upstream
 

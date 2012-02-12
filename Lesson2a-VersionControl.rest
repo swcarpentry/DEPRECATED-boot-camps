@@ -2,8 +2,8 @@ ________________________________________________________________________________
 Version Control
 __________________________________________________________________________________
 
-[[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Python Shell 
-and Variables | Python1-ShellAndVariables]]
+[[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Version Control 
+Continued | Lesson2b-VersionControl]]
 
 ----------------------------------------------------------------------------------
 git : What is Version Control ?
