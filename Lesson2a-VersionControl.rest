@@ -281,9 +281,17 @@ There are some useful flags for this command, such as
 
 ::
 
-  -n
+  -p
+  -3
+  --stat
   --oneline
   --graph
+  --short
+  --full 
+  --pretty
+  --since
+  --until
+  --author
 
 ---------------------------------------------------------------------------------- 
 git branch : Listing, Creating, and Deleting Branches 

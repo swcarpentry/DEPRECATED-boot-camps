@@ -19,7 +19,7 @@ http://help.github.com/set-up-git-redirect]].
 
 
 ---------------------------------------------------------------------------------- 
-~.gitconfig
+git config : Configuring your git environment
 ---------------------------------------------------------------------------------- 
 
 Once you've set up your rsa keys, you need to tell github who you are. 
@@ -47,9 +47,27 @@ This configuration step allows github to properly credit the authorship of
 changes you make in your repository. For projects with numerous authors, this is 
 essential.
 
+Another configuration step for some will be to set their favorite text editor as 
+git's text editor of choice. This is optional, since vi is usually the default, 
+but can be done with the following command (if you like **nano** for example):
+
+::
+
+  $ git config --global core.editor nano
+
+
 ---------------------------------------------------------------------------------- 
-Forking
+git remote : Steps for Forking a Repository
 ---------------------------------------------------------------------------------- 
+
+
+A key step to interacting with an online repository that you have forked is 
+adding the original as a remote repository. By adding the remote repository, you 
+inform git of a new option for fetching updates and pushing commits.
+
+The **git remote** command allows you to add, name, list, and delete repositories
+such as the original one **upstream** from your fork, others that may be 
+**parallel** to your fork, and so on. 
 
 ********************************************************************************** 
 Exercise : Fork Our GitHub Repository
@@ -58,7 +76,6 @@ Exercise : Fork Our GitHub Repository
 While you probably already have a copy of the PyTrieste repository, GitHub 
 doesn't know about it yet. You'll need to tell github you want to have an 
 official fork of this repository.  
-
 
 Step 1 : Go to our [[repository | 
 https://github.com/thehackerwithin/PyTrieste/]] from your browser, and click on 
@@ -77,5 +94,61 @@ Step 3 :
 ::
 
   $ git remote add upstream git://github.com/thehackerwithin/PyTrieste.git
+  $ git remote -v
+  origin  git@github.com:username/PyTrieste.git (fetch)
+  origin  git@github.com:username/PyTrieste.git (push)
+  upstream        git://github.com/thehackerwithin/PyTrieste.git (fetch)
+  upstream        git://github.com/thehackerwithin/PyTrieste.git (push)
+
+
+
+---------------------------------------------------------------------------------- 
+git fetch : Fetching the contents of a remote 
+---------------------------------------------------------------------------------- 
+
+
+Now that you have alerted your repository to the presence of others, it is able 
+to pull in updates from those repositories. In this case, if you want your 
+master branch to track updates in the original PyTrieste repository, you simply 
+fetch that repository into the master branch of your current repository.
+
+
+********************************************************************************** 
+Exercise : Fetch the Contents of Our GitHub Repository
+********************************************************************************** 
+
+Step 1 : Fetch it
+
+::
+  
   $ git fetch upstream
+
+Step 2 : Check it
+
+:: 
+  
+  $ ls
+
+
+
+---------------------------------------------------------------------------------- 
+git merge : Merging the contents of a remote 
+---------------------------------------------------------------------------------- 
+
+
+
+
+
+---------------------------------------------------------------------------------- 
+git pull : Pull = Fetch + Merge  
+---------------------------------------------------------------------------------- 
+
+The command **git pull** is the same as executing **git fetch** followed by 
+**git merge**. Though this is shorter in simple cases, it is not recommened for 
+cases in which there are many branches to consider. 
+
+
+
+
+
 
