@@ -1,8 +1,14 @@
-...................................................
+______________________________________________________________________
 Python 4: Functions and Standard Modules
-...................................................
+______________________________________________________________________
+
+[[Back to Flow Control : Loops, Conditionals, etc.  
+|Python3-FlowControl]] - [[Forward to Strings and File I-O  |Python-5-Strings-and-File-I-O]]
+
+----
 
 **Original material by Milad Fatenejad**
+
 
 During the last session we saw how to use some of the built-in data types. During this session, we are going to learn about writing functions and using modules.
 
