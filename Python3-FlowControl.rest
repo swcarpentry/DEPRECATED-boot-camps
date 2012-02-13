@@ -20,7 +20,7 @@ Standard Modules |Python4-FunctionsAndStandardModules.rest]]
 Conditionals (if statements) are also really easy to use in python. Take a look 
 at the following examples:
 
-```ipython
+```python
 
  > i = 4
  > sign = "zero"
@@ -53,6 +53,7 @@ Python has an easy to use if-syntax for setting the value of a variable. Try
 entering this into IPython:
 
 ```python
+
   i = 5
   sign = "positive" if i > 0 else "negative"
 ```
@@ -69,6 +70,7 @@ many other language. The example below takes a list of integers and computes the
 product of each number in the list up to the -1 element. 
 
 ```python
+
   mult = 1
   sequence = [1, 5, 7, 9, 3, -1, 5, 3]
   while sequence[0] is not -1:
@@ -88,6 +90,7 @@ For loops in python operate a little differently from other languages. Lets
 start with a simple example which prints all of the numbers from 0 to 9:
 
 ```python 
+
   for i in range(10):
      print i
 ```
@@ -95,7 +98,7 @@ start with a simple example which prints all of the numbers from 0 to 9:
 You may be wondering how this works. Start by using help(range) to see what the 
 range function does.
 
-```python
+::
 
   Help on built-in function range in module __builtin__:
   
@@ -107,7 +110,6 @@ range function does.
       When step is given, it specifies the increment (or decrement).
       For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
       These are exactly the valid indices for a list of 4 elements.
-```
   
 
 Range is a function that returns a list containing a sequence of integers. So, 
@@ -118,9 +120,10 @@ but for now this definition will do). Try entering the following to see what
 happens:
 
 ```python
-  
+
   for c in ["one", 2, "three", 4, "five"]
      print c
+```
 
 
 this is equivalent to:
