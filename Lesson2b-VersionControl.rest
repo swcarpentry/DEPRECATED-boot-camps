@@ -2,16 +2,16 @@ ________________________________________________________________________________
 Version Control : Collaboration on GitHub
 __________________________________________________________________________________
 
-[[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python Shell 
-and Variables | Python1-ShellAndVariables]]
+[[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python 
+Shell and Variables | Python1-ShellAndVariables]]
 
 ----------------------------------------------------------------------------------
 github.com?
 ---------------------------------------------------------------------------------- 
 
-GitHub is a site where many people store their open (and closed) source 
-code repositories. It provides tools for browsing, collaborating on and 
-documenting code.
+GitHub is a site where many people store their open (and closed) source code 
+repositories. It provides tools for browsing, collaborating on and documenting 
+code.
 
 
 Setting up github at first requires [[some setup | 
@@ -22,9 +22,8 @@ http://help.github.com/set-up-git-redirect]].
 git config : Configuring your git environment
 ---------------------------------------------------------------------------------- 
 
-Once you've set up your rsa keys, you need to tell github who you are. 
-Crack open a terminal.
-
+Once you've set up your rsa keys, you need to tell github who you are.  Crack 
+open a terminal.
 
 ::
 
@@ -65,9 +64,9 @@ A key step to interacting with an online repository that you have forked is
 adding the original as a remote repository. By adding the remote repository, you 
 inform git of a new option for fetching updates and pushing commits.
 
-The **git remote** command allows you to add, name, list, and delete repositories
-such as the original one **upstream** from your fork, others that may be 
-**parallel** to your fork, and so on. 
+The **git remote** command allows you to add, name, rename, list, and delete 
+repositories such as the original one **upstream** from your fork, others that 
+may be **parallel** to your fork, and so on. 
 
 ********************************************************************************** 
 Exercise : Fork Our GitHub Repository
@@ -113,19 +112,21 @@ to pull in updates from those repositories. In this case, if you want your
 master branch to track updates in the original PyTrieste repository, you simply 
 **git fetch** that repository into the master branch of your current repository.
 
-The fetch command alone merely pulls down information recent changes from the original master 
-(upstream) repository. By itself, the fetch command does not change your local 
-working copy. To update your local working copy to include recent changes in the  
-original (upstream) repository, it is necessary to also merge. 
+The fetch command alone merely pulls down information recent changes from the 
+original master (upstream) repository. By itself, the fetch command does not 
+change your local working copy. To update your local working copy to include 
+recent changes in the  original (upstream) repository, it is necessary to also 
+merge. 
 
 ---------------------------------------------------------------------------------- 
 git merge : Merging the contents of a remote 
 ---------------------------------------------------------------------------------- 
 
-To incorporate upstream changes from the original master repository (in this case 
-thehackerwithin/PyTrieste) into your local working copy, you must both fetch and 
-merge. The process of merging may result in conflicts, so pay attention. This is  
-where version control is both at its most powerful and its most complicated. 
+To incorporate upstream changes from the original master repository (in this 
+case thehackerwithin/PyTrieste) into your local working copy, you must both 
+fetch and merge. The process of merging may result in conflicts, so pay 
+attention. This is  where version control is both at its most powerful and its 
+most complicated. 
 
 ********************************************************************************** 
 Exercise : Fetch and Merge the Contents of Our GitHub Repository
@@ -193,16 +194,83 @@ that remote is exactly analagous.
   $ git push upstream master
 
 
+In the case of the PyTrieste code, new developer accounts will not allow this 
+push to succeed. You're welcome to try it though. 
+
+
 ---------------------------------------------------------------------------------- 
-Dealing with Conflicts
+git resolve : Dealing With Conflicts
 ---------------------------------------------------------------------------------- 
 
-This is the trickiest part of version control. 
+This is the trickiest part of version control, so let's take it very carefully. 
 
-Imagine the following situation : 
+In the PyTrieste code, you'll find a file called readme.rst. This is a standard 
+documentation file that appears rendered on the landing page for the repository  
+in github. To see the rendered version, visit your fork on github, 
+https://github.com/username/PyTrieste/ .
+
+For illustration, let's imagine that, suddenly, each of the developers on the 
+PyTrieste code would like to welcome visitors in a language other than English.  
+Since we're all from so many different nations and speak so many languages, 
+there will certainly be disagreements about what to say instead of "Welcome."  
+
+I, for example, am from Texas, so I'll push (to the upstream repository) my own 
+version of the Welcome on line 2 of readme.rst. 
+
+You, however will want to replace the english word Welcome with an equivalent 
+word that you prefer (willkommen, bienvenido, benvenuti, etc.).
+
+You'll want to start a new branch for development.  It's a good convention to 
+think of your master branch as the "production branch," typically by keeping 
+that branch clean of your local edits until they are ready for release. 
+Developers typically use the master branch of their local fork to track other 
+developers changes in the remote repository until their own local development 
+branch changes are ready for production.
 
 
+********************************************************************************** 
+Exercise : Experience a Conflict
+********************************************************************************** 
 
+Step 1 : Make a new branch, edit the readme file in that branch, and commit your  
+changes.
+
+:: 
+
+  $ git branch development
+  $ git checkout development
+  Switched to branch 'development'
+  $ nano readme.rst
+  <edit the readme file and exit nano>
+  $ git commit -am "Changed the welcome message to ... "
+
+Step 2 : Mirror the remote upstream repository in your master branch by pulling 
+down my changes
+
+::
+
+  $ git checkout master
+  Switched to branch 'master'
+  $ git fetch upstream
+  $ git merge upstream/master
+  Updating 43844ea..3b36a87
+  Fast-forward
+   README.rst |   2 +-
+   1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+Step 3 : You want to push it to the internet eventually, so you pull updates 
+from the upstream repository, but will experience a conflict.
+
+::
+
+  $ git merge development
+  Auto-merging readme.rst
+  CONFLICT (content): Merge conflict in readme.rst
+  Automatic merge failed; fix conflicts and then commit the result.
+
+
+Now what?
 
 
 
