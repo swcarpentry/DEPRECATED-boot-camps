@@ -199,7 +199,7 @@ push to succeed. You're welcome to try it though.
 
 
 ---------------------------------------------------------------------------------- 
-git resolve : Dealing With Conflicts
+git merge : Conflicts
 ---------------------------------------------------------------------------------- 
 
 This is the trickiest part of version control, so let's take it very carefully. 
@@ -270,7 +270,77 @@ from the upstream repository, but will experience a conflict.
   Automatic merge failed; fix conflicts and then commit the result.
 
 
+
+---------------------------------------------------------------------------------- 
+git resolve : Resolving Conflicts
+---------------------------------------------------------------------------------- 
+
+
 Now what?
+
+Git has paused the merge. You can see this with the **git status** command.
+
+:: 
+
+  # On branch master
+  # Unmerged paths:
+  #   (use "git add/rm <file>..." as appropriate to mark resolution)
+  #
+  #       unmerged:      readme.rst
+  #
+  no changes added to commit (use "git add" and/or "git commit -a")
+
+
+The only thing that has changed is the readme.rst file. Opening it, you'll see 
+something like this at the beginning of the file. 
+
+::
+
+  =====================
+  <<<<<<< HEAD
+  Howdy
+  =======
+  Willkommen
+  >>>>>>> development
+  =====================
+
+The intent is for you to edit the file, knowing now that I wanted the Welcome to 
+say Howdy. If you want it to say Willkommen, you should delete the other lines. 
+However, if you want to be inclusive, you may want to change it to read Howdy 
+and Willkommen. Decisions such as this one must be made by a human, and  
+why conflict resolution is not handled more automatically by the version control 
+system.
+
+::
+
+  =====================
+  Howdy and Willkommen
+  =====================
+
+This results in a status To alert git that you have made appropriate alterations, 
+
+:: 
+
+  $ git add readme.rst
+  $ git commit
+  Merge branch 'development'
+
+  Conflicts:
+    readme.rst
+  #
+  # It looks like you may be committing a MERGE.
+  # If this is not correct, please remove the file
+  # .git/MERGE_HEAD
+  # and try again.
+  #
+  $ git push origin master
+  Counting objects: 10, done.
+  Delta compression using up to 2 threads.
+  Compressing objects: 100% (6/6), done.
+  Writing objects: 100% (6/6), 762 bytes, done.
+  Total 6 (delta 2), reused 0 (delta 0)
+  To git@github.com:username/PyTrieste.git
+
 
 
 
