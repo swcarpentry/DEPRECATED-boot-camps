@@ -2,7 +2,9 @@ ______________________________________________________________________
  Using Scipy 
 ______________________________________________________________________
 
-[[Back To Lesson 6|Lesson6-Lesson6]] - [[Forward to MatPlotLib|Python8-MatPlotLib]]
+[[Back To Object Oriented Programming|Python-6:-Object-oriented-programming]] - [[Forward to MatPlotLib|Python8-MatPlotLib]]
+
+----
 
 **Presented By: Katy Huff**
 

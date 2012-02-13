@@ -4,6 +4,8 @@ ______________________________________________________________________
 
 [[Back to SciPy|Python7-SciPy.rest]] - [[Forward to NumPy|Python9-NumPy.rest]]
 
+----
+
 **Presented By : Katy Huff**
 
 **Based On Lecture Material By Anthony Scopatz**

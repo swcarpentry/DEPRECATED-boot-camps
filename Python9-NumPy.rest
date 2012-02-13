@@ -2,7 +2,9 @@ ______________________________________________________________________
  NumPy 
 ______________________________________________________________________
 
-[[Back to MatPlotLib|Python8-MatPlotLib]] 
+[[Back to MatPlotLib|Python8-MatPlotLib]]  - [[Forward to Home | Home]]
+
+----
 
 **Presented By : Katy Huff**
 

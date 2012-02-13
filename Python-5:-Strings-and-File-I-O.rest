@@ -2,6 +2,11 @@
 Python 5: Strings and File I/O
 ............................................
 
+[[Back to Functions and Modules |Python4-FunctionsAndStandardModules]] - 
+[[Forward to Object Oriented Programming |Python-6:-Object-priented-programming]]
+
+----
+
 Lesson goals:
 
 1) Examine the string class in greater detail.
@@ -49,7 +54,7 @@ To start understanding the String class, let's use the built in help system.
   |  
   |  __getattribute__(...)
   |      x.__getattribute__('name') <==> x.name
-  |  
+  |  ]]
   |  __getitem__(...)
   |      x.__getitem__(y) <==> x[y]
   |  

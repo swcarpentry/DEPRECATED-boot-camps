@@ -1,4 +1,11 @@
+
+
+[[Back to Home|Home]] - [[Forward to Version Control | Lesson2a-VersionControl]]
+----
+
+
 Special thanks to [[Jonathan Dursi|http://www.cita.utoronto.ca/~ljdursi/]] with SciNet in Toronto, ON, from whom this material is adapted.
+
 
 ------------------------------------------
 Motivation: Data Storage and Manipulation
