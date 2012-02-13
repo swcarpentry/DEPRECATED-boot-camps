@@ -20,7 +20,7 @@ Standard Modules |Python4-FunctionsAndStandardModules]]
 Conditionals (if statements) are also really easy to use in python. Take a look 
 at the following examples:
 
-```python
+```pycon
 
   i = 4
   sign = "zero"
