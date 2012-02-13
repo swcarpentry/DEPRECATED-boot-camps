@@ -27,7 +27,7 @@ import them explicitly.
 
 
 ----------------------------------------------------------------------
- NumPy basics 
+NumPy basics 
 ----------------------------------------------------------------------
 
 
@@ -203,7 +203,7 @@ all the elements of the array.
 Much like the basic arithmetic operations we discussed above, comparison 
 operations are perfomed element-wise. That is, rather than returning a single 
 boolean, comparison operators compare each element in both arrays pairwise, and 
-return an ''array'' of booleans (if the sizes of the input arrays are 
+return an **array** of booleans (if the sizes of the input arrays are 
 incompatible, the comparison will simply return False). For example:
 
 ::
@@ -256,7 +256,7 @@ dimension is 1. NumPy makes this extremely simple:
   array([4, 5, 6, 7])
 
 
-Now suppose you want the elements of that array where the ''second'' dimension 
+Now suppose you want the elements of that array where the **second** dimension 
 is 1. To do this, you can use "slices" of an entire dimension as a placeholder 
 by typing : as your first "index". Continuing from above:
 
@@ -275,7 +275,6 @@ of high dimension.
 
 **Hands-on Example**
 
-----
 
 Using what we've learned about slicing and indexing, get just the upper-left 
 quarter of the array A above.
@@ -398,7 +397,6 @@ tuples, which are always copies.
 
 **Hands-on Example**
 
-----
 
 Figure out how to create a copy of a NumPy array. Remember: since NumPy slices 
 are views, you can't use the trick you'd use for Python lists, i.e.  copy = list[:].
@@ -526,14 +524,13 @@ return an output array can be used in more advanced ways as discussed in
 
 **Hands-on Example**
 
-----
 
 Using ufuncs, calculate the reciprocals of each element in the following array:
 
 ::
   
   [8.1, 1.6, 0.9, 4.3, 7.0, 7.3, 4.7, 8.2, 7.2, 3.0,
-   1.4, 9.8, 5.7, 0.7, 8.7, 4.6, 8.8, 0.9, 4.4, 4.4]
+  1.4, 9.8, 5.7, 0.7, 8.7, 4.6, 8.8, 0.9, 4.4, 4.4]
   
 
 
@@ -545,6 +542,7 @@ Using ufuncs, calculate the reciprocals of each element in the following array:
 NumPy has too many features to discuss here. However, there are plenty of 
 resources on the web that describe NumPy in detail. Here is a selection of 
 them:
+
  * [[NumPy user's guide | http://docs.scipy.org/doc/numpy/user/ ]]
  * [[NumPy Reference | http://docs.scipy.org/doc/numpy/reference/]]
  * [[NumPy For Matlab Users | http://www.scipy.org/NumPy_for_Matlab_Users ]]
