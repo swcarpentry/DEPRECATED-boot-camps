@@ -3,7 +3,7 @@ Python 4: Functions and Standard Modules
 ______________________________________________________________________
 
 [[Back to Flow Control : Loops, Conditionals, etc.  
-|Python3-FlowControl]] - [[Forward to Strings and File I-O  |Python-5-Strings-and-File-I-O]]
+|Python3-FlowControl]] - [[Forward to Strings and File I-O  | Python-5%3A-Strings-and-File-I-O ]]
 
 ----
 
