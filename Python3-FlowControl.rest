@@ -2,8 +2,7 @@ ______________________________________________________________________
 Flow Control : Loops, Conditionals, etc.
 ______________________________________________________________________
 
-[[Back to Lists, dictionaries, sets, and tuples 
-|Python-2:-Lists,-Dictionaries,-Sets,-Tuples]] - [[Forward to Functions and 
+[[Back to Lists, dictionaries, sets, and tuples |Python2-ListsDictionariesSetsTuples]] - [[Forward to Functions and 
 Standard Modules |Python4-FunctionsAndStandardModules]]
 
 ----
