@@ -4,7 +4,7 @@ ______________________________________________________________________
 
 [[Back to Lists, dictionaries, sets, and tuples 
 |Python-2:-Lists,-Dictionaries,-Sets,-Tuples]] - [[Forward to Functions and 
-Standard Modules |Python4-FunctionsAndStandardModules.rest]]
+Standard Modules |Python4-FunctionsAndStandardModules]]
 
 ----
 
