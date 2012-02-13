@@ -22,18 +22,18 @@ at the following examples:
 
 ```python
 
- >>> i = 4
- >>> sign = "zero"
+  i = 4
+  sign = "zero"
   
- >>> if i < 0:
- >>>    sign = "negative"
- >>> elif i > 0:
- >>>    sign = "positive"
- >>> else:
- >>>    print "Sign must be zero"
- >>>    print "Have a nice day"
+  if i < 0:
+     sign = "negative"
+  elif i > 0:
+     sign = "positive"
+  else:
+     print "Sign must be zero"
+     print "Have a nice day"
   
- > print sign
+  print sign
 ```
   
 The behavior of this code snippet should be pretty clear, but there is something 
@@ -52,10 +52,10 @@ functions or classes.
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
 
-```pycon
+```python
 
-  >>> i = 5
-  >>> sign = "positive" if i > 0 else "negative"
+  i = 5
+  sign = "positive" if i > 0 else "negative"
 ```
   
 
