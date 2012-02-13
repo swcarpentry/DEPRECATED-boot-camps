@@ -25,12 +25,12 @@ at the following examples:
   i = 4
   sign = "zero"
   if i < 0:
-    sign = "negative"
+      sign = "negative"
   elif i > 0:
-    sign = "positive"
+      sign = "positive"
   else:
-    print "Sign must be zero"
-    print "Have a nice day"
+      print "Sign must be zero"
+      print "Have a nice day"
   print sign
 ```
 
@@ -70,8 +70,8 @@ product of each number in the list up to the -1 element.
   mult = 1
   sequence = [1, 5, 7, 9, 3, -1, 5, 3]
   while sequence[0] is not -1:
-    mult = mult * sequence[0]
-    del sequence[0]
+      mult = mult * sequence[0]
+      del sequence[0]
 
   print mult
 ```
@@ -88,7 +88,7 @@ start with a simple example which prints all of the numbers from 0 to 9:
 ```python 
 
   for i in range(10):
-    print i
+      print i
 ```
 
 You may be wondering how this works. Start by using help(range) to see what the 
@@ -128,7 +128,7 @@ this is equivalent to:
   
   sequence = ["one", 2, "three", 4, "five"]
   for i in range(len(sequence)):
-    print sequence[i]
+      print sequence[i]
 ```
 
 
@@ -160,11 +160,11 @@ and the number of times it occurs is the value.
   f = open("phonenums.txt") # Open the text file
   for line in f: # iterate through the text file, one line at a time (think of the 
   file as a list of lines)
-    ac = line.split('-')[0] # Split phone number, first element is the area code
-    if not ac in areacodes: # Check if it is already in the dictionary
-      areacodes[ac] = 1 # If not, add it to the dictionary
-    else:
-      areacodes[ac] += 1 # Add one to the dictionary entry
+      ac = line.split('-')[0] # Split phone number, first element is the area code
+      if not ac in areacodes: # Check if it is already in the dictionary
+        areacodes[ac] = 1 # If not, add it to the dictionary
+      else:
+        areacodes[ac] += 1 # Add one to the dictionary entry
   
   print areacodes # Print the answer
 ```
@@ -181,8 +181,6 @@ is to write a loop that prints:
   800 4
   608 8
   773 3
-
-
 
 This example is a little tricky to figure out, but give it a shot. 
 
