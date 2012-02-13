@@ -263,8 +263,9 @@ dimension is 1. NumPy makes this extremely simple:
 
 Now suppose you want the elements of that array where the ''second'' dimension 
 is 1. To do this, you can use "slices" of an entire dimension as a placeholder 
-by typing ::
-: as your first "index". Continuing from above:
+by typing : as your first "index". Continuing from above:
+
+
 ::
 
   #!CodeExample
@@ -281,6 +282,7 @@ Slicing].]]
 
 
 **Hands-on Example**
+
 ----
 
 Using what we've learned about slicing and indexing, get just the upper-left 
@@ -300,6 +302,7 @@ index array is True. (We'll discuss the difference between views and copies in a
 moment.) This makes normally-tedious operations like clamping extremely simple.
 
 Indexing with an array of indices:
+
 ::
 
   #!CodeExample
@@ -315,6 +318,7 @@ Indexing with an array of indices:
   
 
 Indexing with an array of booleans:
+
 ::
   
   #!CodeExample
@@ -345,6 +349,7 @@ As you may have noticed above, since NumPy arrays are modeled more closely
 after vectors and matrices, multiplying by a scalar will multiply each element 
 of the array, whereas multiplying a list by a scalar will repeat that list N 
 times.
+
 ::
   
   #!CodeExample
@@ -357,6 +362,7 @@ times.
   
 Similarly, when adding two NumPy arrays together, we get the vector sum back, 
 whereas when adding two lists together, we get the concatenation back.
+
 ::
   
   #!CodeExample
