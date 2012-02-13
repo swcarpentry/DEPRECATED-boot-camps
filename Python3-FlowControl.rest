@@ -24,7 +24,6 @@ at the following examples:
 
   i = 4
   sign = "zero"
-  
   if i < 0:
      sign = "negative"
   elif i > 0:
@@ -32,10 +31,9 @@ at the following examples:
   else:
      print "Sign must be zero"
      print "Have a nice day"
-  
   print sign
 ```
-  
+
 The behavior of this code snippet should be pretty clear, but there is something 
 peculiar. How does Python know where the if-statement ends? Other languages, 
 like FORTRAN, !MatLab, and C/C++ all have some way of delimiting blocks of code. 
@@ -57,8 +55,6 @@ entering this into IPython:
   i = 5
   sign = "positive" if i > 0 else "negative"
 ```
-  
-
 
 ----------------------------------------------------------------------
  Loops 
