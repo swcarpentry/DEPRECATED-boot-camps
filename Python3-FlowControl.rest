@@ -70,12 +70,12 @@ many other language. The example below takes a list of integers and computes the
 product of each number in the list up to the -1 element. 
 
 ```python
-
   mult = 1
   sequence = [1, 5, 7, 9, 3, -1, 5, 3]
   while sequence[0] is not -1:
      mult = mult * sequence[0]
      del sequence[0]
+
   print mult
 ```
 
@@ -89,7 +89,6 @@ For loops in python operate a little differently from other languages. Lets
 start with a simple example which prints all of the numbers from 0 to 9:
 
 ```python 
-
   for i in range(10):
      print i
 ```
