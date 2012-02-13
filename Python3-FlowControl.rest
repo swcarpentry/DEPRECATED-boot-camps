@@ -20,7 +20,7 @@ Standard Modules |Python4-FunctionsAndStandardModules]]
 Conditionals (if statements) are also really easy to use in python. Take a look 
 at the following examples:
 
-```python
+```pycon
 
  > i = 4
  > sign = "zero"
@@ -52,10 +52,10 @@ functions or classes.
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
 
-```python
+```pycon
 
-  i = 5
-  sign = "positive" if i > 0 else "negative"
+  >>> i = 5
+  >>> sign = "positive" if i > 0 else "negative"
 ```
   
 
