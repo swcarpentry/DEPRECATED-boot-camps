@@ -51,7 +51,8 @@ functions or classes.
 
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
-::
+
+.. code :: python
   
   #!CodeExample
   #!python
