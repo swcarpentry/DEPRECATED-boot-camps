@@ -1,5 +1,5 @@
 ______________________________________________________________________
-Python 4: Functions and Standard Modules
+Python 4 : Functions and Standard Modules
 ______________________________________________________________________
 
 [[Back to Flow Control : Loops, Conditionals, etc.  

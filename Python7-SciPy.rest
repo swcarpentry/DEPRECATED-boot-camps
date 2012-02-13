@@ -1,5 +1,5 @@
 ______________________________________________________________________
- Using Scipy 
+Python 7 : Using Scipy 
 ______________________________________________________________________
 
 [[Back To Object Oriented Programming|Python-6:-Object-oriented-programming]] - [[Forward to MatPlotLib|Python8-MatPlotLib]]

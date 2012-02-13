@@ -1,5 +1,5 @@
 __________________________________________________________________________________
-Version Control
+Lesson 2a : Version Control Locally
 __________________________________________________________________________________
 
 [[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Version Control 

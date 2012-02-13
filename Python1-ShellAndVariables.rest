@@ -1,5 +1,5 @@
 ______________________________________________________________________
- Basic Data Types 
+ Python 1 : Basic Data Types 
 ______________________________________________________________________
 
 [[Back To Version Control|Lesson2-VersionControl]] - [[Forward to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]

@@ -1,5 +1,5 @@
 ______________________________________________________________________
- Graphing with MatPlotLib 
+Python 8 : Graphing with MatPlotLib 
 ______________________________________________________________________
 
 [[Back to SciPy|Python7-SciPy.rest]] - [[Forward to NumPy|Python9-NumPy.rest]]

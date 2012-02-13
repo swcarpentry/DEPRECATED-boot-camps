@@ -1,5 +1,5 @@
 __________________________________________________________________________________
-Version Control : Collaboration on GitHub
+Lesson 2b : Version Control Collaboratively
 __________________________________________________________________________________
 
 [[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python 
