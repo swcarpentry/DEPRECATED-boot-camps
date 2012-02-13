@@ -81,10 +81,10 @@ and type of the array with the low-level creation function:
   numbers
 
 
-For many of the examples below, we will be using ::
-numpy.arange which, similar to the Python built-in function ::
-range, returns a NumPy array of integers from 0 to N-1, inclusive. Like 
-``range``, you can also specify a starting value and a step.
+For many of the examples below, we will be using 
+**numpy.arange** which, similar to the Python built-in function **range**, 
+returns a NumPy array of integers from 0 to N-1, inclusive. Like ``range``, you 
+can also specify a starting value and a step.
 
 ::
 
@@ -103,8 +103,7 @@ range, returns a NumPy array of integers from 0 to N-1, inclusive. Like
 **Hands-on Example**
 
 Create a NumPy array with values ranging from 0 to 10, in increments of 0.5. 
-Don't forget to use ::
-help() to find useful functions!
+Don't forget to use **help()** to find useful functions!
 
 
 .........................................................................
@@ -136,8 +135,8 @@ complex # Python-compatible complex
 
 
 For basic operations, NumPy arrays can be accessed just like Python lists and 
-tuples. This means that you can use the square brackets to access elements, ::
-len() to access the size of the array, and so on.
+tuples. This means that you can use the square brackets to access elements, 
+**len()** to access the size of the array, and so on.
 
 ::
 
@@ -208,8 +207,7 @@ Much like the basic arithmetic operations we discussed above, comparison
 operations are perfomed element-wise. That is, rather than returning a single 
 boolean, comparison operators compare each element in both arrays pairwise, and 
 return an ''array'' of booleans (if the sizes of the input arrays are 
-incompatible, the comparison will simply return ::
-False). For example:
+incompatible, the comparison will simply return False). For example:
 
 ::
 
@@ -286,8 +284,7 @@ Slicing].]]
 ----
 
 Using what we've learned about slicing and indexing, get just the upper-left 
-quarter of the array ::
-A above.
+quarter of the array A above.
 
 
 .......................................................................
@@ -409,8 +406,7 @@ tuples, which are always copies.
 ----
 
 Figure out how to create a copy of a NumPy array. Remember: since NumPy slices 
-are views, you can't use the trick you'd use for Python lists, i.e. ::
-copy = list[:].
+are views, you can't use the trick you'd use for Python lists, i.e.  copy = list[:].
 
 
 
@@ -484,11 +480,9 @@ consult the NumPy documentation before writing your own versions!
 
 
 So far, we've used two-dimensional arrays to represent matrix-like objects. 
-However, NumPy provides a specialized class for this. The ::
-matrix class is almost identical to a two-dimensional NumPy array, but has a 
-few changes to the interface to simplify common linear algebraic tasks. These 
-are:
-
+However, NumPy provides a specialized class for this. The matrix class is almost 
+identical to a two-dimensional NumPy array, but has a few changes to the 
+interface to simplify common linear algebraic tasks. These are: 
  * The ``*`` operator is performs matrix multiplication
  * The ``**`` operator performs matrix exponentiation
  * The property ``.I`` (or the method ``.getI()``) returns the matrix inverse
@@ -541,6 +535,7 @@ Methods].|PyBCSession05/Advanced#UfuncMethods Ufunc Methods].]]
 ----
 
 Using ufuncs, calculate the reciprocals of each element in the following array:
+
 ::
   
   [8.1, 1.6, 0.9, 4.3, 7.0, 7.3, 4.7, 8.2, 7.2, 3.0,
