@@ -52,10 +52,8 @@ functions or classes.
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
 
-.. code :: python
-  
-  #!CodeExample
-  #!python
+::
+:
   i = 5
   sign = "positive" if i > 0 else "negative"
   
@@ -72,8 +70,6 @@ product of each number in the list up to the -1 element.
 
 ::
 
-  #!Lineno
-  #!python
   mult = 1
   sequence = [1, 5, 7, 9, 3, -1, 5, 3]
   while sequence[0] is not -1:
@@ -94,8 +90,6 @@ start with a simple example which prints all of the numbers from 0 to 9:
 
 ::
   
-  #!CodeExample
-  #!python
   for i in range(10):
      print i
 
@@ -126,8 +120,6 @@ happens:
 
 ::
   
-  #!CodeExample
-  #!python
   for c in ["one", 2, "three", 4, "five"]
      print c
 
@@ -136,8 +128,6 @@ this is equivalent to:
 
 ::
   
-  #!CodeExample
-  #!python
   sequence = ["one", 2, "three", 4, "five"]
   for i in range(len(sequence)):
    print sequence[i]
@@ -165,10 +155,8 @@ through each line in the file and counts the number of times each area code
 appears. The answer is stored in a dictionary, where the area code is the key 
 and the number of times it occurs is the value.
 
-::
+```python
   
-  #!CodeExample
-  #!python
   areacodes = {} # Create an empty dictionary
   f = open("phonenums.txt") # Open the text file
   for line in f: # iterate through the text file, one line at a time (think of the 
@@ -182,6 +170,7 @@ and the number of times it occurs is the value.
         areacodes[ac] += 1 # Add one to the dictionary entry
   
   print areacodes # Print the answer
+```
   
 **Hands-on Example**
 
