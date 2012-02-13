@@ -76,9 +76,8 @@ product of each number in the list up to the -1 element.
   while sequence[0] is not -1:
      mult = mult * sequence[0]
      del sequence[0]
-  
   print mult
-```  
+```
 
 Some new syntax has been introduced in this example. We begin the while loop on 
 line 3. Notice that instead of using the not-equals symbol, !=, we can simply 
