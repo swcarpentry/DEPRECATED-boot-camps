@@ -44,8 +44,6 @@ tuples in that the data is contiguous in memory. A Python list
 number. This allows NumPy arrays to be considerably faster for numerical 
 operations than Python lists/tuples.
 
-For a more advanced discussion, see [wiki:[[Session05/Advanced#EfficiencyandC 
-Efficiency and C].|PyBCSession05/Advanced#EfficiencyandC Efficiency and C].]]
 
 .........................................................................
  Creating NumPy Arrays 
@@ -70,20 +68,19 @@ automatically-chosen one would be unsuitable.
 As you might expect, creating a NumPy array this way can be slow, since it must 
 manually convert each element of a list into its equivalent C type (int objects 
 become C ints, etc). There are many other ways to create NumPy arrays, such as 
-numpy.identity, numpy.zeros, ``numpy.zeros_like``, or by manually specifying the dimensions 
+**numpy.identity**, **numpy.zeros**, **numpy.zeros_like**, or by manually specifying the dimensions 
 and type of the array with the low-level creation function:
 
 ::
 
   #!CodeExample
   #!python
-  numpy.ndarray((2, 3, 4), dtype=complex) # create a 2x3x4 array of complex 
-  numbers
+  numpy.ndarray((2, 3, 4), dtype=complex) # new 2x3x4 array of complex numbers
 
 
 For many of the examples below, we will be using 
 **numpy.arange** which, similar to the Python built-in function **range**, 
-returns a NumPy array of integers from 0 to N-1, inclusive. Like ``range``, you 
+returns a NumPy array of integers from 0 to N-1, inclusive. Like **range**, you 
 can also specify a starting value and a step.
 
 ::
@@ -121,12 +118,12 @@ common scalar types include:
 
 ::
 
-int     # Python-compatible int (usually a C long)
-intc    # C int
-float   # Python-compatible float (usually a C double)
-single  # C float
-double  # C double
-complex # Python-compatible complex
+  int     # Python-compatible int (usually a C long)
+  intc    # C int
+  float   # Python-compatible float (usually a C double)
+  single  # C float
+  double  # C double
+  complex # Python-compatible complex
 
 
 .........................................................................
@@ -273,10 +270,7 @@ by typing : as your first "index". Continuing from above:
   
   
 As you'd expect, this type of indexing can become quite complicated with arrays 
-of high dimension. For a more advanced example, see 
-[wiki:[[Session05/Advanced#MultidimensionalSlicing Multidimensional 
-Slicing].|PyBCSession05/Advanced#MultidimensionalSlicing Multidimensional 
-Slicing].]]
+of high dimension.
 
 
 **Hands-on Example**
@@ -403,6 +397,7 @@ tuples, which are always copies.
 
 
 **Hands-on Example**
+
 ----
 
 Figure out how to create a copy of a NumPy array. Remember: since NumPy slices 
@@ -528,10 +523,9 @@ subtraction, logarithms, and so on. Calling a ufunc is a simple matter:
   
 In addition to basic operation like above, ufuncs that take two input arrays and 
 return an output array can be used in more advanced ways as discussed in 
-[wiki:[[Session05/Advanced#UfuncMethods Ufunc 
-Methods].|PyBCSession05/Advanced#UfuncMethods Ufunc Methods].]]
 
 **Hands-on Example**
+
 ----
 
 Using ufuncs, calculate the reciprocals of each element in the following array:
@@ -551,7 +545,7 @@ Using ufuncs, calculate the reciprocals of each element in the following array:
 NumPy has too many features to discuss here. However, there are plenty of 
 resources on the web that describe NumPy in detail. Here is a selection of 
 them:
- * [http://docs.scipy.org/doc/numpy/user/ NumPy user's guide]
- * [http://docs.scipy.org/doc/numpy/reference/ NumPy reference]
- * [http://www.scipy.org/NumPy_for_Matlab_Users NumPy for Matlab users]
- * [http://www.scipy.org/Cookbook NumPy cookbook]
+ * [[NumPy user's guide | http://docs.scipy.org/doc/numpy/user/ ]]
+ * [[NumPy Reference | http://docs.scipy.org/doc/numpy/reference/]]
+ * [[NumPy For Matlab Users | http://www.scipy.org/NumPy_for_Matlab_Users ]]
+ * [[NumPy CookBook | http://www.scipy.org/Cookbook ]]
