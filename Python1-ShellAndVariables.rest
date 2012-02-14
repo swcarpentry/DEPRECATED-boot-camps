@@ -171,7 +171,7 @@ variable of a different type. Try this:
     <type 'int'>
 
 This is an interesting feature. Can you think of ways it can be helpful? Are 
-there ways it might be troublesome?  What type of variable is sillystring after 
+there ways it might be troublesome?  What is the value type of sillystring after 
 this :
 
 :: 
