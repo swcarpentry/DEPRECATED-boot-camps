@@ -31,42 +31,34 @@ this in.
     def setA(self, A):
       self.A = A
   
+Now, in the Python shell, lets import and use MyClass:
 
- * Explicit is better than implicit - all python class functions (methods) 
-   explicitly pass the object they work on.
- * Simple is better than complicated - class variables (attributes) can be 
-   directly accessed and dynamically created
- * Namespaces are one honking great idea -- let's do more of those! - Notice the 
-   similarity of accessing functions in a module and object attributes/functions
+::
 
-You create a !MyClass object and play around with it.  Instances of a class are 
-instantiated by calling the class like a function.  a = !MyClass()
- * create a !MyClass
- * ask its type
- * set A using setA
- * directly set A
- * what types are fair game for A?
- * add an attribute B to an instance of a !MyClass
+  > import myclass
+  > anObject = myclass.MyClass()  # The MyClass object is in the myclass module.
+  > type(anObject)
+  <class 'myclass.MyClass'>  # See, it's a new type!
+  > anObject.A = 34          # Set the class variable A directly.
+  > print anObject.A
+  > anObject.setA('hello')   # Set the class variable A with the setter method.
+  > print anObject.A
 
-Vocabulary time
- * Class - user defined type (!MyClass)
- * object - instance of a Class (tmp = !MyClass(), tmp is an object)
+It will help to have a bit of object-oriented vocabulary to understand what just happened:
+ * Class - user defined type (MyClass)
+ * object - instance of a Class (tmp = MyClass(), tmp is an object)
  * method - a Class function, also called a member function (tmp.getA())
  * attribute - a Class variable (tmp.A)
- * Duck typing - if it behaves like a duck, who cares if 
-   type(a)== 'Duck'?
 
-
+Remember: you *write* a class and you *create* and object.
 
 **Hands on Example**
 
-Write a !PhoneNumber class with functions set_number(number_string) and 
+Write a PhoneNumber class with functions set_number(number_string) and 
 area_code().
 
 ::
   
-  #!CodeExample
-  #!python
   """phonenum defines function for manipulating phone number strings"""
   
   print "Nudge, nudge, wink, wing, say no more, say no more!"
@@ -79,6 +71,9 @@ area_code().
       to 'xxx-xxx-xxxx'"""
           
           formatted_string = ''
+          # bonus: the next line is equivalent to the following for loop.
+          #formatted_string = ''.join([c for c in phone_string if c in '0123456789'])
+
           for char in phone_string:
               if char in '0123456789':
                   formatted_string += char
@@ -89,6 +84,8 @@ area_code().
       phone number string"""
           return self.phone_number[0:3]
   
+1) What are some other methods we might want to add?
+2) What are some checks we might add to this code to make sure the number is properly formatted?
 
 .........................................................................
  Constructors 
