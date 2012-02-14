@@ -3,7 +3,7 @@ Python 5: Strings and File I/O
 ............................................
 
 [[Back to Functions and Modules |Python4-FunctionsAndStandardModules]] - 
-[[Forward to Object Oriented Programming |Python-6:-Object-priented-programming]]
+[[Forward to Object Oriented Programming |Python-6:-Object-oriented-programming]]
 
 ----
 

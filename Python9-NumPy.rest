@@ -39,8 +39,8 @@ NumPy basics
 NumPy is a Python package implementing efficient collections of specific types 
 of data (generally numerical), similar to the standard 
 array module (but with many more features). NumPy arrays differ from lists and 
-tuples in that the data is contiguous in memory. A Python list 
-[0, 1, 2] is actually an array of pointers to Python objects representing each 
+tuples in that the data is contiguous in memory. A Python **list**, [0, 1, 2],
+in contrast, is actually an array of pointers to Python objects representing each 
 number. This allows NumPy arrays to be considerably faster for numerical 
 operations than Python lists/tuples.
 
@@ -67,14 +67,14 @@ automatically-chosen one would be unsuitable.
 As you might expect, creating a NumPy array this way can be slow, since it must 
 manually convert each element of a list into its equivalent C type (int objects 
 become C ints, etc). There are many other ways to create NumPy arrays, such as 
-**numpy.identity**, **numpy.zeros**, **numpy.zeros_like**, or by manually specifying the dimensions 
-and type of the array with the low-level creation function:
+**numpy.identity**, **numpy.zeros**, **numpy.zeros_like**, or by manually 
+specifying the dimensions and type of the array with the low-level creation 
+function:
 
 ```python
 
   numpy.ndarray((2, 3, 4), dtype=complex) # new 2x3x4 array of complex numbers
 ```
-
 
 For many of the examples below, we will be using 
 **numpy.arange** which, similar to the Python built-in function **range**, 
@@ -90,11 +90,10 @@ can also specify a starting value and a step.
   >>> numpy.arange(1, 10, 2)
   array([1, 3, 5, 7, 9])
 ```
-  
-  
 
-
-**Hands-on Example**
+*************************************************************************
+Exercise : Create an Array
+*************************************************************************
 
 Create a NumPy array with values ranging from 0 to 10, in increments of 0.5. 
 Don't forget to use **help()** to find useful functions!
@@ -193,7 +192,6 @@ all the elements of the array.
  Comparison 
 .........................................................................
 
-
 Much like the basic arithmetic operations we discussed above, comparison 
 operations are perfomed element-wise. That is, rather than returning a single 
 boolean, comparison operators compare each element in both arrays pairwise, and 
@@ -259,16 +257,15 @@ by typing : as your first "index". Continuing from above:
   array([ 1,  5,  9, 13])
 ```
   
-  
-  
 As you'd expect, this type of indexing can become quite complicated with arrays 
 of high dimension.
 
+*************************************************************************
+Exercise : Selective Array Display
+*************************************************************************
 
-**Hands-on Example**
 
-
-Using what we've learned about slicing and indexing, get just the upper-left 
+Using what we've learned about slicing and indexing, print just the upper-left 
 quarter of the array A above.
 
 
@@ -381,8 +378,9 @@ tuples, which are always copies.
   [0, 1, 2, 3, 4]
 ```
 
-
-**Hands-on Example**
+*************************************************************************
+Exercise : Copy a NumPy Array
+*************************************************************************
 
 
 Figure out how to create a copy of a NumPy array. Remember: since NumPy slices 
@@ -505,7 +503,10 @@ subtraction, logarithms, and so on. Calling a ufunc is a simple matter:
 In addition to basic operation like above, ufuncs that take two input arrays and 
 return an output array can be used in more advanced ways as discussed in 
 
-**Hands-on Example**
+
+**********************************************************************
+Exercise : Elementwise Operations
+**********************************************************************
 
 
 Using ufuncs, calculate the reciprocals of each element in the following array:
