@@ -1,5 +1,5 @@
 ______________________________________________________________________
- Python 1 : Basic Data Types 
+ Python 1 : The Shell, Variables, and Basic Data Types 
 ______________________________________________________________________
 
 [[Back To Version Control|Lesson2a-VersionControl]] - [[Forward to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]
@@ -64,8 +64,8 @@ see something like this:
      <type 'str'>
 
 
-This tells us that `s` is of type **str** (i.e. that `s` is a string). Making 
-numeric variables is equally easy and intuitive. Try entering the following into 
+This tells us that `s` is of type **str** (i.e. that `s` is a string). 
+Making numeric variables is equally easy and intuitive. Try entering the following into 
 IPython. Notice that the # symbol is used to start comments so everything after 
 the pound sign is ignored.
 
@@ -154,6 +154,33 @@ as being a function that is attached to a particular variable. You call methods
 by typing: `<variable>.<method name>`.
 
 ----------------------------------------------------------------------
+Dynamic Typing
+----------------------------------------------------------------------
+
+Importantly, python is a **dynamically typed** language. That is, variables in 
+python which are initialized to a variable of one type can be re-assigned to a 
+variable of a different type. Try this:
+
+::
+
+  > sillystring = "A string"
+  > print type(sillystring)
+    <type 'str'>
+  > sillystring = 98
+  > print type(sillystring)
+    <type 'int'>
+
+This is an interesting feature. Can you think of ways it can be helpful? Are 
+there ways it might be troublesome?  What type of variable is sillystring after 
+this :
+
+:: 
+
+  > sillystring += 0.1
+
+
+
+----------------------------------------------------------------------
  Getting Help 
 ----------------------------------------------------------------------
 
@@ -161,7 +188,6 @@ One of the really nice features in Python is that a lot of the help and
 documentation is built into the code. Practically, this means that much of the 
 time you don't have to go digging through some web site to find help. You can 
 get help in Python using the `help` function. Lets look at an example - enter 
-"
 
 :: 
 
