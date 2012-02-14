@@ -14,72 +14,51 @@ to Python7-SciPy | SciPy ]]
 .........................................................................
 
 
-Thus far we've developed a few functions for dealing with phone numbers.  One 
-converts a phone number string formatted in a particular way to a format more 
-convenient for manipulation.  The second assumes an already formatted number and 
-does something with that.  It would be really nice if there was a thing that 
-encapsulated all this behavior, kinda like the split() functions were attached 
-to strings.  Really what we want is a new type.  We want a type representing a 
-phone number and having a set of functions that do sensible things with phone 
-numbers.  This thought process is the basis of objects and object oriented 
-programming.
+The file manipulation example in the last lecture hid a pretty amazing idea. When we opened a file using open(), it returned a new type we hadn't seen before. The type had methods that we could use to access the file all at once or one character at a time. It had other methods to move around in the file, to close it, and to update it. It also had data: what file is open and where in the file is the next readable byte. The magic is that you, the programmer, don't have to think about the details of the file implementation. You just have to use the methods available to access the file. This thought process is the basis of objects and object oriented programming.
 
-Object oriented programming really deserves of a bootcamp of it own, but this 
-one is on python, not OOP.
 
 Object oriented (OO) programming revolves around the create and manipulation of 
 objects that have attributes and can do things.  They can be as simple as a 
 coordinate with x and y values or as complicated as a dynamic webpage framework.  
 They are a useful way to organize programs.  C++ and Java are OO languages.  
-Even fortran is adding OO constructs in newer standards.  Convinced already?  
-Great!  Lets start writing code.  Here is the code for making a very simple 
+Even fortran is adding OO constructs in newer standards.  Here is the code for making a very simple 
 class that sets an attribute.  Start a new file, call it myclass.py and type 
 this in.
 
 ::
 
-  #!CodeExample
-  #!python
   class MyClass(object):
     def setA(self, A):
       self.A = A
   
+Now, in the Python shell, lets import and use MyClass:
 
- * Explicit is better than implicit - all python class functions (methods) 
-   explicitly pass the object they work on.
- * Simple is better than complicated - class variables (attributes) can be 
-   directly accessed and dynamically created
- * Namespaces are one honking great idea -- let's do more of those! - Notice the 
-   similarity of accessing functions in a module and object attributes/functions
+::
 
-You create a !MyClass object and play around with it.  Instances of a class are 
-instantiated by calling the class like a function.  a = !MyClass()
- * create a !MyClass
- * ask its type
- * set A using setA
- * directly set A
- * what types are fair game for A?
- * add an attribute B to an instance of a !MyClass
+  > import myclass
+  > anObject = myclass.MyClass()  # The MyClass object is in the myclass module.
+  > type(anObject)
+  <class 'myclass.MyClass'>  # See, it's a new type!
+  > anObject.A = 34          # Set the class variable A directly.
+  > print anObject.A
+  > anObject.setA('hello')   # Set the class variable A with the setter method.
+  > print anObject.A
 
-Vocabulary time
- * Class - user defined type (!MyClass)
- * object - instance of a Class (tmp = !MyClass(), tmp is an object)
+It will help to have a bit of object-oriented vocabulary to understand what just happened:
+ * Class - user defined type (MyClass)
+ * object - instance of a Class (tmp = MyClass(), tmp is an object)
  * method - a Class function, also called a member function (tmp.getA())
  * attribute - a Class variable (tmp.A)
- * Duck typing - if it behaves like a duck, who cares if 
-   type(a)== 'Duck'?
 
-
+Remember: you *write* a class and you *create* and object.
 
 **Hands on Example**
 
-Write a !PhoneNumber class with functions set_number(number_string) and 
+Write a PhoneNumber class with functions set_number(number_string) and 
 area_code().
 
 ::
   
-  #!CodeExample
-  #!python
   """phonenum defines function for manipulating phone number strings"""
   
   print "Nudge, nudge, wink, wing, say no more, say no more!"
@@ -92,6 +71,9 @@ area_code().
       to 'xxx-xxx-xxxx'"""
           
           formatted_string = ''
+          # bonus: the next line is equivalent to the following for loop.
+          #formatted_string = ''.join([c for c in phone_string if c in '0123456789'])
+
           for char in phone_string:
               if char in '0123456789':
                   formatted_string += char
@@ -102,6 +84,8 @@ area_code().
       phone number string"""
           return self.phone_number[0:3]
   
+1) What are some other methods we might want to add?
+2) What are some checks we might add to this code to make sure the number is properly formatted?
 
 .........................................................................
  Constructors 
