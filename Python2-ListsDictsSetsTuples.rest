@@ -21,7 +21,8 @@ python it is extremely easy and intuitive to make a list of things, for example:
 ```python
   
   > mylist = [] # Make an empty list
-  > mylist = [1, 1.0+3j, "aperitivo", True] # Make a list containing four entities
+  > mylist = [1, 1.0+3j, "aperitivo", True] # Make a list containing four 
+  > entities
 ```
 
 Using lists is easy and intuitive. Notice that lists can contain objects of any 
@@ -67,25 +68,33 @@ dictionaries as shown below:
 ```python
 
  > mydictionary = {} # Make an empty dictionary
- > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary with some values
+ > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary 
+ > with some values
   
  > print type(mydictionary) # Tells you mydictionary is of type "dict"
  > print mydictionary["one"] # Prints the number 1
  > print mydictionary["two"] # Prints the number 2
  > mydictionary["four"] = 4 # Insert an element into the dictionary
- > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing the numbers 1, 2, and 3
+ > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing 
+ > the numbers 1, 2, and 3
 ```
 
-**Hands-on Example**
+
+*************************************************************************
+Example: Creating and Sorting Lists 
+*************************************************************************
 
 Accomplish the following tasks using Python. Each task should take only one 
 line. You may need to use the help and dir functions to figure out parts you 
 don't know:
 
-1. Create a string and initialize it to "Milad Matt Nico Anthony Jim Katy"
-2. Split the string into a list whose elements are the names Milad, Matt, 
-   Nico, Anthony, Jim, and Katy
+1. Create a string and initialize it to "Tommy Katy Stefano Antun Graziano""
+2. Split the string into a list whose elements are the names Tommy, Katy, 
+Stefano, Antun, Graziano.
 3. Sort and print the list
+4. Without deleting anyone, add your own name to the list **so that it comes 
+first.**
+
 
 *************************************************************************
 Example: Manipulating Compound Data 
@@ -102,14 +111,17 @@ don't know:
     * "Blue", 3
     * "Teal", 3
 2. Extract a list of values from the dictionary (i.e. get a list containing 
-   [3,3,3,3,1,5] from the dictionary, don't make the list on your own)
+[3,3,3,3,1,5] from the dictionary, don't make the list on your own)
 3. Find and use a list method to count the number of times the value 3 appears 
-   (Use the list you produced on step 2, the correct answer is that the value 
-   3 appears four times)
+(Use the list you produced on step 2, the correct answer is that the value 3 
+appears four times)
 
-In a dictionary, the keys must be unique: assigning a second value to a key overwrites whatever was stored there. What if we  want to store a list of unique items? There are two options using what we know about so far:
+In a dictionary, the keys must be unique: assigning a second value to a key 
+overwrites whatever was stored there. What if we  want to store a list of unique 
+items? There are two options using what we know about so far:
 
-1. Use a list, but every time we add an element, check whether it is already there.
+1. Use a list, but every time we add an element, check whether it is already 
+there.
 2. Use a dictionary to store the object as a key to some dummy value.
 
 
@@ -118,7 +130,8 @@ In a dictionary, the keys must be unique: assigning a second value to a key over
 Sets
 ----------------------------------------------------
 
-It turns out there is a third type of container in Python that only stores unique things: it's called a set.
+It turns out there is a third type of container in Python that only stores 
+unique things: it's called a set.
 
 ```python
 
@@ -142,7 +155,8 @@ Example : Appending/Adding vs Updating
 *************************************************************************
 
 There are two methods to add element(s) to a list: append and update. Likewise, 
-there are two methods to add element(s) to a set: add and update. What is the difference? 
+there are two methods to add element(s) to a set: add and update. What is the 
+difference? 
 
 ```python
 
@@ -151,7 +165,8 @@ there are two methods to add element(s) to a set: add and update. What is the di
  > myUpdatedList = myList.update([4,5])
 ```
 
-What is the difference between the appended list and the updated list? Why did this happen?
+What is the difference between the appended list and the updated list? Why did 
+this happen?
 
 1. Try the same thing with the add() and update() functions on a set.
 
@@ -172,11 +187,14 @@ tuples:
   > mytuple[2] = 4 # ERROR - tuples can't be modified
   > print mytuple[2], len(mytuple)
    
-  > myonetuple = ("hello",) # Create a tuple containing only one element (note the trailing comma)
+  > myonetuple = ("hello",) # Create a tuple containing only one element (note 
+  > the trailing comma)
 ```
 
 You might be asking yourself, why do we need tuples if we have lists? The answer 
-is that tuples are used internally in Python in a lot of places. One of the basic differences is that dictionaries can not use a list as a key, but they can use a tuple: 
+is that tuples are used internally in Python in a lot of places. One of the 
+basic differences is that dictionaries cannot use a list as a key, but they can 
+use a tuple: 
 
 ```python
 
@@ -190,15 +208,16 @@ is that tuples are used internally in Python in a lot of places. One of the basi
    TypeError: unhashable type: 'list'
 ```
 
-As you learn more about python you'll see how lists, tuples and dictionaries are the basic 
-building blocks of the entire language. 
+As you learn more about python you'll see how lists, tuples and dictionaries are 
+the basic building blocks of the entire language. 
 
 ----------------------------------------------------
- Copy or Reference?  
+ Copy or Reference? 
 ----------------------------------------------------
 
 
-Simple data types like integers and strings behave slightly differently than more complicated objects. To see one unexpected example, try these commands:
+Simple data types like integers and strings behave slightly differently than 
+more complicated objects. To see one unexpected example, try these commands:
 
 ```python
 
@@ -211,11 +230,11 @@ Simple data types like integers and strings behave slightly differently than mor
 
 What happens? You'll notice that modifying list2 also modifies list1! This is 
 because line 2 does not copy list1, instead list2 is set to *reference* the same 
-data as list1. After line 2 is executed, list1 and list2 refer to the same 
-data. Modifying one list also modifies the other. This was not the case when we 
-were dealing with simple numbers. This behavior can be very annoying and can 
-lead to a lot of bugs, so be careful. We can force python to copy list1 as shown 
-in the example below:
+data as list1. After line 2 is executed, list1 and list2 refer to the same data. 
+Modifying one list also modifies the other. This was not the case when we were 
+dealing with simple numbers. This behavior can be very annoying and can lead to 
+a lot of bugs, so be careful. We can force python to copy list1 as shown in the 
+example below:
 
 ```python
 
@@ -226,4 +245,14 @@ in the example below:
 ```
 
 
-Why would Python variables be references rather than copied instances? Let's think about a list file handles or some other complicated data type. In two lectures, we will talk a lot more about file handles. If you've ever done file I/O, you know that the file handle has a *state*: it stores the location of the next readable byte in the file as well as a lot of other information. When we copy the list, we probably want to maintain the same set of file handles rather than reinitialize them all. Python made the decision that the default should be to pass the reference to the list rather than create a copy of each element. 
+Why would Python variables be references rather than copied instances? Let's 
+think about a list file handles or some other complicated data type. In two 
+lectures, we will talk a lot more about file handles. If you've ever done file 
+I/O, you know that the file handle has a *state*: it stores the location of the 
+next readable byte in the file as well as a lot of other information. When we 
+copy the list, we probably want to maintain the same set of file handles rather 
+than reinitialize them all. Python made the decision that the default should be 
+to pass the reference to the list rather than create a copy of each element. 
+
+
+
