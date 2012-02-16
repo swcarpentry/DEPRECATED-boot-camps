@@ -493,6 +493,7 @@ There are two methods to add element(s) to a list: append and update. Likewise, 
  > myList = [1,2,3]
  > myAppendedList = myList.append([4,5])
  > myUpdatedList = myList.update([4,5])
+```
 
 What is the difference between the appended list and the updated list? Why did this happen?
 
@@ -510,8 +511,9 @@ tuples:
  > (1,2,3,4) # Create a four element tuple
  > mytuple[2] = 4 # ERROR - tuples can't be modified
  > print mytuple[2], len(mytuple)
-  
+
  > myonetuple = ("hello",) # Create a tuple containing only one element (note the trailing comma)
+```
 
 
 You might be asking yourself, why do we need tuples if we have lists? The answer 
