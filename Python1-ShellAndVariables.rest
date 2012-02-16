@@ -37,18 +37,12 @@ editor, outside of the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-```python
-
-  > reset                 # Clear everything
-  > import math as m      # Same as import math, except we are renaming the module m
-  > print m.sin(3)        # This is really handy if you have module names that are long
-```
-
 
 ``` python 
-> print "Hello World"
-Hello World
-> exit()
+
+  > print "Hello World"
+  Hello World
+  > exit()
 ```
 
 
@@ -393,17 +387,16 @@ method call:
 Most languages have some kind of simple syntax for making lists of things. In 
 python it is extremely easy and intuitive to make a list of things, for example:
 
-```python
-  
+::  
+
   > mylist = [] # Make an empty list
   > mylist = [1, 2, "Milad", "book"] # Make a list containing four entities
-```
 
 
 Using lists is easy and intuitive. Notice that lists can contain objects of any 
 data type. Try entering the following lines. 
 
-```python
+::
 
   > mylist = [1,2,3,4]
   > mylist[2] = 1.0 + 2j # Modify an element
@@ -417,15 +410,13 @@ data type. Try entering the following lines.
   
   > mylist = [2, 4, 6, 8, 10]
   > print mylist[1:4] # Prints a list containing elements 1 2 and 3 from mylist 
-```
 
   
 Remember that there is an element 0, so this prints [4, 6, 8]
   
-```python
- 
+:: 
+
   > print mylist[-2] # Print the second element from the end of the list (8)
-```
   
   
 Lists aren't the only compound data type. Another really useful one is a 
@@ -433,7 +424,7 @@ dictionary (referred to as a map in many other languages). Dictionaries allow
 you to set/access elements using a key value relationship. You can create 
 dictionaries as shown below:
 
-```python
+::
 
   > mydictionary = {} # Make an empty dictionary
   > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary with some values
@@ -443,7 +434,6 @@ dictionaries as shown below:
   > print mydictionary["two"] # Prints the number 2
   > mydictionary["four"] = 4 # Insert an element into the dictionary
   > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing the numbers 1, 2, and 3
-```
 
   
 **Hands-on Example**
@@ -505,12 +495,11 @@ Hands on example
 
 There are two methods to add element(s) to a list: append and update. Likewise, there are two methods to add element(s) to a set: add and update. What is the difference? 
 
-```python
+::
 
   > myList = [1,2,3]
   > myAppendedList = myList.append([4,5])
   > myUpdatedList = myList.update([4,5])
-```
 
 
 What is the difference between the appended list and the updated list? Why did this happen?
@@ -524,20 +513,19 @@ There is one other compound data type - the tuple. Think of a tuple as a list
 that you can't change. The example below demonstrates how to create and use 
 tuples:
 
-```python
-  
+::  
+
   > (1,2,3,4) # Create a four element tuple
   > mytuple[2] = 4 # ERROR - tuples can't be modified
   > print mytuple[2], len(mytuple)
 
   > myonetuple = ("hello",) # Create a tuple containing only one element (note the trailing comma)
-```
 
 
 You might be asking yourself, why do we need tuples if we have lists? The answer 
 is that tuples are used internally in Python in a lot of places. One of the basic differences is that dictionaries can not use a list as a key, but they can use a tuple: 
 
-```python
+::
 
   > d = {}
   > d[(1,2)] = 'numbers'
@@ -547,7 +535,6 @@ is that tuples are used internally in Python in a lot of places. One of the basi
    Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
    TypeError: unhashable type: 'list'
-```
 
 
 As you learn more about python you'll see how lists, tuples and dictionaries are the basic 
@@ -562,13 +549,12 @@ When you start using data types that are more complicated than numbers or
 strings, you'll encounter a seemingly annoying feature in Python that I want to 
 warn you about. Try the following example:
 
-```python
+::
 
   list1 = [1, 5, 9, 13]
   list2 = list1
   list2[0] = -1
   print list1, list2
-```
 
 
 What happens? You'll notice that modifying list2 also modifies list1! This is 
@@ -579,12 +565,11 @@ were dealing with simple numbers. This behavior can be very annoying and can
 lead to a lot of bugs, so be careful. We can force python to copy list1 as shown 
 in the example below:
 
-```python
+::
 
   > list1 = [1, 5, 9, 13]
   > list2 = list1[:] # <--- Notice the colon!
   > list2[0] = -1
   > print list1, list2
-```
 
 
