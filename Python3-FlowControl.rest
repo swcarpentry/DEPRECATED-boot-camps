@@ -62,8 +62,7 @@ Lets start by looking at while loops since they function like while loops in
 many other language. The example below takes a list of integers and computes the 
 product of each number in the list up to the -1 element. 
 
-::
-
+```python
   mult = 1
   sequence = [1, 5, 7, 9, 3, -1, 5, 3]
   while sequence[0] is not -1:
@@ -71,6 +70,7 @@ product of each number in the list up to the -1 element.
       del sequence[0]
 
   print mult
+```
 
 Some new syntax has been introduced in this example. We begin the while loop on 
 line 3. Notice that instead of using the not-equals symbol, !=, we can simply 
