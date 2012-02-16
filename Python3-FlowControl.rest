@@ -48,10 +48,10 @@ functions or classes.
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
 
-::
-
+```python
   i = 5
   sign = "positive" if i > 0 else "negative"
+```
 
 ----------------------------------------------------------------------
  Loops 
@@ -111,11 +111,10 @@ really used to iterate over sequences of things (they can be used for much more,
 but for now this definition will do). Try entering the following to see what 
 happens:
 
-```python
+::
 
   for c in ["one", 2, "three", 4, "five"]
       print c
-```
 
 
 this is equivalent to:
