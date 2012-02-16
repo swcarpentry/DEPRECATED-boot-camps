@@ -9,6 +9,8 @@ Python 2:   Lists, Dictionaries, Sets, Tuples
 
 **Presented By : Katy Huff**
 
+**Based on lecture materials by Milad Fatenejad"
+
 
 Most languages have some kind of simple syntax for making lists of things. In 
 python it is extremely easy and intuitive to make a list of things, for example:
