@@ -37,24 +37,20 @@ editor, outside of the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-
- python 
-
+```python
   > print "Hello World"
   Hello World
   > exit()
-
-
+```
 
 To get to the interactive python interpreter, a more sophisticated python shell, 
 type ipython into the terminal.
 
-::
-
+```python
   > print "Hello World"
   Hello World
   > exit
-
+```
 
 
 You can also put the commands in a **.py** file and execute that file in the terminal by 
@@ -76,11 +72,10 @@ typing **python [filename]**
 Before we get started, I want you to enter the "%autocall" command into ipython 
 to disable the autocall feature:
 
-::
-
+```python
   > %autocall
     Automatic calling is: OFF
-
+```
 
 
 You should see the message that automatic calling is off. Automatic calling is a 
@@ -104,22 +99,19 @@ Variables are names, while values are the data assigned to those names.
 It is really easy to make variables in python. For example, to create a string, 
 `s`, and print its value, simply type the following into iPython:
 
-::
-
+```python
   > s = "Hello World"
   > print s
-
-
+```
 
 If you want to see what the type of a variable is, you can use the built-in 
 python function, `type`. Just enter `print type(s)` into iPython and you should 
 see something like this:
 
-::
-
+```python
    > print type(s)
      <type 'str'>
-
+```
 
 
 This tells us that `s` is of type **str** (i.e. that `s` is a string). 
@@ -127,10 +119,9 @@ Making numeric variables is equally easy and intuitive. Try entering the followi
 IPython. Notice that the # symbol is used to start comments so everything after 
 the pound sign is ignored.
 
-::
- 
+```python
   > i,r,c = -10, 3.5, 1.0 + 2j  # set i to -10, r to 3.5 and c to 1.0+2j
-
+```
 
 
 This one line sets the variable `i` to the integer -10 , `r` to the floating 
