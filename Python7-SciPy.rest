@@ -443,10 +443,9 @@ Now the gains from using the Pade approximant for an exponential here seem sligh
    1. If instead x were replaced by the matrix A, then e^A^ could be calculated with about half as many multiplications and sums using Pade rather than a polynomial. Success!
 
 However, Pade's real power can be seen when approximating a different function.  Let's try approximating a rougher function...
-::
 
-  #!CodeExample
-  #!python
+```python
+
   import scipy.misc
   from pylab import *
   
@@ -479,6 +478,7 @@ However, Pade's real power can be seen when approximating a different function. 
   legend(loc=0)
 
   show()
+```
  
 The above script [attachment:PyBC_S7_pade2.py] generates the following figure [attachment:PadeFigure2.png]
 
@@ -500,16 +500,14 @@ First let's read in an image file.  For now make it a JPEG. From Wikipedia. Of a
 
 [[Image(image.jpg, 20%)]]
 
-::
-
-  #!CodeExample
-  #!python
+```python
   import scipy.misc
   img = scipy.misc.imread("image.jpg")
   #Note that this really is an array!
   print(str(img))
+```
 
-::
+```python
 
   >>> [[[130 174  27]
   >>>   [129 173  24]
@@ -560,38 +558,34 @@ First let's read in an image file.  For now make it a JPEG. From Wikipedia. Of a
   >>>   [ 67 117   4]
   >>>   [ 81 138   0]
   >>>   [117 172  18]]]
-  
+```
 
 We can now apply some basic filters...
-::
-  
-  #!CodeExample
-  #!python
+ 
+```python
   img = scipy.misc.imfilter(img, 'blur')
-
+```
 
 We can even rotate the image, counter-clockwise by degrees.
-::
 
-  #!CodeExample
-  #!python
+```python
   img = scipy.misc.imrotate(img, 45)
+```
 
 
 And then, we can rewrite the array to an image file.
-::
 
-  #!CodeExample
-  #!python
+```python
   scipy.misc.imsave("image1.jpg", img)
+```
 
 These functions produce the following image:
 
 [[Image(image1.jpg, 20%)]]
 
 Because the array takes integer values from 0 - 255, we can easily define our own filters as well!  For instance, you could write a two-line function to inverse the image...
-::
 
+```python
   #!CodeExample
   #!python
   def InverseImage(imgarr):
@@ -602,6 +596,7 @@ Because the array takes integer values from 0 - 255, we can easily define our ow
   img = scipy.misc.imrotate(img, 330)
   img = InverseImage(img)
   scipy.misc.imsave("image2.jpg", img)
+```
   
 Having this much fun, the rabbit becomes a twisted shade of its former self!
 
