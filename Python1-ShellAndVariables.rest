@@ -522,7 +522,7 @@ tuples:
 You might be asking yourself, why do we need tuples if we have lists? The answer 
 is that tuples are used internally in Python in a lot of places. One of the basic differences is that dictionaries can not use a list as a key, but they can use a tuple: 
 
-::
+```python
 
   > d = {}
   > d[(1,2)] = 'numbers'
@@ -532,6 +532,7 @@ is that tuples are used internally in Python in a lot of places. One of the basi
    Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
    TypeError: unhashable type: 'list'
+```
 
 
 As you learn more about python you'll see how lists, tuples and dictionaries are the basic 
