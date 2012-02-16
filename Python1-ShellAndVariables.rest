@@ -49,9 +49,8 @@ type **ipython** into the terminal.
 ```python
   In [1]: print "Hello World"
   Hello World
-  In[2]: exit
+  In [2]: exit
 ```
-
 
 You can also put the commands in a **.py** file and execute that file in the terminal by 
 typing **python [filename]**
@@ -358,16 +357,18 @@ functions by entering `dir(__builtins__)`. If you see something interesting,
 such as the `zip` function, you can examine what it does using help(zip). 
 
 
-**Hands-on Example**
+......................................................................
+Example : Manipulating Basic Data Types
+......................................................................
 
 Use the basic data types we've learned about along with the `help` and `dir` 
 functions to figure out how to do the following using either one function or one 
 method call:
 
-  * Take the absolute value of the number -1.4
-  * Take the string "a MaN and His DOG" and create the string "A man and his 
+* Take the absolute value of the number -1.4
+* Take the string "a MaN and His DOG" and create the string "A man and his 
     dog"
-  * Return the position of the character 'e' in the string "my test string" (The 
+* Return the position of the character 'e' in the string "my test string" (The 
     answer is 4, since `m` is  is at position 0 not position 1)
 
 
