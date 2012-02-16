@@ -38,23 +38,23 @@ editor, outside of the interpreter.
 To get to the python shell, type **python** into the terminal.
 
 
-``` python 
+ python 
 
   > print "Hello World"
   Hello World
   > exit()
-```
+
 
 
 To get to the interactive python interpreter, a more sophisticated python shell, 
 type ipython into the terminal.
 
-```python
+::
 
   > print "Hello World"
   Hello World
   > exit
-```
+
 
 
 You can also put the commands in a **.py** file and execute that file in the terminal by 
@@ -76,11 +76,11 @@ typing **python [filename]**
 Before we get started, I want you to enter the "%autocall" command into ipython 
 to disable the autocall feature:
 
-```python
+::
 
   > %autocall
     Automatic calling is: OFF
-```
+
 
 
 You should see the message that automatic calling is off. Automatic calling is a 
@@ -104,22 +104,22 @@ Variables are names, while values are the data assigned to those names.
 It is really easy to make variables in python. For example, to create a string, 
 `s`, and print its value, simply type the following into iPython:
 
-```python
+::
 
   > s = "Hello World"
   > print s
-```
+
 
 
 If you want to see what the type of a variable is, you can use the built-in 
 python function, `type`. Just enter `print type(s)` into iPython and you should 
 see something like this:
 
-```python
+::
 
    > print type(s)
      <type 'str'>
-```
+
 
 
 This tells us that `s` is of type **str** (i.e. that `s` is a string). 
@@ -127,10 +127,10 @@ Making numeric variables is equally easy and intuitive. Try entering the followi
 IPython. Notice that the # symbol is used to start comments so everything after 
 the pound sign is ignored.
 
-```python
+::
  
   > i,r,c = -10, 3.5, 1.0 + 2j  # set i to -10, r to 3.5 and c to 1.0+2j
-```
+
 
 
 This one line sets the variable `i` to the integer -10 , `r` to the floating 
@@ -140,11 +140,11 @@ set multiple variables to something. You'll discover a lot of similar syntax
 that is designed to make your life easier). Lets use the built-in type function 
 to determine the type of each of the three variables we just created:
 
-```python
+::
 
   > print type(i), type(r), type(c) 
    <type 'int'> <type 'float'> <type 'complex'>
-```
+
 
 
 This tells us that "i" is an integer, "r" is a floating point number, and "c" is 
@@ -157,17 +157,17 @@ arbitrary large. In languages like C/C++ and FORTRAN integer variables can only
 store values up to a certain size. But entering and manipulating the following 
 forty digit number with iPython is no problem:
 
-```python
+::
 
   > i = 1234567890123456789012345678901234567890  
   > print i * 6
    7407407340740740734074074073407407407340
-```
+
 
   
 Operations in Python are defined by their type. For instance, look the difference between these operations:
 
-```python
+::
 
   > 1 + 3
     4
@@ -179,18 +179,18 @@ Operations in Python are defined by their type. For instance, look the differenc
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   TypeError: unsupported operand type(s) for +: 'int' and 'str'
-```
+
 
 
 In the first two cases, addition between numbers meant that 1 was added to 3 using the standard type rules (float plus int = float). In the third case, the command was string addition, which concatenates two strings. The final case broke because an 'int' type can not be added to a 'str' type. This is because it's unclear how to interpret an int as a string: should it be the string representation, the ASCII character code, or something else entirely?
 
 One way to handle this is to explicitly convert the int into a string:
 
-```python
+::
 
   > str(1) + "Hello"
   '1Hello'
-```
+
 
 
 Basic data types in Python have a lot of functionality already built in. For 
@@ -199,21 +199,21 @@ that sometimes the names have leading and trailing spaces that we want to strip
 away. We can just use the `strip` string method to accomplish this. For example, 
 type the following into iPython:
 
-```python
+::
 
   > name = "   Milad    "
   > print name + "is here"
         Milad     is here
-```
+
 
   
 Now enter `name.strip()` instead of `name`:
 
-```python
+::
   
   > print name.strip() + " is here"
    Milad is here
-```
+
 
 
 Notice that the extra spaces are gone. We used the `strip()` method, which 
@@ -229,7 +229,7 @@ Importantly, python is a **dynamically typed** language. That is, variables in
 python which are initialized to a variable of one type can be re-assigned to a 
 variable of a different type. Try this:
 
-```python
+::
 
   > sillystring = "A string"
   > print type(sillystring)
@@ -237,17 +237,17 @@ variable of a different type. Try this:
   > sillystring = 98
   > print type(sillystring)
     <type 'int'>
-```
+
 
 This is an interesting feature. Can you think of ways it can be helpful? Are 
 there ways it might be troublesome? 
 
 What is should type of sillystring be after this :
 
-```python 
+:: 
 
   > sillystring += 0.1
-```
+
 
 Importantly, values always have a type. The number 98 is an **int**. For this 
 number to be a float, it must be assigned as **98.0**. 
@@ -273,10 +273,10 @@ documentation is built into the code. Practically, this means that much of the
 time you don't have to go digging through some web site to find help. You can 
 get help in Python using the `help` function. Lets look at an example - enter 
 
-```python 
+:: 
 
   > help(str.strip) 
-```
+
 
 
 into IPython. You should then see documentation for the 
@@ -285,20 +285,20 @@ interpreter, just hit "`q`" to exit the help screen). You can also use the
 question mark, "`?`", character to display the documentation as well. For 
 example, enter 
 
-```python
+::
 
   > str.strip?
-```
+
   
 
 into IPython to view the documentation. 
 
 Now try entering 
 
-```python
+::
 
   > help(str)
-```
+
 
 
 You should see documentation for the entire 
@@ -320,11 +320,11 @@ has documentation that looks like:
 These lines tell us that the string class has a method called "upper" which can 
 be used to convert strings to uppercase. Now enter:
 
-```python
+::
 
   > name = "cooper"
   > print name.upper()
-```
+
 
 
 At which point, you should see the word "COOPER" printed to the screen. 
@@ -339,10 +339,10 @@ the value "cooper", then used the `upper` string method to obtain the uppercased
 version of the string. We didn't have to create a variable, however. We could 
 simply enter:
 
-```python
+::
 
   > print "cooper".upper()
-```
+
 
 
 To generate the uppercased version.
