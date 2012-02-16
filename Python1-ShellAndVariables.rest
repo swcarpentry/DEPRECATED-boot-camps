@@ -379,10 +379,11 @@ method call:
 Most languages have some kind of simple syntax for making lists of things. In 
 python it is extremely easy and intuitive to make a list of things, for example:
 
-::  
 
+```python
   > mylist = [] # Make an empty list
   > mylist = [1, 2, "Milad", "book"] # Make a list containing four entities
+```
 
 
 Using lists is easy and intuitive. Notice that lists can contain objects of any 
