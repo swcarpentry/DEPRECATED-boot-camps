@@ -15,42 +15,49 @@ ______________________________________________________________________
 What is Python ?
 ----------------------------------------------------------------------
 
-Python is a very readable compiled language. 
+Python is an interpreted (pre-compiled) language. Its simple, high level, human 
+readable interface speeds the programming process in exchange for some 
+computation time overhead.
 
 During this session you are going to learn about some of the built-in Python 
-data types. Built-in data types are the basic building blocks of Python 
+data types
+Built-in data types are the basic building blocks of Python 
 programs. They are really basic things like strings and numbers (either 
 integers, complex or floating point numbers). There are simple containers like 
 lists (think of lists as arrays or vectors), tuples and dictionaries. 
+
+----------------------------------------------------------------------
+Hello World
+----------------------------------------------------------------------
 
 For this lesson, we will use python ''interactively''. This means 
 that we will type commands directly into iPython. Once we start performing more 
 complicated tasks we will start writing Python scripts and programs in a text 
 editor, outside of the interpreter. 
 
-----------------------------------------------------------------------
-Hello World
-----------------------------------------------------------------------
 
 In the python shell :
 
-::
+```python
   $ python 
   >>> print "Hello World!"
   Hello World! 
   >>> exit()
+```
 
 In the interactive python interpreter, a more sophisticated python shell:
 
-::
+```python
   $ ipython
   > print "Hello World!"
   Hello World!
   > exit
+```
 
-In a file:
+You can also put the commands in a **.py** file and execute that file in the terminal by 
+typing **python [filename]**
 
-:: 
+::
 
   $ nano myfile.py
   <edit myfile with the hello world program.>
@@ -66,15 +73,26 @@ In a file:
 Before we get started, I want you to enter the "%autocall" command into ipython 
 to disable the autocall feature:
 
-::
+```python
 
   > %autocall
     Automatic calling is: OFF
+```
 
 
 You should see the message that automatic calling is off. Automatic calling is a 
 feature that may prevent you from copying and pasting code snippets into 
 ipython, so just turn it off with this simple command when you start up ipython. 
+
+
+----------------------------------------------------------------------
+Variables
+----------------------------------------------------------------------
+
+Variables are names, while values are the data assigned to those names.
+
+It's important to note that a sinble
+
 
 
 ----------------------------------------------------------------------
@@ -85,20 +103,22 @@ ipython, so just turn it off with this simple command when you start up ipython.
 It is really easy to make variables in python. For example, to create a string, 
 `s`, and print its value, simply type the following into iPython:
 
-::
+```python
 
   > s = "Hello World!"
   > print s
+```
 
 
 If you want to see what the type of a variable is, you can use the built-in 
 python function, `type`. Just enter `print type(s)` into iPython and you should 
 see something like this:
 
-::
+```python
 
    > print type(s)
      <type 'str'>
+```
 
 
 This tells us that `s` is of type **str** (i.e. that `s` is a string). 
@@ -106,9 +126,10 @@ Making numeric variables is equally easy and intuitive. Try entering the followi
 IPython. Notice that the # symbol is used to start comments so everything after 
 the pound sign is ignored.
 
-::
+```python
 
  > i,r,c = -10, 3.5, 1.0 + 2j  # set i to -10, r to 3.5 and c to 1.0+2j
+```
 
 
 This one line sets the variable `i` to the integer -10 , `r` to the floating 
@@ -118,10 +139,11 @@ set multiple variables to something. You'll discover a lot of similar syntax
 that is designed to make your life easier). Lets use the built-in type function 
 to determine the type of each of the three variables we just created:
 
-::
+```python
 
  > print type(i), type(r), type(c) 
    <type 'int'> <type 'float'> <type 'complex'>
+```
 
 
 This tells us that "i" is an integer, "r" is a floating point number, and "c" is 
@@ -134,15 +156,16 @@ arbitrary large. In languages like C/C++ and FORTRAN integer variables can only
 store values up to a certain size. But entering and manipulating the following 
 forty digit number with iPython is no problem:
 
-::
+```python
 
   > i = 1234567890123456789012345678901234567890  
   > print i * 6
    7407407340740740734074074073407407407340
+```
   
 Operations in Python are defined by their type. For instance, look the difference between these operations:
 
-::
+```python
 
  > 1 + 3
    4
@@ -154,16 +177,18 @@ Operations in Python are defined by their type. For instance, look the differenc
  Traceback (most recent call last):
    File "<stdin>", line 1, in <module>
  TypeError: unsupported operand type(s) for +: 'int' and 'str'
+```
 
 
 In the first two cases, addition between numbers meant that 1 was added to 3 using the standard type rules (float plus int = float). In the third case, the command was string addition, which concatenates two strings. The final case broke because an 'int' type can not be added to a 'str' type. This is because it's unclear how to interpret an int as a string: should it be the string representation, the ASCII character code, or something else entirely?
 
 One way to handle this is to explicitly convert the int into a string:
 
-::
+```python
 
  > str(1) + "Hello"
  '1Hello'
+```
 
 Basic data types in Python have a lot of functionality already built in. For 
 example, lets say that you are reading names from a file one line at a time and 
@@ -171,18 +196,20 @@ that sometimes the names have leading and trailing spaces that we want to strip
 away. We can just use the `strip` string method to accomplish this. For example, 
 type the following into iPython:
 
-::
+```python
 
  > name = "   Milad    "
  > print name + "is here"
        Milad     is here
+```
   
 Now enter `name.strip()` instead of `name`:
 
-::
+```python
   
  > print name.strip() + " is here"
   Milad is here
+```
 
 
 Notice that the extra spaces are gone. We used the `strip()` method, which 
@@ -198,7 +225,7 @@ Importantly, python is a **dynamically typed** language. That is, variables in
 python which are initialized to a variable of one type can be re-assigned to a 
 variable of a different type. Try this:
 
-::
+```python
 
   > sillystring = "A string"
   > print type(sillystring)
@@ -206,15 +233,31 @@ variable of a different type. Try this:
   > sillystring = 98
   > print type(sillystring)
     <type 'int'>
+```
 
 This is an interesting feature. Can you think of ways it can be helpful? Are 
-there ways it might be troublesome?  What is the value type of sillystring after 
-this :
+there ways it might be troublesome? 
 
-:: 
+What is should type of sillystring be after this :
+
+```python 
 
   > sillystring += 0.1
+```
 
+Importantly, values always have a type. The number 98 is an **int**. For this 
+number to be a float, it must be assigned as **98.0**. 
+
+
+
+**********************************************************************
+Questions : Dynamic Typing
+**********************************************************************
+
+Imagine that I first assign :
+
+
+What has happened to the memory that was holding the number 2??
 
 
 ----------------------------------------------------------------------
@@ -226,9 +269,10 @@ documentation is built into the code. Practically, this means that much of the
 time you don't have to go digging through some web site to find help. You can 
 get help in Python using the `help` function. Lets look at an example - enter 
 
-:: 
+```python 
 
   > help(str.strip) 
+```
 
 into IPython. You should then see documentation for the 
 strip method pop up. (NOTE: if you don't automatically return to the python 
@@ -236,17 +280,19 @@ interpreter, just hit "`q`" to exit the help screen). You can also use the
 question mark, "`?`", character to display the documentation as well. For 
 example, enter 
 
-::
+```python
 
   > str.strip?
+```
   
 into IPython to view the documentation. 
 
 Now try entering 
 
-::
+```python
 
   > help(str)
+```
 
 You should see documentation for the entire 
 string type, including all of the string methods. This can be useful when you 
@@ -267,10 +313,11 @@ has documentation that looks like:
 These lines tell us that the string class has a method called "upper" which can 
 be used to convert strings to uppercase. Now enter:
 
-::
+```python
 
  > name = "cooper"
  > print name.upper()
+```
 
 
 At which point, you should see the word "COOPER" printed to the screen. 
@@ -285,9 +332,10 @@ the value "cooper", then used the `upper` string method to obtain the uppercased
 version of the string. We didn't have to create a variable, however. We could 
 simply enter:
 
-::
+```python
 
  > print "cooper".upper()
+```
 
 To generate the uppercased version.
 
@@ -331,16 +379,17 @@ method call:
 Most languages have some kind of simple syntax for making lists of things. In 
 python it is extremely easy and intuitive to make a list of things, for example:
 
-::
+```python
   
  > mylist = [] # Make an empty list
  > mylist = [1, 2, "Milad", "book"] # Make a list containing four entities
+```
 
 
 Using lists is easy and intuitive. Notice that lists can contain objects of any 
 data type. Try entering the following lines. 
 
-::
+```python
 
  > mylist = [1,2,3,4]
  > mylist[2] = 1.0 + 2j # Modify an element
@@ -354,12 +403,14 @@ data type. Try entering the following lines.
   
  > mylist = [2, 4, 6, 8, 10]
  > print mylist[1:4] # Prints a list containing elements 1 2 and 3 from mylist 
+```
   
 Remember that there is an element 0, so this prints [4, 6, 8]
   
-::
+```python
 
  > print mylist[-2] # Print the second element from the end of the list (8)
+```
   
   
 Lists aren't the only compound data type. Another really useful one is a 
@@ -367,7 +418,7 @@ dictionary (referred to as a map in many other languages). Dictionaries allow
 you to set/access elements using a key value relationship. You can create 
 dictionaries as shown below:
 
-::
+```python
 
  > mydictionary = {} # Make an empty dictionary
  > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary with some values
@@ -377,6 +428,7 @@ dictionaries as shown below:
  > print mydictionary["two"] # Prints the number 2
  > mydictionary["four"] = 4 # Insert an element into the dictionary
  > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing the numbers 1, 2, and 3
+```
   
 **Hands-on Example**
 
@@ -415,7 +467,7 @@ In a dictionary, the keys must be unique: assigning a second value to a key over
 
 It turns out there is a third type of container in Python that only stores unique things: it's called a set.
 
-::
+```python
 
  > s = set([1,1,2,3,4]) # Note that there are 2 1's in the input list.
  > print s
@@ -430,12 +482,13 @@ It turns out there is a third type of container in Python that only stores uniqu
  > anotherSet = set([1,2,"hello"])
  > s.intersection(anotherSet)
  set([1, 2])
+```
 
 **Hand's on example**
 
 There are two methods to add element(s) to a list: append and update. Likewise, there are two methods to add element(s) to a set: add and update. What is the difference? 
 
-::
+```python
 
  > myList = [1,2,3]
  > myAppendedList = myList.append([4,5])
@@ -452,7 +505,7 @@ There is one other compound data type - the tuple. Think of a tuple as a list
 that you can't change. The example below demonstrates how to create and use 
 tuples:
 
-::
+```python
   
  > (1,2,3,4) # Create a four element tuple
  > mytuple[2] = 4 # ERROR - tuples can't be modified
@@ -464,7 +517,7 @@ tuples:
 You might be asking yourself, why do we need tuples if we have lists? The answer 
 is that tuples are used internally in Python in a lot of places. One of the basic differences is that dictionaries can not use a list as a key, but they can use a tuple: 
 
-::
+```python
 
  > d = {}
  > d[(1,2)] = 'numbers'
@@ -474,6 +527,7 @@ is that tuples are used internally in Python in a lot of places. One of the basi
   Traceback (most recent call last):
    File "<stdin>", line 1, in <module>
   TypeError: unhashable type: 'list'
+```
 
 As you learn more about python you'll see how lists, tuples and dictionaries are the basic 
 building blocks of the entire language. 
@@ -487,7 +541,7 @@ When you start using data types that are more complicated than numbers or
 strings, you'll encounter a seemingly annoying feature in Python that I want to 
 warn you about. Try the following example:
 
-::
+```python
 
   #!CodeExample
   #!python
@@ -495,6 +549,7 @@ warn you about. Try the following example:
   list2 = list1
   list2[0] = -1
   print list1, list2
+```
 
 
 What happens? You'll notice that modifying list2 also modifies list1! This is 
@@ -505,11 +560,12 @@ were dealing with simple numbers. This behavior can be very annoying and can
 lead to a lot of bugs, so be careful. We can force python to copy list1 as shown 
 in the example below:
 
-::
+```python
 
  > list1 = [1, 5, 9, 13]
  > list2 = list1[:] # <--- Notice the colon!
  > list2[0] = -1
  > print list1, list2
+```
 
 

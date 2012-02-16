@@ -5,6 +5,12 @@ ________________________________________________________________________________
 [[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Version Control 
 Continued | Lesson2b-VersionControl]]
 
+----
+
+**Presented By : Katy Huff**
+
+
+
 ----------------------------------------------------------------------------------
 git : What is Version Control ?
 ---------------------------------------------------------------------------------- 

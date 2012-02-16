@@ -5,6 +5,11 @@ ________________________________________________________________________________
 [[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python 
 Shell and Variables | Python1-ShellAndVariables]]
 
+----
+
+**Presented By : Katy Huff**
+
+
 ----------------------------------------------------------------------------------
 github.com?
 ---------------------------------------------------------------------------------- 
