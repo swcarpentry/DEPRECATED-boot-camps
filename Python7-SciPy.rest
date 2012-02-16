@@ -336,28 +336,29 @@ However, you can use the ```x= [0, 3,...]`` or ```dx = 3``` argument keywords to
 Say that you have an ODE of the form ::
 dy/dt = f(y, t) that you ''really'' need integrated.  Then you, my friend, are in luck!  SciPy can do this for you using the ::
 scipy.integrate.odeint function.  This is of the form:
-::
 
-  #!python
+```python
+
   odeint( f, y0, [t0, t1, ...])
+```
 
 For example take the decay equation: ``f(y, t) = - lambda * y .  We can then try integrating this using a decay constant of 0.2``:
 
-::
+```python
 
-  #!CodeExample
-  #!python
   def dDecay(y, t, lam):
           return -lam*y
+```
 
 vals = scipy.integrate.odeint( lambda y, t: dDecay(y, t, 0.2), 1.0, [0.0, 10.0] )
 print("If you start with a mass of y(0) = %F"%vals[0][0])
 print("you'll only have y(t= 10) = %F left."%vals[1][0])
 
-::
+```python
 
   >>> If you start with a mass of y(0) = 1.000000
   >>> you'll only have y(t= 10) = 0.135335 left.
+```
 
 
 Check out http://docs.scipy.org/doc/scipy/reference/integrate.html for more information on integreation.
@@ -375,14 +376,15 @@ import scipy.misc.  What follows is a brief explanation of the Pade Approximant 
 
 Most people are familar with the polynomial expansions of a function:
 
-::
+```python
   f(x) = a + bx + cx^2 + ...
+```
 
 Or a Taylor expansion:
 
-::
+```python
   f(x) = sum( d^n f(a) / dx^n (x-a)^n /n! )
-
+```
 However, there exists the lesser known, more exact Pade approximation. This basically splits up a function into a numerator and a denominator. 
 
 ::
