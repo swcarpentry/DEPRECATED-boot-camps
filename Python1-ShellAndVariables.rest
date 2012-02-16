@@ -37,7 +37,7 @@ editor, outside of the interpreter.
 
 In the python shell :
 
-```python 
+``` python 
 
   $ python 
   > print 'Hello World'
