@@ -90,15 +90,11 @@ For example, the mass of an alpha particle is:
 
 
 But buyer beware! Let's look at the speed of light again.
-::
 
-  #!CodeExample
-  #!python
-  print("c = %s"%str(scipy.constants.physical_constants["speed of light in vacuum"]))
-
-::
-
+```python
+  >>> print("c = %s"%str(scipy.constants.physical_constants["speed of light in vacuum"]))
   >>> c = (299792458.0, 'm s^-1', 0.0)
+```
 
 The uncertainty in c should not be zero!  Physically measured parameters always have a non-trivial error.  So this is is an actual lack of information in the SciPy database. How much of a problem not knowing the 10^th^, 11^th^, 12^th^, ... digit of ::
 c poses for you is for YOU to decide! 
@@ -118,10 +114,9 @@ SciPy Special Functions, walk before you run!
 
 Code that numerically approximates common (and some not-so-common) special functions can be found in '::
 scipy.special'.  Here you can find things like error functions, gamma functions, Legendre polynomials, etc.  But as a example let's focus on my favorites: the Bessel functions.
-::
   
-  #!CodeExample
-  #!python
+
+```python
   from scipy.special import *
   from pylab import *
   
@@ -142,6 +137,7 @@ scipy.special'.  Here you can find things like error functions, gamma functions,
   ylabel("Bessel Functions")
   
   show()
+```
   
 These 20-ish lines of code should produce [attachment:BesselFigure.png]: 
 
@@ -171,10 +167,8 @@ __float__() method.
 
 The simplest way to compute a functions definite integral is via the ::
 quad(...) function.  The script
-::
-  
-  #!CodeExample
-  #!python
+
+```python
   import scipy.integrate
   #For kicks, let's also grab
   import scipy.special
@@ -189,15 +183,15 @@ quad(...) function.  The script
   
   print("A Crazy Function integrates to %.8E"%val)
   print("And with insanely low error of %.8E"%err)
+```
 
 will return 
 
-::
-
+```python
   >>> Try integrating CrazyFunc on the range [-5, 10]...
   >>> A Crazy Function integrates to 6.65625226E+09
   >>> And with insanely low error of 3.21172897E-03
-
+```
 
 .........................................................................
  Integration Example: Infinite Limits 
@@ -205,15 +199,11 @@ will return
 
 You can also use ::
 scipy.integrate.Inf for infinity in the limits of integration.  For example, try integrating e^x^ on ``[-inf, 0]``:
-::
 
-  #!CodeExample
-  #!python
-  print("(val, err) = " + str( scipy.integrate.quad(scipy.exp, -scipy.integrate.Inf, 0.0) ))
-    
-::
-  
+```python
+  >>> print("(val, err) = " + str( scipy.integrate.quad(scipy.exp, -scipy.integrate.Inf, 0.0) ))
   >>> (val, err) = (1.0000000000000002, 5.8426067429060041e-11)
+```
 
 
 .........................................................................
