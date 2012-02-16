@@ -2,7 +2,7 @@ ______________________________________________________________________
 Python 8 : Graphing with MatPlotLib 
 ______________________________________________________________________
 
-[[Back to SciPy|Python7-SciPy.rest]] - [[Forward to NumPy|Python9-NumPy]]
+[[Back to SciPy|Python7-SciPy]] - [[Forward to NumPy|Python9-NumPy]]
 
 ----
 
@@ -364,8 +364,8 @@ Lets walk through the following code.
   
   if __name__ == "__main__":
       mplot = MovingPlot()
-``` 
-  
+```
+
 ----------------------------------------------------------------------
  Image Manipulation 
 ----------------------------------------------------------------------
