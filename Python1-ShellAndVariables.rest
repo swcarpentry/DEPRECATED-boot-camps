@@ -38,13 +38,19 @@ editor, outside of the interpreter.
 
 In the python shell :
 
+
+```python 
+  $ python 
+```
+  
 ```python 
 
-  python 
   > print "Hello World!"
-  Hello World! 
-  exit()
 ```
+
+::
+  Hello World! 
+  > exit()
 
 In the interactive python interpreter, a more sophisticated python shell:
 
