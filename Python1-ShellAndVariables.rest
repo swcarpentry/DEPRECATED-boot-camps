@@ -407,9 +407,9 @@ data type. Try entering the following lines.
   
 Remember that there is an element 0, so this prints [4, 6, 8]
   
-:: 
-
+```python
   > print mylist[-2] # Print the second element from the end of the list (8)
+```
   
   
 Lists aren't the only compound data type. Another really useful one is a 
@@ -417,7 +417,7 @@ dictionary (referred to as a map in many other languages). Dictionaries allow
 you to set/access elements using a key value relationship. You can create 
 dictionaries as shown below:
 
-::
+```python
 
   > mydictionary = {} # Make an empty dictionary
   > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary with some values
@@ -427,6 +427,7 @@ dictionaries as shown below:
   > print mydictionary["two"] # Prints the number 2
   > mydictionary["four"] = 4 # Insert an element into the dictionary
   > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing the numbers 1, 2, and 3
+```
 
   
 **Hands-on Example**
