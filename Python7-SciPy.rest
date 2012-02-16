@@ -229,7 +229,7 @@ More information on the justification of this integral may be found at [http://e
   print("err = %.8E"%err)
 ```
 
-will return:
+
 
 ```python
   >>> Integrate the surface area of the unit sphere...
@@ -252,9 +252,10 @@ tplquad( f(z, y, x) ).  Moreover, {{{z}}} has limits of integration define by su
 [[Image(trplquad.gif)]]
 
 To continue with the previous example, let's try integrating the volume of a sphere.  Take the radius here to be 3.5.
+::
 
-
-```python
+  #!CodeExample
+  #!python
   def dV_Sphere(phi, theta, r):
           return r * r * dA_Sphere(phi, theta)
   
@@ -262,15 +263,12 @@ To continue with the previous example, let's try integrating the volume of a sph
   val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
   print("val = %.8F"%val)
   print("err = %.8E"%err)
-```
   
-will return:
-
-```python 
+::
+  
   >>> Integrate the volume of a sphere with r=3.5...
   >>> val = 179.59438003
   >>> err = 1.99389816E-12
-```
 
 A simple hand calculation verifies this result.
 
@@ -278,91 +276,86 @@ A simple hand calculation verifies this result.
  Integration Example: Trapazoidal 
 .........................................................................
 
-Now, only very rarely will scientists (and even more rarely engineers) will 
-truely 'know' the function that they wish to integrate.  Much more often we'll 
-have piecewise data that we wish numerically integrate (ie sum an array y(x), 
-biased by array x).  This can be done in SciPy through the **trapz(...)** function.  
+Now, only very rarely will scientists (and even more rarely engineers) will truely 'know' the function that they wish to integrate.  Much more often we'll have piecewise data that we wish numerically integrate (ie sum an array y(x), biased by array x).  This can be done in SciPy through the ::
+trapz(...) function.  
+::
 
-
-```python
+  #!CodeExample
+  #!python
   y = range(0, 11)
   print("Trapazoidally integrate y = x on [0,10]...")
   val = scipy.integrate.trapz(y)
   print("val = %F"%val)
-```
 
-will return:
+::
 
-```python
   >>> Trapazoidally integrate y = x on [0,10]...
-  >>> val = 50.000000 
-```
+  >>> val = 50.000000
 
 The above takes a series of y-values that are implicitly spaced 1-unit apart in x and 'trapazoidally integrates' them.  Basically, just a sum.
 
-However, you can use the ```x=
-[0, 3,...]``` or ``` dx = 3``` argument keywords to explicitly declare different spacings in x.  For example, with y = x^2^:
+However, you can use the '::
+x=
+[0, 3,...]' or ' dx = 3' argument keywords to explicitly declare different spacings in x.  For example, with y = x^2^:
+::
 
-```python
+  #!CodeExample
+  #!python
   x = numpy.arange(0.0, 20.5, 0.5)
   y = x * x
   print("Trapazoidally integrate y = x^2 on [0,20] with half steps...")
   val = scipy.integrate.trapz(y, x)
   print("val = %F"%val)
-```
 
-will return
+::
 
-```python
   >>> Trapazoidally integrate y = x^2 on [0,20] with half steps...
   >>> val = 2667.500000
-```
 
-and
 
-```python
+::
+
+  #!CodeExample
+  #!python
   print("Trapazoidally integrate y = x^2 with dx = 0.5...")
   val = scipy.integrate.trapz(y, dx = 0.5)
   print("val = %F"%val)
-```
 
-will return
+::
 
-```python
   >>> Trapazoidally integrate y = x^2 with dx = 0.5...
   >>> val = 2667.500000
-```
  
 
 .........................................................................
  Integration Example: Ordinary Differential Equations 
 .........................................................................
 
-Say that you have an ODE of the form ``` dy/dt = f(y, t)``` that you ''really'' 
-need integrated.  Then you, my friend, are in luck!  SciPy can do this for you 
-using the ``` scipy.integrate.odeint``` function.  This is of the form:
+Say that you have an ODE of the form ::
+dy/dt = f(y, t) that you ''really'' need integrated.  Then you, my friend, are in luck!  SciPy can do this for you using the ::
+scipy.integrate.odeint function.  This is of the form:
+::
 
-```python
+  #!python
   odeint( f, y0, [t0, t1, ...])
-```
 
 For example take the decay equation: ``f(y, t) = - lambda * y .  We can then try integrating this using a decay constant of 0.2``:
 
-```python
+::
+
+  #!CodeExample
+  #!python
   def dDecay(y, t, lam):
           return -lam*y
-  
-  vals = scipy.integrate.odeint( lambda y, t: dDecay(y, t, 0.2), 1.0, [0.0, 10.0] )
-  print("If you start with a mass of y(0) = %F"%vals[0][0])
-  print("you'll only have y(t= 10) = %F left."%vals[1][0])
-```
 
-will return
+vals = scipy.integrate.odeint( lambda y, t: dDecay(y, t, 0.2), 1.0, [0.0, 10.0] )
+print("If you start with a mass of y(0) = %F"%vals[0][0])
+print("you'll only have y(t= 10) = %F left."%vals[1][0])
 
-```python
+::
+
   >>> If you start with a mass of y(0) = 1.000000
   >>> you'll only have y(t= 10) = 0.135335 left.
-```
 
 
 Check out http://docs.scipy.org/doc/scipy/reference/integrate.html for more information on integreation.
@@ -380,29 +373,28 @@ import scipy.misc.  What follows is a brief explanation of the Pade Approximant 
 
 Most people are familar with the polynomial expansions of a function:
 
-```python
+::
   f(x) = a + bx + cx^2 + ...
-```
 
 Or a Taylor expansion:
 
-```python
+::
   f(x) = sum( d^n f(a) / dx^n (x-a)^n /n! )
-```
 
 However, there exists the lesser known, more exact Pade approximation. This basically splits up a function into a numerator and a denominator. 
 
-```python
+::
   f(x) = p(x) / q(x)
-```
 
 Then, you can approximate p(x) and q(x) using a power series.  However to generate p(x) and q(x) of order ::
 N, you first need the polynomial approximation of f(x) to order ::
 2N+1 (for when p and q are expanded to the same order).  Thus the Pade approximate is a way to squeeze greater orders of accuracy out of another, more expensively gained approximation.  A more complete treatment is available in Section 5.12 in ''Numerical Recipes'' by W. H. Press, et al... (http://www.nr.com/).  The strength of this method is demonstrated though examples and figures.
 
 First let's take the case for where f(x) = e^x^.
- 
-```python
+::
+  
+  #!CodeExample
+  #!python
   import scipy.misc
   from pylab import *
   
@@ -432,7 +424,6 @@ First let's take the case for where f(x) = e^x^.
   legend(loc=0)
 
   show()
-```
 
 The above script [attachment:PyBC_S7_pade1.py] generates the following figure [attachment:PadeFigure1.png]
 
@@ -443,8 +434,10 @@ Now the gains from using the Pade approximant for an exponential here seem sligh
    1. If instead x were replaced by the matrix A, then e^A^ could be calculated with about half as many multiplications and sums using Pade rather than a polynomial. Success!
 
 However, Pade's real power can be seen when approximating a different function.  Let's try approximating a rougher function...
+::
 
-```python
+  #!CodeExample
+  #!python
   import scipy.misc
   from pylab import *
   
@@ -477,7 +470,6 @@ However, Pade's real power can be seen when approximating a different function. 
   legend(loc=0)
 
   show()
-```
  
 The above script [attachment:PyBC_S7_pade2.py] generates the following figure [attachment:PadeFigure2.png]
 
@@ -499,16 +491,16 @@ First let's read in an image file.  For now make it a JPEG. From Wikipedia. Of a
 
 [[Image(image.jpg, 20%)]]
 
-```python
+::
+
+  #!CodeExample
+  #!python
   import scipy.misc
   img = scipy.misc.imread("image.jpg")
   #Note that this really is an array!
   print(str(img))
-```
 
-will return
-
-```python
+::
 
   >>> [[[130 174  27]
   >>>   [129 173  24]
@@ -559,13 +551,14 @@ will return
   >>>   [ 67 117   4]
   >>>   [ 81 138   0]
   >>>   [117 172  18]]]
-``` 
+  
 
 We can now apply some basic filters...
-
-```python
+::
+  
+  #!CodeExample
+  #!python
   img = scipy.misc.imfilter(img, 'blur')
-```
 
 
 We can even rotate the image, counter-clockwise by degrees.
