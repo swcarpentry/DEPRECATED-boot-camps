@@ -494,9 +494,12 @@ It turns out there is a third type of container in Python that only stores uniqu
   > anotherSet = set([1,2,"hello"])
   > s.intersection(anotherSet)
   set([1, 2])
+
 ``` 
 
-**Hands on example**
+.........................................................................
+Hands on example
+.........................................................................
 
 There are two methods to add element(s) to a list: append and update. Likewise, there are two methods to add element(s) to a set: add and update. What is the difference? 
 
