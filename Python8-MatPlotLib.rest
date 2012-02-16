@@ -134,7 +134,7 @@ up your favorite text editor.
   ax = fig.add_subplot(111)
   ax.plot([1,2,3,4,5,6])
   plt.show()
-``` 
+```
 
 **Aside: other, sometimes more convenient ways to get an axes.**
 
@@ -149,7 +149,7 @@ up your favorite text editor.
   
   # Useful for overlaying axes, sharing the x axis
   ax3 = plt.twinx(ax2)
-```  
+```
 
 Plot is pretty powerful, lets peruse the [http://matplotlib.sourceforge.net/ MPL 
 documentation].
@@ -177,7 +177,6 @@ MPL as all the usual types of plots
   ax.semilogy(x,y)
   ax.loglog(x,y)
 ```
-
 .........................................................................
  contour plots and pcolor 
 .........................................................................
