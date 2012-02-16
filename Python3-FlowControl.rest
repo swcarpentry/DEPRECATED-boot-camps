@@ -121,11 +121,12 @@ happens:
 
 this is equivalent to:
 
-::
+```python
 
   sequence = ["one", 2, "three", 4, "five"]
   for i in range(len(sequence)):
       print sequence[i]
+```
 
 
 ----------------------------------------------------------------------
