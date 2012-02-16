@@ -156,12 +156,15 @@ The above code is reproduced concisely in [attachment:PyBC_S7_special_functions.
 
 Tools used to calculate numerical, definite integrals may be found in the 
 ```integrate`` module.  There are two basic ways you can integrate in SciPy:
-   1. Integrate a function, -or-
-   1. Integrate piecewise data.
+
+#. Integrate a function, -or-
+#. Integrate piecewise data.
+
 First, let's deal with integration of functions. Recall that in Python, 
 functions are also objects.  Therefore you can pass functions as arguments to 
 other functions! Just make sure that the function that you want to integrate 
-returns a float, or at the very least, an object that has a ```__float__()``` method.  
+returns a float, or at the very least, an object that has a **__float__()**
+method.  
 
 .........................................................................
  Integration Example: 1D 
