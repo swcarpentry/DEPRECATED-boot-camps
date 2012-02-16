@@ -90,6 +90,7 @@ Variables are names, while values are the data assigned to those names.
 
 ...
 
+
 ----------------------------------------------------------------------
  Strings and Numbers 
 ----------------------------------------------------------------------
@@ -207,6 +208,14 @@ Notice that the extra spaces are gone. We used the `strip()` method, which
 removes leading and trailing white space from strings. You can think of a method 
 as being a function that is attached to a particular variable. You call methods 
 by typing: `<variable>.<method name>`.
+
+
+**Aside : Tab Completion**
+
+Maybe you've noticed this already, but check out what happens you begin typing a 
+variable name (the first two letters of name, for example)  and press tab. 
+
+Convenient, right? This is also true of many built in functions.
 
 ----------------------------------------------------------------------
 Dynamic Typing
