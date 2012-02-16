@@ -254,7 +254,8 @@ tplquad( f(z, y, x) ).  Moreover, {{{z}}} has limits of integration define by su
 
 To continue with the previous example, let's try integrating the volume of a sphere.  Take the radius here to be 3.5.
 
-```python
+::
+
   def dV_Sphere(phi, theta, r):
           return r * r * dA_Sphere(phi, theta)
   
@@ -263,11 +264,10 @@ To continue with the previous example, let's try integrating the volume of a sph
       lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
   print("val = %.8F"%val)
   print("err = %.8E"%err)
-```
 
 will return:
 
-```python  
+```python
   >>> Integrate the volume of a sphere with r=3.5...
   >>> val = 179.59438003
   >>> err = 1.99389816E-12
@@ -294,10 +294,10 @@ biased by array x).  This can be done in SciPy through the **trapz(...)** functi
 
 will return:
 
-```python
+::
+
   >>> Trapazoidally integrate y = x on [0,10]...
   >>> val = 50.000000
-```
 
 The above takes a series of y-values that are implicitly spaced 1-unit apart in x and 'trapazoidally integrates' them.  Basically, just a sum.
 
