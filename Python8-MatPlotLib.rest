@@ -178,8 +178,9 @@ MPL as all the usual types of plots
   ax.semilogy(x,y)
   ax.loglog(x,y)
 ```
+
 .........................................................................
- contour plots and pcolor 
+Contour plots and pcolor 
 .........................................................................
 
 Notice that for the z argument to pcolor is shorter by one in both directions.  
@@ -276,9 +277,9 @@ something similar to what you want to do.
  Choose your own adventure 
 ----------------------------------------------------------------------
 
- * keyboard/mouse bindings (interactive plots!)
- * [http://matplotlib.sourceforge.net/users/image_tutorial.html image plotting]
- * Shared Axes Across Subplots
+* keyboard/mouse bindings (interactive plots!)
+* [http://matplotlib.sourceforge.net/users/image_tutorial.html image plotting]
+* Shared Axes Across Subplots
 
 ----------------------------------------------------------------------
  Event binding with MPL 
@@ -292,19 +293,19 @@ else crazy that you dream up.  All you need a a function that draws the figure
 and some logic to identify events that your care about.  MPL handles the rest.  
 Lets walk through the following code.
 
- * A MovingPlot instance remembers which plot and axes to modify (no current 
-   figure nonsense!)
- * In the constructor, we draw() the initial frame
- * The attribute cid listens for "key press events" and calls self.update(event) 
-   when something happens
- * event is a 'key_press_event' object, with attributes like "key"
- * update() takes one argument: an event object (other than the unavoidable 
-   self)
- * Based on the event object passed, update() only does something on right and 
-   left arrow key presses
- * MPL has several other 
-   [http://matplotlib.sourceforge.net/api/backend_bases_api.html?highlight=canvas#matplotlib.backend_bases.FigureCanvasBase.mpl_connect 
-   supported events]
+* A MovingPlot instance remembers which plot and axes to modify (no current 
+  figure nonsense!)
+* In the constructor, we draw() the initial frame
+* The attribute cid listens for "key press events" and calls self.update(event) 
+  when something happens
+* event is a 'key_press_event' object, with attributes like "key"
+* update() takes one argument: an event object (other than the unavoidable 
+  self)
+* Based on the event object passed, update() only does something on right and 
+  left arrow key presses
+* MPL has several other 
+  [http://matplotlib.sourceforge.net/api/backend_bases_api.html?highlight=canvas#matplotlib.backend_bases.FigureCanvasBase.mpl_connect 
+  supported events]
 
 ```python
 
@@ -372,15 +373,14 @@ Lets walk through the following code.
 
 MPL has the ability to plot images.  Check out the following code.  It plots 4 
 subplots
- * an image of a bunny
- * an image of a bunny with stuff over plotted
- * an image of a generated array
- * a pcolor plot of the same data
+
+* an image of a bunny
+* an image of a bunny with stuff over plotted
+* an image of a generated array
+* a pcolor plot of the same data
 
 ```python
     
-  #!CodeExample
-  #!python
   from matplotlib import pyplot as plt
   import numpy as np
   import urllib
@@ -432,6 +432,7 @@ subplots
   ax.set_title('pcolor() of same array array')
   
   plt.show()
+```
 
 
 ----------------------------------------------------------------------
@@ -445,8 +446,6 @@ right).
 
 ```python
   
-  #!CodeExample
-  #!python
   from matplotlib import pyplot as plt
   import numpy as np
   
@@ -489,4 +488,4 @@ right).
   plt.setp( ax4.get_yticklabels(), visible=False)
   
   plt.show()
-    
+```  
