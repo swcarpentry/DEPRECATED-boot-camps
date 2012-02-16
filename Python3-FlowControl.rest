@@ -151,7 +151,7 @@ through each line in the file and counts the number of times each area code
 appears. The answer is stored in a dictionary, where the area code is the key 
 and the number of times it occurs is the value.
 
-::
+```python
 
   areacodes = {} # Create an empty dictionary
   f = open("phonenums.txt") # Open the text file
@@ -164,6 +164,7 @@ and the number of times it occurs is the value.
         areacodes[ac] += 1 # Add one to the dictionary entry
   
   print areacodes # Print the answer
+```
   
 **Hands-on Example**
 
