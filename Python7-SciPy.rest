@@ -284,13 +284,12 @@ truely 'know' the function that they wish to integrate.  Much more often we'll
 have piecewise data that we wish numerically integrate (ie sum an array y(x), 
 biased by array x).  This can be done in SciPy through the **trapz(...)** function.  
 
-::
-
+```python
   y = range(0, 11)
   print("Trapazoidally integrate y = x on [0,10]...")
   val = scipy.integrate.trapz(y)
   print("val = %F"%val)
-
+```
 
 will return:
 
