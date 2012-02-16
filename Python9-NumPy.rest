@@ -464,9 +464,9 @@ interface to simplify common linear algebraic tasks. These are:
  * The property ``.I`` (or the method ``.getI()``) returns the matrix inverse
  * The property ``.H`` (or the method ``.getH()``) returns the conjugate transpose
 
-.........................................................................
+**********************************************************************
  Example: Solving a System of Linear Equations 
-.........................................................................
+**********************************************************************
 
 
 ```python
@@ -501,8 +501,12 @@ subtraction, logarithms, and so on. Calling a ufunc is a simple matter:
   
   
 In addition to basic operation like above, ufuncs that take two input arrays and 
-return an output array can be used in more advanced ways as discussed in 
+return an output array can be used in more advanced ways. 
 
+
+.........................................................................
+ufuncs
+.........................................................................
 
 **********************************************************************
 Exercise : Elementwise Operations
