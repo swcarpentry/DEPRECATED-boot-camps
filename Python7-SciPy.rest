@@ -291,6 +291,7 @@ biased by array x).  This can be done in SciPy through the **trapz(...)** functi
   print("val = %F"%val)
 ```
 
+
 ```python
   >>> Trapazoidally integrate y = x on [0,10]...
   >>> val = 50.000000
