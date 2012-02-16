@@ -377,20 +377,21 @@ Oddly, some of the best stuff is in the ```miscellaneous``` module accessed via
 
 Most people are familar with the polynomial expansions of a function:
 
-```python
+::
+
   f(x) = a + bx + cx^2 + ...
-```
 
 Or a Taylor expansion:
 
-```python
+::
+
   f(x) = sum( d^n f(a) / dx^n (x-a)^n /n! )
-```
+
 However, there exists the lesser known, more exact Pade approximation. This basically splits up a function into a numerator and a denominator. 
 
-```python
+::
+
   f(x) = p(x) / q(x)
-```
 
 Then, you can approximate p(x) and q(x) using a power series.  However to 
 generate p(x) and q(x) of order ``` N```, you first need the polynomial 
