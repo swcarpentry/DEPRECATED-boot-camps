@@ -436,7 +436,7 @@ subplots
 
 
 ----------------------------------------------------------------------
- Shares Axes Across Subplots 
+ Shared Axes Across Subplots 
 ----------------------------------------------------------------------
 
 Take a look at the following plotting script.  It plots 4 subplots.  If the 
