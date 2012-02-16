@@ -175,11 +175,10 @@ In the first two cases, addition between numbers meant that 1 was added to 3 usi
 
 One way to handle this is to explicitly convert the int into a string:
 
-```python
+::
+
   > str(1) + "Hello"
   '1Hello'
-```
-
 
 
 Basic data types in Python have a lot of functionality already built in. For 
@@ -188,16 +187,17 @@ that sometimes the names have leading and trailing spaces that we want to strip
 away. We can just use the `strip` string method to accomplish this. For example, 
 type the following into iPython:
 
-```python
+::
+
   > name = "   Milad    "
   > print name + "is here"
         Milad     is here
-```
 
   
 Now enter `name.strip()` instead of `name`:
 
 ```python  
+
   > print name.strip() + " is here"
    Milad is here
 ```
