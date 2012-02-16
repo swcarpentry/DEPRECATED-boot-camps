@@ -171,7 +171,7 @@ method.
 .........................................................................
 
 The simplest way to compute a functions definite integral is via the 
-```quad(...)`` function.  The script
+**quad(...)** function.  The script
 
 ```python
   import scipy.integrate
