@@ -479,22 +479,21 @@ In a dictionary, the keys must be unique: assigning a second value to a key over
 
 It turns out there is a third type of container in Python that only stores unique things: it's called a set.
 
-
-
 ```python
-  > s = set([1,1,2,3,4]) # Note that there are 2 1's in the input list.
+
+  > s = set([1,1,2,3,4]) # Note that there are two ones in the input list.
   > print s
-  set([1, 2, 3, 4])
+    set([1, 2, 3, 4])
   > 1 in s
-  True
+    True
   > 5 in s
-  False
+    False
   > s.add(5)
   > 5 in s
-  True
+    True
   > anotherSet = set([1,2,"hello"])
   > s.intersection(anotherSet)
-  set([1, 2])
+    set([1, 2])
 
 ``` 
 
