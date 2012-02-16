@@ -218,7 +218,6 @@ python which are initialized to a variable of one type can be re-assigned to a
 variable of a different type. Try this:
 
 ```python
-
   > sillystring = "A string"
   > print type(sillystring)
     <type 'str'>
