@@ -11,6 +11,9 @@ Python 2:   Lists, Dictionaries, Sets, Tuples
 
 **Based on lecture materials by Milad Fatenejad"
 
+----------------------------------------------------
+Lists
+----------------------------------------------------
 
 Most languages have some kind of simple syntax for making lists of things. In 
 python it is extremely easy and intuitive to make a list of things, for example:
@@ -31,16 +34,20 @@ data type. Try entering the following lines.
  > mylist.append("test") # Add an element to the end of a the list
  > print len(mylist) # print the length of mylist (5)
   
- > mylist = [1,2,3,4]
+ > mylist = [1,9,7,32,2.0]
  > del(mylist[2]) # Remove element 2 from the list
   
  > mylist = [1,5,4,2]; mylist.sort() # Sort the list
-  
- > mylist = [2, 4, 6, 8, 10]
+```
+
+The colon, **:**, provides a syntax for ranges.
+
+```python
  > print mylist[1:4] # Prints a list containing elements 1 2 and 3 from mylist 
 ```
 
 Remember that there is an element 0, so this prints [4, 6, 8]
+
   
 ```python
 
@@ -48,6 +55,10 @@ Remember that there is an element 0, so this prints [4, 6, 8]
 ```
 
   
+----------------------------------------------------
+Dictionaries
+----------------------------------------------------
+
 Lists aren't the only compound data type. Another really useful one is a 
 dictionary (referred to as a map in many other languages). Dictionaries allow 
 you to set/access elements using a key value relationship. You can create 
@@ -76,8 +87,9 @@ don't know:
    Nico, Anthony, Jim, and Katy
 3. Sort and print the list
 
-
-**Hands-on Example**
+*************************************************************************
+Example: Manipulating Compound Data 
+*************************************************************************
 
 Accomplish the following tasks using Python. Each task should take only one 
 line. You may need to use the help and dir functions to figure out parts you 
@@ -100,6 +112,12 @@ In a dictionary, the keys must be unique: assigning a second value to a key over
 1. Use a list, but every time we add an element, check whether it is already there.
 2. Use a dictionary to store the object as a key to some dummy value.
 
+
+
+----------------------------------------------------
+Sets
+----------------------------------------------------
+
 It turns out there is a third type of container in Python that only stores unique things: it's called a set.
 
 ```python
@@ -119,9 +137,12 @@ It turns out there is a third type of container in Python that only stores uniqu
  set([1, 2])
 ```
 
-**Hand's on example**
+*************************************************************************
+Example : Appending/Adding vs Updating
+*************************************************************************
 
-There are two methods to add element(s) to a list: append and update. Likewise, there are two methods to add element(s) to a set: add and update. What is the difference? 
+There are two methods to add element(s) to a list: append and update. Likewise, 
+there are two methods to add element(s) to a set: add and update. What is the difference? 
 
 ```python
 
@@ -136,6 +157,10 @@ What is the difference between the appended list and the updated list? Why did t
 
 The key is that containers can hold other containers.
 
+
+----------------------------------------------------
+Tuples
+----------------------------------------------------
 
 There is one other compound data type - the tuple. Think of a tuple as a list 
 that you can't change. The example below demonstrates how to create and use 
