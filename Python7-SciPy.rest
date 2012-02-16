@@ -14,42 +14,41 @@ Scientific Python (SciPy) is a very robust package.  It encompasses several modu
 
 The presentation on SciPy will follow five sections:
 
-  #. SciPy Constants,
-  #. Special Functions, 
-  #. Integration & ODEs, 
-  #. Pade Approximates, 
-  #. and Image Tricks.
+#. SciPy Constants,
+#. Special Functions, 
+#. Integration & ODEs, 
+#. Pade Approximates, 
+#. and Image Tricks.
 
 In general, you can grab SciPy functionality via
 
-::
-
-  #!python
+```python
   import scipy
+```
 
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
 
-   - Clustering package (**scipy.cluster**)
-   - Constants (**scipy.constants**)
-   - Fourier transforms (**scipy.fftpack**)
-   - Integration and ODEs (**scipy.integrate**)
-   - Interpolation (**scipy.interpolate**)
-   - Input and output (**scipy.io**)
-   - Linear algebra (**scipy.linalg**)
-   - Maximum entropy models (**scipy.maxentropy**)
-   - Miscellaneous routines (**scipy.misc**)
-   - Multi-dimensional image processing (**scipy.ndimage**)
-   - Orthogonal distance regression (**scipy.odr**)
-   - Optimization and root finding (**scipy.optimize**)
-   - Signal processing (**scipy.signal**)
-   - Sparse matrices (**scipy.sparse**)
-   - Sparse linear algebra (**scipy.sparse.linalg**)
-   - Spatial algorithms and data structures (**scipy.spatial**)
-   - Special functions (**scipy.special**)
-   - Statistical functions (**scipy.stats**)
-   - Image Array Manipulation and Convolution (**scipy.stsci**)
-   - C/C++ integration (**scipy.weave**)
+- Clustering package (**scipy.cluster**)
+- Constants (**scipy.constants**)
+- Fourier transforms (**scipy.fftpack**)
+- Integration and ODEs (**scipy.integrate**)
+- Interpolation (**scipy.interpolate**)
+- Input and output (**scipy.io**)
+- Linear algebra (**scipy.linalg**)
+- Maximum entropy models (**scipy.maxentropy**)
+- Miscellaneous routines (**scipy.misc**)
+- Multi-dimensional image processing (**scipy.ndimage**)
+- Orthogonal distance regression (**scipy.odr**)
+- Optimization and root finding (**scipy.optimize**)
+- Signal processing (**scipy.signal**)
+- Sparse matrices (**scipy.sparse**)
+- Sparse linear algebra (**scipy.sparse.linalg**)
+- Spatial algorithms and data structures (**scipy.spatial**)
+- Special functions (**scipy.special**)
+- Statistical functions (**scipy.stats**)
+- Image Array Manipulation and Convolution (**scipy.stsci**)
+- C/C++ integration (**scipy.weave**)
 
 
 ----------------------------------------------------------------------
@@ -61,38 +60,33 @@ scipy.constants'.  NOTE: However, this module is not automatically included when
 import scipy". Still, some very basic pieces of information are given as module attributes.
 
 The following, for example:
-::
-  
-  #!CodeExample
-  #!python
+
+```python
   import scipy.constants
   import math
   
   print("SciPy thinks that pi = %.16f"%scipy.constants.pi)
   print("While math thinks that pi = %.16f"%math.pi)
   print("SciPy also thinks that the speed of light is c = %.1F"%scipy.constants.c)
+```
 
 will return 
-::
   
+```python
   >>> SciPy thinks that pi = 3.1415926535897931
   >>> While math thinks that pi = 3.1415926535897931
   >>> SciPy also thinks that the speed of light is c = 299792458.0
-
+```
 
 However, the real value of SciPy Constants is its enormous physical constant database.  These are of the form:
 ``scipy.constants.physical_constants[name] = (value, units, uncertainty)``.
 
 For example, the mass of an alpha particle is:
-::
 
-  #!CodeExample
-  #!python
-  scipy.constants.physical_constants["alpha particle mass"]
-
-::
-
+```python
+  >>> scipy.constants.physical_constants["alpha particle mass"]
   >>> (6.6446564999999997e-27, 'kg', 1.1e-33)
+```
 
 
 But buyer beware! Let's look at the speed of light again.
