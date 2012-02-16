@@ -131,11 +131,10 @@ set multiple variables to something. You'll discover a lot of similar syntax
 that is designed to make your life easier). Lets use the built-in type function 
 to determine the type of each of the three variables we just created:
 
-::
-
+```python
   > print type(i), type(r), type(c) 
    <type 'int'> <type 'float'> <type 'complex'>
-
+```
 
 
 This tells us that "i" is an integer, "r" is a floating point number, and "c" is 
