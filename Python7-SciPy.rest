@@ -154,19 +154,21 @@ The above code is reproduced concisely in [attachment:PyBC_S7_special_functions.
  SciPy Integration, run before you glide! 
 ----------------------------------------------------------------------
 
-Tools used to calculate numerical, definite integrals may be found in the '::
-integrate' module.  There are two basic ways you can integrate in SciPy:
+Tools used to calculate numerical, definite integrals may be found in the 
+```integrate`` module.  There are two basic ways you can integrate in SciPy:
    1. Integrate a function, -or-
    1. Integrate piecewise data.
-First, let's deal with integration of functions. Recall that in Python, functions are also objects.  Therefore you can pass functions as arguments to other functions! Just make sure that the function that you want to integrate returns a float, or at the very least, an object that has a ::
-__float__() method.  
+First, let's deal with integration of functions. Recall that in Python, 
+functions are also objects.  Therefore you can pass functions as arguments to 
+other functions! Just make sure that the function that you want to integrate 
+returns a float, or at the very least, an object that has a ```__float__()``` method.  
 
 .........................................................................
  Integration Example: 1D 
 .........................................................................
 
-The simplest way to compute a functions definite integral is via the ::
-quad(...) function.  The script
+The simplest way to compute a functions definite integral is via the 
+```quad(...)`` function.  The script
 
 ```python
   import scipy.integrate
@@ -197,8 +199,7 @@ will return
  Integration Example: Infinite Limits 
 .........................................................................
 
-You can also use ::
-scipy.integrate.Inf for infinity in the limits of integration.  For example, try integrating e^x^ on ``[-inf, 0]``:
+You can also use ```scipy.integrate.Inf``` for infinity in the limits of integration.  For example, try integrating e^x^ on ``[-inf, 0]``:
 
 ```python
   >>> print("(val, err) = " + str( scipy.integrate.quad(scipy.exp, -scipy.integrate.Inf, 0.0) ))
@@ -210,9 +211,9 @@ scipy.integrate.Inf for infinity in the limits of integration.  For example, try
  Integration Example: 2D 
 .........................................................................
 
-Two dimensional integrations follows similarly to the 1D case.  However, now we need to use the ::
-dblquad( f(y,x), ...) function instead of simply ::
-quad( f(x), ...).   Because a picture is worth 10^3^ words, SciPy computes the right-hand side of the following equation:
+Two dimensional integrations follows similarly to the 1D case.  However, now we 
+need to use the ```dblquad( f(y,x), ...)``` function instead of simply ```quad( 
+f(x), ...)```.   Because a picture is worth 10^3^ words, SciPy computes the right-hand side of the following equation:
 
 [[Image(dblquad.gif)]]
 
@@ -238,17 +239,17 @@ More information on the justification of this integral may be found at [http://e
   >>> err = 1.39514740E-13
 ```
 
-There are a couple of subtleties here.  First is that the function you are integrating over is defined as ::
-f(y,x) and NOT the more standard ::
-f(x,y).  Moreover, while {{{x}}}'s limits of integration are given directly {{{[0, 2*pi]}}}, {{{y}}}'s limits have to be functions {{{[g(x), h(x)]}}} (given by the '{{{lambda}}}s' here).  This method of doing double integrals allows for {{{y}}} to have a more complicated edge in {{{x}}} than  a simple point.  This is great for some functions  but a little annoying for simple integrations.  In any event, the above integral computes the surface are of a unit sphere to be {{{4*pi}}} to within floating point error. 
+There are a couple of subtleties here.  First is that the function you are 
+integrating over is defined as ```f(y,x)``` and NOT the more standard ``` 
+f(x,y)```.  Moreover, while {{{x}}}'s limits of integration are given directly {{{[0, 2*pi]}}}, {{{y}}}'s limits have to be functions {{{[g(x), h(x)]}}} (given by the '{{{lambda}}}s' here).  This method of doing double integrals allows for {{{y}}} to have a more complicated edge in {{{x}}} than  a simple point.  This is great for some functions  but a little annoying for simple integrations.  In any event, the above integral computes the surface are of a unit sphere to be {{{4*pi}}} to within floating point error. 
 
 .........................................................................
  Integration Example: 3D 
 .........................................................................
 
-Three dimensional integration is more similar to 2D than 1D.  Once again, we define our function variables in reverse order, ::
-f(z, y, x), and integrate using ::
-tplquad( f(z, y, x) ).  Moreover, {{{z}}} has limits of integration define by surfaces give as functions {{{[q(x,y), r(x,y)]}}}.  Thus, {{{tplquad(...)}}} integrates the right-hand side of...
+Three dimensional integration is more similar to 2D than 1D.  Once again, we 
+define our function variables in reverse order, ``` f(z, y, x)```, and integrate 
+using ``` tplquad( f(z, y, x) )```.  Moreover, {{{z}}} has limits of integration define by surfaces give as functions {{{[q(x,y), r(x,y)]}}}.  Thus, {{{tplquad(...)}}} integrates the right-hand side of...
 
 [[Image(trplquad.gif)]]
 
@@ -333,9 +334,9 @@ However, you can use the ```x= [0, 3,...]`` or ```dx = 3``` argument keywords to
  Integration Example: Ordinary Differential Equations 
 .........................................................................
 
-Say that you have an ODE of the form ::
-dy/dt = f(y, t) that you ''really'' need integrated.  Then you, my friend, are in luck!  SciPy can do this for you using the ::
-scipy.integrate.odeint function.  This is of the form:
+Say that you have an ODE of the form ```dy/dt = f(y, t)``` that you ''really'' 
+need integrated.  Then you, my friend, are in luck!  SciPy can do this for you 
+using the ```scipy.integrate.odeint``` function.  This is of the form:
 
 ```python
 
@@ -370,9 +371,9 @@ The above code is reproduced concisely in [attachment:PyBC=S7=integrate.py].
  SciPy Pade, glide before you fly! 
 ----------------------------------------------------------------------
 
-As you have seen, SciPy has some really neat functionality that comes stock. Oddly, some of the best stuff is in the '::
-miscellaneous' module accessed via ::
-import scipy.misc.  What follows is a brief explanation of the Pade Approximant (http://en.wikipedia.org/wiki/Padé_approximant) and how to utilize it in SciPy.
+As you have seen, SciPy has some really neat functionality that comes stock. 
+Oddly, some of the best stuff is in the ```miscellaneous``` module accessed via 
+``` import scipy.misc```.  What follows is a brief explanation of the Pade Approximant (http://en.wikipedia.org/wiki/Padé_approximant) and how to utilize it in SciPy.
 
 Most people are familar with the polynomial expansions of a function:
 
@@ -387,18 +388,17 @@ Or a Taylor expansion:
 ```
 However, there exists the lesser known, more exact Pade approximation. This basically splits up a function into a numerator and a denominator. 
 
-::
+```python
   f(x) = p(x) / q(x)
+```
 
-Then, you can approximate p(x) and q(x) using a power series.  However to generate p(x) and q(x) of order ::
-N, you first need the polynomial approximation of f(x) to order ::
-2N+1 (for when p and q are expanded to the same order).  Thus the Pade approximate is a way to squeeze greater orders of accuracy out of another, more expensively gained approximation.  A more complete treatment is available in Section 5.12 in ''Numerical Recipes'' by W. H. Press, et al... (http://www.nr.com/).  The strength of this method is demonstrated though examples and figures.
+Then, you can approximate p(x) and q(x) using a power series.  However to 
+generate p(x) and q(x) of order ``` N```, you first need the polynomial 
+approximation of f(x) to order ``` 2N+1``` (for when p and q are expanded to the same order).  Thus the Pade approximate is a way to squeeze greater orders of accuracy out of another, more expensively gained approximation.  A more complete treatment is available in Section 5.12 in ''Numerical Recipes'' by W. H. Press, et al... (http://www.nr.com/).  The strength of this method is demonstrated though examples and figures.
 
 First let's take the case for where f(x) = e^x^.
-::
-  
-  #!CodeExample
-  #!python
+
+```python
   import scipy.misc
   from pylab import *
   
@@ -428,6 +428,7 @@ First let's take the case for where f(x) = e^x^.
   legend(loc=0)
 
   show()
+```
 
 The above script [attachment:PyBC_S7_pade1.py] generates the following figure [attachment:PadeFigure1.png]
 
