@@ -275,9 +275,10 @@ interpreter, just hit "`q`" to exit the help screen). You can also use the
 question mark, "`?`", character to display the documentation as well. For 
 example, enter 
 
-::
+```python
 
   > str.strip?
+```
 
   
 
@@ -285,9 +286,10 @@ into IPython to view the documentation.
 
 Now try entering 
 
-::
+```python
 
   > help(str)
+```
 
 
 
@@ -310,11 +312,11 @@ has documentation that looks like:
 These lines tell us that the string class has a method called "upper" which can 
 be used to convert strings to uppercase. Now enter:
 
-::
+```python
 
   > name = "cooper"
   > print name.upper()
-
+```
 
 
 At which point, you should see the word "COOPER" printed to the screen. 
@@ -329,10 +331,10 @@ the value "cooper", then used the `upper` string method to obtain the uppercased
 version of the string. We didn't have to create a variable, however. We could 
 simply enter:
 
-::
+```python
 
   > print "cooper".upper()
-
+```
 
 
 To generate the uppercased version.
