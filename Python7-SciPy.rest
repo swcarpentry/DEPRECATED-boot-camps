@@ -265,11 +265,13 @@ To continue with the previous example, let's try integrating the volume of a sph
   print("err = %.8E"%err)
 ```
 
-::
-  
+will return:
+
+```python  
   >>> Integrate the volume of a sphere with r=3.5...
   >>> val = 179.59438003
   >>> err = 1.99389816E-12
+```
 
 A simple hand calculation verifies this result.
 
@@ -277,21 +279,22 @@ A simple hand calculation verifies this result.
  Integration Example: Trapazoidal 
 .........................................................................
 
-Now, only very rarely will scientists (and even more rarely engineers) will truely 'know' the function that they wish to integrate.  Much more often we'll have piecewise data that we wish numerically integrate (ie sum an array y(x), biased by array x).  This can be done in SciPy through the ::
-trapz(...) function.  
-::
+Now, only very rarely will scientists (and even more rarely engineers) will 
+truely 'know' the function that they wish to integrate.  Much more often we'll 
+have piecewise data that we wish numerically integrate (ie sum an array y(x), 
+biased by array x).  This can be done in SciPy through the **trapz(...)** function.  
 
-  #!CodeExample
-  #!python
+```python
   y = range(0, 11)
   print("Trapazoidally integrate y = x on [0,10]...")
   val = scipy.integrate.trapz(y)
   print("val = %F"%val)
+```
 
-::
-
+```python
   >>> Trapazoidally integrate y = x on [0,10]...
   >>> val = 50.000000
+```
 
 The above takes a series of y-values that are implicitly spaced 1-unit apart in x and 'trapazoidally integrates' them.  Basically, just a sum.
 
