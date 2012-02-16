@@ -7,6 +7,7 @@ Welcome to the PyTrieste wiki!
 - [[Python 3: Flow Control|Python3-FlowControl]]
 - [[Python 4: Code Structure: Functions and Modules|Python4-FunctionsAndStandardModules]]
 - [[Python 5: Strings and File I/O|Python-5:-Strings-and-File-I-O]]
+- [[Python 6: Object oriented python|Python-6:-Object-oriented-programming]]
 - [[Python 7: SciPy|Python7-SciPy]]
 - [[Python 8: MatPlotLib|Python8-MatPlotLib]]
 - [[Python 9: NumPy|Python9-NumPy]]
