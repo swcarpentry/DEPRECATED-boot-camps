@@ -93,9 +93,7 @@ Variables
 
 Variables are names, while values are the data assigned to those names.
 
-It's important to note that a sinble
-
-
+...
 
 ----------------------------------------------------------------------
  Strings and Numbers 
@@ -107,7 +105,7 @@ It is really easy to make variables in python. For example, to create a string,
 
 ```python
 
-  > s = "Hello World!"
+  > s = "Hello World"
   > print s
 ```
 
