@@ -19,7 +19,7 @@ Standard Modules |Python4-FunctionsAndStandardModules]]
 Conditionals (if statements) are also really easy to use in python. Take a look 
 at the following examples:
 
-::
+```python
 
   i = 4
   sign = "zero"
@@ -31,6 +31,7 @@ at the following examples:
       print "Sign must be zero"
       print "Have a nice day"
   print sign
+```
 
 The behavior of this code snippet should be pretty clear, but there is something 
 peculiar. How does Python know where the if-statement ends? Other languages, 
