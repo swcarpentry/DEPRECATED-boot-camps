@@ -389,8 +389,7 @@ python it is extremely easy and intuitive to make a list of things, for example:
 Using lists is easy and intuitive. Notice that lists can contain objects of any 
 data type. Try entering the following lines. 
 
-::
-
+```python
   > mylist = [1,2,3,4]
   > mylist[2] = 1.0 + 2j # Modify an element
   > mylist.append("test") # Add an element to the end of a the list
@@ -403,6 +402,7 @@ data type. Try entering the following lines.
   
   > mylist = [2, 4, 6, 8, 10]
   > print mylist[1:4] # Prints a list containing elements 1 2 and 3 from mylist 
+```
 
   
 Remember that there is an element 0, so this prints [4, 6, 8]
