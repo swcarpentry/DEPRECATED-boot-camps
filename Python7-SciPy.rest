@@ -155,7 +155,7 @@ The above code is reproduced concisely in [attachment:PyBC_S7_special_functions.
 ----------------------------------------------------------------------
 
 Tools used to calculate numerical, definite integrals may be found in the 
-```integrate`` module.  There are two basic ways you can integrate in SciPy:
+**integrate** module.  There are two basic ways you can integrate in SciPy:
 
 #. Integrate a function, -or-
 #. Integrate piecewise data.
