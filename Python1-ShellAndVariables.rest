@@ -147,28 +147,27 @@ arbitrary large. In languages like C/C++ and FORTRAN integer variables can only
 store values up to a certain size. But entering and manipulating the following 
 forty digit number with iPython is no problem:
 
-::
-
+```python
   > i = 1234567890123456789012345678901234567890  
   > print i * 6
    7407407340740740734074074073407407407340
-
+```
 
   
 Operations in Python are defined by their type. For instance, look the difference between these operations:
 
-::
-
+```python
   > 1 + 3
     4
   > 1.0 + 3
     4.0  # This is a float
-  > "Hello " + "world!"
-    'Hello world!'
+  > "Hello " + "world"
+    'Hello world'
   > 1 + "Hello"
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   TypeError: unsupported operand type(s) for +: 'int' and 'str'
+```
 
 
 
