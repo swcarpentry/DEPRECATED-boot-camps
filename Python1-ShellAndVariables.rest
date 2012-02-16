@@ -35,13 +35,12 @@ that we will type commands directly into iPython. Once we start performing more
 complicated tasks we will start writing Python scripts and programs in a text 
 editor, outside of the interpreter. 
 
-In the python shell :
+To get to the python shell, type **python** into the terminal.
 
 ``` python 
 
-  $ python 
   > print 'Hello World'
-  Hello World! 
+  Hello World
   > exit()
 ```
 
