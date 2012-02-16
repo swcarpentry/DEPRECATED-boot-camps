@@ -38,18 +38,18 @@ editor, outside of the interpreter.
 To get to the python shell, type **python** into the terminal.
 
 ```python
-  > print "Hello World"
+  >>> print "Hello World"
   Hello World
-  > exit()
+  >>> exit()
 ```
 
 To get to the interactive python interpreter, a more sophisticated python shell, 
-type ipython into the terminal.
+type **ipython** into the terminal.
 
 ```python
-  > print "Hello World"
+  In [1]: print "Hello World"
   Hello World
-  > exit
+  In[2]: exit
 ```
 
 
