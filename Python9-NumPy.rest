@@ -2,7 +2,7 @@ ______________________________________________________________________
 Python 9 : NumPy 
 ______________________________________________________________________
 
-[[Back to MatPlotLib|Python8-MatPlotLib]]  - [[Forward to Home | Home]]
+[[Back to MatPlotLib|Python8-MatPlotLib]]  - [[Forward to Testing | Python-10-Testing-your-program]]
 
 ----
 
