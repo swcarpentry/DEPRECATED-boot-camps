@@ -40,9 +40,9 @@ In the python shell :
 
 ```python
     $ python 
-    >>> print "Hello World!"
+    print "Hello World!"
     Hello World! 
-    >>> exit()
+    exit()
 ```
 
 In the interactive python interpreter, a more sophisticated python shell:
