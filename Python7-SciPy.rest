@@ -224,7 +224,8 @@ More information on the justification of this integral may be found at [http://e
           return  scipy.sin(phi)
   
   print("Integrate the surface area of the unit sphere...")
-  val, err = scipy.integrate.dblquad(dA_Sphere, 0.0, 2.0*scipy.pi, lambda theta: 0.0,  lambda theta: scipy.pi )
+  val, err = scipy.integrate.dblquad(dA_Sphere, 0.0, 2.0*scipy.pi, 
+      lambda theta: 0.0,  lambda theta: scipy.pi )
   print("val = %.8F"%val)
   print("err = %.8E"%err)
 ```
@@ -252,18 +253,18 @@ tplquad( f(z, y, x) ).  Moreover, {{{z}}} has limits of integration define by su
 [[Image(trplquad.gif)]]
 
 To continue with the previous example, let's try integrating the volume of a sphere.  Take the radius here to be 3.5.
-::
 
-  #!CodeExample
-  #!python
+```python
   def dV_Sphere(phi, theta, r):
           return r * r * dA_Sphere(phi, theta)
   
   print("Integrate the volume of a sphere with r=3.5...")
-  val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
+  val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, 
+      lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
   print("val = %.8F"%val)
   print("err = %.8E"%err)
-  
+```
+
 ::
   
   >>> Integrate the volume of a sphere with r=3.5...
