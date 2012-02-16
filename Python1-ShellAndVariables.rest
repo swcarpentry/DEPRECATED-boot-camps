@@ -547,12 +547,13 @@ When you start using data types that are more complicated than numbers or
 strings, you'll encounter a seemingly annoying feature in Python that I want to 
 warn you about. Try the following example:
 
-::
+```python
 
   list1 = [1, 5, 9, 13]
   list2 = list1
   list2[0] = -1
   print list1, list2
+```
 
 
 What happens? You'll notice that modifying list2 also modifies list1! This is 
@@ -563,11 +564,12 @@ were dealing with simple numbers. This behavior can be very annoying and can
 lead to a lot of bugs, so be careful. We can force python to copy list1 as shown 
 in the example below:
 
-::
+```python
 
   > list1 = [1, 5, 9, 13]
   > list2 = list1[:] # <--- Notice the colon!
   > list2[0] = -1
   > print list1, list2
+```
 
 
