@@ -175,10 +175,10 @@ In the first two cases, addition between numbers meant that 1 was added to 3 usi
 
 One way to handle this is to explicitly convert the int into a string:
 
-::
-
+```python
   > str(1) + "Hello"
   '1Hello'
+```
 
 
 
@@ -188,20 +188,19 @@ that sometimes the names have leading and trailing spaces that we want to strip
 away. We can just use the `strip` string method to accomplish this. For example, 
 type the following into iPython:
 
-::
-
+```python
   > name = "   Milad    "
   > print name + "is here"
         Milad     is here
-
+```
 
   
 Now enter `name.strip()` instead of `name`:
 
-::
-  
+```python  
   > print name.strip() + " is here"
    Milad is here
+```
 
 
 
@@ -218,7 +217,7 @@ Importantly, python is a **dynamically typed** language. That is, variables in
 python which are initialized to a variable of one type can be re-assigned to a 
 variable of a different type. Try this:
 
-::
+```python
 
   > sillystring = "A string"
   > print type(sillystring)
@@ -226,6 +225,7 @@ variable of a different type. Try this:
   > sillystring = 98
   > print type(sillystring)
     <type 'int'>
+```
 
 
 This is an interesting feature. Can you think of ways it can be helpful? Are 
