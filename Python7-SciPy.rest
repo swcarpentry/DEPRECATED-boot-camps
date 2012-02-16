@@ -315,18 +315,16 @@ However, you can use the ```x= [0, 3,...]`` or ```dx = 3``` argument keywords to
   >>> val = 2667.500000
 ```
 
-::
-
-  #!CodeExample
-  #!python
+```python
   print("Trapazoidally integrate y = x^2 with dx = 0.5...")
   val = scipy.integrate.trapz(y, dx = 0.5)
   print("val = %F"%val)
+```
 
-::
-
+```python
   >>> Trapazoidally integrate y = x^2 with dx = 0.5...
   >>> val = 2667.500000
+```
  
 
 .........................................................................
