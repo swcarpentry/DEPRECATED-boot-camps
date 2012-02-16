@@ -373,7 +373,7 @@ The above code is reproduced concisely in [attachment:PyBC=S7=integrate.py].
 
 As you have seen, SciPy has some really neat functionality that comes stock. 
 Oddly, some of the best stuff is in the ```miscellaneous``` module accessed via 
-``` import scipy.misc```.  What follows is a brief explanation of the Pade Approximant (http://en.wikipedia.org/wiki/Padé_approximant) and how to utilize it in SciPy.
+**import scipy.misc**.  What follows is a brief explanation of the Pade Approximant (http://en.wikipedia.org/wiki/Padé_approximant) and how to utilize it in SciPy.
 
 Most people are familar with the polynomial expansions of a function:
 
