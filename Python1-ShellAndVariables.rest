@@ -37,6 +37,14 @@ editor, outside of the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
+```python
+
+  > reset                 # Clear everything
+  > import math as m      # Same as import math, except we are renaming the module m
+  > print m.sin(3)        # This is really handy if you have module names that are long
+```
+
+
 ``` python 
 > print "Hello World"
 Hello World
