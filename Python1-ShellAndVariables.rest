@@ -40,11 +40,13 @@ In the python shell :
 ::
 
   $ python 
+
   
 ```python 
 
-  > print "Hello World!"
+  > print 'Hello World!'
 ```
+
 
 ::
   Hello World! 
@@ -58,6 +60,7 @@ In the interactive python interpreter, a more sophisticated python shell:
   Hello World!
   > exit
 ```
+
 
 You can also put the commands in a **.py** file and execute that file in the terminal by 
 typing **python [filename]**
