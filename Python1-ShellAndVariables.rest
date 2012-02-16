@@ -196,8 +196,7 @@ type the following into iPython:
   
 Now enter `name.strip()` instead of `name`:
 
-```python  
-
+```python
   > print name.strip() + " is here"
    Milad is here
 ```
@@ -217,14 +216,14 @@ Importantly, python is a **dynamically typed** language. That is, variables in
 python which are initialized to a variable of one type can be re-assigned to a 
 variable of a different type. Try this:
 
-```python
+::
+
   > sillystring = "A string"
   > print type(sillystring)
     <type 'str'>
   > sillystring = 98
   > print type(sillystring)
     <type 'int'>
-```
 
 
 This is an interesting feature. Can you think of ways it can be helpful? Are 
