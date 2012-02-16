@@ -37,21 +37,21 @@ editor, outside of the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-``` python 
+```python 
 
-  > print 'Hello World'
+  > print "Hello World"
   Hello World
   > exit()
 ```
 
 
-In the interactive python interpreter, a more sophisticated python shell:
+To get to the interactive python interpreter, a more sophisticated python shell, 
+type ipython into the terminal.
 
 ```python
 
-  $ ipython
-  > print "Hello World!"
-  Hello World!
+  > print "Hello World"
+  Hello World
   > exit
 ```
 
