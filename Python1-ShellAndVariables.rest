@@ -510,13 +510,14 @@ There is one other compound data type - the tuple. Think of a tuple as a list
 that you can't change. The example below demonstrates how to create and use 
 tuples:
 
-::
+```python
 
   > (1,2,3,4) # Create a four element tuple
   > mytuple[2] = 4 # ERROR - tuples can't be modified
   > print mytuple[2], len(mytuple)
 
   > myonetuple = ("hello",) # Create a tuple containing only one element (note the trailing comma)
+```
 
 
 You might be asking yourself, why do we need tuples if we have lists? The answer 
