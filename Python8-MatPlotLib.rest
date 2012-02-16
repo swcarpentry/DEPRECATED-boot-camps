@@ -18,11 +18,10 @@ ______________________________________________________________________
 Do this while I talk.  If this is your first use of matplotlib (ever on this 
 machine), it will take a little longer starting up.
 
-::
+```python
 
-  #!CodeExample
-  #!python
   from matplotlib import pyplot
+```
 
 
 The ability to visually represent data is one of the more important tools to the 
@@ -74,9 +73,8 @@ When you go searching around the web for MPL help, you will find people
 importing pylab rather than matplotlib.pyplot.  pylab imports both pyplot and 
 numpy (and a few other things) together.
 
-::
+```python
 
-  #!python
   # <snip from pylab.py>
   from numpy import *
   from numpy.fft import *
@@ -89,22 +87,21 @@ numpy (and a few other things) together.
   import numpy as np
   import numpy.ma as ma
   # <end snip>
-
+```
 
 
 First things first.  Let's plot something.  Open up a file, copy, paste, 
 execute.
-::
 
-  #!CodeExample
-  #!python
+```python
+
   from matplotlib import pyplot as plt
   x = range(0,10)
   y = [val**2 for val in x]
   ax = plt.subplot(111)
   ax.plot(x,y)
   plt.show()
-  
+```  
 
 **Aside: Interactive plotting**
 
@@ -130,22 +127,18 @@ up your favorite text editor.
  * Plot on the axes
  * Show the figure
 
-::
+```python
 
-  #!CodeExample
-  #!python
   from matplotlib import pyplot as plt
   fig = plt.figure()
   ax = fig.add_subplot(111)
   ax.plot([1,2,3,4,5,6])
   plt.show()
-  
+```  
 
 **Aside: other, sometimes more convenient ways to get an axes.**
-::
+```python
 
-  #!CodeExample
-  #!python
   # Useful for figures composed of multiple subplots
   fig = plt.figure()
   ax1 = fig.add_subplot(211)
@@ -155,7 +148,7 @@ up your favorite text editor.
   
   # Useful for overlaying axes, sharing the x axis
   ax3 = plt.twinx(ax2)
-  
+```  
 
 Plot is pretty powerful, lets peruse the [http://matplotlib.sourceforge.net/ MPL 
 documentation].
@@ -177,15 +170,12 @@ MPL as all the usual types of plots
  log-linear, linear-log, log-log 
 .........................................................................
 
-::
+```python
 
-  #!CodeExample
-  #!python
   ax.semilogx(x,y)
   ax.semilogy(x,y)
   ax.loglog(x,y)
-
-
+```
 
 .........................................................................
  contour plots and pcolor 
@@ -195,10 +185,8 @@ Notice that for the z argument to pcolor is shorter by one in both directions.
 You should think of z as being defined zone centered.  If you forget to do so, 
 it will drop the last row and column.
 
-::
+```python
   
-  #!CodeExample
-  #!python
   from matplotlib import pyplot as plt
   import numpy as np
   
@@ -218,7 +206,7 @@ it will drop the last row and column.
   ax.clabel(con)
 
   plt.show()
-
+```
 
 ----------------------------------------------------------------------
  Random useful things 
@@ -233,13 +221,12 @@ it will drop the last row and column.
 !Matlab converts may have used this function to look at the structure of sparse 
 [http://www.merriam-webster.com/medical/matrixes matrixes].
 
-::
+```python
 
-  #!python
   n = 20
   f = diag(ones(n)) + diag(ones(n-1),1) + diag(ones(n-3),-3)
   spy(f)
-
+```
 
 .........................................................................
  Masked Arrays 
@@ -259,12 +246,10 @@ constructing masked arrays].
 
 Starting from the pcolor plot, add the following code after defining z and 
 before plotting things.
-::
 
-  #!python
+```python
   z = np.ma.masked_where( np.abs(y-x) < 0.2, z )
-
-
+```
 
 .........................................................................
  draw() vs show() 
@@ -320,10 +305,8 @@ Lets walk through the following code.
    [http://matplotlib.sourceforge.net/api/backend_bases_api.html?highlight=canvas#matplotlib.backend_bases.FigureCanvasBase.mpl_connect 
    supported events]
 
-::
+```python
 
-  #!CodeExample
-  #!python
   from matplotlib import pyplot as plt
   import numpy as np
   
@@ -379,7 +362,7 @@ Lets walk through the following code.
   
   if __name__ == "__main__":
       mplot = MovingPlot()
-  
+``` 
   
 ----------------------------------------------------------------------
  Image Manipulation 
@@ -393,7 +376,7 @@ subplots
  * an image of a generated array
  * a pcolor plot of the same data
 
-::
+```python
     
   #!CodeExample
   #!python
@@ -459,7 +442,7 @@ bottom left subplot is the anchor, 1 subplot shares the xaxis (top left).  1
 subplot shares the yaxis (bottom right).  1 subplot shares both axes (top 
 right).
 
-::
+```python
   
   #!CodeExample
   #!python
