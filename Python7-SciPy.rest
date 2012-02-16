@@ -293,20 +293,17 @@ biased by array x).  This can be done in SciPy through the **trapz(...)** functi
 
 will return:
 
-::
-
+```python
   >>> Trapazoidally integrate y = x on [0,10]...
   >>> val = 50.000000
+```
 
 The above takes a series of y-values that are implicitly spaced 1-unit apart in x and 'trapazoidally integrates' them.  Basically, just a sum.
 
-However, you can use the '::
-x=
-[0, 3,...]' or ' dx = 3' argument keywords to explicitly declare different spacings in x.  For example, with y = x^2^:
+However, you can use the ```x= [0, 3,...]`` or ```dx = 3``` argument keywords to explicitly declare different spacings in x.  For example, with y = x^2^:
+
 ::
 
-  #!CodeExample
-  #!python
   x = numpy.arange(0.0, 20.5, 0.5)
   y = x * x
   print("Trapazoidally integrate y = x^2 on [0,20] with half steps...")
