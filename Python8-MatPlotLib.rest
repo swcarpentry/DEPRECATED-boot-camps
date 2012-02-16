@@ -114,17 +114,18 @@ MPL plots are organized into figures, subplots and axes.
 
 [[Image(fig1.jpg)]]
 
- * figure
- * subplot
- * axes
+* figure
+* subplot
+* axes
 
 Lets make a plot.  Once we start generating data, plotting things, setting 
 xlabels and ylabels and titles and such, retyping everything is not fun.  Fire 
 up your favorite text editor.
- * Make a figure
- * Add a subplot to the figure, get an axes
- * Plot on the axes
- * Show the figure
+
+* Make a figure
+* Add a subplot to the figure, get an axes
+* Plot on the axes
+* Show the figure
 
 ```python
 
@@ -136,6 +137,7 @@ up your favorite text editor.
 ``` 
 
 **Aside: other, sometimes more convenient ways to get an axes.**
+
 ```python
 
   # Useful for figures composed of multiple subplots
