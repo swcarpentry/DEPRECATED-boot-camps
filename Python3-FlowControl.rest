@@ -19,7 +19,7 @@ Standard Modules |Python4-FunctionsAndStandardModules]]
 Conditionals (if statements) are also really easy to use in python. Take a look 
 at the following examples:
 
-```python
+::
 
   i = 4
   sign = "zero"
@@ -31,7 +31,6 @@ at the following examples:
       print "Sign must be zero"
       print "Have a nice day"
   print sign
-```
 
 The behavior of this code snippet should be pretty clear, but there is something 
 peculiar. How does Python know where the if-statement ends? Other languages, 
@@ -49,11 +48,10 @@ functions or classes.
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
 
-```python
+::
 
   i = 5
   sign = "positive" if i > 0 else "negative"
-```
 
 ----------------------------------------------------------------------
  Loops 
