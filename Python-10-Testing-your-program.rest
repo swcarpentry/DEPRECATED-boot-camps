@@ -205,35 +205,35 @@ But, sometimes it’s the case that your tests change the fixtures. If so, it’
   test3
   tearDown
 
-
+----------------------------------------------------------
 Python Nose
- 
+---------------------------------------------------------- 
 
 The testing framework we’ll discuss today is called nose, and comes packaged with the enthought python distribution that you’ve installed.
 
-Where is a nose test?
-Nose tests are files that begin with Test-, Test_, test-, or test_. Specifically, these satisfy the testMatch regular expression [Tt]est[-_]. You can also teach nose to find tests by declaring them in the unittest.TestCase subclasses chat you create in your code. You can also create test functions which are not unittest.TestCase subclasses if they are named with the configured testMatch regular expression.
+**Where is a nose test?**
+
+Nose tests are files that begin with Test-, Test_, test-, or test_. Specifically, these satisfy the testMatch regular expression [Tt]est[-_]. (You can also teach nose to find tests by declaring them in the unittest.TestCase subclasses chat you create in your code. You can also create test functions which are not unittest.TestCase subclasses if they are named with the configured testMatch regular expression.)
 
 Nose Test Syntax
 To write a nose test, we make assertions.
 
-?
-1
-2
-assert (ShouldBeTrue())
-assert (not ShouldNotBeTrue())
+::
+
+    assert (ShouldBeTrue())
+    assert (not ShouldNotBeTrue())
+
+
 In addition to assertions, in many test frameworks, there are expectations, etc.
 
-Add a test to our work
-Let’s together add a test to our work in the find_missing module.
+**Add a test to our work**
 
-To create tests, we’ll want to define the expected behaviors of the find missing module, as well as cases which might be boundary cases or exceptional cases.
+There are a few tests for the mean function that we listed in this lesson. What are some tests that should fail? Add at least three test cases to this set.
 
-We can test the whole module by testing the behaviors after the main() function has run.
+*Hint: think about what form your input could take and what you should do to handle it. Also, think about the type of the elements in the list. What should be done if you pass a list of integers? What if you pass a list of strings?*
 
-To get deeper, though, into the units of this code, we’ll need to test the find_files, found_missing, and fix_missing functions, at the very least.
+**Test Driven Development**
 
-Test Driven Development
 Some people develop code by writing the tests first.
 
 If you write your tests comprehensively enough, the expected behaviors that you define in your tests will be the necessary and sufficient set of behaviors your code must perform. Thus, if you write the tests first and program until the tests pass, you will have written exactly enough code to perform the behavior your want and no more. Furthermore, you will have been forced to write your code in a modular enough way to make testing easy now. This will translate into easier testing well into the future.
