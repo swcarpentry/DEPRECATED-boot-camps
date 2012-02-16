@@ -134,7 +134,7 @@ up your favorite text editor.
   ax = fig.add_subplot(111)
   ax.plot([1,2,3,4,5,6])
   plt.show()
-```  
+``` 
 
 **Aside: other, sometimes more convenient ways to get an axes.**
 ```python
