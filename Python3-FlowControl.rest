@@ -81,10 +81,11 @@ list, shifting every element down one.
 For loops in python operate a little differently from other languages. Lets 
 start with a simple example which prints all of the numbers from 0 to 9:
 
-::
+```python
 
   for i in range(10):
       print i
+```
 
 You may be wondering how this works. Start by using help(range) to see what the 
 range function does.
