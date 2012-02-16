@@ -112,8 +112,8 @@ The above code is reproduced concisely in [attachment:PyBC_S7_constants.py].
 SciPy Special Functions, walk before you run! 
 ----------------------------------------------------------------------
 
-Code that numerically approximates common (and some not-so-common) special functions can be found in '::
-scipy.special'.  Here you can find things like error functions, gamma functions, Legendre polynomials, etc.  But as a example let's focus on my favorites: the Bessel functions.
+Code that numerically approximates common (and some not-so-common) special 
+functions can be found in **scipy.special**.  Here you can find things like error functions, gamma functions, Legendre polynomials, etc.  But as a example let's focus on my favorites: the Bessel functions.
   
 
 ```python
