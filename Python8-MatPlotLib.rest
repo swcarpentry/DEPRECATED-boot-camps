@@ -156,10 +156,11 @@ documentation].
 
 Plot something.  Plot it again with a different character.  Change the color.  
 Attach a label and then display the label with a legend.  (ax.legend())
- * legend
- * colors
- * linestyles
- * kwargs !
+ 
+* legend
+* colors
+* linestyles
+* kwargs !
 
 ----------------------------------------------------------------------
  Other Types of Line Plots 
