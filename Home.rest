@@ -10,3 +10,4 @@ Welcome to the PyTrieste wiki!
 - [[Python 7: SciPy|Python7-SciPy]]
 - [[Python 8: MatPlotLib|Python8-MatPlotLib]]
 - [[Python 9: NumPy|Python9-NumPy]]
+- [[Python 10: Testing|Python-10-Testing-your-program]]
