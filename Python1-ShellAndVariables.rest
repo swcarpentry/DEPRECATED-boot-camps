@@ -491,12 +491,11 @@ Hands on example
 
 There are two methods to add element(s) to a list: append and update. Likewise, there are two methods to add element(s) to a set: add and update. What is the difference? 
 
-```python
+::
 
   > myList = [1,2,3]
   > myAppendedList = myList.append([4,5])
   > myUpdatedList = myList.update([4,5])
-```
 
 
 What is the difference between the appended list and the updated list? Why did this happen?
