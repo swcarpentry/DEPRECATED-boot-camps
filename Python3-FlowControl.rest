@@ -112,10 +112,11 @@ really used to iterate over sequences of things (they can be used for much more,
 but for now this definition will do). Try entering the following to see what 
 happens:
 
-::
+```python
 
   for c in ["one", 2, "three", 4, "five"]
       print c
+```
 
 
 this is equivalent to:
