@@ -6,6 +6,7 @@ Welcome to the PyTrieste wiki!
 - [[Python 2: Lists, dictionaries, sets, and tuples|Python2-ListsDictsSetsTuples]]
 - [[Python 3: Flow Control|Python3-FlowControl]]
 - [[Python 4: Code Structure: Functions and Modules|Python4-FunctionsAndStandardModules]]
+- [[Exercise Session 1 | ExerciseSession1-Basics]]
 - [[Python 5: Strings and File I/O|Python-5:-Strings-and-File-I-O]]
 - [[Python 6: Object oriented python|Python-6:-Object-oriented-programming]]
 - [[Python 7: SciPy|Python7-SciPy]]
