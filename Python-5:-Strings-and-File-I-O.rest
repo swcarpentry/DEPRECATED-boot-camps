@@ -7,6 +7,8 @@ Python 5: Strings and File I/O
 
 ----
 
+**Presented By : Tommy Guy**
+
 Lesson goals:
 
 1) Examine the string class in greater detail.

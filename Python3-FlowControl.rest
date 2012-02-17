@@ -2,16 +2,20 @@ ______________________________________________________________________
 Python 3 : Flow Control - Loops, Conditionals, etc.
 ______________________________________________________________________
 
-[[Back to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]] - [[Forward to Functions and 
-Standard Modules |Python4-FunctionsAndStandardModules]]
+[[Back to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]] 
+- [[Forward to Functions and Standard Modules 
+|Python4-FunctionsAndStandardModules]]
 
 ----
 
+**Presented By : Katy Huff**
+
 **Based on Lecture Materials By: Milad Fatenejad**
+
 
 ----------------------------------------------------------------------
  Conditionals 
-----------------------------------------------------------------------
+ ----------------------------------------------------------------------
 
 
 Conditionals (if statements) are also really easy to use in python. Take a look 
@@ -33,11 +37,11 @@ at the following examples:
 
 The behavior of this code snippet should be pretty clear, but there is something 
 peculiar. How does Python know where the if-statement ends?  Other languages, 
-like FORTRAN, MatLab, and C/C++ all have some way of delimiting blocks of code. 
+like FORTRAN, MatLab, and C/C++ all have some way of delimiting blocks of code.  
 For example, in MatLab you begin an if statement with the word "if" and you end 
 it with "end if". In C/C++ you delimit blocks with curly braces. Python uses 
 ''indentation'' to delimit code blocks. The indentation above is NOT just to 
-make things look pretty - it tells Python what the body of the if-statement is. 
+make things look pretty - it tells Python what the body of the if-statement is.  
 This is true when ever we create any code blocks, such as the bodies of loops, 
 functions or classes.
 
@@ -53,13 +57,15 @@ entering this into IPython:
 ```
 
 ----------------------------------------------------------------------
- Loops 
+ While Loops 
 ----------------------------------------------------------------------
 
-
 Lets start by looking at while loops since they function like while loops in 
-many other language. The example below takes a list of integers and computes the 
-product of each number in the list up to the -1 element. 
+many other languages. The example below takes a list of integers and computes 
+the product of each number in the list up to the -1 element. 
+
+A while loop will repeat the instructions within itself until the conditional 
+that defines it is no longer true.
 
 ```python
   mult = 1
@@ -71,11 +77,61 @@ product of each number in the list up to the -1 element.
   print mult
 ```
 
-Some new syntax has been introduced in this example. We begin the while loop on 
-line 3. Notice that instead of using the not-equals symbol, !=, we can simply 
-enter "is not" which is easier to read. On line 4, we compute the product of the 
-elements. On line 5, we use the `del` keyword to remove the first element of the 
-list, shifting every element down one.
+Some new syntax has been introduced in this example. 
+
+* On line 3 We begin the while loop.  Notice that instead of using the not-equals 
+  symbol, !=, we can simply enter "is not" which is easier to read. This while 
+  loop will execute until sequence[0]= -1 . That is, until deletes all of the 
+  entries of the sequence that come before -1.
+
+* On line 4, we compute the product of the elements just to make this more 
+  interesting. 
+
+* On line 5, we use the `del` keyword to remove the first element of the 
+  list, shifting every element down one.
+
+**Watch Out**  
+
+Since a while loop will continue until its conditional is no longer true, 
+a **poorly formed** while loop might repeat forever. For example : 
+
+
+```python
+  i=1
+  print "The wheels on the bus go round and "
+  while i is 1:
+    print "round, round and "
+  print "all day long."
+```
+
+Since the variable **i** never changes within the while loop, we can expect that 
+the conditional, **i=1** will remain true forever and the while loop will just 
+go round and round. (If you try this at home, please note that one way to 
+interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
+
+
+**********************************************************************
+Example : Infinite While Loop
+**********************************************************************
+
+Using the sequence example,
+
+```python
+  mult = 1
+  sequence = [1, 5, 7, 9, 3, -1, 5, 3]
+  while sequence[0] is not -1:
+      mult = mult * sequence[0]
+      del sequence[0]
+
+  print mult
+```
+
+Can you think of a sequence of numbers that would produce an infinite loop?
+
+
+----------------------------------------------------------------------
+ For Loops
+----------------------------------------------------------------------
 
 For loops in python operate a little differently from other languages. Lets 
 start with a simple example which prints all of the numbers from 0 to 9:

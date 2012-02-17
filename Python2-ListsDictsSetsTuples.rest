@@ -7,6 +7,8 @@ Python 2:   Lists, Dictionaries, Sets, Tuples
 
 ----
 
+**Presented By : Tommy Guy**
+
 **Based on lecture materials by Milad Fatenejad**
 
 ----------------------------------------------------

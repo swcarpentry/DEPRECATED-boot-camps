@@ -8,6 +8,8 @@ to SciPy | Python7-SciPy ]]
 
 ----
 
+**Presented By : Tommy Guy**
+
 
 .........................................................................
  Basic Classes 
