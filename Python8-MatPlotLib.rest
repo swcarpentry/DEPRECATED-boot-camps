@@ -112,7 +112,7 @@ have been warned.
 
 MPL plots are organized into figures, subplots and axes.
 
-[[Image(fig1.jpg)]]
+[[/images/fig1.jpg]]
 
 * figure
 * subplot
