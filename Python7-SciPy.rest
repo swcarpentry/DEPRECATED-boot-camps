@@ -106,7 +106,8 @@ c or the meter would have a measurement uncertainty involved.
 
 Check http://docs.scipy.org/doc/scipy/reference/constants.html for a complete constants listing.
 
-The above code is reproduced concisely in [attachment:PyBC_S7_constants.py].
+The above code is reproduced concisely in the constants.py file found in the 
+SciPy directory of your PyTrieste repository.
 
 ----------------------------------------------------------------------
 SciPy Special Functions, walk before you run! 
@@ -139,15 +140,14 @@ functions can be found in **scipy.special**.  Here you can find things like erro
   show()
 ```
   
-These 20-ish lines of code should produce [attachment:BesselFigure.png]: 
-
-[[Image(BesselFigure.png, 30%, left, top)]]
+These 20-ish lines of code should produce [[/images/BesselFigure.png]]: 
 
 Note that the figure that was created here is a reproduction of Figure 6.5.1 in ''Numerical Recipes'' by W. H. Press, et al... (http://www.nr.com/).
 
 Check out http://docs.scipy.org/doc/scipy/reference/special.html for a complete listing of special functions.
 
-The above code is reproduced concisely in [attachment:PyBC_S7_special_functions.py].
+The above code is reproduced concisely in PyBC_S7_special_functions.py which can 
+be found in the SciPy directory of your PyTrieste repository.
 
 
 ----------------------------------------------------------------------
@@ -367,7 +367,8 @@ print("you'll only have y(t= 10) = %F left."%vals[1][0])
 
 Check out http://docs.scipy.org/doc/scipy/reference/integrate.html for more information on integreation.
 
-The above code is reproduced concisely in [attachment:PyBC=S7=integrate.py].
+The above code is reproduced concisely in integrate.py, which can be found in 
+the SciPy direcotry of your PyTreiste repository.
 
 
 ----------------------------------------------------------------------
@@ -434,9 +435,7 @@ First let's take the case for where f(x) = e^x^.
   show()
 ```
 
-The above script [attachment:PyBC_S7_pade1.py] generates the following figure [attachment:PadeFigure1.png]
-
-[[Image(PadeFigure1.png, 30%)]]
+The above script, pade1.py, generates the following figure [[/images/PadeFigure1.png]]
 
 Now the gains from using the Pade approximant for an exponential here seem slight. This is because the original exponential expansion is rather well defined.  Still the Pade version in this case has two important advantages:
    1. The power series version of e^x^ would still require about twice as many terms to gain that slight increase in accuracy that the Pade gives.
@@ -480,7 +479,8 @@ However, Pade's real power can be seen when approximating a different function. 
   show()
 ```
  
-The above script [attachment:PyBC_S7_pade2.py] generates the following figure [attachment:PadeFigure2.png]
+The above script, pade2.py, generates the following figure 
+[[/images/PadeFigure2.png]]
 
 [[Image(PadeFigure2.png, 30%)]]
 
@@ -498,7 +498,7 @@ miscellaneous' module.
 
 First let's read in an image file.  For now make it a JPEG. From Wikipedia. Of a bunny. (http://en.wikipedia.org/wiki/File:JumpingRabbit.JPG)
 
-[[Image(image.jpg, 20%)]]
+[[/images/image.jpg]]
 
 ```python
   import scipy.misc
@@ -581,7 +581,7 @@ And then, we can rewrite the array to an image file.
 
 These functions produce the following image:
 
-[[Image(image1.jpg, 20%)]]
+[[/images/image1.jpg]]
 
 Because the array takes integer values from 0 - 255, we can easily define our own filters as well!  For instance, you could write a two-line function to inverse the image...
 
@@ -600,8 +600,9 @@ Because the array takes integer values from 0 - 255, we can easily define our ow
   
 Having this much fun, the rabbit becomes a twisted shade of its former self!
 
-[[Image(image2.jpg, 20%)]]
+[[/images image2.jpg]]
 
 Check out http://docs.scipy.org/doc/scipy/reference/misc.html for a complete listing of associated image functions.
 
-The code above can be found at [attachment:PyBC_S7_image_tricks.py].
+The code above can be found in the image_tricks.py file in the SciPy directory 
+of your repository..
