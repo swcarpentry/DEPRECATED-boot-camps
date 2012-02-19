@@ -392,7 +392,7 @@ subplots
       print "can't find bunny.png, trying to download"
       # the image probably doesn't exits
       url = 
-      'http://github.com/thehackerwithin/PyTrieste/images/bunny.png'
+      'http://github.com/thehackerwithin/PyTrieste.wiki/images/bunny.png'
       urllib.urlretrieve(url, filename='bunny.png')
       img = plt.imread('bunny.png')
   
