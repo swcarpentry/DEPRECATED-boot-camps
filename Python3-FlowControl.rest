@@ -40,7 +40,7 @@ peculiar. How does Python know where the if-statement ends?  Other languages,
 like FORTRAN, MatLab, and C/C++ all have some way of delimiting blocks of code.  
 For example, in MatLab you begin an if statement with the word "if" and you end 
 it with "end if". In C/C++ you delimit blocks with curly braces. Python uses 
-''indentation'' to delimit code blocks. The indentation above is NOT just to 
+''indentation'' to delimit code blocks. The **indentation** above is NOT just to 
 make things look pretty - it tells Python what the body of the if-statement is.  
 This is true when ever we create any code blocks, such as the bodies of loops, 
 functions or classes.
@@ -55,6 +55,8 @@ entering this into IPython:
   i = 5
   sign = "positive" if i > 0 else "negative"
 ```
+
+
 
 ----------------------------------------------------------------------
  While Loops 
@@ -98,16 +100,41 @@ a **poorly formed** while loop might repeat forever. For example :
 
 ```python
   i=1
-  print "The wheels on the bus go round and "
+  print "Well, there's egg and bacon, egg and spam, egg bacon and"
   while i is 1:
-    print "round, round and "
-  print "all day long."
+    print "spam "
+  print "or Lobster Thermidor a Crevette with a mornay sauce served in a 
+  Provencale manner with shallots and aubergines garnished with... "
 ```
 
 Since the variable **i** never changes within the while loop, we can expect that 
 the conditional, **i=1** will remain true forever and the while loop will just 
 go round and round. (If you try this at home, please note that one way to 
 interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
+
+
+To create nested if loops, the indentation (preferably two or four spaces) 
+should increase for each looping level.
+
+```python
+
+weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
+
+  tries=0
+  script=""
+  while tries < len(weapons) :
+      i=0
+      while i<tries :
+          script += weapons[i]
+          script += " and "
+          i+=1
+      script += weapons[tries]
+      script += ". "
+      if tries == len(weapons) - 1 :
+          script += " and nice red uniforms. Oh damn!"
+      tries +=1
+  print script
+```
 
 
 **********************************************************************
