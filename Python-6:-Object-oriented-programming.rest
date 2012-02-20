@@ -67,7 +67,7 @@ area_code().
   
   class PhoneNumber(object):
       """I am a phone number"""
-      
+
       def set_phone_number(self, phone_string):
           '''Sets the formatted phone number by cleaning the data.'''
           
@@ -168,6 +168,17 @@ built in python class "object."
 
 For example, let's say we we want to use international phone numbers. If we get a number without a country code, assume that the country code is 39 for Italy.
 
+::
+
+  class InternationalPhoneNumber:
+    ''' Hold an international phone number, which has an area code. '''
+
+    def __init__(self):
+        self._countryCode = '49'
+        self._phoneNumber = ''
+        
+    # todo: finish.
+    
 
 Python guidelines for code formatting and pythonic conventions on class 
 behavior, naming, etc.
