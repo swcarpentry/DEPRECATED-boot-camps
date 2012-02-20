@@ -16,8 +16,21 @@ github.com?
 
 GitHub is a site where many people store their open (and closed) source code 
 repositories. It provides tools for browsing, collaborating on and documenting 
-code.
+code. It is very similar to the [[ictp gforge portal| http://gforge.ictp.it]]. 
+GitHub, much like the ictp gforge portal and other forge hosting services 
+([[launchpad|https://launchpad.net]], [[bitbucket | https://bitbucket.org]], 
+[[googlecode | http://code.google.com]], [[sourceforge | 
+http://sourceforge.net]] etc.) provides : 
 
+- landing page support ([[my research is at cyclus.github.com | http://cyclus.github.com]]
+- wiki support
+- network graphs and time histories of commits
+- code browser with syntax highlighting
+- issue (ticket) tracking
+- user downloads
+- varying permissions for various groups of users
+- commit triggered mailing lists
+- other service hooks (twitter, etc.)
 
 Setting up github at first requires [[some setup | 
 http://help.github.com/set-up-git-redirect]].
