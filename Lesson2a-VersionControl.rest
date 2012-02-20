@@ -154,7 +154,7 @@ Science". You may call yours anything you like.
 
 ::
   
-  $ nano description
+  $ gedit description &
 
  
 ---------------------------------------------------------------------------------- 
@@ -174,7 +174,7 @@ Step 1 : Create a file to add to your repository.
 
 :: 
   
-  $ nano readme.rst
+  $ gedit readme.rst &
 
 Step 2 : Inform git that you would like to keep track of future changes in this file.
 

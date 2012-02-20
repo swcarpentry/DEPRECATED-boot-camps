@@ -67,11 +67,11 @@ essential.
 
 Another configuration step for some will be to set their favorite text editor as 
 git's text editor of choice. This is optional, since vi is usually the default, 
-but can be done with the following command (if you like **nano** for example):
+but can be done with the following command (if you like **gedit** for example):
 
 ::
 
-  $ git config --global core.editor nano
+  $ git config --global core.editor gedit
 
 
 ---------------------------------------------------------------------------------- 
@@ -259,8 +259,8 @@ changes.
   $ git branch development
   $ git checkout development
   Switched to branch 'development'
-  $ nano readme.rst
-  <edit the readme file and exit nano>
+  $ gedit readme.rst &
+  <edit the readme file and exit gedit>
   $ git commit -am "Changed the welcome message to ... "
 
 Step 2 : Mirror the remote upstream repository in your master branch by pulling 
