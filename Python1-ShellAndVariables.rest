@@ -1,8 +1,9 @@
 ______________________________________________________________________
  Python 1 : The Shell, Variables, and Basic Data Types 
-______________________________________________________________________
+ ______________________________________________________________________
 
-[[Back To Version Control|Lesson2a-VersionControl]] - [[Forward to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]
+[[Back To Version Control|Lesson2a-VersionControl]] - [[Forward to Lists, 
+dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]
 
 ----
 
@@ -17,23 +18,28 @@ What is Python ?
 
 Python is an interpreted (pre-compiled) language. Its simple, high level, human 
 readable interface speeds the programming process in exchange for some 
-computation time overhead.
+computation time overhead. Python is implemented mostly in the C programming 
+language, so, as python develops, it is increasingly possible to do everything 
+in Python that is possible in C. Python is also free and open source, so if you 
+find a bug or generate a useful module, the Python Software Foundation will 
+likely be happy to merge your changes into the language.
 
-During this session you are going to learn about some of the built-in Python 
-data types
-Built-in data types are the basic building blocks of Python 
-programs. They are really basic things like strings and numbers (either 
-integers, complex or floating point numbers). There are simple containers like 
-lists (think of lists as arrays or vectors), tuples and dictionaries. 
+During this session you are going to learn about some very basics about how to 
+execute python code as well as some examples of the built-in Python data types.
+
+Built-in data types are the basic building blocks of Python programs. They are 
+really basic things like strings and numbers (either integers, complex or 
+floating point numbers). There are simple containers like lists (think of lists 
+as arrays or vectors), tuples and dictionaries. 
 
 ----------------------------------------------------------------------
 Hello World
 ----------------------------------------------------------------------
 
-For this lesson, we will use python ''interactively''. This means 
-that we will type commands directly into iPython. Once we start performing more 
-complicated tasks we will start writing Python scripts and programs in a text 
-editor, outside of the interpreter. 
+First, we will use python ''interactively''. This means that we will type 
+commands directly into iPython. Once we start performing more complicated tasks 
+we will start writing Python scripts and programs in a text editor, outside of 
+the interpreter. 
 
 To get to the python shell, type **python** into the terminal.
 
@@ -52,12 +58,12 @@ type **ipython** into the terminal.
   In [2]: exit
 ```
 
-You can also put the commands in a **.py** file and execute that file in the terminal by 
-typing **python [filename]**
+You can also put the commands in a **.py** file and execute that file in the 
+terminal by typing **python [filename]**
 
 ::
 
-  $ nano myfile.py
+  $ gedit myfile.py &
   <edit myfile with the hello world program.>
   $ python myfile.py
   Hello World!
@@ -65,7 +71,7 @@ typing **python [filename]**
 
 ----------------------------------------------------------------------
  Turn off Autocall 
-----------------------------------------------------------------------
+ ----------------------------------------------------------------------
  
 
 Before we get started, I want you to enter the "%autocall" command into ipython 
@@ -88,8 +94,23 @@ Variables
 
 Variables are names, while values are the data assigned to those names.
 
-...
+......................................................................
+Questions : Variables and Values
+......................................................................
 
+In the code snippet :
+
+```python
+  > a=2
+  > b="string"
+  > c=a
+```
+
+- What is the value of the variable `c`?
+- What is the value of the variable b ?
+- What is the name given to the variable 2 ?
+
+(The last one is a trick, the value 2 has two names.)
 
 ----------------------------------------------------------------------
  Strings and Numbers 
@@ -114,8 +135,8 @@ see something like this:
 ```
 
 
-This tells us that `s` is of type **str** (i.e. that `s` is a string). 
-Making numeric variables is equally easy and intuitive. Try entering the following into 
+This tells us that `s` is of type **str** (i.e. that `s` is a string).  Making 
+numeric variables is equally easy and intuitive. Try entering the following into 
 IPython. Notice that the # symbol is used to start comments so everything after 
 the pound sign is ignored.
 
@@ -148,13 +169,13 @@ store values up to a certain size. But entering and manipulating the following
 forty digit number with iPython is no problem:
 
 ```python
-  > i = 1234567890123456789012345678901234567890  
-  > print i * 6
+  > i = 1234567890123456789012345678901234567890  print i * 6
    7407407340740740734074074073407407407340
 ```
 
   
-Operations in Python are defined by their type. For instance, look the difference between these operations:
+Operations in Python are defined by their type. For instance, look the 
+difference between these operations:
 
 ```python
   > 1 + 3
@@ -171,7 +192,12 @@ Operations in Python are defined by their type. For instance, look the differenc
 
 
 
-In the first two cases, addition between numbers meant that 1 was added to 3 using the standard type rules (float plus int = float). In the third case, the command was string addition, which concatenates two strings. The final case broke because an 'int' type can not be added to a 'str' type. This is because it's unclear how to interpret an int as a string: should it be the string representation, the ASCII character code, or something else entirely?
+In the first two cases, addition between numbers meant that 1 was added to 3 
+using the standard type rules (float plus int = float). In the third case, the 
+command was string addition, which concatenates two strings. The final case 
+broke because an 'int' type can not be added to a 'str' type. This is because 
+it's unclear how to interpret an int as a string: should it be the string 
+representation, the ASCII character code, or something else entirely?
 
 One way to handle this is to explicitly convert the int into a string:
 
@@ -221,13 +247,14 @@ Convenient, right? This is also true of many built in functions.
 Dynamic Typing
 ----------------------------------------------------------------------
 
-Importantly, python is a **dynamically typed** language. That is, variables in 
-python which are initialized to a variable of one type can be re-assigned to a 
+Importantly, python is a **dynamically typed** language. That is, an explicit 
+type is not needed when creating a variable. Also, this means that variables in 
+Python which are initialized to a variable of one type can be re-assigned to a 
 variable of a different type. Try this:
 
 ```python
 
-  > sillystring = "A string"
+  > sillystring = "What is the airspeed velocity of an unladen swallow?"
   > print type(sillystring)
     <type 'str'>
   > sillystring = 98
@@ -239,7 +266,7 @@ variable of a different type. Try this:
 This is an interesting feature. Can you think of ways it can be helpful? Are 
 there ways it might be troublesome? 
 
-What is should type of sillystring be after this :
+What is the type of sillystring be after this :
 
 ```python
 
@@ -247,10 +274,14 @@ What is should type of sillystring be after this :
 ```
 
 
-Importantly, values always have a type. The number 98 is an **int**. For this 
-number to be a float, it must be assigned as **98.0**. 
+**Aside: In Place Equivalency**
 
+What is the += syntax about? This is an in-place way to write ```sillystring = 
+sillystring + 0.1```. It is common in a number of languages.
 
+Importantly, though we do not explcity state them, variables always have exactly 
+one type. The number 98 is an **int**. For the variable holding this value to be 
+treated as  a float, it must be assigned as **98.0**. 
 
 ......................................................................
 Questions : Dynamic Typing
@@ -258,6 +289,16 @@ Questions : Dynamic Typing
 
 Imagine that I first assign :
 
+```python
+
+  > a=2
+```
+
+Then, I assign : 
+
+```python
+
+  > a="I am the walrus"
 
 What has happened to the memory that was holding the number 2??
 
