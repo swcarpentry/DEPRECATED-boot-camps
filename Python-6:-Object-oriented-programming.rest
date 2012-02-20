@@ -97,17 +97,21 @@ area_code().
 Usually you want to create an object with a set of initial values for things.  
 Perhaps an object needs certain information to be created.  For this you write a 
 "constructor."  In python, constructors are just methods with a special name: 
-!__init!__.  !MyClass(stuff) -> !__init!__(self, stuff).  
+
+::
+
+  class MyClass(object):
+    def __init__(self):
+        ''' Initialize things '''
 
 **Aside: Magic functions**
 
 Methods with leading and trailing double underscores are "magic functions" in 
-python.  If you go to the [Session09 Advanced Python] breakout session you will 
-learn more about them.
-  * Iteration (for x in sequence) uses !__next!__
-  * Slicing ie brackets) (a[1:2]) uses !__get!__
-  * Calling ie parentheses (a(3)) uses !__call!__
-  * Help uses !__doc!__
+python.  
+  * Iteration (for x in sequence) uses __next__
+  * Slicing ie brackets) (a[1:2]) uses __get__
+  * Calling ie parentheses (a(3)) uses __call__
+  * Help uses __doc__
 
 
 Convert your set_number function to be a constructor.
