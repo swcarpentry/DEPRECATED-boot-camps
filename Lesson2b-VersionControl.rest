@@ -22,7 +22,8 @@ GitHub, much like the ictp gforge portal and other forge hosting services
 [[googlecode | http://code.google.com]], [[sourceforge | 
 http://sourceforge.net]] etc.) provides : 
 
-- landing page support ([[my research is at cyclus.github.com | http://cyclus.github.com]]
+- landing page support ([[my research is at cyclus.github.com | 
+  http://cyclus.github.com]])
 - wiki support
 - network graphs and time histories of commits
 - code browser with syntax highlighting
