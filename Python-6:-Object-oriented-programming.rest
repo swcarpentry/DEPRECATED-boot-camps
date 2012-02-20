@@ -69,8 +69,7 @@ area_code().
       """I am a phone number"""
       
       def set_phone_number(self, phone_string):
-          """format_phone_number formats a string in the format 'xxx-xxx-xxxx'
-      to 'xxx-xxx-xxxx'"""
+          '''Sets the formatted phone number by cleaning the data.'''
           
           formatted_string = ''
           # bonus: the next line is equivalent to the following for loop.
@@ -108,13 +107,14 @@ Perhaps an object needs certain information to be created.  For this you write a
 
 Methods with leading and trailing double underscores are "magic functions" in 
 python.  
-  * Iteration (for x in sequence) uses __next__
-  * Slicing ie brackets) (a[1:2]) uses __get__
-  * Calling ie parentheses (a(3)) uses __call__
-  * Help uses __doc__
+
+- Iteration (for x in sequence) uses __next__
+- Slicing ie brackets) (a[1:2]) uses __get__
+- Calling ie parentheses (a(3)) uses __call__
+- Help uses __doc__
 
 
-Convert your set_number function to be a constructor.
+*Convert your set_number function to be a constructor.*
 
 
 **Aside: Old vs New Style Classes**
@@ -130,8 +130,6 @@ typing system.
 
 ::
 
-  #!CodeExample
-  #!python
   class OldStyleClass: # don't use this one
       def __init__(self):
           print "Old Style"
@@ -167,6 +165,9 @@ If you want a to create a Class that behaves mostly like another class, you
 should not have to copy code.  What you do is subclass and change the things 
 that need changing.  When we created classes we were already subclassing the 
 built in python class "object."
+
+For example, let's say we we want to use international phone numbers. If we get a number without a country code, assume that the country code is 39 for Italy.
+
 
 Python guidelines for code formatting and pythonic conventions on class 
 behavior, naming, etc.
