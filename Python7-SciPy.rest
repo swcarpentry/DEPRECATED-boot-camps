@@ -22,8 +22,11 @@ things.'
 
 The presentation on SciPy will follow five sections:
 
-#. SciPy Constants, #. Special Functions, #. Integration & ODEs, #. Pade
-Approximates, #. and Image Tricks.
+#. SciPy Constants, 
+#. Special Functions,
+#. Integration & ODEs, 
+#. Pade Approximates, 
+#. and Image Tricks.
 
 In general, you can grab SciPy functionality via
 
