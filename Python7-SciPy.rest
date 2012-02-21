@@ -34,7 +34,6 @@ In general, you can grab SciPy functionality via
 
   import scipy 
 
-```
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
 
@@ -59,6 +58,8 @@ What you get is (from http://docs.scipy.org/doc/scipy/reference/):
 -- Image Array Manipulation and Convolution (**scipy.stsci**)
 -- C/C++ integration (**scipy.weave**)
 
+```
+
 
 ---------------------------------------------------------------------- 
 SciPy Constants, crawl before you walk!
@@ -82,12 +83,10 @@ The following, for example:
 
 will return 
   
-```python 
-
+```python
   >>> SciPy thinks that pi = 3.1415926535897931 
   >>> While math thinks that pi = 3.1415926535897931 
   >>> SciPy also thinks that the speed of light is c = 299792458.0 
-
 ```
 
 However, the real value of SciPy Constants is its enormous physical constant
