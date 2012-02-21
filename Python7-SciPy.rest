@@ -31,9 +31,10 @@ The presentation on SciPy will follow five sections:
 In general, you can grab SciPy functionality via
 
 ```python 
-  import scipy 
-```
 
+  import scipy 
+
+```
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
 -- Clustering package (**scipy.cluster**)
@@ -161,7 +162,7 @@ let's focus on my favorites: the Bessel functions.
   
   show() 
 ```
-  
+
 These 20-ish lines of code should produce :
 
 [[/images/BesselFigure.png]] 
@@ -297,8 +298,7 @@ To continue with the previous example, let's try integrating the volume of a
 sphere.  Take the radius here to be 3.5.
 
 ```python
-  def dV_Sphere(phi, theta, r):
-          return r * r * dA_Sphere(phi, theta)
+  def dV_Sphere(phi, theta, r): return r * r * dA_Sphere(phi, theta)
   
   print("Integrate the volume of a sphere with r=3.5...")
   val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
