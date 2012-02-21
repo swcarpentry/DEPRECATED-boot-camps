@@ -151,7 +151,8 @@ let's focus on my favorites: the Bessel functions.
   
 
 ```python 
-  from scipy.special import * from pylab import *
+  from scipy.special import * 
+  from pylab import *
   
   x = arange(0.0, 10.1, 0.1)
   
