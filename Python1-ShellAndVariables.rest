@@ -433,10 +433,9 @@ functions to figure out how to do the following using either one function or one
 method call:
 
 * Take the absolute value of the number -1.4
-* Take the string "a MaN and His DOG" and create the string "A man and his 
-    dog"
+* Begin with the string "a MaN and His DOG" and create the string "A man and his dog"
 * Return the position of the character 'e' in the string "my test string" (The 
-    answer is 4, since `m` is  is at position 0 not position 1)
+  answer is 4, since `m` is  is at position 0 not position 1)
 
 
 
