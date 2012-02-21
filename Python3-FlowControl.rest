@@ -38,8 +38,25 @@ The code should paste and execute in iPython.
 ----------------------------------------------------------------------
 
 
+A conditional (if statement) is some statement that in general says : "When some 
+boolean is true, do the following. Elsewise, do this other thing."
+
+Many equivalence test statements exist in Python:
+
+```python
+  i=1
+  j=2
+  i==j # i is equal to j : FALSE
+  i<j  # i is less than j
+  i<=j # i is less than or equal to j : TRUE
+  i>j  # i is greater than j
+  i>=j # i is greater than or equal to j : FALSE
+  i!=j # i is not equal to j : TRUE
+```
+
+
 Conditionals (if statements) are also really easy to use in python. Take a look 
-at the following examples:
+at the following example:
 
 ```python
 
