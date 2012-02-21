@@ -251,7 +251,7 @@ need to use the **dblquad( f(y,x), ...)** function instead of simply **quad(
 f(x), ...)**.   Because a picture is worth 10^3 words, SciPy computes the
 right-hand side of the following equation:
 
-[[/images/dblquad.gif]]
+[[/images/dblquad.png]]
 
 More information on the justification of this integral may be found at
 [http://en.wikipedia.org/wiki/Order_of_integration_(calculus)].  For example,
@@ -296,7 +296,7 @@ using **tplquad( f(z, y, x) )**.  Moreover, **z** has limits of integration
 defined by surfaces give as functions **[q(x,y), r(x,y)]**.  Thus, 
 **tplquad(...)** integrates the right-hand side of : 
 
-[[/images/trplquad.gif]]
+[[/images/trplquad.png]]
 
 To continue with the previous example, let's try integrating the volume of a 
 sphere.  Take the radius here to be 3.5.
