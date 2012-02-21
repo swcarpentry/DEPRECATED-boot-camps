@@ -301,8 +301,7 @@ defined by surfaces give as functions **[q(x,y), r(x,y)]**.  Thus,
 To continue with the previous example, let's try integrating the volume of a 
 sphere.  Take the radius here to be 3.5.
 
-::
-
+```python
   def dV_Sphere(phi, theta, r): 
       return r * r * dA_Sphere(phi, theta)
   
