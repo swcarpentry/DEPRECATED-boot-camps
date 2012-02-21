@@ -70,23 +70,17 @@ terminal by typing **python [filename]**
 
 
 ----------------------------------------------------------------------
- Turn off Autocall 
+ Pasting into iPython 
 ----------------------------------------------------------------------
  
+To paste text from another application (i.e. the internet browser) into iPython 
+:
 
-Before we get started, I want you to enter the "%autocall" command into ipython 
-to disable the autocall feature:
+#. select text from the wiki
+#. copy with **ctrl+c**
+#. in iPython, type **%paste**
 
-```python
-  > %autocall
-    Automatic calling is: OFF
-```
-
-
-You should see the message that automatic calling is off. Automatic calling is a 
-feature that may prevent you from copying and pasting code snippets into 
-ipython, so just turn it off with this simple command when you start up ipython. 
-
+The code should paste and execute in iPython.
 
 ----------------------------------------------------------------------
 Variables
