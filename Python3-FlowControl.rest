@@ -227,7 +227,8 @@ Importantly, you don't have to use the words key and value. That's just what
 will fill those variables. Here, we rewrite the previous loop using this clever 
 syntax.
 
-```python
+::
+
   italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
   argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
   india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
@@ -237,7 +238,6 @@ syntax.
       print nation + " : "
       for city in cities :
           print "  " + city 
-```
 
 
 ----------------------------------------------------------------------
