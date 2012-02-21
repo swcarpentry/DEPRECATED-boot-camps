@@ -299,7 +299,8 @@ defined by surfaces give as functions **[q(x,y), r(x,y)]**.  Thus,
 To continue with the previous example, let's try integrating the volume of a 
 sphere.  Take the radius here to be 3.5.
 
-```python
+::
+
   def dV_Sphere(phi, theta, r): 
       return r * r * dA_Sphere(phi, theta)
   
@@ -307,7 +308,6 @@ sphere.  Take the radius here to be 3.5.
   val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
   print("val = %.8F"%val)
   print("err = %.8E"%err)
-```
 
 will return:
 
