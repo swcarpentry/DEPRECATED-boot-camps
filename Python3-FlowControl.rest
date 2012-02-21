@@ -13,6 +13,26 @@ ______________________________________________________________________
 **Based on Lecture Materials By: Milad Fatenejad**
 
 
+
+
+----------------------------------------------------------------------
+ Pasting into iPython 
+----------------------------------------------------------------------
+  
+This part of the lesson includes a lot of text, but it will be useful to run 
+it yourself in iPython. 
+  
+To paste text from another application (i.e. these lecture notes) into 
+iPython :
+
+#. select text from the wiki
+#. copy with **ctrl+c**
+#. in iPython, type **%paste**
+
+The code should paste and execute in iPython.
+
+
+
 ----------------------------------------------------------------------
  Conditionals 
 ----------------------------------------------------------------------
