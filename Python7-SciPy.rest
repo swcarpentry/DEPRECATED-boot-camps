@@ -71,7 +71,8 @@ given as module attributes.
 The following, for example:
 
 ```python 
-  import scipy.constants import math
+  import scipy.constants 
+  import math
   
   print("SciPy thinks that pi = %.16f"%scipy.constants.pi) 
   print("While math thinks that pi = %.16f"%math.pi) 
