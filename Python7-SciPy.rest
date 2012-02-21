@@ -308,7 +308,8 @@ sphere.  Take the radius here to be 3.5.
       return r * r * dA_Sphere(phi, theta)
   
   print("Integrate the volume of a sphere with r=3.5...")
-  val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
+  val, err = scipy.integrate.tplquad(dV_Sphere, 0.0, 3.5, lambda r: 0.0, 
+      lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
   print("val = %.8F"%val)
   print("err = %.8E"%err)
 
