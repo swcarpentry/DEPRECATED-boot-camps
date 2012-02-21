@@ -119,8 +119,8 @@ constants listing.
 The above code is reproduced concisely in the constants.py file found in the
 SciPy directory of your PyTrieste repository.
 
----------------------------------------------------------------------- SciPy
-Special Functions, walk before you run!
+---------------------------------------------------------------------- 
+SciPy Special Functions, walk before you run!
 ----------------------------------------------------------------------
 
 Code that numerically approximates common (and some not-so-common) special
@@ -157,8 +157,8 @@ The above code is reproduced concisely in special_functions.py which can be
 found in the SciPy directory of your PyTrieste repository.
 
 
----------------------------------------------------------------------- SciPy
-Integration, run before you glide!
+---------------------------------------------------------------------- 
+SciPy Integration, run before you glide!
 ----------------------------------------------------------------------
 
 Tools used to calculate numerical, definite integrals may be found in the
