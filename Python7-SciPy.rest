@@ -206,7 +206,8 @@ The simplest way to compute a functions definite integral is via the
   import scipy.special
   import numpy
   
-  def CrazyFunc(x): return (scipy.special.i1(x) - 1)**3
+  def CrazyFunc(x): 
+      return (scipy.special.i1(x) - 1)**3
   
   print("Try integrating CrazyFunc on the range [-5, 10]...")
   
@@ -258,7 +259,8 @@ let's try to integrate the surface area of a unit sphere:
 
 ```python
   
-  def dA_Sphere(phi, theta): return  scipy.sin(phi)
+  def dA_Sphere(phi, theta): 
+      return  scipy.sin(phi)
   
   print("Integrate the surface area of the unit sphere...") 
   val, err = scipy.integrate.dblquad(dA_Sphere, 0.0, 2.0*scipy.pi, lambda theta: 0.0, lambda theta: scipy.pi ) i
@@ -458,7 +460,7 @@ First let's take the case for where f(x) = e^x.
   #p and q are of numpy's polynomial class
   #So the Pade approximation is given by 
   def PadeAppx(x):
-          return p(x) / q(x)
+      return p(x) / q(x)
   
   #Let's test it...
   x = arange(0.0, 3.1, 0.1)
