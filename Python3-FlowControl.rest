@@ -31,6 +31,8 @@ iPython :
 
 The code should paste and execute in iPython.
 
+If you also type %autocall to turn autocall OFF, you may be able to paste with 
+**ctrl+v** though this won't work with all ipython builds.
 
 
 ----------------------------------------------------------------------
