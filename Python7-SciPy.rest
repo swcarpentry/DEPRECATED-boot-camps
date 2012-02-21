@@ -598,7 +598,7 @@ Because the array takes integer values from 0 - 255, we can easily define our ow
   
 Having this much fun, the rabbit becomes a twisted shade of its former self!
 
-[[/images image2.jpg]]
+[[/images/image2.jpg]]
 
 Check out http://docs.scipy.org/doc/scipy/reference/misc.html for a complete listing of associated image functions.
 
