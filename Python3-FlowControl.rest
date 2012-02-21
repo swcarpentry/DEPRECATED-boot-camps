@@ -180,7 +180,7 @@ happens:
 
 ```python
 
-  for c in ["one", 2, "three", 4, "five"]
+  for c in ["one", 2, "three", 4, "five"]:
       print c
 ```
 
