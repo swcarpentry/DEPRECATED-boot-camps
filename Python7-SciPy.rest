@@ -30,7 +30,9 @@ The presentation on SciPy will follow five sections:
 
 In general, you can grab SciPy functionality via
 
-```python import scipy ```
+```python 
+  import scipy 
+```
 
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
