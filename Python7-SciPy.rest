@@ -294,7 +294,7 @@ using **tplquad( f(z, y, x) )**.  Moreover, **z** has limits of integration
 defined by surfaces give as functions **[q(x,y), r(x,y)]**.  Thus, 
 **tplquad(...)** integrates the right-hand side of : 
 
-[[/images/tplquad.gif]]
+[[/images/trplquad.gif]]
 
 To continue with the previous example, let's try integrating the volume of a 
 sphere.  Take the radius here to be 3.5.
