@@ -264,7 +264,7 @@ let's try to integrate the surface area of a unit sphere:
       return  scipy.sin(phi)
   
   print("Integrate the surface area of the unit sphere...") 
-  val, err = scipy.integrate.dblquad(dA_Sphere, 0.0, 2.0*scipy.pi, lambda theta: 0.0, lambda theta: scipy.pi ) i
+  val, err = scipy.integrate.dblquad(dA_Sphere, 0.0, 2.0*scipy.pi, lambda theta: 0.0, lambda theta: scipy.pi ) 
   print("val = %.8F"%val) 
   print("err = %.8E"%err) 
 ```
