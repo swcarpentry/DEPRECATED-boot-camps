@@ -72,7 +72,7 @@ area_code().
 
       def setWidth(self, w):
            self._width = w
-           self._data = [0] * (self._width * self._height)
+           self.reinit()
 
       def reinit(self):
            self._data = [0] * (self._width * self._height)
@@ -198,27 +198,14 @@ For example, let's say you want to write a sparse matrix class, which means that
     class SparseMatrix(object):
       """I am a matrix of real numbers"""
 
-      self._width = 10
-      self._height = 10
-      self._data = [0] * (self._width * self._height)
-
-      def setWidth(self, w):
-           self._width = w
-           self._data = [0] * (self._width * self._height)
+      self._data = {}  # A dictionary with a tuple -> value
 
       def reinit(self):
-           self._data = [0] * (self._width * self._height)
-
-      def setHeight(self, h):
-           self._height = h
-           self.reinit()
+           self._data = {}
 
       def setValue(self,i,j, value):
-         if i < self._width and j < self._height:   
-             self._data[i * self._width + j] = value
-         else:
-             raise Exception("Out of range")
-
+         self._data[(i,j)] = value
+         
       def multiply(self, otherMatrix):
          ''' Perform matrix multiplication and return a new matrix.
          The new matrix is on the left. '''
@@ -235,7 +222,7 @@ For example, let's say you want to write a sparse matrix class, which means that
          invertedMatrix.setHeight(self._height)
          invertedMatrix.setWidth(self._height)
     
-
+The SparseMatrix object is a Matrix but the inv, multiply, and reinit methods are defined in the *super class* Matrix. 
 
 Python guidelines for code formatting and pythonic conventions on class 
 behavior, naming, etc.
