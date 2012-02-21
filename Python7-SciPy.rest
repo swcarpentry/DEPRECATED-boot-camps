@@ -71,7 +71,7 @@ given as module attributes.
 
 The following, for example:
 
-```python 
+```python
   import scipy.constants 
   import math
   
@@ -482,7 +482,9 @@ First let's take the case for where f(x) = e^x.
   show()
 ```
 
-The above script, pade1.py, generates the following figure [[/images/PadeFigure1.png]]
+The above script, pade1.py, generates the following figure :
+
+[[/images/PadeFigure1.png]]
 
 Now the gains from using the Pade approximant for an exponential here seem slight. This is because the original exponential expansion is rather well defined.  Still the Pade version in this case has two important advantages:
    1. The power series version of e^x would still require about twice as many terms to gain that slight increase in accuracy that the Pade gives.
