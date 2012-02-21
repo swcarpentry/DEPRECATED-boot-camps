@@ -116,9 +116,7 @@ To create nested if loops, the indentation (preferably two or four spaces)
 should increase for each looping level.
 
 ```python
-
-weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
-
+  weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
   tries=0
   script=""
   while tries < len(weapons) :
