@@ -310,6 +310,7 @@ sphere.  Take the radius here to be 3.5.
       lambda r: 2.0*scipy.pi, lambda x, y: 0.0, lambda x, y: scipy.pi)
   print("val = %.8F"%val)
   print("err = %.8E"%err)
+```
 
 will return:
 
