@@ -61,8 +61,8 @@ python. To check whether an object is contained in a list :
 ```python
   beatle="John"
   beatles=["George", "Ringo","John", "Paul"]
-  beatle in beatles # is John one of the beatles? : TRUE
-  "Katy" not in beatles # this is also TRUE. 
+  print beatle in beatles # is John one of the beatles? : TRUE
+  print "Katy" not in beatles # this is also TRUE. 
 ```
 
 
