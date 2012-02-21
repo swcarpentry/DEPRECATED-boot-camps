@@ -1,6 +1,6 @@
 ______________________________________________________________________
  Python 1 : The Shell, Variables, and Basic Data Types 
- ______________________________________________________________________
+______________________________________________________________________
 
 [[Back To Version Control|Lesson2a-VersionControl]] - [[Forward to Lists, 
 dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]
@@ -71,7 +71,7 @@ terminal by typing **python [filename]**
 
 ----------------------------------------------------------------------
  Turn off Autocall 
- ----------------------------------------------------------------------
+----------------------------------------------------------------------
  
 
 Before we get started, I want you to enter the "%autocall" command into ipython 
