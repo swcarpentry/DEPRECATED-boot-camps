@@ -37,6 +37,7 @@ In general, you can grab SciPy functionality via
 ```
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
+
 -- Clustering package (**scipy.cluster**)
 -- Constants (**scipy.constants**)
 -- Fourier transforms (**scipy.fftpack**)
