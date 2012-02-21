@@ -135,26 +135,6 @@ weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..
   print script
 ```
 
-
-**********************************************************************
-Example : Infinite While Loop
-**********************************************************************
-
-Using the sequence example,
-
-```python
-  mult = 1
-  sequence = [1, 5, 7, 9, 3, -1, 5, 3]
-  while sequence[0] is not -1:
-      mult = mult * sequence[0]
-      del sequence[0]
-
-  print mult
-```
-
-Can you think of a sequence of numbers that would produce an infinite loop?
-
-
 ----------------------------------------------------------------------
  For Loops
 ----------------------------------------------------------------------
