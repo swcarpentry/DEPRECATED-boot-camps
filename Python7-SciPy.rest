@@ -243,18 +243,17 @@ More information on the justification of this integral may be found at [http://e
 ```
 
 There are a couple of subtleties here.  First is that the function you are 
-integrating over is defined as ```f(y,x)``` and NOT the more standard ``` 
-f(x,y)```.  Moreover, while {{{x}}}'s limits of integration are given directly {{{[0, 2*pi]}}}, {{{y}}}'s limits have to be functions {{{[g(x), h(x)]}}} (given by the '{{{lambda}}}s' here).  This method of doing double integrals allows for {{{y}}} to have a more complicated edge in {{{x}}} than  a simple point.  This is great for some functions  but a little annoying for simple integrations.  In any event, the above integral computes the surface are of a unit sphere to be {{{4*pi}}} to within floating point error. 
+integrating over is defined as **f(y,x)** and NOT the more standard **f(x,y)**.  Moreover, while **x**'s limits of integration are given directly **[0, 2*pi]**, **y**'s limits have to be functions **[g(x), h(x)]** (given by the 'lambdas' here).  This method of doing double integrals allows for **y** to have a more complicated edge in **x** than  a simple point.  This is great for some functions  but a little annoying for simple integrations.  In any event, the above integral computes the surface are of a unit sphere to be **4*pi** to within floating point error. 
 
 .........................................................................
  Integration Example: 3D 
 .........................................................................
 
 Three dimensional integration is more similar to 2D than 1D.  Once again, we 
-define our function variables in reverse order, ``` f(z, y, x)```, and integrate 
-using ``` tplquad( f(z, y, x) )```.  Moreover, {{{z}}} has limits of integration define by surfaces give as functions {{{[q(x,y), r(x,y)]}}}.  Thus, {{{tplquad(...)}}} integrates the right-hand side of...
+define our function variables in reverse order, **f(z, y, x)**, and integrate 
+using **tplquad( f(z, y, x) )**.  Moreover, **z** has limits of integration define by surfaces give as functions **[q(x,y), r(x,y)]**.  Thus, **tplquad(...)** integrates the right-hand side of...
 
-[[/images/trplquad.gif]]
+[[/images/tplquad.gif]]
 
 To continue with the previous example, let's try integrating the volume of a sphere.  Take the radius here to be 3.5.
 

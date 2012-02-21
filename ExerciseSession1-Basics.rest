@@ -39,11 +39,10 @@ directory and should all have the extension **.txt**.
    ( hint: import os, glob ). 
 
 #. Create a function that, given a line from a file, returns true if that line 
-   contains a question without a response and false otherwise.
+   contains a question with an N response and false otherwise.
 
-#. Create a function that, given the filename and the line that is missing a response, fixes the 
-   missing entry by appending that line with a default answer of 0, gender N, 
-   or Jan 1, 1970).
+#. Create a function that, given the filename and the line that has a missing response, fixes the 
+   missing entry by appending that line with a default answer of gender M.
 
 #. Use these functions together (probably within the main function) to create a loop that, 
    for each file in the file list, reads each line, determines whether it is 
