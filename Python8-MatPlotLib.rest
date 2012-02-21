@@ -34,6 +34,10 @@ own words, MatPlotLib is
   shell (ala MatLab or mathematica), web application servers, and six graphical 
   user interface toolkits."
 
+Put your seatbelts on and see what matplotlib can do :
+
+[[the gallery | http://matplotlib.sourceforge.net/gallery.html]]
+
 
 .........................................................................
  pyplot, pylab and matplotlib.  numpy, MatLab and more...  
