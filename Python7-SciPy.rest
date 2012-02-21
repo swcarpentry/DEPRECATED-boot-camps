@@ -69,19 +69,23 @@ given as module attributes.
 
 The following, for example:
 
-```python import scipy.constants import math
+```python 
+  import scipy.constants import math
   
   print("SciPy thinks that pi = %.16f"%scipy.constants.pi) 
   print("While math thinks that pi = %.16f"%math.pi) 
-  print("SciPy also thinks that the speed of light is c = %.1F"%scipy.constants.c) ```
+  print("SciPy also thinks that the speed of light is c = %.1F"%scipy.constants.c) 
+```
 
 will return 
   
 ```python 
+
   >>> SciPy thinks that pi = 3.1415926535897931 
   >>> While math thinks that pi = 3.1415926535897931 
-  >>> SciPy also thinks that the speed of light is c
-= 299792458.0 ```
+  >>> SciPy also thinks that the speed of light is c = 299792458.0 
+
+```
 
 However, the real value of SciPy Constants is its enormous physical constant
 database.  These are of the form: **scipy.constants.physical_constants[name] =
@@ -90,18 +94,28 @@ database.  These are of the form: **scipy.constants.physical_constants[name] =
 For example, the mass of an alpha particle is:
 
 ```python 
+
   >>> scipy.constants.physical_constants["alpha particle mass"] 
   >>> (6.6446564999999997e-27, 'kg', 1.1e-33) 
+
 ```
 
 How can you tell what the key is for this function? My favorite way is with the
 scipy.constants.find() method.
 
-```python scipy.constants.find("light") ```
+```python 
+
+  scipy.constants.find("light") 
+
+```
 
 gives : 
 
-```python ['speed of light in vacuum'] ```
+```python 
+
+  ['speed of light in vacuum'] 
+
+```
 
 But buyer beware! Let's look at the speed of light again.
 
@@ -134,15 +148,14 @@ error functions, gamma functions, Legendre polynomials, etc.  But as a example
 let's focus on my favorites: the Bessel functions.
   
 
-```python from scipy.special import * from pylab import *
+```python 
+  from scipy.special import * from pylab import *
   
   x = arange(0.0, 10.1, 0.1)
   
-  for n in range(4): j = jn(n, x) plot(x, j, 'k-') text(x[10*(n+1)+1],
-j[10*(n+1)], r'$J_%r$'%n)
+  for n in range(4): j = jn(n, x) plot(x, j, 'k-') text(x[10*(n+1)+1], j[10*(n+1)], r'$J_%r$'%n)
   
-  for n in range(3): y = yn(n, x) plot(x, y, 'k--') text(x[10*(n)+6],
-y[10*(n)+5], r'$Y_%r$'%n)
+  for n in range(3): y = yn(n, x) plot(x, y, 'k--') text(x[10*(n)+6], y[10*(n)+5], r'$Y_%r$'%n)
   
   axis([0, 10, -2, 1.25]) xlabel(r'$x$') ylabel("Bessel Functions")
   
@@ -185,8 +198,10 @@ Integration Example: 1D
 The simplest way to compute a functions definite integral is via the
 **quad(...)** function.  The script
 
-```python import scipy.integrate #For kicks, let's also grab import
-scipy.special import numpy
+```python 
+  import scipy.integrate #For kicks, let's also grab 
+  import scipy.special
+  import numpy
   
   def CrazyFunc(x): return (scipy.special.i1(x) - 1)**3
   
