@@ -26,12 +26,12 @@ at the following examples:
   i = 4
   sign = "zero"
   if i < 0:
-      sign = "negative"
+    sign = "negative"
   elif i > 0:
-      sign = "positive"
+    sign = "positive"
   else:
-      print "Sign must be zero"
-      print "Have a nice day"
+    print "Sign must be zero"
+    print "Have a nice day"
   print sign
 ```
 
