@@ -30,36 +30,36 @@ The presentation on SciPy will follow five sections:
 
 In general, you can grab SciPy functionality via
 
-```python 
-
+```python
   import scipy 
+```
 
 
 What you get is (from http://docs.scipy.org/doc/scipy/reference/):
 
--- Clustering package (**scipy.cluster**)
--- Constants (**scipy.constants**)
--- Fourier transforms (**scipy.fftpack**)
--- Integration and ODEs (**scipy.integrate**)
--- Interpolation (**scipy.interpolate**)
--- Input and output (**scipy.io**)
--- Linear algebra (**scipy.linalg**)
--- Maximum entropy models (**scipy.maxentropy**)
--- Miscellaneous routines (**scipy.misc**)
--- Multi-dimensional image processing (**scipy.ndimage**)
--- Orthogonal distance regression (**scipy.odr**)
--- Optimization and root finding (**scipy.optimize**)
--- Signal processing (**scipy.signal**)
--- Sparse matrices (**scipy.sparse**)
--- Sparse linear algebra (**scipy.sparse.linalg**)
--- Spatial algorithms and data structures (**scipy.spatial**)
--- Special functions (**scipy.special**)
--- Statistical functions (**scipy.stats**)
--- Image Array Manipulation and Convolution (**scipy.stsci**)
--- C/C++ integration (**scipy.weave**)
+```python
+  -- Clustering package (**scipy.cluster**)
+  -- Constants (**scipy.constants**)
+  -- Fourier transforms (**scipy.fftpack**)
+  -- Integration and ODEs (**scipy.integrate**)
+  -- Interpolation (**scipy.interpolate**)
+  -- Input and output (**scipy.io**)
+  -- Linear algebra (**scipy.linalg**)
+  -- Maximum entropy models (**scipy.maxentropy**)
+  -- Miscellaneous routines (**scipy.misc**)
+  -- Multi-dimensional image processing (**scipy.ndimage**)
+  -- Orthogonal distance regression (**scipy.odr**)
+  -- Optimization and root finding (**scipy.optimize**)
+  -- Signal processing (**scipy.signal**)
+  -- Sparse matrices (**scipy.sparse**)
+  -- Sparse linear algebra (**scipy.sparse.linalg**)
+  -- Spatial algorithms and data structures (**scipy.spatial**)
+  -- Special functions (**scipy.special**)
+  -- Statistical functions (**scipy.stats**)
+  -- Image Array Manipulation and Convolution (**scipy.stsci**)
+  -- C/C++ integration (**scipy.weave**)
 
 ```
-
 
 ---------------------------------------------------------------------- 
 SciPy Constants, crawl before you walk!
@@ -95,7 +95,7 @@ database.  These are of the form: **scipy.constants.physical_constants[name] =
 
 For example, the mass of an alpha particle is:
 
-```python 
+```python
 
   >>> scipy.constants.physical_constants["alpha particle mass"] 
   >>> (6.6446564999999997e-27, 'kg', 1.1e-33) 
@@ -105,7 +105,7 @@ For example, the mass of an alpha particle is:
 How can you tell what the key is for this function? My favorite way is with the
 scipy.constants.find() method.
 
-```python 
+```python
 
   scipy.constants.find("light") 
 
@@ -113,7 +113,7 @@ scipy.constants.find() method.
 
 gives : 
 
-```python 
+```python
 
   ['speed of light in vacuum'] 
 
@@ -121,7 +121,7 @@ gives :
 
 But buyer beware! Let's look at the speed of light again.
 
-```python 
+```python
   >>> print("c = %s"%str(scipy.constants.physical_constants["speed of light in vacuum"])) 
   >>> c = (299792458.0, 'm s^-1', 0.0) 
 ```
@@ -150,7 +150,7 @@ error functions, gamma functions, Legendre polynomials, etc.  But as a example
 let's focus on my favorites: the Bessel functions.
   
 
-```python 
+```python
   from scipy.special import * 
   from pylab import *
   
@@ -201,7 +201,7 @@ Integration Example: 1D
 The simplest way to compute a functions definite integral is via the
 **quad(...)** function.  The script
 
-```python 
+```python
   import scipy.integrate #For kicks, let's also grab 
   import scipy.special
   import numpy
@@ -231,7 +231,7 @@ Integration Example: Infinite Limits
 You can also use **scipy.integrate.Inf** for infinity in the limits of
 integration.  For example, try integrating e^x on ``[-inf, 0]``:
 
-```python 
+```python
   >>> print("(val, err) = " + str( scipy.integrate.quad(scipy.exp, -scipy.integrate.Inf, 0.0) )) 
 ```
 
@@ -643,7 +643,7 @@ Because the array takes integer values from 0 - 255, we can easily define our ow
   img = InverseImage(img)
   scipy.misc.imsave("image2.jpg", img)
 ```
-  
+
 Having this much fun, the rabbit becomes a twisted shade of its former self!
 
 [[/images/image2.jpg]]
