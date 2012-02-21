@@ -227,7 +227,7 @@ Importantly, you don't have to use the words key and value. That's just what
 will fill those variables. Here, we rewrite the previous loop using this clever 
 syntax.
 
-::
+```python
 
   italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
   argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
@@ -238,7 +238,7 @@ syntax.
       print nation + " : "
       for city in cities :
           print "  " + city 
-
+```
 
 ----------------------------------------------------------------------
 break, continue, and else 
@@ -253,7 +253,7 @@ infinite loops by cutting off loops when they're clearly going nowhere.
       if n == reasonable :
           break
       print n
-``` 
+```
 
 Something you might want to do instead of breaking is to continue to the next 
 iteration of a loop, giving up on the current one..
@@ -264,7 +264,7 @@ iteration of a loop, giving up on the current one..
       if n == reasonable :
         continue
       print n
-``` 
+```
 
 What is the difference between the output of these two?
 
@@ -289,7 +289,6 @@ That is :
           string += title + ", but not quite so brave as Sir Lancelot." 
       print string
 ```
-
 
       
 ----------------------------------------------------------------------
