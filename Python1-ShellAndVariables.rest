@@ -309,16 +309,17 @@ Imagine that I first assign :
 
 ```python
 
-  > a=2
+  a=2
 ```
 
 Then, I assign : 
 
 ```python
 
-  > a="I am the walrus"
+  a="Welcome to the ministry of silly walks."
+```
 
-What has happened to the memory that was holding the number 2??
+What has happened to the memory that was pointing to the number 2??
 
 
 ----------------------------------------------------------------------
@@ -332,10 +333,8 @@ get help in Python using the `help` function. Lets look at an example - enter
 
 ```python
 
-  > help(str.strip) 
+  help(str.strip) 
 ```
-
-
 
 into IPython. You should then see documentation for the 
 strip method pop up. (NOTE: if you don't automatically return to the python 
@@ -345,7 +344,7 @@ example, enter
 
 ```python
 
-  > str.strip?
+  str.strip?
 ```
 
   
@@ -356,7 +355,7 @@ Now try entering
 
 ```python
 
-  > help(str)
+  help(str)
 ```
 
 
@@ -382,8 +381,8 @@ be used to convert strings to uppercase. Now enter:
 
 ```python
 
-  > name = "cooper"
-  > print name.upper()
+  name = "cooper"
+  print name.upper()
 ```
 
 
@@ -401,7 +400,7 @@ simply enter:
 
 ```python
 
-  > print "cooper".upper()
+  print "cooper".upper()
 ```
 
 
