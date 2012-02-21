@@ -19,8 +19,11 @@ Of all the millions of papers out there, most people have only read a few. Since
 A good way to store sparse data is in a dictionary for each user, where each ratings is stored as a unique paper identifier and a rating.
 
 We want to turn this data into an array. For this section, write a class that includes three public elements:
+
 1) A numpy array where element i,j is the rating of person i for paper j.
+
 2) A python list where element i is the name of person i.
+
 3) A python list where element j is the name of paper j.
 
 ------------------------------------------
@@ -31,7 +34,9 @@ We can think of each person's ratings as a real vector, so a measure of the simi
 
 a) Add a function to your class to compute the 2-norm between two people's ratings. However, your function should only consider papers for which *both* people have provided a non-zero rating. If there are 4 papers, and Tommy has read papers 1,2, and 3 while Katy has read papers 1,3, and 4, then you should only compute the similarity using papers 1 and 3. 
 If two people have no shared recommendations then return 0.
+
 b) Add a function to compute the Pearson correlation between two vectors in the same way you computed the 2-norm above.
+
 c) (Optional) Look up the Tanimoto distance function. Add a function to compute the Tanimoto distance.
 
 ------------------------------------------
@@ -51,7 +56,9 @@ General Advice
 There are a few functions you will want to investigate in numpy.
 
 1) numpy.cov
+
 2) numpy.logical_and
+
 3) numpy.linalg.norm
 
 
