@@ -26,50 +26,50 @@ machine), it will take a little longer starting up.
 
 The ability to visually represent data is one of the more important tools to the 
 scientific user of python.  The most popular and arguably most mature library 
-for producing publication quality 2D plots matplotlib (MPL).  In the developers 
-own words, MPL is
+for producing publication quality 2D plots matplotlib (MatPlotLib).  In the developers 
+own words, MatPlotLib is
   "matplotlib is a python 2D plotting library which produces publication quality 
   figures in a variety of hardcopy formats and interactive environments across 
   platforms. matplotlib can be used in python scripts, the python and ipython 
-  shell (ala !MatLab or mathematica), web application servers, and six graphical 
+  shell (ala MatLab or mathematica), web application servers, and six graphical 
   user interface toolkits."
 
 
 .........................................................................
- pyplot, pylab and matplotlib.  numpy, !MatLab and more...  
+ pyplot, pylab and matplotlib.  numpy, MatLab and more...  
 .........................................................................
 
 
-The underlying structure of MPL is very general and customizable.  Thankfully, 
+The underlying structure of MatPlotLib is very general and customizable.  Thankfully, 
 you don't actually need to interact with all that power.  The way to generate 
 plots and modify them is through the pyplot interface.  The pyplot interface is 
-much much inspired by !Matlab's plotting commands, so it should if you're 
+much much inspired by Matlab's plotting commands, so it should if you're 
 familiar with that it should be easy to pick up.
 
  * matplotlib - raw access to the plotting library.  useful for extending 
    matplotlib or doing very custom things
- * pyplot - !MatLab-like interface to matplotlib (use this one!)
+ * pyplot - MatLab-like interface to matplotlib (use this one!)
  * pylab - pyplot + numpy
 
-**Aside: Multiple Interfaces to MPL**
+**Aside: Multiple Interfaces to MatPlotLib**
 
 In addition to the object oriented pyplot interface, pyplot implements a clone 
-of !Matlab's plotting interface.  The main difference is that the !Matlab 
+of Matlab's plotting interface.  The main difference is that the Matlab 
 interface has the paradigm of the "current figure."  So plotting and labeling 
 commands implicitly refer to the current figure/subplot.  This is find, so long 
 as your plotting commands are simple and sequential.  However, when your program 
-requires that you modify a figure in multiple contexts the !Matlab interface 
+requires that you modify a figure in multiple contexts the Matlab interface 
 becomes very difficult to keep up with.
 
 In this session, we will use the object oriented interface exclusively.  It is 
-trivial to degrade to the !Matlab interface if you're feeling lazy, but the 
+trivial to degrade to the Matlab interface if you're feeling lazy, but the 
 object oriented interface is powerful.  It is also more explicit, and, in my 
 opinion, a better teaching tool.
 
 
 **Aside: pyplot vs pylab**
 
-When you go searching around the web for MPL help, you will find people 
+When you go searching around the web for MatPlotLib help, you will find people 
 importing pylab rather than matplotlib.pyplot.  pylab imports both pyplot and 
 numpy (and a few other things) together.
 
@@ -104,13 +104,13 @@ execute.
 
 **Aside: Interactive plotting**
 
-MPL is ipython aware.  If you interactively plot things from ipython, your 
+MatPlotLib is ipython aware.  If you interactively plot things from ipython, your 
 figures will automatically re-render.  This can be nice, but potentially slow.  
 You can also get into trouble if you close figures an inappropriate times.  You 
 have been warned.
 
 
-MPL plots are organized into figures, subplots and axes.
+MatPlotLib plots are organized into figures, subplots and axes.
 
 [[/images/fig1.jpg]]
 
@@ -151,7 +151,7 @@ up your favorite text editor.
   ax3 = plt.twinx(ax2)
 ```
 
-Plot is pretty powerful, lets peruse the [http://matplotlib.sourceforge.net/ MPL 
+Plot is pretty powerful, lets peruse the [http://matplotlib.sourceforge.net/ MatPlotLib 
 documentation].
 
 Plot something.  Plot it again with a different character.  Change the color.  
@@ -166,7 +166,7 @@ Attach a label and then display the label with a legend.  (ax.legend())
  Other Types of Line Plots 
 ----------------------------------------------------------------------
 
-MPL as all the usual types of plots
+MatPlotLib as all the usual types of plots
 
 .........................................................................
  log-linear, linear-log, log-log 
@@ -220,7 +220,7 @@ it will drop the last row and column.
 .........................................................................
 
 
-!Matlab converts may have used this function to look at the structure of sparse 
+Matlab converts may have used this function to look at the structure of sparse 
 [http://www.merriam-webster.com/medical/matrixes matrixes].
 
 ```python
@@ -258,7 +258,7 @@ before plotting things.
 .........................................................................
 
 
-If you're changing plots after they render (ie show()) you have to tell MPL to 
+If you're changing plots after they render (ie show()) you have to tell MatPlotLib to 
 draw the plot.  draw() forces a figure to redraw.  If you're doing all your 
 plotting from scripts, you probably won't have to deal with draw().  If you're 
 programming figures such that they change over the course of your program, you 
@@ -269,7 +269,7 @@ will need to use draw to refresh the figure.
 ----------------------------------------------------------------------
 
 
-MPL has an extensive [http://matplotlib.sourceforge.net/gallery.html, gallery] 
+MatPlotLib has an extensive [http://matplotlib.sourceforge.net/gallery.html, gallery] 
 of plots with source code.  Take a look through those; they probably have 
 something similar to what you want to do.
 
@@ -282,15 +282,15 @@ something similar to what you want to do.
 * Shared Axes Across Subplots
 
 ----------------------------------------------------------------------
- Event binding with MPL 
+ Event binding with MatPlotLib 
 ----------------------------------------------------------------------
 
 
-MPL has a built in mechanism for handling keyboard/mouse events in a platform 
+MatPlotLib has a built in mechanism for handling keyboard/mouse events in a platform 
 independent way.  This can be useful when you want to toggle different data on 
 and off in the same figure, or step through time dependent data, or something 
 else crazy that you dream up.  All you need a a function that draws the figure 
-and some logic to identify events that your care about.  MPL handles the rest.  
+and some logic to identify events that your care about.  MatPlotLib handles the rest.  
 Lets walk through the following code.
 
 * A MovingPlot instance remembers which plot and axes to modify (no current 
@@ -303,9 +303,8 @@ Lets walk through the following code.
   self)
 * Based on the event object passed, update() only does something on right and 
   left arrow key presses
-* MPL has several other 
-  [http://matplotlib.sourceforge.net/api/backend_bases_api.html?highlight=canvas#matplotlib.backend_bases.FigureCanvasBase.mpl_connect 
-  supported events]
+* MatPlotLib has several other 
+  [[supported events | http://matplotlib.sourceforge.net/api/backend_bases_api.html?highlight=canvas#matplotlib.backend_bases.FigureCanvasBase.mpl_connect ]]
 
 ```python
 
@@ -371,7 +370,7 @@ Lets walk through the following code.
 ----------------------------------------------------------------------
 
 
-MPL has the ability to plot images.  Check out the following code.  It plots 4 
+MatPlotLib has the ability to plot images.  Check out the following code.  It plots 4 
 subplots
 
 * an image of a bunny
