@@ -56,37 +56,62 @@ Remember: you *write* a class and you *create* and object.
 
 **Hands on Example**
 
-Write a PhoneNumber class with functions set_number(number_string) and 
+Write an Atom class with functions set_number(number_string) and 
 area_code().
 
 ::
   
-  """phonenum defines function for manipulating phone number strings"""
+  """Matrix defines a real, 2-d matrix."""
   
-  print "Nudge, nudge, wink, wing, say no more, say no more!"
-  
-  class PhoneNumber(object):
-      """I am a phone number"""
+  class Matrix(object):
+      """I am a matrix of real numbers"""
 
-      def set_phone_number(self, phone_string):
-          '''Sets the formatted phone number by cleaning the data.'''
-          
-          formatted_string = ''
-          # bonus: the next line is equivalent to the following for loop.
-          #formatted_string = ''.join([c for c in phone_string if c in '0123456789'])
+      self._width = 10
+      self._height = 10
+      self._data = [0] * (self._width * self._height)
 
-          for char in phone_string:
-              if char in '0123456789':
-                  formatted_string += char
-          self.phone_number = formatted_string
+      def setWidth(self, w):
+           self._width = w
+           self._data = [0] * (self._width * self._height)
+
+      def reinit(self):
+           self._data = [0] * (self._width * self._height)
+
+      def setHeight(self, h):
+           self._height = h
+           self.reinit()
+
+      def setValue(self,i,j, value):
+         if i < self._width and j < self._height:   
+             self._data[i * self._width + j] = value
+         else:
+             raise Exception("Out of range")
+
+      def multiply(self, otherMatrix):
+         ''' Perform matrix multiplication and return a new matrix.
+         The new matrix is on the left. '''
+         result = Matrix()
+         result.setHeight(self._height)
+         result.setWidth(otherMatrix.getWidth())
+         # Do multiplication...
+         return result
+
+     def inv(self):
+         ''' Invert matrix '''
+         if self._height != self._width: raise Exception("Only square matrices are invertible")
+         invertedMatrix = Matrix()
+         invertedMatrix.setHeight(self._height)
+         invertedMatrix.setWidth(self._height)
   
-      def area_code(self):
-          """area_code returns the area code from a properly formatted
-      phone number string"""
-          return self.phone_number[0:3]
-  
-1) What are some other methods we might want to add?
-2) What are some checks we might add to this code to make sure the number is properly formatted?
+Note the "self" argument in all of the class methods. This is a pointer to the current object. You have to use self to reference methods and data in an object.
+
+...............................................
+The Big Idea: Interface vs. Implementation
+...............................................
+
+Users shouldn't have to know *how* your program works in order to use it. 
+
+The interface is a *contract* saying what a class knows how to do. The code above defines matrix multiplication, which means that mat1.multiply(mat2) should always return the right answer. It turns out there are many ways to multiply matrices, and there are whole Ph.Ds written on performing efficient matrix inversion. The implementation is the way in which the *contract* is carried out. 
 
 .........................................................................
  Constructors 
@@ -114,7 +139,7 @@ python.
 - Help uses __doc__
 
 
-*Convert your set_number function to be a constructor.*
+*Write an initializer for the Matrix class that sets the height and width. Change the multiply and inv methods to use this compiler*
 
 
 **Aside: Old vs New Style Classes**
@@ -166,19 +191,51 @@ should not have to copy code.  What you do is subclass and change the things
 that need changing.  When we created classes we were already subclassing the 
 built in python class "object."
 
-For example, let's say we we want to use international phone numbers. If we get a number without a country code, assume that the country code is 39 for Italy.
+For example, let's say you want to write a sparse matrix class, which means that you don't explicitly store zero elements. You can create a subclass of the Matrix class that redefines the matrix operations.
 
 ::
 
-  class InternationalPhoneNumber:
-    ''' Hold an international phone number, which has an area code. '''
+    class SparseMatrix(object):
+      """I am a matrix of real numbers"""
 
-    def __init__(self):
-        self._countryCode = '49'
-        self._phoneNumber = ''
-        
-    # todo: finish.
+      self._width = 10
+      self._height = 10
+      self._data = [0] * (self._width * self._height)
+
+      def setWidth(self, w):
+           self._width = w
+           self._data = [0] * (self._width * self._height)
+
+      def reinit(self):
+           self._data = [0] * (self._width * self._height)
+
+      def setHeight(self, h):
+           self._height = h
+           self.reinit()
+
+      def setValue(self,i,j, value):
+         if i < self._width and j < self._height:   
+             self._data[i * self._width + j] = value
+         else:
+             raise Exception("Out of range")
+
+      def multiply(self, otherMatrix):
+         ''' Perform matrix multiplication and return a new matrix.
+         The new matrix is on the left. '''
+         result = Matrix()
+         result.setHeight(self._height)
+         result.setWidth(otherMatrix.getWidth())
+         # Do multiplication...
+         return result
+
+     def inv(self):
+         ''' Invert matrix '''
+         if self._height != self._width: raise Exception("Only square matrices are invertible")
+         invertedMatrix = Matrix()
+         invertedMatrix.setHeight(self._height)
+         invertedMatrix.setWidth(self._height)
     
+
 
 Python guidelines for code formatting and pythonic conventions on class 
 behavior, naming, etc.
