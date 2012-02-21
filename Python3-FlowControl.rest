@@ -206,10 +206,8 @@ list of things. What about a nested loops around a list of lists?
   us = ["Chicago", "Austin", "New York", "San Fran"]
   nations = [italy, argentina, india, us]
   nationnames = ["italy","argentina", "india", "us"]
-  i=0
   for nation in nations :
-      print nationnames[i] + ": "
-      i+=1
+      print nationnames[nations.index(nation)] + ": "
       for city in nation :
           print "  " + city 
 ```
