@@ -2,7 +2,7 @@ ______________________________________________________________________
 Python 8 : Using Scipy
 ______________________________________________________________________
 
-[[Back to Object Orientation | Python6:-Object-oriented-programming]] - [[Forward to NumPy|Python9-NumPy]]
+[[Back to MatPlotLib| Python8-MatPloLib]] - [[Forward to NumPy|Python9-NumPy]]
 
 ----
 
