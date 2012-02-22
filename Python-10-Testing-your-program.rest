@@ -274,43 +274,6 @@ The overlap method takes two rectangles (red and blue) and computes the degree o
 
 Now let's create a set of tests for this class. Before we do this, let's think about *how* we might test this method. How should it work?
 
-This
-
-space
-
-intentionally
-
-left
-
-blank
-
-so
-
-you 
-
-don't
-
-cheat.
-
-So 
-
-don't
-
-look
-
-down
-
-here
-
-until
-
-I
-
-tell
-
-you
-
-to.
 
 ::
 
