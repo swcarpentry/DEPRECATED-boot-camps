@@ -243,3 +243,8 @@ Writing to a file uses the write() command, which accepts a string.
 
 Another way to write to a file is to use writelines(), which accepts a list of strings and writes them in order. 
 *Caution!* writelines does not append newlines. If you really want to write a newline at the end of each string in the list, add it yourself.
+
+.....................................
+Aside: The first exercise
+.....................................
+Yesterday, we asked you to edit a file in place. Many of you asked how this was possible. The answer is that it is not. You can use f.seek() and f.tell() to verify that even if your file handle is pointing to the middle of a file, write commands go to the end of the file in append mode. The best way to change a file is to open a temporary file in /tmp/, fill it, and then move it to overwrite the original. On large clusters, /tmp/ is often local to each node, which means it reduces I/O bottlenecks associated with writing large amounts of data.
