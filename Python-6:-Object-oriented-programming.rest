@@ -64,44 +64,55 @@ area_code().
   """Matrix defines a real, 2-d matrix."""
   
   class Matrix(object):
-      """I am a matrix of real numbers"""
+    """I am a matrix of real numbers"""
 
-      self._width = 10
-      self._height = 10
-      self._data = [0] * (self._width * self._height)
+    def __init__(self,h,w):
+        self._nrows = h
+        self._ncols = w
+        self._data = [0] * (self._nrows * self._ncols)
 
-      def setWidth(self, w):
-           self._width = w
-           self.reinit()
+    def __str__(self):
+        return "Matrix: " + str(self._nrows) + " by " + str(self._ncols)
 
-      def reinit(self):
-           self._data = [0] * (self._width * self._height)
+    def setnrows(self, w):
+         self._nrows = w
+         self.reinit()
 
-      def setHeight(self, h):
-           self._height = h
-           self.reinit()
+    def getnrows(self):
+         return self._nrows
 
-      def setValue(self,i,j, value):
-         if i < self._width and j < self._height:   
-             self._data[i * self._width + j] = value
-         else:
-             raise Exception("Out of range")
+    def getncols(self):
+         return self._ncols
 
-      def multiply(self, otherMatrix):
-         ''' Perform matrix multiplication and return a new matrix.
-         The new matrix is on the left. '''
-         result = Matrix()
-         result.setHeight(self._height)
-         result.setWidth(otherMatrix.getWidth())
-         # Do multiplication...
-         return result
+    def reinit(self):
+         self._data = [0] * (self._nrows * self._ncols)
 
-     def inv(self):
-         ''' Invert matrix '''
-         if self._height != self._width: raise Exception("Only square matrices are invertible")
-         invertedMatrix = Matrix()
-         invertedMatrix.setHeight(self._height)
-         invertedMatrix.setWidth(self._height)
+    def setncols(self, h):
+         self._ncols = h
+         self.reinit()
+
+    def setValue(self,i,j, value):
+       if i < self._nrows and j < self._ncols:
+           self._data[i * self._nrows + j] = value
+       else:
+           raise Exception("Out of range")
+
+    def multiply(self, otherMatrix):
+       ''' Perform matrix multiplication and return a new matrix.
+       The new matrix is on the left. '''
+       result = Matrix(self._nrows, otherMatrix.getncols())
+       # Do multiplication...
+       return result
+
+    def inv(self):
+       ''' Invert matrix '''
+       if self._ncols != self._nrows: raise Exception("Only square matrices are invertible")
+       invertedMatrix = Matrix(self._ncols, self._nrows)
+       invertedMatrix.setncols(self._ncols)
+       invertedMatrix.setnrows(self._ncols)
+       # INVERT!
+       return invertedMatrix
+
   
 Note the "self" argument in all of the class methods. This is a pointer to the current object. You have to use self to reference methods and data in an object.
 
@@ -195,34 +206,32 @@ For example, let's say you want to write a sparse matrix class, which means that
 
 ::
 
-    class SparseMatrix(object):
-      """I am a matrix of real numbers"""
+  class SparseMatrix(Matrix):
+  """I am a matrix of real numbers"""
 
-      self._data = {}  # A dictionary with a tuple -> value
+  def __str__(self):
+    return "SparseMatrix: " + str(self._nrows) + " by " + str(self._ncols)
 
-      def reinit(self):
-           self._data = {}
+  def reinit(self):
+    self._data = {}
 
-      def setValue(self,i,j, value):
-         self._data[(i,j)] = value
-         
-      def multiply(self, otherMatrix):
-         ''' Perform matrix multiplication and return a new matrix.
-         The new matrix is on the left. '''
-         result = Matrix()
-         result.setHeight(self._height)
-         result.setWidth(otherMatrix.getWidth())
-         # Do multiplication...
-         return result
+  def setValue(self,i,j, value):
+     self._data[(i,j)] = value
 
-     def inv(self):
-         ''' Invert matrix '''
-         if self._height != self._width: raise Exception("Only square matrices are invertible")
-         invertedMatrix = Matrix()
-         invertedMatrix.setHeight(self._height)
-         invertedMatrix.setWidth(self._height)
+
+  def multiply(self, otherMatrix):
+     ''' Perform matrix multiplication and return a new matrix.
+     The new matrix is on the left. '''
+     result = SparseMatrix(self._nrows, otherMatrix.getncols())
+     # Do multiplication...
+     return result
+
+  def inv(self):
+     ''' Invert matrix '''
+     if self._nrows != self._rcols: raise Exception("Only square matrices are invertible")
+     invertedMatrix = SparseMatrix(self._ncols, self._nrows)
     
-The SparseMatrix object is a Matrix but the inv, multiply, and reinit methods are defined in the *super class* Matrix. 
+The SparseMatrix object is a Matrix but some methods are defined in the *super class* Matrix. 
 
 Python guidelines for code formatting and pythonic conventions on class 
 behavior, naming, etc.
