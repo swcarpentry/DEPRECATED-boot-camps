@@ -231,7 +231,7 @@ For example, let's say you want to write a sparse matrix class, which means that
      if self._nrows != self._rcols: raise Exception("Only square matrices are invertible")
      invertedMatrix = SparseMatrix(self._ncols, self._nrows)
     
-The SparseMatrix object is a Matrix but the inv, multiply, and reinit methods are defined in the *super class* Matrix. 
+The SparseMatrix object is a Matrix but some methods are defined in the *super class* Matrix. 
 
 Python guidelines for code formatting and pythonic conventions on class 
 behavior, naming, etc.
