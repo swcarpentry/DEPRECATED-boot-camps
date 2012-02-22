@@ -206,32 +206,30 @@ For example, let's say you want to write a sparse matrix class, which means that
 
 ::
 
-    class SparseMatrix(object):
-      """I am a matrix of real numbers"""
+  class SparseMatrix(Matrix):
+  """I am a matrix of real numbers"""
 
-      self._data = {}  # A dictionary with a tuple -> value
+  def __str__(self):
+    return "SparseMatrix: " + str(self._nrows) + " by " + str(self._ncols)
 
-      def reinit(self):
-           self._data = {}
+  def reinit(self):
+    self._data = {}
 
-      def setValue(self,i,j, value):
-         self._data[(i,j)] = value
-         
-      def multiply(self, otherMatrix):
-         ''' Perform matrix multiplication and return a new matrix.
-         The new matrix is on the left. '''
-         result = Matrix()
-         result.setHeight(self._height)
-         result.setWidth(otherMatrix.getWidth())
-         # Do multiplication...
-         return result
+  def setValue(self,i,j, value):
+     self._data[(i,j)] = value
 
-     def inv(self):
-         ''' Invert matrix '''
-         if self._height != self._width: raise Exception("Only square matrices are invertible")
-         invertedMatrix = Matrix()
-         invertedMatrix.setHeight(self._height)
-         invertedMatrix.setWidth(self._height)
+
+  def multiply(self, otherMatrix):
+     ''' Perform matrix multiplication and return a new matrix.
+     The new matrix is on the left. '''
+     result = SparseMatrix(self._nrows, otherMatrix.getncols())
+     # Do multiplication...
+     return result
+
+  def inv(self):
+     ''' Invert matrix '''
+     if self._nrows != self._rcols: raise Exception("Only square matrices are invertible")
+     invertedMatrix = SparseMatrix(self._ncols, self._nrows)
     
 The SparseMatrix object is a Matrix but the inv, multiply, and reinit methods are defined in the *super class* Matrix. 
 
