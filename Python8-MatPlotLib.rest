@@ -93,33 +93,53 @@ MatPlotLib plots are organized into figures, subplots and axes.
 
 * figure = the whole window (Figure 1 above)
 * subplot = the regular grid of four plots (One, Two, Three, and Four above) within the window
-* axes = the curves located on the plots (six curves of varying color above)
+* axes = a handle to the place in the subplot to put your curves (there are four 
+  axes defining the locations of the 6 curves above.) 
 
-Lets make a plot.  Once we start generating data, plotting things, setting 
-xlabels and ylabels and titles and such, retyping everything is not fun.  Fire 
-up your favorite text editor.
+*************************************************************************
+Hands On Exercise : Making a Plot
+*************************************************************************
 
-* Make a figure
-* Add a subplot to the figure, get an axes
-* Plot on the axes
-* Show the figure
+Lets make a plot.  Retyping everything is not fun. Open up your favorite text 
+editor to create a file "plot.py" to hold your plotting script.
+
+
+0. from matplotlib import pyplot as plt
+
+1. Make a figure:  **fig = plt.figure()**
+
+2. Add a subplot to the figure: **ax = fig.add_subplot(111)**
+
+3. Plot on the subplot axes: **ax.plot(range(10))** 
+
+4. Show the figure: **plt.show()**
+
+
+Your file should look like : 
 
 ```python
-
   from matplotlib import pyplot as plt
   fig = plt.figure()
   ax = fig.add_subplot(111)
   ax.plot([1,2,3,4,5,6])
-  plt.show()
 ```
 
-**Aside: other, sometimes more convenient ways to get an axes.**
+5. Run your python file from the terminal **python plot.py &** 
+
+.........................................................................
+Customizing your Figure
+.........................................................................
+
+Other, sometimes more convenient ways to get axes.
 
 ```python
 
   # Useful for figures composed of multiple subplots
   fig = plt.figure()
-  ax1 = fig.add_subplot(211)
+  ax1 = fig.add_subplot(221)
+  ax2 = fig.add_subplot(222)
+  ax3 = fig.add_subplot(223)
+  ax4 = fig.add_subplot(224)
   
   # Useful for figures with one subplot (ie the subplot is the figure)
   ax2 = subplot(111)
@@ -128,12 +148,21 @@ up your favorite text editor.
   ax3 = plt.twinx(ax2)
 ```
 
+
+*************************************************************************
+Customizing your Plot
+*************************************************************************
+
 Plot is pretty powerful, lets peruse the [http://matplotlib.sourceforge.net/ MatPlotLib 
 documentation].
 
-Plot something.  Plot it again with a different character.  Change the color.  
-Attach a label and then display the label with a legend.  (ax.legend())
- 
+
+1. By editing plot.py and referencing the documentation try to add a label to an 
+   axis or change the color.
+2. If you're feeling adventurous and you've successfully added a label, try ax.legend()
+
+Hints:
+
 * legend
 * colors
 * linestyles
@@ -155,6 +184,9 @@ MatPlotLib as all the usual types of plots
   ax.semilogy(x,y)
   ax.loglog(x,y)
 ```
+
+Execute ax.semilogx(range(1,11),range(10)) within your script instead of ax.plot(x) 
+and run it again to see the effect.
 
 .........................................................................
 Contour plots and pcolor 
