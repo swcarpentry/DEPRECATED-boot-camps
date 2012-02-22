@@ -2,7 +2,7 @@ ______________________________________________________________________
 Python 9 : NumPy 
 ______________________________________________________________________
 
-[[Back to SciPy|Python7-SciPy]]  - [[Forward to Testing | Python-10-Testing-your-program]]
+[[Back to SciPy|Python8-SciPy]]  - [[Forward to Testing | Python-10-Testing-your-program]]
 
 ----
 

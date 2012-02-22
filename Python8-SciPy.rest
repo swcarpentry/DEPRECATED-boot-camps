@@ -2,7 +2,7 @@ ______________________________________________________________________
 Python 8 : Using Scipy
 ______________________________________________________________________
 
-[[Back to MatPlotLib| Python8-MatPlotLib]] - [[Forward to NumPy|Python9-NumPy]]
+[[Back to MatPlotLib| Python7-MatPlotLib]] - [[Forward to NumPy|Python9-NumPy]]
 
 ----
 
