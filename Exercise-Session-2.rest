@@ -50,6 +50,11 @@ Second, we could ask which papers have the most similar ratings. Write a functio
 
 Third, we could ask for recommended papers for a researcher. Write a function that identifies the top 5 papers that a researcher should read. Keep in mind that the function should only return papers that the researcher has *not* already rated. In the comment, explain how this function chooses which papers to return.
 
+------------------------------------------
+Write some tests
+------------------------------------------
+Use Nose to write some tests for your code. Specifically, think about how you can test the input code and the distance measurements.
+
 -----------------------------------------
 General Advice
 -----------------------------------------
