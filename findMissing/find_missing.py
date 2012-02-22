@@ -2,7 +2,7 @@
 import os, sys, glob
 import fileinput
 
-"""These are the default values, if an answer is missing."""
+"""These are the default values, in case an answer is missing."""
 questions = {'Reported: ':'Thur Jan 1 00:00:00 1970',\
         'Subject: ':'unknown',\
         'Year/month of birth: ':'0000/00',\
@@ -33,15 +33,15 @@ def find_files(path, pattern):
 
 
 def found_missing(a_line):
-    """This method checks that the gender line contains an N response"""
+    """This method checks that the gender line contains a missing or a Sex: N response"""
     # The questions are a dictionary of the matching string and default answer 
     to_ret = False
     for question, default in questions.items() :
         if a_line.find(question) != -1 :
-            if "N" in a_line.replace(question,'').split() :
+            if "N" in a_line.replace(question,'').split() or len(a_line.replace(question,'').split())==0: 
                 to_ret = True
                 print "Found missing"
-            else : 
+            else :
                 to_ret = False
     return to_ret
 
@@ -50,7 +50,10 @@ def fix_missing(filename, entry):
     for question, default in questions.items() :
         if entry.find(question) != -1 : 
             for line in fileinput.FileInput(filename, inplace=True): 
-                line = line.replace(question + 'N', question+default)
+                if question == "Sex: " : 
+                    line = line.replace(question + 'N', question+default)
+                else : 
+                    line = line.replace(question, question+default)
                 sys.stdout.write(line)
 
 class TestClass :
