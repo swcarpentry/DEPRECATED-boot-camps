@@ -4,7 +4,7 @@ Python 6: Classes and Objects
 
 
 [[Back to Strings and File I-O | Python-5:-Strings-and-File-I-O ]] - [[Forward 
-to SciPy | Python7-SciPy ]]
+to MatPlotLib | Python8-MatPlotLib ]]
 
 ----
 
