@@ -1,8 +1,9 @@
 ______________________________________________________________________
-Python 8 : Graphing with MatPlotLib 
+Python 7 : Graphing with MatPlotLib 
 ______________________________________________________________________
 
-[[Back to SciPy|Python7-SciPy]] - [[Forward to NumPy|Python9-NumPy]]
+[[Back to Object Oriented Programming |Python-6:-Object-oriented-programming]] - 
+[[Forward to SciPy|Python7-SciPy]]
 
 ----
 
