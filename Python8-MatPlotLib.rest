@@ -28,7 +28,8 @@ The ability to visually represent data is one of the more important tools to the
 scientific user of python.  The most popular and arguably most mature library 
 for producing publication quality 2D plots matplotlib (MatPlotLib).  In the developers 
 own words, MatPlotLib is
-  "matplotlib is a python 2D plotting library which produces publication quality 
+
+  a python 2D plotting library which produces publication quality 
   figures in a variety of hardcopy formats and interactive environments across 
   platforms. matplotlib can be used in python scripts, the python and ipython 
   shell (ala MatLab or mathematica), web application servers, and six graphical 
@@ -46,49 +47,28 @@ plots and modify them is through the pyplot interface.  The pyplot interface is
 much much inspired by Matlab's plotting commands, so it should if you're 
 familiar with that it should be easy to pick up.
 
- * matplotlib - raw access to the plotting library.  useful for extending 
-   matplotlib or doing very custom things
- * pyplot - MatLab-like interface to matplotlib (use this one!)
- * pylab - pyplot + numpy
+* matplotlib - raw access to the plotting library.  useful for extending 
+  matplotlib or doing very custom things
+* pyplot - MatLab-like interface to matplotlib (use this one!)
+* pylab - pyplot + numpy
 
 **Aside: Multiple Interfaces to MatPlotLib**
 
 In addition to the object oriented pyplot interface, pyplot implements a clone 
 of Matlab's plotting interface.  The main difference is that the Matlab 
 interface has the paradigm of the "current figure."  So plotting and labeling 
-commands implicitly refer to the current figure/subplot.  This is find, so long 
+commands implicitly refer to the current figure/subplot.  This is fine so long 
 as your plotting commands are simple and sequential.  However, when your program 
 requires that you modify a figure in multiple contexts the Matlab interface 
 becomes very difficult to keep up with.
 
 In this session, we will use the object oriented interface exclusively.  It is 
 trivial to degrade to the Matlab interface if you're feeling lazy, but the 
-object oriented interface is powerful.  It is also more explicit, and, in my 
-opinion, a better teaching tool.
+object oriented interface is powerful.  It is also more explicit.
 
-
-**Aside: pyplot vs pylab**
-
-When you go searching around the web for MatPlotLib help, you will find people 
-importing pylab rather than matplotlib.pyplot.  pylab imports both pyplot and 
-numpy (and a few other things) together.
-
-```python
-
-  # <snip from pylab.py>
-  from numpy import *
-  from numpy.fft import *
-  from numpy.random import *
-  from numpy.linalg import *
-  
-  # provide the recommended module abbrevs in the pylab namespace
+```python 
   import matplotlib.pyplot as plt
-  import numpy as np
-  import numpy as np
-  import numpy.ma as ma
-  # <end snip>
 ```
-
 
 First things first.  Let's plot something.  Open up a file, copy, paste, 
 execute.
@@ -102,21 +82,18 @@ execute.
   plt.show()
 ```
 
-**Aside: Interactive plotting**
 
-MatPlotLib is ipython aware.  If you interactively plot things from ipython, your 
-figures will automatically re-render.  This can be nice, but potentially slow.  
-You can also get into trouble if you close figures an inappropriate times.  You 
-have been warned.
-
+.........................................................................
+figures, subplots, and axes
+.........................................................................
 
 MatPlotLib plots are organized into figures, subplots and axes.
 
 [[/images/fig1.jpg]]
 
-* figure
-* subplot
-* axes
+* figure = the whole window (Figure 1 above)
+* subplot = the regular grid of four plots (One, Two, Three, and Four above) within the window
+* axes = the curves located on the plots (six curves of varying color above)
 
 Lets make a plot.  Once we start generating data, plotting things, setting 
 xlabels and ylabels and titles and such, retyping everything is not fun.  Fire 
