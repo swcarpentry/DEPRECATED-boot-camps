@@ -1,5 +1,4 @@
 
-
 [[Back To NumPy | Python9-NumPy]] - [[Forward To Home | Home]]
 
 ----
@@ -247,3 +246,69 @@ There are a few tests for the mean function that we listed in this lesson. What 
 Some people develop code by writing the tests first.
 
 If you write your tests comprehensively enough, the expected behaviors that you define in your tests will be the necessary and sufficient set of behaviors your code must perform. Thus, if you write the tests first and program until the tests pass, you will have written exactly enough code to perform the behavior your want and no more. Furthermore, you will have been forced to write your code in a modular enough way to make testing easy now. This will translate into easier testing well into the future.
+
+--------------------------------------------------------------------
+
+::
+
+ def overlap_broken(red, blue):
+    '''Return overlap between two rectangles, or None.'''
+
+    ((red_lo_x, red_lo_y), (red_hi_x, red_hi_y)) = red
+    ((blue_lo_x, blue_lo_y), (blue_hi_x, blue_hi_y)) = blue
+
+    # bug in lo_y vs. hi_x
+    if (red_lo_x >= blue_hi_x) or \
+       (red_hi_x <= blue_lo_x) or \
+       (red_lo_y >= blue_hi_x) or \
+       (red_hi_y <= blue_lo_y):
+        return None
+
+    lo_x = max(red_lo_x, blue_lo_x)
+    lo_y = max(red_lo_y, blue_lo_y)
+    hi_x = min(red_hi_x, blue_hi_x)
+    hi_y = min(red_hi_y, blue_hi_y)
+    return ((lo_x, lo_y), (hi_x, hi_y))
+
+ def overlap_fixed(red, blue):
+    '''Return overlap between two rectangles, or None.'''
+
+    ((red_lo_x, red_lo_y), (red_hi_x, red_hi_y)) = red
+    ((blue_lo_x, blue_lo_y), (blue_hi_x, blue_hi_y)) = blue
+
+    if (red_lo_x >= blue_hi_x) or \
+       (red_hi_x <= blue_lo_x) or \
+       (red_lo_y >= blue_hi_y) or \
+       (red_hi_y <= blue_lo_y):
+        return None
+
+    lo_x = max(red_lo_x, blue_lo_x)
+    lo_y = max(red_lo_y, blue_lo_y)
+    hi_x = min(red_hi_x, blue_hi_x)
+    hi_y = min(red_hi_y, blue_hi_y)
+    return ((lo_x, lo_y), (hi_x, hi_y))
+
+ overlap = overlap_fixed
+
+::
+
+ from overlap import overlap
+
+ def test_empty_with_empty():
+    rect = ((0, 0), (0, 0))
+    assert overlap(rect, rect) == None
+
+ def test_empty_with_unit():
+    empty = ((0, 0), (0, 0))
+    unit = ((0, 0), (1, 1))
+    assert overlap(empty, unit) == None
+
+ def test_unit_with_unit():
+    unit = ((0, 0), (1, 1))
+    assert overlap(unit, unit) == unit
+
+ def test_partial_overlap():
+    red = ((0, 3), (2, 5))
+    blue = ((1, 0), (2, 4))
+    assert overlap(red, blue) == ((1, 3), (2, 4))
+ applebrandi:src guyrt7$ 
