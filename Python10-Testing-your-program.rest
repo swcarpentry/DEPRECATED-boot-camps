@@ -1,5 +1,3 @@
-
-
 [[Back To NumPy | Python9-NumPy]] - [[Forward To Home | Home]]
 
 ----
@@ -247,3 +245,89 @@ There are a few tests for the mean function that we listed in this lesson. What 
 Some people develop code by writing the tests first.
 
 If you write your tests comprehensively enough, the expected behaviors that you define in your tests will be the necessary and sufficient set of behaviors your code must perform. Thus, if you write the tests first and program until the tests pass, you will have written exactly enough code to perform the behavior your want and no more. Furthermore, you will have been forced to write your code in a modular enough way to make testing easy now. This will translate into easier testing well into the future.
+
+--------------------------------------------------------------------
+An example
+--------------------------------------------------------------------
+The overlap method takes two rectangles (red and blue) and computes the degree of overlap between them. Save it in overlap.py. A rectangle is defined as a tuple of tuples: ((x_lo,y_lo),(x_hi),(y_hi))
+
+::
+
+ def overlap(red, blue):
+    '''Return overlap between two rectangles, or None.'''
+
+    ((red_lo_x, red_lo_y), (red_hi_x, red_hi_y)) = red
+    ((blue_lo_x, blue_lo_y), (blue_hi_x, blue_hi_y)) = blue
+
+    if (red_lo_x >= blue_hi_x) or \
+       (red_hi_x <= blue_lo_x) or \
+       (red_lo_y >= blue_hi_x) or \
+       (red_hi_y <= blue_lo_y):
+        return None
+
+    lo_x = max(red_lo_x, blue_lo_x)
+    lo_y = max(red_lo_y, blue_lo_y)
+    hi_x = min(red_hi_x, blue_hi_x)
+    hi_y = min(red_hi_y, blue_hi_y)
+    return ((lo_x, lo_y), (hi_x, hi_y))
+
+
+Now let's create a set of tests for this class. Before we do this, let's think about *how* we might test this method. How should it work?
+
+
+::
+
+ from overlap import overlap
+
+ def test_empty_with_empty():
+    rect = ((0, 0), (0, 0))
+    assert overlap(rect, rect) == None
+
+ def test_empty_with_unit():
+    empty = ((0, 0), (0, 0))
+    unit = ((0, 0), (1, 1))
+    assert overlap(empty, unit) == None
+
+ def test_unit_with_unit():
+    unit = ((0, 0), (1, 1))
+    assert overlap(unit, unit) == unit
+
+ def test_partial_overlap():
+    red = ((0, 3), (2, 5))
+    blue = ((1, 0), (2, 4))
+    assert overlap(red, blue) == ((1, 3), (2, 4))
+
+
+Run your tests.
+
+::
+
+ [rguy@infolab-33 ~/TestExample]$ nosetests
+ ...F
+ ======================================================================
+ FAIL: test_overlap.test_partial_overlap
+ ----------------------------------------------------------------------
+ Traceback (most recent call last):
+   File "/usr/lib/python2.6/site-packages/nose/case.py", line 183, in runTest
+     self.test(*self.arg)
+   File "/afs/ictp.it/home/r/rguy/TestExample/test_overlap.py", line 19, in test_partial_overlap
+     assert overlap(red, blue) == ((1, 3), (2, 4))
+ AssertionError
+
+ ----------------------------------------------------------------------
+ Ran 4 tests in 0.005s
+
+ FAILED (failures=1)
+
+
+Oh no! Something failed. The failure was on line in this test:
+
+::
+
+ def test_partial_overlap():
+   red = ((0, 3), (2, 5))
+   blue = ((1, 0), (2, 4))
+   assert overlap(red, blue) == ((1, 3), (2, 4))
+
+
+Can you spot why it failed? Try to fix the method so all tests pass.
