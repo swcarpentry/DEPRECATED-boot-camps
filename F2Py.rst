@@ -328,11 +328,11 @@ Let's change the pass_array_args.py file thusly:
   =
   'i').reshape(10,10)
 ```
-  
-  
-  When running the script, you will notice an extra line in the output:
+
+When running the script, you will notice an extra line in the output:
   
 ::  
+
   copied an array: size = 100, elsize = 4
   int_arr  == [[ 0  1  2  3  4  5  6  7  8  9]
    ...
