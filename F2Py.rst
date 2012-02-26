@@ -51,7 +51,7 @@ It is easy to wrap this subroutine with `f2py`.  Here's how.
 
 First, it is necessary to tell `f2py` the intent of each subroutine argument.  `f2py` provides multiple ways to specify how to generate the interface -- the easiest is to put `f2py`-specific comments right in the FORTRAN code.
 
-[attachment:scalar_args.f]
+[[scalar_args.f | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/scalar_args.f]]
 
 ```fortran
       subroutine scalar_args(int_in, real_in, int_inout, real_inout,
@@ -87,7 +87,7 @@ If everything is setup correctly, the above command will compile the fortran sou
 
 We can test this module from python with a python source file named 'pass_args.py':
 
-[attachment:pass_args.py]
+[[pass_args.py | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/pass_args.py]]
 
 
 ```python
@@ -181,7 +181,7 @@ Nothing special.  This contrived example is designed to be similar to FORTRAN 77
 
 Let's add in the `f2py` comments to specify the intent of the arguments:
 
-[attachment:array_args.f]
+[[array_args.f | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/array_args.f]]
 
 ```fortran
       subroutine array_args(nx, ny, int_arr_in,
@@ -213,7 +213,7 @@ As you'd expect.  We invoke `f2py` from the commandline:
 
 Here's a test script similar to the one we saw before:
 
-[attachment:pass_array_args.py]
+[[pass_array_args.py | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/pass_array_args.py]]
 
 ```python
   # pass_array_args.py
@@ -356,7 +356,7 @@ As a more interesting example, we'll plot the logistic map (http://en.wikipedia.
 
 Let's say we have a Fortran subroutine that calculates the equilibrium points for an iteratively applied function.  It takes a function as an argument, applies the function iteratively `num_iters` times, and puts the next `n` results of the function in an array.
 
-[attachment:chaos.f]
+[[chaos.f | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/chaos.f]]
 
 ```fortran
 
@@ -430,7 +430,8 @@ end python module _chaos
 ```
 
 
-All that remains in this instance is to add in intent specifications to the interface file, and to remove the line specifying the `n` argument.  Here are the changed lines [attachment:_chaos.pyf]:
+All that remains in this instance is to add in intent specifications to the interface file, and to remove the line specifying the `n` argument.  Here are the changed lines 
+[[chaos.pyf | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/chaos.pyf]] : 
 
 ```python
 
@@ -448,7 +449,7 @@ Now, we invoke `f2py` a bit differently, to use the interface file.
   $ f2py -c -m _chaos _chaos.pyf chaos.f
 
 
-Here is the driver script in Python [attachment:chaos.py]:
+Here is the driver script in Python [[chaos.py | https://raw.github.com/thehackerwithin/PyTrieste/master/f2py/chaos.py]]:
 
 ::
 
@@ -498,7 +499,8 @@ Here is the driver script in Python [attachment:chaos.py]:
       pl.show()
 
 
-Running the above script yields [attachment:logistic-map.png] and [attachment:sine-map.png].
+Running the above script yields 
+[attachment:logistic-map.png] and [attachment:sine-map.png] .
 
 [[Image(logistic-map.png, 50%, center, top)]]
 
