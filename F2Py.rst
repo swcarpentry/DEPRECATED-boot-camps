@@ -331,16 +331,17 @@ Let's change the pass_array_args.py file thusly:
 
 When running the script, you will notice an extra line in the output:
   
-::  
+::
 
   copied an array: size = 100, elsize = 4
   int_arr  == [[ 0  1  2  3  4  5  6  7  8  9]
-   ...
+  ...
   real_arr == [[  0.   1.   2.   3.   4.   5.   6.   7.   8.   9.]
-   ...
+  ...
   cplx_arr == [[  0. +0.j   1. +1.j   2. +2.j   3. +3.j   4. +4.j   5. +5.j   6. +6.j
-     ...
-  
+  ...
+
+
 
 The `-DF2PY_REPORT_ON_ARRAY_COPY=1` switch caused `f2py` to report that it copied an array (int_arr) on input, since it received a 'C' order array as an argument.  To avoid this array copy, it is necessary to declare the arrays as fortran contiguous, with the `np.asfortranarray` function.
 
