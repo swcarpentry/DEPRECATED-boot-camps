@@ -1,0 +1,27 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module iterate_limit__user__routines 
+    interface iterate_limit_user_interface 
+        function func(x0) result (x0) ! in :_chaos:chaos.f:iterate_limit:unknown_interface
+            double precision :: x0
+        end function func
+    end interface iterate_limit_user_interface
+end python module iterate_limit__user__routines
+python module _chaos ! in 
+    interface  ! in :_chaos
+        subroutine iterate_limit(func,x0,num_iters,results,n) ! in :_chaos:chaos.f
+            use iterate_limit__user__routines
+            external func
+            double precision, intent(inout) :: x0
+            integer, intent(in) :: num_iters
+            integer, intent(in) :: n
+            double precision dimension(n), intent(out) :: results
+            integer optional,check(len(results)> = n),depend(results) :: n = len(results)
+        end subroutine iterate_limit
+    end interface 
+end python module _chaos
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
+
