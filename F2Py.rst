@@ -235,8 +235,8 @@ Here's the source of a FORTRAN 77 subroutine that takes array arguments:
 ```fortran
 
       subroutine array_args(nx, ny, int_arr_in,
-     \*                      cmplx_arr_inout, 
-     \*                      real_arr_out)
+     \ cmplx_arr_inout, 
+     \ real_arr_out)
 
           integer nx, ny
           integer int_arr_in(nx, ny)
@@ -248,7 +248,7 @@ Here's the source of a FORTRAN 77 subroutine that takes array arguments:
           do j = 1, ny
               do i = 1, nx
                   cmplx_arr_inout(i,j) = cmplx(int_arr_in(i,j),
-     \*                   int_arr_in(i,j))
+     \                   int_arr_in(i,j))
                   real_arr_out(i,j) = real(int_arr_in(i,j))
               enddo
           enddo
@@ -264,8 +264,8 @@ Let's add in the `f2py` comments to specify the intent of the arguments:
 
 ```fortran
       subroutine array_args(nx, ny, int_arr_in,
-     \*                      cmplx_arr_inout, 
-     \*                      real_arr_out)
+     \                      cmplx_arr_inout, 
+     \                      real_arr_out)
 
           integer nx, ny
           integer int_arr_in(nx, ny)
