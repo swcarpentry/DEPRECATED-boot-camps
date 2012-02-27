@@ -26,7 +26,51 @@ And that's where `f2py` comes in.
 
 `f2py` is a Fortran to Python interface generator that allows you to take Fortran code, generate a Python interface and compile it all together into an extension module.  The front-end is Python, the heavy lifting is done by Fortran.  Best of both worlds.
 
-Let's see an example.
+
+----------------------------------------------------------------------
+ First Step :  Getting Help
+----------------------------------------------------------------------
+
+Always, we first learn how to get more help. To get some clues about `f2py`, 
+type f2py in the terminal and you will see hints about usage. 
+
+Among the hints about usage, you will find that there is no ordinary help flag,  
+though there are help flags concerning fortran compilers and linking. This is 
+good to know, but not super helpful. 
+
+Really, help for f2py can mostly just be found on the web : 
+
+- The User's Guide is your friend : [[ http://cens.ioc.ee/projects/f2py2e/usersguide/ | http://cens.ioc.ee/projects/f2py2e/usersguide/]]
+- Google is also your friend. You'll find that f2py might throw errors you don't 
+  understand. Google them and you'll find the StackOverflow forums are full of 
+  people with the same error.
+
+
+----------------------------------------------------------------------
+ Example 0: Hello World 
+----------------------------------------------------------------------
+
+As usual, we want to start with a hello world example. 
+
+
+```fortran
+C File hello.f
+      subroutine foo (a)
+      integer a
+      print*, "Hello from Fortran!"
+      print*, "a=",a
+      end
+```
+
+The purpose of this simple file is to say hello from FORTRAN. The function will also set the variable, a, to the argument that you have passed it and print it, for demonstration. Very exciting.
+
+In order to Pythonize this code, try:
+
+::
+  $ f2py -c -m hello hello.f
+
+The configuration of my machine requires that I specify the compiler I want to use, so the command that I'll call is : ```f2py -c -m --fcompiler=gnu95 hello hello.f```
+
 
 ----------------------------------------------------------------------
  Example 1: passing scalar arguments 
