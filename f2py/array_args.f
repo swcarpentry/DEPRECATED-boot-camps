@@ -1,6 +1,6 @@
       subroutine array_args(nx, ny, int_arr_in,
-     \*                      cmplx_arr_inout, 
-     \*                      real_arr_out)
+     \                      cmplx_arr_inout, 
+     \                      real_arr_out)
 
           integer nx, ny
           integer int_arr_in(nx, ny)
@@ -19,7 +19,7 @@ C ... body of subroutine unchanged ...
         do j = 1, ny
             do i = 1, nx
                 cmplx_arr_inout(i,j) = cmplx(int_arr_in(i,j),
-   \*                   int_arr_in(i,j))
+   \                   int_arr_in(i,j))
                 real_arr_out(i,j) = real(int_arr_in(i,j))
             enddo
         enddo
