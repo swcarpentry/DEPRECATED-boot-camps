@@ -14,3 +14,5 @@ Welcome to the PyTrieste wiki!
 - [[Python 9: NumPy|Python9-NumPy]]
 - [[Python 10: Testing|Python10-Testing-your-program]]
 - [[Exercise Session 2 | Exercise-Session-2]]
+- [[Python 11: F2Py | F2Py]]
+- [[Python 12: SWIG | Swig]]
