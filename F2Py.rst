@@ -116,7 +116,7 @@ Let's try a more interesting example. Suppose we have an implicitly typed FORTRA
 
 ```fortran
       subroutine scalar_args(int_in, real_in, int_inout, real_inout,
-     *   int_out, real_out)
+    / int_out, real_out)
 C This doesn't do anything interesting, just for illustration.
       int_inout = int_in
       real_inout = real_in
