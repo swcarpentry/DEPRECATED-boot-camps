@@ -8,7 +8,7 @@ http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/
 int main()
 {
   char *p;
-  int sz;
+  unsigned short sz;
   p = new char[sz];
 
   p = new char[12];
