@@ -9,8 +9,8 @@ int_in = 1.0
 real_in = 10.0
 
 # since these are intent(inout) variables, these must be arrays
-int=inout = np.zeros((1,), dtype = np.int32)
-real=inout = np.zeros((1,), dtype = np.float32)
+int_inout = np.zeros((1,), dtype = np.int32)
+real_inout = np.zeros((1,), dtype = np.float32)
 
 # all intent(out) variables are returned in a tuple, so they aren't passed as
 # arguments.
