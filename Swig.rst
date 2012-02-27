@@ -76,7 +76,7 @@ If all went well, we should now have _pyfast.so and pyfast.py.  Lets run a test 
 
 
 ----------------------------------------------------------------------
- Python and C++ are Different Language 
+ Python and C++ are Different Languages
 ----------------------------------------------------------------------
 
 Python and C++ are different languages (surprise!).  They have different conventions and different features.  Don't be surprised if there isn't a direct analog of some C++ feature in python (or vice versa).
