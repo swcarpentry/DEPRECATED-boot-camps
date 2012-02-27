@@ -79,6 +79,7 @@ The purpose of this simple file is to fill the array you provide with a fibonacc
 In order to Pythonize this code, try:
 
 ::
+
   $ f2py -c -m fib1 fib1.f
 
 The configuration of my machine requires that I specify the compiler I want to 
@@ -180,8 +181,8 @@ We can test this module from python with a python source file named 'pass_args.p
   real_in = 10.0
   
   # since these are intent(inout) variables, these must be arrays
-  int=inout = np.zeros((1,), dtype = np.int32)
-  real=inout = np.zeros((1,), dtype = np.float32)
+  int_inout = np.zeros((1,), dtype = np.int32)
+  real_inout = np.zeros((1,), dtype = np.float32)
   
   # all intent(out) variables are returned in a tuple, so they aren't passed as
   # arguments.
