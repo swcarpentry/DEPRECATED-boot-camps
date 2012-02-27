@@ -50,26 +50,60 @@ Really, help for f2py can mostly just be found on the web :
  Example 0: Hello World 
 ----------------------------------------------------------------------
 
-As usual, we want to start with a hello world example. 
+As usual, we want to start with a very simple example provided by the user manual.
 
 
 ```fortran
-C File hello.f
-      subroutine foo (a)
-      integer a
-      print*, "Hello from Fortran!"
-      print*, "a=",a
-      end
+C FILE: FIB1.F
+      SUBROUTINE FIB(A,N)
+C
+C     CALCULATE FIRST N FIBONACCI NUMBERS
+C
+      INTEGER N
+      REAL*8 A(N)
+      DO I=1,N
+         IF (I.EQ.1) THEN
+            A(I) = 0.0D0
+         ELSEIF (I.EQ.2) THEN
+            A(I) = 1.0D0
+         ELSE 
+            A(I) = A(I-1) + A(I-2)
+         ENDIF
+      ENDDO
+      END
+C END FILE FIB1.F
 ```
 
-The purpose of this simple file is to say hello from FORTRAN. The function will also set the variable, a, to the argument that you have passed it and print it, for demonstration. Very exciting.
+The purpose of this simple file is to fill the array you provide with a fibonacci series.
 
 In order to Pythonize this code, try:
 
 ::
-  $ f2py -c -m hello hello.f
+  $ f2py -c -m fib1 fib1.f
 
-The configuration of my machine requires that I specify the compiler I want to use, so the command that I'll call is : ```f2py -c -m --fcompiler=gnu95 hello hello.f```
+The configuration of my machine requires that I specify the compiler I want to 
+use, so the command that I'll call is : ```f2py -c -m --fcompiler=gnu95 fib1 
+fib1.f``` Once we have run this command, a shared object file has been created by f2py. 
+
+```python
+  import fib1
+```
+
+Interestingly, if we don't yet know how to use fib1 or the fib module within it , we can view the docstrings created by f2py.
+
+```python
+  print fib1.__doc__
+  print fib1.fib.__doc__
+```
+
+So, now we know that in order to use the fib code, we need to provide a numpy (Numeric) array to fill with fibonacci numbers.
+
+```python
+  import numpy as np
+  a=np.zeros(10,'d') 
+  fib1.fib(a) 
+  print a 
+```
 
 
 ----------------------------------------------------------------------
@@ -77,7 +111,7 @@ The configuration of my machine requires that I specify the compiler I want to u
 ----------------------------------------------------------------------
 
 
-Suppose we have an implicitly typed FORTRAN 77 function that takes a number of scalar arguments.  This might be a subroutine in a legacy FORTRAN 77 code, for example.
+Let's try a more interesting example. Suppose we have an implicitly typed FORTRAN 77 function that takes a number of scalar arguments.  This might be a subroutine in a legacy FORTRAN 77 code, for example.
 
 ```fortran
       subroutine scalar_args(int_in, real_in, int_inout, real_inout,
