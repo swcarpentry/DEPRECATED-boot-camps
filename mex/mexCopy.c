@@ -21,7 +21,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]){
 
 		plhs[i] = mxCreateDoubleMatrix(m,n,mxREAL); /* create an m by n real matrix. */
 		dataIn = mxGetPr(prhs[i]); /* pointer to input. */
-		dataOut = mxGetPr(plhs[i]); /* pointer to ouput (for convienence) */
+		dataOut = mxGetPr(plhs[i]); /* pointer to ouput (for convenience) */
 		for (j = 0; j < m*n; j++)
 			dataOut[j] = 2 * dataIn[j]; /* stupid... need better example. */ 
 
