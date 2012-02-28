@@ -16,3 +16,4 @@ Welcome to the PyTrieste wiki!
 - [[Exercise Session 2 | Exercise-Session-2]]
 - [[Python 11: F2Py | F2Py]]
 - [[Python 12: SWIG | Swig]]
+- [[Mex and Matlab|Mex-for-Matlab]]
