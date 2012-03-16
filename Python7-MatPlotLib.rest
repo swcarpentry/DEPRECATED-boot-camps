@@ -2,7 +2,7 @@ ______________________________________________________________________
 Python 7 : Graphing with MatPlotLib 
 ______________________________________________________________________
 
-[[Back to Object Oriented Programming |Python-6:-Object-oriented-programming]] - 
+[[Back to Object Oriented Programming |Python6-Object-oriented-programming]] - 
 [[Forward to SciPy|Python8-SciPy]]
 
 ----
