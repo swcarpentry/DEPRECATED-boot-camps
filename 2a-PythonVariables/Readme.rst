@@ -44,11 +44,12 @@ the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-```
+.. code-block::
+
   >>> print "Hello World"
   Hello World
   >>> exit()
-```
+
 
 To get to the interactive python interpreter, a more sophisticated python shell, 
 type **ipython** into the terminal.
