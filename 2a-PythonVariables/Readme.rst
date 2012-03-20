@@ -44,7 +44,7 @@ the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-.. code-block:: python
+.. code:: python
 
   >>> print "Hello World"
   Hello World
