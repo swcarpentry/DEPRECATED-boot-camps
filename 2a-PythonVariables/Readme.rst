@@ -2,15 +2,16 @@ ______________________________________________________________________
  Python 1 : The Shell, Variables, and Basic Data Types 
 ______________________________________________________________________
 
-[[Back To Version Control|Lesson2a-VersionControl]] - [[Forward to Lists, 
-dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]]
+`Back To The Shell <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/1-Shell/>`_ - 
+`Forward to Lists, dictionaries, sets, and tuples <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonDataStructures/>`_
 
 ----
 
-**Presented By: Katy Huff**
+**Presented By: Joshua R. Smith**
 
 **Based on Lecture Materials By: Milad Fatenejad**
-**With help from Tommy Guy and Many More**
+
+**With help from Katy Huff, Tommy Guy and Many More**
 
 ----------------------------------------------------------------------
 What is Python ?

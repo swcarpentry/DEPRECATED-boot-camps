@@ -1,9 +1,9 @@
 __________________________________________________________________________________
-Lesson 2b : Version Control Collaboratively
+Version Control Collaboratively
 __________________________________________________________________________________
 
-[[Back To Local Version Control| Lesson2a-VersionControl]] - [[Forward to Python 
-Shell and Variables | Python1-ShellAndVariables]]
+`Back To Local Version Control <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3a-VersionControlLocal/>`_ - 
+`Forward To Debugging <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debugging/>`_
 
 ----
 

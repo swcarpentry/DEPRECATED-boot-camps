@@ -2,8 +2,9 @@ ______________________________________________________________________
 Python 4 : Functions and Standard Modules
 ______________________________________________________________________
 
-[[Back to Flow Control : Loops, Conditionals, etc.  
-|Python3-FlowControl]] - [[Forward to Strings and File I-O  | Python-5:-Strings-and-File-I-O]]
+`Back To Flow Control <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/>`_ - 
+`Forward To Local Version Control <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3a-VersionControlLocal/>`_
+
 
 ----
 

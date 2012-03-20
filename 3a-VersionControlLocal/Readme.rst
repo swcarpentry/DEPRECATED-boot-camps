@@ -1,9 +1,9 @@
 __________________________________________________________________________________
-Lesson 2a : Version Control Locally
+Local Version Control
 __________________________________________________________________________________
 
-[[Back To The Unix Shell | Lesson1-TheUnixShell]] - [[Forward to Version Control 
-Continued | Lesson2b-VersionControl]]
+`Back To Python Functions and Modules  <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/>`_ - 
+`Forward To Remote Version Control  <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/>`_
 
 ----
 

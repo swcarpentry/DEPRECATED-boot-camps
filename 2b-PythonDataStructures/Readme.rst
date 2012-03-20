@@ -2,8 +2,8 @@
 Python 2:   Lists, Dictionaries, Sets, Tuples
 .........................................................................
 
-[[Back to The Python Shell and Variables |Python1-ShellAndVariables]] - 
-[[Forward to Flow Control |Python3-FlowControl]]
+`Back To Python Variables <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2a-PythonVariables/>`_ - 
+`Forward to Python Flow Control <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/>`_
 
 ----
 

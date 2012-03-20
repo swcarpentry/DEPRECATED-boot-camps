@@ -1,3 +1,12 @@
+
+Debugging
+____________________________________________
+
+
+
+`Back To Remote Version Control  <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/>`_ - 
+`Forward To Testing <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/5-Testing/>`_
+
 Compile each program without optimization first.
 
 For simpleTest.cc, run this line to see errors in this code. 

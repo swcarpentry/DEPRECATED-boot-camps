@@ -2,9 +2,9 @@ ______________________________________________________________________
 Python 3 : Flow Control - Loops, Conditionals, etc.
 ______________________________________________________________________
 
-[[Back to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]] 
-- [[Forward to Functions and Standard Modules 
-|Python4-FunctionsAndStandardModules]]
+`Back To Python Data Structures <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonDataStructures>`_ - 
+`Forward To Python Functions and Modules  <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/>`_
+
 
 ----
 
