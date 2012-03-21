@@ -18,16 +18,18 @@ Lists
 Most languages have some kind of simple syntax for making lists of things. In 
 python it is extremely easy and intuitive to make a list of things, for example:
 
-```python
+.. code-block:: python
+
   
   > mylist = [] # Make an empty list
   > mylist = [1, 1.0+3j, "aperitivo", True] # Make a list containing four entities
-```
+
 
 Using lists is easy and intuitive. Notice that lists can contain objects of any 
 data type. Try entering the following lines. 
 
-```python
+.. code-block:: python
+
 
  > mylist = [1,2,3,4]
  > mylist[2] = 1.0 + 2j # Modify an element
@@ -38,21 +40,23 @@ data type. Try entering the following lines.
  > del(mylist[2]) # Remove element 2 from the list
   
  > mylist = [1,5,4,2]; mylist.sort() # Sort the list
-```
+
 
 The colon, **:**, provides a syntax for ranges.
 
-```python
+.. code-block:: python
+
  > print mylist[1:4] # Prints a list containing elements 1 2 and 3 from mylist 
-```
+
 
 Remember that there is an element 0, so this prints [4, 6, 8]
 
   
-```python
+.. code-block:: python
+
 
  > print mylist[-2] # Print the second element from the end of the list (8)
-```
+
 
   
 ----------------------------------------------------
@@ -64,7 +68,8 @@ dictionary (referred to as a map in many other languages). Dictionaries allow
 you to set/access elements using a key value relationship. You can create 
 dictionaries as shown below:
 
-```python
+.. code-block:: python
+
 
  > mydictionary = {} # Make an empty dictionary
  > mydictionary = {"one" : 1, "two" : 2, "three" : 3} # Initialize a dictionary 
@@ -76,7 +81,7 @@ dictionaries as shown below:
  > mydictionary["four"] = 4 # Insert an element into the dictionary
  > mydictionary["list"] = [1,2,3] # Sets the element "list" to a list containing 
  > the numbers 1, 2, and 3
-```
+
 
 
 *************************************************************************
@@ -133,7 +138,8 @@ Sets
 It turns out there is a third type of container in Python that only stores 
 unique things: it's called a set.
 
-```python
+.. code-block:: python
+
 
  > s = set()
  > s = set([1,1,2,3,4]) # Note that there are 2 1's in the input list.
@@ -149,7 +155,7 @@ unique things: it's called a set.
  > anotherSet = set([1,2,"hello"])
  > s.intersection(anotherSet)
  set([1, 2])
-```
+
 
 *************************************************************************
 Example : Appending/Adding vs Updating
@@ -159,12 +165,13 @@ There are two methods to add element(s) to a list: append and update. Likewise,
 there are two methods to add element(s) to a set: add and update. What is the 
 difference? 
 
-```python
+.. code-block:: python
+
 
  > myList = [1,2,3]
  > myAppendedList = myList.append([4,5])
  > myUpdatedList = myList.update([4,5])
-```
+
 
 What is the difference between the appended list and the updated list? Why did 
 this happen?
@@ -181,21 +188,23 @@ There is one other compound data type - the tuple. Think of a tuple as a list
 that you can't change. The example below demonstrates how to create and use 
 tuples:
 
-```python
+.. code-block:: python
+
   
   > mytuple = (1,2,3,4) # Create a four element tuple
   > mytuple[2] = 4 # ERROR - tuples can't be modified
   > print mytuple[2], len(mytuple)
    
   > myonetuple = ("hello",) # Create a tuple containing only one element (note the trailing comma)
-```
+
 
 You might be asking yourself, why do we need tuples if we have lists? The answer 
 is that tuples are used internally in Python in a lot of places. One of the 
 basic differences is that dictionaries cannot use a list as a key, but they can 
 use a tuple: 
 
-```python
+.. code-block:: python
+
 
   > d = {}
   > d[(1,2)] = 'numbers'
@@ -205,7 +214,7 @@ use a tuple:
    Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
    TypeError: unhashable type: 'list'
-```
+
 
 As you learn more about python you'll see how lists, tuples and dictionaries are 
 the basic building blocks of the entire language. 
@@ -218,13 +227,14 @@ the basic building blocks of the entire language.
 Simple data types like integers and strings behave slightly differently than 
 more complicated objects. To see one unexpected example, try these commands:
 
-```python
+.. code-block:: python
+
 
   > list1 = [1, 5, 9, 13]
   > list2 = list1
   > list2[0] = -1
   > print list1, list2
-```
+
 
 
 What happens? You'll notice that modifying list2 also modifies list1! This is 
@@ -235,13 +245,14 @@ dealing with simple numbers. This behavior can be very annoying and can lead to
 a lot of bugs, so be careful. We can force python to copy list1 as shown in the 
 example below:
 
-```python
+.. code-block:: python
+
 
   > list1 = [1, 5, 9, 13]
   > list2 = list1[:] # <--- Notice the colon!
   > list2[0] = -1
   > print list1, list2
-```
+
 
 
 Why would Python variables be references rather than copied instances? Let's 

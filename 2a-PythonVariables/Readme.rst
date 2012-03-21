@@ -96,11 +96,12 @@ Questions : Variables and Values
 
 In the code snippet :
 
-```python
+.. code-block:: python
+
    a=2
    b="string"
    c=a
-```
+
 
 - What is the value of the variable `c`?
 - What is the value of the variable b ?
@@ -116,32 +117,36 @@ In the code snippet :
 It is really easy to make variables in python. For example, to create a string, 
 `s`, and print its value, simply type the following into iPython:
 
-```python
+.. code-block:: python
+
    s = "Hello World"
    print s
-```
+
 
 If you want to see what the type of a variable is, you can use the built-in 
 python function, `type`. Just enter 
 
-```python
+.. code-block:: python
+
   print type(s)
-```
+
 
 into iPython and you should see something like this:
 
-```python
+.. code-block:: python
+
      <type 'str'>
-```
+
 
 This tells us that `s` is of type **str** (i.e. that `s` is a string).  Making 
 numeric variables is equally easy and intuitive. Try entering the following into 
 IPython. Notice that the # symbol is used to start comments so everything after 
 the pound sign is ignored.
 
-```python
+.. code-block:: python
+
   i,r,c = -10, 3.5, 1.0 + 2j  # set i to -10, r to 3.5 and c to 1.0+2j
-```
+
 
 
 This one line sets the variable `i` to the integer -10 , `r` to the floating 
@@ -151,14 +156,16 @@ set multiple variables to something. You'll discover a lot of similar syntax
 that is designed to make your life easier). Lets use the built-in type function 
 to determine the type of each of the three variables we just created:
 
-```python
+.. code-block:: python
+
   print type(i), type(r), type(c) 
-```
+
 
 This will give :
-```python
+.. code-block:: python
+
    <type 'int'> <type 'float'> <type 'complex'>
-```
+
 
 This tells us that "i" is an integer, "r" is a floating point number, and "c" is 
 a complex number. As you can see, Python has built-in support for imaginary 
@@ -170,16 +177,18 @@ arbitrary large. In languages like C/C++ and FORTRAN integer variables can only
 store values up to a certain size. But entering and manipulating the following 
 forty digit number with iPython is no problem:
 
-```python
+.. code-block:: python
+
   i = 1234567890123456789012345678901234567890 
   print i * 6
-```
+
 
   
 Operations in Python are defined by their type. For instance, look the 
 difference between these operations:
 
-```python
+.. code-block:: python
+
   In[1]:  1 + 3
     4
   In[2]:  1.0 + 3
@@ -190,7 +199,7 @@ difference between these operations:
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   TypeError: unsupported operand type(s) for +: 'int' and 'str'
-```
+
 
 
 
@@ -203,10 +212,10 @@ representation, the ASCII character code, or something else entirely?
 
 One way to handle this is to explicitly convert the int into a string:
 
-```python
+.. code-block:: python
 
    str(1) + "Hello"
-```
+
 
 Equivalent functions exist for converting to **int**, **float**, and other types.
 
@@ -216,20 +225,22 @@ that sometimes the names have leading and trailing spaces that we want to strip
 away. We can just use the `strip` string method to accomplish this. For example, 
 type the following into iPython:
 
-```python
+.. code-block:: python
+
 
   In[1]: name = "   Milad    "
   In[2]: print name + "is here"
         Milad     is here
-```
+
 
   
 Now enter `name.strip()` instead of `name`:
 
-```python
+.. code-block:: python
+
   In[1]: print name.strip() + " is here"
    Milad is here
-```
+
 
 
 Notice that the extra spaces are gone. We used the `strip()` method, which 
@@ -254,30 +265,33 @@ type is not needed when creating a variable. Also, this means that variables in
 Python which are initialized to a variable of one type can be re-assigned to a 
 variable of a different type. Try this:
 
-```python
+.. code-block:: python
 
    sillystring = "What is the airspeed velocity of an unladen swallow?"
    print type(sillystring)
-```
+
 
 You'll see:
 
-```python
+.. code-block:: python
+
     <type 'str'>
-```
+
 
 If you reassign silly string to an integer, what happens? That is, when you type :
 
-```python
+.. code-block:: python
+
    sillystring = 98
    print type(sillystring)
-```
+
 
 You should see:
 
-```python
+.. code-block:: python
+
     <type 'int'>
-```
+
 
 
 This is an interesting feature. Can you think of ways it can be helpful? Are 
@@ -285,10 +299,10 @@ there ways it might be troublesome?
 
 What is the type of sillystring be after this :
 
-```python
+.. code-block:: python
 
   sillystring += 0.1
-```
+
 
 
 **Aside: In Place Equivalency**
@@ -306,17 +320,19 @@ Questions : Dynamic Typing
 
 Imagine that I first assign :
 
-```python
+.. code-block:: python
+
 
   a=2
-```
+
 
 Then, I assign : 
 
-```python
+.. code-block:: python
+
 
   a="Welcome to the ministry of silly walks."
-```
+
 
 What has happened to the memory that was pointing to the number 2??
 
@@ -330,10 +346,10 @@ documentation is built into the code. Practically, this means that much of the
 time you don't have to go digging through some web site to find help. You can 
 get help in Python using the `help` function. Lets look at an example - enter 
 
-```python
+.. code-block:: python
 
   help(str.strip) 
-```
+
 
 into IPython. You should then see documentation for the 
 strip method pop up. (NOTE: if you don't automatically return to the python 
@@ -341,10 +357,10 @@ interpreter, just hit "`q`" to exit the help screen). You can also use the
 question mark, "`?`", character to display the documentation as well. For 
 example, enter 
 
-```python
+.. code-block:: python
 
   str.strip?
-```
+
 
   
 
@@ -352,10 +368,10 @@ into IPython to view the documentation.
 
 Now try entering 
 
-```python
+.. code-block:: python
 
   help(str)
-```
+
 
 
 
@@ -378,11 +394,12 @@ has documentation that looks like:
 These lines tell us that the string class has a method called "upper" which can 
 be used to convert strings to uppercase. Now enter:
 
-```python
+.. code-block:: python
+
 
   name = "cooper"
   print name.upper()
-```
+
 
 
 At which point, you should see the word "COOPER" printed to the screen. 
@@ -397,10 +414,11 @@ the value "cooper", then used the `upper` string method to obtain the uppercased
 version of the string. We didn't have to create a variable, however. We could 
 simply enter:
 
-```python
+.. code-block:: python
+
 
   print "cooper".upper()
-```
+
 
 
 To generate the uppercased version.

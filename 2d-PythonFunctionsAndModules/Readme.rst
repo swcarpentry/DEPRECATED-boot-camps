@@ -21,41 +21,45 @@ During the last session we saw how to use some of the built-in data types. Durin
 
 Python has a lot of useful data type and functions built into the language. We've see some of these already, and we'll see more over the next few lectures. For a full list, you can type `dir(__builtins__)`. However, most of the useful function are stored in modules. An example is the sine function, which is stored in the math module. In order  to access mathematical functions, like `sin`, we need to ''import'' the math module. Lets take a look at a simple example:
 
-```python
+.. code-block:: python
+
 
   > print sin(3)    # Error! Python doesn't know what sin is...yet
   > import math     # Import the math module
   > print math.sin(3)
   > print dir(math) # See a list of everything in the math module
   > help(math)      # Get help information for the math module
-```
+
 
 
 It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Lets take a look at an example:
 
-```python
+.. code-block:: python
+
 
   > from math import *  # import everything from math into the global namespace (A BAD IDEA IN GENERAL)
   > print sin(3)        # notice that we don't need to type math.sin anymore
   > print tan(3)        # the tangent function was also in math, so we can use that too
-```
+
  
 
-```python
+.. code-block:: python
+
 
   > reset                 # Clear everything from IPython
   > from math import sin  # Import just sin from the math module. This is a good idea.
   > print sin(3)          # We can use sin because we just imported it
   > print tan(3)          # Error: We only imported sin - not tan
-```
 
 
-```python
+
+.. code-block:: python
+
 
   > reset                 # Clear everything
   > import math as m      # Same as import math, except we are renaming the module m
   > print m.sin(3)        # This is really handy if you have module names that are long
-```
+
 
 
 -----------------------------------------
@@ -102,7 +106,8 @@ The sys module gives you access to the Python interpreter. Some important object
 
 Put the following text in a file findPrimes.py in your current working directory.
 
-```python
+.. code-block:: python
+
 
   ''' findPrimes.py
   List whether the numbers passed in the command line are prime.
@@ -112,7 +117,7 @@ Put the following text in a file findPrimes.py in your current working directory
 
   for i in xrange(1,len(argv)):
       print argv[i]
-```
+
 
 
 This program should print each input on its own line. 
@@ -130,19 +135,21 @@ Now, let's work on the next piece of the program, which is a function to compute
 
 The keyword "`def`" is used to define a function. As in the case of conditionals and loops, whitespace is used to define the body of a function. Try entering the following into iPython:
 
-```python
+.. code-block:: python
+
 
  > def triangle_perimeter(a, b, c):
  >    return a + b + c
  > 
  > p = triangle_perimeter(3,4,5)
  > print p
-```
+
   
   
 Python functions can return multiple values:
   
-```python
+.. code-block:: python
+
 
  def rgb(color_name):
   
@@ -159,7 +166,7 @@ Python functions can return multiple values:
   
   r,g,b = rgb("yellow")
   print r,g,b
-```
+
   
 
 **Hands-on Example**
@@ -174,21 +181,23 @@ Write a function, "`perimeter`" that takes one argument - a tuple containing the
 
 In the last example, you wrote a function, called `perimeter`, that you have to call like this:
 
-```python
+.. code-block:: python
+
 
   print perimeter((1,2,3,4,5))
-```
+
 
 
 You need the extra set of parentheses, because the function takes only one argument - a single tuple. Wouldn't it be nice if we didn't have to have the extra parentheses? It turns out that this is easy in python:
 
-```python
+.. code-block:: python
+
 
   def perimeter(\*args):
      return sum(args)
   
   print perimeter(1,2,3,4,5)
-```
+
   
 
 Notice that little star on the first line. That star tells python to take all of the arguments and bundle them into a single tuple called args. This feature allows us to create functions that take a variable number of arguments. The function calls do not require the extra set of parentheses we saw earlier.
@@ -205,24 +214,26 @@ Write a function that takes a variable number of floating point arguments and re
 
 Consider the following function, whose arguments represent the model year, mileage, and number of accidents that a car has had. The function attempts to use this information to compute the value of the car.
 
-```python
+.. code-block:: python
+
 
   def carvalue(year, mileage, nacc):
      return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
   
   print carvalue(2001, 100000, 2)
-```
+
 
 
 In order to use the `carvalue` function, we have to remember that `year` is the first argument, `mileage` is the second, and `nacc` is the third. If we accidentally put the wrong argument in the wrong place then we will compute the wrong answer. Luckily, we can be explicit when calling functions using the following syntax:
 
-```python
+.. code-block:: python
+
 
   print carvalue(year=2001, mileage = 100000, nacc=2)
   print carvalue(mileage= 100000, year = 2001, nacc=2) # Also produces the correct answer!
   print carvalue(2001, nacc= 2, mileage = 100000) # Sets the year to 2001, the mileage to 100000, and nacc to 2
   print carvalue(year= 2001, mileage = 100000, 2) # ERROR: Keyword arguments must precede non-keyword arguments
-```
+
   
   
 .........................................................................
@@ -232,14 +243,15 @@ In order to use the `carvalue` function, we have to remember that `year` is the 
 
 Suppose I did a study that showed that the average number of car accidents a particular vehicle experienced was two. Now I want to modify the `carvalue` function so that if the user doesn't know the number of accidents, the function will use two by default. I can do this by providing a default value in the function definition.
 
-```python
+.. code-block:: python
+
 
   def carvalue(year, mileage, nacc=2):
      return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
   
   print carvalue(2001, 100000, 2) # Works just like before
   print carvalue(2001, 100000) # Since nacc is not specified, it defaults to 2
-```
+
     
 
 You cannot mix default value arguments and variable numbers of arguments in the same function. 
@@ -250,7 +262,8 @@ Back to Prime Numbers
 
 Let's write a function in findPrimes.py to find prime numbers. Recall that a prime number is a number that has no divisors other than 1 and the number itself. In the code below, I'm using the sqrt function, which can be imported from the math module.
 
-```python
+.. code-block:: python
+
 
   def isPrime(n):
     ''' Return True iff a number is prime. '''
@@ -270,7 +283,7 @@ Let's write a function in findPrimes.py to find prime numbers. Recall that a pri
        cntr += 2
 
     return True
-```
+
 
 
 **Hands on example** 

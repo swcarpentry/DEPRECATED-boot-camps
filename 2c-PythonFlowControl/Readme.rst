@@ -46,7 +46,8 @@ boolean is true, do the following. Elsewise, do this other thing."
 Many equivalence test statements exist in Python that are similar in other 
 languages:
 
-```python
+.. code-block:: python
+
   i=1
   j=2
   i==j # i is equal to j : FALSE
@@ -55,24 +56,26 @@ languages:
   i>j  # i is greater than j
   i>=j # i is greater than or equal to j : FALSE
   i!=j # i is not equal to j : TRUE
-```
+
 
 However, python has other equivalence test statements that are fairly unique to 
 python. To check whether an object is contained in a list :
 
-```python
+.. code-block:: python
+
   beatle="John"
   beatles=["George", "Ringo","John", "Paul"]
   print beatle in beatles # is John one of the beatles? : TRUE
   print "Katy" not in beatles # this is also TRUE. 
-```
+
 
 
 
 Conditionals (if statements) are also really easy to use in python. Take a look 
 at the following example:
 
-```python
+.. code-block:: python
+
 
   i = 4
   sign = "zero"
@@ -84,7 +87,7 @@ at the following example:
     print "Sign must be zero"
     print "Have a nice day"
   print sign
-```
+
 
 The behavior of this code snippet should be pretty clear, but there is something 
 peculiar. How does Python know where the if-statement ends?  Other languages, 
@@ -102,10 +105,11 @@ functions or classes.
 Python has an easy to use if-syntax for setting the value of a variable. Try 
 entering this into IPython:
 
-```python
+.. code-block:: python
+
   i = 5
   sign = "positive" if i > 0 else "negative"
-```
+
 
 
 
@@ -120,7 +124,8 @@ the product of each number in the list up to the -1 element.
 A while loop will repeat the instructions within itself until the conditional 
 that defines it is no longer true.
 
-```python
+.. code-block:: python
+
   mult = 1
   sequence = [1, 5, 7, 9, 3, -1, 5, 3]
   while sequence[0] is not -1:
@@ -128,7 +133,7 @@ that defines it is no longer true.
       del sequence[0]
 
   print mult
-```
+
 
 Some new syntax has been introduced in this example. 
 
@@ -149,13 +154,14 @@ Since a while loop will continue until its conditional is no longer true,
 a **poorly formed** while loop might repeat forever. For example : 
 
 
-```python
+.. code-block:: python
+
   i=1
   print "Well, there's egg and bacon, egg and spam, egg bacon and"
   while i is 1:
     print "spam "
   print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..." 
-```
+
 
 Since the variable **i** never changes within the while loop, we can expect that 
 the conditional, **i=1** will remain true forever and the while loop will just 
@@ -166,7 +172,8 @@ interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
 To create nested if loops, the indentation (preferably two or four spaces) 
 should increase for each looping level.
 
-```python
+.. code-block:: python
+
   weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
   tries=0
   script=""
@@ -182,7 +189,7 @@ should increase for each looping level.
           script += " and nice red uniforms. Oh damn!"
       tries +=1
   print script
-```
+
 
 ----------------------------------------------------------------------
  For Loops
@@ -191,11 +198,12 @@ should increase for each looping level.
 For loops in python operate a little differently from other languages. Lets 
 start with a simple example which prints all of the numbers from 0 to 9:
 
-```python
+.. code-block:: python
+
 
   for i in range(10):
       print i
-```
+
 
 You may be wondering how this works. Start by using help(range) to see what the 
 range function does.
@@ -229,26 +237,29 @@ really used to iterate over sequences of things (they can be used for much more,
 but for now this definition will do). Try entering the following to see what 
 happens:
 
-```python
+.. code-block:: python
+
 
   for c in ["one", 2, "three", 4, "five"]:
       print c
-```
+
 
 
 this is equivalent to:
 
-```python
+.. code-block:: python
+
 
   c = ["one", 2, "three", 4, "five"]
   for i in range(len(c)):
       print c[i]
-```
+
 
 With a list, then, it's clear that we can use the **in** keyword to indicate a 
 list of things. What about a nested loops around a list of lists?
 
-```python
+.. code-block:: python
+
   italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
   argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
   india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
@@ -259,7 +270,7 @@ list of things. What about a nested loops around a list of lists?
       print nationnames[nations.index(nation)] + ": "
       for city in nation :
           print "  " + city 
-```
+
 
 
 Of course, this information is better stored in a dictionary, isn't it? 
@@ -278,7 +289,8 @@ Importantly, you don't have to use the words key and value. That's just what
 will fill those variables. Here, we rewrite the previous loop using this clever 
 syntax.
 
-```python
+.. code-block:: python
+
 
   italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
   argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
@@ -289,7 +301,7 @@ syntax.
       print nation + " : "
       for city in cities :
           print "  " + city 
-```
+
 
 ----------------------------------------------------------------------
 break, continue, and else 
@@ -298,24 +310,26 @@ break, continue, and else
 A break statement cuts off a loop from within an inner loop. It helps avoid 
 infinite loops by cutting off loops when they're clearly going nowhere.
 
-```python
+.. code-block:: python
+
   reasonable = 10
   for n in range(1,2000):
       if n == reasonable :
           break
       print n
-```
+
 
 Something you might want to do instead of breaking is to continue to the next 
 iteration of a loop, giving up on the current one..
 
-```python
+.. code-block:: python
+
   reasonable = 10
   for n in range(1,2000):
       if n == reasonable :
         continue
       print n
-```
+
 
 What is the difference between the output of these two?
 
@@ -324,7 +338,8 @@ Importantly, Python allows you to use an else statement in a for loop.
 
 That is :
 
-```python
+.. code-block:: python
+
   knights={"Sir Belvedere":"the Wise", "Sir Lancelot":"the Brave", \
           "Sir Galahad":"the Pure", "Sir Robin":"the Brave", "The Black Knight":"John Clease"} 
 
@@ -339,7 +354,7 @@ That is :
       else:
           string += title + ", but not quite so brave as Sir Lancelot." 
       print string
-```
+
 
       
 ----------------------------------------------------------------------
@@ -362,7 +377,8 @@ through each line in the file and counts the number of times each area code
 appears. The answer is stored in a dictionary, where the area code is the key 
 and the number of times it occurs is the value.
 
-```python
+.. code-block:: python
+
 
   areacodes = {} # Create an empty dictionary
   f = open("phonenums.txt") # Open the text file
@@ -374,7 +390,7 @@ and the number of times it occurs is the value.
         areacodes[ac] += 1 # Add one to the dictionary entry
   
   print areacodes # Print the answer
-```
+
   
 **********************************************************************
 Example : Iteritems
