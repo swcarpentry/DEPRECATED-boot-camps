@@ -51,7 +51,9 @@ To get to the python shell, type **python** into the terminal.
   >>> exit()
 
 To get to the interactive python interpreter, a more sophisticated python shell, 
-type **ipython** into the terminal::
+type **ipython** into the terminal:
+
+.. code-block:: python
 
   In [1]: print "Hello World"
   Hello World
