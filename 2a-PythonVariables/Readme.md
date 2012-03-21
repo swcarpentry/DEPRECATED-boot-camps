@@ -40,7 +40,7 @@ text editor, outside of the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-```` {.sourceCode .python}
+````python
 >>> print "Hello World"
 Hello World
 >>> exit()
