@@ -40,16 +40,18 @@ text editor, outside of the interpreter.
 
 To get to the python shell, type **python** into the terminal.
 
-~~~~ {.sourceCode .python}
+```` {.sourceCode .python}
 >>> print "Hello World"
 Hello World
 >>> exit()
-~~~~
+````
 
 To get to the interactive python interpreter, a more sophisticated
-python shell, type **ipython** into the terminal.
+python shell, type **ipython** into the terminal:
 
-`` `python   In [1]: print "Hello World"   Hello World   In [2]: exit ``\`
+    In [1]: print "Hello World"
+    Hello World
+    In [2]: exit
 
 You can also put the commands in a **.py** file and execute that file in
 the terminal by typing **python [filename]**
