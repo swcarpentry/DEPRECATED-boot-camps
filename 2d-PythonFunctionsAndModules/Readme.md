@@ -1,5 +1,4 @@
 Python 4 : Functions and Standard Modules
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 [Back To Flow
 Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/)
@@ -8,7 +7,7 @@ Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3a-VersionCo
 
 * * * * *
 
-**Presented By : Tommy Guy**
+**Presented By : Joshua R. Smith**
 
 **Original material by Milad Fatenejad**
 

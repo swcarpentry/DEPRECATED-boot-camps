@@ -7,7 +7,7 @@ Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlo
 
 * * * * *
 
-**Presented By : Tommy Guy**
+**Presented By : Joshua R. Smith**
 
 **Based on lecture materials by Milad Fatenejad**
 
@@ -75,12 +75,13 @@ Accomplish the following tasks using Python. Each task should take only
 one line. You may need to use the help and dir functions to figure out
 parts you don't know:
 
-1.  Create a string and initialize it to "Tommy Katy Stefano Antun
-    Graziano""
+1.  Create a string and initialize it to "Joshua Katy Milad Anthony"
 
-\2. Split the string into a list whose elements are the names Tommy,
-Katy, Stefano, Antun, Graziano. 3. Sort and print the list 4. Without
-deleting anyone, add your own name to the list **so that it comes
+2. Split the string into a list whose elements are the names Joshua, Katy, Milad, and Anthony. 
+
+3. Sort and print the list 
+
+4. Without deleting anyone, add your own name to the list **so that it comes
 first.**
 
 ### Example: Manipulating Compound Data
@@ -95,12 +96,13 @@ parts you don't know:
     -   "Purple", 3
     -   "Orange", 1
     -   "Blue", 3
+    -   "Teal", 3
 
-    \* "Teal", 3
-
-\2. Extract a list of values from the dictionary (i.e. get a list
+2. Extract a list of values from the dictionary (i.e. get a list
 containing [3,3,3,3,1,5] from the dictionary, don't make the list on
-your own) 3. Find and use a list method to count the number of times the
+your own) 
+
+3. Find and use a list method to count the number of times the
 value 3 appears (Use the list you produced on step 2, the correct answer
 is that the value 3 appears four times)
 
@@ -109,9 +111,10 @@ key overwrites whatever was stored there. What if we want to store a
 list of unique items? There are two options using what we know about so
 far:
 
-\1. Use a list, but every time we add an element, check whether it is
-already there. 2. Use a dictionary to store the object as a key to some
-dummy value.
+1. Use a list, but every time we add an element, check whether it is
+already there. 
+
+2. Use a dictionary to store the object as a key to some dummy value.
 
 ## Sets
 
@@ -150,7 +153,7 @@ update. What is the difference?
 What is the difference between the appended list and the updated list?
 Why did this happen?
 
-\1. Try the same thing with the add() and update() functions on a set.
+1. Try the same thing with the add() and update() functions on a set.
 The key is that containers can hold other containers.
 
 ## Tuples

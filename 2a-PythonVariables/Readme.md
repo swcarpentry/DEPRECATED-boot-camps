@@ -7,9 +7,7 @@ tuples](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonData
 
 **Presented By: Joshua R. Smith**
 
-**Based on Lecture Materials By: Milad Fatenejad**
-
-**With help from Katy Huff, Tommy Guy and Many More**
+**Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy and Many More**
 
 # What is Python ?
 
@@ -141,9 +139,11 @@ the type of each of the three variables we just created:
 print type(i), type(r), type(c) 
 ```
 
-This will give : .. code-block:: python
+This will give : 
 
+```python
 > <type 'int'\> <type 'float'\> <type 'complex'\>
+```
 
 This tells us that "i" is an integer, "r" is a floating point number,
 and "c" is a complex number. As you can see, Python has built-in support
