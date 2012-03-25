@@ -142,7 +142,7 @@ print type(i), type(r), type(c)
 This will give : 
 
 ```python
-> <type 'int'\> <type 'float'\> <type 'complex'\>
+<type 'int'\> <type 'float'\> <type 'complex'\>
 ```
 
 This tells us that "i" is an integer, "r" is a floating point number,
