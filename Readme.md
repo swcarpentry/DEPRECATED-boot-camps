@@ -1,6 +1,6 @@
 # Welcome to the University of Chicago Software Carpentry Boot Camp!!
 
-![THW logo](http://software-carpentry.org/blog/wp-content/uploads/2012/01/flash-logo-sm.gif "thw logo")
+![THW logo]( http://hackerwithin.org/thw/static/thwlogo-small.png "thw logo")
 
 ![Flash logo]( http://software-carpentry.org/blog/wp-content/uploads/2012/01/flash-logo-sm.gif "flash logo")
 
