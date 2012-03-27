@@ -1,9 +1,21 @@
 # Welcome to the University of Chicago Software Carpentry Boot Camp!!
 
+## How ?
+
+Before you come to the boot camp, you will need to bring a laptop with which to 
+follow along interactively with the tutorials. In order to do this, you will 
+need to install [VirtualBox](https://www//virtualbox.org/), download 
+[this virtual machine image](http://s3.amazonaws.com/ufocthwscbc/UoFCSCBC2012.ova/) 
+and open the image using VirtualBox.
+
+By doing so, you will have, on your laptop, a virtual environment pre-loaded 
+with all of the necessary software (a terminal, text editors, git, the enthought 
+python distribution, and valgrind) for the tutorial. 
+
 ## Where?
 
 The University of Chicago Software Carpentry Boot Camp will be located
-at : .
+at [University of Chicago, Searle-Cl 240, 5735 S Ellis Ave (Main Entrance)](http://maps.google.com/maps?q=Searle+Chemical+Laboratory++5735+South+Ellis+Avenue++Chicago,+IL+60637&hl=en&ll=41.790689,-87.600131&spn=0.009087,0.019205&client=safari&oe=UTF-8&hq=Searle+Chemical+Laboratory++5735+South+Ellis+Avenue++Chicago,+IL+60637&radius=15000&t=m&z=16&iwloc=A).    
 
 ## When ?
 
