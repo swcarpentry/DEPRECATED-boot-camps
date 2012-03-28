@@ -25,10 +25,12 @@ def main():
         n += 1
 
     madeit = [order[2] for order in orders[:n]]
+    manymadeit = [order[2] for order in orders[:n] if 1 < order[0]]
     maybe = [order[2] for order in orders[n:n+10]]
     nogo = [order[2] for order in orders[n+10:]]
 
     print "made it: {}\n".format(', '.join(madeit))
+    print "many made it: {}\n".format(', '.join(manymadeit))
     print "maybe: {}\n".format(', '.join(maybe))
     print "nogo: {}\n".format(', '.join(nogo))
 
