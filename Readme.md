@@ -1,9 +1,24 @@
 # Welcome to the University of Chicago Software Carpentry Boot Camp!!
 
+![THW logo]( http://hackerwithin.org/thw/static/thwlogo-small.png "thw logo")   ![Flash logo]( http://software-carpentry.org/blog/wp-content/uploads/2012/01/flash-logo-sm.gif "flash logo")                 ![SWC logo]( http://software-carpentry.org/software-carpentry-logo-285x58.png "SWC logo")
+
+## How ?
+
+Before you come to the boot camp, you will need to bring a laptop with which to 
+follow along interactively with the tutorials. In order to do this, you will 
+need to install [VirtualBox](https://www//virtualbox.org/), download 
+[this virtual machine 
+image](http://s3.amazonaws.com/ufocthwscbc/UoFCSCBC2012.ova/), 
+and open the image using VirtualBox.
+
+By doing so, you will have, on your laptop, a virtual environment pre-loaded 
+with all of the necessary software (a terminal, text editors, git, the enthought 
+python distribution, and valgrind) for the tutorial. 
+
 ## Where?
 
 The University of Chicago Software Carpentry Boot Camp will be located
-at : .
+at [University of Chicago, Searle-Cl 240, 5735 S Ellis Ave (Main Entrance)](http://maps.google.com/maps?q=Searle+Chemical+Laboratory++5735+South+Ellis+Avenue++Chicago,+IL+60637&hl=en&ll=41.790689,-87.600131&spn=0.009087,0.019205&client=safari&oe=UTF-8&hq=Searle+Chemical+Laboratory++5735+South+Ellis+Avenue++Chicago,+IL+60637&radius=15000&t=m&z=16&iwloc=A).    
 
 ## When ?
 
@@ -20,42 +35,31 @@ compendium of resources for scientific computation.
 
 ## What?
 
-  ----- ------------------------------------------------------------------
-  Time  Topic
+Time  &  Topic
 
-  8:30  [Set
-  9:00  Up](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/0-S
-  12:00 etUp/)
-  1:00  [Shell](http://github.com/thehackerwithin/UofCSCBC2012/tree/master
-  2:00  /1-Shell/)
-  3:00  [Lunch](http://github.com/thehackerwithin/UofCSCBC2012/tree/master
-  4:00  /Lunch/)
-  9:00  [Python 1:
-  11:00 Variables](http://github.com/thehackerwithin/UofCSCBC2012/tree/mas
-  12:30 ter/2a-PythonVariables/)
-  1:30  [Python 2: Data
-  2:30  Structures](http://github.com/thehackerwithin/UofCSCBC2012/tree/ma
-  4:00  ster/2b-PythonDataStructures/)
-        [Python 3: Flow
-        Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/maste
-        r/2c-PythonFlowControl/)
-        [Python 4: Functions And
-        Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/maste
-        r/2d-PythonFunctionsAndModules/)
-        [Local Version
-        Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/maste
-        r/3a-VersionControlLocal/)
-        [Collaborative Version
-        Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/maste
-        r/3b-VersionControlRemote/)
-        [Lunch](http://github.com/thehackerwithin/UofCSCBC2012/tree/master
-        /Lunch/)
-        [Debugging](http://github.com/thehackerwithin/UofCSCBC2012/tree/ma
-        ster/4-Debugging/)
-        [Testing](http://github.com/thehackerwithin/UofCSCBC2012/tree/mast
-        er/5-Testing/)
-        [Documentation](http://github.com/thehackerwithin/UofCSCBC2012/tre
-        e/master/6-Documentation/)
-  ----- ------------------------------------------------------------------
+8:30   [Set Up](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/0-SetUp/)
 
+9:00   [Shell](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/1-Shell/)
+
+12:00  [Lunch](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/Lunch/)
+
+1:00   [Python 1: Variables](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2a-PythonVariables/)
+
+2:00   [Python 2: Data Structures](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonDataStructures/)
+
+3:00   [Python 3: Flow Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/)
+
+4:00   [Python 4: Functions And Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/)
+
+9:00   [Local Version Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3a-VersionControlLocal/)
+
+11:00  [Collaborative Version Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/)
+
+12:30  [Lunch](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/Lunch/)
+
+1:30   [Debugging](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debugging/)
+
+2:30   [Testing](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/5-Testing/)
+
+4:00   [Documentation](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/6-Documentation/)
 
