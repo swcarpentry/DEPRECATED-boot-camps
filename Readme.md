@@ -8,7 +8,7 @@ Before you come to the boot camp, you will need to bring a laptop with which to
 follow along interactively with the tutorials. In order to do this, you will 
 need to install [VirtualBox](https://www//virtualbox.org/), download 
 [this virtual machine 
-image](http://s3.amazonaws.com/ufocthwscbc/UoFCSCBC2012.ova/), 
+image](http://s3.amazonaws.com/ufocthwscbc/UoFCSCBC2012.ova), 
 and open the image using VirtualBox.
 
 By doing so, you will have, on your laptop, a virtual environment pre-loaded 
