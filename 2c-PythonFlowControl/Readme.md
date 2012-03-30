@@ -1,5 +1,4 @@
-Python 3 : Flow Control - Loops, Conditionals, etc.
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+# Python 3 : Flow Control - Loops, Conditionals, etc.
 
 [Back To Python Data
 Structures](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonDataStructures)
@@ -8,11 +7,11 @@ Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFun
 
 * * * * *
 
-**Presented By : Katy Huff**
+**Presented By : Joshua R. Smith**
 
 **Based on Lecture Materials By: Milad Fatenejad**
 
-# Pasting into iPython
+# Pasting into iPython, a recap
 
 This part of the lesson includes a lot of text, but it will be useful to
 run it yourself in iPython.
@@ -77,8 +76,8 @@ print sign
 
 The behavior of this code snippet should be pretty clear, but there is
 something peculiar. How does Python know where the if-statement ends?
-Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code. For example, in MatLab you begin an if
+Other languages, like FORTRAN, MATLAB, and C/C++ all have some way of
+delimiting blocks of code. For example, in MATLAB you begin an if
 statement with the word "if" and you end it with "end if". In C/C++ you
 delimit blocks with curly braces. Python uses ''indentation'' to delimit
 code blocks. The **indentation** above is NOT just to make things look
