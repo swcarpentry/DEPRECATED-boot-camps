@@ -99,28 +99,30 @@ Segfaults
 ==========================================================================
 The Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded, Objective}!
 **************************************************************************
+Segmentation faults (*segfaults*) are some of the most obscure, most annoying, 
+and most difficult to debug errors in existence.  This is because they are a 
+function of the state of the computer's RAM or virtual memory at runtime.
 
-**Segfaults** are some of the most obscure, most annoying, and most difficult to debug errors in existence.  This is because they are a function of the state of the computer's RAM or virtual memory at runtime.
+Segfaults occur when the program tries to access a part of memory that it expects 
+to be able to get to, and for whatever reason it is not available.  At this point 
+the code cannot continue and typically just prints out ``Segmentation fault`` to the screen.
 
-Segfaults occur when the program tries to access a part of memory that it expects to be able to get to, and for whatever reason it is not available.  At this point the code cannot continue and typically just prints out ``Segmentation fault`` to the screen.
+As the above error message does not indicate *where* in the execution the segfault occurred, 
+it very could have been anywhere.  However, all hope is not lost!  Even high-level languages 
+like Python have ways of handling segfaults made on the C/C++/Fortran level and turning them 
+into standard exceptions.  A great module for doing this is faulthandler, which joined the 
+Python standard library in v3.3.
 
-As the above error message does not indicate ''where'' in the execution the segfault occurred, it very truthfully could be anywhere!  
+**Example::**
 
-However, all hope is not lost!
+    python segfault_unhandled_example.py
+    python segfault_handled_example.py
 
-Even from high-level languages like Python have ways of handling segfaults made on the C/C++/Fortran level and turning them into standard exceptions.
+**Other Resources:**  `faulthandler`_, `WAD`_, `HOWTO Crash Python`_.
 
-A great module for doing this is faulthandler.
-
-**Example:** 
-
-``
-python segfault_unhandled_example.py
-python segfault_handled_example.py
-``
-
-**Other Resources:**  [[faulthandler https://github.com/haypo/faulthandler/wiki/]], [[WAD http://www.dabeaz.com/papers/Python2001/python.html]], [[HOWTO Crash Python http://wiki.python.org/moin/CrashingPython]].
-
+.. _faulthandler: https://github.com/haypo/faulthandler/wiki/
+.. _WAD: http://www.dabeaz.com/papers/Python2001/python.html
+.. _HOWTO Crash Python: http://wiki.python.org/moin/CrashingPython
 
 
 Compile each program without optimization first.
