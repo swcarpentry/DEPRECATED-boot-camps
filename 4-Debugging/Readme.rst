@@ -8,6 +8,13 @@ ____________________________________________
 
 **Presented and Designed by Anthony Scopatz** 
 
+Below are some tools that are useful for debugging.  We'll need to do some 
+extra installation to have all of them available::
+
+    cd ~/UofCSCBC2012/4-Debugging/
+    sudo ./install.sh
+
+
 What is Debugging (Exercise)?
 =============================
 Before I show you the practice (art) of debugging, separate out into groups 
@@ -22,14 +29,6 @@ of 2-3 people.  Follow these steps:
 (Bonus Challenge: Make a new friend!)  
 
 Time limit: 5 min.
-
-Tools
-=====
-Below are some python tools that are used for debugging.  All of the following are in the 
-debugging directory::
-
-    cd ~/UofCSCBC2012/4-Debugging/
-    sudo ./install.sh
 
 pdb
 ===

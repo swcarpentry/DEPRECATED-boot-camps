@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install gcc
+apt-get install gcc -y
+
 # Install kernprof
 wget http://pypi.python.org/packages/source/l/line_profiler/line_profiler-1.0b3.tar.gz#md5=63fc2a757192eb5e577559cfdff5b831
 tar xvzf line_profiler-1.0b3.tar.gz
