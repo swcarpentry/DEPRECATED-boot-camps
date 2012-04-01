@@ -27,16 +27,15 @@ Time limit: 5 min.
 Below are some python tools that are used for debugging. All of the
 following are in the debugging directory:
 
-    cd debugging/
+    cd ~/UofCSCBC2012/4-Debugging/
     sudo ./install.sh
 
 ## pdb
 
 Following Python's moto of "batteries included", the language itself
-comes packaged with its own aptly named Python DeBugger (pdb).
-
-From any Python code anywhere, simply make sure that pdb is imported and
-then call the `set_trace()` function.
+comes packaged with its own aptly named Python DeBugger (pdb). From any
+Python code anywhere, simply make sure that pdb is imported and then
+call the `set_trace()` function.
 
 ```python
 import pdb
@@ -50,13 +49,14 @@ Once inside the debugger, 'l(ist)' will list the commands available,
 'h(elp)' will give you help on those commands, and 'q(uit)' exits the
 debugger.
 
-**Example: `python pdb_example.py`**
+**Example:** `python pdb_example.py`
 
 **Other Resources:** [PDB
-Docs](http://docs.python.org/library/pdb.html), [[Wingware
-http://wingware.com/doc/debug/advanced]], [[O'Reily
-http://onlamp.com/pub/a/python/2005/09/01/debugger.html]], [[Great Blog
-http://pythonconquerstheuniverse.wordpress.com/category/the-python-debugger/]].
+Docs](http://docs.python.org/library/pdb.html),
+[Wingware](http://wingware.com/doc/debug/advanced),
+[O'Reily](http://onlamp.com/pub/a/python/2005/09/01/debugger.html),
+[Great
+Blog](http://pythonconquerstheuniverse.wordpress.com/category/the-python-debugger/).
 
 \#\# Profiling
 
