@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Install gcc
+apt-get update
 apt-get install gcc -y
 
 # Install kernprof
