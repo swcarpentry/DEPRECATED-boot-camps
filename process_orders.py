@@ -10,7 +10,9 @@ def main():
 
     orders = [(int(order[index['Tickets']]), 
                order[index['Date']], 
-               order[index['Email Address']]) for order in orders][::-1]
+               order[index['Email Address']], 
+               order[index['First Name']] + " " + order[index['Last Name']]) \
+               for order in orders][::-1]
 
     # Group and sort 
     sorted_orders = []
@@ -25,6 +27,8 @@ def main():
         n += 1
 
     madeit = [order[2] for order in orders[:n]]
+    #with open("madeit_emails.txt") as f:
+    #    names += [email[:-1] for email in f.readlines()]
     manymadeit = [order[2] for order in orders[:n] if 1 < order[0]]
     maybe = [order[2] for order in orders[n:n+10]]
     nogo = [order[2] for order in orders[n+10:]]
@@ -33,6 +37,12 @@ def main():
     print "many made it: {}\n".format(', '.join(manymadeit))
     print "maybe: {}\n".format(', '.join(maybe))
     print "nogo: {}\n".format(', '.join(nogo))
+
+    names = [order[3] for order in orders[:n]]
+    with open("extra_names.txt") as f:
+        names += [name[:-1] for name in f.readlines()]
+    print "Names: {}".format(len(names))
+    print "\n".join(names)
 
 
 if __name__ == "__main__":
