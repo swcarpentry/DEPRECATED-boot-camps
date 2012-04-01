@@ -95,8 +95,10 @@ than importing and running the module.  We'll be talking about pyflakes.
 .. _pylint: http://www.logilab.org/857
 .. _comparison: http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-03-linters/
 
-Segfaults - the Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded, Objective}!
+Segfaults 
 ==========================================================================
+The Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded, Objective}!
+**************************************************************************
 
 **Segfaults** are some of the most obscure, most annoying, and most difficult to debug errors in existence.  This is because they are a function of the state of the computer's RAM or virtual memory at runtime.
 
