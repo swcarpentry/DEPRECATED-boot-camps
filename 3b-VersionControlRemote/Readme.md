@@ -79,28 +79,28 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the PyTrieste repository,
+While you probably already have a copy of the UofCSCBC2012 repository,
 GitHub doesn't know about it yet. You'll need to tell github you want to
 have an official fork of this repository.
 
 Step 1 : Go to our [[repository |
-https://github.com/thehackerwithin/PyTrieste/]] from your browser, and
+https://github.com/thehackerwithin/UofCSCBC2012/]] from your browser, and
 click on the Fork button. Choose to fork it to your username rather than
 any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone git@github.com:username/PyTrieste.git
-    $ cd PyTrieste
+    $ git clone git@github.com:username/UofCSCBC2012.git
+    $ cd UofCSCBC2012
 
 Step 3 :
 
-    $ git remote add upstream git://github.com/thehackerwithin/PyTrieste.git
+    $ git remote add upstream git://github.com/thehackerwithin/UofCSCBC2012.git
     $ git remote -v
-    origin  git@github.com:username/PyTrieste.git (fetch)
-    origin  git@github.com:username/PyTrieste.git (push)
-    upstream        git://github.com/thehackerwithin/PyTrieste.git (fetch)
-    upstream        git://github.com/thehackerwithin/PyTrieste.git (push)
+    origin  git@github.com:username/UofCSCBC2012.git (fetch)
+    origin  git@github.com:username/UofCSCBC2012.git (push)
+    upstream        git://github.com/thehackerwithin/UofCSCBC2012.git (fetch)
+    upstream        git://github.com/thehackerwithin/UofCSCBC2012.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
@@ -108,7 +108,7 @@ All repositories that are clones begin with a remote called origin.
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original PyTrieste
+want your master branch to track updates in the original UofCSCBC2012
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -121,7 +121,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case thehackerwithin/PyTrieste) into your local working copy, you
+this case thehackerwithin/UofCSCBC2012) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
@@ -175,7 +175,7 @@ commits to that remote is exactly analagous.
 
     $ git push upstream master
 
-In the case of the PyTrieste code, new developer accounts will not allow
+In the case of the UofCSCBC2012 code, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
 
 ## git merge : Conflicts
@@ -183,15 +183,15 @@ this push to succeed. You're welcome to try it though.
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the PyTrieste code, you'll find a file called readme.rst. This is a
+In the UofCSCBC2012 code, you'll find a file called readme.rst. This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
 fork on github,
-[https://github.com/username/PyTrieste/](https://github.com/username/PyTrieste/)
+[https://github.com/username/UofCSCBC2012/](https://github.com/username/UofCSCBC2012/)
 .
 
 For illustration, let's imagine that, suddenly, each of the developers
-on the PyTrieste code would like to welcome visitors in a language other
+on the UofCSCBC2012 code would like to welcome visitors in a language other
 than English. Since we're all from so many different nations and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
@@ -301,4 +301,4 @@ alterations,
     Compressing objects: 100% (6/6), done.
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/PyTrieste.git
+    To git@github.com:username/UofCSCBC2012.git
