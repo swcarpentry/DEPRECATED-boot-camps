@@ -366,14 +366,10 @@ Step 3 : Merge the two branches into the core
 The Hacker Within has its own online code repositories. You can check
 out code from them at any time, from anywhere. You checked out some code
 this morning at github
-[http://www.github.com/thehackerwithin/PyTrieste.](http://www.github.com/thehackerwithin/PyTrieste.)
-
-If you gave me github account name, you are a fully fledged reading
-writing member today. Remember, with great power comes great
-responsibility.
+[http://www.github.com/thehackerwithin/UofCSCBC2012.](http://www.github.com/thehackerwithin/UofCSCBC2012).
 
 Today, we'll check out a git type repository at
-www.github.com/thehackerwithin/PyTrieste .
+www.github.com/thehackerwithin/UofCSCBC2012 .
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
