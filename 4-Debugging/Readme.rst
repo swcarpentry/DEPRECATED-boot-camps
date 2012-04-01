@@ -13,11 +13,11 @@ What is Debugging (Exercise)?
 Before I show you the practice (art) of debugging, separate out into groups 
 of 2-3 people.  Follow these steps:
 
-    1. **Come up with a definition of debugging.**
-    2. **Write it down on a strip of paper.**
-    3. **Put paper in hat.**
-    4. **???**
-    5. **Profit.**
+1. **Come up with a definition of debugging.**
+2. **Write it down on a strip of paper.**
+3. **Put paper in hat.**
+4. **???**
+5. **Profit.**
 
 (Bonus Challenge: Make a new friend!)  
 
@@ -57,18 +57,22 @@ Once inside the debugger, 'l(ist)' will list the commands available,
 .. _O'Reily: http://onlamp.com/pub/a/python/2005/09/01/debugger.html
 .. _Great Blog: http://pythonconquerstheuniverse.wordpress.com/category/the-python-debugger/
 
-## Profiling
 
-Various profiling tools exist for every language out there.  However, the general idea is always the same.  
-
-Different parts of your code take up different amounts of the processing time.  Your (human) time is limited.  Therefore, you should focus on optimizing/fixing/etc. only the most important parts of your code.  You discover which parts are most important by using a profiler.
+Profiling
+=========
+Various profiling tools exist for every language out there.  However, the general 
+idea is always the same.  Different parts of your code take up different amounts 
+of the processing time.  Your (human) time is limited.  Therefore, you should 
+focus on optimizing/fixing/etc. only the most important parts of your code.  
+You discover which parts are most important by using a profiler.
 
 Here we will be using kernprof, a line profiler by Robert Kern.
 
 **Example: ``kernprof.py -lv profiler_example.py``**
 
-**Other Resources:**  [[kernprof http://packages.python.org/line_profiler/]]
+**Other Resources:**  `kernprof`_
 
+.. _kernprof: http://packages.python.org/line_profiler/
 
 
 ## Linting
