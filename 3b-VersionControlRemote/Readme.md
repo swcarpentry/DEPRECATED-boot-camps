@@ -1,16 +1,17 @@
 Version Control Collaboratively
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+----
 
 [Back To Local Version
 Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3a-VersionControlLocal/)
 - [Forward To
 Debugging](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debugging/)
 
-* * * * *
+----
 
 **Presented By : Katy Huff**
 
-# github.com?
+## github.com?
 
 GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
@@ -35,7 +36,7 @@ provides :
 Setting up github at first requires [[some setup |
 http://help.github.com/set-up-git-redirect]].
 
-# git config : Configuring your git environment
+## git config : Configuring your git environment
 
 Once you've set up your rsa keys, you need to tell github who you are.
 Crack open a terminal.
@@ -65,7 +66,7 @@ like **gedit** for example):
 
     $ git config --global core.editor gedit
 
-# git remote : Steps for Forking a Repository
+## git remote : Steps for Forking a Repository
 
 A key step to interacting with an online repository that you have forked
 is adding the original as a remote repository. By adding the remote
@@ -76,7 +77,7 @@ The **git remote** command allows you to add, name, rename, list, and
 delete repositories such as the original one **upstream** from your
 fork, others that may be **parallel** to your fork, and so on.
 
-## Exercise : Fork Our GitHub Repository
+### Exercise : Fork Our GitHub Repository
 
 While you probably already have a copy of the PyTrieste repository,
 GitHub doesn't know about it yet. You'll need to tell github you want to
@@ -103,7 +104,7 @@ Step 3 :
 
 All repositories that are clones begin with a remote called origin.
 
-# git fetch : Fetching the contents of a remote
+## git fetch : Fetching the contents of a remote
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
@@ -117,7 +118,7 @@ command does not change your local working copy. To update your local
 working copy to include recent changes in the original (upstream)
 repository, it is necessary to also merge.
 
-# git merge : Merging the contents of a remote
+## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
 this case thehackerwithin/PyTrieste) into your local working copy, you
@@ -125,7 +126,7 @@ must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
 
-## Exercise : Fetch and Merge the Contents of Our GitHub Repository
+### Exercise : Fetch and Merge the Contents of Our GitHub Repository
 
 Step 1 : Fetch the recent remote repository history
 
@@ -139,7 +140,7 @@ upstreeam master branch into your master branch
 
 Step 3 : Check out what happened by browsing the directory.
 
-# git pull : Pull = Fetch + Merge
+## git pull : Pull = Fetch + Merge
 
 The command **git pull** is the same as executing **git fetch** followed
 by **git merge**. Though it is not recommened for cases in which there
@@ -155,7 +156,7 @@ When there have been remote changes, the pull will apply those changes
 to your local branch, unless there are conflicts with your local
 changes.
 
-# git push : Sending Your Commits to Remote Repositories
+## git push : Sending Your Commits to Remote Repositories
 
 The **git push** command pushes commits in a local working copy to a
 remote repository. The syntax is git push [remote] [local branch].
@@ -177,7 +178,7 @@ commits to that remote is exactly analagous.
 In the case of the PyTrieste code, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
 
-# git merge : Conflicts
+## git merge : Conflicts
 
 This is the trickiest part of version control, so let's take it very
 carefully.
@@ -210,7 +211,7 @@ their local fork to track other developers changes in the remote
 repository until their own local development branch changes are ready
 for production.
 
-## Exercise : Experience a Conflict
+### Exercise : Experience a Conflict
 
 Step 1 : Make a new branch, edit the readme file in that branch, and
 commit your changes.
@@ -242,7 +243,7 @@ updates from the upstream repository, but will experience a conflict.
     CONFLICT (content): Merge conflict in readme.rst
     Automatic merge failed; fix conflicts and then commit the result.
 
-# git resolve : Resolving Conflicts
+## git resolve : Resolving Conflicts
 
 Now what?
 

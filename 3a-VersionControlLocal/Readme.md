@@ -157,14 +157,15 @@ from the files in the official repository copy. To find out what's
 different about them in the terminal, try:
 
     $ git status
-    ## On branch master
+    # On branch master
     #
-    ## Initial commit
+    # Initial commit
     #
-    ## Changes to be committed:
-    ##   (use "git rm --cached <file>..." to unstage)
+    # Changes to be committed:
+
+    #   (use "git rm --cached <file>..." to unstage)
     #
-    ##       new file:   readme.rst
+    #       new file:   readme.rst
     #
 
 The null result means that you're up to date with the current version of
@@ -199,7 +200,7 @@ Step 1 : Commit the file you've added to your repository.
 Step 2 : Admire your work.
 
     $ git status
-    ## On branch master
+    # On branch master
     nothing to commit (working directory clean)
 
 ## git diff : Viewing the Differences
