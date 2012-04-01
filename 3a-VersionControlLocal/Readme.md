@@ -1,16 +1,17 @@
-Local Version Control
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+# Local Version Control
+----
+
 
 [Back To Python Functions and
 Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/)
 - [Forward To Remote Version
 Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/)
 
-* * * * *
+----
 
 **Presented By : Katy Huff**
 
-# git : What is Version Control ?
+## git : What is Version Control ?
 
 Very briefly, version control is a way to keep a backup of changing
 files, to store a history of those changes, and most importantly to
@@ -24,15 +25,18 @@ control system, distinct from centralized verson control systems. I'll
 make the distinction clear later, but for now, the table below will
 suffice.
 
-  Version Control System To   ol Options
-  --------------------------- -----------------------------------
-  **Distributed**             **Centralized**
-  Decentralized CVS (dcvs)    concurrent versions system (cvs)
-  mercurial (hg)              subversion (svn)
-  git (git)                   
-  bazaar (bzr)                
+Version Control System Tool Options
 
-# git --help : Getting Help
+- **Distributed** 
+  - Decentralized CVS (dcvs)  
+  - mercurial (hg)
+  - git (git) 
+  - bazaar (bzr)
+- **Centralized**
+  - concurrent versions system (cvs)
+  - subversion (svn)
+
+## git --help : Getting Help
 
 The first thing I like to know about any tool is how to get help. From
 the command line type
@@ -86,7 +90,7 @@ as their descriptions.
 
     See 'git help <command>' for more information on a specific command.
 
-# git init : Creating a Local Repository
+## git init : Creating a Local Repository
 
 To keep track of numerous versions of your work without saving numerous
 copies, you can make a local repoitory for it on your computer. What git
@@ -101,7 +105,7 @@ initialize the repository with the infrastructure git needs in order to
 keep a record of things within the repsitory that you're concerned
 about. The command to do this is **git init** .
 
-## Exercise : Create a Local Repository
+### Exercise : Create a Local Repository
 
 Step 1 : Initialize your repository.
 
@@ -126,13 +130,13 @@ called "Reproducible Science". You may call yours anything you like.
 
     $ gedit description &
 
-# git add : Adding a File To Version Control
+## git add : Adding a File To Version Control
 
 For the git repository to know which files within this directory you
 would like to keep track of, you must add them. First, you'll need to
 create one, then we'll learn the **git add** command.
 
-## Exercise : Add a File to Your Local Repository
+### Exercise : Add a File to Your Local Repository
 
 Step 1 : Create a file to add to your repository.
 
@@ -143,7 +147,7 @@ in this file.
 
     $ git add readme.rst
 
-# Checking The Status of Your Local Copy
+## Checking The Status of Your Local Copy
 
 The files you've created on your machine are your local "working" copy.
 The changes your make in this local copy aren't backed up online
@@ -153,14 +157,14 @@ from the files in the official repository copy. To find out what's
 different about them in the terminal, try:
 
     $ git status
-    # On branch master
+    ## On branch master
     #
-    # Initial commit
+    ## Initial commit
     #
-    # Changes to be committed:
-    #   (use "git rm --cached <file>..." to unstage)
+    ## Changes to be committed:
+    ##   (use "git rm --cached <file>..." to unstage)
     #
-    #       new file:   readme.rst
+    ##       new file:   readme.rst
     #
 
 The null result means that you're up to date with the current version of
@@ -168,7 +172,7 @@ the repository online. This result indicates that the current difference
 between the repository HEAD (which, so far, is empty) and your
 good\_science directory is this new readme.rst file.
 
-# git commit : Saving a Snapshot
+## git commit : Saving a Snapshot
 
 In order to save a snapshot of the current state (revision) of the
 repository, we use the commit command. This command is always associated
@@ -183,7 +187,7 @@ In the same way that it is wise to often save a document that you are
 working on, so too is it wise to save numerous revisions of your code.
 More frequent commits increase the granularity of your **undo** button.
 
-## Exercise : Commit Your Changes
+### Exercise : Commit Your Changes
 
 Step 1 : Commit the file you've added to your repository.
 
@@ -195,10 +199,10 @@ Step 1 : Commit the file you've added to your repository.
 Step 2 : Admire your work.
 
     $ git status
-    # On branch master
+    ## On branch master
     nothing to commit (working directory clean)
 
-# git diff : Viewing the Differences
+## git diff : Viewing the Differences
 
 There are many diff tools.
 
@@ -238,7 +242,7 @@ type git commit without the -a flag), you can try :
 
     $ git diff --cached
 
-# git log : Viewing the History
+## git log : Viewing the History
 
 A log of the commit messages is kept by the repository and can be
 reviewed with the log command.
@@ -264,7 +268,7 @@ There are some useful flags for this command, such as
     --until
     --author
 
-# git branch : Listing, Creating, and Deleting Branches
+## git branch : Listing, Creating, and Deleting Branches
 
 Branches are parallel instances of a repository that can be edited and
 version controlled in parallel. They are useful for pursuing various
@@ -292,7 +296,7 @@ To delete a branch, use the **-d** flag.
     $ git branch
     * master
 
-# git checkout : Switching Between Branches, Abandoning Local Changes
+## git checkout : Switching Between Branches, Abandoning Local Changes
 
 The **git checkout** command allows context switching between branches
 as well as abandoning local changes.
@@ -306,14 +310,14 @@ How can you tell we've switched between branches? When we used the
 branch command before there was an asterisk next to the master branch.
 That's because the asterisk indicates which branch you're currently in.
 
-# git merge : Merging Branches
+## git merge : Merging Branches
 
 At some point, the experimental branch may be ready to become part of
 the core or two testing branches may be ready to be combined for further
 integration testing. The method for combining the changes in two
 parallel branches is the **merge** command.
 
-## Exercise : Create and Merge Branches
+### Exercise : Create and Merge Branches
 
 Step 1 : Create two new branches and list them
 
@@ -356,7 +360,7 @@ Step 3 : Merge the two branches into the core
      create mode 100644 firstnewfile
      create mode 100644 secondnewfile
 
-# git clone : Copying a Repository
+## git clone : Copying a Repository
 
 The Hacker Within has its own online code repositories. You can check
 out code from them at any time, from anywhere. You checked out some code
@@ -377,7 +381,7 @@ able to pull changes from collaborators to your local machine and push
 your changes to the Original repository. We'll get to that soon, but for
 now, let's **fork** the repository from GitHub.
 
-## Exercise : Cloning a Repository from GitHub
+### Exercise : Cloning a Repository from GitHub
 
 Step 1 : Pick any repository you like. There are many cool projects
 hosted on github. Take a few minutes here, and pick a piece of code. May
@@ -401,7 +405,7 @@ code and list the contents.
     $ cd Spoon-Knife
     $ ls 
 
-# git pull : Pulling updates from the Original Repository
+## git pull : Pulling updates from the Original Repository
 
 Updating your repository is like voting. You should update early and
 often especially if you intend to contribute back to the upstream
