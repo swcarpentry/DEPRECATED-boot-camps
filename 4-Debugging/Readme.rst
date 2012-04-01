@@ -13,45 +13,48 @@ What is Debugging (Exercise)?
 Before I show you the practice (art) of debugging, separate out into groups 
 of 2-3 people.  Follow these steps:
 
-1. **Come up with a definition of debugging.**
-2. **Write it down on a strip of paper.**
-3. **Put paper in hat.**
-4. **???**
-5. **Profit.**
+    1. **Come up with a definition of debugging.**
+    2. **Write it down on a strip of paper.**
+    3. **Put paper in hat.**
+    4. **???**
+    5. **Profit.**
 
 (Bonus Challenge: Make a new friend!)  
 
 Time limit: 5 min.
 
-# Tools:
-
+Tools
+=====
 Below are some python tools that are used for debugging.  All of the following are in the 
 debugging directory::
 
-    cd ~/hacker-within/sc/
-    svn update
     cd debugging/
     sudo ./install.sh
 
-## pdb
+pdb
+===
+Following Python's moto of "batteries included", the language itself comes packaged 
+with its own aptly named Python DeBugger (pdb).
 
-Following Python's moto of "batteries included", the language itself comes packaged with its own aptly named Python DeBugger (pdb).
+From any Python code anywhere, simply make sure that pdb is imported and then 
+call the ``set_trace()`` function.
 
-From any Python code anywhere, simply make sure that pdb is imported and then call the ``set_trace()`` function.
+.. code-block:: python
 
-``
-import pdb
-pdb.set_trace()
-``
+    import pdb
+    pdb.set_trace()
 
-This drops you into debugging mode, where you have *exactly* the state of the program that the trace was set at!
+This drops you into debugging mode, where you have *exactly* the state of the 
+program that the trace was set at!
 
-Once inside the debugger, 'l(ist)' will list the commands available, 'h(elp)' will give you help on those commands, and 'q(uit)' exits the debugger.
+Once inside the debugger, 'l(ist)' will list the commands available, 
+'h(elp)' will give you help on those commands, and 'q(uit)' exits the debugger.
 
 **Example: ``python pdb_example.py``**
 
-**Other Resources:**  [[PDB Docs http://docs.python.org/library/pdb.html]], [[Wingware http://wingware.com/doc/debug/advanced]], [[O'Reily http://onlamp.com/pub/a/python/2005/09/01/debugger.html]], [[Great Blog http://pythonconquerstheuniverse.wordpress.com/category/the-python-debugger/]].
+**Other Resources:**  `PDB Docs`_, [[Wingware http://wingware.com/doc/debug/advanced]], [[O'Reily http://onlamp.com/pub/a/python/2005/09/01/debugger.html]], [[Great Blog http://pythonconquerstheuniverse.wordpress.com/category/the-python-debugger/]].
 
+.. _PDB Docs: http://docs.python.org/library/pdb.html
 
 
 ## Profiling
