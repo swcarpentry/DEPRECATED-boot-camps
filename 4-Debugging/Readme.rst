@@ -111,9 +111,9 @@ As the above error message does not indicate *where* in the execution the segfau
 it very could have been anywhere.  However, all hope is not lost!  Even high-level languages 
 like Python have ways of handling segfaults made on the C/C++/Fortran level and turning them 
 into standard exceptions.  A great module for doing this is faulthandler, which joined the 
-Python standard library in v3.3.
+Python 3.3 standard library.
 
-**Example::**
+**Example**::
 
     python segfault_unhandled_example.py
     python segfault_handled_example.py
