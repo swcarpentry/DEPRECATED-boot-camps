@@ -7,6 +7,12 @@ Testing](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/5-Testing/)
 
 **Presented and Designed by Anthony Scopatz**
 
+Below are some tools that are useful for debugging. We'll need to do
+some extra installation to have all of them available:
+
+    cd ~/UofCSCBC2012/4-Debugging/
+    sudo ./install.sh
+
 ## What is Debugging (Exercise)?
 
 Before I show you the practice (art) of debugging, separate out into
@@ -21,14 +27,6 @@ groups of 2-3 people. Follow these steps:
 (Bonus Challenge: Make a new friend!)
 
 Time limit: 5 min.
-
-## Tools
-
-Below are some python tools that are used for debugging. All of the
-following are in the debugging directory:
-
-    cd ~/UofCSCBC2012/4-Debugging/
-    sudo ./install.sh
 
 ## pdb
 
@@ -69,32 +67,35 @@ important by using a profiler.
 
 Here we will be using kernprof, a line profiler by Robert Kern.
 
-**Example: `kernprof.py -lv profiler_example.py`**
+**Example:** `kernprof.py -lv profiler_example.py`
 
 **Other Resources:**
 [kernprof](http://packages.python.org/line_profiler/)
 
-\#\# Linting
+## Linting
 
 Linting in software is the process of discovering errors in a code
 (typically typos and syntax errors) before the code is ever run or
-compiled.
-
-Some people use such power automatically by not allowing their version
-control to check in code unless the linter passes. Or they have the
-linter run each time they exit their text editor. This is not crazy.
+compiled. Some people use such power automatically by not allowing their
+version control to check in code unless the linter passes. Or they have
+the linter run each time they exit their text editor. *This is not
+crazy!*
 
 In Python there are two main libraries that help in this regard:
-**pylint** and **pyflakes**. We'll be talking about pyflakes.
+**pylint** and **pyflakes**. These codes work by statically analyzing
+the parse tree, rather than importing and running the module. We'll be
+talking about pyflakes.
 
-**Example: `pyflakes lint_example.py`**
+**Example:** `pyflakes lint_example.py`
 
-**Other Resources:** [[wiki
-http://en.wikipedia.org/wiki/Lint\_(software)]], [[pyflakes
-http://pypi.python.org/pypi/pyflakes/]], [[pylint
-http://www.logilab.org/857]].
+**Other Resources:** [basic
+definition](http://en.wikipedia.org/wiki/Lint_(software)),
+[pyflakes](http://pypi.python.org/pypi/pyflakes/),
+[pylint](http://www.logilab.org/857),
+[comparison](http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-03-linters/).
 
-\#\# Segfaults, the most unhelpful error message ever!
+## Segfaults - the Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded,
+Objective}!
 
 **Segfaults** are some of the most obscure, most annoying, and most
 difficult to debug errors in existence. This is because they are a

@@ -67,27 +67,36 @@ You discover which parts are most important by using a profiler.
 
 Here we will be using kernprof, a line profiler by Robert Kern.
 
-**Example: ``kernprof.py -lv profiler_example.py``**
+**Example:** ``kernprof.py -lv profiler_example.py``
 
 **Other Resources:**  `kernprof`_
 
 .. _kernprof: http://packages.python.org/line_profiler/
 
 
-## Linting
+Linting
+=======
+Linting in software is the process of discovering errors in a code (typically 
+typos and syntax errors) before the code is ever run or compiled.  Some people 
+use such power automatically by not allowing their version control to check in 
+code unless the linter passes.  Or they have the linter run each time they exit 
+their text editor.  *This is not crazy!*
 
-Linting in software is the process of discovering errors in a code (typically typos and syntax errors) before the code is ever run or compiled. 
+In Python there are two main libraries that help in this regard: **pylint** and 
+**pyflakes**.  These codes work by statically analyzing the parse tree, rather 
+than importing and running the module.  We'll be talking about pyflakes.  
 
-Some people use such power automatically by not allowing their version control to check in code unless the linter passes.  Or they have the linter run each time they exit their text editor.  This is not crazy.
+**Example:** ``pyflakes lint_example.py``
 
-In Python there are two main libraries that help in this regard: **pylint** and **pyflakes**.  We'll be talking about pyflakes.
+**Other Resources:** `basic definition`_, `pyflakes`_, `pylint`_, `comparison`_.
 
-**Example: ``pyflakes lint_example.py``**
+.. _basic definition: http://en.wikipedia.org/wiki/Lint_(software)
+.. _pyflakes: http://pypi.python.org/pypi/pyflakes/
+.. _pylint: http://www.logilab.org/857
+.. _comparison: http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-03-linters/
 
-**Other Resources:** [[wiki http://en.wikipedia.org/wiki/Lint_(software)]], [[pyflakes http://pypi.python.org/pypi/pyflakes/]], [[pylint http://www.logilab.org/857]].
-
-
-## Segfaults, the most unhelpful error message ever!
+Segfaults - the Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded, Objective}!
+==========================================================================
 
 **Segfaults** are some of the most obscure, most annoying, and most difficult to debug errors in existence.  This is because they are a function of the state of the computer's RAM or virtual memory at runtime.
 
