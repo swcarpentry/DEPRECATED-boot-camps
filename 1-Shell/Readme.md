@@ -697,30 +697,215 @@ learn to become proficient with the pipe and redirection operators:
 `|`, `>`, `>>`.
 
 
-# Extra Commands
+**A sorting example**
 
-## The backtick, xargs
+Let's create a file with some words to sort for the next example. We
+want to create a file which contains the following names:
 
-## Some more common commands
+    Katy
+    Milad
+    Anthony
+    Joshua
 
-**alias**
+To do this, we need a program which allows us to create text
+files. There are many such programs, the easiest one which is
+installed on almost all systems is called `nano`. Navigate to `/tmp`
+and enter the following command:
+
+    nano toBeSorted
+
+Now enter the four names as shown above. When you are done, press
+CONTROL+O to write out the file. Press enter to use the file name
+`toBeSorted`. Then press CONTROL+x to exit `nano`.
+
+When you are back to the command line, enter the command:
+
+    sort toBeSorted
+
+Notice that the names are now printed in alphabetical order.
+
+* * * *
+**Short Exercise**
+
+Use the `echo` command and the append operator, `>>`, to append your
+name to the file, then sort it.
+
+* * * *
+
+Let's navigate back to `~/UofCSCBC2012/1-Shell/data`. You should still
+have the `all_data` file hanging around here. Enter the following command:
+
+    wc Bert/* | sort -n -k 3
+
+We are already familiar with what the first of these two commands
+does: it creates a list containing the number of characters, words,
+and lines in each file in the `Bert` directory. This list is then
+piped into the `sort` command, so that it can be sorted. Notice there
+are two options given to sort:
+
+1.  `-n`: Sort in numerical order as opposed to alphabetical order
+2.  `-k 3`: Sort based on the numbers in the third column
+
+Notice that the files are sorted by the number of characters.
+
+* * * *
+**Short Exercise**
+
+Use the `man` command to find out how to sort the output from `wc` in
+reverse order.
+
+* * * *
+
+* * * * 
+**Short Exercise**
+
+Combine the `wc`, `sort`, `head` and `tail` commands so that only the
+`wc` information for the largest file is listed
+
+Hint: To print the smallest file, use:
+
+    wc Bert/* | sort -n -k 3 | head -n 1
+
+* * * * 
+
+Printing the smallest file seems pretty useful. We don't want to type
+out that long command often. Let's create a simple script, a simple
+program, to run this command. The program will look at all of the
+files in the current directory and print the information about the
+smallest one. Let's call the script `smallest`. We'll use `nano` to
+create this file. Navigate to the `data` directory, then:
+
+    nano smallest
+
+Then enter the following text:
+
+    #!/bin/bash
+    wc * | sort -n -k 3 | head -n 1
+
+Now, `cd` into the `Bert` directory and enter the command
+`../smallest`. Notice that it says permission denied. This happens
+because we haven't told the shell that this is an executable
+file. Enter the following commands:
+
+    chmod a+x ../smallest
+    ../smallest
+
+The `chmod` command is used to modify the permissions of a file. This
+particular command modifies the file `../smallest` by giving all users
+(notice the `a`) permission to execute (notice the `x`) the file. If
+you enter:
+
+    ls ../smallest
+
+You will see that the file name is green. Congratulations, you just
+created your first shell script!
+
+# Searching files
+
+You can search the contents of a file using the command `grep`. The
+`grep` program is very powerful and useful especially when combined
+with other commands by using the pipe. Navigate to the `Bert`
+directory. Every data file in this directory has a line which says
+"Range". The range represents the smallest frequency range that can be
+discriminated. Lets list all of the ranges from the tests that Bert
+conducted:
+
+    grep Range *
+
+* * * * 
+**Short Exercise**
+
+Create an executable script called `smallestrange` in the `data`
+directory, that is similar to the `smallest` script, but prints the
+file containing the file with the smallest Range. Use the commands
+`grep`, `sort`, and `tail` to do this.
+
+* * * * 
+
+
+# Finding files
+
+The `find` program can be used to find files based on arbitrary
+criteria. Navigate to the `data` directory and enter the following
+command:
+
+    find .
+
+This prints the name of every file or directory, recursively, starting
+from the current directory. Let's exclude all of the directories:
+
+    find . -type f
+
+This tells `find` to locate only files. Now try these commands:
+
+    find . -type f -name "*1*"
+    find . -type f -name "*1*" -or -name "*2*"
+    find . -type f -name "*1*" -and -name "*2*"
+
+The `find` command can acquire a list of files and perform some
+operation on each file. Try this command out:
+
+    find . -type f -exec grep Volume {} \;
+
+This command finds every file starting from `.`. Then it searches each
+file for a line which contains the word "Volume". The `{}` refers to
+the name of each file. The trailing `\;` is used to terminate the
+command.
+
+* * * * 
+**Short Exercise**
+
+Navigate to the `data` directory. Use one find command to perform each
+of the operations listed below (except number 2, which does not
+require a find command):
+
+1.  Find any file whose name is "NOTES" within `data` and delete it 
+
+2.  Create a new directory called `cleaneddata`
+
+3.  Move all of the files within `data` to the `cleaneddata` directory
+
+4.  Rename all of the files to ensure that they end in `.txt` (note:
+    it is ok for the file name to end in `.txt.txt`
+
+Hint: If you make a mistake and need to start over just do the
+following:
+
+1.  Navigate to the `1-Shell` directory
+
+2.  Delete the `data` directory
+
+3.  Enter the command: `git checkout -- data` You should see that the
+    data directory has reappeared in its original state
+
+**BONUS**
+
+Redo exercise 4, except rename only the files which do not already end
+in `.txt`. You will have to use the `man` command to figure out how to
+search for files which do not match a certain name. 
+
+* * * * 
+
+
+
+## Bonus:
+
+**backtick, xargs**: Example find all files with certain text
+
+**alias** -> rm -i
+
+**variables** -> use a path example
+
+**.bashrc**
 
 **du**
 
-## .bashrc
+**ln**
 
-## ssh and scp
+**ssh and scp**
 
-## Regular Expressions
+**Regular Expressions**
 
-# Milad's Notes:
+**Permissions**
 
-# Background, Foreground, control-Z, control-C
-
-## Not everything is a file or a directory...
-- Symbolic links
-- /dev
-
-## Permissions
-
-## Variables
+**Chaining commands together**
