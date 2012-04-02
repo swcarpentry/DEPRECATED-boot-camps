@@ -13,7 +13,7 @@ apt-get install metacity -y
 apt-get install gcc -y
 
 # Fix to redraw borders
-if [[ !`grep "@metacity --replace" /etc/xdg/lxsession/Lubuntu/autostart` ]]; then
+if ! grep "@metacity --replace" /etc/xdg/lxsession/Lubuntu/autostart ; then
     echo "@metacity --replace" >> /etc/xdg/lxsession/Lubuntu/autostart
 fi
 
