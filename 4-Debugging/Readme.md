@@ -7,12 +7,6 @@ Testing](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/5-Testing/)
 
 **Presented and Designed by Anthony Scopatz**
 
-Below are some tools that are useful for debugging. We'll need to do
-some extra installation to have all of them available:
-
-    cd ~/UofCSCBC2012/4-Debugging/
-    sudo ./install.sh
-
 ## What is Debugging (Exercise)?
 
 Before I show you the practice (art) of debugging, separate out into
@@ -93,6 +87,31 @@ definition](http://en.wikipedia.org/wiki/Lint_(software)),
 [pyflakes](http://pypi.python.org/pypi/pyflakes/),
 [pylint](http://www.logilab.org/857),
 [comparison](http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-03-linters/).
+
+## Coding Standards
+
+Much like a written natural language, there are many ways to express the
+same idea. The strict syntax of languages are necessarily more forgiving
+than what the *correct* way of doing things (think Oxford comma). To
+make the consumption of information easier, style guides exists to
+enforce particularly effective ways of writing.
+
+Coding standards fill the same role but for programming languages. They
+become absolutely essential as projects become large (\>1 person). \`
+Now, the wonderful thing about standards is that there are so many to
+choose from!\`\_
+
+Python is somewhat unique in that the language itself has an approved
+coding standard called [PEP8](http://www.python.org/dev/peps/pep-0008/).
+The overwhelming majority (80-90%) of Python code that is available on
+the internet is written in a way that is PEP8-compliant. Unfortunately,
+some of that 20% is in standard library...
+
+Thus not adhearing to your coding standard is often cosidered "against
+best practices", ie a bug. Luckily there are tools to test for
+compliance:
+
+    pep8 style_example.py
 
 ## Segfaults
 

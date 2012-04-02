@@ -22,7 +22,7 @@ def main():
     orders = sorted_orders
 
     n, tickets = 0, 0
-    while tickets < 50:
+    while tickets < 60:
         tickets += orders[n][0]
         n += 1
 
