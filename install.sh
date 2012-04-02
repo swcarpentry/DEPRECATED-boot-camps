@@ -10,6 +10,7 @@ cp bashrc ~/.bashrc
 # Install extra packages
 apt-get update
 apt-get install metacity -y
+apt-get install most -y
 apt-get install gcc -y
 
 # Fix to redraw borders
