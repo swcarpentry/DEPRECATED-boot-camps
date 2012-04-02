@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# setup bashrc
+if [ -f ~/.bashrc.bak ]; then
+    cp ~/.bashrc.bak ~/.bashrc
+fi
+cp ~/.bashrc ~/.bashrc.bak
+cp bashrc ~/.bashrc
+
 # Install gcc
 apt-get update
 apt-get install gcc -y
