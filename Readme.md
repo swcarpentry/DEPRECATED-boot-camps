@@ -15,6 +15,15 @@ By doing so, you will have, on your laptop, a virtual environment pre-loaded
 with all of the necessary software (a terminal, text editors, git, the enthought 
 python distribution, and valgrind) for the tutorial. 
 
+You'll need to open a terminal (try konsole or LXterminal). Then type the 
+following commands:
+
+- git clone git://github.com/thehackerwithin/UofCSCBC2012.git
+- cd UofCSCBC2012
+- sudo ./install.sh
+
+Your sudo password is 'thw'.
+
 ## Where?
 
 The University of Chicago Software Carpentry Boot Camp will be located
