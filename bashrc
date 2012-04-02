@@ -61,11 +61,9 @@ function get_curr_branch {
 # Version Control Friendly PS1
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;31m\]$(get_curr_branch '$2') \[\033[01;34m\]\$\[\033[00m\] '
 
-
-# Syntax highlighting for less
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
-
+# Hacky fix for less
+export PAGER='most'
+alias less='most'
 
 # Enable custom input control
 HISTSIZE=8128
