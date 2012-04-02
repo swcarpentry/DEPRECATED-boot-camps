@@ -96,7 +96,7 @@ definition](http://en.wikipedia.org/wiki/Lint_(software)),
 
 ## Segfaults
 
-### The Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded, Objective}!
+### The Scourge of {K&R, ANSI, ISO, 99, 11, Embedded, Objective} C!
 
 Segmentation faults (*segfaults*) are some of the most obscure, most
 annoying, and most difficult to debug errors in existence. This is
@@ -125,23 +125,28 @@ which joined the Python 3.3 standard library.
 [WAD](http://www.dabeaz.com/papers/Python2001/python.html), [HOWTO Crash
 Python](http://wiki.python.org/moin/CrashingPython).
 
-Compile each program without optimization first.
+## Valgrind
 
-For simpleTest.cc, run this line to see errors in this code.
+Valgrind is a utility for compiled codes which aids in debugging,
+finiding memory leaks, and profiling. This is invaluable for codes
+tracking down errors that only happen at runtime, such as segfaults.
 
+As an example, first compile the following program without optimization.
+For simpleTest.cc, run this line to see errors in this code:
+
+    g++ simpleTest.cc -o simpleTest
     valgrind --track-origins=yes --leak-check=full ./simpleTest 300 300
 
-We also have a cache test line. Run this line to see the cache errors.
+We also have a cache test line. Run this line to see the cache errors:
 
+    g++ cacheTest.cc
     valgrind --tool=cachegrind ./a.out 0 1000 100000
 
 There are two paths in this code. If the first input is 1, it runs a
 cache-sensitive version of the loop. If it is 0, it runs a
-cache-insensitive version.
+cache-insensitive version. The cache should look like:
 
-FYI: on the Trieste lab machines, this is what cache looks like:
-
-    guy ~>dmesg | grep cache
+    ~ $ dmesg | grep cache
     CPU: L1 I cache: 32K, L1 D cache: 32K
     CPU: L2 cache: 6144K
     CPU: L1 I cache: 32K, L1 D cache: 32K
@@ -154,3 +159,5 @@ way to see the exact cache setup that valgrind found is the following:
 
 Note that your cachegrind.out will have a different number. This command
 is also handy because it shows which functions caused cache misses.
+
+**Other Resources:** [Valgrind](http://valgrind.org/)
