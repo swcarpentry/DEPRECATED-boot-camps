@@ -22,9 +22,37 @@ groups of 2-3 people. Follow these steps:
 
 Time limit: 5 min.
 
+## How I Debug
+
+I write perfect code the first time.
+
+## Errors, Exceptions, & Tracebacks
+
+Bugs start where execution ends. In many modern languages, when an
+invalid operation occurs an exception is *thrown* or *raised*. These
+exceptions may be *handled* or *caught*. In Python, there are \~165
+built-in exceptions.
+
+```python
+try:
+    a = 1.0 / 0.0
+except ZeroDivisionError as e:
+    print "Going from zero to hero."
+    a = 1.0
+```
+
+In languages that have functions and exceptions, you can typically get a
+hold of what is known as a traceback. This displays the history of
+function calls leading up to the error.
+
+**Example:** `python tb_example.py`
+
+**Other Resources:** [Exception
+Handling](http://www.doughellmann.com/articles/how-tos/python-exception-handling/index.html)
+
 ## pdb
 
-Following Python's moto of "batteries included", the language itself
+Following Python's motto of "batteries included", the language itself
 comes packaged with its own aptly named Python DeBugger (pdb). From any
 Python code anywhere, simply make sure that pdb is imported and then
 call the `set_trace()` function.
@@ -107,7 +135,7 @@ The overwhelming majority (80-90%) of Python code that is available on
 the internet is written in a way that is PEP8-compliant. Unfortunately,
 some of that 20% is in standard library...
 
-Thus not adhearing to your coding standard is often cosidered "against
+Thus not adhering to your coding standard is often considered "against
 best practices", ie a bug. Luckily there are tools to test for
 compliance:
 
@@ -147,7 +175,7 @@ Python](http://wiki.python.org/moin/CrashingPython).
 ## Valgrind
 
 Valgrind is a utility for compiled codes which aids in debugging,
-finiding memory leaks, and profiling. This is invaluable for codes
+finding memory leaks, and profiling. This is invaluable for codes
 tracking down errors that only happen at runtime, such as segfaults.
 
 As an example, first compile the following program without optimization.
