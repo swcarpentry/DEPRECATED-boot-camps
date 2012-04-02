@@ -13,7 +13,9 @@ apt-get install metacity -y
 apt-get install gcc -y
 
 # Fix to redraw borders
-echo "@metacity --replace" >> /etc/xdg/lxsession/Lubuntu/autostart
+if [[ !`grep "@metacity --replace" /etc/xdg/lxsession/Lubuntu/autostart` ]]; then
+    echo "@metacity --replace" >> /etc/xdg/lxsession/Lubuntu/autostart
+fi
 
 # Install kernprof
 wget http://pypi.python.org/packages/source/l/line_profiler/line_profiler-1.0b3.tar.gz#md5=63fc2a757192eb5e577559cfdff5b831
