@@ -62,11 +62,6 @@ function get_curr_branch {
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;31m\]$(get_curr_branch '$2') \[\033[01;34m\]\$\[\033[00m\] '
 
 
-# Syntax highlighting for less
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
-
-
 # Enable custom input control
 HISTSIZE=8128
 
