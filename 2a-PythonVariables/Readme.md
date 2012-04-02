@@ -1,4 +1,4 @@
-# Python 1: The iPython Shell, Variables, and Basic Data Types
+# Python, iPython, and the basics
 
 [Back To The
 Shell](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/1-Shell/)
@@ -11,387 +11,430 @@ tuples](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonData
 
 **Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy and Many More**
 
-# What is Python ?
+## Introduction
+In this lecture, i'm going to talk about programming; specifically the python programming language. In order to do the examples, we are going to have to use an environment called iPython which I'll also talk about. I expect this lecture to be interactive, so stop me at any point if you have questions. Finally, I want everyone to understand that fundamentally computing is about people. The correct power dynamic is that people are the mastes and the machines are servants. The machines are there to make our lives easier. Programming is an act of written communication between people across time and space. Computers are just the medium.
 
-Python is an interpreted (pre-compiled) language. Its simple, high
-level, human readable interface speeds the programming process in
-exchange for some computation time overhead. Python is implemented
-mostly in the C programming language, so, as python develops, it is
-increasingly possible to do everything in Python that is possible in C.
-Python is also free and open source, so if you find a bug or generate a
-useful module, the Python Software Foundation will likely be happy to
-merge your changes into the language.
+So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.python.org/dev/peps/pep-0020/)
 
-During this session you are going to learn about some very basics about
-how to execute python code as well as some examples of the built-in
-Python data types.
+> Beautiful is better than ugly.
+> Explicit is better than implicit.
+> Simple is better than complex.
+> Complex is better than complicated.
+> Flat is better than nested.
+> Sparse is better than dense.
+> Readability counts.
+> Special cases aren't special enough to break the rules.
+> Although practicality beats purity.
+> Errors should never pass silently.
+> Unless explicitly silenced.
+> In the face of ambiguity, refuse the temptation to guess.
+> There should be one-- and preferably only one --obvious way to do it.
+> Although that way may not be obvious at first unless you're Dutch.
+> Now is better than never.
+> Although never is often better than *right* now.
+> If the implementation is hard to explain, it's a bad idea.
+> If the implementation is easy to explain, it may be a good idea.
+> Namespaces are one honking great idea -- let's do more of those!
 
-Built-in data types are the basic building blocks of Python programs.
-They are really basic things like strings and numbers (either integers,
-complex or floating point numbers). There are simple containers like
-lists (think of lists as arrays or vectors), tuples and dictionaries.
+This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
 
-# Hello World
+Here is the reference material.
 
-First, we will use python ''interactively''. This means that we will
-type commands directly into iPython. Once we start performing more
-complicated tasks we will start writing Python scripts and programs in a
-text editor, outside of the interpreter.
+* [Dive into Python] (http://www.diveintopython.net/toc/index.html)
+* [Software Carpentry's Python Lectures] (http://software-carpentry.org/4_0/python/)
+* [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
+* [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
 
-To get to the python shell, type **python** into the terminal.
+Once we briefly deal with ipython, I'll cover python in the following order:
 
-```python
->>> print "Hello World"
-Hello World
->>> exit()
+## What I'll cover
+### Lesson 1
+* print statements
+* variables
+* integers
+* floats
+* strings
+* types
+* type coersion
+* basic operations: add numbers, concatenate strings, basic data type functionality
+
+### Lesson 2
+* list
+* dictionary 
+* set 
+* tuple
+* file reading
+
+### Lesson 3
+* for loop
+* conditional (if) statements
+* while loops
+* iteration
+* writing to files
+
+### Lesson 4
+* methods
+* modules
+
+## iPython
+ipython is the tool that we are going to use to execute python commands and code. iPython is an alternative to the built-in Python interpreter with some nice features. Lets give the built-in interpreter a spin just this once.
+
+```
+jrsmith3@zoidberg:~$ python
+Python 2.7.2+ (default, Oct  4 2011, 20:03:08) 
+[GCC 4.6.1] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print "hello world"
+hello world
+>>> quit() 
 ```
 
-To get to the interactive python interpreter, a more sophisticated
-python shell, type **ipython** into the terminal:
+We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line
 
-```python
-In [1]: print "Hello World"
-Hello World
-In [2]: exit
+```
+jrsmith3@zoidberg:~$ python hello.py
 ```
 
-You can also put the commands in a **.py** file and execute that file in
-the terminal by typing **python [filename]**
-
-    $ gedit myfile.py &
-    <edit myfile with the hello world program.>
-    $ python myfile.py
-    Hello World!
-
-# Pasting into iPython
-
-**Note:**
-
-To paste text from another application (i.e. the internet browser) into
-iPython:
-
-1.  select text from the wiki
-2.  copy with **ctrl+c**
-3.  in iPython, type **%paste**
-
-The code should paste and execute in iPython.
-
-# Variables
-
-Variables are names, while values are the data assigned to those names.
-
-## Questions : Variables and Values
-
-In the code snippet :
+iPython has more useful features than the standard python interpreter, so we'll use it from here on out.
 
 ```python
-a=2
-b="string"
-c=a
+jrsmith3@zoidberg:~$ ipython
+In [1]: print "hello world"
+hello world
+
+In [2]: 
 ```
 
--   What is the value of the variable \`c\`?
--   What is the value of the variable b ?
--   What is the name given to the variable 2 ?
+### Pasting
 
-(The last one is a trick, the value 2 has two names.)
+You can paste things into the ipython console by copying text from your machine with **ctrl+c** and typing **%paste** at the iPython prompt.
 
-# Strings and Numbers
+### History
 
-It is really easy to make variables in python. For example, to create a
-string, \`s\`, and print its value, simply type the following into
-iPython:
+iPython has a history. If you press the up and down keys, you can access the history.
+
+### Tab Completion
+
+iPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
+
+### Getting Help
+
+iPython has some nice help features. Lets say we want to know more about the integer data type. There are at least two ways to do this task:
 
 ```python
-s = "Hello World"
-print s
+In [1] help(int)
 ```
 
-If you want to see what the type of a variable is, you can use the
-built-in python function, \`type\`. Just enter
+or 
 
 ```python
-print type(s)
+In [1] int?
 ```
 
-into iPython and you should see something like this:
+If you wanted to see all the commands available for something, use the dir command. Check out all of the methods of the str type.
 
 ```python
-<type 'str'>
+In [1] dir(str)
 ```
 
-This tells us that \`s\` is of type **str** (i.e. that \`s\` is a
-string). Making numeric variables is equally easy and intuitive. Try
-entering the following into IPython. Notice that the \# symbol is used
-to start comments so everything after the pound sign is ignored.
+### Executing code in files
+
+If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so
 
 ```python
-i,r,c = -10, 3.5, 1.0 + 2j  # set i to -10, r to 3.5 and c to 1.0+2j
+In [1] %run hello.py
 ```
 
-This one line sets the variable \`i\` to the integer -10 , \`r\` to the
-floating point value 3.5 (a floating point number is just a
-real/non-integer number) and \`c\` to the value 1.0 + 2j (Notice, how
-easy and intuitive it is in python to set multiple variables to
-something. You'll discover a lot of similar syntax that is designed to
-make your life easier). Lets use the built-in type function to determine
-the type of each of the three variables we just created:
+### Clearing iPython
+
+To clear everything from iPython, use the reset command.
 
 ```python
-print type(i), type(r), type(c) 
+In [1] reset
+Once deleted, variables cannot be recovered. Proceed (y/[n])?
 ```
 
-This will give : 
+## Variables
+
+All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Lets set a variable.
 
 ```python
-<type 'int'\> <type 'float'\> <type 'complex'\>
+In [1]: experiment = "current vs. voltage"
+
+In [2]: print experiment
+current vs. voltage
+
+In [3]: voltage = 2
+
+In [4]: current = 0.5
+
+In [5]: print voltage, current
+2 0.5
 ```
 
-This tells us that "i" is an integer, "r" is a floating point number,
-and "c" is a complex number. As you can see, Python has built-in support
-for imaginary numbers!
+## Types and Dynamic Typing
 
-**Aside: Long integers** Another way python makes our lives easier is by
-allowing integers to be arbitrary large. In languages like C/C++ and
-FORTRAN integer variables can only store values up to a certain size.
-But entering and manipulating the following forty digit number with
-iPython is no problem:
+Like most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
 
 ```python
-i = 1234567890123456789012345678901234567890 
-print i * 6
+In [6]: type(experiment)
+Out[6]: <type 'str'>
+
+In [7]: type(voltage)
+Out[7]: <type 'int'>
+
+In [8]: type(current)
+Out[8]: <type 'float'>
 ```
 
-Operations in Python are defined by their type. For instance, look the
-difference between these operations:
+Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. Its actually important, but its importance may not be clear to you until long after this class is over.
+
+Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Lets say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
+
+Here's an example of dynamic typing. What's the type of data assigned to voltage?
 
 ```python
-In[1]:  1 + 3
-  4
-In[2]:  1.0 + 3
-  4.0  # This is a float
-In[3]: "Hello " + "world"
-  'Hello world'
-In[4]: 1 + "Hello"
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
+In [9]: type(voltage)
+Out[9]: <type 'int'>
 ```
 
-In the first two cases, addition between numbers meant that 1 was added
-to 3 using the standard type rules (float plus int = float). In the
-third case, the command was string addition, which concatenates two
-strings. The final case broke because an 'int' type can not be added to
-a 'str' type. This is because it's unclear how to interpret an int as a
-string: should it be the string representation, the ASCII character
-code, or something else entirely?
-
-One way to handle this is to explicitly convert the int into a string:
+Lets assign a value of 2.7 (which is clearly a float) to voltage. What happens to the type?
 
 ```python
-str(1) + "Hello"
+In [10]: voltage = 2.7
+
+In [11]: type(voltage)
+Out[11]: <type 'float'>
 ```
 
-Equivalent functions exist for converting to **int**, **float**, and
-other types.
-
-Basic data types in Python have a lot of functionality already built in.
-For example, lets say that you are reading names from a file one line at
-a time and that sometimes the names have leading and trailing spaces
-that we want to strip away. We can just use the \`strip\` string method
-to accomplish this. For example, type the following into iPython:
+You can even now assign a string to the variable voltage and python would be happy to comply.
 
 ```python
-In[1]: name = "   Milad    "
-In[2]: print name + "is here"
-      Milad     is here
+In [12]: voltage = "2.7 volts"
+
+In [13]: type(voltage)
+Out[13]: <type 'str'>
 ```
 
-Now enter \`name.strip()\` instead of \`name\`:
+I'll let you ruminate on the pros and cons of this construction while I change the value of voltage back to an int:
 
 ```python
-In[1]: print name.strip() + " is here"
- Milad is here
+In [14]: voltage = 2
 ```
 
-Notice that the extra spaces are gone. We used the \`strip()\` method,
-which removes leading and trailing white space from strings. You can
-think of a method as being a function that is attached to a particular
-variable. You call methods by typing: \`<variable\>.<method name\>\`.
-
-**Aside : Tab Completion**
-
-Maybe you've noticed this already, but check out what happens you begin
-typing a variable name (the first two letters of name, for example) and
-press tab.
-
-Convenient, right? This is also true of many built in functions.
-
-# Dynamic Typing
-
-Importantly, python is a **dynamically typed** language. That is, an
-explicit type is not needed when creating a variable. Also, this means
-that variables in Python which are initialized to a variable of one type
-can be re-assigned to a variable of a different type. Try this:
+## Coersion
+It is possible to coerce (a fancy and slightly menacing way to say "convert") certain types of data to other types. For example, its pretty straightforward to coerce numerical data to strings.
 
 ```python
-sillystring = "What is the airspeed velocity of an unladen swallow?"
-print type(sillystring)
-```
+In [19]: voltageString = str(voltage)
 
-You'll see:
+In [20]: currentString = str(current)
 
-```python
-<type 'str'>
-```
+In [21]: voltageString
+Out[21]: '2'
 
-If you reassign silly string to an integer, what happens? That is, when
-you type :
+In [22]: type(voltageString)
+Out[22]: <type 'str'>
+``` 
 
-```python
-sillystring = 98
-print type(sillystring)
-```
-
-You should see:
+As you might imagine, you can go the other way in certain cases. Lets say you had numerical data in a string.
 
 ```python
-<type 'int'>
+In [23]: resistanceString = "4.0"
+
+In [24]: resistance = float(resistanceString)
+
+In [25]: resistance
+Out[25]: 4.0
+
+In [26]: type(resistance)
+Out[26]: <type 'float'>
 ```
 
-This is an interesting feature. Can you think of ways it can be helpful?
-Are there ways it might be troublesome?
-
-What is the type of sillystring be after this :
+What would happen if you tried to coerce resistanceString to an int? What about coercing resistance to an int? Consider the following:
 
 ```python
-sillystring += 0.1
+In [27] resistanceString = "4.0 ohms"
 ```
 
-**Aside: In Place Equivalency**
+Do you think you can coerce that string to a numerical type?
 
-What is the += syntax about? This is an in-place way to write
-`` `sillystring =  sillystring + 0.1 ``\`. It is common in a number of
-languages.
+## On Being Precise with floats and ints
 
-Importantly, though we do not explcity state them, variables always have
-exactly one type. The number 98 is an **int**. For the variable holding
-this value to be treated as a float, it must be assigned as **98.0**.
+Again, the following may seem esoteric and pedantic, but it is very important. So bear with me.
 
-## Questions : Dynamic Typing
+Lets say you had some voltage data that looks like the following
 
-Imagine that I first assign :
+```
+0
+0.5
+1
+1.5
+2
+```
+
+Obviously, if you just assigned this data individually to a variable, you'd end up with the following types
+
+```
+0   -> int
+0.5 -> float
+1   -> int
+1.5 -> float
+2   -> int
+```
+
+But what if you wanted all of that data to be floats on its way in? You could assign the variable and then coerce it to type float:
 
 ```python
-a=2
+In [28]: voltage = float(1)
 ```
 
-Then, I assign :
+But that's ugly. If you want whats otherwise an integer to be a float, just add a period at the end
 
 ```python
-a="Welcome to the ministry of silly walks."
+In [29]: voltage = 1.
+
+In [30]: type(voltage)
+Out[30]: <type 'float'>
 ```
 
-What has happened to the memory that was pointing to the number 2??
+This point becomes important when we start operating on data in the next section.
 
-# Getting Help
+## Data Operations
 
-One of the really nice features in Python is that a lot of the help and
-documentation is built into the code. Practically, this means that much
-of the time you don't have to go digging through some web site to find
-help. You can get help in Python using the \`help\` function. Lets look
-at an example - enter
+In this section all of the discussion in the previous section becomes important. I don't know if I'd call this stuff fundamental to the language, but its pretty important and it will zing you if you aren't careful. The takeaway is that you need to be precise with what you are doing. Lets say you want to add some integers.
 
 ```python
-help(str.strip) 
+In [31]: a = 1
+
+In [32]: b = 2
+
+In [33]: c = a+b
+
+In [34]: c
+Out[34]: 3
+
+In [38]: type(a), type(b), type(c)
+Out[38]: (<type 'int'>, <type 'int'>, <type 'int'>)
 ```
 
-into IPython. You should then see documentation for the strip method pop
-up. (NOTE: if you don't automatically return to the python interpreter,
-just hit "\`q\`" to exit the help screen). You can also use the question
-mark, "\`?\`", character to display the documentation as well. For
-example, enter
+So we got a vale of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
+
+So what about the case where a is an integer and b is a float?
 
 ```python
-str.strip?
+In [39]: a = 1
+
+In [40]: b = 2.
+
+In [41]: c = a + b
+
+In [42]: c
+Out[42]: 3.0
+
+In [43]: type(a), type(b), type(c)
+Out[43]: (<type 'int'>, <type 'float'>, <type 'float'>)
 ```
 
-into IPython to view the documentation.
-
-Now try entering
+You can do multiplication on numbers as well.
 
 ```python
-help(str)
+In [44]: a = 2
+
+In [45]: b = 3
+
+In [46]: c = a * b
+
+In [47]: c
+Out[47]: 6
+
+In [48]: type(a), type(b), type(c)
+Out[48]: (<type 'int'>, <type 'int'>, <type 'int'>)
 ```
 
-You should see documentation for the entire string type, including all
-of the string methods. This can be useful when you are trying to perform
-a specific task, but you don't know the right function to call. For
-example, lets say we want to convert the string "cooper" to uppercase,
-and we want to know if there is a string method which can do the job for
-us. Start by typing "\`help(str)\`" to pull up the string documentation.
-You can scroll through the string methods until you find a method called
-"upper" which has documentation that looks like:
-
-    |  upper(...)
-    |      S.upper() -> string
-    |      |      Return a copy of the string S converted to uppercase.
-
-These lines tell us that the string class has a method called "upper"
-which can be used to convert strings to uppercase. Now enter:
+Also division.
 
 ```python
-name = "cooper"
-print name.upper()
+In [49]: a = 1
+
+In [50]: b = 2
+
+In [51]: c = a / b
+
+In [52]: c
+Out[52]: 0
 ```
 
-At which point, you should see the word "COOPER" printed to the screen.
+**ZING!**
 
-**Aside: Using Methods Directly on Data**
+Here's why type is important. Divding two integers returnes an integer: this operation calculates the quotient and floors the result to get the answer.
 
-* * * * *
-
-In the previous example, we first created a string variable, \`name\`,
-assigned it the value "cooper", then used the \`upper\` string method to
-obtain the uppercased version of the string. We didn't have to create a
-variable, however. We could simply enter:
+If everything was a float, the division is what you would expect.
 
 ```python
-print "cooper".upper()
+In [53]: a = 1.
+
+In [54]: b = 2.
+
+In [55]: c = a / b
+
+In [56]: c
+Out[56]: 0.5
+
+In [57]: type(a), type(b), type(c)
+Out[57]: (<type 'float'>, <type 'float'>, <type 'float'>)
 ```
 
-To generate the uppercased version.
+There are operations that can be done with strings.
 
-As we saw above, the **str** type has a lot of documentation associated
-with it, and we had to sift through most of it to find the upper method.
-If we had a way to simply print all of the **str** methods, we could
-have probably figured out that the \`upper\` method is what we wanted by
-the name and in a lot less time. Luckily, python has a built in
-function, "\`dir\`", for just this situation. The \`dir\` function takes
-a type name and prints all of the methods associated. Try entering
-"\`print dir(str)\`" to see a list of every method and variable
-associated with the string class. You can ignore the methods that start
-and end with double underscores for now. Try printing the methods
-associated with the **int**, and **complex** types.
+```python
+In [58]: firstName = "Joshua"
 
-Finally, there are some really basic functions that are built right into
-python that we have been using. For example, we used the "float"
-function above to convert a string to a floating point number. You can
-see a list of built in functions by entering
-\`dir(\_[\_builtins](____________________________________________________________________Python%201%20:%20The%20Shell,%20Variables,%20and%20Basic%20Data%20Types))\`.
-If you see something interesting, such as the \`zip\` function, you can
-examine what it does using help(zip).
+In [59]: lastName = "Smith"
 
-## Example : Manipulating Basic Data Types
+In [60]: fullName = firstName + lastName
 
-Use the basic data types we've learned about along with the \`help\` and
-\`dir\` functions to figure out how to do the following using either one
-function or one method call:
+In [61]: print fullName
+JoshuaSmith
+```
 
--   Take the absolute value of the number -1.4
--   Begin with the string "a MaN and His DOG" and create the string "A
-    man and his dog"
--   Return the position of the character 'e' in the string "my test
-    string" (The answer is 4, since \`m\` is is at position 0 not
-    position 1)
+When concatenating strings, you have to be explicit since computers don't understand context.
 
+```python
+In [62]: fullName = firstName + " " + lastName
+
+In [63]: print fullName
+Joshua Smith
+```
+
+There are other operations deined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
+
+```python
+In [64]: str.upper?
+Type:           method_descriptor
+Base Class:     <type 'method_descriptor'>
+String Form:    <method 'upper' of 'str' objects>
+Namespace:      Python builtin
+Docstring:
+    S.upper() -> string                                                                                                                        
+    
+    Return a copy of the string S converted to uppercase.
+```
+
+So we can use it to upper-caseify a string. 
+
+```python
+In [65]: fullName.upper()
+Out[65]: 'JOSHUA SMITH'
+```
+
+You have to use the parenthesis at the end because upper is a method of the string class.
+
+For what its worth, you don't need to have a variable to use the upper() method, you could use it on the string itself.
+
+```python
+In [66]: "Joshua Smith".upper()
+Out[66]: 'JOSHUA SMITH'
+```
+
+That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
