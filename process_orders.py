@@ -27,8 +27,8 @@ def main():
         n += 1
 
     madeit = [order[2] for order in orders[:n]]
-    #with open("madeit_emails.txt") as f:
-    #    names += [email[:-1] for email in f.readlines()]
+    with open("madeit_emails.txt") as f:
+        madeit += [email[:-1] for email in f.readlines()]
     manymadeit = [order[2] for order in orders[:n] if 1 < order[0]]
     maybe = [order[2] for order in orders[n:n+10]]
     nogo = [order[2] for order in orders[n+10:]]
