@@ -15,15 +15,16 @@ Debugging](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debuggin
 
 GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
-documenting code. It is very similar to the [[ictp gforge portal|
-http://gforge.ictp.it]]. GitHub, much like the ictp gforge portal and
-other forge hosting services ([[launchpad|https://launchpad.net]],
-[[bitbucket | https://bitbucket.org]], [[googlecode |
-http://code.google.com]], [[sourceforge | http://sourceforge.net]] etc.)
+documenting code. Your home institution may have a repository hosting system
+of it's own. To find out, ask your system administrator.
+GitHub, much like other forge hosting services 
+( [launchpad](https://launchpad.net),
+[bitbucket](https://bitbucket.org), [googlecode](http://code.google.com), 
+[sourceforge](http://sourceforge.net) etc.)
 provides :
 
--   landing page support ([[my research is at cyclus.github.com |
-    http://cyclus.github.com]])
+-   landing page support [my research is at 
+    cyclus.github.com](http://cyclus.github.com)
 -   wiki support
 -   network graphs and time histories of commits
 -   code browser with syntax highlighting
@@ -33,8 +34,51 @@ provides :
 -   commit triggered mailing lists
 -   other service hooks (twitter, etc.)
 
-Setting up github at first requires [[some setup |
-http://help.github.com/set-up-git-redirect]].
+## github pasword 
+
+Setting up github at first requires a github user name and password. 
+Please take a moment to [create a free one](https://github.com/signup/free)
+(if you want to start paying, you can add that to your account some 
+other day). 
+
+## github ssh keys
+
+It will help you to set up automatic authorization, so that github can handshake
+with your computer (in this case, your virtual machine).
+There are [some setup instructions](http://help.github.com/set-up-git-redirect)  
+on the website, but I'll do this along with you at the front of the room as 
+well. 
+
+    $ cd ~/.ssh
+
+It will likely say "no such file or directory."
+
+    $ ssh-keygen -t rsa -C "your_email@youremail.com"
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/thw/.ssh/id_rsa):  <press enter>
+
+The path that it provides will be to this home directory. This is okay. **Press 
+enter.** You may enter a passphrase. You'll see something like this :
+
+    Created directory '/home/thw/.ssh'.
+    Enter passphrase (empty for no passphrase): 
+    Enter same passphrase again: 
+    Your identification has been saved in /home/thw/.ssh/id_rsa.
+    Your public key has been saved in /home/thw/.ssh/id_rsa.pub.
+    The key fingerprint is:
+    09:06:c6:0f:24:b7:84:ef:22:74:de:95:f0:99:64:5d your_email@youremail.com
+    The key's randomart image is:
+    +--[ RSA 2048]----+
+    |  .+*   . .E     |
+    |  .=o+ o .       |
+    |   ..oB +        |
+    | . ....B .       |
+    |. o.. . S        |
+    |. ....           |
+    | . .             |
+    |                 |
+    |                 |
+    +-----------------+
 
 ## git config : Configuring your git environment
 
@@ -62,9 +106,9 @@ authors, this is essential.
 Another configuration step for some will be to set their favorite text
 editor as git's text editor of choice. This is optional, since vi is
 usually the default, but can be done with the following command (if you
-like **gedit** for example):
+like **nano** for example):
 
-    $ git config --global core.editor gedit
+    $ git config --global core.editor nano
 
 ## git remote : Steps for Forking a Repository
 
@@ -83,8 +127,8 @@ While you probably already have a copy of the UofCSCBC2012 repository,
 GitHub doesn't know about it yet. You'll need to tell github you want to
 have an official fork of this repository.
 
-Step 1 : Go to our [[repository |
-https://github.com/thehackerwithin/UofCSCBC2012/]] from your browser, and
+Step 1 : Go to our 
+[repository](https://github.com/thehackerwithin/UofCSCBC2012/) from your browser, and
 click on the Fork button. Choose to fork it to your username rather than
 any organizations.
 
@@ -183,7 +227,7 @@ this push to succeed. You're welcome to try it though.
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the UofCSCBC2012 code, you'll find a file called readme.rst. This is a
+In the UofCSCBC2012 code, you'll find a file called Readme.md. This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
 fork on github,
@@ -192,16 +236,16 @@ fork on github,
 
 For illustration, let's imagine that, suddenly, each of the developers
 on the UofCSCBC2012 code would like to welcome visitors in a language other
-than English. Since we're all from so many different nations and speak
+than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
 
 I, for example, am from Texas, so I'll push (to the upstream repository)
-my own version of the Welcome on line 2 of readme.rst.
+my own version of Welcome on line 2 of Readme.md.
 
-You, however will want to replace the english word Welcome with an
-equivalent word that you prefer (willkommen, bienvenido, benvenuti,
-etc.).
+You may speak another language, however, and may want to replace the 
+english word Welcome with an equivalent word that you prefer (willkommen, 
+bienvenido, benvenuti, etc.).
 
 You'll want to start a new branch for development. It's a good
 convention to think of your master branch as the "production branch,"
@@ -219,7 +263,7 @@ commit your changes.
     $ git branch development
     $ git checkout development
     Switched to branch 'development'
-    $ gedit readme.rst &
+    $ gedit Readme.md &
     <edit the readme file and exit gedit>
     $ git commit -am "Changed the welcome message to ... "
 
@@ -239,8 +283,8 @@ Step 3 : You want to push it to the internet eventually, so you pull
 updates from the upstream repository, but will experience a conflict.
 
     $ git merge development
-    Auto-merging readme.rst
-    CONFLICT (content): Merge conflict in readme.rst
+    Auto-merging Readme.md
+    CONFLICT (content): Merge conflict in Readme.md
     Automatic merge failed; fix conflicts and then commit the result.
 
 ## git resolve : Resolving Conflicts
@@ -254,11 +298,11 @@ command.
     # Unmerged paths:
     #   (use "git add/rm <file>..." as appropriate to mark resolution)
     #
-    #       unmerged:      readme.rst
+    #       unmerged:      Readme.md
     #
     no changes added to commit (use "git add" and/or "git commit -a")
 
-The only thing that has changed is the readme.rst file. Opening it,
+The only thing that has changed is the Readme.md file. Opening it,
 you'll see something like this at the beginning of the file.
 
     =====================
@@ -283,12 +327,12 @@ more automatically by the version control system.
 This results in a status To alert git that you have made appropriate
 alterations,
 
-    $ git add readme.rst
+    $ git add Readme.md
     $ git commit
     Merge branch 'development'
 
     Conflicts:
-      readme.rst
+      Readme.md
     #
     # It looks like you may be committing a MERGE.
     # If this is not correct, please remove the file
