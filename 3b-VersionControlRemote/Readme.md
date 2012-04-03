@@ -23,8 +23,8 @@ GitHub, much like other forge hosting services
 [sourceforge](http://sourceforge.net) etc.)
 provides :
 
--   landing page support ([[my research is at cyclus.github.com |
-    http://cyclus.github.com]])
+-   landing page support [my research is at 
+    cyclus.github.com](http://cyclus.github.com)
 -   wiki support
 -   network graphs and time histories of commits
 -   code browser with syntax highlighting
@@ -34,8 +34,54 @@ provides :
 -   commit triggered mailing lists
 -   other service hooks (twitter, etc.)
 
-Setting up github at first requires [[some setup |
-http://help.github.com/set-up-git-redirect]].
+## github pasword 
+
+Setting up github at first requires a github user name and password. 
+Please take a moment to [create a free one](https://github.com/signup/free)
+(if you want to start paying, you can add that to your account some 
+other day). 
+
+## github ssh keys
+
+It will help you to set up automatic authorization, so that github can handshake
+with your computer (in this case, your virtual machine).
+There are [some setup instructions](http://help.github.com/set-up-git-redirect)  
+on the website, but I'll do this along with you at the front of the room as 
+well. 
+
+    $ cd ~/.ssh
+
+It will likely say "no such file or directory."
+
+    $ ssh-keygen -t rsa -C "your_email@youremail.com"
+    Generating public/private rsa key pair
+    Enter file in which to save the key
+    <path>
+
+The path that it provides will be to this home directory. This is okay. **Press 
+enter.** You may enter a passphrase. You'll see something like this :
+
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/thw/.ssh/id_rsa):  <press enter>
+    Created directory '/home/thw/.ssh'.
+    Enter passphrase (empty for no passphrase): 
+    Enter same passphrase again: 
+    Your identification has been saved in /home/thw/.ssh/id_rsa.
+    Your public key has been saved in /home/thw/.ssh/id_rsa.pub.
+    The key fingerprint is:
+    09:06:c6:0f:24:b7:84:ef:22:74:de:95:f0:99:64:5d katy@katyhuff.com
+    The key's randomart image is:
+    +--[ RSA 2048]----+
+    |  .+*   . .E     |
+    |  .=o+ o .       |
+    |   ..oB +        |
+    | . ....B .       |
+    |. o.. . S        |
+    |. ....           |
+    | . .             |
+    |                 |
+    |                 |
+    +-----------------+
 
 ## git config : Configuring your git environment
 
