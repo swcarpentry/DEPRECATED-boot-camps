@@ -9,7 +9,9 @@
 
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony Scopatz**
 
-.. image:: http://memecreator.net/the-most-interesting-man-in-the-world/showimage.php/169/I-don%27t-always-test-my-code-But-when-I-do-I-do-it-in-production.jpg
+.. image:: http://s3.amazonaws.com/inscight/img/blog/evo_sol1.png
+
+http://memecreator.net/the-most-interesting-man-in-the-world/showimage.php/169/I-don%27t-always-test-my-code-But-when-I-do-I-do-it-in-production.jpg
 
 
 What is testing?
