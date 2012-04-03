@@ -1,12 +1,16 @@
-[[Back To NumPy | Python9-NumPy]] - [[Forward To Home | Home]]
+[Back To
+Debugging](https://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debugging/)
+- [Forward To
+Documentation](https://github.com/thehackerwithin/UofCSCBC2012/tree/master/6-Documentation/)
 
 * * * * *
 
-**Presented By Tommy Guy**
+**Presented By Anthony Scopatz**
 
-**Based on materials by Katy Huff and Rachel Slaybaugh**
+**Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
+Scopatz**
 
-**What is testing?**
+# What is testing?
 
 Software testing is a process by which one or more expected behaviors
 and results from a piece of software are exercised and confirmed. Well
@@ -14,48 +18,38 @@ chosen tests will confirm expected code behavior for the extreme
 boundaries of the input domains, output ranges, parametric combinations,
 and other behavioral edge cases.
 
-**Why test?**
+# Why test software?
 
 Unless you write flawless, bug-free, perfectly accurate, fully precise,
 and predictable code every time, you must test your code in order to
 trust it enough to answer in the affirmative to at least a few of the
 following questions:
 
-Does your code work?
+-   Does your code work?
+-   Always?
+-   Does it do what you think it does?
+-   Does it continue to work after changes are made?
+-   Does it continue to work after system configurations or libraries
+    are upgraded?
+-   Does it respond properly for a full range of input parameters?
+-   What about edge or corner cases?
+-   What's the limit on that input parameter?
 
-Always?
+## Verification
 
-Does it do what you think it does?
-
-Does it continue to work after changes are made?
-
-Does it continue to work after system configurations or libraries are
-upgraded?
-
-Does it respond properly for a full range of input parameters?
-
-What about edge or corner cases?
-
-What’s the limit on that input parameter?
-
-**Verification**
-
-Verification is the process of asking, “Have we built the software
-correctly?” That is, is the code bug free, precise, accurate, and
+*Verification* is the process of asking, "Have we built the software
+correctly?" That is, is the code bug free, precise, accurate, and
 repeatable?
 
-**Validation**
+## Validation
 
-Validation is the process of asking, “Have we built the right software?”
-That is, is the code designed in such a way as to produce the answers
-we’re interested in, data we want, etc.
+*Validation* is the process of asking, "Have we built the right
+software?" That is, is the code designed in such a way as to produce the
+answers we are interested in, data we want, etc.
 
-Where are tests ? Say we have an averaging function:
+# Where are tests?
 
-    def mean(numlist):
-       total = sum(numlist)
-       length = len(numlist)
-       return total/length
+Say we have an averaging function:
 
 The test could be runtime exceptions in the function.
 
@@ -251,7 +245,7 @@ of each test. In that case, the testing algorithm should be:
     test3
     tearDown
 
-# Python Nose
+### Python Nose
 
 The testing framework we’ll discuss today is called nose, and comes
 packaged with the enthought python distribution that you’ve installed.
@@ -298,7 +292,7 @@ will have been forced to write your code in a modular enough way to make
 testing easy now. This will translate into easier testing well into the
 future.
 
-# An example
+### An example
 
 The overlap method takes two rectangles (red and blue) and computes the
 degree of overlap between them. Save it in overlap.py. A rectangle is
