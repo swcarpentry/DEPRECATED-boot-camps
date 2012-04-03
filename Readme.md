@@ -1,4 +1,6 @@
-# Welcome to the University of Chicago Software Carpentry Boot Camp!!
+# Welcome 
+
+**The University of Chicago Software Carpentry Boot Camp 2012**
 
 ![THW logo]( http://hackerwithin.org/thw/static/thwlogo-small.png "thw logo")   ![Flash logo]( http://software-carpentry.org/blog/wp-content/uploads/2012/01/flash-logo-sm.gif "flash logo")                 ![SWC logo]( http://software-carpentry.org/software-carpentry-logo-285x58.png "SWC logo")
 
