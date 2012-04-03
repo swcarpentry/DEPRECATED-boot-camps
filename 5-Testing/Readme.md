@@ -35,6 +35,8 @@ following questions:
 -   Does it respond properly for a full range of input parameters?
 -   What about edge or corner cases?
 -   What's the limit on that input parameter?
+-   How will it affect your
+    [publications](http://www.nature.com/news/2010/101013/full/467775a.html)?
 
 ## Verification
 
@@ -523,15 +525,16 @@ define a line segment. Additionally there exists experimental data which
 can be anywhere in the domain. Find the data point which is closest to
 the line segment.
 
-![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
 In the `close_line.py` file there are four different implementations
 which all solve this problem. [You can read more about them
 here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
 there are no tests! Please write from scratch a `test_close_line.py`
-file which tests the closest\_data\_to\_line() functions. *Hint:* you
-can use one implementation to test another. Below is some sample data to
-help you get started.
+file which tests the closest\_data\_to\_line() functions.
 
+*Hint:* you can use one implementation function to test another. Below
+is some sample data to help you get started.
+
+![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
 ```python
 import numpy as np
 
