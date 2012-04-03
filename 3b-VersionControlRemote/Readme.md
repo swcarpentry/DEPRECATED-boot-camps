@@ -15,11 +15,12 @@ Debugging](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debuggin
 
 GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
-documenting code. It is very similar to the [[ictp gforge portal|
-http://gforge.ictp.it]]. GitHub, much like the ictp gforge portal and
-other forge hosting services ([[launchpad|https://launchpad.net]],
-[[bitbucket | https://bitbucket.org]], [[googlecode |
-http://code.google.com]], [[sourceforge | http://sourceforge.net]] etc.)
+documenting code. Your home institution may have a repository hosting system
+of it's own. To find out, ask your system administrator.
+GitHub, much like other forge hosting services 
+( [launchpad](https://launchpad.net),
+[bitbucket](https://bitbucket.org), [googlecode](http://code.google.com), 
+[sourceforge](http://sourceforge.net) etc.)
 provides :
 
 -   landing page support ([[my research is at cyclus.github.com |
