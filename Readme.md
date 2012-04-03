@@ -6,7 +6,7 @@
 
 Before you come to the boot camp, you will need to bring a laptop with which to 
 follow along interactively with the tutorials. In order to do this, you will 
-need to install [VirtualBox](https://www//virtualbox.org/), download 
+need to install [VirtualBox](https://www.virtualbox.org/), download 
 [this virtual machine 
 image](http://s3.amazonaws.com/ufocthwscbc/UoFCSCBC2012.ova), 
 and open the image using VirtualBox.
@@ -14,6 +14,15 @@ and open the image using VirtualBox.
 By doing so, you will have, on your laptop, a virtual environment pre-loaded 
 with all of the necessary software (a terminal, text editors, git, the enthought 
 python distribution, and valgrind) for the tutorial. 
+
+You'll need to open a terminal (try konsole or LXterminal). Then type the 
+following commands:
+
+- git clone git://github.com/thehackerwithin/UofCSCBC2012.git
+- cd UofCSCBC2012
+- sudo ./install.sh
+
+Your sudo password is 'thw'.
 
 ## Where?
 
