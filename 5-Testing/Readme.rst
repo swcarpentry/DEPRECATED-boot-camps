@@ -238,7 +238,7 @@ But, sometimes it's the case that your tests change the fixtures. If so, it's be
 for the setup() and teardown() functions to occur on either side of each test. In 
 that case, the testing algorithm should be:
 
-.. code-block::
+.. code-block:: python
 
     setup()
     test1()
@@ -253,34 +253,75 @@ that case, the testing algorithm should be:
     teardown()
 
 ----------------------------------------------------------
-Python Nose
----------------------------------------------------------- 
 
-The testing framework we’ll discuss today is called nose, and comes packaged with the enthought python distribution that you’ve installed.
+Nose: A Python Testing Framework
+================================
+The testing framework we'll discuss today is called nose.  However, there are several
+other testing frameworks available in most language.  Most notably there is `JUnit`_
+in Java which can arguably attributed to inventing the testing framework.
 
-**Where is a nose test?**
+.. _nose: http://readthedocs.org/docs/nose/en/latest/
+.. _JUnit: http://www.junit.org/
 
-Nose tests are files that begin with Test-, Test_, test-, or test_. Specifically, these satisfy the testMatch regular expression [Tt]est[-_]. (You can also teach nose to find tests by declaring them in the unittest.TestCase subclasses chat you create in your code. You can also create test functions which are not unittest.TestCase subclasses if they are named with the configured testMatch regular expression.)
+Where do nose tests live?
+*************************
+Nose tests are files that begin with Test-, Test_, test-, or test_. 
+Specifically, these satisfy the testMatch regular expression [Tt]est[-_]. 
+(You can also teach nose to find tests by declaring them in the unittest.TestCase 
+subclasses chat you create in your code. You can also create test functions which 
+are not unittest.TestCase subclasses if they are named with the configured 
+testMatch regular expression.)
 
 Nose Test Syntax
+****************
 To write a nose test, we make assertions.
 
-::
+.. code-block:: python
 
-    assert (ShouldBeTrue())
-    assert (not ShouldNotBeTrue())
+    assert should_be_true()
+    assert not should_not_be_true()
 
+Additionally, nose itself defines number of assert functions which can be used to 
+test more specific aspects of the code base.
 
-In addition to assertions, in many test frameworks, there are expectations, etc.
+.. code-block:: python
 
-**Add a test to our work**
+    from nose.tools import *
 
-There are a few tests for the mean function that we listed in this lesson. What are some tests that should fail? Add at least three test cases to this set.
+    assert_equal(a, b)
+    assert_almost_equal(a, b)
+    assert_true(a)
+    assert_false(a)
+    assert_raises(exception, func, *args, **kwargs)
+    assert_is_instance(a, b)
+    # and many more!
 
-*Hint: think about what form your input could take and what you should do to handle it. Also, think about the type of the elements in the list. What should be done if you pass a list of integers? What if you pass a list of strings?*
+Moreover, numpy offers similar testing functions for arrays:
 
-**Test Driven Development**
+.. code-block:: python
 
+    from numpy.testing import *
+
+    assert_array_equal(a, b)
+    assert_array_almost_equal(a, b)
+    # etc.
+
+Exersize: Writing tests for mean()
+**********************************
+There are a few tests for the mean() function that we listed in this lesson. 
+What are some tests that should fail? Add at least three test cases to this set.
+Edit the ``test_mean.py`` file which tests the mean() function in ``mean.py``.
+
+*Hint:* Think about what form your input could take and what you should do to handle it. 
+Also, think about the type of the elements in the list. What should be done if you pass 
+a list of integers? What if you pass a list of strings?
+
+**Example**::
+
+    nosetests test_mean.py
+
+Test Driven Development
+=======================
 Some people develop code by writing the tests first.
 
 If you write your tests comprehensively enough, the expected behaviors that you define in your tests will be the necessary and sufficient set of behaviors your code must perform. Thus, if you write the tests first and program until the tests pass, you will have written exactly enough code to perform the behavior your want and no more. Furthermore, you will have been forced to write your code in a modular enough way to make testing easy now. This will translate into easier testing well into the future.

@@ -256,12 +256,30 @@ But, sometimes it's the case that your tests change the fixtures. If so,
 it's better for the setup() and teardown() functions to occur on either
 side of each test. In that case, the testing algorithm should be:
 
-### Python Nose
+```python
+setup()
+test1()
+teardown()
 
-The testing framework we’ll discuss today is called nose, and comes
-packaged with the enthought python distribution that you’ve installed.
+setup()
+test2()
+teardown()
 
-**Where is a nose test?**
+setup()
+test3()
+teardown()
+```
+
+* * * * *
+
+# Nose: A Python Testing Framework
+
+The testing framework we'll discuss today is called nose. However, there
+are several other testing frameworks available in most language. Most
+notably there is [JUnit](http://www.junit.org/) in Java which can
+arguably attributed to inventing the testing framework.
+
+## Where do nose tests live?
 
 Nose tests are files that begin with Test-, Test\_, test-, or test\_.
 Specifically, these satisfy the testMatch regular expression
@@ -271,26 +289,57 @@ can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
 expression.)
 
-Nose Test Syntax To write a nose test, we make assertions.
+## Nose Test Syntax
 
-    assert (ShouldBeTrue())
-    assert (not ShouldNotBeTrue())
+To write a nose test, we make assertions.
 
-In addition to assertions, in many test frameworks, there are
-expectations, etc.
+```python
+assert should_be_true()
+assert not should_not_be_true()
+```
 
-**Add a test to our work**
+Additionally, nose itself defines number of assert functions which can
+be used to test more specific aspects of the code base.
 
-There are a few tests for the mean function that we listed in this
+```python
+from nose.tools import *
+
+assert_equal(a, b)
+assert_almost_equal(a, b)
+assert_true(a)
+assert_false(a)
+assert_raises(exception, func, *args, **kwargs)
+assert_is_instance(a, b)
+# and many more!
+```
+
+Moreover, numpy offers similar testing functions for arrays:
+
+```python
+from numpy.testing import *
+
+assert_array_equal(a, b)
+assert_array_almost_equal(a, b)
+# etc.
+```
+
+## Exersize: Writing tests for mean()
+
+There are a few tests for the mean() function that we listed in this
 lesson. What are some tests that should fail? Add at least three test
-cases to this set.
+cases to this set. Edit the `test_mean.py` file which tests the mean()
+function in `mean.py`.
 
-*Hint: think about what form your input could take and what you should
+*Hint:* Think about what form your input could take and what you should
 do to handle it. Also, think about the type of the elements in the list.
 What should be done if you pass a list of integers? What if you pass a
-list of strings?*
+list of strings?
 
-**Test Driven Development**
+**Example**:
+
+    nosetests test_mean.py
+
+# Test Driven Development
 
 Some people develop code by writing the tests first.
 
