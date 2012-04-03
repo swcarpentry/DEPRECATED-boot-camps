@@ -1,12 +1,17 @@
-[[Back To NumPy | Python9-NumPy]] - [[Forward To Home | Home]]
+[Back To
+Debugging](https://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debugging/)
+- [Forward To
+Documentation](https://github.com/thehackerwithin/UofCSCBC2012/tree/master/6-Documentation/)
 
 * * * * *
 
-**Presented By Tommy Guy**
+**Presented By Anthony Scopatz**
 
-**Based on materials by Katy Huff and Rachel Slaybaugh**
+**Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
+Scopatz**
 
-**What is testing?**
+![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
+# What is testing?
 
 Software testing is a process by which one or more expected behaviors
 and results from a piece of software are exercised and confirmed. Well
@@ -14,361 +19,528 @@ chosen tests will confirm expected code behavior for the extreme
 boundaries of the input domains, output ranges, parametric combinations,
 and other behavioral edge cases.
 
-**Why test?**
+# Why test software?
 
 Unless you write flawless, bug-free, perfectly accurate, fully precise,
 and predictable code every time, you must test your code in order to
 trust it enough to answer in the affirmative to at least a few of the
 following questions:
 
-Does your code work?
+-   Does your code work?
+-   Always?
+-   Does it do what you think it does?
+-   Does it continue to work after changes are made?
+-   Does it continue to work after system configurations or libraries
+    are upgraded?
+-   Does it respond properly for a full range of input parameters?
+-   What about edge or corner cases?
+-   What's the limit on that input parameter?
+-   How will it affect your
+    [publications](http://www.nature.com/news/2010/101013/full/467775a.html)?
 
-Always?
+## Verification
 
-Does it do what you think it does?
-
-Does it continue to work after changes are made?
-
-Does it continue to work after system configurations or libraries are
-upgraded?
-
-Does it respond properly for a full range of input parameters?
-
-What about edge or corner cases?
-
-What’s the limit on that input parameter?
-
-**Verification**
-
-Verification is the process of asking, “Have we built the software
-correctly?” That is, is the code bug free, precise, accurate, and
+*Verification* is the process of asking, "Have we built the software
+correctly?" That is, is the code bug free, precise, accurate, and
 repeatable?
 
-**Validation**
+## Validation
 
-Validation is the process of asking, “Have we built the right software?”
-That is, is the code designed in such a way as to produce the answers
-we’re interested in, data we want, etc.
+*Validation* is the process of asking, "Have we built the right
+software?" That is, is the code designed in such a way as to produce the
+answers we are interested in, data we want, etc.
 
-Where are tests ? Say we have an averaging function:
+## Uncertainty Quantification
 
-    def mean(numlist):
-       total = sum(numlist)
-       length = len(numlist)
-       return total/length
+*Uncertainty Quantification* is the process of asking, "Given that our
+algorithm may not be deterministic, was our execution within acceptable
+error bounds?" This is particularly important for anything which uses
+random numbers, eg Monte Carlo methods.
 
-The test could be runtime exceptions in the function.
+# Where are tests?
 
-    def mean(numlist):
-       try :
-           total = sum(numlist)
-           length = len(numlist)
-       except ValueError :
-           print "The number list was not a list of numbers."
-       except :
-           print "There was a problem evaluating the number list."
-       return total/length
+Say we have an averaging function:
 
-Sometimes they’re alongside the function definitions they’re testing.
+```python
+def mean(numlist):
+    total = sum(numlist)
+    length = len(numlist)
+    return total/length
+```
 
-    def mean(numlist):
-       try :
-           total = sum(numlist)
-           length = len(numlist)
-       except ValueError :
-           print "The number list was not a list of numbers."
-       except :
-           print "There was a problem evaluating the number list."
-       return total/length
+Tests could be implemented as runtime exceptions in the function:
 
-    class TestClass:
-       def test_mean(self):
-           assert(mean([0,0,0,0])==0)
-           assert(mean([0,200])==100)
-           assert(mean([0,-200]) == -100)
-           assert(mean([0]) == 0)
-       def test_floating_mean(self):
-           assert(mean([1,2])==1.5)
+```python
+def mean(numlist):
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except ValueError:
+        print "The number list was not a list of numbers."
+    except:
+        print "There was a problem evaluating the number list."
+    return total/length
+```
 
-Sometimes they’re in an executable independent of the main executable.
+Sometimes tests they are functions alongside the function definitions
+they are testing.
 
-    def mean(numlist):
-       try :
-           total = sum(numlist)
-           length = len(numlist)
-       except ValueError :
-           print "The number list was not a list of numbers."
-       except :
-           print "There was a problem evaluating the number list."
-       return total/length
+```python
+def mean(numlist):
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except ValueError:
+        print "The number list was not a list of numbers."
+    except:
+        print "There was a problem evaluating the number list."
+    return total/length
+
+
+def test_mean():
+    assert mean([0, 0, 0, 0]) == 0
+    assert mean([0, 200]) == 100
+    assert mean([0, -200]) == -100
+    assert mean([0]) == 0
+
+
+def test_floating_mean():
+    assert mean([1, 2]) == 1.5
+```
+
+Sometimes they are in an executable independent of the main executable.
+
+```python
+def mean(numlist):
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except ValueError:
+        print "The number list was not a list of numbers."
+    except:
+        print "There was a problem evaluating the number list."
+    return total/length
+```
 
 Where, in a different file exists a test module:
 
-    import mean
-    class TestClass:
-        def test_mean(self):
-            assert(mean([0,0,0,0])==0)
-            assert(mean([0,200])==100)
-            assert(mean([0,-200]) == -100)
-            assert(mean([0]) == 0)
-        def test_floating_mean(self):
-            assert(mean([1,2])==1.5)
+```python
+import mean
 
-**When should we test?**
+def test_mean():
+    assert mean([0, 0, 0, 0]) == 0
+    assert mean([0, 200]) == 100
+    assert mean([0, -200]) == -100
+    assert mean([0]) == 0
 
-The short answer is all the time. The long answer is that testing either
-before or after your software is written will improve your code, but
-testing after your program is used for something important is too late.
+
+def test_floating_mean():
+    assert mean([1, 2]) == 1.5
+```
+
+# When should we test?
+
+The three right answers are:
+
+-   **ALWAYS!**
+-   **EARLY!**
+-   **OFTEN!**
+
+The longer answer is that testing either before or after your software
+is written will improve your code, but testing after your program is
+used for something important is too late.
 
 If we have a robust set of tests, we can run them before adding
 something new and after adding something new. If the tests give the same
-results (as appropriate), we can have some assurance that we didn’t
-break anything. The same idea applies to making changes in your system
+results (as appropriate), we can have some assurance that we didn't
+wreak anything. The same idea applies to making changes in your system
 configuration, updating support codes, etc.
 
 Another important feature of testing is that it helps you remember what
 all the parts of your code do. If you are working on a large project
 over three years and you end up with 200 classes, it may be hard to
 remember what the widget class does in detail. If you have a test that
-checks all of the widget’s functionality, you can look at the test to
-remember what it’s supposed to do.
+checks all of the widget's functionality, you can look at the test to
+remember what it's supposed to do.
 
-**Who tests?** In a collaborative coding environment, where many
-developers contribute to the same code, developers should be responsible
-individually for testing the functions they create and collectively for
-testing the code as a whole.
+# Who should test?
 
-Professionals invariably test their code, and take pride in test
-coverage, the percent of their functions that they feel confident are
+In a collaborative coding environment, where many developers contribute
+to the same code base, developers should be responsible individually for
+testing the functions they create and collectively for testing the code
+as a whole.
+
+Professionals often test their code, and take pride in test coverage,
+the percent of their functions that they feel confident are
 comprehensively tested.
 
-**How does one test?**
+# How are tests written?
 
-The type of tests you’ll write is determined by the testing framework
-you adopt.
+The type of tests that are written is determined by the testing
+framework you adopt. Don't worry, there are a lot of choices.
 
-**Types of Tests:** *Exceptions* Exceptions can be thought of as type of
-runttime test. They alert the user to exceptional behavior in the code.
-Often, exceptions are related to functions that depend on input that is
-unknown at compile time. Checks that occur within the code to handle
-exceptional behavior that results from this type of input are called
-Exceptions.
+## Types of Tests
 
-*Unit Tests*
+**Exceptions:** Exceptions can be thought of as type of runtime test.
+They alert the user to exceptional behavior in the code. Often,
+exceptions are related to functions that depend on input that is unknown
+at compile time. Checks that occur within the code to handle exceptional
+behavior that results from this type of input are called Exceptions.
 
-Unit tests are a type of test which test the fundametal units a
-program’s functionality. Often, this is on the class or function level
-of detail.
+**Unit Tests:** Unit tests are a type of test which test the fundamental
+units of a program's functionality. Often, this is on the class or
+function level of detail. However what defines a *code unit* is not
+formally defined.
 
-To test functions and classes, we want to test the interfaces, rather
-than the implmentation. Treating the implementation as a ‘black box’, we
-can probe the expected behavior with boundary cases for the inputs.
+To test functions and classes, the interfaces (API) - rather than the
+implementation - should be tested. Treating the implementation as a
+black box, we can probe the expected behavior with boundary cases for
+the inputs.
 
-In the case of our fix\_missing function, we need to test the expected
-behavior by providing lines and files that do and do not have missing
-entries. We should also test the behavior for empty lines and files as
-well. These are boundary cases.
+**System Tests:** System level tests are intended to test the code as a
+whole. As opposed to unit tests, system tests ask for the behavior as a
+whole. This sort of testing involves comparison with other validated
+codes, analytical solutions, etc.
 
-*System Tests*
+**Regression Tests:** A regression test ensures that new code does
+change anything. If you change the default answer, for example, or add a
+new question, you'll need to make sure that missing entries are still
+found and fixed.
 
-System level tests are intended to test the code as a whole. As opposed
-to unit tests, system tests ask for the behavior as a whole. This sort
-of testing involves comparison with other validated codes, analytical
-solutions, etc.
+**Integration Tests:** Integration tests query the ability of the code
+to integrate well with the system configuration and third party
+libraries and modules. This type of test is essential for codes that
+depend on libraries which might be updated independently of your code or
+when your code might be used by a number of users who may have various
+versions of libraries.
 
-*Regression Tests*
+**Test Suites:** Putting a series of unit tests into a collection of
+modules creates, a test suite. Typically the suite as a whole is
+executed (rather than each test individually) when verifying that the
+code base still functions after changes have been made.
 
-A regression test ensures that new code does change anything. If you
-change the default answer, for example, or add a new question, you’ll
-need to make sure that missing entries are still found and fixed.
+# Elements of a Test
 
-*Integration Tests*
+**Behavior:** The behavior you want to test. For example, you might want
+to test the fun() function.
 
-Integration tests query the ability of the code to integrate well with
-the system configuration and third party libraries and modules. This
-type of test is essential for codes that depend on libraries which might
-be updated independently of your code or when your code might be used by
-a number of users who may have various versions of libraries.
-
-**Test Suites** Putting a series of unit tests into a suite creates, as
-you might imagine, a test suite.
-
-**Elements of a Test**
-
-**Behavior**
-
-The behavior you want to test. For example, you might want to test the
-fun() function.
-
-**Expected Result**
-
-This might be a single number, a range of numbers, a new, fully defined
-object, a system state, an exception, etc.
-
-When we run the fun function, we expect to generate some fun. If we
-don’t generate any fun, the fun() function should fail its test.
+**Expected Result:** This might be a single number, a range of numbers,
+a new fully defined object, a system state, an exception, etc. When we
+run the fun() function, we expect to generate some fun. If we don't
+generate any fun, the fun() function should fail its test.
 Alternatively, if it does create some fun, the fun() function should
-pass this test.
+pass this test. The the expected result should known *a priori*. For
+numerical functions, this is result is ideally analytically determined
+even if the function being tested isn't.
 
-**Assertions**
+**Assertions:** Require that some conditional be true. If the
+conditional is false, the test fails.
 
-Require that some conditional be true. If the conditional is false, the
-test fails.
-
-**Fixtures**
-
-Sometimes you have to do some legwork to create the objects that are
-necessary to run one or many tests. These objects are called fixtures.
+**Fixtures:** Sometimes you have to do some legwork to create the
+objects that are necessary to run one or many tests. These objects are
+called fixtures as they are not really part of the test themselves but
+rather involve getting the computer into the appropriate state.
 
 For example, since fun varies a lot between people, the fun() function
-is a member function of the Person class. In order to check the fun
-function, then, we need to create an appropriate Person object on which
-to run fun().
+is a method of the Person class. In order to check the fun function,
+then, we need to create an appropriate Person object on which to run
+fun().
 
-**Setup and teardown**
+**Setup and teardown:** Creating fixtures is often done in a call to a
+setup function. Deleting them and other cleanup is done in a teardown
+function.
 
-Creating fixtures is often done in a call to a setup function. Deleting
-them and other cleanup is done in a teardown function.
-
-**The Big Picture** Putting all this together, the testing algorithm is
+**The Big Picture:** Putting all this together, the testing algorithm is
 often:
 
-    setUp
-    test
-    tearDown
+```python
+setup()
+test()
+teardown()
+```
 
-But, sometimes it’s the case that your tests change the fixtures. If so,
-it’s better for the setup and teardown functions to occur on either side
-of each test. In that case, the testing algorithm should be:
+But, sometimes it's the case that your tests change the fixtures. If so,
+it's better for the setup() and teardown() functions to occur on either
+side of each test. In that case, the testing algorithm should be:
 
-    setUp
-    test1
-    tearDown
-    setUp
-    test2
-    tearDown
-    setUp
-    test3
-    tearDown
+```python
+setup()
+test1()
+teardown()
 
-# Python Nose
+setup()
+test2()
+teardown()
 
-The testing framework we’ll discuss today is called nose, and comes
-packaged with the enthought python distribution that you’ve installed.
+setup()
+test3()
+teardown()
+```
 
-**Where is a nose test?**
+* * * * *
 
-Nose tests are files that begin with Test-, Test\_, test-, or test\_.
-Specifically, these satisfy the testMatch regular expression
-[Tt]est[-\_]. (You can also teach nose to find tests by declaring them
+# Nose: A Python Testing Framework
+
+The testing framework we'll discuss today is called nose. However, there
+are several other testing frameworks available in most language. Most
+notably there is [JUnit](http://www.junit.org/) in Java which can
+arguably attributed to inventing the testing framework.
+
+## Where do nose tests live?
+
+Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
+`test_`. Specifically, these satisfy the testMatch regular expression
+`[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
 in the unittest.TestCase subclasses chat you create in your code. You
 can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
 expression.)
 
-Nose Test Syntax To write a nose test, we make assertions.
+## Nose Test Syntax
 
-    assert (ShouldBeTrue())
-    assert (not ShouldNotBeTrue())
+To write a nose test, we make assertions.
 
-In addition to assertions, in many test frameworks, there are
-expectations, etc.
+```python
+assert should_be_true()
+assert not should_not_be_true()
+```
 
-**Add a test to our work**
+Additionally, nose itself defines number of assert functions which can
+be used to test more specific aspects of the code base.
 
-There are a few tests for the mean function that we listed in this
+```python
+from nose.tools import *
+
+assert_equal(a, b)
+assert_almost_equal(a, b)
+assert_true(a)
+assert_false(a)
+assert_raises(exception, func, *args, **kwargs)
+assert_is_instance(a, b)
+# and many more!
+```
+
+Moreover, numpy offers similar testing functions for arrays:
+
+```python
+from numpy.testing import *
+
+assert_array_equal(a, b)
+assert_array_almost_equal(a, b)
+# etc.
+```
+
+## Exercise: Writing tests for mean()
+
+There are a few tests for the mean() function that we listed in this
 lesson. What are some tests that should fail? Add at least three test
-cases to this set.
+cases to this set. Edit the `test_mean.py` file which tests the mean()
+function in `mean.py`.
 
-*Hint: think about what form your input could take and what you should
+*Hint:* Think about what form your input could take and what you should
 do to handle it. Also, think about the type of the elements in the list.
 What should be done if you pass a list of integers? What if you pass a
-list of strings?*
+list of strings?
 
-**Test Driven Development**
+**Example**:
 
-Some people develop code by writing the tests first.
+    nosetests test_mean.py
 
-If you write your tests comprehensively enough, the expected behaviors
-that you define in your tests will be the necessary and sufficient set
-of behaviors your code must perform. Thus, if you write the tests first
-and program until the tests pass, you will have written exactly enough
-code to perform the behavior your want and no more. Furthermore, you
-will have been forced to write your code in a modular enough way to make
-testing easy now. This will translate into easier testing well into the
-future.
+# Test Driven Development
 
-# An example
+Test driven development (TDD) is a philosophy whereby the developer
+creates code by **writing the tests fist**. That is to say you write the
+tests *before* writing the associated code!
 
-The overlap method takes two rectangles (red and blue) and computes the
-degree of overlap between them. Save it in overlap.py. A rectangle is
-defined as a tuple of tuples: ((x\_lo,y\_lo),(x\_hi),(y\_hi))
+This is an iterative process whereby you write a test then write the
+minimum amount code to make the test pass. If a new feature is needed,
+another test is written and the code is expanded to meet this new use
+case. This continues until the code does what is needed.
 
-    def overlap(red, blue):
-       '''Return overlap between two rectangles, or None.'''
+TDD operates on the YAGNI principle (You Ain't Gonna Need It). People
+who diligently follow TDD swear by its effectiveness. This development
+style was put forth most strongly by [Kent Beck in
+2002](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530).
 
-       ((red_lo_x, red_lo_y), (red_hi_x, red_hi_y)) = red
-       ((blue_lo_x, blue_lo_y), (blue_hi_x, blue_hi_y)) = blue
+## A TDD Example
 
-       if (red_lo_x >= blue_hi_x) or \
-          (red_hi_x <= blue_lo_x) or \
-          (red_lo_y >= blue_hi_x) or \
-          (red_hi_y <= blue_lo_y):
-           return None
+Say you want to write a fib() function which generates values of the
+Fibonacci sequence of given indexes. You would - of course - start by
+writing the test, possibly testing a single value:
 
-       lo_x = max(red_lo_x, blue_lo_x)
-       lo_y = max(red_lo_y, blue_lo_y)
-       hi_x = min(red_hi_x, blue_hi_x)
-       hi_y = min(red_hi_y, blue_hi_y)
-       return ((lo_x, lo_y), (hi_x, hi_y))
+```python
+from nose import assert_equal
 
-Now let's create a set of tests for this class. Before we do this, let's
-think about *how* we might test this method. How should it work?
+from pisa import fib
 
-    from overlap import overlap
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
+```
 
-    def test_empty_with_empty():
-       rect = ((0, 0), (0, 0))
-       assert overlap(rect, rect) == None
+You would *then* go ahead and write the actual function:
 
-    def test_empty_with_unit():
-       empty = ((0, 0), (0, 0))
-       unit = ((0, 0), (1, 1))
-       assert overlap(empty, unit) == None
+```python
+def fib(n):
+    # you snarky so-and-so
+    return 1
+```
 
-    def test_unit_with_unit():
-       unit = ((0, 0), (1, 1))
-       assert overlap(unit, unit) == unit
+And that is it right?! Well, not quite. This implementation fails for
+most other values. Adding tests we see that:
 
-    def test_partial_overlap():
-       red = ((0, 3), (2, 5))
-       blue = ((1, 0), (2, 4))
-       assert overlap(red, blue) == ((1, 3), (2, 4))
+```python
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
 
-Run your tests.
 
-    [rguy@infolab-33 ~/TestExample]$ nosetests
-    ...F
-    ======================================================================
-    FAIL: test_overlap.test_partial_overlap
-    ----------------------------------------------------------------------
-    Traceback (most recent call last):
-      File "/usr/lib/python2.6/site-packages/nose/case.py", line 183, in runTest
-        self.test(*self.arg)
-      File "/afs/ictp.it/home/r/rguy/TestExample/test_overlap.py", line 19, in test_partial_overlap
-        assert overlap(red, blue) == ((1, 3), (2, 4))
-    AssertionError
+def test_fib2():
+    obs = fib(0)
+    exp = 0
+    assert_equal(obs, exp)
 
-    ----------------------------------------------------------------------
-    Ran 4 tests in 0.005s
+    obs = fib(1)
+    exp = 1
+    assert_equal(obs, exp)
+```
 
-    FAILED (failures=1)
+This extra test now requires that we bother to implement at least the
+initial values:
 
-Oh no! Something failed. The failure was on line in this test:
+```python
+def fib(n):
+    # a little better
+    if n == 0 or n == 1:
+        return n
+    return 1
+```
 
-    def test_partial_overlap():
-      red = ((0, 3), (2, 5))
-      blue = ((1, 0), (2, 4))
-      assert overlap(red, blue) == ((1, 3), (2, 4))
+However, this function still falls over for `2 < n`. Time for more
+tests!
 
-Can you spot why it failed? Try to fix the method so all tests pass.
+```python
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib2():
+    obs = fib(0)
+    exp = 0
+    assert_equal(obs, exp)
+
+    obs = fib(1)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib3():
+    obs = fib(3)
+    exp = 2
+    assert_equal(obs, exp)
+
+    obs = fib(6)
+    exp = 8
+    assert_equal(obs, exp)
+```
+
+At this point, we had better go ahead and try do the right thing...
+
+```python
+def fib(n):
+    # finally, some math
+    if n == 0 or n == 1:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
+```
+
+Here it becomes very tempting to take an extended coffee break or
+possibly a power lunch. But then you remember those pesky negative
+numbers and floats. Perhaps the right thing to do here is to just be
+undefined.
+
+```python
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib2():
+    obs = fib(0)
+    exp = 0
+    assert_equal(obs, exp)
+
+    obs = fib(1)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib3():
+    obs = fib(3)
+    exp = 2
+    assert_equal(obs, exp)
+
+    obs = fib(6)
+    exp = 8
+    assert_equal(obs, exp)
+
+
+def test_fib3():
+    obs = fib(13.37)
+    exp = NotImplemented
+    assert_equal(obs, exp)
+
+    obs = fib(-9000)
+    exp = NotImplemented
+    assert_equal(obs, exp)
+```
+
+This means that it is time to add the appropriate case to the function
+itself:
+
+```python
+def fib(n):
+    # sequence and you shall find
+    if n < 0 or int(n) != n:
+        return NotImplemented
+    elif n == 0 or n == 1:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
+```
+
+And thus - finally - we have a robust function together with working
+tests!
+
+# Exercise
+
+**The Problem:** In 2D or 3D, we have two points (p1 and p2) which
+define a line segment. Additionally there exists experimental data which
+can be anywhere in the domain. Find the data point which is closest to
+the line segment.
+
+In the `close_line.py` file there are four different implementations
+which all solve this problem. [You can read more about them
+here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
+there are no tests! Please write from scratch a `test_close_line.py`
+file which tests the closest\_data\_to\_line() functions.
+
+*Hint:* you can use one implementation function to test another. Below
+is some sample data to help you get started.
+
+![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
+> -
+
+```python
+import numpy as np
+
+p1 = np.array([0.0, 0.0])
+p2 = np.array([1.0, 1.0])
+data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
+```

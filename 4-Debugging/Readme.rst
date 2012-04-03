@@ -1,4 +1,3 @@
-
 Debugging
 ____________________________________________
 
@@ -7,13 +6,6 @@ ____________________________________________
 `Forward To Testing <http://github.com/thehackerwithin/UofCSCBC2012/tree/master/5-Testing/>`_
 
 **Presented and Designed by Anthony Scopatz** 
-
-Below are some tools that are useful for debugging.  We'll need to do some 
-extra installation to have all of them available::
-
-    cd ~/UofCSCBC2012/4-Debugging/
-    sudo ./install.sh
-
 
 What is Debugging (Exercise)?
 =============================
@@ -30,9 +22,39 @@ of 2-3 people.  Follow these steps:
 
 Time limit: 5 min.
 
+How I Debug
+===========
+I write perfect code the first time.
+
+
+Errors, Exceptions, & Tracebacks
+================================
+Bugs start where execution ends.  In many modern languages, when an invalid operation occurs
+an exception is *thrown* or *raised*.  These exceptions may be *handled* or *caught*.
+In Python, there are ~165 built-in exceptions.
+
+.. code-block:: python
+
+    try:
+        a = 1.0 / 0.0
+    except ZeroDivisionError as e:
+        print "Going from zero to hero."
+        a = 1.0
+
+In languages that have functions and exceptions, you can typically get a hold of what is 
+known as a traceback.  This displays the history of function calls leading up to the 
+error.
+
+**Example:** ``python tb_example.py``
+
+**Other Resources:** `Exception Handling`_
+
+.. _Exception Handling: http://www.doughellmann.com/articles/how-tos/python-exception-handling/index.html
+
+
 pdb
 ===
-Following Python's moto of "batteries included", the language itself comes packaged 
+Following Python's motto of "batteries included", the language itself comes packaged 
 with its own aptly named Python DeBugger (pdb).  From any Python code anywhere, 
 simply make sure that pdb is imported and then call the ``set_trace()`` function.
 
@@ -95,9 +117,34 @@ than importing and running the module.  We'll be talking about pyflakes.
 .. _pylint: http://www.logilab.org/857
 .. _comparison: http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-03-linters/
 
+Coding Standards
+================
+Much like a written natural language, there are many ways to express the same idea.
+The strict syntax of languages are necessarily more forgiving than what the 
+*correct* way of doing things (think Oxford comma).  To make the consumption of information
+easier, style guides exists to enforce particularly effective ways of writing.
+
+Coding standards fill the same role but for programming languages.  They become absolutely 
+essential as projects become large (>1 person). 
+` Now, the wonderful thing about standards is that there are so many to choose from!`_
+
+Python is somewhat unique in that the language itself has an approved coding standard
+called `PEP8`_.  The overwhelming majority (80-90%) of Python code that is available
+on the internet is written in a way that is PEP8-compliant.  Unfortunately, some of that
+20% is in standard library...
+
+Thus not adhering to your coding standard is often considered "against best practices", 
+ie a bug.  Luckily there are tools to test for compliance::
+
+    pep8 style_example.py
+
+.. _Now, the wonderful thing about standards is that there are so many to choose from!: http://xkcd.com/927/
+.. _PEP8: http://www.python.org/dev/peps/pep-0008/
+
+
 Segfaults 
 ==========================================================================
-The Scourge of C{K&R, ANSI, ISO, 99, 11, Embedded, Objective}!
+The Scourge of {K&R, ANSI, ISO, 99, 11, Embedded, Objective} C!
 **************************************************************************
 Segmentation faults (*segfaults*) are some of the most obscure, most annoying, 
 and most difficult to debug errors in existence.  This is because they are a 
@@ -125,43 +172,42 @@ Python 3.3 standard library.
 .. _HOWTO Crash Python: http://wiki.python.org/moin/CrashingPython
 
 
-Compile each program without optimization first.
+Valgrind
+========
+Valgrind is a utility for compiled codes which aids in debugging, 
+finding memory leaks, and profiling.  This is invaluable for codes 
+tracking down errors that only happen at runtime, such as segfaults.
 
-For simpleTest.cc, run this line to see errors in this code. 
+As an example, first compile the following program without optimization.
+For simpleTest.cc, run this line to see errors in this code::
 
-::
+    g++ simpleTest.cc -o simpleTest
+    valgrind --track-origins=yes --leak-check=full ./simpleTest 300 300
 
-  valgrind --track-origins=yes --leak-check=full ./simpleTest 300 300
+We also have a cache test line. Run this line to see the cache errors::
 
+    g++ cacheTest.cc
+    valgrind --tool=cachegrind ./a.out 0 1000 100000
 
-We also have a cache test line. Run this line to see the cache errors.
+There are two paths in this code. If the first input is 1, it runs a 
+cache-sensitive version of the loop.  If it is 0, it runs a cache-insensitive version.
+The cache should look like::
 
-::
+    ~ $ dmesg | grep cache
+    CPU: L1 I cache: 32K, L1 D cache: 32K
+    CPU: L2 cache: 6144K
+    CPU: L1 I cache: 32K, L1 D cache: 32K
+    CPU: L2 cache: 6144K
 
-  valgrind --tool=cachegrind ./a.out 0 1000 100000
+You can run the same command to see cache on your linux machine. 
+Another way to see the exact cache setup that valgrind found is the following::
 
-There are two paths in this code. If the first input is 1, it runs a cache-sensitive version of the loop. 
-If it is 0, it runs a cache-insensitive version.
+    cg_annotate --auto=yes cachegrind.out.21960
 
-FYI: on the Trieste lab machines, this is what cache looks like:
-
-::
-
-  guy ~>dmesg | grep cache
-  CPU: L1 I cache: 32K, L1 D cache: 32K
-  CPU: L2 cache: 6144K
-  CPU: L1 I cache: 32K, L1 D cache: 32K
-  CPU: L2 cache: 6144K
-
-You can run the same command to see cache on your linux machine. Another way to see the exact cache setup that 
-valgrind found is the following:
-
-::
-
-  cg_annotate --auto=yes cachegrind.out.21960
-
-Note that your cachegrind.out will have a different number. This command is also handy because it shows which functions caused cache
-misses.
+Note that your cachegrind.out will have a different number. This command is 
+also handy because it shows which functions caused cache misses.
 
 
+**Other Resources:** `Valgrind`_
 
+.. _Valgrind: http://valgrind.org/
