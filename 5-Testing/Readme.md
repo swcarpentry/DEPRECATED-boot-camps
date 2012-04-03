@@ -10,7 +10,7 @@ Documentation](https://github.com/thehackerwithin/UofCSCBC2012/tree/master/6-Doc
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
-![image](test_prod.jpg)
+![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
@@ -518,4 +518,22 @@ tests!
 
 # Exercise
 
-![image](http://s3.amazonaws.com/inscight/img/blog/evo_sol1.png)
+**The Problem:** In 2D or 3D, we have two points (p1 and p2) which
+define a line segment. Additionally there exists experimental data which
+can be anywhere in the domain. Find the data point which is closest to
+the line segment.
+
+![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
+In the `close_line.py` file there are four different implementations
+which all solve this problem. [You can read more about them
+here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
+there are no tests! Please write from scratch a `test_close_line.py`
+file which tests the closest\_data\_to\_line() functions. *Hint:* you
+can use one implentation to test another. Below is some sample data to
+help you get started.
+
+```python
+p1 = np.array([0.0, 0.0])
+p2 = np.array([1.0, 1.0])
+data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
+```
