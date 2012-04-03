@@ -51,81 +51,101 @@ answers we are interested in, data we want, etc.
 
 Say we have an averaging function:
 
-The test could be runtime exceptions in the function.
+```python
+def mean(numlist):
+    total = sum(numlist)
+    length = len(numlist)
+    return total/length
+```
 
-    def mean(numlist):
-       try :
-           total = sum(numlist)
-           length = len(numlist)
-       except ValueError :
-           print "The number list was not a list of numbers."
-       except :
-           print "There was a problem evaluating the number list."
-       return total/length
+Tests could be implemented as runtime exceptions in the function:
 
-Sometimes they’re alongside the function definitions they’re testing.
+```python
+def mean(numlist):
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except ValueError:
+        print "The number list was not a list of numbers."
+    except:
+        print "There was a problem evaluating the number list."
+    return total/length
+```
 
-    def mean(numlist):
-       try :
-           total = sum(numlist)
-           length = len(numlist)
-       except ValueError :
-           print "The number list was not a list of numbers."
-       except :
-           print "There was a problem evaluating the number list."
-       return total/length
+Sometimes tests they are functions alongside the function definitions
+they are testing.
 
-    class TestClass:
-       def test_mean(self):
-           assert(mean([0,0,0,0])==0)
-           assert(mean([0,200])==100)
-           assert(mean([0,-200]) == -100)
-           assert(mean([0]) == 0)
-       def test_floating_mean(self):
-           assert(mean([1,2])==1.5)
+```python
+def mean(numlist):
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except ValueError:
+        print "The number list was not a list of numbers."
+    except:
+        print "There was a problem evaluating the number list."
+    return total/length
 
-Sometimes they’re in an executable independent of the main executable.
 
-    def mean(numlist):
-       try :
-           total = sum(numlist)
-           length = len(numlist)
-       except ValueError :
-           print "The number list was not a list of numbers."
-       except :
-           print "There was a problem evaluating the number list."
-       return total/length
+def test_mean():
+    assert mean([0, 0, 0, 0]) == 0
+    assert mean([0, 200]) == 100
+    assert mean([0, -200]) == -100
+    assert mean([0]) == 0
+
+
+def test_floating_mean():
+    assert mean([1, 2]) == 1.5
+```
+
+Sometimes they are in an executable independent of the main executable.
+
+```python
+def mean(numlist):
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except ValueError:
+        print "The number list was not a list of numbers."
+    except:
+        print "There was a problem evaluating the number list."
+    return total/length
+```
 
 Where, in a different file exists a test module:
 
-    import mean
-    class TestClass:
-        def test_mean(self):
-            assert(mean([0,0,0,0])==0)
-            assert(mean([0,200])==100)
-            assert(mean([0,-200]) == -100)
-            assert(mean([0]) == 0)
-        def test_floating_mean(self):
-            assert(mean([1,2])==1.5)
+```python
+import mean
 
-**When should we test?**
+  def test_mean():
+      assert mean([0, 0, 0, 0]) == 0
+      assert mean([0, 200]) == 100
+      assert mean([0, -200]) == -100
+      assert mean([0]) == 0
 
-The short answer is all the time. The long answer is that testing either
-before or after your software is written will improve your code, but
-testing after your program is used for something important is too late.
+
+  def test_floating_mean():
+      assert mean([1, 2]) == 1.5
+```
+
+# When should we test?
+
+**ALWAYS.** The longer answer is that testing either before or after
+your software is written will improve your code, but testing after your
+program is used for something important is too late.
 
 If we have a robust set of tests, we can run them before adding
 something new and after adding something new. If the tests give the same
-results (as appropriate), we can have some assurance that we didn’t
-break anything. The same idea applies to making changes in your system
+results (as appropriate), we can have some assurance that we didn'treak
+anything. The same idea applies to making changes in your system
 configuration, updating support codes, etc.
 
 Another important feature of testing is that it helps you remember what
 all the parts of your code do. If you are working on a large project
 over three years and you end up with 200 classes, it may be hard to
 remember what the widget class does in detail. If you have a test that
-checks all of the widget’s functionality, you can look at the test to
-remember what it’s supposed to do.
+checks all of the widget's functionality, you can look at the test to
+remember what it's supposed to do.
 
 **Who tests?** In a collaborative coding environment, where many
 developers contribute to the same code, developers should be responsible
