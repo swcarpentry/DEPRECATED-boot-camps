@@ -27,9 +27,10 @@ write. We have no excuse for bad documentation.
 1.  Readmes
 2.  User Guides
 3.  Developer Guides
-4.  Code Comments
-5.  API Documentation
-6.  Auto-documentation
+4.  Self-Documenting Code
+5.  Code Comments
+6.  API Documentation
+7.  Auto-documentation
 
 ## Readmes
 
@@ -91,3 +92,112 @@ less well defined.
 
 **Examples:** [Android](http://developer.android.com/guide/index.html),
 [Python](http://docs.python.org/devguide/).
+
+## Self-Documenting Code
+
+Much like in testing where you can simply write perfect code the first
+time, there is an analogous philosophy is documentation. This is the
+philosophy of [self-documenting
+code](http://c2.com/cgi/wiki?SelfDocumentingCode). This ethos makes the
+claim that it is often possible to write code in such a way that new
+readers can understand what the code does simply by reading it.
+Therefore, no extra documentation is required. It is all there in the
+code itself.
+
+While there are obvious pitfalls with this approach (assumed knowledge
+on the reader's behalf, unavoidable complexities, etc) there are some
+merits. By having meaningful naming conventions and structure it does
+become possible to infer a lot about a code just by glancing at it.
+Coding standards come from the same desire to have readable software.
+
+However using this documentation strategy exclusively is *highly*
+inadvisable.
+
+## Code Comments
+
+Every language has a special character (or two) which indicate to the
+parser, compiler, or interpreter that whatever comes after or between
+these characters should be ignored. This allows the author to write
+annotate and explain the code that they are writing *right at the point
+that they are writing it!* This is especially helpful if something
+wierd, obtuse, or obscure is about to happen because it gives the author
+a chance to explain themselves to future developers (often themselves in
+1, 2, 6 months).
+
+The best part is that you can put literally *anything* in comments:
+pubilcation citations, ASCII art, messages to lost loves, and threats to
+your collaborators.
+
+In Python, the comment character is the hash symbol `#`. The following
+example shows how you might help explain a toaster:
+
+```python
+def toast(slices, toastiness, msg=None):
+    # make sure the toaster has the right setting
+    toastiness = int(toastiness) if 0 < toastiness else 5
+
+    print "Engage the bread warming!"
+    for slice if slices:
+        slice.toast(toastiness)
+
+    # log the message, making a default if needed
+    if msg is None:
+        msg = "Toasted to level {}".format(toastiness)
+    logger.info(msg, "toast")
+```
+
+However, it is certainly possible to over-document your code with
+comments. Comments should never simply repeat what the code itself is
+doing. The goal is to strike the right balance. The approriate ratio
+changes with language. (Typically higher level languages have greater
+functionality per line and so have more comments.) Try to avoid the
+following:
+
+```python
+# init a to 0
+a = 0
+
+# make b 'a string'
+b = 'a string'
+
+# Add one to a
+a = a + 1
+
+# stopping excessive comments
+self.fall_on_sword()
+```
+
+## API Documentation
+
+The application programming interface (API) is the definition of the
+protocol that two pieces of code may use to interact with one another.
+Consider the case of functions. All functions have a function signature
+which specifies how many arguments they accept and their return values.
+This signature along with the module name and function name is the API.
+(The function object/pointer itself is the implementation and is
+independent of the abstract API.)
+
+Just because you have an argument list, however, does not imply that the
+meaning of the arguments is known. For example:
+
+```python
+def f(a, b=10):
+    ...
+```
+
+We know that `f()` accepts two argument `a` and `b` and that `b` should
+probably be an integer. But what does `f()` actually do? What do these
+arguments mean in this context?
+
+Python allows the user to define API documentation right at the
+function, class, module, or variable definition. Every Python object may
+have an `__doc__` attribute which is a string representation of the API
+docs. This is known as a *docstring*.
+[PEP257](http://www.python.org/dev/peps/pep-0257/) describes the
+convetions for docstrings. The most important of these is that simple
+things should have simple docstrings.
+
+Right below a definition, if the first non-comment, non-whitespace line
+is an unassigned string literal, then this string is automatically
+loaded in as the docstring. It is this docstring which then read by the
+`help()` builtin or the `?` in IPython.
