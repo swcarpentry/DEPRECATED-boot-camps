@@ -7,7 +7,7 @@ Form](https://docs.google.com/spreadsheet/viewform?formkey=dDlSWDEzMUt0Ri1TUDlTM
 
 **Please run the following command now**:
 
-    sudo apt-get install make texlive -y
+    sudo apt-get install make -y
 
 Just like version control and testing, documenting your code is the most
 important thing you can do as a software developer. As we have seen in
