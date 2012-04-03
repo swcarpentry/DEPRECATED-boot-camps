@@ -5,6 +5,10 @@ Testing](http://github.com/thehackerwithin/UofCSCBC2012/tree/master//) -
 [Forward To Google Feedback
 Form](https://docs.google.com/spreadsheet/viewform?formkey=dDlSWDEzMUt0Ri1TUDlTM21pUEwwSnc6MA#gid=0)
 
+**Please run the following command now**:
+
+    sudo apt-get install make texlive -y
+
 Just like version control and testing, documenting your code is the most
 important thing you can do as a software developer. As we have seen in
 previous sessions with other tools, good documentation is a sublime
