@@ -54,22 +54,19 @@ well.
 It will likely say "no such file or directory."
 
     $ ssh-keygen -t rsa -C "your_email@youremail.com"
-    Generating public/private rsa key pair
-    Enter file in which to save the key
-    <path>
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/thw/.ssh/id_rsa):  <press enter>
 
 The path that it provides will be to this home directory. This is okay. **Press 
 enter.** You may enter a passphrase. You'll see something like this :
 
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/home/thw/.ssh/id_rsa):  <press enter>
     Created directory '/home/thw/.ssh'.
     Enter passphrase (empty for no passphrase): 
     Enter same passphrase again: 
     Your identification has been saved in /home/thw/.ssh/id_rsa.
     Your public key has been saved in /home/thw/.ssh/id_rsa.pub.
     The key fingerprint is:
-    09:06:c6:0f:24:b7:84:ef:22:74:de:95:f0:99:64:5d katy@katyhuff.com
+    09:06:c6:0f:24:b7:84:ef:22:74:de:95:f0:99:64:5d your_email@youremail.com
     The key's randomart image is:
     +--[ RSA 2048]----+
     |  .+*   . .E     |
@@ -109,9 +106,9 @@ authors, this is essential.
 Another configuration step for some will be to set their favorite text
 editor as git's text editor of choice. This is optional, since vi is
 usually the default, but can be done with the following command (if you
-like **gedit** for example):
+like **nano** for example):
 
-    $ git config --global core.editor gedit
+    $ git config --global core.editor nano
 
 ## git remote : Steps for Forking a Repository
 
