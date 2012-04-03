@@ -9,9 +9,7 @@
 
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony Scopatz**
 
-.. image:: http://s3.amazonaws.com/inscight/img/blog/evo_sol1.png
-
-http://memecreator.net/the-most-interesting-man-in-the-world/showimage.php/169/I-don%27t-always-test-my-code-But-when-I-do-I-do-it-in-production.jpg
+.. image:: test_prod.jpg
 
 
 What is testing?
@@ -496,3 +494,7 @@ This means that it is time to add the appropriate case to the funtion itself:
             return fib(n - 1) + fib(n - 2)
 
 And thus - finally - we have a robust function together with working tests!
+
+Exercise
+========
+.. image:: http://s3.amazonaws.com/inscight/img/blog/evo_sol1.png
