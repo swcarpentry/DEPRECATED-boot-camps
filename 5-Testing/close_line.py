@@ -19,7 +19,7 @@ def closest_data_to_line1(data, p1, p2):
     dists = np.empty(len(data), dtype=float)
     for i, pdata in enumerate(data):
         x = fmin(dist_from_line1, p1[0], (pdata, p1, p2), disp=False)[0]
-        dists[i] = dist_from_line1(x, pdata)
+        dists[i] = dist_from_line1(x, pdata, p1, p2)
     imin = np.argmin(dists)
     return imin, data[imin]
 
