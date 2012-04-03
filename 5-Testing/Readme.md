@@ -10,6 +10,7 @@ Documentation](https://github.com/thehackerwithin/UofCSCBC2012/tree/master/6-Doc
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
+![image](http://memecreator.net/the-most-interesting-man-in-the-world/showimage.php/169/I-don't-always-test-my-code-But-when-I-do-I-do-it-in-production.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
@@ -124,20 +125,24 @@ Where, in a different file exists a test module:
 ```python
 import mean
 
-  def test_mean():
-      assert mean([0, 0, 0, 0]) == 0
-      assert mean([0, 200]) == 100
-      assert mean([0, -200]) == -100
-      assert mean([0]) == 0
+def test_mean():
+    assert mean([0, 0, 0, 0]) == 0
+    assert mean([0, 200]) == 100
+    assert mean([0, -200]) == -100
+    assert mean([0]) == 0
 
 
-  def test_floating_mean():
-      assert mean([1, 2]) == 1.5
+def test_floating_mean():
+    assert mean([1, 2]) == 1.5
 ```
 
 # When should we test?
 
-**ALWAYS!!!**
+The three right answers are:
+
+-   **ALWAYS!**
+-   **EARLY!**
+-   **OFTEN!**
 
 The longer answer is that testing either before or after your software
 is written will improve your code, but testing after your program is
@@ -281,9 +286,9 @@ arguably attributed to inventing the testing framework.
 
 ## Where do nose tests live?
 
-Nose tests are files that begin with Test-, Test\_, test-, or test\_.
-Specifically, these satisfy the testMatch regular expression
-[Tt]est[-\_]. (You can also teach nose to find tests by declaring them
+Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
+`test_`. Specifically, these satisfy the testMatch regular expression
+`[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
 in the unittest.TestCase subclasses chat you create in your code. You
 can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
@@ -341,88 +346,172 @@ list of strings?
 
 # Test Driven Development
 
-Some people develop code by writing the tests first.
+Test driven development (TDD) is a philosophy whereby the developer
+creates code by **writing the tests fist**. That is to say you write the
+tests *before* writing the associated code!
 
-If you write your tests comprehensively enough, the expected behaviors
-that you define in your tests will be the necessary and sufficient set
-of behaviors your code must perform. Thus, if you write the tests first
-and program until the tests pass, you will have written exactly enough
-code to perform the behavior your want and no more. Furthermore, you
-will have been forced to write your code in a modular enough way to make
-testing easy now. This will translate into easier testing well into the
-future.
+This is an iterative process whereby you write a test then write the
+minimum amount code to make the test pass. If a new feature is needed,
+another test is written and the code is expanded to meet this new use
+case. This continues until the code does what is needed.
 
-### An example
+TDD operates on the YAGNI principle (You Ain't Gonna Need It). People
+who diligently follow TDD swear by its effectiveness. This development
+style was put forth most strongly by [Kent Beck in
+2002](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530).
 
-The overlap method takes two rectangles (red and blue) and computes the
-degree of overlap between them. Save it in overlap.py. A rectangle is
-defined as a tuple of tuples: ((x\_lo,y\_lo),(x\_hi),(y\_hi))
+## A TDD Example
 
-    def overlap(red, blue):
-       '''Return overlap between two rectangles, or None.'''
+Say you want to write a fib() function which generates values of the
+Fibinacci sequence fof given indexes. You would - of course - start by
+writing the test, possibly testing a single value:
 
-       ((red_lo_x, red_lo_y), (red_hi_x, red_hi_y)) = red
-       ((blue_lo_x, blue_lo_y), (blue_hi_x, blue_hi_y)) = blue
+```python
+from nose import assert_equal
 
-       if (red_lo_x >= blue_hi_x) or \
-          (red_hi_x <= blue_lo_x) or \
-          (red_lo_y >= blue_hi_x) or \
-          (red_hi_y <= blue_lo_y):
-           return None
+from pisa import fib
 
-       lo_x = max(red_lo_x, blue_lo_x)
-       lo_y = max(red_lo_y, blue_lo_y)
-       hi_x = min(red_hi_x, blue_hi_x)
-       hi_y = min(red_hi_y, blue_hi_y)
-       return ((lo_x, lo_y), (hi_x, hi_y))
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
+```
 
-Now let's create a set of tests for this class. Before we do this, let's
-think about *how* we might test this method. How should it work?
+You would *then* go ahead and write the actual function:
 
-    from overlap import overlap
+```python
+def fib(n):
+    # you snarky so-and-so
+    return 1
+```
 
-    def test_empty_with_empty():
-       rect = ((0, 0), (0, 0))
-       assert overlap(rect, rect) == None
+And that is it right?! Well, not quite. This implementation fails for
+most other values. Adding tests we see that:
 
-    def test_empty_with_unit():
-       empty = ((0, 0), (0, 0))
-       unit = ((0, 0), (1, 1))
-       assert overlap(empty, unit) == None
+```python
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
 
-    def test_unit_with_unit():
-       unit = ((0, 0), (1, 1))
-       assert overlap(unit, unit) == unit
 
-    def test_partial_overlap():
-       red = ((0, 3), (2, 5))
-       blue = ((1, 0), (2, 4))
-       assert overlap(red, blue) == ((1, 3), (2, 4))
+def test_fib2():
+    obs = fib(0)
+    exp = 0
+    assert_equal(obs, exp)
 
-Run your tests.
+    obs = fib(1)
+    exp = 1
+    assert_equal(obs, exp)
+```
 
-    [rguy@infolab-33 ~/TestExample]$ nosetests
-    ...F
-    ======================================================================
-    FAIL: test_overlap.test_partial_overlap
-    ----------------------------------------------------------------------
-    Traceback (most recent call last):
-      File "/usr/lib/python2.6/site-packages/nose/case.py", line 183, in runTest
-        self.test(*self.arg)
-      File "/afs/ictp.it/home/r/rguy/TestExample/test_overlap.py", line 19, in test_partial_overlap
-        assert overlap(red, blue) == ((1, 3), (2, 4))
-    AssertionError
+This extra test now requires that we bother to implement at least the
+intial values:
 
-    ----------------------------------------------------------------------
-    Ran 4 tests in 0.005s
+```python
+def fib(n):
+    # a little better
+    if n == 0 or n == 1:
+        return n
+    return 1
+```
 
-    FAILED (failures=1)
+However, this function still falls over for `2 < n`. Time for more
+tests!
 
-Oh no! Something failed. The failure was on line in this test:
+```python
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
 
-    def test_partial_overlap():
-      red = ((0, 3), (2, 5))
-      blue = ((1, 0), (2, 4))
-      assert overlap(red, blue) == ((1, 3), (2, 4))
 
-Can you spot why it failed? Try to fix the method so all tests pass.
+def test_fib2():
+    obs = fib(0)
+    exp = 0
+    assert_equal(obs, exp)
+
+    obs = fib(1)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib3():
+    obs = fib(3)
+    exp = 2
+    assert_equal(obs, exp)
+
+    obs = fib(6)
+    exp = 8
+    assert_equal(obs, exp)
+```
+
+At this point, we had better go ahead and try do the right thing...
+
+```python
+def fib(n):
+    # finally, some math
+    if n == 0 or n == 1:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
+```
+
+Here it becomes very tempting to take an extended coffee break or
+possibly a power lunch. But then you remember those pesky negative
+numbers and floats. Perhaps the right thing to do here is to just be
+undefined.
+
+```python
+def test_fib1():
+    obs = fib(2)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib2():
+    obs = fib(0)
+    exp = 0
+    assert_equal(obs, exp)
+
+    obs = fib(1)
+    exp = 1
+    assert_equal(obs, exp)
+
+
+def test_fib3():
+    obs = fib(3)
+    exp = 2
+    assert_equal(obs, exp)
+
+    obs = fib(6)
+    exp = 8
+    assert_equal(obs, exp)
+
+
+def test_fib3():
+    obs = fib(13.37)
+    exp = NotImplemented
+    assert_equal(obs, exp)
+
+    obs = fib(-9000)
+    exp = NotImplemented
+    assert_equal(obs, exp)
+```
+
+This means that it is time to add the appropriate case to the funtion
+itself:
+
+```python
+def fib(n):
+    # sequence and you shall find
+    if n < 0 or int(n) != n:
+        return NotImplemented
+    elif n == 0 or n == 1:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
+```
+
+And thus - finally - we have a robust function together with working
+tests!

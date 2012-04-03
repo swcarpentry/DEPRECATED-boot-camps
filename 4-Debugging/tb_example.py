@@ -5,7 +5,7 @@ def check_n(n):
 
 def fib(n):
     if 0 <= n <= 1:
-        return 1
+        return n
     elif 1 < n:
         return fib(n-1) + fib(n-2)
     else:
