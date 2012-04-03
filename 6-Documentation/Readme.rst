@@ -61,3 +61,33 @@ has a readme::
     ...
 
 
+User's Guides
+=============
+The next level of documentation are user's guides.  These often take the form of 
+books or pdfs that aim to explain top level architechture and functionality to 
+possibly novice users.  Such documents are extremely helpful for bringing in new
+members to the community, going in depth into the theory (math, biology, physics, 
+chemistry, engineering), and as a reference manual for advanced users and 
+developers.  However because of their high level nature, you typically have to wait 
+until the code has stabalized to be able to write a good comprehensive user's guide.
+
+**Examples:** `FLASH`_, `NumPy`_.
+
+.. _FLASH: http://flash.uchicago.edu/site/flashcode/user_support/flash4b_ug.pdf
+.. _NumPy: http://www.tramy.us/numpybook.pdf
+
+
+Developer Guides
+================
+Developer guides are very similar to user's guides except that they assume a
+basic mastery of the project.  They are typically for people who want to *become*
+developers on a project rather than for existing developers.  They are probably 
+most important for code projects that have plugin architechtures and where the
+line between user and developer is less well defined.
+
+**Examples:** `Android`_, `Python`_.
+
+.. _Android: http://developer.android.com/guide/index.html
+.. _Python: http://docs.python.org/devguide/
+
+
