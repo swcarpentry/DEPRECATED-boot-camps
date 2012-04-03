@@ -149,7 +149,7 @@ something important is too late.
 
 If we have a robust set of tests, we can run them before adding something new and after 
 adding something new. If the tests give the same results (as appropriate), we can have 
-some assurance that we didn'treak anything. The same idea applies to making changes in 
+some assurance that we didn't wreak anything. The same idea applies to making changes in 
 your system configuration, updating support codes, etc.
 
 Another important feature of testing is that it helps you remember what all the parts 
@@ -174,18 +174,18 @@ Don't worry, there are a lot of choices.
 
 Types of Tests
 ****************
-**Exceptions:** Exceptions can be thought of as type of runttime test. They alert 
+**Exceptions:** Exceptions can be thought of as type of runtime test. They alert 
 the user to exceptional behavior in the code. Often, exceptions are related to 
 functions that depend on input that is unknown at compile time. Checks that occur 
 within the code to handle exceptional behavior that results from this type of input 
 are called Exceptions.
 
-**Unit Tests:** Unit tests are a type of test which test the fundametal units of a 
+**Unit Tests:** Unit tests are a type of test which test the fundamental units of a 
 program's functionality. Often, this is on the class or function level of detail.
 However what defines a *code unit* is not formally defined.
 
-To test functions and classes, the interfaces (API) - rather than the implmentation - should
-be tested.  Treating the implementation as a ack box, we can probe the expected behavior 
+To test functions and classes, the interfaces (API) - rather than the implementation - should
+be tested.  Treating the implementation as a black box, we can probe the expected behavior 
 with boundary cases for the inputs.
 
 **System Tests:** System level tests are intended to test the code as a whole. As opposed 
@@ -216,7 +216,7 @@ object, a system state, an exception, etc.  When we run the fun() function, we e
 generate some fun. If we don't generate any fun, the fun() function should fail its test. 
 Alternatively, if it does create some fun, the fun() function should pass this test.
 The the expected result should known *a priori*.  For numerical functions, this is 
-result is ideally analytically determined even if the fucntion being tested isn't.
+result is ideally analytically determined even if the function being tested isn't.
 
 **Assertions:** Require that some conditional be true. If the conditional is false, 
 the test fails.
@@ -313,7 +313,7 @@ Moreover, numpy offers similar testing functions for arrays:
     assert_array_almost_equal(a, b)
     # etc.
 
-Exersize: Writing tests for mean()
+Exercise: Writing tests for mean()
 **********************************
 There are a few tests for the mean() function that we listed in this lesson. 
 What are some tests that should fail? Add at least three test cases to this set.
@@ -347,7 +347,7 @@ strongly by `Kent Beck in 2002`_.
 A TDD Example
 *************
 Say you want to write a fib() function which generates values of the
-Fibinacci sequence fof given indexes.  You would - of course - start
+Fibonacci sequence of given indexes.  You would - of course - start
 by writing the test, possibly testing a single value:
 
 .. code-block:: python
@@ -389,7 +389,7 @@ most other values.  Adding tests we see that:
         exp = 1
         assert_equal(obs, exp)
 
-This extra test now requires that we bother to implement at least the intial values:
+This extra test now requires that we bother to implement at least the initial values:
 
 .. code-block:: python
 
@@ -480,7 +480,7 @@ Perhaps the right thing to do here is to just be undefined.
         exp = NotImplemented
         assert_equal(obs, exp)
 
-This means that it is time to add the appropriate case to the funtion itself:
+This means that it is time to add the appropriate case to the function itself:
 
 .. code-block:: python
 
@@ -501,17 +501,21 @@ Exercise
 Additionally there exists experimental data which can be anywhere in the domain. 
 Find the data point which is closest to the line segment. 
 
+
 .. image:: https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png
+
 
 In the ``close_line.py`` file there are four different implementations which all
 solve this problem.  `You can read more about them here.`_  However, there are no tests!
 Please write from scratch a ``test_close_line.py`` file which tests the closest_data_to_line() 
-functions.  *Hint:* you can use one implentation to test another.  Below is some sample data
+functions.  *Hint:* you can use one implementation to test another.  Below is some sample data
 to help you get started.
 
 .. _You can read more about them here.: http://inscight.org/2012/03/31/evolution_of_a_solution/
 
 .. code-block:: python
+
+    import numpy as np
 
     p1 = np.array([0.0, 0.0])
     p2 = np.array([1.0, 1.0])

@@ -150,8 +150,8 @@ used for something important is too late.
 
 If we have a robust set of tests, we can run them before adding
 something new and after adding something new. If the tests give the same
-results (as appropriate), we can have some assurance that we didn'treak
-anything. The same idea applies to making changes in your system
+results (as appropriate), we can have some assurance that we didn't
+wreak anything. The same idea applies to making changes in your system
 configuration, updating support codes, etc.
 
 Another important feature of testing is that it helps you remember what
@@ -179,21 +179,21 @@ framework you adopt. Don't worry, there are a lot of choices.
 
 ## Types of Tests
 
-**Exceptions:** Exceptions can be thought of as type of runttime test.
+**Exceptions:** Exceptions can be thought of as type of runtime test.
 They alert the user to exceptional behavior in the code. Often,
 exceptions are related to functions that depend on input that is unknown
 at compile time. Checks that occur within the code to handle exceptional
 behavior that results from this type of input are called Exceptions.
 
-**Unit Tests:** Unit tests are a type of test which test the fundametal
+**Unit Tests:** Unit tests are a type of test which test the fundamental
 units of a program's functionality. Often, this is on the class or
 function level of detail. However what defines a *code unit* is not
 formally defined.
 
 To test functions and classes, the interfaces (API) - rather than the
-implmentation - should be tested. Treating the implementation as a ack
-box, we can probe the expected behavior with boundary cases for the
-inputs.
+implementation - should be tested. Treating the implementation as a
+black box, we can probe the expected behavior with boundary cases for
+the inputs.
 
 **System Tests:** System level tests are intended to test the code as a
 whole. As opposed to unit tests, system tests ask for the behavior as a
@@ -229,7 +229,7 @@ generate any fun, the fun() function should fail its test.
 Alternatively, if it does create some fun, the fun() function should
 pass this test. The the expected result should known *a priori*. For
 numerical functions, this is result is ideally analytically determined
-even if the fucntion being tested isn't.
+even if the function being tested isn't.
 
 **Assertions:** Require that some conditional be true. If the
 conditional is false, the test fails.
@@ -328,7 +328,7 @@ assert_array_almost_equal(a, b)
 # etc.
 ```
 
-## Exersize: Writing tests for mean()
+## Exercise: Writing tests for mean()
 
 There are a few tests for the mean() function that we listed in this
 lesson. What are some tests that should fail? Add at least three test
@@ -363,7 +363,7 @@ style was put forth most strongly by [Kent Beck in
 ## A TDD Example
 
 Say you want to write a fib() function which generates values of the
-Fibinacci sequence fof given indexes. You would - of course - start by
+Fibonacci sequence of given indexes. You would - of course - start by
 writing the test, possibly testing a single value:
 
 ```python
@@ -406,7 +406,7 @@ def test_fib2():
 ```
 
 This extra test now requires that we bother to implement at least the
-intial values:
+initial values:
 
 ```python
 def fib(n):
@@ -499,7 +499,7 @@ def test_fib3():
     assert_equal(obs, exp)
 ```
 
-This means that it is time to add the appropriate case to the funtion
+This means that it is time to add the appropriate case to the function
 itself:
 
 ```python
@@ -529,10 +529,12 @@ which all solve this problem. [You can read more about them
 here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
 there are no tests! Please write from scratch a `test_close_line.py`
 file which tests the closest\_data\_to\_line() functions. *Hint:* you
-can use one implentation to test another. Below is some sample data to
+can use one implementation to test another. Below is some sample data to
 help you get started.
 
 ```python
+import numpy as np
+
 p1 = np.array([0.0, 0.0])
 p2 = np.array([1.0, 1.0])
 data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
