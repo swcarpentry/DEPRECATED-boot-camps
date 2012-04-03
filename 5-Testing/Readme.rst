@@ -43,6 +43,13 @@ Validation
 That is, is the code designed in such a way as to produce the answers we are 
 interested in, data we want, etc.
 
+Uncertainty Quantification
+**************************
+*Uncertainty Quantification* is the process of asking, "Given that our algorithm
+may not be deterministic, was our execution within acceptable error bounds?"  This 
+is particularly important for anything which uses random numbers, eg Monte Carlo methods.
+
+
 Where are tests?
 ================
 Say we have an averaging function:
@@ -127,7 +134,9 @@ Where, in a different file exists a test module:
 
 When should we test?
 ====================
-**ALWAYS.**  The longer answer is that testing either before or after your software 
+**ALWAYS!!!**  
+
+The longer answer is that testing either before or after your software 
 is written will improve your code, but testing after your program is used for 
 something important is too late.
 
@@ -142,91 +151,106 @@ with 200 classes, it may be hard to remember what the widget class does in detai
 you have a test that checks all of the widget's functionality, you can look at the test 
 to remember what it's supposed to do.
 
-**Who tests?**
-In a collaborative coding environment, where many developers contribute to the same code, developers should be responsible individually for testing the functions they create and collectively for testing the code as a whole.
+Who should test?
+================
+In a collaborative coding environment, where many developers contribute to the same code base, 
+developers should be responsible individually for testing the functions they create and 
+collectively for testing the code as a whole.
 
-Professionals invariably test their code, and take pride in test coverage, the percent of their functions that they feel confident are comprehensively tested.
+Professionals often test their code, and take pride in test coverage, the percent 
+of their functions that they feel confident are comprehensively tested.
 
-**How does one test?**
+How are tests written?
+======================
+The type of tests that are written is determined by the testing framework you adopt.
+Don't worry, there are a lot of choices.
 
-The type of tests you’ll write is determined by the testing framework you adopt.
+Types of Tests
+****************
+**Exceptions:** Exceptions can be thought of as type of runttime test. They alert 
+the user to exceptional behavior in the code. Often, exceptions are related to 
+functions that depend on input that is unknown at compile time. Checks that occur 
+within the code to handle exceptional behavior that results from this type of input 
+are called Exceptions.
 
-**Types of Tests:**
-*Exceptions*
-Exceptions can be thought of as type of runttime test. They alert the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Checks that occur within the code to handle exceptional behavior that results from this type of input are called Exceptions.
+**Unit Tests:** Unit tests are a type of test which test the fundametal units of a 
+program's functionality. Often, this is on the class or function level of detail.
+However what defines a *code unit* is not formally defined.
 
-*Unit Tests*
+To test functions and classes, the interfaces (API) - rather than the implmentation - should
+be tested.  Treating the implementation as a ack box, we can probe the expected behavior 
+with boundary cases for the inputs.
 
-Unit tests are a type of test which test the fundametal units a program’s functionality. Often, this is on the class or function level of detail.
+**System Tests:** System level tests are intended to test the code as a whole. As opposed 
+to unit tests, system tests ask for the behavior as a whole. This sort of testing involves 
+comparison with other validated codes, analytical solutions, etc.
 
-To test functions and classes, we want to test the interfaces, rather than the implmentation. Treating the implementation as a ‘black box’, we can probe the expected behavior with boundary cases for the inputs.
+**Regression Tests:**  A regression test ensures that new code does change anything. 
+If you change the default answer, for example, or add a new question, you'll need to 
+make sure that missing entries are still found and fixed.
 
-In the case of our fix_missing function, we need to test the expected behavior by providing lines and files that do and do not have missing entries. We should also test the behavior for empty lines and files as well. These are boundary cases.
+**Integration Tests:** Integration tests query the ability of the code to integrate 
+well with the system configuration and third party libraries and modules. This type 
+of test is essential for codes that depend on libraries which might be updated 
+independently of your code or when your code might be used by a number of users 
+who may have various versions of libraries.
 
-*System Tests*
+**Test Suites:** Putting a series of unit tests into a collection of modules creates, 
+a test suite.  Typically the suite as a whole is executed (rather than each test individually)
+when verifying that the code base still functions after changes have been made.
 
-System level tests are intended to test the code as a whole. As opposed to unit tests, system tests ask for the behavior as a whole. This sort of testing involves comparison with other validated codes, analytical solutions, etc.
+Elements of a Test
+==================
+**Behavior:** The behavior you want to test. For example, you might want to test the fun() 
+function.
 
-*Regression Tests*
+**Expected Result:** This might be a single number, a range of numbers, a new fully defined 
+object, a system state, an exception, etc.  When we run the fun() function, we expect to 
+generate some fun. If we don't generate any fun, the fun() function should fail its test. 
+Alternatively, if it does create some fun, the fun() function should pass this test.
+The the expected result should known *a priori*.  For numerical functions, this is 
+result is ideally analytically determined even if the fucntion being tested isn't.
 
-A regression test ensures that new code does change anything. If you change the default answer, for example, or add a new question, you’ll need to make sure that missing entries are still found and fixed.
+**Assertions:** Require that some conditional be true. If the conditional is false, 
+the test fails.
 
-*Integration Tests*
+**Fixtures:**  Sometimes you have to do some legwork to create the objects that are 
+necessary to run one or many tests. These objects are called fixtures as they are not really
+part of the test themselves but rather involve getting the computer into the appropriate state.
 
-Integration tests query the ability of the code to integrate well with the system configuration and third party libraries and modules. This type of test is essential for codes that depend on libraries which might be updated independently of your code or when your code might be used by a number of users who may have various versions of libraries.
+For example, since fun varies a lot between people, the fun() function is a method of 
+the Person class. In order to check the fun function, then, we need to create an appropriate 
+Person object on which to run fun().
 
-**Test Suites**
-Putting a series of unit tests into a suite creates, as you might imagine, a test suite.
+**Setup and teardown:** Creating fixtures is often done in a call to a setup function. 
+Deleting them and other cleanup is done in a teardown function.
 
-**Elements of a Test**
+**The Big Picture:** Putting all this together, the testing algorithm is often:
 
-**Behavior**
+.. code-block:: python
 
-The behavior you want to test. For example, you might want to test the fun() function.
-
-**Expected Result**
-
-This might be a single number, a range of numbers, a new, fully defined object, a system state, an exception, etc.
-
-When we run the fun function, we expect to generate some fun. If we don’t generate any fun, the fun() function should fail its test. Alternatively, if it does create some fun, the fun() function should pass this test.
-
-**Assertions**
-
-Require that some conditional be true. If the conditional is false, the test fails.
-
-**Fixtures**
-
-Sometimes you have to do some legwork to create the objects that are necessary to run one or many tests. These objects are called fixtures.
-
-For example, since fun varies a lot between people, the fun() function is a member function of the Person class. In order to check the fun function, then, we need to create an appropriate Person object on which to run fun().
-
-**Setup and teardown**
-
-Creating fixtures is often done in a call to a setup function. Deleting them and other cleanup is done in a teardown function.
-
-**The Big Picture**
-Putting all this together, the testing algorithm is often:
-
-::
-
-  setUp
-  test
-  tearDown
+    setup()
+    test()
+    teardown()
 
 
-But, sometimes it’s the case that your tests change the fixtures. If so, it’s better for the setup and teardown functions to occur on either side of each test. In that case, the testing algorithm should be:
+But, sometimes it's the case that your tests change the fixtures. If so, it's better 
+for the setup() and teardown() functions to occur on either side of each test. In 
+that case, the testing algorithm should be:
 
-::
+.. code-block::
 
-  setUp
-  test1
-  tearDown
-  setUp
-  test2
-  tearDown
-  setUp
-  test3
-  tearDown
+    setup()
+    test1()
+    teardown()
+
+    setup()
+    test2()
+    teardown()
+
+    setup()
+    test3()
+    teardown()
 
 ----------------------------------------------------------
 Python Nose
