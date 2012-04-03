@@ -34,7 +34,7 @@ at [University of Chicago, Searle-Cl 240, 5735 S Ellis Ave (Main Entrance)](http
 ## When ?
 
 The boot camp will last from 9am to 5pm on April 2 and 3, 2012. There
-will be a lunch break at 12:30pm on April 2 and a lunch break at 12pm on
+will be a lunch break at 12:00pm on April 2 and a lunch break at 12:30pm on
 April 3. There will also be coffee breaks intermittently throughout the
 days.
 
