@@ -1,8 +1,8 @@
+![SWC logo](http://software-carpentry.org/software-carpentry-logo-285x58.png "SWC logo")
+
 # Welcome
 
 **Software Carpentry Bootcamp 2012 at Johns Hopkins University**
-
-![SWC logo]( http://software-carpentry.org/software-carpentry-logo-285x58.png "SWC logo")
 
 ## How ?
 
