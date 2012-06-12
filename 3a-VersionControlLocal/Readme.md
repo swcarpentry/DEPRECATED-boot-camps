@@ -1,9 +1,5 @@
 # Local Version Control
 ----
-
-A change!
-
-
 [Back To Python Functions and
 Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/)
 - [Forward To Remote Version
@@ -11,7 +7,12 @@ Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionCo
 
 ----
 
-**Presented By : Katy Huff**
+**Presented By Joshua Ryan Smith**
+**Based on material by Katy Huff**
+
+## Example: A Slide Deck for a Presentation
+
+Show example here.
 
 ## git : What is Version Control ?
 
@@ -131,7 +132,7 @@ description. You can describe your repository by opening the description
 file and replacing the text with a name for the repository. Mine will be
 called "Reproducible Science". You may call yours anything you like.
 
-    $ gedit description &
+    $ kate description &
 
 ## git add : Adding a File To Version Control
 
@@ -143,7 +144,7 @@ create one, then we'll learn the **git add** command.
 
 Step 1 : Create a file to add to your repository.
 
-    $ gedit readme.rst &
+    $ kate readme.rst &
 
 Step 2 : Inform git that you would like to keep track of future changes
 in this file.
@@ -190,6 +191,10 @@ least a full sentence description.
 In the same way that it is wise to often save a document that you are
 working on, so too is it wise to save numerous revisions of your code.
 More frequent commits increase the granularity of your **undo** button.
+
+**Advice: good commit messages**
+
+add advice.
 
 ### Exercise : Commit Your Changes
 
@@ -307,8 +312,9 @@ as well as abandoning local changes.
 
 To switch between branches, try
 
-::
-  ~ $ git branch newbranch $ git checkout newbranch $ git branch
+    $ git branch newbranch 
+    $ git checkout newbranch 
+    $ git branch
 
 How can you tell we've switched between branches? When we used the
 branch command before there was an asterisk next to the master branch.
@@ -366,13 +372,8 @@ Step 3 : Merge the two branches into the core
 
 ## git clone : Copying a Repository
 
-The Hacker Within has its own online code repositories. You can check
-out code from them at any time, from anywhere. You checked out some code
-this morning at github
-[http://www.github.com/thehackerwithin/UofCSCBC2012.](http://www.github.com/thehackerwithin/UofCSCBC2012).
-
 Today, we'll check out a git type repository at
-www.github.com/thehackerwithin/UofCSCBC2012 .
+https://github.com/JHU-SWC-2012/SWC-bootcamp
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
@@ -420,3 +421,7 @@ without asking, so don't get nervous. When in doubt, update.
 Since we just pulled the repository down, we will be up to date unless
 there has been a commit by someone else to the Original repository in
 the meantime.
+
+## Resources
+
+add resources.
