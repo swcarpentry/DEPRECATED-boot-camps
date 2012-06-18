@@ -11,9 +11,9 @@ add features to the function. The ideal solution would be to keep the
 function in one spot and use it over and over again from many different places.
 Python modules to the rescue!
 
-Today we're going to move beyond the IPython notebook. Most Python code is
+We're going to move beyond the IPython notebook. Most Python code is
 stored in `.py` files and then used in other `.py` files where it has been
-pulled in using an `import` statement.
+pulled in using an `import` statement. Today we'll show you how to do that.
 
 =========
 Exercises
