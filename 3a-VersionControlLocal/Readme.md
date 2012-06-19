@@ -12,7 +12,7 @@ Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionCo
 
 ## Example: A Slide Deck for a Presentation
 
-Show example here.
+Imagine you have two computers: the first is a big, powerful deesktop machine with a big, dual monitor setup. The second is a tiny lightweight netbook you take with you when you travel. Imagine also that you have a presentation at a conference overseas. You know that no matter how "finished" you think you are with your slide deck, inevitably you will realize you need to add an exta figure or recalculate some data AFTER leaving the country and your main desktop workstation. How can you be sure your slide deck, data, and the programs you've written are synchronized between your two machines? How can you be sure that every little change you've made on your netbook is reflected on your desktop? What happens if you start making changes on your slide deck, only to realize you need to drop back to the slide deck you had five days ago?
 
 ## git : What is Version Control ?
 
@@ -116,7 +116,7 @@ Step 1 : Initialize your repository.
     $ mkdir good_science
     $ cd good_science
     $ git init
-    Initialized empty Git repository in /Users/khuff/Documents/hacker/good_science/.git/
+    Initialized empty Git repository in /Users/swc/good_science/.git/
 
 Step 2 : Browse the directory's hidden files to see what happened here.
 Open directories, browse file contents. Learn what you can in a minute.
@@ -186,15 +186,17 @@ indicating their purpose. Informative commit messages will serve you
 well someday, so make a habit of never committing changes without at
 least a full sentence description.
 
-**ASIDE: Commit Often**
+**ADVICE: Commit often**
 
 In the same way that it is wise to often save a document that you are
 working on, so too is it wise to save numerous revisions of your code.
 More frequent commits increase the granularity of your **undo** button.
 
-**Advice: good commit messages**
+**ADVICE: Good commit messages**
 
-add advice.
+There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
+
+[This guy's repo](https://github.com/jonspeicher/Pathfinder/commits/master) has some good commit messages.
 
 ### Exercise : Commit Your Changes
 
@@ -258,7 +260,7 @@ reviewed with the log command.
 
     $ git log
     commit 1863aefd7db752f58226264e5f4282bda641ddb3
-    Author: Katy Huff <katyhuff@gmail.com>
+    Author: Joshua Smith <joshua.r.smith@gmail.com>
     Date:   Wed Feb 8 16:08:08 2012 -0600
 
         This is the first commit. It adds a readme file.
@@ -385,8 +387,7 @@ now, let's **fork** the repository from GitHub.
 ### Exercise : Cloning a Repository from GitHub
 
 Step 1 : Pick any repository you like. There are many cool projects
-hosted on github. Take a few minutes here, and pick a piece of code. May
-I recommend the cyclus repository or the github.com/cyclus/core.
+hosted on github. Take a few minutes here, and pick a piece of code.
 
 Step 2 : Clone it. If you didn't find anything cool, you can chose the
 "instructional" Spoon-Knife repository:
@@ -424,4 +425,4 @@ the meantime.
 
 ## Resources
 
-add resources.
+[git book](git-scm.com/book)
