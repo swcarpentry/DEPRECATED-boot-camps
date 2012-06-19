@@ -7,3 +7,4 @@ madeit_emails.txt
 6-Documentation/close_line.md
 6-Documentation/index.md
 *.pyc
+*~
