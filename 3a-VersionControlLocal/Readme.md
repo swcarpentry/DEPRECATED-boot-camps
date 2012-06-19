@@ -425,4 +425,4 @@ the meantime.
 
 ## Resources
 
-[git book](git-scm.com/book)
+[git book](http://git-scm.com/book)
