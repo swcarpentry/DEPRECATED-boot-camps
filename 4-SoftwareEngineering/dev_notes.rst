@@ -18,31 +18,36 @@ Put all the functionality in one file and make small scripts that import
 from that file, parse command line arguments, and do stuff.
 
 - average number of an animal seen per sighting
-- total number of an animal seen over the season
-- all the sightings on a given day
 
 Students may want an IPython notebook open as a scratch pad.
 
 Lesson Plan
 -----------
 
-Going to make a command line script that will print the average group
+We're going to make a command line script that will print the average group
 size in a given file for a given animal.
 
 0. Discuss libraries and re-using code.
-1. Demonstrate importing a module (maybe `math` or `glob`)
+1. Demonstrate importing a module (maybe `math` or `glob`), then demonstrate
+   putting a function in a file and importing it.
 
 Exercise: Make a new text file called `animals.py`. Copy the file reading
 function from yesterday's IPython notebook into the file and modify it so
 that it returns the columns of the file as lists (instead of printing
-certain lines).
+certain lines). (They may want to develop the function in the IPython
+notebook and then copy it over.)
 
 2. Go over the exercise and talk about documentation as you do.
 3. How do we know the function works correctly? Try importing and running it
    on a small file.
 4. But what if we want to make changes and make sure it still works afterward,
    or we want to make sure it isn't broken when we add new stuff later?
-   Explain unit tests and show how to write one and run with nosetests.
+
+   - Demonstrate a potential test solution comparing output in an `if` and
+     printing a message if something doesn't match.
+   - Explain `assert` and demonstrate
+   - Explain unit tests and show how to run with nosetests.
+
 5. Explain test driven development.
 
 Exercise: We're going to make a function to calculate the mean of all the
