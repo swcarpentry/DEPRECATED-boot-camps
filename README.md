@@ -1,4 +1,4 @@
 notebooks
 =========
 
-Software Carpentry Python lessons in IPython Notebooks
+Software Carpentry Python lessons in IPython Notebooks.
