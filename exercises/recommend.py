@@ -227,7 +227,7 @@ def recommend(prefs, subject, similarity_func):
     # Create the normalized list
 
     rankings = []
-    for title, total in total.items():
+    for title, total in totals.items():
         rankings.append((total/sim_sums[title], title))
 
     # Return the sorted list
