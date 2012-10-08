@@ -1,8 +1,7 @@
-# rawr I am a big bad monster
+# Software Carpentry Purdue 2012 Bootcamp
 
-**I <3 <3 <3 THW!!1!**
 
-![THW logo]( http://hackerwithin.org/thw/static/thwlogo-small.png "thw logo")   ![Flash logo]( http://software-carpentry.org/blog/wp-content/uploads/2012/01/flash-logo-sm.gif "flash logo")                 ![SWC logo]( http://software-carpentry.org/software-carpentry-logo-285x58.png "SWC logo")
+![SWC logo]( http://software-carpentry.org/software-carpentry-logo-285x58.png "SWC logo")
 
 ## How ?
 
