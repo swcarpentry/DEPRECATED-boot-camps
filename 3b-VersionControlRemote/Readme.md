@@ -181,7 +181,7 @@ Step 2 : Make certain you are in the master branch and merge the
 upstreeam master branch into your master branch
 
     $ git checkout master
-    $ git merge upstream\master
+    $ git merge upstream/master
 
 Step 3 : Check out what happened by browsing the directory.
 
