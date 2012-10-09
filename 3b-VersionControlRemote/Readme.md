@@ -9,7 +9,8 @@ Debugging](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/4-Debuggin
 
 ----
 
-**Presented By : Katy Huff**
+**Presented By : Anthony Scopatz**
+**Developed By : Katy Huff**
 
 ## github.com?
 
