@@ -5,11 +5,11 @@
 
 * * * * *
 
-**Updated and presented by : Sasha Wood**
+**Updated and presented by : Katy Huff**
 
-**This presentation originally developed by: Milad Fatenejad**
+**Based on materials originally developed by: Milad Fatenejad, Katy Huff, Jonathon Dursi, and Sasha Wood**
 
-# What is the shell how do I access the shell?
+# What is the shell ?
 
 The *shell* is a program that presents a command line interface
 which allows you to control your computer using commands entered
