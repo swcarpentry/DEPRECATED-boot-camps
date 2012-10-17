@@ -3,9 +3,8 @@ Version Control Collaboratively
 ----
 
 [Back To Local Version
-Control](http://github.com/thehackerwithin/SWC-bootcamp/tree/master/3a-VersionControlLocal/)
-- [Forward To
-Debugging](http://github.com/thehackerwithin/SWC-bootcamp/tree/master/4-Debugging/)
+Control](http://github.com/swcarpentry/2012-10-lbl/tree/master/3a-VersionControlLocal/) - [Forward To
+Debugging](http://github.com/swcarpentry/2012-10-lbl/tree/master/4-Debugging/)
 
 ----
 
