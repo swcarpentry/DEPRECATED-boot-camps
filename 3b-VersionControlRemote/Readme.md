@@ -9,8 +9,8 @@ Debugging](http://github.com/thehackerwithin/SWC-bootcamp/tree/master/4-Debuggin
 
 ----
 
-**Presented By Joshua Ryan Smith**
-**Based on material by Katy Huff**
+**Presented By Katy Huff**
+**Based on material by Katy Huff with edits by Joshua Ryan Smith**
 
 ## github.com?
 

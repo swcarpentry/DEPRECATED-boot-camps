@@ -1,9 +1,7 @@
 # Local Version Control
 ----
-[Back To Python Functions and
-Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/)
-- [Forward To Remote Version
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/)
+[Back To Python](http://github.com/UofCSCBC2012/2012-10-lbl/UofCSCBC2012/tree/master/2-PythonIntro - [Forward To Remote Version
+Control](http://github.com/UofCSCBC2012/2012-10-lbl/UofCSCBC2012/tree/master/3b-VersionControlRemote/)
 
 ----
 
@@ -375,7 +373,7 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Today, we'll check out a git type repository at
-https://github.com/JHU-SWC-2012/SWC-bootcamp
+https://github.com/swcarpentry/2012-10-lbl
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local

@@ -1,7 +1,6 @@
 # The Shell
 
-[Back To The Menu](http://github.com/JHU-SWC-2012/SWC-bootcamp/)
-- [Forward to Python Variables](http://github.com/JHU-SWC-2012/SWC-bootcamp/tree/master/2a-PythonVariables/)
+[Back To The Menu](http://github.com/swcarpentry/2012-10-lbl/) - [Forward to Python Variables](http://github.com/swcarpentry/2012-10-lbl/tree/master/2-PythonIntro/)
 
 * * * * *
 
