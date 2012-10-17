@@ -7,8 +7,8 @@ Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionCo
 
 ----
 
-**Presented By Joshua Ryan Smith**
-**Based on material by Katy Huff**
+**Presented By Katy Huff**
+**Material by Katy Huff with Additions by Joshua Ryan Smith**
 
 ## Example: A Slide Deck for a Presentation
 
