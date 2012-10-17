@@ -1,4 +1,4 @@
-`Back To The Shell <http://github.com/swcarpentry/2012-10-lbl/>`_ - `Forward to Version Control <http://github.com/swcarpentry/2012-10-lbl/tree/master/3a-VersionControlLocal`_
+`Back To The Shell <http://github.com/swcarpentry/2012-10-lbl/>`_ - `Forward to Version Control <http://github.com/swcarpentry/2012-10-lbl/tree/master/3a-VersionControlLocal>`_
 
 ======
 Python
