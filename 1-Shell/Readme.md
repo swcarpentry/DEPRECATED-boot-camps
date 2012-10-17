@@ -18,7 +18,7 @@ with a keyboard instead of controlling graphical user interfaces
 
 Use the GUI to open the tutorial on github.  Single click on the "Firefox 
 Web Browser".  Type in the URL:
-    github.com/JHU-SWC-2012/SWC-bootcamp
+    github.com/swcarpentry/2012-10-lbl
 Click on the directory named `1-Shell`.
 
 A *terminal* is a program you run that gives you access to the
@@ -56,7 +56,7 @@ by manipulating some experimental data from a hearing tests. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone https://github.com/JHU-SWC-2012/SWC-bootcamp.git
+    git clone https://github.com/swcarpentry/2012-10-lbl.git
 
 This will grab all of the data needed for this workshop from the
 internet.
