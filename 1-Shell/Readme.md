@@ -50,7 +50,7 @@ Desktop.
 # The Example: Manipulating Experimental Data Files
 
 We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data from a hearing tests. To get
+by manipulating some experimental data from a set of hearing tests. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
