@@ -1,6 +1,6 @@
 # The Shell
 
-[Back To The Menu](http://github.com/swcarpentry/2012-10-lbl/) - [Forward to Python Variables](http://github.com/swcarpentry/2012-10-lbl/tree/master/2-PythonIntro/)
+[Back To The Menu](http://github.com/swcarpentry/2012-10-lbl/) - [Forward to Python](http://github.com/swcarpentry/2012-10-lbl/tree/master/2-PythonIntro/)
 
 * * * * *
 
@@ -15,8 +15,7 @@ which allows you to control your computer using commands entered
 with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
-Use the GUI to open the tutorial on github.  Single click on the "Firefox 
-Web Browser".  Type in the URL:
+Use a browser to open the tutorial on github. Type in the URL:
     github.com/swcarpentry/2012-10-lbl
 Click on the directory named `1-Shell`.
 
