@@ -6,6 +6,11 @@ from argparse import ArgumentParser
 
 
 def subset_by_name(match, infile, outfile):
+    """
+    Write lines from `infile` which contain the string `match`
+    in the first column to `outfile`. Also copies the column headings.
+
+    """
     with open(outfile, 'w') as outf:
         with open(infile, 'r') as inf:
             # transfer the column headings
