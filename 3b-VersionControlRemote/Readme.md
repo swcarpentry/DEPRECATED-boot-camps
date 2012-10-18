@@ -137,7 +137,7 @@ GitHub doesn't know about it yet. You'll need to tell github you want to
 have an official fork of this repository.
 
 Step 1 : Go to our 
-[repository](https://github.com/JHU-SWC-2012/SWC-bootcamp) from your browser, and
+[repository](https://github.com/swcarpentry/2012-10-lbl) from your browser, and
 click on the Fork button. Choose to fork it to your username rather than
 any organizations.
 
@@ -148,12 +148,12 @@ Step 2 : Clone it. From your terminal :
 
 Step 3 :
 
-    $ git remote add upstream git://github.com:JHU-SWC-2012/SWC-bootcamp.git
+    $ git remote add upstream git://github.com:swcarpentry/2012-10-lbl.git
     $ git remote -v
     origin  git@github.com:username/SWC-bootcamp.git (fetch)
     origin  git@github.com:username/SWC-bootcamp.git (push)
-    upstream        git://github.com/JHU-SWC-2012/SWC-bootcamp.git (fetch)
-    upstream        git://github.com/JHU-SWC-2012/SWC-bootcamp.git (push)
+    upstream        git://github.com/swcarpentry/2012-10-lbl.git (fetch)
+    upstream        git://github.com/swcarpentry/2012-10-lbl.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
@@ -174,7 +174,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case JHU-SWC-2012/SWC-bootcamp) into your local working copy, you
+this case swcarpentry/2012-10-lbl) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
