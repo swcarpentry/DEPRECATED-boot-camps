@@ -132,7 +132,7 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the SWC-bootcamp repository,
+While you probably already have a copy of the 2012-10-lbl repository,
 GitHub doesn't know about it yet. You'll need to tell github you want to
 have an official fork of this repository.
 
@@ -143,15 +143,15 @@ any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone git@github.com:username/SWC-bootcamp.git
-    $ cd SWC-bootcamp
+    $ git clone git@github.com:username/2012-10-lbl.git
+    $ cd 2012-10-lbl
 
 Step 3 :
 
     $ git remote add upstream git://github.com:swcarpentry/2012-10-lbl.git
     $ git remote -v
-    origin  git@github.com:username/SWC-bootcamp.git (fetch)
-    origin  git@github.com:username/SWC-bootcamp.git (push)
+    origin  git@github.com:username/2012-10-lbl.git (fetch)
+    origin  git@github.com:username/2012-10-lbl.git (push)
     upstream        git://github.com/swcarpentry/2012-10-lbl.git (fetch)
     upstream        git://github.com/swcarpentry/2012-10-lbl.git (push)
 
@@ -161,7 +161,7 @@ All repositories that are clones begin with a remote called origin.
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original SWC-bootcamp
+want your master branch to track updates in the original 2012-10-lbl
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -228,7 +228,7 @@ commits to that remote is exactly analagous.
 
     $ git push upstream master
 
-In the case of the SWC-bootcamp code, new developer accounts will not allow
+In the case of the 2012-10-lbl code, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
 
 ## git merge : Conflicts
@@ -236,13 +236,13 @@ this push to succeed. You're welcome to try it though.
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the SWC-bootcamp code, you'll find a file called Readme.md. This is a
+In the 2012-10-lbl code, you'll find a file called Readme.md. This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/username/SWC-bootcamp/).
+fork on github, (https://github.com/username/2012-10-lbl/).
 
 For illustration, let's imagine that, suddenly, each of the developers
-on the SWC-bootcamp code would like to welcome visitors in a language other
+on the 2012-10-lbl code would like to welcome visitors in a language other
 than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
@@ -351,7 +351,7 @@ alterations,
     Compressing objects: 100% (6/6), done.
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/SWC-bootcamp.git
+    To git@github.com:username/2012-10-lbl.git
 
 ## gitolite
 
