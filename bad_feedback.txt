@@ -1,0 +1,29 @@
+don't know how to apply git to work
+covered too much material
+group felt too large for number of helpers
+felt unprepared for git instruction
+couldn't run VM, add system reqs
+python level was too easy
+need well defined goals for exercises
+group people by experience
+would have liked a more detailed description of course
+didn't get any emails on the waitlist
+getting info ahead of time
+whole thing too fast
+topics jumped around
+maybe too language (Python) dependent, no objects
+burnt out at end of first day (fast)
+9-4:30 draining, more breaks between topics
+didn't expect to program at end, was right
+switch morning git with afternoon python on 2nd day
+not clear that mac users needed to install software ahead, why certain steps
+some hard to follow along, relies on previous success with commands
+more relevant examples to audience, day to day data/problems
+what was xcode for?
+falling behind in python - 2 tiered exercises
+documentation needs comments
+is there help for release management?
+advanced math?
+third day - integrative exercise, case study - start to finish
+    (optional, weekend)
+follow up project, final suggested homework assignment
