@@ -53,20 +53,17 @@ up-and-running with a whole ecosystems of tools.
 - `Anaconda <https://store.continuum.io/cshop/anaconda>`__ Community Edition
   is free, Pro version available. (cross-platform)
 
+Drafting notes
+--------------
 
-*We can flip open the  `IPython sympy notebook.`_.. show the `galleries for
-skimage,`_  `sklearn`_.  I can run through the  `SciPy docs`_.*
+Stéfan: We can flip open the  `IPython sympy notebook.`_.. show the `galleries for
+skimage,`_  `sklearn`_.  I can run through the  `SciPy docs`_.
 
 .. _IPython sympy notebook.: IPython sympy notebook.
 .. _galleries for skimage,: http://scikit-image.org/docs/dev/auto_examples/
 .. _sklearn: http://scikit-learn.org/stable/auto_examples/index.html
 .. _SciPy docs: http://docs.scipy.org/doc/
 
-Drafting notes
---------------
-
-We can flip open the IPython sympy notebook... show the galleries for skimage,
-sklearn.  I can run through the SciPy docs.
 
 ..
 
