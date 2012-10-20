@@ -30,13 +30,16 @@ The following can be your "one-stop shopping" destinations for getting
 up-and-running with a whole ecosystems of tools.
 
 - `Python (x,y) <http://code.google.com/p/pythonxy/>`__
+
 -  `Sage <http://www.sagemath.org/>`__ - not only does it ship with the
   tools we discussed, but also many other numerical and symbolic.
+
 - `Enthought Python Distribution (EPD)
   <http://www.enthought.com/products/getepd.php>`__ - Free for academics
   (temporarily not available), `EPD Free
   <http://www.enthought.com/products/epd_free.php>`__ has no cost to anyone,
   and  has the basics you off the ground.
+
 - `Anaconda <https://store.continuum.io/cshop/anaconda>`__ Community Edition
   is free, Pro version available.
 
