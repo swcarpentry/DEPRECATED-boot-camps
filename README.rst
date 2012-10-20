@@ -22,6 +22,9 @@ Anarchy: the good kind
 
 - `pandas <http://pandas.pydata.org/>`__ - data analysis
 
+- `statsmodels <http://statsmodels.sourceforge.net/>`__ - just what you'd
+  think.
+
 - `sympy <http://sympy.org>`__ - symbolic mathematics
 
   - `Release 0.7.2
@@ -29,6 +32,15 @@ Anarchy: the good kind
 
 - `cython <http://cython.org>`__ - C speed without semicolons! (or pointers)
 
+- `pytables <http://pytables.github.com/>`__ - efficiently and easily cope
+  with extremely large amounts of data (HDF5).
+
+IDEs:
+-----
+
+- `Spyder <http://code.google.com/p/spyderlib/>`__ - interactive development environment for the Python (IDE)
+
+- `Ninja-IDE <http://ninja-ide.org/>`__ - "Ninja-IDE Is Not Just Another IDE"
 
 Bundles and whole distributions
 -------------------------------
