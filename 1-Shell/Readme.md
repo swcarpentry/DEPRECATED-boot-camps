@@ -1,24 +1,22 @@
 # The Shell
 
-[Back To The Menu](http://github.com/JHU-SWC-2012/SWC-bootcamp/)
-- [Forward to Python Variables](http://github.com/JHU-SWC-2012/SWC-bootcamp/tree/master/2a-PythonVariables/)
+[Back To The Menu](http://github.com/swcarpentry/2012-10-ucb/) - [Forward to Python](http://github.com/swcarpentry/2012-10-ucb/tree/master/2-PythonIntro/)
 
 * * * * *
 
-**Updated and presented by : Sasha Wood**
+**Updated and presented by : Katy Huff**
 
-**This presentation originally developed by: Milad Fatenejad**
+**Based on materials originally developed by: Milad Fatenejad, Katy Huff, Jonathon Dursi, and Sasha Wood**
 
-# What is the shell how do I access the shell?
+# What is the shell ?
 
 The *shell* is a program that presents a command line interface
 which allows you to control your computer using commands entered
 with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
-Use the GUI to open the tutorial on github.  Single click on the "Firefox 
-Web Browser".  Type in the URL:
-    github.com/JHU-SWC-2012/SWC-bootcamp
+Use a browser to open the tutorial on github and type in the URL:
+    github.com/swcarpentry/2012-10-ucb .
 Click on the directory named `1-Shell`.
 
 A *terminal* is a program you run that gives you access to the
@@ -52,11 +50,11 @@ Desktop.
 # The Example: Manipulating Experimental Data Files
 
 We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data from a hearing tests. To get
+by manipulating some experimental data from a set of hearing tests. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone https://github.com/JHU-SWC-2012/SWC-bootcamp.git
+    git clone https://github.com/swcarpentry/2012-10-ucb.git
 
 This will grab all of the data needed for this workshop from the
 internet.
