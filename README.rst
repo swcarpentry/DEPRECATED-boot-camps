@@ -10,8 +10,8 @@ sckits:
  - `scikit-image <http://scikit-image.org>`__
  - `scikit-learn <http://scikit-learn.org>`__
 
-- pandas
-- sympy
+- `pandas <http://pandas.pydata.org/>`__
+- `sympy <http://sympy.org>`__
 
 We can flip open the IPython sympy notebook... show the galleries for skimage,
 sklearn.  I can run through the SciPy docs.
