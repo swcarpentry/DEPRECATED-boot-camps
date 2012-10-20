@@ -12,6 +12,7 @@ sckits:
 
 - `pandas <http://pandas.pydata.org/>`__
 - `sympy <http://sympy.org>`__
+  - `Release 0.7.2 <http://sympy.blogspot.com/2012/10/sympy-072-is-released.html>`__
 
 We can flip open the IPython sympy notebook... show the galleries for skimage,
 sklearn.  I can run through the SciPy docs.
