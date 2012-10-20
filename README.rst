@@ -3,6 +3,8 @@ COMMUNITY RESOURCES
 
 Welcome to the Community:
 
+http://scipy.org/Getting_Started
+
 Anarchy: the good kind
 ----------------------
 
@@ -29,26 +31,40 @@ Bundles and whole distributions
 The following can be your "one-stop shopping" destinations for getting
 up-and-running with a whole ecosystems of tools.
 
-- `Python (x,y) <http://code.google.com/p/pythonxy/>`__
+- `Python (x,y) <http://code.google.com/p/pythonxy/>`__ - Windows,
+  experimental Linux support.
+
+- `Scipy Superpack <http://fonnesbeck.github.com/ScipySuperpack/>`__ - Mac OS
+  X (recent version only).
 
 - `Sage <http://www.sagemath.org/>`__ - not only does it ship with the
-  tools we discussed, but also many other numerical and symbolic.
+  tools we discussed, but also many others, both numerical and symbolic. "The
+  Borg" which assimilates  `nearly 100 open-source packages`_ and features a
+  unified interface. (cross-platform)
+
+.. _nearly 100 open-source packages: http://www.sagemath.org/links-components.html
 
 - `Enthought Python Distribution (EPD)
   <http://www.enthought.com/products/getepd.php>`__ - Free for academics
   (temporarily not available), `EPD Free
   <http://www.enthought.com/products/epd_free.php>`__ has no cost to anyone,
-  and  has the basics you off the ground.
+  and  has the basics you off the ground. (cross-platform)
 
 - `Anaconda <https://store.continuum.io/cshop/anaconda>`__ Community Edition
-  is free, Pro version available.
+  is free, Pro version available. (cross-platform)
 
 
-We can flip open the IPython sympy notebook... show the galleries for skimage,
-sklearn.  I can run through the SciPy docs.
+*We can flip open the  `IPython sympy notebook.`_.. show the `galleries for
+skimage,`_  `sklearn`_.  I can run through the  `SciPy docs`_.*
 
+.. _IPython sympy notebook.: IPython sympy notebook.
+.. _galleries for skimage,: http://scikit-image.org/docs/dev/auto_examples/
+.. _sklearn: http://scikit-learn.org/stable/auto_examples/index.html
+.. _SciPy docs: http://docs.scipy.org/doc/
 
-sjvdwalt: What we are thinking is always worth writing down
-sjvdwalt: Actually, scratch that
-pi: Are you sure? 
-pi: I think with version control, this will be one for the history books.
+..
+
+    sjvdwalt: What we are thinking is always worth writing down
+    sjvdwalt: Actually, scratch that
+    pi: Are you sure?
+    pi: I think with version control, this will be one for the history books.
