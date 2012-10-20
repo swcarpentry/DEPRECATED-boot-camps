@@ -2,7 +2,7 @@ Following up on Justin's matplotlib tutorial...
 
 - quick `matplotlib teaser <http://nbviewer.ipython.org/3835181/>`__, with
   `a detailed explanation
-  <http://jakevdp.github.com/blog/2012/10/07/xkcd-style-plots-in-matplotlib/>`__
+  <http://jakevdp.github.com/blog/2012/10/07/xkcd-style-plots-in-matplotlib/>`__.
 
 COMMUNITY RESOURCES
 ===================
@@ -64,7 +64,7 @@ Drafting notes
 Stéfan: We can flip open the  `IPython sympy notebook.`_.. show the `galleries for
 skimage,`_  `sklearn`_.  I can run through the  `SciPy docs`_.
 
-.. _IPython sympy notebook.: IPython sympy notebook.
+.. _IPython sympy notebook.: http://nbviewer.ipython.org/urls/raw.github.com/ipython/ipython/master/docs/examples/notebooks/sympy.ipynb
 .. _galleries for skimage,: http://scikit-image.org/docs/dev/auto_examples/
 .. _sklearn: http://scikit-learn.org/stable/auto_examples/index.html
 .. _SciPy docs: http://docs.scipy.org/doc/
