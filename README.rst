@@ -31,7 +31,7 @@ up-and-running with a whole ecosystems of tools.
 
 - `Python (x,y) <http://code.google.com/p/pythonxy/>`__
 
--  `Sage <http://www.sagemath.org/>`__ - not only does it ship with the
+- `Sage <http://www.sagemath.org/>`__ - not only does it ship with the
   tools we discussed, but also many other numerical and symbolic.
 
 - `Enthought Python Distribution (EPD)
