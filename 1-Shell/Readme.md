@@ -1,8 +1,5 @@
 # The Shell
 
-[Back To The Menu](http://github.com/JHU-SWC-2012/SWC-bootcamp/)
-- [Forward to Python Variables](http://github.com/JHU-SWC-2012/SWC-bootcamp/tree/master/2a-PythonVariables/)
-
 * * * * *
 
 **Updated and presented by : Sasha Wood**
@@ -16,7 +13,7 @@ which allows you to control your computer using commands entered
 with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
-Use the GUI to open the tutorial on github.  Single click on the "Firefox 
+Use the GUI to open the tutorial on github.  Single click on the "Firefox
 Web Browser".  Type in the URL:
     github.com/JHU-SWC-2012/SWC-bootcamp
 Click on the directory named `1-Shell`.
@@ -24,13 +21,13 @@ Click on the directory named `1-Shell`.
 A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
-	 
+
 There are many reasons to learn about the shell. In my opinion, the
-most important reasons are that: 
+most important reasons are that:
 
 1.  It is very common to encounter the shell and
     command-line-interfaces in scientific computing, so you will
-    probably have to learn it eventually 
+    probably have to learn it eventually
 
 2.  The shell is a really powerful way of interacting with your
     computer. GUIs and the shell are complementary - by knowing both
@@ -78,7 +75,7 @@ to other programs.
 Let's learn how to move around the file system using command line
 programs. This is really easy to do using a GUI (just click on
 things). Once you learn the basic commands, you'll see that it is
-really easy to do in the shell too. 
+really easy to do in the shell too.
 
 First we have to know where we are. The program `pwd` (print working
 directory) tells you where you are sitting in the directory tree. The
@@ -93,7 +90,7 @@ directory where they have full access to do whatever they want. In
 this case, the `pwd` command tells us that we are in the `/home/swc`
 directory. This is the home directory for the `swc` user. That is our
 user name. You can always find out your user name by entering the
-command `whoami`. 
+command `whoami`.
 
 **File Types**
 
@@ -110,7 +107,7 @@ command:
 Then list the contents of the directory again. You should see that a
 new entry, called `testfile`, exists. It is colored white meaning that
 it is a file, as opposed to a directory. The `touch` command just
-creates an empty file. 
+creates an empty file.
 
 Some terminals will not color the directory entries in this very
 convenient way. In those terminals, use `ls -F` instead of `ls`. The
@@ -256,7 +253,7 @@ directory, then enter the command:
 
 This prints the contents of your home directory, without you having to
 type the full path. The shortcut `..` always refers to the directory
-above your current directory. Thus: 
+above your current directory. Thus:
 
     ls ..
 
@@ -336,7 +333,7 @@ this command:
 
 lists every file in the current directory which contains the number
 `4`, and ends with the number `1`. There are four such files: `0241`,
-`0341`, `0431`, and `0481`. 
+`0341`, `0431`, and `0481`.
 
 So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for files
@@ -379,7 +376,7 @@ The shell will fill in the rest of the directory name for
 When you hit the first tab, nothing happens. The reason is that there
 are multiple directories in the home directory which start with
 3. Thus, the shell does not know which one to fill in. When you hit
-tab again, the shell will list the possible choices. 
+tab again, the shell will list the possible choices.
 
 Tab completion can also fill in the names of programs. For example,
 enter `e<tab><tab>`. You will see the name of every program that
@@ -388,9 +385,9 @@ will see that tab completion works.
 
 ** Command History**
 
-You can easily access previous commands.  Hit the up arrow.  
-Hit it again.  You can step backwards through your command history. 
-The down arrow takes your forwards in the command history.  
+You can easily access previous commands.  Hit the up arrow.
+Hit it again.  You can step backwards through your command history.
+The down arrow takes your forwards in the command history.
 
 ^-C will cancel the command you are writing, and give you a fresh prompt.
 
@@ -429,7 +426,7 @@ on environment variables later. Notice that a list of directories,
 separated by colon characters, is listed. These are the places the
 shell looks for programs to run. If your program is not in this list,
 then an error is printed. The shell ONLY checks in the places listed
-in the `PATH` environment variable. 
+in the `PATH` environment variable.
 
 Navigate to the `1-Shell` directory and list the contents. You will
 notice that there is a program (executable file) called `hello` in
@@ -474,7 +471,7 @@ This prints out the contents of the `ex_data.txt` file. If you enter:
 
 It will print out the contents of `ex_data.txt` twice. `cat` just
 takes a list of file names and writes them out one after another (this
-is where the name comes from, `cat` is short for concatenate). 
+is where the name comes from, `cat` is short for concatenate).
 
 * * * *
 **Short Exercises**
@@ -518,7 +515,7 @@ documentation using "/" as well!
 Use the commands we've learned so far to figure out how to search
 in reverse while using `less`.
 
-* * * * 
+* * * *
 
 
 ## Redirection
@@ -590,7 +587,7 @@ the backup file now:
     rm /tmp/all_data_backup
 
 The `mkdir` command is used to create a directory. Just enter `mkdir`
-followed by a space, then the directory name. 
+followed by a space, then the directory name.
 
 * * * *
 **Short Exercise**
@@ -621,7 +618,7 @@ For each of the files indicated, `wc` has printed a line with three
 numbers. The first is the number of lines in that file. The second is
 the number of words. Finally, the total number of characters is
 indicated. The final line contains this information summed over all of
-the files. Thus, there were 10445 characters in total. 
+the files. Thus, there were 10445 characters in total.
 
 Remember that the `Bert/*` and `gerdal/*4*` files were merged
 into the `all_data` file. So, we should see that `all_data` contains
@@ -706,7 +703,7 @@ printed back at you. The CONTROL+d keyboard shortcut inserts an
 *end-of-file* character. It is sort of the standard way of telling the
 program "I'm done entering data". The `|` character is replaces the
 data from the keyboard with data from another command. You can string
-all sorts of commands together using the pipe. 
+all sorts of commands together using the pipe.
 
 The philosophy behind these command line programs is that none of them
 really do anything all that impressive. BUT when you start chaining
@@ -775,7 +772,7 @@ reverse order.
 
 * * * *
 
-* * * * 
+* * * *
 **Short Exercise**
 
 Combine the `wc`, `sort`, `head` and `tail` commands so that only the
@@ -785,7 +782,7 @@ Hint: To print the smallest file, use:
 
     wc Bert/* | sort -k 3 -n | head -n 1
 
-* * * * 
+* * * *
 
 Printing the smallest file seems pretty useful. We don't want to type
 out that long command often. Let's create a simple script, a simple
@@ -831,7 +828,7 @@ conducted:
 
     grep Range *
 
-* * * * 
+* * * *
 **Short Exercise**
 
 Create an executable script called `smallestrange` in the `data`
@@ -839,7 +836,7 @@ directory, that is similar to the `smallest` script, but prints the
 file containing the file with the smallest Range. Use the commands
 `grep`, `sort`, and `tail` to do this.
 
-* * * * 
+* * * *
 
 
 # Finding files
@@ -876,19 +873,19 @@ A faster way to do this is to use the `xargs` command:
 
     find . -type f -print | xargs grep Volume
 
-`find` generates a list of all the files we are interested in, 
-then we pipe them to `xargs`.  `xargs` takes the items given to it 
+`find` generates a list of all the files we are interested in,
+then we pipe them to `xargs`.  `xargs` takes the items given to it
 and passes them as arguments to `grep`.  `xargs` generally only creates
 a single instance of `grep` (or whatever program it is running).
 
-* * * * 
+* * * *
 **Short Exercise**
 
 Navigate to the `data` directory. Use one find command to perform each
 of the operations listed below (except number 2, which does not
 require a find command):
 
-1.  Find any file whose name is "NOTES" within `data` and delete it 
+1.  Find any file whose name is "NOTES" within `data` and delete it
 
 2.  Create a new directory called `cleaneddata`
 
@@ -911,9 +908,9 @@ following:
 
 Redo exercise 4, except rename only the files which do not already end
 in `.txt`. You will have to use the `man` command to figure out how to
-search for files which do not match a certain name. 
+search for files which do not match a certain name.
 
-* * * * 
+* * * *
 
 
 

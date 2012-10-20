@@ -1,18 +1,8 @@
 # Local Version Control
 ----
-[Back To Python Functions and
-Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/)
-- [Forward To Remote Version
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/)
 
-----
-
-**Presented By Joshua Ryan Smith**
+**Presented By Matt Davis**
 **Based on material by Katy Huff**
-
-## Example: A Slide Deck for a Presentation
-
-Imagine you have two computers: the first is a big, powerful deesktop machine with a big, dual monitor setup. The second is a tiny lightweight netbook you take with you when you travel. Imagine also that you have a presentation at a conference overseas. You know that no matter how "finished" you think you are with your slide deck, inevitably you will realize you need to add an exta figure or recalculate some data AFTER leaving the country and your main desktop workstation. How can you be sure your slide deck, data, and the programs you've written are synchronized between your two machines? How can you be sure that every little change you've made on your netbook is reflected on your desktop? What happens if you start making changes on your slide deck, only to realize you need to drop back to the slide deck you had five days ago?
 
 ## git : What is Version Control ?
 
@@ -30,10 +20,10 @@ suffice.
 
 Version Control System Tool Options
 
-- **Distributed** 
-  - Decentralized CVS (dcvs)  
+- **Distributed**
+  - Decentralized CVS (dcvs)
   - mercurial (hg)
-  - git (git) 
+  - git (git)
   - bazaar (bzr)
 - **Centralized**
   - concurrent versions system (cvs)
@@ -125,7 +115,7 @@ Open directories, browse file contents. Learn what you can in a minute.
     .git
     $ cd .git
     $ ls -A
-    HEAD        config      description hooks       info        objects     refs 
+    HEAD        config      description hooks       info        objects     refs
 
 Step 3 : Use what you've learned. You may have noticed the file called
 description. You can describe your repository by opening the description
@@ -273,7 +263,7 @@ There are some useful flags for this command, such as
     --oneline
     --graph
     --short
-    --full 
+    --full
     --pretty
     --since
     --until
@@ -314,8 +304,8 @@ as well as abandoning local changes.
 
 To switch between branches, try
 
-    $ git branch newbranch 
-    $ git checkout newbranch 
+    $ git branch newbranch
+    $ git checkout newbranch
     $ git branch
 
 How can you tell we've switched between branches? When we used the
@@ -405,7 +395,7 @@ machine. Let's make sure it worked. Change directories to the source
 code and list the contents.
 
     $ cd Spoon-Knife
-    $ ls 
+    $ ls
 
 ## git pull : Pulling updates from the Original Repository
 
@@ -416,7 +406,7 @@ will ensure you're working with the most up-to-date version of the
 repository. Updating won't overwrite any changes you've made locally
 without asking, so don't get nervous. When in doubt, update.
 
-    $ git pull 
+    $ git pull
     Already up-to-date.
 
 Since we just pulled the repository down, we will be up to date unless

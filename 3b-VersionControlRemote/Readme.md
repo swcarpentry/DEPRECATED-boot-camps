@@ -2,14 +2,7 @@ Version Control Collaboratively
 
 ----
 
-[Back To Local Version
-Control](http://github.com/thehackerwithin/SWC-bootcamp/tree/master/3a-VersionControlLocal/)
-- [Forward To
-Debugging](http://github.com/thehackerwithin/SWC-bootcamp/tree/master/4-Debugging/)
-
-----
-
-**Presented By Joshua Ryan Smith**
+**Presented By Matt Davis**
 **Based on material by Katy Huff**
 
 ## github.com?
@@ -18,13 +11,13 @@ GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
 documenting code. Your home institution may have a repository hosting system
 of it's own. To find out, ask your system administrator.
-GitHub, much like other forge hosting services 
+GitHub, much like other forge hosting services
 ( [launchpad](https://launchpad.net),
-[bitbucket](https://bitbucket.org), [googlecode](http://code.google.com), 
+[bitbucket](https://bitbucket.org), [googlecode](http://code.google.com),
 [sourceforge](http://sourceforge.net) etc.)
 provides :
 
--   landing page support 
+-   landing page support
 -   wiki support
 -   network graphs and time histories of commits
 -   code browser with syntax highlighting
@@ -46,20 +39,20 @@ In addition to secure communication, public key cryptography gives authenticatio
 
 In this way people can be certain who made commits to a git repository. Furthermore, a git server can be certain that the person who is pushing changes to a particular repository actually has commit access to that repo.
 
-## github pasword 
+## github pasword
 
-Setting up github at first requires a github user name and password. 
+Setting up github at first requires a github user name and password.
 Please take a moment to [create a free one](https://github.com/signup/free)
-(if you want to start paying, you can add that to your account some 
-other day). 
+(if you want to start paying, you can add that to your account some
+other day).
 
 ## github ssh keys
 
 It will help you to set up automatic authorization, so that github can handshake
 with your computer (in this case, your virtual machine).
-There are [some setup instructions](http://help.github.com/set-up-git-redirect)  
-on the website, but I'll do this along with you at the front of the room as 
-well. 
+There are [some setup instructions](http://help.github.com/set-up-git-redirect)
+on the website, but I'll do this along with you at the front of the room as
+well.
 
     $ cd ~/.ssh
 
@@ -69,12 +62,12 @@ It will likely say "no such file or directory."
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/swc/.ssh/id_rsa):  <press enter>
 
-The path that it provides will be to this home directory. This is okay. **Press 
+The path that it provides will be to this home directory. This is okay. **Press
 enter.** You may enter a passphrase. You'll see something like this :
 
     Created directory '/home/swc/.ssh'.
-    Enter passphrase (empty for no passphrase): 
-    Enter same passphrase again: 
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
     Your identification has been saved in /home/swc/.ssh/id_rsa.
     Your public key has been saved in /home/swc/.ssh/id_rsa.pub.
     The key fingerprint is:
@@ -135,28 +128,28 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the SWC-bootcamp repository,
+While you probably already have a copy of the 2012-10-caltech repository,
 GitHub doesn't know about it yet. You'll need to tell github you want to
 have an official fork of this repository.
 
-Step 1 : Go to our 
-[repository](https://github.com/JHU-SWC-2012/SWC-bootcamp) from your browser, and
+Step 1 : Go to our
+[repository](https://github.com/swcarpentry/2012-10-caltech) from your browser, and
 click on the Fork button. Choose to fork it to your username rather than
 any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone git@github.com:username/SWC-bootcamp.git
-    $ cd SWC-bootcamp
+    $ git clone git@github.com:username/2012-10-caltech.git
+    $ cd 2012-10-caltech
 
 Step 3 :
 
-    $ git remote add upstream git://github.com:JHU-SWC-2012/SWC-bootcamp.git
+    $ git remote add upstream git://github.com:swcarpentry/2012-10-caltech.git
     $ git remote -v
-    origin  git@github.com:username/SWC-bootcamp.git (fetch)
-    origin  git@github.com:username/SWC-bootcamp.git (push)
-    upstream        git://github.com/JHU-SWC-2012/SWC-bootcamp.git (fetch)
-    upstream        git://github.com/JHU-SWC-2012/SWC-bootcamp.git (push)
+    origin  git@github.com:username/2012-10-caltech.git (fetch)
+    origin  git@github.com:username/2012-10-caltech.git (push)
+    upstream        git://github.com/swcarpentry/2012-10-caltech.git (fetch)
+    upstream        git://github.com/swcarpentry/2012-10-caltech.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
@@ -164,7 +157,7 @@ All repositories that are clones begin with a remote called origin.
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original SWC-bootcamp
+want your master branch to track updates in the original 2012-10-caltech
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -177,7 +170,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case JHU-SWC-2012/SWC-bootcamp) into your local working copy, you
+this case swcarpentry/2012-10-caltech) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
@@ -231,7 +224,7 @@ commits to that remote is exactly analagous.
 
     $ git push upstream master
 
-In the case of the SWC-bootcamp code, new developer accounts will not allow
+In the case of the 2012-10-caltech code, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
 
 ## git merge : Conflicts
@@ -239,21 +232,21 @@ this push to succeed. You're welcome to try it though.
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the SWC-bootcamp code, you'll find a file called Readme.md. This is a
+In the 2012-10-caltech code, you'll find a file called Readme.md. This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/username/SWC-bootcamp/).
+fork on github, (https://github.com/username/2012-10-caltech/).
 
 For illustration, let's imagine that, suddenly, each of the developers
-on the SWC-bootcamp code would like to welcome visitors in a language other
+on the 2012-10-caltech code would like to welcome visitors in a language other
 than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
 
 I, for example, am from North Carolina, so I'll push (to the upstream repository) my own version of Welcome on line 2 of Readme.md.
 
-You may speak another language, however, and may want to replace the 
-english word Welcome with an equivalent word that you prefer (willkommen, 
+You may speak another language, however, and may want to replace the
+english word Welcome with an equivalent word that you prefer (willkommen,
 bienvenido, benvenuti, etc.).
 
 You'll want to start a new branch for development. It's a good
@@ -354,7 +347,7 @@ alterations,
     Compressing objects: 100% (6/6), done.
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/SWC-bootcamp.git
+    To git@github.com:username/2012-10-caltech.git
 
 ## gitolite
 
