@@ -9,11 +9,14 @@ Anarchy: the good kind
 - `MayaVi <http://code.enthought.com/projects/mayavi/#Mayavi>`__
 
 - `sckits <http://scikits.appspot.com/>`__:
+
   - `scikit-image <http://scikit-image.org>`__ - image processing
   - `scikit-learn <http://scikit-learn.org>`__ - machine learning
 
 - `pandas <http://pandas.pydata.org/>`__
+
 - `sympy <http://sympy.org>`__ - symbolic mathematics
+
   - `Release 0.7.2
     <http://sympy.blogspot.com/2012/10/sympy-072-is-released.html>`__
 
