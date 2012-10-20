@@ -1,9 +1,14 @@
+Following up on Justin's matplotlib tutorial...
+
+- quick `matplotlib teaser <http://nbviewer.ipython.org/3835181/>`__, with
+  `a detailed explanation
+  <http://jakevdp.github.com/blog/2012/10/07/xkcd-style-plots-in-matplotlib/>`__
+
 COMMUNITY RESOURCES
 ===================
 
-Welcome to the Community:
+Welcome to the Community...
 
-http://scipy.org/Getting_Started
 
 Anarchy: the good kind
 ----------------------
