@@ -258,8 +258,8 @@ reviewed with the log command.
 
     $ git log
     commit 1863aefd7db752f58226264e5f4282bda641ddb3
-    Author: Joshua Smith <joshua.r.smith@gmail.com>
-    Date:   Wed Feb 8 16:08:08 2012 -0600
+    Author: Katy Huff <katyhuff@gmail.com>
+    Date:   Sat Oct 21 19:00:09 2012 -0600
 
         This is the first commit. It adds a readme file.
 
@@ -308,11 +308,13 @@ To delete a branch, use the **-d** flag.
 ## git checkout : Switching Between Branches, Abandoning Local Changes
 
 The **git checkout** command allows context switching between branches
-as well as abandoning local changes.
+as well as abandoning local changes. To investigate this feature, let's
+first create a new branch :
+
+    $ git branch newbranch
 
 To switch between branches, try
 
-    $ git branch newbranch 
     $ git checkout newbranch 
     $ git branch
 
@@ -322,7 +324,7 @@ That's because the asterisk indicates which branch you're currently in.
 
 ## git merge : Merging Branches
 
-At some point, the experimental branch may be ready to become part of
+At some point, an experimental branch may be ready to become part of
 the core or two testing branches may be ready to be combined for further
 integration testing. The method for combining the changes in two
 parallel branches is the **merge** command.
@@ -331,48 +333,48 @@ parallel branches is the **merge** command.
 
 Step 1 : Create two new branches and list them
 
-    $ git branch first
-    $ git branch second
+    $ git branch AFeature
+    $ git branch BFeature
 
 Step 2 : Make changes in each new branch and commit them.
 
-    $ git checkout first
-    Switched to branch 'first'
-    $ touch firstnewfile
-    $ git add firstnewfile
-    $ git commit -am "Added firstnewfile to the first branch."
-    [first 68eba44] Added firstnewfile to first branch.
+    $ git checkout featureA
+    Switched to branch 'featureA'
+    $ touch fixA
+    $ git add fixA
+    $ git commit -am "Added fixA to the featureA branch."
+    [featureA 68eba44] Added fixA to featureA branch.
      0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 firstnewfile
-    $ git checkout second
-    Switched to branch 'second'
-    $ touch secondnewfile
-    $ git add secondnewfile
-    $ git commit -am "Added secondnewfile to the second branch."
-    [second 45dd34c] Added secondnewfile to the second branch.
+     create mode 100644 fixA
+    $ git checkout featureB
+    Switched to branch 'featureB'
+    $ touch fixB
+    $ git add fixB
+    $ git commit -am "Added fixB to the featureB branch."
+    [featureB 45dd34c] Added fixB to the featureB branch.
      0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 secondnewfile
+     create mode 100644 fixB
 
 Step 3 : Merge the two branches into the core
 
-    $ git checkout first
-    Switched to branch 'first'
-    $ git merge second
+    $ git checkout featureA
+    Switched to branch 'featureA'
+    $ git merge featureB
     Merge made by recursive.
      0 files changed, 0 insertions(+), 0 deletions(-)
-      create mode 100644 secondnewfile
+      create mode 100644 fixB
     $ git checkout master
     Switched to branch 'master'
-    $ git merge first
+    $ git merge featureA
     Updating 1863aef..ce7e4b5
     Fast-forward
      0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 firstnewfile
-     create mode 100644 secondnewfile
+     create mode 100644 fixA
+     create mode 100644 fixB
 
 ## git clone : Copying a Repository
 
-Today, we'll check out a git type repository at
+Yesterday, we checked out a git type repository at
 https://github.com/swcarpentry/2012-10-ucb
 
 When you clone the Original repository, the one that is created on your
@@ -380,7 +382,7 @@ local machine is a copy, and will behave as a fully fledged local
 repository locally. However, with the right configuration, it will be
 able to pull changes from collaborators to your local machine and push
 your changes to the Original repository. We'll get to that soon, but for
-now, let's **fork** the repository from GitHub.
+now, let's **clone** a fun repository from GitHub.
 
 ### Exercise : Cloning a Repository from GitHub
 
@@ -414,12 +416,18 @@ will ensure you're working with the most up-to-date version of the
 repository. Updating won't overwrite any changes you've made locally
 without asking, so don't get nervous. When in doubt, update.
 
+For example, there may have been changes in the course notes since yesterday. 
+Try navigating to the 2012-10-ucb repository and pulling down new changes.
+
     $ git pull 
     Already up-to-date.
 
 Since we just pulled the repository down, we will be up to date unless
 there has been a commit by someone else to the Original repository in
-the meantime.
+the meantime. The above set of commands is exactly analogous to 
+   
+    $ git fetch 
+    $ git merge
 
 ## Resources
 
