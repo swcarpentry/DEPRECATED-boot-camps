@@ -30,12 +30,58 @@ etc.) provides :
 want to share (in the most liberal sense) your stuff with the world, pay
 github money for private repos, or host your own.
 
-## github pasword 
+## github pasword
 
 Setting up github at first requires a github user name and password.
 Please take a moment to [create a free one](https://github.com/signup/free)
 (if you want to start paying, you can add that to your account some other
 day). 
+
+## github ssh keys
+
+It will help you to set up automatic authorization, so that github can handshake
+with your computer (in this case, your virtual machine).
+There are [some setup instructions](http://help.github.com/set-up-git-redirect)  
+on the website, but I'll do this along with you at the front of the room as 
+well. 
+
+In this way people can be certain who made commits to a git repository.
+Furthermore, a git server can be certain that the person who is pushing changes
+to a particular repository actually has commit access to that repo.
+
+Remember, your public/private SSH keys from yesterday?  We can use those to
+authenticate to github so that we don't have to enter our password every time
+we push to or fetch from the remote repository.
+
+## git config : Configuring your git environment
+
+Once you've set up your rsa keys, you need to tell github who you are.
+Crack open a terminal.
+
+    $ git config --global user.name "Firstname Lastname"
+    $ git config --global user.email "your_email@youremail.com"
+
+Unless your name is Firstname Lastname, please don't copy the above
+lines verbatim. Make the appropriate substitutions.
+
+If you did this properly, you'll have a file in your home **(\~)**
+directory that's called **.gitconfig** . It's contents should look like
+:
+
+    [user]
+          name = Joshua Smith
+          email = joshua.r.smith@gmail.com
+
+This configuration step allows github to properly credit the authorship
+of changes you make in your repository. For projects with numerous
+authors, this is essential.
+
+Another configuration step for some will be to set their favorite text
+editor as git's text editor of choice. This is optional, since vi is
+usually the default, but can be done with the following command (if you
+like **nano** for example):
+
+    $ git config --global core.editor nano
 
 ## git remote : Steps for Forking a Repository
 
