@@ -36,3 +36,34 @@ def test_mean3():
 def test_mean4():
     l = []
     assert animals.mean(l) == None
+
+
+def test_filter_animals():
+    date, time, animal, count = \
+        animals.read_animals('animals.txt')
+
+    species = 'Elk'
+    date, time, animal, count = \
+        animals.filter_animals(date, time, animal, count, species)
+
+    assert count == [25, 26]
+    assert animal == ['Elk', 'Elk']
+
+
+def test_mean_animals_sighted1():
+    mean_sighted = animals.mean_animals_sighted('animals.txt',
+                                                'Wolverine')
+    assert mean_sighted == 31
+
+
+def test_mean_animals_sighted2():
+    mean_sighted = animals.mean_animals_sighted('animals.txt',
+                                                'Elk')
+    assert mean_sighted == 25.5
+
+
+import nose
+@nose.tools.raises(ValueError)
+def test_mean_animals_sighted3():
+    mean_sighted = animals.mean_animals_sighted('animals.txt',
+                                                'Pangolin')
