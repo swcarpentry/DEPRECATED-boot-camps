@@ -1,0 +1,16 @@
+first day good with no programming experience
+good general intro to basics of Python and VC
+liked the intro/advanced Python split
+good git introduction
+IPython notebook helped me learn
+got to see real software engineering
+good coverage of Python + software engineering
+wanted to learn Python
+liked simple examples
+IPython/shell interaction awesome
+good job squeezing a lot of content in
+introduced scientific Python
+liked the showcase demos of matplotlib/IPython features
+combination of topics was good
+liked intro Python exercises
+understand the basics of version control

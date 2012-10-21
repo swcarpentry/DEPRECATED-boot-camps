@@ -1,0 +1,16 @@
+couldn't run the VM on underpowered computer
+don't see why Python is better than R
+would like a longer bootcamp with more focus on Python
+didn't want to learn Python
+would like to give anonymous feedback
+didn't catch some important details that held things up
+have better setup instructions, test scripts
+Python instruction was too slow/basic
+got left behind sometimes
+not sure how to integrate git into workflow, have practical demos, case studies
+hard to type/listen/watch all at once
+would be nice to have a data cleaning example, workflow example
+could have sped up introductory topics
+have more content summaries, workflow visualizations
+reading suggestions to follow up bootcamp
+wanted to see object oriented programming/calling C code
