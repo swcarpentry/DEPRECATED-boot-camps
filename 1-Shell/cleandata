@@ -1,0 +1,4 @@
+#!/bin/bash
+find ./data -type f -exec grep NOTES -exec rm {} \;
+find ./data -type f -exec cp {} ./cleaneddata \;
+find ./cleaneddata -type f -exec mv {} {}.txt \;
