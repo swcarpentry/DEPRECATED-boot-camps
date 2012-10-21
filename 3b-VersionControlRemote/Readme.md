@@ -31,17 +31,44 @@ provides :
 -   commit triggered mailing lists
 -   other service hooks (twitter, etc.)
 
-**NOTE** Public repos have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world, pay github money for private repos, or host your own.
+**NOTE** Public repos have public licences **by default**. If you don't want to 
+share (in the most liberal sense) your stuff with the world, use bitbucket for 
+private repos, pay github money for private repos, or host your own.
+
+Software Carpentry hosts a lot of our teaching material on github. You've 
+already cloned it yesterday. If you weren't in class yesterday, try this from 
+your terminal 
+
+    $ git clone https://github.com/swcarpentry/2012-10-ucb.git
+    $ cd 2012-10-ucb
+
 
 ### Digression: SSH
 
-ssh is a protocol for securely sending data across an insecure network. An important feature of ssh is the ability to perform public key cryptography. We are about to take a little digression, but it is important because ssh is built in to git at a very low level.
+ssh is a protocol for securely sending data across an insecure network. An 
+important feature of ssh is the ability to perform public key cryptography. We 
+are about to take a little digression, but it is important because ssh is built 
+in to git at a very low level.
 
-Public key cryptography consists of a public key, a private key, and an algorithm called a cypher. Information can be combined with the public key using hte cypher in such a way that it appears like nonsense to anyone not holding the private key. The only way to recover the originial information is to use the cypher and the private key; using the cypher and the public key only generates more nonsense-looking data. In this way, a person can use a public key, encrypt data using the cypher + public key, and send the encrypted data over the network without fear that someone will intercept the information.
+Public key cryptography consists of a public key, a private key, and an 
+algorithm called a cypher. Information can be combined with the public key using 
+hte cypher in such a way that it appears like nonsense to anyone not holding the 
+private key. The only way to recover the originial information is to use the 
+cypher and the private key; using the cypher and the public key only generates 
+more nonsense-looking data. In this way, a person can use a public key, encrypt 
+data using the cypher + public key, and send the encrypted data over the network 
+without fear that someone will intercept the information.
 
-In addition to secure communication, public key cryptography gives authentication: you can know that a message sent by someone hasn't been altered. A person uses their private key and the cypher on some data to create a hash, then sends the data and the resulting hash to someone holding the public key. The person on the other end can take the public key + hash and verify the data wasn't changed in transit.
+In addition to secure communication, public key cryptography gives 
+authentication: you can know that a message sent by someone hasn't been altered. 
+A person uses their private key and the cypher on some data to create a hash, 
+then sends the data and the resulting hash to someone holding the public key. 
+The person on the other end can take the public key + hash and verify the data 
+wasn't changed in transit.
 
-In this way people can be certain who made commits to a git repository. Furthermore, a git server can be certain that the person who is pushing changes to a particular repository actually has commit access to that repo.
+In this way people can be certain who made commits to a git repository. 
+Furthermore, a git server can be certain that the person who is pushing changes 
+to a particular repository actually has commit access to that repo.
 
 ## github pasword 
 
@@ -105,8 +132,8 @@ directory that's called **.gitconfig** . It's contents should look like
 :
 
     [user]
-          name = Joshua Smith
-          email = joshua.r.smith@gmail.com
+          name = Katy Huff
+          email = katyhuff@gmail.com
 
 This configuration step allows github to properly credit the authorship
 of changes you make in your repository. For projects with numerous
@@ -127,7 +154,7 @@ repository, you inform git of a new option for fetching updates and
 pushing commits.
 
 The **git remote** command allows you to add, name, rename, list, and
-delete repositories such as the original one **upstream** from your
+delete repositories such as the original one **origin** from your
 fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
@@ -141,21 +168,22 @@ Step 1 : Go to our
 click on the Fork button. Choose to fork it to your username rather than
 any organizations.
 
-Step 2 : Clone it. From your terminal :
+Step 2 : Add your new repository as a remote in the previous repository
 
-    $ git clone git@github.com:username/2012-10-ucb.git
-    $ cd 2012-10-ucb
-
-Step 3 :
-
-    $ git remote add upstream git://github.com:swcarpentry/2012-10-ucb.git
+    $ git remote add username https://github.com/username/2012-10-ucb.git
     $ git remote -v
-    origin  git@github.com:username/2012-10-ucb.git (fetch)
-    origin  git@github.com:username/2012-10-ucb.git (push)
-    upstream        git://github.com/swcarpentry/2012-10-ucb.git (fetch)
-    upstream        git://github.com/swcarpentry/2012-10-ucb.git (push)
+    origin  https://github.com/swcarpentry/2012-10-ucb.git (fetch)
+    origin  https://github.com/swcarpentry/2012-10-ucb.git (push)
+    username        https://github.com/username/2012-10-ucb.git (fetch)
+    username        https://github.com/username/2012-10-ucb.git (push)
 
 All repositories that are clones begin with a remote called origin.
+
+Step 3 : Make sure that it worked by updating your local repository from your 
+fork.
+
+    $ git pull username master
+    Already up-to-date.
 
 ## git fetch : Fetching the contents of a remote
 
@@ -165,15 +193,17 @@ want your master branch to track updates in the original 2012-10-ucb
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
+    $ git fetch origin
+
 The fetch command alone merely pulls down information recent changes
-from the original master (upstream) repository. By itself, the fetch
+from the original master (origin) repository. By itself, the fetch
 command does not change your local working copy. To update your local
-working copy to include recent changes in the original (upstream)
+working copy to include recent changes in the original (origin)
 repository, it is necessary to also merge.
 
 ## git merge : Merging the contents of a remote
 
-To incorporate upstream changes from the original master repository (in
+To incorporate origin changes from the original master repository (in
 this case swcarpentry/2012-10-ucb) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
@@ -183,13 +213,13 @@ its most powerful and its most complicated.
 
 Step 1 : Fetch the recent remote repository history
 
-    $ git fetch upstream
+    $ git fetch origin
 
 Step 2 : Make certain you are in the master branch and merge the
 upstreeam master branch into your master branch
 
     $ git checkout master
-    $ git merge upstream\master
+    $ git merge origin\master
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -202,7 +232,7 @@ than fetching and merging as it automates the branch matching.
 Specificially, to perform the same task as we did in the previous
 exercise, the pull command would be :
 
-    $ git pull upstream
+    $ git pull origin
     Already up-to-date.
 
 When there have been remote changes, the pull will apply those changes
@@ -221,12 +251,12 @@ We'll talk about conflicts later, but first, since we have no conflicts
 and are up to date, we can make a minor change and send our changes to
 your fork, the "origin."
 
-    $ git push origin master
+    $ git push username master
 
-If you have permission to push to the upstream repository, sending
+If you have permission to push to the origin repository, sending
 commits to that remote is exactly analagous.
 
-    $ git push upstream master
+    $ git push origin master
 
 In the case of the 2012-10-ucb code, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
@@ -247,7 +277,8 @@ than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
 
-I, for example, am from North Carolina, so I'll push (to the upstream repository) my own version of Welcome on line 2 of Readme.md.
+I, for example, am from Texas, so I'll push (to the origin repository) my own 
+version of Welcome on line 2 of Readme.md.
 
 You may speak another language, however, and may want to replace the 
 english word Welcome with an equivalent word that you prefer (willkommen, 
@@ -273,20 +304,20 @@ commit your changes.
     <edit the readme file and exit kate>
     $ git commit -am "Changed the welcome message to ... "
 
-Step 2 : Mirror the remote upstream repository in your master branch by
+Step 2 : Mirror the remote origin repository in your master branch by
 pulling down my changes
 
     $ git checkout master
     Switched to branch 'master'
-    $ git fetch upstream
-    $ git merge upstream/master
+    $ git fetch origin
+    $ git merge origin/master
     Updating 43844ea..3b36a87
     Fast-forward
      README.rst |   2 +-
      1 files changed, 1 insertions(+), 1 deletions(-)
 
 Step 3 : You want to push it to the internet eventually, so you pull
-updates from the upstream repository, but will experience a conflict.
+updates from the origin repository, but will experience a conflict.
 
     $ git merge development
     Auto-merging Readme.md
