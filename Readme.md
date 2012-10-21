@@ -7,3 +7,5 @@ HOWDY AND Welcome
 
 For a schedule and installation instructions check the bootcamp webpage
 at http://swcarpentry.github.com/2012-10-lbl.
+
+I am also Texan - how are all y'all?
