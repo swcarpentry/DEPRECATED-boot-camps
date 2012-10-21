@@ -1,6 +1,8 @@
 def read_animals(filename):
     """
-    This function will read animal data from a file.
+    This function will read animal data from a file. It returns 4 lists,
+    one for each column in the file.
+
     """
 
     date = []
@@ -20,3 +22,15 @@ def read_animals(filename):
 
     f.close()
     return (date, time, animal, number)
+
+
+def mean(l):
+    """
+    Return the mean of a list of numbers. Returned value
+    should always be a float.
+
+    """
+    if len(l) == 0:
+        return None
+
+    return float(sum(l)) / len(l)
