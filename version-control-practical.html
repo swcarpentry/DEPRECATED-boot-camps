@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Practical</title>
+  </head>
+  <body>
+    <h1>Version control practical</h1>
+
+<p>
+Form into pairs.
+</p>
+<p>
+One of you offer to share your repository:
+</p>
+<ul>
+<li>Get your partner to give you their BitBucket username.</li>
+<li>In BitBucket, click on the cog, and click Access Management.</li>
+<li>Enter your partner's username,  select Write and click Add.</li>
+</ul>
+<p>
+Now both of you change into your home directory and clone the repository, using a command like the following and replacing <code>USERNAME</code> and <code>OWNERUSERNAME</code> with your username and the username of the repository you're sharing:
+</p>
+<pre>
+cd
+hg clone https://USERNAME@bitbucket.org/OWNERUSERNAME/software-carpentry-boot-camp mycopy
+cd mycopy
+</pre>
+<p>
+Now both try editing the same file and commiting the changes.
+</p>
+<p>
+Now both try to push:
+</p>
+<pre>
+hg push https://USERNAME@bitbucket.org/OWNERUSERNAME/software-carpentry-boot-camp 
+</pre>
+<p>
+If you get a "Push failed" then you need to:
+</p>
+<ul>
+<li>Pull down the latest copy</li>
+<li>Merge the changes</li>
+<li>Resolve the conflicts</li>
+<li>Mark conflicts as resolved, using
+<pre>
+hg resolve -m FILENAME
+</pre>
+</li>
+<li>Commit the updated files</li>
+<li>Push these</li>
+</ul>
+<h2>Help...</h2>
+<p>
+<a href="http://mercurial.selenic.com/wiki/QuickReferenceCardsAndCheatSheets?action=AttachFile&do=get&target=Mercurial-Usage-v1.0bz-300dpi-b%26w.png">Mercurial commands cheat sheet</a>
+</p>
+</body>
+</html>
