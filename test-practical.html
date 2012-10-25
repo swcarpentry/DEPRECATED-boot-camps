@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Practical</title>
+  </head>
+  <body>
+    <h1>Python test practical</h1>
+
+<h2>
+Specification
+</h2>
+<p>
+FUNCTION: overlap(rectangle1, rectangle2)
+<p>
+INPUT: two rectangles.
+<p>
+OUTPUT: rectangle representing overlap between the two input rectangles.
+<p>
+Rectangle is defined as a list of four points:
+    [x0, x1, y0, y1]
+where:
+<ul>
+<li>
+0 < x0 < x1
+<li>
+0 < y0 < y1
+</ul>
+</pre>
+<h2>
+Task
+</h2>
+In pairs...
+<ul>
+<li>
+Create a repository 
+<pre>
+hg init
+</pre>
+<li>
+Create source file, rectangle.py
+<pre>
+def overlap(a, b):
+    pass
+</pre>
+<li>
+Create test file, test-overlap.py
+<pre>
+from rectangle import overlap
+
+def test_coincident():
+    a = [0, 2, 0, 2]
+    b = a
+    expected = a
+    actual = overlap(a, b)
+    assert expected == actual
+</pre>
+<li>
+Write more tests
+<li>
+Add to repository 
+<pre>
+hg add rectangle.py test-overlap.py
+</pre>
+<li>
+Write code to make a test pass
+<li>
+Run tests 
+<pre>
+nosetests test-overlap.py
+</pre>
+<li>
+Commit 
+<pre>
+hg commit
+</pre>
+<li>
+Repeat until all tests pass
+</li>
+<li>
+When happy push to a BitBucket repository
+</ul>
+<h2>
+Example test
+</h2>
+<pre>
+from rectangle import overlap
+
+def test_something():
+    a = [3, 6, 3, 6]
+    b = [0, 4, 0, 4]
+    expected = [3, 4, 3, 4]
+    actual = overlap(a, b)
+    assert expected == actual
+</pre>
+<h2>Useful list things</h2>
+<pre>
+rectangle = [0, 2, 4, 6]
+# List elements from 0..3
+print rectangle[0] # rectangle[0] has value 0
+print rectangle[1] # rectangle[1] has value 2
+print rectangle[2] # rectangle[2] has value 4
+print rectangle[3] # rectangle[3] has value 6
+# Another approach
+a, b, c, d = rectangle
+print a # a has value 0
+print b # b has value 2
+print c # c has value 4
+print d # d has value 4
+</pre>
+  </body>
+</html>
