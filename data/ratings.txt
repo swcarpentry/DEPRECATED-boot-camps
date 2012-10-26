@@ -1,0 +1,36 @@
+Name, Paper, Rating
+Bhargan Basepair, Chen 2002, 3.5
+Bhargan Basepair, Chen 2008, 2.5
+Bhargan Basepair, El Awy 2005, 3.5
+Bhargan Basepair, Falkirk et al 2006, 3.0
+Bhargan Basepair, Jackson 1999, 2.5
+Bhargan Basepair, Rollins and Khersau 2002, 3.0
+Fan Fullerene, Chen 2002, 3.5
+Fan Fullerene, Chen 2008, 3.5
+Fan Fullerene, El Awy 2005, 5.0
+Fan Fullerene, Falkirk et al 2006, 3.0
+Fan Fullerene, Jackson 1999, 3.0
+Fan Fullerene, Rollins and Khersau 2002, 1.5
+Gail Graphics, Chen 2002, 4.0
+Gail Graphics, Chen 2008, 3.5
+Gail Graphics, El Awy 2005, 5.0
+Gail Graphics, Falkirk et al 2006, 3.0
+Gail Graphics, Jackson 1999, 3.0
+Helen Helmet, Chen 2002, 3.0
+Helen Helmet, El Awy 2005, 3.5
+Helen Helmet, Falkirk et al 2006, 4.0
+Helen Helmet, Jackson 1999, 2.5
+Mehrdad Mapping, Chen 2002, 3.5
+Mehrdad Mapping, Chen 2008, 2.5
+Mehrdad Mapping, El Awy 2005, 4.0
+Mehrdad Mapping, Falkirk et al 2006, 4.5
+Mehrdad Mapping, Rollins and Khersau 2002, 3.0
+Miguel Monopole, Chen 2002, 4.0
+Miguel Monopole, Chen 2008, 2.0
+Miguel Monopole, El Awy 2005, 3.0
+Miguel Monopole, Falkirk et al 2006, 3.0
+Miguel Monopole, Jackson 1999, 3.0
+Miguel Monopole, Rollins and Khersau 2002, 2.0
+Stephen Scanner, Chen 2002, 4.5
+Stephen Scanner, Chen 2008, 1.0
+Stephen Scanner, El Awy 2005, 4.0

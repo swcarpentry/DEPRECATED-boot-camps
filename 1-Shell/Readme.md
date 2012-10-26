@@ -2,7 +2,7 @@
 
 * * * * *
 
-**Updated and presented by : Sasha Wood**
+**Updated and presented by : Erik Bray**
 
 **This presentation originally developed by: Milad Fatenejad**
 
@@ -15,8 +15,7 @@ with a keyboard instead of controlling graphical user interfaces
 
 Use the GUI to open the tutorial on github.  Single click on the "Firefox
 Web Browser".  Type in the URL:
-    github.com/JHU-SWC-2012/SWC-bootcamp
-Click on the directory named `1-Shell`.
+    github.com/swcarpentry/2012-10-gmu-shell
 
 A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
@@ -53,7 +52,7 @@ by manipulating some experimental data from a hearing tests. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone https://github.com/JHU-SWC-2012/SWC-bootcamp.git
+    git clone https://github.com/swcarpentry/2012-10-gmu-shell.git
 
 This will grab all of the data needed for this workshop from the
 internet.
@@ -134,23 +133,18 @@ you will see that `testfile` is gone.
 **Changing Directories**
 
 Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `SWC-bootcamp`
+directory) is used to move around. Let's move into the `2012-10-gmu-shell`
 directory. Enter the following command:
 
-    cd SWC-bootcamp
+    cd 2012-10-gmu-shell
 
 Now use the `ls` command to see what is inside this directory. You
 will see that there is an entry which is green. This means that this
 is an executable. If you use `ls -F` you will see that this file ends
 with a star.
 
-This directory contains all of the material for this boot camp. Now
-move to the directory containing the data for the shell tutorial:
-
-    cd 1-Shell
-
 If you enter the `cd` command by itself, you will return to the home
-directory. Try this, and then navigate back to the `1-Shell`
+directory. Try this, and then navigate back to the `2012-10-gmu-shell`
 directory.
 
 ## Arguments
@@ -184,19 +178,19 @@ give `ls` the names of other directories to view. Navigate to the
 home directory if you are not already there. Then enter the
 command:
 
-    ls SWC-bootcamp
+    ls 2012-10-gmu-shell
 
-This will list the contents of the `SWC-bootcamp` directory without
-you having to navigate there. Now enter:
+This will list the contents of the `2012-10-gmu-shell` directory without
+you having to navigate there.
 
-    ls SWC-bootcamp/1-Shell
+    ls 2012-10-gmu-shell/data
 
-This prints the contents of `1-Shell`. The `cd` command works in a
+This prints the contents of `data/`. The `cd` command works in a
 similar way. Try entering:
 
-    cd SWC-bootcamp/1-Shell
+    cd 2012-10-gmu-shell/data
 
-and you will jump directly to `1-Shell` without having to go through
+and you will jump directly to `data` without having to go through
 the intermediate directory.
 
 ## Full vs. Relative Paths
@@ -206,35 +200,41 @@ name. Directories can be specified using either a *relative* path a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+command and you should see something like
 
-    /home/swc
+    /home/<your_username>
 
-which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
-`home` which sits inside the very top directory in the hierarchy. The
-very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
-directory in `home` which is a directory in `/`.
+    or (if on OSX)
+
+    /Users/Your Name
+
+which is the full name of your home directory. This tells you that you are in a
+directory with the same name as your login name (typically), which sits inside
+a directory called `home` which sits inside the very top directory in the
+hierarchy. The very top of the hierarchy is a directory called `/` which is
+usually referred to as the *root directory*. So, to summarize: your home
+directory is a directory in `home` or `Users` which is a directory in `/`.
 
 Now enter the following command:
 
-    cd /home/swc/SWC-bootcamp/1-Shell
+    cd /home/your_username/2012-10-gmu-shell/
 
-This jumps to `1-Shell`. Now go back to the home directory. We saw
+or
+
+    cd /Users/Your Name/2012-10-gmu-shell/
+
+This jumps to `2012-10-gmu-shell`. Now go back to the home directory. We saw
 earlier that the command:
 
-    cd SWC-bootcamp/1-Shell
+    cd 2012-10-gmu-shell/
 
-had the same effect - it took us to the `1-Shell` directory. But,
-instead of specifying the full path
-(`/home/swc/SWC-bootcamp/1-Shell`), we specified a *relative path*. In
-other words, we specified the path relative to our current
-directory. A full path always starts with a `/`. A relative path does
-not. You can usually use either a full path or a relative path
-depending on what is most convenient. If we are in the home directory,
-it is more convenient to just enter the relative path since it
-involves less typing.
+had the same effect - it took us to the `2012-10-gmu-shell` directory. But,
+instead of specifying the full path (`/home/swc/2012-10-gmu-shell/`), we
+specified a *relative path*. In other words, we specified the path relative to
+our current directory. A full path always starts with a `/`. A relative path
+does not. You can usually use either a full path or a relative path depending
+on what is most convenient. If we are in the home directory, it is more
+convenient to just enter the relative path since it involves less typing.
 
 Now, list the contents of the /bin directory. Do you see anything
 familiar in there?
@@ -244,9 +244,9 @@ familiar in there?
 
 **Shortcuts**
 
-There are some shortcuts which you should know about. Dealing with the
-home directory is very common. So, in the shell the tilde character,
-`~`, is a shortcut for your home directory. Navigate to the `1-Shell`
+There are some shortcuts which you should know about. Dealing with the home
+directory is very common. So, in the shell the tilde character, `~`, is a
+shortcut for your home directory. Navigate to the `2012-10-gmu-shell/data`
 directory, then enter the command:
 
     ls ~
@@ -257,17 +257,16 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/swc/SWC-bootcamp`. You can chain
+prints the contents of the `/home/swc/2012-10-gmu-shell`. You can chain
 these together, so:
 
     ls ../../
 
-prints the contents of `/home/swsc` which is your home
-directory. Finally, the special directory `.` always refers to your
-current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
-same thing, they print the contents of the current directory. This may
-seem like a useless shortcut right now, but we'll see when it is
-needed in a little while.
+prints the contents of `/home/swc` which is your home directory. Finally, the
+special directory `.` always refers to your current directory. So, `ls`, `ls
+.`, and `ls ././././.` all do the same thing, they print the contents of the
+current directory. This may seem like a useless shortcut right now, but we'll
+see when it is needed in a little while.
 
 To summarize, the commands `ls ~`, `ls ~/.`, `ls ../../`, and `ls
 /home/swc` all do exactly the same thing. These shortcuts are not
@@ -312,7 +311,7 @@ onto more advanced shell topics...
 
 **Wild cards**
 
-Navigate to the `~/SWC-bootcamp/Shell-1/data/THOMAS` directory. This
+Navigate to the `~/2012-10-gmu-shell/data/THOMAS` directory. This
 directory contains our hearing test data for THOMAS. If we type `ls`,
 we will see that there are a bunch of files which are just four digit
 numbers. By default, `ls` lists all of the files in a given
@@ -369,7 +368,7 @@ directory name. For example, enter:
     cd S<tab>
 
 The shell will fill in the rest of the directory name for
-`SWC-bootcamp`. Now enter:
+`2012-10-gmu-shell`. Now enter:
 
     ls 3<tab><tab>
 
@@ -428,28 +427,28 @@ shell looks for programs to run. If your program is not in this list,
 then an error is printed. The shell ONLY checks in the places listed
 in the `PATH` environment variable.
 
-Navigate to the `1-Shell` directory and list the contents. You will
-notice that there is a program (executable file) called `hello` in
-this directory. Now, try to run the program by entering:
+Navigate to the `2012-10-gmu-shell` directory and list the contents. You will
+notice that there is a program (executable file) called `hello` in this
+directory. Now, try to run the program by entering:
 
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory `/home/swc/SWC-bootcamp/1-Shell` is not in the
+because the directory `/home/swc/2012-10-gmu-shell/` is not in the
 `PATH`. You can run the `hello` program by entering:
 
     ./hello
 
-Remember that `.` is a shortcut for the current working
-directory. This tells the shell to run the `hello` program which is
-located right here. So, you can run any program by entering the path
-to that program. You can run `hello` equally well by specifying:
+Remember that `.` is a shortcut for the current working directory. This tells
+the shell to run the `hello` program which is located right here. So, you can
+run any program by entering the path to that program. You can run `hello`
+equally well by specifying:
 
-    /home/swc/SWC-bootcamp/1-Shell/hello
+    /home/swc/2012-10-gmu-shell/hello
 
 Or by entering:
 
-    ../1-Shell/hello
+    ./hello
 
 When there are no `/` characters, the shell assumes you want to look
 in one of the default places for the program.
@@ -476,12 +475,12 @@ is where the name comes from, `cat` is short for concatenate).
 * * * *
 **Short Exercises**
 
-1.  Print out the contents of the `~/SWC-bootcamp/1-Shell/dictionary.txt`
+1.  Print out the contents of the `~/2012-10-gmu-shell/dictionary.txt`
     file. What does this file contain?
 
-2.  Without changing directories, (you should still be in `1-Shell`),
+2.  Without changing directories, (you should still be in `2012-10-gmu-shell`),
     use one short command to print the contents of all of the files in
-    the /home/swc/SWC-bootcamp/1-Shell/data/THOMAS directory.
+    the /home/swc/2012-10-gmu-shell/data/THOMAS directory.
 
 * * * *
 
@@ -489,7 +488,7 @@ is where the name comes from, `cat` is short for concatenate).
 be annoying to use. The program, `less`, is useful for this
 case. Enter the following command:
 
-    less ~/SWC-bootcamp/1-Shell/dictionary.txt
+    less ~/2012-10-gmu-shell/dictionary.txt
 
 `less` opens the file, and lets you navigate through it. The commands
 are identical to the `man` program. Use "space" to go forward and hit
@@ -521,7 +520,7 @@ in reverse while using `less`.
 ## Redirection
 
 Let's turn to the experimental data from the hearing tests that we
-began with. This data is located in the `~/SWC-bootcamp/1-Shell/data`
+began with. This data is located in the `~/2012-10-gmu-shell/data`
 directory. Each subdirectory corresponds to a particular participant
 in the study. Navigate to the `Bert` subdirectory in `data`.  There
 are a bunch of text files which contain experimental data
@@ -548,7 +547,7 @@ exists.
 Use `>>`, to append the contents of all of the files which contain the
 number 4 in the directory:
 
-    /home/swc/SWC-bootcamp/1-Shell/data/gerdal
+    /home/swc/2012-10-gmu-shell/data/gerdal
 
 to the existing `all_data` file. Thus, when you are done `all_data`
 should contain all of the experiment data from Bert and any
@@ -748,7 +747,7 @@ name to the file, then sort it.
 
 * * * *
 
-Let's navigate back to `~/SWC-bootcamp/1-Shell/data`. You should still
+Let's navigate back to `~/2012-10-gmu-shell/data`. You should still
 have the `all_data` file hanging around here. Enter the following command:
 
     wc Bert/* | sort -k 3 -n
@@ -897,7 +896,7 @@ require a find command):
 Hint: If you make a mistake and need to start over just do the
 following:
 
-1.  Navigate to the `1-Shell` directory
+1.  Navigate to the `2012-10-gmu-shell` directory
 
 2.  Delete the `data` directory
 
