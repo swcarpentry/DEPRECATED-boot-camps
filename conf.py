@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'SWC / SCripps / 2012-11'
+project = u'SWC / Scripps / 2012-11'
 copyright = u'2012, Software Carpentry'
 
 # The version info for the project you're documenting, acts as replacement for
