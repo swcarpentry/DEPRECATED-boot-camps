@@ -11,8 +11,6 @@ Software Carpentry workshop at Scripps, Nov 15-16, 2012
 
 There is editing functionality on this site.  Huzzah.
 
-Test message!!
-
 Indices and tables
 ==================
 
