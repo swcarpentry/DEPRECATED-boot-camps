@@ -9,7 +9,7 @@ Software Carpentry workshop at Scripps, Nov 15-16, 2012
 .. toctree::
    :maxdepth: 2
 
-There is editing functionality on this site.  Huzzah. x2
+There is editing functionality on this site.
 
 Indices and tables
 ==================
