@@ -26,7 +26,6 @@ Intro Python - focus: data processing
  - Scripting with Python;
 
 Day 2 topics:
-
  - Plotting with Python
  - More data structures in Python;
  - analyzing big stuff
