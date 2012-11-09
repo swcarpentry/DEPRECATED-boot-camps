@@ -11,14 +11,14 @@ Software Carpentry workshop at Scripps, Nov 15-16, 2012
 
 Day 1 topics:
 
-The shell - suggested focus: automating stuff
+The shell - focus: automating stuff
  - files & directories;
  - creating things;
  - pipes and filters;
  - loops;
  - scripts;
 
-Intro Python - suggested focus: data processing
+Intro Python - focus: data processing
  - Basic operations;
  - For loops & if statements;
  - Reading, transforming, and writing data;
@@ -27,7 +27,7 @@ Intro Python - suggested focus: data processing
 
 Day 2 topics:
 
-- Plotting with Python
+ - Plotting with Python
  - More data structures in Python;
  - analyzing big stuff
  - Version control
