@@ -9,16 +9,34 @@ Software Carpentry workshop at Scripps, Nov 15-16, 2012
 .. toctree::
    :maxdepth: 2
 
-There is editing functionality on this site.
+Day 1 topics:
 
-test edit TKT
+The shell - suggested focus: automating stuff
+ - files & directories;
+ - creating things;
+ - pipes and filters;
+ - loops;
+ - scripts;
 
-test edit JK
+Intro Python - suggested focus: data processing
+ - Basic operations;
+ - For loops & if statements;
+ - Reading, transforming, and writing data;
+ - Organizing code in functions and modules;
+ - Scripting with Python;
+
+Day 2 topics:
+
+- Plotting with Python
+ - More data structures in Python;
+ - analyzing big stuff
+ - Version control
+ - reproducibility considerations
+ - Making sure your code works w/automated testing
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 * :ref:`Instructors`
