@@ -6,9 +6,6 @@
 Software Carpentry workshop at Scripps, Nov 15-16, 2012
 =======================================================
 
-.. toctree::
-   :maxdepth: 2
-
 Day 1 topics:
 
 The shell - focus: automating stuff
@@ -33,9 +30,15 @@ Day 2 topics:
  - reproducibility considerations
  - Making sure your code works w/automated testing
 
+.. toctree::
+   :maxdepth: 2
+
+   install
+
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`search`
-* :ref:`Instructors`
+
+.. * :ref:`Instructors`
