@@ -15,23 +15,21 @@ By the end of these scientific Python lessons, you will be able to:
 1.	Describe and distinguish the seven core elements shared by all programming 
 	languages.
 2.	Use Python to write simple programs that use these core elements, using 
-	both the core library and packages such as numpy.
-3.	Make and save publication-quality plots using matplotlib.
+	both the core library and scientific packages such as numpy.
+3.	Make and save simple publication-quality plots using matplotlib.
 4.	Read, manipulate, and save data files in csv and text formats.
-5.	Write tests to confirm the accuracy of your Python code.
+5.	Write unit tests to confirm the accuracy of your Python code.
+6.	Create standalone Python scripts that can be run from the command line.
 
-Finally, it's worth noting that you all (unavoidably) have come with very 
-different levels of background in Python programming. 
-
-We (the instructors) recognize that you all (unavoidably) have come with very 
+We (the instructors) recognize that you all unavoidably have come with very 
 different levels of background in Python programming. One-third of you are very 
 experienced in basic Python and one-quarter of you are experienced with modules 
 such as numpy and scipy - for those in that category, this section of the 
 workshop may not be as novel as the other sections. However, we hope that the 
-method of presentation in this lesson will help to solidify your existing 
-knowledge. We also encourage you to take the opportunity to ask the instructors 
-and volunteers about more advanced techniques that you might have heard of but 
-do not know how to use well.
+method of presentation will help to solidify your existing knowledge. We also 
+encourage you to take the opportunity to ask the instructors and volunteers 
+about more advanced techniques that you might have heard of but do not know how 
+to use well.
 
 For those who have no (or almost no) background in programming in any language, 
 you may find that these lessons proceed quickly. We encourage you to make 
