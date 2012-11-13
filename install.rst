@@ -9,7 +9,9 @@ Accounts and software install
 
 1. Sign up for a (free) account on Github: http://github.com/.
 
-2. Also download and install `Anaconda CE <http://continuum.io/downloads.html>`__.
+2. Download and install `Anaconda CE <http://continuum.io/downloads.html>`__.
+
+3. Download and install `git <http://git-scm.com/downloads>`__.
 
 Virtual Machine stuff
 ---------------------
@@ -22,5 +24,5 @@ These instructions are especially important if you're running Windows.
 
 2. Download `this very large (2 GB) file <https://s3.amazonaws.com/SWC_JHU2012/swc_jhu2012_r03.ova>`__ to your laptop.
 
-3. Run VirtualBox and import the virtual machines in the very large file.
+3. Run VirtualBox and import the virtual machines in the very large file. To do this, go to File -> Import Appliance, browse to the 2 GB file you just downloaded, and click 'OK' after all the prompts.
 
