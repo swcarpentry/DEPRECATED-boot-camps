@@ -22,7 +22,7 @@ By the end of these scientific Python lessons, you will be able to:
 6.	Create standalone Python scripts that can be run from the command line.
 
 We (the instructors) recognize that you all unavoidably have come with very 
-different levels of background in Python programming. One-third of you are very 
+different levels of background in Python programming. One-third of you are 
 experienced in basic Python and one-quarter of you are experienced with modules 
 such as numpy and scipy - for those in that category, this section of the 
 workshop may not be as novel as the other sections. However, we hope that the 
@@ -37,6 +37,13 @@ liberal use of the helpful volunteers as we proceed through these lessons. You
 may also wish to consider working together with a partner to complete the 
 exercises as a team.
 
+Regardless of your background, you will probably feel like trying to take all 
+of this material in is like trying to drink from a firehose. That's OK - the 
+idea is to at least introduce you to a wide variety of topics, with the hope 
+that you'll (a) get to reinforce the most important concepts during exercises, 
+and (b) will be able to come back to these materials later to continue 
+mastering the concepts.
+
 As an analogy for our overall strategy for teaching Python, picture becoming a 
 scientific programmer as constructing a house. First you pour the foundation, 
 then you frame the house with wood beams, then you put on a roof, seal it up, 
@@ -49,14 +56,6 @@ scientific programs. Once the workshop is over, you'll need to go out on your
 own and fill in this structure with drywall, insulation, and a couch. (We'll 
 try to point out some useful fixtures that you might want to add to your house 
 as we go along.)
-
-Regardless of your background, you will probably feel like trying to take all 
-of this material in is like trying to drink from a firehose. That's OK - the 
-idea is to at least introduce you to a wide variety of topics, with the hope 
-that you'll (a) get to reinforce the most important concepts during exercises, 
-and (b) will be able to come back to these materials later to continue 
-mastering the concepts.
-
 
 The Seven Core Concepts
 -----------------------
