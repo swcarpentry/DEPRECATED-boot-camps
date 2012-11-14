@@ -6,6 +6,8 @@
 Software Carpentry workshop at Scripps, Nov 15-16, 2012
 =======================================================
 
+NOTE: For real-time help either before or during the workshop, you are welcome to try posting in our chat room: http://j.mp/SWCchat
+
 Day 1 topics:
 
 The shell - focus: automating stuff
