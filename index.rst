@@ -8,34 +8,17 @@ Software Carpentry workshop at Scripps, Nov 15-16, 2012
 
 NOTE: For real-time help either before or during the workshop, you are welcome to try posting in our chat room: http://j.mp/SWCchat
 
-Day 1 topics:
-
-The shell - focus: automating stuff
- - files & directories;
- - creating things;
- - pipes and filters;
- - loops;
- - scripts;
-
-Intro Python - focus: data processing
- - Basic operations;
- - For loops & if statements;
- - Reading, transforming, and writing data;
- - Organizing code in functions and modules;
- - Scripting with Python;
-
-Day 2 topics:
- - Plotting with Python
- - More data structures in Python;
- - analyzing big stuff
- - Version control
- - reproducibility considerations
- - Making sure your code works w/automated testing
+Workshop materials
+------------------
 
 .. toctree::
    :maxdepth: 2
 
    install
+
+   day1
+
+   day2
 
 Indices and tables
 ==================
