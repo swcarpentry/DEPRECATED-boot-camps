@@ -7,7 +7,7 @@ Intro:
  - TAs: Qingpeng Zhang, Cait Pickens
 
  - Where are the materials?  Here!  http://swc-scripps.idyll.org/
- - Online chat? Here! https://www.hipchat.com/g7eubZA2q
+ - Online chat? Here! http://j.mp/SWCchat
  - Comments? Questions? Fixes?
     + You can add comments at the bottom of each page.
     + You can also *edit* each page on github, and suggest them as changes.
