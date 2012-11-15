@@ -35,21 +35,6 @@ downloaded earlier, cd into the python/ subdirectory, and type ::
 
 Your Web browser should pop up.  Tada!
 
-Running the notebook on Windows using Anaconda CE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-On Windows, download and install Anaconda CE.  Then, open a command shell
-('cmd') and change to the 'python' subdirectory of your git repository,
-and type ::
-
-   \Anaconda\Python\Scripts\ipython notebook --pylab=inline
-
-If you're running cygwin, you might need to type ::
-
-   /cygdrive/c/Anaconda/Python/Scripts/ipython notebook --pylab=inline
-
-A Web browser window should open up.
-
 Running the notebooks in the Virtual Box virtual machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
