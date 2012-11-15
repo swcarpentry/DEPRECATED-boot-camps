@@ -9,6 +9,8 @@ Day 1 -- the shell, and basic programming
 
    1-Shell/index
 
+   python-day1
+
 ----
 
 The shell - focus: automating stuff
