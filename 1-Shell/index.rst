@@ -53,7 +53,7 @@ The Example: Manipulating Experimental Data Files
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data from a set of hearing tests. To get
 the data for this test, you will need internet access. Just enter the
-command:
+command::
 
     git clone https://github.com/swcarpentry/2012-11-scripps.git
 
@@ -64,7 +64,7 @@ Let's get started
 -----------------
 
 One very basic command is `echo`. This command is just prints text to
-the terminal. Try entering the command:
+the terminal. Try entering the command::
 
     echo Hello, World
 
@@ -104,7 +104,7 @@ they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
 
 Lets create an empty file using the `touch` command. Enter the
-command:
+command::
 
     touch testfile
 
@@ -135,7 +135,7 @@ files, you can add a -a.
 So, a standard 'ls' command might be 'ls -alFh' or 'ls -lFh'
 
 Now, let's get rid of `testfile`. To remove a file, just enter the
-command:
+command::
 
     rm testfile
 
@@ -147,7 +147,7 @@ you will see that `testfile` is gone.
 
 Now, let's move to a different directory. The command `cd` (change
 directory) is used to move around. Let's move into the `2012-11-scripps`
-directory. Enter the following command:
+directory. Enter the following command::
 
     cd 2012-11-scripps
 
@@ -157,7 +157,7 @@ is an executable. If you use `ls -F` you will see that this file ends
 with a star.
 
 This directory contains all of the material for this boot camp. Now
-move to the directory containing the data for the shell tutorial:
+move to the directory containing the data for the shell tutorial::
 
     cd 1-Shell
 
@@ -174,7 +174,7 @@ program, like many programs, take a lot of arguments. But how do we
 know what the options are to particular commands?
 
 Most commonly used shell programs have a manual. You can access the
-manual using the `man` program. Try entering:
+manual using the `man` program. Try entering::
 
     man ls
 
@@ -195,17 +195,17 @@ directory (i.e. the directory you are in). You can always find the
 directory you are in using the `pwd` command. However, you can also
 give `ls` the names of other directories to view. Navigate to the
 home directory if you are not already there. Then enter the
-command:
+command::
 
     ls 2012-11-scripps
 
 This will list the contents of the `2012-11-scripps` directory without
-you having to navigate there. Now enter:
+you having to navigate there. Now enter::
 
     ls 2012-11-scripps/1-Shell
 
 This prints the contents of `1-Shell`. The `cd` command works in a
-similar way. Try entering:
+similar way. Try entering::
 
     cd 2012-11-scripps/1-Shell
 
@@ -220,7 +220,7 @@ name. Directories can be specified using either a *relative* path a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+command and you should see::
 
     /home/username
 
@@ -231,12 +231,12 @@ very top of the hierarchy is a directory called `/` which is usually
 referred to as the *root directory*. So, to summarize: `username` is a
 directory in `home` which is a directory in `/`.
 
-Now enter the following command:
+Now enter the following command::
 
     cd /home/username/2012-11-scripps/1-Shell
 
 This jumps to `1-Shell`. Now go back to the home directory. We saw
-earlier that the command:
+earlier that the command::
 
     cd 2012-11-scripps/1-Shell
 
@@ -262,7 +262,7 @@ Saving time with shortcuts, wild cards, and tab completion
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
 `~`, is a shortcut for your home directory. Navigate to the `1-Shell`
-directory, then enter the command:
+directory, then enter the command::
 
     ls ~
 
@@ -273,7 +273,7 @@ above your current directory. Thus:
     ls ..
 
 prints the contents of the `/home/username/2012-11-scripps`. You can chain
-these together, so:
+these together, so::
 
     ls ../../
 
