@@ -1,6 +1,14 @@
 Day 1 -- the shell, and basic programming
 =========================================
 
+
+.. toctree::
+   :maxdepth: 2
+
+   introductions
+
+----
+
 The shell - focus: automating stuff
  - files & directories;
  - creating things;
