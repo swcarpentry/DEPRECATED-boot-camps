@@ -7,6 +7,8 @@ Day 1 -- the shell, and basic programming
 
    introductions
 
+   1-Shell/index
+
 ----
 
 The shell - focus: automating stuff

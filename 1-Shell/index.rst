@@ -1,14 +1,12 @@
-# The Shell
+The Shell
+=========
 
-[Back To The Menu](http://github.com/swcarpentry/2012-10-ucb/) - [Forward to Python](http://github.com/swcarpentry/2012-10-ucb/tree/master/2-PythonIntro/)
-
-* * * * *
-
-**Updated and presented by : Tracy Teal**
+**Updated and presented by: Tracy Teal**
 
 **Based on materials originally developed by: Milad Fatenejad, Katy Huff, Jonathon Dursi, and Sasha Wood**
 
-# What is the shell ?
+What is the shell?
+------------------
 
 The *shell* is a program that presents a command line interface
 which allows you to control your computer using commands entered
@@ -16,7 +14,9 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github and type in the URL:
-    github.com/swcarpentry/2012-10-ucb .
+
+    github.com/swcarpentry/2012-11-scripps
+
 Click on the directory named `1-Shell`.
 
 A *terminal* is a program you run that gives you access to the
@@ -47,7 +47,8 @@ are different. I recommend sticking with bash and learning it well.
 To open a terminal, just single click on the "Terminal" icon on the
 Desktop.
 
-# The Example: Manipulating Experimental Data Files
+The Example: Manipulating Experimental Data Files
+-------------------------------------------------
 
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data from a set of hearing tests. To get
@@ -59,7 +60,8 @@ command:
 This will grab all of the data needed for this workshop from the
 internet.
 
-# Let's get started
+Let's get started
+-----------------
 
 One very basic command is `echo`. This command is just prints text to
 the terminal. Try entering the command:
@@ -71,7 +73,8 @@ to you. The echo command is useful for printing from a shell script,
 for displaying variables, and for generating known values to pass
 to other programs.
 
-## Moving around the file system
+Moving around the file system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's learn how to move around the file system using command line
 programs. This is really easy to do using a GUI (just click on
@@ -162,7 +165,8 @@ If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `1-Shell`
 directory.
 
-## Arguments
+Arguments
+~~~~~~~~~
 
 Most programs take additional arguments that control their exact
 behavior. For example, `-F` and `-l` are arguments to `ls`.  The `ls`
@@ -208,7 +212,8 @@ similar way. Try entering:
 and you will jump directly to `1-Shell` without having to go through
 the intermediate directory.
 
-## Full vs. Relative Paths
+Full vs. Relative Paths
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The `cd` command takes an argument which is the directory
 name. Directories can be specified using either a *relative* path a
@@ -249,7 +254,8 @@ Now, list the contents of the /bin directory. Do you see anything
 familiar in there?
 
 
-## Saving time with shortcuts, wild cards, and tab completion
+Saving time with shortcuts, wild cards, and tab completion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Shortcuts**
 
@@ -327,16 +333,16 @@ we will see that there are a bunch of files which are just four digit
 numbers. By default, `ls` lists all of the files in a given
 directory. The `*` character is a shortcut for "everything". Thus, if
 you enter `ls *`, you will see all of the contents of a given
-directory. Now try this command:
+directory. Now try this command::
 
     ls *1
 
-This lists every file that ends with a `1`. This command:
+This lists every file that ends with a `1`. This command::
 
     ls /usr/bin/*.sh
 
 Lists every file in `/usr/bin` that ends in the characters `.sh`. And
-this command:
+this command::
 
     ls *4*1
 
@@ -348,7 +354,7 @@ So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for files
 that match the given pattern. In this case, it identified four such
 files. Then, it replaced the `*4*1` with the list of files, separated
-by spaces. In other the two commands:
+by spaces. In other the two commands::
 
     ls *4*1
     ls 0241 0341 0431 0481
@@ -356,7 +362,8 @@ by spaces. In other the two commands:
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
 
-* * * *
+----
+
 **Short Exercise**
 
 Do each of the following using a single `ls` command without
@@ -366,19 +373,19 @@ navigating to a different directory.
 2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
 3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
 
-* * * *
+----
 
 **Tab Completion**
 
 Navigate to the home directory. Typing out directory names can waste a
 lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
-directory name. For example, enter:
+directory name. For example, enter::
 
     cd 2<tab>
 
 The shell will fill in the rest of the directory name for
-`2012-11-scripps`. Now enter:
+`2012-11-scripps`. Now enter::
 
     ls i<tab><tab>
 
@@ -403,17 +410,18 @@ The down arrow takes your forwards in the command history.
 ^-R will do a reverse-search through your command history.  This
 is very useful.
 
-## Which program? ##
+Which program?
+~~~~~~~~~~~~~~
 
 Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
 on the computer. A program is just a file that you can *execute*. The
 program `which` tells you the location of a particular program. For
-example:
+example::
 
     which ls
 
 Will return "/bin/ls". Thus, we can see that `ls` is a program that
-sits inside of the `/bin` directory. Now enter:
+sits inside of the `/bin` directory. Now enter::
 
     which find
 
@@ -426,7 +434,7 @@ to run `/bin/ls` when we enter `ls`. The answer is that when we enter
 a program name and hit enter, there are a few standard places that the
 shell automatically looks. If it can't find the program in any of
 those places, it will print an error saying "command not found". Enter
-the command:
+the command::
 
     echo $PATH
 
@@ -439,24 +447,24 @@ in the `PATH` environment variable.
 
 Navigate to the `1-Shell` directory and list the contents. You will
 notice that there is a program (executable file) called `hello` in
-this directory. Now, try to run the program by entering:
+this directory. Now, try to run the program by entering::
 
     hello
 
 You should get an error saying that hello cannot be found. That is
 because the directory `/home/username/2012-11-scripps/1-Shell` is not in the
-`PATH`. You can run the `hello` program by entering:
+`PATH`. You can run the `hello` program by entering::
 
     ./hello
 
 Remember that `.` is a shortcut for the current working
 directory. This tells the shell to run the `hello` program which is
 located right here. So, you can run any program by entering the path
-to that program. You can run `hello` equally well by specifying:
+to that program. You can run `hello` equally well by specifying::
 
     /home/swc/2012-11-scripps/1-Shell/hello
 
-Or by entering:
+Or by entering::
 
     ../1-Shell/hello
 
@@ -464,17 +472,18 @@ When there are no `/` characters, the shell assumes you want to look
 in one of the default places for the program.
 
 
-## Examining Files
+Examining Files
+~~~~~~~~~~~~~~~
 
 We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
 The easiest way to examine a file is to just print out all of the
-contents using the program `cat`. Enter the following command:
+contents using the program `cat`. Enter the following command::
 
     cat ex_data.txt
 
-This prints out the contents of the `ex_data.txt` file. If you enter:
+This prints out the contents of the `ex_data.txt` file. If you enter::
 
     cat ex_data.txt ex_data.txt
 
@@ -486,7 +495,8 @@ If there's a bunch of things on your screen and you want to clean it up a
 bit, you can type 'clean' and that will clear your screen so you have a 
 shiny prompt at the top of your screen.
 
-* * * *
+----
+
 **Short Exercises**
 
 1.  Print out the contents of the `~/2012-11-scripps/1-Shell/dictionary.txt`
@@ -496,11 +506,12 @@ shiny prompt at the top of your screen.
     use one short command to print the contents of all of the files in
     the /home/swc/2012-11-scripps/1-Shell/data/THOMAS directory.
 
-* * * *
+----
+
 
 `cat` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, `less`, is useful for this
-case. Enter the following command:
+case. Enter the following command::
 
     less ~/2012-11-scripps/1-Shell/dictionary.txt
 
@@ -524,27 +535,30 @@ beginning of the file and search.
 Remember, the `man` program uses the same commands, so you can search
 documentation using "/" as well!
 
-* * * *
+----
+
 **Short Exercise**
 
 Use the commands we've learned so far to figure out how to search
 in reverse while using `less`.
 
-* * * * 
+----
 
 
-## Redirection
+
+Redirection
+~~~~~~~~~~~
 
 Let's turn to the experimental data from the hearing tests that we
 began with. This data is located in the `~/2012-11-scripps/1-Shell/data`
 directory. Each subdirectory corresponds to a particular participant
 in the study. Navigate to the `Bert` subdirectory in `data`.  There
 are a bunch of text files which contain experimental data
-results. Lets print them all:
+results. Lets print them all::
 
     cat au*
 
-Now enter the following command:
+Now enter the following command::
 
     cat au* > ../all_data
 
@@ -557,11 +571,12 @@ file on the right. The `>>` characters do almost the same thing,
 except that they will append the output to the file if it already
 exists.
 
-* * * *
+----
+
 **Short Exercise**
 
 Use `>>`, to append the contents of all of the files which contain the
-number 4 in the directory:
+number 4 in the directory::
 
     /home/username/2012-11-scripps/1-Shell/data/gerdal
 
@@ -569,20 +584,22 @@ to the existing `all_data` file. Thus, when you are done `all_data`
 should contain all of the experiment data from Bert and any
 experimental data file from gerdal that contains the number 4.
 
-* * * *
+----
 
 
-## Creating, moving, copying, and removing
+
+Creating, moving, copying, and removing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We've created a file called `all_data` using the redirection operator
 `>`. This is critical file so we have to make copies so that the data
 is backed up. Lets copy the file using the `cp` command. The `cp`
-command backs up the file. Navigate to the `data` directory and enter:
+command backs up the file. Navigate to the `data` directory and enter::
 
     cp all_data all_data_backup
 
 Now `all_data_backup` has been created as a copy of `all_data`. We can
-move files around using the command `mv`. Enter this command:
+move files around using the command `mv`. Enter this command::
 
     mv all_data_backup /tmp/
 
@@ -592,19 +609,20 @@ temporary place for storing files. Data stored in `/tmp` is
 automatically deleted when the computer shuts down.
 
 The `mv` command is also how you rename files. Since this file is so
-important, let's rename it:
+important, let's rename it::
 
     mv all_data all_data_IMPORTANT
 
 Now the file name has been changed to all_data_IMPORTANT. Let's delete
-the backup file now:
+the backup file now::
 
     rm /tmp/all_data_backup
 
 The `mkdir` command is used to create a directory. Just enter `mkdir`
 followed by a space, then the directory name. 
 
-* * * *
+----
+
 **Short Exercise**
 
 Do the following:
@@ -613,19 +631,21 @@ Do the following:
 2.  Create a directory in the `data` directory called `foo`
 3.  Then, copy the `all_data` file into `foo`
 
-* * * *
+----
+
 
 By default, `rm`, will NOT delete directories. You can tell `rm` to
-delete a directory using the `-r` option. Enter the following command:
+delete a directory using the `-r` option. Enter the following command::
 
     rm -r foo
 
 
-## Count the words
+Count the words
+~~~~~~~~~~~~~~~
 
 The `wc` program (word count) counts the number of lines, words, and
 characters in one or more files. Make sure you are in the `data`
-directory, then enter the following command:
+directory, then enter the following command::
 
     wc Bert/* gerdal/*4*
 
@@ -637,31 +657,34 @@ the files. Thus, there were 10445 characters in total.
 
 Remember that the `Bert/*` and `gerdal/*4*` files were merged
 into the `all_data` file. So, we should see that `all_data` contains
-the same number of characters:
+the same number of characters::
 
     wc all_data
 
 Every character in the file takes up one byte of disk space. Thus, the
-size of the file in bytes should also be 10445. Let's confirm this:
+size of the file in bytes should also be 10445. Let's confirm this::
 
     ls -l all_data
 
 Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
-* * * *
+----
+
 **Short Exercise**
 
 Figure out how to get `wc` to print the length of the longest line in
 `all_data`.
 
-* * * *
+----
 
-## The awesome power of the Pipe
+
+The awesome power of the Pipe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Suppose I wanted to only see the total number of character, words, and
 lines across the files `Bert/*` and `gerdal/*4*`. I don't want to
-see the individual counts, just the total. Of course, I could just do:
+see the individual counts, just the total. Of course, I could just do::
 
     wc all_data
 
@@ -671,14 +694,14 @@ have wasted a precious 7062 bytes of hard disk space. We can do this
 *without* creating a temporary file, but first I have to show you two
 more commands: `head` and `tail`. These commands print the first few,
 or last few, lines of a file, respectively. Try them out on
-`all_data`:
+`all_data`::
 
     head all_data
     tail all_data
 
 The `-n` option to either of these commands can be used to print the
 first or last `n` lines of a file. To print the first/last line of the
-file use:
+file use::
 
     head -n 1 all_data
     tail -n 1 all_data
@@ -688,7 +711,7 @@ lines in a set of files without creating any temporary files. To do
 this, we want to tell the shell to take the output of the `wc Bert/*
 gerdal/*4*` and send it into the `tail -n 1` command. The `|`
 character (called pipe) is used for this purpose. Enter the following
-command:
+command::
 
     wc Bert/* gerdal/Data0559 | tail -n 1
 
@@ -697,19 +720,19 @@ across all of these files. What is happening here? Well, `tail`, like
 many command line programs will read from the *standard input* when it
 is not given any files to operate on. In this case, it will just sit
 there waiting for input. That input can come from the user's keyboard
-*or from another program*. Try this:
+*or from another program*. Try this::
 
     tail -n 2
 
 Notice that your cursor just sits there blinking. Tail is waiting for
-data to come in. Now type:
+data to come in. Now type::
 
     French
     fries
     are
     good
 
-then CONTROL+d. You should is the lines:
+then CONTROL+d. You should is the lines::
 
     are
     good
@@ -724,14 +747,14 @@ The philosophy behind these command line programs is that none of them
 really do anything all that impressive. BUT when you start chaining
 them together, you can do some really powerful things really
 efficiently. If you want to be proficient at using the shell, you must
-learn to become proficient with the pipe and redirection operators:
+learn to become proficient with the pipe and redirection operators::
 `|`, `>`, `>>`.
 
 
 **A sorting example**
 
 Let's create a file with some words to sort for the next example. We
-want to create a file which contains the following names:
+want to create a file which contains the following names::
 
     Bob
     Alice
@@ -741,7 +764,7 @@ want to create a file which contains the following names:
 To do this, we need a program which allows us to create text
 files. There are many such programs, the easiest one which is
 installed on almost all systems is called `nano`. Navigate to `/tmp`
-and enter the following command:
+and enter the following command::
 
     nano toBeSorted
 
@@ -749,22 +772,24 @@ Now enter the four names as shown above. When you are done, press
 CONTROL+O to write out the file. Press enter to use the file name
 `toBeSorted`. Then press CONTROL+x to exit `nano`.
 
-When you are back to the command line, enter the command:
+When you are back to the command line, enter the command::
 
     sort toBeSorted
 
 Notice that the names are now printed in alphabetical order.
 
-* * * *
+----
+
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your
 name to the file, then sort it.
 
-* * * *
+----
+
 
 Let's navigate back to `~/2012-11-scripps/1-Shell/data`. You should still
-have the `all_data` file hanging around here. Enter the following command:
+have the `all_data` file hanging around here. Enter the following command::
 
     wc Bert/* | sort -k 3 -n
 
@@ -779,36 +804,37 @@ are two options given to sort:
 
 Notice that the files are sorted by the number of characters.
 
-* * * *
+----
+
 **Short Exercise**
 
 Use the `man` command to find out how to sort the output from `wc` in
 reverse order.
 
-* * * *
+----
 
-* * * * 
 **Short Exercise**
 
 Combine the `wc`, `sort`, `head` and `tail` commands so that only the
 `wc` information for the largest file is listed
 
-Hint: To print the smallest file, use:
+Hint: To print the smallest file, use::
 
     wc Bert/* | sort -k 3 -n | head -n 1
 
-* * * * 
+----
+
 
 Printing the smallest file seems pretty useful. We don't want to type
 out that long command often. Let's create a simple script, a simple
 program, to run this command. The program will look at all of the
 files in the current directory and print the information about the
 smallest one. Let's call the script `smallest`. We'll use `nano` to
-create this file. Navigate to the `data` directory, then:
+create this file. Navigate to the `data` directory, then::
 
     nano smallest
 
-Then enter the following text:
+Then enter the following text::
 
     #!/bin/bash
     wc * | sort -k 3 -n | head -n 1
@@ -816,7 +842,7 @@ Then enter the following text:
 Now, `cd` into the `Bert` directory and enter the command
 `../smallest`. Notice that it says permission denied. This happens
 because we haven't told the shell that this is an executable
-file. Enter the following commands:
+file. Enter the following commands::
 
     chmod a+x ../smallest
     ../smallest
@@ -824,14 +850,16 @@ file. Enter the following commands:
 The `chmod` command is used to modify the permissions of a file. This
 particular command modifies the file `../smallest` by giving all users
 (notice the `a`) permission to execute (notice the `x`) the file. If
-you enter:
+you enter::
 
     ls ../smallest
 
 You will see that the file name is green. Congratulations, you just
 created your first shell script!
 
-# Searching files
+Searching files
+---------------
+
 
 You can search the contents of a file using the command `grep`. The
 `grep` program is very powerful and useful especially when combined
@@ -839,11 +867,12 @@ with other commands by using the pipe. Navigate to the `Bert`
 directory. Every data file in this directory has a line which says
 "Range". The range represents the smallest frequency range that can be
 discriminated. Lets list all of the ranges from the tests that Bert
-conducted:
+conducted::
 
     grep Range *
 
-* * * * 
+----
+
 **Short Exercise**
 
 Create an executable script called `smallestrange` in the `data`
@@ -851,30 +880,33 @@ directory, that is similar to the `smallest` script, but prints the
 file containing the file with the smallest Range. Use the commands
 `grep`, `sort`, and `tail` to do this.
 
-* * * * 
+----
 
 
-# Finding files
+
+Finding files
+-------------
+
 
 The `find` program can be used to find files based on arbitrary
 criteria. Navigate to the `data` directory and enter the following
-command:
+command::
 
     find . -print
 
 This prints the name of every file or directory, recursively, starting
-from the current directory. Let's exclude all of the directories:
+from the current directory. Let's exclude all of the directories::
 
     find . -type f -print
 
-This tells `find` to locate only files. Now try these commands:
+This tells `find` to locate only files. Now try these commands::
 
     find . -type f -name "*1*"
     find . -type f -name "*1*" -or -name "*2*" -print
     find . -type f -name "*1*" -and -name "*2*" -print
 
 The `find` command can acquire a list of files and perform some
-operation on each file. Try this command out:
+operation on each file. Try this command out::
 
     find . -type f -exec grep Volume {} \;
 
@@ -884,7 +916,7 @@ the name of each file. The trailing `\;` is used to terminate the
 command.  This command is slow, because it is calling a new instance
 of `grep` for each item the `find` returns.
 
-A faster way to do this is to use the `xargs` command:
+A faster way to do this is to use the `xargs` command::
 
     find . -type f -print | xargs grep Volume
 
@@ -893,7 +925,8 @@ then we pipe them to `xargs`.  `xargs` takes the items given to it
 and passes them as arguments to `grep`.  `xargs` generally only creates
 a single instance of `grep` (or whatever program it is running).
 
-* * * * 
+----
+
 **Short Exercise**
 
 Navigate to the `data` directory. Use one find command to perform each
@@ -906,7 +939,7 @@ require a find command):
 
 3.  Move all of the files within `data` to the `cleaneddata` directory
 
-4.  Rename all of the files to ensure that they end in `.txt` (note:
+4.  Rename all of the files to ensure that they end in `.txt` (note::
     it is ok for the file name to end in `.txt.txt`
 
 Hint: If you make a mistake and need to start over just do the
@@ -925,11 +958,15 @@ Redo exercise 4, except rename only the files which do not already end
 in `.txt`. You will have to use the `man` command to figure out how to
 search for files which do not match a certain name. 
 
-* * * * 
+----
 
 
 
-## Bonus:
+
+Bonus
+-----
+
+
 
 **backtick, xargs**: Example find all files with certain text
 
