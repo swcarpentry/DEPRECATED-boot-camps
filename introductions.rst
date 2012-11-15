@@ -1,6 +1,8 @@
 Introductions and Getting Started
 =================================
 
+You have a typo.
+
 Intro:
 
  - Instructors: `Tracy Teal <mailto:tracyt@idyll.org>`__, `Titus Brown <mailto:titus@idyll.org>`__
