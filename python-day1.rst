@@ -51,7 +51,7 @@ If you're running cygwin, you might need to type ::
 A Web browser window should open up.
 
 Running the notebooks in the Virtual Box virtual machine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start up your virtual machine (see :doc:`install` for instructions on
 installing VirtualBox), and then click 'Terminal'.  Inside of terminal, run
@@ -69,6 +69,16 @@ the following commands::
 your VM with 'ctrl-shift-V'.)
 
 This will start up a Firefox browser pointing at IPython Notebook
+
+Extra -- upgrading ipython notebook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can upgrade ipython notebook to a newer version like so.  Type::
+
+   sudo apt-get install python-pip
+   sudo pip install --upgrade ipython
+
+This will take a few minutes to do, because it has to download some files...
 
 IPython Notebook, a brief intro
 -------------------------------
