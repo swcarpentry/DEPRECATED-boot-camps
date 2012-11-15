@@ -1,8 +1,6 @@
 Introductions and Getting Started
 =================================
 
-You have a typo.
-
 Intro:
 
  - Instructors: `Tracy Teal <mailto:tracyt@idyll.org>`__, `Titus Brown <mailto:titus@idyll.org>`__
@@ -23,7 +21,7 @@ Getting started:
 
   1. Please partner with someone that you know and has similar challenges.
 
-  2. Please send `to Tracy and Titus <mailto:tnt@idyll.org>`__ a ~one
+  2. Please send `to Tracy and Titus (tnt@idyll.org) <mailto:tnt@idyll.org>`__ a ~one
      paragraph description of a specific research problem that you are
      having.  For example, "I am working on a marine organism and we
      got 5000 genes from sequencing and I need to figure out what
