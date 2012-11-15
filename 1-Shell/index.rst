@@ -492,7 +492,7 @@ takes a list of file names and writes them out one after another (this
 is where the name comes from, `cat` is short for concatenate). 
 
 If there's a bunch of things on your screen and you want to clean it up a 
-bit, you can type 'clean' and that will clear your screen so you have a 
+bit, you can type 'clear' and that will clear your screen so you have a 
 shiny prompt at the top of your screen.
 
 ----
