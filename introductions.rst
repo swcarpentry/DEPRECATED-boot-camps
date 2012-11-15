@@ -7,7 +7,7 @@ Intro:
  - TAs: Qingpeng Zhang, Cait Pickens
 
  - Where are the materials?  Here!  http://swc-scripps.idyll.org/
- - Online chat? Here! https://www.hipchat.com/g7eubZA2q
+ - Online chat? Here! http://j.mp/SWCchat
  - Comments? Questions? Fixes?
     + You can add comments at the bottom of each page.
     + You can also *edit* each page on github, and suggest them as changes.
@@ -21,7 +21,7 @@ Getting started:
 
   1. Please partner with someone that you know and has similar challenges.
 
-  2. Please send `to Tracy and Titus <mailto:tnt@idyll.org>`__ a ~one
+  2. Please send `to Tracy and Titus (tnt@idyll.org) <mailto:tnt@idyll.org>`__ a ~one
      paragraph description of a specific research problem that you are
      having.  For example, "I am working on a marine organism and we
      got 5000 genes from sequencing and I need to figure out what
