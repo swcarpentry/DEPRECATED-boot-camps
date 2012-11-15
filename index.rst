@@ -20,6 +20,12 @@ Workshop materials
 
    day2
 
+Other materials:
+
+  The `Analyzing Next-Generation Sequencing Data summer course
+  <http://ged.msu.edu/angus/>`__ is a good resource for people
+  interested in NGS specifically.
+
 Indices and tables
 ==================
 
