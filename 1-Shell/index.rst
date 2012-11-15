@@ -327,7 +327,7 @@ onto more advanced shell topics...
 
 **Wild cards**
 
-Navigate to the `~/2012-11-scripps/Shell-1/data/THOMAS` directory. This
+Navigate to the `~/2012-11-scripps/1-Shell/data/THOMAS` directory. This
 directory contains our hearing test data for THOMAS. If we type `ls`,
 we will see that there are a bunch of files which are just four digit
 numbers. By default, `ls` lists all of the files in a given
