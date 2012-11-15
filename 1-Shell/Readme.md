@@ -88,8 +88,8 @@ can contain other files or directories.
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
 directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/tracyt`
-directory. This is the home directory for the `swc` user. That is our
+this case, the `pwd` command tells us that we are in the `/home/username`
+directory. This is the home directory for the `username` user. That is our
 user name. You can always find out your user name by entering the
 command `whoami`. 
 
@@ -143,7 +143,7 @@ you will see that `testfile` is gone.
 **Changing Directories**
 
 Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `SWC-bootcamp`
+directory) is used to move around. Let's move into the `2012-11-scripps`
 directory. Enter the following command:
 
     cd 2012-11-scripps
@@ -220,10 +220,10 @@ command and you should see:
     /home/username
 
 which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
+are in a directory called `username`, which sits inside a directory called
 `home` which sits inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
+referred to as the *root directory*. So, to summarize: `username` is a
 directory in `home` which is a directory in `/`.
 
 Now enter the following command:
@@ -454,7 +454,7 @@ directory. This tells the shell to run the `hello` program which is
 located right here. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
-    /home/swc/2012-11-scripps/1-Shell/hello
+    /home/username/2012-11-scripps/1-Shell/hello
 
 Or by entering:
 
@@ -494,7 +494,7 @@ shiny prompt at the top of your screen.
 
 2.  Without changing directories, (you should still be in `1-Shell`),
     use one short command to print the contents of all of the files in
-    the /home/swc/2012-11-scripps/1-Shell/data/THOMAS directory.
+    the /home/username/2012-11-scripps/1-Shell/data/THOMAS directory.
 
 * * * *
 
@@ -652,7 +652,7 @@ that the fifth column is the size of the file in bytes.
 * * * *
 **Short Exercise**
 
-Figure out how to get `wc` to print the length of the longest line in
+Figure out how to get `wc` to print just the number of lines in 
 `all_data`.
 
 * * * *
@@ -778,14 +778,6 @@ are two options given to sort:
 2.  `-n`: Sort in numerical order as opposed to alphabetical order
 
 Notice that the files are sorted by the number of characters.
-
-* * * *
-**Short Exercise**
-
-Use the `man` command to find out how to sort the output from `wc` in
-reverse order.
-
-* * * *
 
 * * * * 
 **Short Exercise**
