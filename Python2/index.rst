@@ -8,6 +8,8 @@ http://software-carpentry.org/
 
 Python Lists
 ------------
+SWC Tutorial: http://software-carpentry.org/4_0/python/lists/
+
 
 Collections let us store many values together
 
@@ -96,6 +98,8 @@ You can print where the item is in the list::
 
 Dictionaries
 ------------
+SWC Tutorial: http://software-carpentry.org/4_0/setdict/dict/
+
 
 Dictionaries have key, value pairs.  Here is an example of a dictionary.
 
