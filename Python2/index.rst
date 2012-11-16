@@ -117,5 +117,12 @@ True
 You can loop over items in a dictionary the same way you can over items in a 
 list.  
 
-for keys in tel:
-  print tel[keys]
+    for keys in tel:
+      print tel[keys]
+
+If you want to mix some text in with your printing
+
+    for keys in tel:
+      print 'This is the number', tel[keys]
+
+
