@@ -1,7 +1,10 @@
-SSH
+Useful UNIX tools
 =========
 
 **Updated and presented by: Tracy Teal**
+
+SSH
+--------
 
 
 What is ssh?
@@ -66,3 +69,39 @@ Now let's try a test example of logging on to a remote machine, running screen,
 running a blast at the command line, detaching from the screen and then coming 
 back to check on the results.
 
+Follow the instructions above for loggin in and starting screen
+
+Now to run command line blast
+
+You can download command line blast from NCBI.  It's called 'blastall'
+
+If you type 
+blastall - 
+You get all the options
+
+This is a standard blastall command
+
+blastall -e 1e-05 -p tblastx -d test_fasta -i seqs.fa  -o seqs.blast
+
+-e is the e-value cutoff you want to use.  Any matches higher than that will not be returned
+-p is the program - tblastx, blastx, blastn or tblastn
+-d is the database
+-i is the input file
+-o is the output file
+-m is the output type you want
+   If you're parsing the output, then you want to use -m 8.  It outputs a tab delimited format that's easy to look through
+   The default shows you all the alignments
+
+If you do use -m 8 this is the information in each column
+
+# Query id # Subject id # % identity # alignment length # number of mismatches # number of gap openings # position of query start # position of query end # position of subject start # position of subject end # e-value of a hit # bit score of a hit  
+
+So, we'll run blastall on a test dataset
+
+There are some test fasta files in the 'fasta' directory
+
+Go in to that directory.  You can use any of these files as the input fasta file.
+
+The blast database is: /home/swc/blastdb/nirK_ref_Rh
+
+blastall -e 1e-05 -p tblastx -d /home/swc/blastdb/nirK_ref_Rh -i oneseq.fasta  -o seqs.blast
