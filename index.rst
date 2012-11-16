@@ -29,7 +29,7 @@ Other materials:
 Scripps computational info
 --------------------------
 * IT has set up a temporary server for use by class participants.  The server name is it-test7.scripps.edu
- * iPython Notebook *should* be available at http://it-test7.scripps.edu:8888 (NOTE: only available from the Scripps network)
+ * iPython Notebook is available at http://137.131.19.123:8888/ (NOTE: only available from the Scripps network)
 * IT also invites users who want to do more computational work to request accounts on garabaldi
  * To request an account, please send an email to hpc_ca@scripps.edu
  * Account will provide access to two nodes for interactive use, and also the potential of using our high-performance computing (HPC) cluster.
