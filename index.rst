@@ -40,6 +40,8 @@ Scripps computational info
 * Also, sign up for the mailing list of the Computational Biology and Bioinformatics (CBB) Affinity Group
  * Web sign up: http://lists.scripps.edu/majorcool.cgi
  * Or, send email to majordomo@scripps.edu with 'subscribe cbb' (no quotes) in the message body
+* Also, for the moment, we will leave up the hipchat room.  If you feel like it, post your questions and/or answer others' questions: http://j.mp/SWCchat
+
 
 Indices and tables
 ==================
