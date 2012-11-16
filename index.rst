@@ -37,7 +37,9 @@ Scripps computational info
  * Both are older machines that currently aren't well supported.
  * We suggest you *not* use these servers to use/practice the skills learned in this workshop
  * To encourage IT to make these more up-to-date and publicized resources, use it-test7
-
+* Also, sign up for the mailing list of the Computational Biology and Bioinformatics (CBB) Affinity Group
+ * Web sign up: http://lists.scripps.edu/majorcool.cgi
+ * Or, send email to majordomo@scripps.edu with 'subscribe cbb' (no quotes) in the message body
 
 Indices and tables
 ==================
