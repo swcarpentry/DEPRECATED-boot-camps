@@ -10,6 +10,14 @@ are under the python/ directory of the git repository:
 
   Reading and writing files: `readwrite-full.ipynb <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2012-11-scripps/master/python/readwrite-full.ipynb>`__
 
+---
+
+  Loading and plotting files: `loading-and-plotting-data.ipynb <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2012-11-scripps/master/python/loading-and-plotting-data.ipynb>`__
+
+  `make_figure.py script <https://github.com/swcarpentry/2012-11-scripps/blob/master/python/make_figure.py>`__
+
+  End of day data Analysis mix: `end-of-day-data-analysis.ipynb <>`__
+
 Running IPython Notebook
 ------------------------
 
