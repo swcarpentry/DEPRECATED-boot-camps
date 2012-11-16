@@ -1,7 +1,6 @@
 Day 1 -- the shell, and basic programming
 =========================================
 
-
 .. toctree::
    :maxdepth: 2
 

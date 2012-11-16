@@ -16,7 +16,7 @@ are under the python/ directory of the git repository:
 
   `make_figure.py script <https://github.com/swcarpentry/2012-11-scripps/blob/master/python/make_figure.py>`__
 
-  End of day data Analysis mix: `end-of-day-data-analysis.ipynb <>`__
+  End of day data Analysis mix: `end-of-day-data-analysis.ipynb <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2012-11-scripps/master/python/end-of-day-data-analysis.ipynb>`__
 
 Running IPython Notebook
 ------------------------
