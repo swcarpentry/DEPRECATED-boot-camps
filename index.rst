@@ -30,6 +30,7 @@ Scripps computational info
 --------------------------
 * IT has set up a temporary server for use by class participants.  The server name is it-test7.scripps.edu
  * iPython Notebook is available at http://137.131.19.123:8888/ (NOTE: only available from the Scripps network)
+ * This server is also available for interactive shell use -- login using SSH
 * IT also invites users who want to do more computational work to request accounts on garabaldi
  * To request an account, please send an email to hpc_ca@scripps.edu
  * Account will provide access to two nodes for interactive use, and also the potential of using our high-performance computing (HPC) cluster.
@@ -41,7 +42,7 @@ Scripps computational info
  * Web sign up: http://lists.scripps.edu/majorcool.cgi
  * Or, send email to majordomo@scripps.edu with 'subscribe cbb' (no quotes) in the message body
 * Also, for the moment, we will leave up the hipchat room.  If you feel like it, post your questions and/or answer others' questions: http://j.mp/SWCchat
-
+ * A full export of the HipChat transcript from the workshop will be posted here later today...
 
 Indices and tables
 ==================
