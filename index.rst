@@ -44,6 +44,8 @@ Scripps computational info
 * Also, for the moment, we will leave up the hipchat room.  If you feel like it, post your questions and/or answer others' questions: http://j.mp/SWCchat
  * A full export of the HipChat transcript from the workshop will be posted here later today...
 
+
+
 Indices and tables
 ==================
 
@@ -51,3 +53,6 @@ Indices and tables
 * :ref:`search`
 
 .. * :ref:`Instructors`
+
+
+dumb edit
