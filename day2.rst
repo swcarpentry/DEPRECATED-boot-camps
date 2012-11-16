@@ -20,6 +20,8 @@ ssh and screen; BLAST.
 
 `SSH instructions here <SSH/index.html>`__
 
+'Installing and using command line BLAST <SSH/blast.html>' 
+
 Testing
 -------
 
