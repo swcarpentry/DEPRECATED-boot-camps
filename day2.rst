@@ -11,36 +11,16 @@ See `Python data structures <Python2/index.html>`__
 Installing Python packages; useful Python packages
 --------------------------------------------------
 
-If you're using anaconda on OS X, you will need to refer to the python
-package installer by a full path name::
-
-   ~/anaconda/bin/pip
-
-If you're running on VirtualBox, you may need to install pip first
-by doing::
-
-   sudo apt-get install python-pip
-
-at the terminal.
-
-If you're running any other way, you should already have pip installed.
-
----
-
-The easiest way to install Python packages is to use 
-
----
-
-You can also use virtualenv, 
-
-First, update 
-
 (screed and blastparser)
 
 Testing
 -------
 
+Nose testing.
+
 Regression testing vs unit testing.
+
+Reproducibility!  Correctness!
 
 ---
 
@@ -49,13 +29,22 @@ Version Control
 
 1. Web interface and editing files.
 
-2. 
+2. One-person repositories
+
+3. One-person repositories with branches.
+
+4. Collaborations!
 
 Useful UNIX tools
 -----------------
 
 ssh and screen; BLAST.
 
+:doc:`SSH/index.rst`
+
 Pipelines
 ---------
 
+Operating on more complex files.
+
+Doing stuff with BLAST output.
