@@ -11,7 +11,7 @@ See `Python data structures <Python2/index.html>`__
 Installing Python packages; useful Python packages
 --------------------------------------------------
 
-(screed and blastparser)
+See :doc:`python-packages`
 
 Testing
 -------
@@ -40,7 +40,7 @@ Useful UNIX tools
 
 ssh and screen; BLAST.
 
-:doc:`SSH/index.rst`
+`SSH instructions here <SSH/index.html>`__
 
 Pipelines
 ---------
