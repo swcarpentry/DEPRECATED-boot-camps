@@ -6,6 +6,14 @@ Python Data Structures
 Adapted from Software Carpentry materials
 http://software-carpentry.org/
 
+Starting an iPython notebook
+Mac
+~/anaconda/bin/ipython notebook --pylab=inline
+PC
+./run-in-vm.sh
+
+
+
 Python Lists
 ------------
 SWC Tutorial: http://software-carpentry.org/4_0/python/lists/
