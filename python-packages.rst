@@ -105,6 +105,8 @@ called '25k.fq.gz'; check it out::
 
 (type 'q' to get out of less, and space bar to scroll through the file.)
 
+**All of the below screed commands are in the `using-screed.ipynb notebook <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2012-11-scripps/master/python/using-screed.ipynb>`__**
+
 screed, in a nutshell, lets you read in all that data and access it
 in Python. Try::
 
