@@ -26,6 +26,19 @@ Other materials:
   <http://ged.msu.edu/angus/>`__ is a good resource for people
   interested in NGS specifically.
 
+Scripps computational info
+--------------------------
+* IT has set up a temporary server for use by class participants.  The server name is it-test7.scripps.edu
+ * iPython Notebook *should* be available at http://it-test7.scripps.edu:8888 (NOTE: only available from the Scripps network)
+* IT also invites users who want to do more computational work to request accounts on garabaldi
+ * To request an account, please send an email to hpc_ca@scripps.edu
+ * Account will provide access to two nodes for interactive use, and also the potential of using our high-performance computing (HPC) cluster.
+* IT also maintains two general-purpose compute servers: home.scripps.edu, app.scripps.edu
+ * Both are older machines that currently aren't well supported.
+ * We suggest you *not* use these servers to use/practice the skills learned in this workshop
+ * To encourage IT to make these more up-to-date and publicized resources, use it-test7
+
+
 Indices and tables
 ==================
 
