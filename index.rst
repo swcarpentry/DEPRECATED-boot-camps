@@ -41,8 +41,14 @@ Scripps computational info
 * Also, sign up for the mailing list of the Computational Biology and Bioinformatics (CBB) Affinity Group
  * Web sign up: http://lists.scripps.edu/majorcool.cgi
  * Or, send email to majordomo@scripps.edu with 'subscribe cbb' (no quotes) in the message body
-* Also, for the moment, we will leave up the hipchat room.  If you feel like it, post your questions and/or answer others' questions: http://j.mp/SWCchat
- * A full export of the HipChat transcript from the workshop will be posted here later today...
+
+Hipchat
+-------
+* For the moment, we will leave up the hipchat room.  If you feel like it, post your questions and/or answer others' questions: http://j.mp/SWCchat
+* Transcripts
+ * `Wednesday 14th <notes/14.html>`__
+ * `Thursday 15th <notes/15.html>`__
+ * `Friday 16th <notes/16.html>`__
 
 
 
