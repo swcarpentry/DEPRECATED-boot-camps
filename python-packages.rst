@@ -216,3 +216,5 @@ A few things to cover --
 
  * figuring out what is stored in each object
  * print out to csv
+
+See `using-blastparser.ipynb <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2012-11-scripps/master/python/using-blastparser.ipynb>`__.

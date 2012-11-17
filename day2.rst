@@ -60,7 +60,7 @@ A test function looks like this::
       # run some code
       # fail loudly or succeed silently
 
-(Notebook will go here.)
+See `testing-with-nose.ipynb <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2012-11-scripps/master/python/testing-with-nose.ipynb>`__.
 
 More reading
 ~~~~~~~~~~~~
