@@ -46,9 +46,9 @@ Hipchat
 -------
 * For the moment, we will leave up the hipchat room.  If you feel like it, post your questions and/or answer others' questions: http://j.mp/SWCchat
 * Transcripts
- * `Wednesday 14th <notes/14.html>`__
- * `Thursday 15th <notes/15.html>`__
- * `Friday 16th <notes/16.html>`__
+ * `Wednesday 14th <./_static/14.html>`__
+ * `Thursday 15th <./_static/15.html>`__
+ * `Friday 16th <./_static/16.html>`__
 
 
 
