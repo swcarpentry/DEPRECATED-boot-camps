@@ -8,6 +8,8 @@ Software Carpentry workshop at Scripps, Nov 15-16, 2012
 
 NOTE: For real-time help either before or during the workshop, you are welcome to try posting in our chat room: http://j.mp/SWCchat
 
+:doc:`instructors`
+
 Workshop materials
 ------------------
 
@@ -25,6 +27,8 @@ Other materials:
   The `Analyzing Next-Generation Sequencing Data summer course
   <http://ged.msu.edu/angus/>`__ is a good resource for people
   interested in NGS specifically.
+
+  For people interested in learning Python, I got really strong positive recommendations for `the MIT OpenCourseware <http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/>`__ and `Khan Academies <http://www.khanacademy.org/science/computer-science/v/introduction-to-programs-data-types-and-variables>`__ lectures from a course attendee.
 
 Scripps computational info
 --------------------------
