@@ -1,5 +1,12 @@
+'''
+These test functions test the function calc_mean.py
+'''
+
+
 import calc_mean
 from calc_mean import get_mean, read_file
+
+
 
 def test_mean_functionality():
     x = [1, 2, 3.0, 5, 1.0, 0]
