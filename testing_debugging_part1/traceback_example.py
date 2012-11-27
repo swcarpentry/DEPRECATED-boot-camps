@@ -5,13 +5,13 @@ def area_of_a_circle(radius):
     '''
     Calculate the area of a circle
     '''
-    return 2.0 * math.pi * radius
+    return  math.pi * radius**2
 
 def area_of_a_square(half_side):
     '''
     Calculate the area of a square
     '''
-    return (2.0*half_side) **2
+    return (2.0*radius) **2
 
 def diff_area_circle_area_square(radius):
     '''
@@ -25,5 +25,5 @@ def diff_area_circle_area_square(radius):
     return area_sq - area_circ
 
 if __name__ == "__main__":
-    r = sys.argv[1]
+    r = float(sys.argv[1])
     diff_area_circle_area_square(r)
