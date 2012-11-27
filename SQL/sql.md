@@ -178,6 +178,7 @@ For example, let’s say we want to order by the species ID, but we only want to
     SELECT genus, species FROM species ORDER BY species_id ASC;
 
 We can do this because sorting occurs earlier in the computational pipeline than field.
+
 The computer is doing this:
 
 1. Filtering rows according to WHERE
@@ -185,11 +186,18 @@ The computer is doing this:
 3. Displaying requested columns or expressions.
 
 
+***Let’s try to combine what we’ve learned so far in a single query.  Let’s go back to the surveys table and lets say that we want to display
+the three date fields, species ID, and weight in kilograms (rounded to two 
+decimal places),  for rodents captured in 1999, ordered alphabetically by 
+the species ID.***
 
-***Let’s try to combine what we’ve learned so far in a single query.  Let’s go back to the individuals table and lets say that we want to display the data, including the body_length change, for spiders captured in July, ordered by carapace width.
-SELECT , ROUND(body_length-(body_length*0.05),2) FROM individuals WHERE month = “July” ORDER BY carapace_width DESC
+    SELECT month, day, year, species, ROUND(wgt / 1000.0,2)
+    FROM surveys
+    WHERE year = 1999
+    ORDER BY species;
 
 The order of the clauses is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
+and we often write each of them on their own line for readability.
 
 Exporting results of queries
 ----------------------------
