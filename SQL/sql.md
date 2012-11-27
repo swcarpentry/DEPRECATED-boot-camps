@@ -276,8 +276,26 @@ and taxa information for the several thousand individuals of each species.
 
 Joins
 -----
+To combine data from two tables we use the SQL JOIN command,
+which comes after the FROM command.
 
+    SELECT * FROM surveys JOIN species
 
+But this didn’t do what we wanted because we didn’t tell the database 
+manager how the tables are related to each other.
+Look at the number of rows it returned!
+Simply adding the JOIN combines every row of 
+one table with every row of the other -
+it creates a cross-product of the sets of rows.
+We need to tell SQL how the tables are related.
+
+To do this we indicated which columns provide the link between
+the two tables using the word ON.
+What we want is to join the data with the same species codes.
+
+    SELECT *
+    FROM surveys
+    JOIN species ON surveys.species = species.species_id
 
 
 Exporting results of queries
