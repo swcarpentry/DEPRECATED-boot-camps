@@ -255,6 +255,31 @@ ORDER BY COUNT(sp_code)
 
 ***Exercise: Write a query that shows us which species had the largest individuals on average?***
 
+Database Design
+---------------
+Each field in a database should store a single value.
+Information should not be duplicated in a database.
+Each table should be about a single subject (avoids unnecessary replication).
+When naming fields, you should think about meaning, not presentation.
+
+When we divide our data between several tables,
+we need a way to bring it back together again.
+The key is to have an identifier in common between tables – shared columns.
+This will allow us to join tables, which we will discuss now.
+
+For example, the species ID is included in the surveys table,
+but we don’t know what the species ID stands for.
+That information is stored in the Species table and can be
+linked to if we need it.
+This means that we don't have to record the full genus, species,
+and taxa information for the several thousand individuals of each species. 
+
+Joins
+-----
+
+
+
+
 Exporting results of queries
 ----------------------------
 
