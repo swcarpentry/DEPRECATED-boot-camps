@@ -186,15 +186,10 @@ The computer is doing this:
 3. Displaying requested columns or expressions.
 
 
-***Let’s try to combine what we’ve learned so far in a single query.  Let’s go back to the surveys table and lets say that we want to display
+***Exercise: Let’s try to combine what we’ve learned so far in a single query.  Let’s go back to the surveys table and lets say that we want to display
 the three date fields, species ID, and weight in kilograms (rounded to two 
 decimal places),  for rodents captured in 1999, ordered alphabetically by 
 the species ID.***
-
-    SELECT month, day, year, species, ROUND(wgt / 1000.0,2)
-    FROM surveys
-    WHERE year = 1999
-    ORDER BY species;
 
 The order of the clauses is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
 and we often write each of them on their own line for readability.
@@ -223,8 +218,6 @@ MAX, MIN, and AVG.
  
 ***From the surveys table, can you use one query to output the total weight, average weight, and the min and max weights?***
 
-    SELECT ROUND(SUM(wgt),2), AVG(wgt), MIN(wgt), MAX(wgt) FROM surveys
-
 Now, let's try to see how many individuals were counted in each species?
 
     SELECT species, COUNT(*) FROM individuals
@@ -239,22 +232,28 @@ If we select fields and aggregate at the same time, values from
 unaggregated fields can be any value – we need to tell the data how to 
 aggregate, and we can do that using GROUP BY clause
 
-Correct: SELECT month, COUNT(sp_code) FROM individuals GROUP BY month
+    SELECT species, COUNT(*)
+    FROM surveys
+    GROUP BY species
 
-***How many species were counted in each month?
+***Exercise: How many individuals were counted in each year?***
 SELECT month, COUNT(DISTINCT sp_code) FROM individuals GROUP BY month
 
-***How many individuals were counted in each species in each month?
-SELECT month, sp_code, COUNT(sp_code) FROM individuals GROUP BY month, sp_code
+***Exercise: How many individuals were counted in each species in each year?***
 
-We can order the results of our aggregation by a specific column, including the aggregated column. Let’s count the number of each species captured, ordered by then number of species
-SELECT sp_code, COUNT(sp_code) FROM individuals GROUP BY sp_code ORDER BY COUNT(sp_code)
+We can order the results of our aggregation by a specific column, 
+including the aggregated column.
+Let’s count the number of individuals of each species captured,
+ordered by the count
 
-***Can you tell me which shrubs contained the most spiders? Which had the least?
-SELECT shrub_id, COUNT(*) FROM individuals GROUP BY shrub_id, ORDER BY COUNT(*)
+SELECT species, COUNT(*)
+FROM surveys
+GROUP BY species
+ORDER BY COUNT(sp_code)
 
-***Which shrubs had the largest spiders on average?
-SELECT shrub_id, AVG(body_length), AVG(carapace_width) FROM individuals GROUP BY shrub_id ORDER BY AVG(body_length) DESC, AVG(carapace_width) DESC
+***Exercise: Write a query that let's us look at which years contained the most individuals and which had the least?***
+
+***Exercise: Write a query that shows us which species had the largest individuals on average?***
 
 Exporting results of queries
 ----------------------------
