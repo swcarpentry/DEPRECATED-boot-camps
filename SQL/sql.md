@@ -199,6 +199,63 @@ the species ID.***
 The order of the clauses is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
 and we often write each of them on their own line for readability.
 
+Aggregation
+-----------
+Aggregation allows us to combine results group records based on value
+and calculate combined values in groups.
+
+Let’s go to the surveys table and find out how many individuals there are.
+Using the wildcard simply counts the number of records (rows)
+
+    SELECT COUNT(*) FROM individuals
+
+We can also find out how all of those individuals weigh.
+
+    SELECT SUM(wgt) FROM individuals
+
+***Do you think you could output this value in kilograms,
+rounded to 3 decimal places?***
+
+    SELECT ROUND(SUM(wgt)/1000.0, 3) FROM surveys
+
+There are many other aggregate functions included in SQL including
+MAX, MIN, and AVG.
+ 
+***From the surveys table, can you use one query to output the total weight, average weight, and the min and max weights?***
+
+    SELECT ROUND(SUM(wgt),2), AVG(wgt), MIN(wgt), MAX(wgt) FROM surveys
+
+Now, let's try to see how many individuals were counted in each species?
+
+    SELECT species, COUNT(*) FROM individuals
+
+Why does this NOT work?
+
+The database counted all the individuals,
+but we didn’t specify anything about the species,
+so it just picked an arbitrary value and returned it.
+
+If we select fields and aggregate at the same time, values from 
+unaggregated fields can be any value – we need to tell the data how to 
+aggregate, and we can do that using GROUP BY clause
+
+Correct: SELECT month, COUNT(sp_code) FROM individuals GROUP BY month
+
+***How many species were counted in each month?
+SELECT month, COUNT(DISTINCT sp_code) FROM individuals GROUP BY month
+
+***How many individuals were counted in each species in each month?
+SELECT month, sp_code, COUNT(sp_code) FROM individuals GROUP BY month, sp_code
+
+We can order the results of our aggregation by a specific column, including the aggregated column. Let’s count the number of each species captured, ordered by then number of species
+SELECT sp_code, COUNT(sp_code) FROM individuals GROUP BY sp_code ORDER BY COUNT(sp_code)
+
+***Can you tell me which shrubs contained the most spiders? Which had the least?
+SELECT shrub_id, COUNT(*) FROM individuals GROUP BY shrub_id, ORDER BY COUNT(*)
+
+***Which shrubs had the largest spiders on average?
+SELECT shrub_id, AVG(body_length), AVG(carapace_width) FROM individuals GROUP BY shrub_id ORDER BY AVG(body_length) DESC, AVG(carapace_width) DESC
+
 Exporting results of queries
 ----------------------------
 
