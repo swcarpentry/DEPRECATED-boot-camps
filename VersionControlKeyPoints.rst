@@ -4,7 +4,7 @@ Version Control Key Points
 
 Mike Jackson, The Software Sustainability Institute.
 
-This work is licensed under the Creative Commons Attribution License. Copyright(c) Software Carpentry and The University of Edinburgh 2012. See http://software-carpentry.org/license.html for more information.
+This work is licensed under the Creative Commons Attribution License. Copyright (c) Software Carpentry and The University of Edinburgh 2012. See http://software-carpentry.org/license.html for more information.
 
 Derived from Chris Cannam's original at, https://code.soundsoftware.ac.uk/projects/easyhg/wiki/SC2012BootcampPlan. 
 
@@ -165,8 +165,18 @@ Click Commits
  cd ../software-carpentry-boot-camp
  hg incoming https://user@bitbucket.org/user/software-carpentry-boot-camp
  hg pull https://user@bitbucket.org/user/software-carpentry-boot-camp
- hg history
- hg diff
+ hg log
+
+Find out what version repository is at.
+::
+
+ hg id -n
+
+Check difference to most-up-to-date version and update.
+::
+
+ hg log
+ hg diff -r M -r N
  hg update
 
 Push changes, pull changes, check for changes - everything needed for collaboration.
