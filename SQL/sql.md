@@ -115,6 +115,9 @@ Here, we only want the data since 2000:
 
     SELECT * FROM surveys WHERE year >= 2000;
 
+***Exercise: Write a query that returns the day, month, year, species ID, and weight
+for individuals that weigh more than 75 grams***
+
 We can user more sophisticated conditions by combining tests with AND and OR.
 For example, suppose we want to data on Dipodomys merriami startinging in the year 2000:
 
@@ -129,7 +132,7 @@ which have species codes DM, DO, and DS we could combine the tests using OR:
     SELECT * FROM surveys WHERE (species = "DM") OR (species = "DO") OR (species = "DS");
 
 ***Exercise: Write a query that returns the day, month, year, species ID, and weight
-for individuals caught on plot 1 that weigh more than 75 grams***
+(in kg) for individuals caught on plot 1 that weigh more than 0.075 kg***
 
 Exporting results of queries
 ----------------------------
