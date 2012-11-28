@@ -18,7 +18,7 @@ def test_sum_list(numbers):
     numbers -- a list of numbers.
 
     """
-    assert sum(numbers) == 10, "mean of %s is not 10" % str(numbers)
+    assert sum(numbers) == 10, "sum of %s is not 10" % str(numbers)
 numbers = [1, 2, 3, 4]
 test_sum_list(numbers)
 

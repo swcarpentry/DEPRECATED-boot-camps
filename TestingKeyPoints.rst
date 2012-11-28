@@ -49,7 +49,7 @@ Test data is outside functions but validation is within. Put test data into test
 
  numbers = [1, 2, 3, 4]
  def test_calc_mean(numbers):
-     assert calc_mean(numbers) == 2.5, 'mean of [1, 2, 3, 4] is not 2.5'
+     assert calc_mean(numbers) == 2.5, "mean of %s is not 2.5" % str(numbers)
  test_calc_mean(numbers)
 
 becomes
@@ -57,13 +57,21 @@ becomes
 
  def test_calc_mean():
      numbers = [1, 2, 3, 4]
-     assert calc_mean(numbers) == 2.5, 'mean of [1, 2, 3, 4] is not 2.5'
+     assert calc_mean(numbers) == 2.5, "mean of %s is not 2.5" % str(numbers)
  test_calc_mean()
 
 Run.
 ::
 
  python test_utilities.py
+
+Test what happens if the list is empty.
+::
+
+ def test_sum_empty_list():
+     numbers = []
+     assert calc_mean(numbers) == 0, "sum of %s is not 0" % str(numbers)
+ test_sum_empty_list()
 
 Every time we add a test we need to add a call to that test function. Automate!
 ::
@@ -130,7 +138,9 @@ Helps avoid tests that:
 
 ::
 
- def test_example():
+ def test_vital_correctness():
+     # TODO - will complete this tomorrow!
+     # Tomorrow never comes!
      pass
 
 Test driven development
