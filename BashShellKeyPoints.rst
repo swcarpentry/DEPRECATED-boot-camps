@@ -64,7 +64,7 @@ Current directory, the bash name for a folder.
 
  pwd
 
-Change into a directory.
+Change into a directory. Use 'up arrow' to return to previous commands in the command 'history'.
 ::
 
  cd bash-materials
@@ -83,8 +83,8 @@ List files ending in \*.txt.
 \* is a wild-card. \*.txt expands to a list of matching files. This is called globbing.
 ::
 
- ls P*
- ls P*Func*
+ ls h*
+ ls *_hai*
 
 -R option recurses into sub-directories.
 ::
@@ -252,6 +252,9 @@ Exit with control-D.
 ::
 
  cat > myscript.txt
+ This is a test!
+ Yes it is!
+ CTRL-D
  cat myscript.txt
 
 < redirects input (the standard input).
@@ -329,6 +332,8 @@ This gives an error as the wild-card is expanded. The correct way is to use quot
 ::
 
  find . -empty
+ touch emptyfile.txt
+ find . -empty
 
 `` back-ticks allow the list of files to be passed to another command. 
 ::
@@ -346,7 +351,7 @@ Pipes and filters
 Count text files.
 ::
 
- find . -name "*.txt" > files.tmp
+ find . -name '*.txt' > files.tmp
  wc -l files.tmp
 
 All shell commands produce text output. All shell commands can take text input.
@@ -354,12 +359,12 @@ All shell commands produce text output. All shell commands can take text input.
 Connect the output from one command to the input of the next command by a pipe.
 ::
 
- find . -name "*.txt" | wc -l
+ find . -name '*.txt' | wc -l
 
 In this context, find and wc are filters and | is a pipe.
 ::
 
- echo "Number of .txt files:" ; find . -name "*.txt" | wc -l
+ echo "Number of .txt files:" ; find . -name '*.txt' | wc -l
 
 ; separates commands. It is equivalent to running the two commands on separate lines.
 
@@ -370,7 +375,7 @@ Question: what does this do?
 
  ls | grep s | wc -l
 
-Answer: counts the number of files with the letter S in their name.
+Answer: counts the number of files with the letter "s" in their name.
 
 "Little pieces loosely joined".
 
@@ -443,7 +448,7 @@ Save the output of a command in a variable.
 Loops.
 ::
 
- for PDB in `find . -name "*.pdb"`; do
+ for PDB in `find . -name '*.pdb'`; do
      echo $PDB
  done
 
@@ -458,7 +463,7 @@ Add
  #!/bin/bash
  DATE=`date`
  echo "Processing date: $DATE"
- for PDB in `find . -name "*.pdb"`; do
+ for PDB in `find . -name '*.pdb'`; do
      echo $PDB
  done
  echo "Processing completed!"
@@ -585,7 +590,10 @@ top shows resource consumption.
 nohup allows processes to continue even after the user logs out.
 ::
 
+ bash
  nohup ./counter.sh > output.txt &
+ CTRL-D
+ wc -l output.txt
 
 Secure shell
 ------------
