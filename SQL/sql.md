@@ -119,7 +119,7 @@ Here, we only want the data since 2000:
 for individuals that weigh more than 75 grams***
 
 We can user more sophisticated conditions by combining tests with AND and OR.
-For example, suppose we want to data on Dipodomys merriami startinging in the year 2000:
+For example, suppose we want to data on Dipodomys merriami starting in the year 2000:
 
     SELECT * FROM surveys WHERE (year >= 2000) AND (species = "DM");
 
