@@ -153,9 +153,12 @@ Output data is not just dependent upon input data but also programs that create 
 .pdb.data files are dependent upon program.awk. 
 ::
 
- cubane.pdb.data : program.awk
- ethane.pdb.data : program.awk
- methane.pdb.data : program.awk
+ cubane.pdb.data : cubane.pdb program.awk
+  ...
+ ethane.pdb.data : ethane.pdb program.awk
+  ...
+ methane.pdb.data : methane.pdb program.awk
+  ...
 
 No dependencies for .pdb files, as these are input files - a dependency on program.awk would be a false dependency.
 ::
@@ -171,7 +174,7 @@ Still duplication and repetition.
 Replace .pdb.data targets and dependencies with a single target and dependency.
 ::
 
- %.pdb.data : %.pdb
+ %.pdb.data : %.pdb program.awk
 
 % is a Make wild-card and this rule is termed a pattern rule.
 
@@ -194,26 +197,11 @@ Change pattern rule action to:
 
 $< means use the first dependency only.
 
-Replace the program.awk dependent rules with:
-::
-
- %.pdb.data : program.awk
-
 Run.
 ::
 
  touch program.awk
  make -f pdbprocess.mk
-
-Does not rebuild. % wild-cards only matches the first rule.
-
-Replace with a false dependency:
-::
-
- %.pdb : program.awk
-         touch $@
-
-When program.awk is updated, timestamps of the raw data files are updated, which retriggers the build. Make is not perfect.
 
 Exercise 3 - zip the files
 --------------------------
@@ -281,11 +269,8 @@ Completed makefile:
  %.pdb.data.zip : %.pdb.data
     zip $@ $<
 
- %.pdb.data : %.pdb
+ %.pdb.data : %.pdb $(PROCESSOR)
     $(AWKPROG) -f $(PROCESSOR) $< > $@
-
- %.pdb : $(PROCESSOR)
-    touch $@
 
 Completed configuration file:
 ::
