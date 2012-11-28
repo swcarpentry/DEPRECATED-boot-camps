@@ -4,7 +4,7 @@ Bash Shell Key Points
 
 Steve Crouch, Mike Jackson, The Software Sustainability Institute. Steve McGough, Newcastle University.
 
-This work is licensed under the Creative Commons Attribution License. Copyright © Software Carpentry and Southampton University and The University of Edinburgh and Newcastle University 2010-2012. See http://software-carpentry.org/license.html for more information.
+This work is licensed under the Creative Commons Attribution License. Copyright (c) Software Carpentry and Southampton University and The University of Edinburgh and Newcastle University 2010-2012. See http://software-carpentry.org/license.html for more information.
 
 .. Written in reStructuredText, http://docutils.sourceforge.net/rst.html.
 
