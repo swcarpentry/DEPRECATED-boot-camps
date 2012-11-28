@@ -4,7 +4,7 @@ Version Control Key Points
 
 Mike Jackson, The Software Sustainability Institute.
 
-This work is licensed under the Creative Commons Attribution License. Copyright © Software Carpentry and The University of Edinburgh 2012. See http://software-carpentry.org/license.html for more information.
+This work is licensed under the Creative Commons Attribution License. Copyright(c) Software Carpentry and The University of Edinburgh 2012. See http://software-carpentry.org/license.html for more information.
 
 Derived from Chris Cannam's original at, https://code.soundsoftware.ac.uk/projects/easyhg/wiki/SC2012BootcampPlan. 
 

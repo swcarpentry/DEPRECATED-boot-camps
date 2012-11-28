@@ -4,7 +4,7 @@ Automation and Make Key Points
 
 Steve Crouch, Mike Jackson, The Software Sustainability Institute.
 
-This work is licensed under the Creative Commons Attribution License. Copyright © Software Carpentry and The University of Edinburgh and Southampton University 2010-2012. See http://software-carpentry.org/license.html for more information.
+This work is licensed under the Creative Commons Attribution License. Copyright (c) Software Carpentry and The University of Edinburgh and Southampton University 2010-2012. See http://software-carpentry.org/license.html for more information.
 
 .. Written in reStructuredText, http://docutils.sourceforge.net/rst.html.
 
@@ -21,8 +21,8 @@ Cover AutomationMake.pptx, slides 1 to 9.
 Use wget or curl e.g.
 ::
 
- wget --no-check-certificate https://.../make-materials.zip
- curl --insecure https://.../make-materials.zip > make-materials.zip
+ wget --no-check-certificate https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/make-materials.zip
+ curl --insecure https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/make-materials.zip > make-materials.zip
 
 to get make-materials.zip from BitBucket and unzip these.
 
