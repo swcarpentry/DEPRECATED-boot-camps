@@ -47,18 +47,29 @@ Run tests.
 Test data is outside functions but validation is within. Put test data into test functions e.g.
 ::
 
- numbers = [1, 2, 3, 4]
  def test_calc_mean(numbers):
+     """ Test calc_mean.
+ 
+     Arguments:
+     numbers -- a list of numbers.
+ 
+     """
      assert calc_mean(numbers) == 2.5, "mean of %s is not 2.5" % str(numbers)
+ numbers = [1, 2, 3, 4]
  test_calc_mean(numbers)
 
 becomes
 ::
 
  def test_calc_mean():
+     """ Test calc_mean.
+ 
+     """
      numbers = [1, 2, 3, 4]
      assert calc_mean(numbers) == 2.5, "mean of %s is not 2.5" % str(numbers)
  test_calc_mean()
+
+Remember to update comments too. Inaccurate comments are sometimes worse than no comments at all.
 
 Run.
 ::
@@ -70,7 +81,7 @@ Test what happens if the list is empty.
 
  def test_sum_empty_list():
      numbers = []
-     assert calc_mean(numbers) == 0, "sum of %s is not 0" % str(numbers)
+     assert sum_list(numbers) == 0, "sum of %s is not 0" % str(numbers)
  test_sum_empty_list()
 
 Every time we add a test we need to add a call to that test function. Automate!
