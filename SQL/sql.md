@@ -50,8 +50,12 @@ Import
 
 Basic queries
 -------------
+Let's start by using the **surveys** table.
+Here we have data on every individual that was captured at the site,
+including when they were captured, what plot they were captured on,
+their species ID, sex and weight in grams.
 
-Let’s write an SQL query that selects only the scientific names from the species table.
+Let’s write an SQL query that selects only the year column from the surveys table.
 
     SELECT scientific_name FROM species;
 
@@ -60,38 +64,33 @@ SQL is case insensitive, but it helps for readability – good style.
 
 If we want more information, we can just add a new column to the list of fields, right after SELECT:
 
-    SELECT scientific_name, species_id FROM species;
+    SELECT day, month, year FROM surveys;
 
 Or we can select all of the columns in a table using the wildcard *
 
-    SELECT * FROM species;
+    SELECT * FROM surveys;
 
-***Exercise: Write a query that returns only the taxa column***
+***Exercise: Write a query that returns only the species column***
 
 ### Unique values
 
-So, we've all written a query that pulls out the taxa column from the database,
+So, we've all written a query that pulls out the species column from the database,
 but what if we want only the unique values so that we can quickly see what
-taxa have been sampled.
+species have been sampled.
 
-    SELECT DISTINCT taxa FROM species;
+    SELECT DISTINCT species FROM surveys;
 
 If we select more than one column, then the distinct pairs of values are returned
 
-    SELECT DISTINCT taxa, scientific_name FROM species;
+    SELECT DISTINCT year, species FROM surveys;
 
-Calculated values
------------------
-Now let's switch to the **surveys** table.
-Here we have data on every individual that was captured at the site,
-including when they were captured, what plot they were captured on,
-their sex and their weight in grams.
+### Calculated values
 
-Now that we're using a table with numbers in it we can see that in addition
-to selecting columns we can also do calculations with their values.
-For example, if we wanted the mass in kg instead of g we would use
+We can also do calculations with the values in a query.
+For example, if we wanted to look at the mass of each individual
+on different dates, but we needed it in kg instead of g we would use
 
-    SELECT plot, species, sex, wgt, wgt / 1000.0 from surveys
+    SELECT month, day, year, wgt/1000.0 from surveys
 
 When we run the query, the expression ``wgt / 1000.0`` is evaluated for each row
 and appended to that row, in a new column. 
