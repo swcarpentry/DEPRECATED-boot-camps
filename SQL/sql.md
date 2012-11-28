@@ -127,6 +127,11 @@ which have species codes DM, DO, and DS we could combine the tests using OR:
 ***Exercise: Write a query that returns the day, month, year, species ID, and weight
 for individuals caught on plot 1 that weigh more than 75 grams***
 
+Exporting results of queries
+----------------------------
+Getting the result of your query out to work with elsewhere is as easy
+as clicking the **Actions** button and choosing **Save Result to File**.
+
 Building more complex queries
 -----------------------------
 
@@ -297,9 +302,35 @@ What we want is to join the data with the same species codes.
     FROM surveys
     JOIN species ON surveys.species = species.species_id
 
+ON is like WHERE, it filters things out according to a test condition.
+We use the table.colname to tell the manager what column in which table
+we are referring to.
 
-Exporting results of queries
-----------------------------
+We often won't want all of the fields from both tables,
+so anywhere we would have used a field name in a non-join query,
+we can use *table.colname*
+
+For example, what if we wanted information on when individuals of each
+species were captured, but instead of their species ID we wanted their
+actual species names.
+
+    SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
+    FROM surveys
+    JOIN species ON surveys.species = species.species_id
+
+***Exercise: Write a query that the genus, the species, and the weight of every individual captured at the site***
+
+Joins can be combined with sorting, filtering, and aggregation.
+So, if we wanted average mass of the individuals on each different
+type of treatment, we could do something like
+
+    SELECT plots.plot_type, AVG(surveys.wgt)
+    FROM surveys
+    JOIN plots
+    ON surveys.plot = plots.plot_id
+    GROUP BY plots.plot_type
+
+
 
 Creating tables
 ---------------
