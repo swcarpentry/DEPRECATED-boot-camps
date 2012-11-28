@@ -23,10 +23,15 @@ The data
 --------
 
 This is data on a small mammal community in southern Arizona over the last 35 years.
+This is part of a larger project studying the effects of rodents and ants
+on the plant community.
+The rodents are sampled on a series of 24 plots, with different 
+manipulations of which rodents are allowed to access the plots.
 
 This is a real dataset that has been used in over 100 publications.
 I've simplified it just a little bit for the workshop,
-but you can download the [full dataset](
+but you can download the [full dataset](http://esapubs.org/archive/ecol/E090/118/)
+and work with it using exactly the same tools we'll learn about today.
 
 Import
 ------
