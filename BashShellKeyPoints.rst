@@ -431,7 +431,7 @@ String comparisons.
 ::
 
  WORD="hello"
- if [ "$WORD" = "hello"];  then echo "The same"; fi
+ if [ "$WORD" = "hello" ];  then echo "The same"; fi
 
 Arithmetic.
 ::
