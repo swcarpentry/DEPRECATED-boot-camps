@@ -119,7 +119,7 @@ Here, we only want the data since 2000:
 for individuals that weigh more than 75 grams***
 
 We can user more sophisticated conditions by combining tests with AND and OR.
-For example, suppose we want to data on Dipodomys merriami startinging in the year 2000:
+For example, suppose we want to data on Dipodomys merriami starting in the year 2000:
 
     SELECT * FROM surveys WHERE (year >= 2000) AND (species = "DM");
 
@@ -258,12 +258,12 @@ including the aggregated column.
 Let’s count the number of individuals of each species captured,
 ordered by the count
 
-SELECT species, COUNT(*)
-FROM surveys
-GROUP BY species
-ORDER BY COUNT(sp_code)
+    SELECT species, COUNT(*)
+    FROM surveys
+    GROUP BY species
+    ORDER BY COUNT(sp_code)
 
-***Exercise: Write a query that let's us look at which years contained the most individuals and which had the least?***
+***Exercise: Write a query that lets us look at which years contained the most individuals and which had the least?***
 
 ***Exercise: Write a query that shows us which species had the largest individuals on average?***
 
