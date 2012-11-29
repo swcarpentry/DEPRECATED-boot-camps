@@ -258,12 +258,12 @@ including the aggregated column.
 Let’s count the number of individuals of each species captured,
 ordered by the count
 
-SELECT species, COUNT(*)
-FROM surveys
-GROUP BY species
-ORDER BY COUNT(sp_code)
+    SELECT species, COUNT(*)
+    FROM surveys
+    GROUP BY species
+    ORDER BY COUNT(sp_code)
 
-***Exercise: Write a query that let's us look at which years contained the most individuals and which had the least?***
+***Exercise: Write a query that lets us look at which years contained the most individuals and which had the least?***
 
 ***Exercise: Write a query that shows us which species had the largest individuals on average?***
 
