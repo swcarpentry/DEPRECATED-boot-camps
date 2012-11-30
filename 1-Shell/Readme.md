@@ -52,10 +52,41 @@ by manipulating some experimental data from a hearing tests. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone https://github.com/swcarpentry/2012-11-uh.git
+    git clone -b shell-data git://github.com/swcarpentry/2012-11-uh.git
 
-This will grab all of the data needed for this workshop from the
-internet.
+This will grab all of the data needed for the shell exercises from the
+internet (specifically from our version control repository). The details of
+this will be explained tomorrow.  For now just think of it as a way to quickly
+download an entire directory of files.
+
+If you're having trouble with git or github you can download the data as a
+zip file and extract it. You can enter the following URL into a web browser:
+
+    https://github.com/swcarpentry/2012-11-uh/archive/shell-data.zip
+
+Then just unzip it using your favorite archive tool.  Just make sure to unzip
+to `/Users/(Your Name)/` on OSX, or to your home directory on Linux.
+
+
+If you want to get your feet wet you can do also this on the command line using either
+the `wget` or `curl` command. `curl` is usually installed on OSX, where as
+Linux users are more likely to have `wget`.  First change to your home
+directory:
+
+    cd ~
+
+Then use `wget` *or* `curl`:
+
+    wget https://github.com/swcarpentry/2012-11-uh/archive/shell-data.zip
+
+or
+
+    curl -OL https://github.com/swcarpentry/2012-11-uh/archive/shell-data.zip
+
+Then unzip, and rename the extracted directory to something a little shorter:
+
+    unzip shell-data.zip
+    mv 2012-11-uh-shell-data 2012-11-uh
 
 # Let's get started
 
