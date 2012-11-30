@@ -613,6 +613,8 @@ delete a directory using the `-r` option. Enter the following command:
 
 ## The awesome power of the Pipe
 
+![UNIX magic](http://swcarpentry.github.com/2012-11-uh/images/learning_unix_is_not_magic.jpg)
+
 Suppose I wanted to only see the total number of character, words, and
 lines across the files `Bert/*` and `gerdal/*4*`. I don't want to
 see the individual counts, just the total. Of course, I could just do:
