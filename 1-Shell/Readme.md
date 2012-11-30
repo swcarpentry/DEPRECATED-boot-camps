@@ -15,7 +15,7 @@ with a keyboard instead of controlling graphical user interfaces
 
 Use the GUI to open the tutorial on github.  Single click on the "Firefox
 Web Browser".  Type in the URL:
-    github.com/swcarpentry/2012-10-gmu-shell
+    github.com/swcarpentry/2012-11-uh
 
 A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
@@ -52,7 +52,7 @@ by manipulating some experimental data from a hearing tests. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone https://github.com/swcarpentry/2012-10-gmu-shell.git
+    git clone https://github.com/swcarpentry/2012-11-uh.git
 
 This will grab all of the data needed for this workshop from the
 internet.
@@ -133,10 +133,10 @@ you will see that `testfile` is gone.
 **Changing Directories**
 
 Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `2012-10-gmu-shell`
+directory) is used to move around. Let's move into the `2012-11-uh`
 directory. Enter the following command:
 
-    cd 2012-10-gmu-shell
+    cd 2012-11-uh
 
 Now use the `ls` command to see what is inside this directory. You
 will see that there is an entry which is green. This means that this
@@ -144,7 +144,7 @@ is an executable. If you use `ls -F` you will see that this file ends
 with a star.
 
 If you enter the `cd` command by itself, you will return to the home
-directory. Try this, and then navigate back to the `2012-10-gmu-shell`
+directory. Try this, and then navigate back to the `2012-11-uh`
 directory.
 
 ## Arguments
@@ -164,8 +164,8 @@ forward and b to go backwards. When you are done reading, just hit `q`
 to exit.
 
 Programs that are run from the shell can get extremely complicated. To
-see an example, open up the manual page for the `find` program,
-which we will use later this session. No one can possibly learn all of
+see an example, open up the manual page for the `grep` program,
+which we may use later this session. No one can possibly learn all of
 these arguments, of course. So you will probably find yourself
 referring back to the manual page frequently.
 
@@ -178,19 +178,19 @@ give `ls` the names of other directories to view. Navigate to the
 home directory if you are not already there. Then enter the
 command:
 
-    ls 2012-10-gmu-shell
+    ls 2012-11-uh
 
-This will list the contents of the `2012-10-gmu-shell` directory without
+This will list the contents of the `2012-11-uh` directory without
 you having to navigate there.
 
-    ls 2012-10-gmu-shell/data
+    ls 2012-11-uh/fits_data
 
-This prints the contents of `data/`. The `cd` command works in a
+This prints the contents of `fits_data/`. The `cd` command works in a
 similar way. Try entering:
 
-    cd 2012-10-gmu-shell/data
+    cd 2012-11-uh/fits_data
 
-and you will jump directly to `data` without having to go through
+and you will jump directly to `fits_data` without having to go through
 the intermediate directory.
 
 ## Full vs. Relative Paths
@@ -207,6 +207,13 @@ command and you should see something like
     or (if on OSX)
 
     /Users/Your Name
+    
+    on Windows this might be something like:
+    
+    C:\Documents and Settings\Your Name\
+    
+    but that depends on what Windows version you are using, and whether or not
+    you are using a UNIX-like environment for Windows such as Cygwin or MinGW32
 
 which is the full name of your home directory. This tells you that you are in a
 directory with the same name as your login name (typically), which sits inside
@@ -217,19 +224,19 @@ directory is a directory in `home` or `Users` which is a directory in `/`.
 
 Now enter the following command:
 
-    cd /home/your_username/2012-10-gmu-shell/
+    cd /home/your_username/2012-11-uh/
 
-or
+or (for OSX):
 
-    cd /Users/Your Name/2012-10-gmu-shell/
+    cd /Users/Your Name/2012-11-uh/
 
-This jumps to `2012-10-gmu-shell`. Now go back to the home directory. We saw
+This jumps to `2012-11-uh`. Now go back to the home directory. We saw
 earlier that the command:
 
-    cd 2012-10-gmu-shell/
+    cd 2012-11-uh/
 
-had the same effect - it took us to the `2012-10-gmu-shell` directory. But,
-instead of specifying the full path (`/home/swc/2012-10-gmu-shell/`), we
+had the same effect - it took us to the `2012-11-uh` directory. But,
+instead of specifying the full path (`/home/swc/2012-11-uh/`), we
 specified a *relative path*. In other words, we specified the path relative to
 our current directory. A full path always starts with a `/`. A relative path
 does not. You can usually use either a full path or a relative path depending
@@ -246,7 +253,7 @@ familiar in there?
 
 There are some shortcuts which you should know about. Dealing with the home
 directory is very common. So, in the shell the tilde character, `~`, is a
-shortcut for your home directory. Navigate to the `2012-10-gmu-shell/data`
+shortcut for your home directory. Navigate to the `2012-11-uh/fits_data`
 directory, then enter the command:
 
     ls ~
@@ -257,7 +264,7 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/swc/2012-10-gmu-shell`. You can chain
+prints the contents of the `/home/swc/2012-11-uh`. You can chain
 these together, so:
 
     ls ../../
@@ -272,76 +279,69 @@ To summarize, the commands `ls ~`, `ls ~/.`, `ls ../../`, and `ls
 /home/swc` all do exactly the same thing. These shortcuts are not
 necessary, they are provided for your convenience.
 
-**Our data set: Cochlear Implants**
+**An example set: Erik's test FITS files**
 
-A cochlear implant is a small electronic device that is surgically
-implanted in the inner ear to give deaf people a sense of
-hearing. More than a quarter of a million people have them, but there
-is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
-got teenagers with CIs to listen to audio files on their computer and
-report:
+This is a real world example from straight off Erik's filesystem.
+FITS stands for Flexible Image Transport System.  It's a file format
+that was developed in the 80s primarily for Astronomy data, especially
+images, though it can store non-image data too, such as spectra, data
+cubes, and tables.  It has found use in other scientific fields too.
+By 1980s standards it was a very Flexible system, but by today it has
+grown a number of warts, and requires complex specialized software for
+reading and writing them.
 
-1.  the quietest sound they could hear
-2.  the lowest and highest tones they could hear
-3.  the narrowest range of frequencies they could discriminate
+Erik works on one such piece of software written primarily in Python
+called PyFITS.  One of the goals of PyFITS is to make it possible to at
+least be able to *read* every single FITS file that was ever written to
+within some approximation of the actual FITS standard (there are many
+FITS files out there written by software that takes the meaning of the
+word "standard" very loosely).
 
-To participate, subjects attended our laboratory and one of our lab
-techs played an audio sample, and recorded their data - when they
-first heard the sound, or first heard a difference in the sound.  Each
-set of test results were written out to a text file, one set per file.
-Each participant has a unique subject ID, and a made-up subject name.
-Each experiment has a unique experiment ID. The experiment has
-collected 351 files so far.
+When Erik receives a bug report on PyFITS he asks users to send a test
+file that reproduces the problem.  Eventually this bug report may become
+a regression test (which we'll learn about on day 2) so it's important to
+keep the sample data, and it's important to keep it organized.  All of
+Erik's collected sample data is in the `fits_data` directory.  But this is
+a mess!  There are a mixture of FITS files and non-FITS files.  There are
+some FITS files that don't use the standard `.fits` filename extension,
+and there's no way of knowing what issues each file is associated with.
 
-The data is a bit of a mess! There are inconsistent file names, there
-are extraneous "NOTES" files that we'd like to get rid of, and the
-data is spread across many directories. We are going to use shell
-commands to get this data into shape. By the end we would like to:
+If we have time to get through everything this morning we'll be able to 
+get this data organized. And then perhaps we will move on to some more
+advanced shell topics.
 
-1.  Put all of the data into one directory called "alldata"
-
-2.  Have all of the data files in there, and ensure that every file
-    has a ".txt" extension
-
-3.  Get rid of the extraneous "NOTES" files
-
-If we can get through this example in the available time, we will move
-onto more advanced shell topics...
 
 **Wild cards**
 
-Navigate to the `~/2012-10-gmu-shell/data/THOMAS` directory. This
-directory contains our hearing test data for THOMAS. If we type `ls`,
-we will see that there are a bunch of files which are just four digit
-numbers. By default, `ls` lists all of the files in a given
-directory. The `*` character is a shortcut for "everything". Thus, if
-you enter `ls *`, you will see all of the contents of a given
-directory. Now try this command:
+Navigate to the `~/2012-11-uh/fits_data` directory. If we type `ls`,
+we will see that there are a bunch of files with `.fits` extensions.
+By default, `ls` lists all of the files in a given directory. The 
+`*` character is a shortcut for "everything". Thus, if you enter
+`ls *`, you will see all of the contents of a given directory.
+Now try this command:
 
-    ls *1
+    ls *.fits
 
-This lists every file that ends with a `1`. This command:
+This lists every file that ends with a `.fits`. This command:
 
     ls /usr/bin/*.sh
 
 Lists every file in `/usr/bin` that ends in the characters `.sh`. And
 this command:
 
-    ls *4*1
+    ls *many*.fits
 
-lists every file in the current directory which contains the number
-`4`, and ends with the number `1`. There are four such files: `0241`,
-`0341`, `0431`, and `0481`.
+lists every file in the current directory which contains the word
+`many`, and ends with `.fits`.
 
 So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for files
 that match the given pattern. In this case, it identified four such
-files. Then, it replaced the `*4*1` with the list of files, separated
+files. Then, it replaced the `*many*.fits` with the list of files, separated
 by spaces. In other the two commands:
 
-    ls *4*1
-    ls 0241 0341 0431 0481
+    ls *many*.fits
+    ls manyhdus2.fits manyhdus.fits
 
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
@@ -365,16 +365,17 @@ lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
 directory name. For example, enter:
 
-    cd S<tab>
+    cd 2012<tab>
 
 The shell will fill in the rest of the directory name for
-`2012-10-gmu-shell`. Now enter:
+`2012-11-uh`. Now from within the `2012-11-uh/fits_data` directory
+enter:
 
-    ls 3<tab><tab>
+    ls j<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
 are multiple directories in the home directory which start with
-3. Thus, the shell does not know which one to fill in. When you hit
+j. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices.
 
 Tab completion can also fill in the names of programs. For example,
@@ -427,14 +428,14 @@ shell looks for programs to run. If your program is not in this list,
 then an error is printed. The shell ONLY checks in the places listed
 in the `PATH` environment variable.
 
-Navigate to the `2012-10-gmu-shell` directory and list the contents. You will
+Navigate to the `2012-11-uh` directory and list the contents. You will
 notice that there is a program (executable file) called `hello` in this
 directory. Now, try to run the program by entering:
 
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory `/home/swc/2012-10-gmu-shell/` is not in the
+because the directory `/home/swc/2012-11-uh/` is not in the
 `PATH`. You can run the `hello` program by entering:
 
     ./hello
@@ -444,7 +445,7 @@ the shell to run the `hello` program which is located right here. So, you can
 run any program by entering the path to that program. You can run `hello`
 equally well by specifying:
 
-    /home/swc/2012-10-gmu-shell/hello
+    /home/swc/2012-11-uh/hello
 
 Or by entering:
 
@@ -452,6 +453,35 @@ Or by entering:
 
 When there are no `/` characters, the shell assumes you want to look
 in one of the default places for the program.
+
+
+## The EDITOR environment variable
+
+There are many plain text console-based text editors available on UNIX-like
+systems.  Many programs (notably git, which we will use tomorrow for version
+control) will sometimes drop the user into a text editor if they require some
+written input from the user.
+
+On many systems the default editor is a user-unfriendly program called vi, or
+its more "modern" cousin vim.  Though vi/vim have many power users it is not
+an easy to learn program for beginners.  For that reason we recommend setting
+your EDITOR environment variable to something more user-friendly like `nano` by
+typing:
+
+    EDITOR=nano
+    
+at the command line, followed by:
+
+    export EDITOR
+    
+Unforunately this change is not permanent--when you open a new terminal the default
+is restored.  However there are several ways to make it permanent, which unforunately
+may depend a lot on what OS you are using.  If you would like to make a permanent change
+just ask for help later after class or during a break.
+
+Finally, there is no requirement that the `$EDITOR` environment variable point to a
+console-based editor.  If you have a GUI editor of choice, such as TextMate, it's possible
+to use that too so long as the correct name of the command is used.
 
 
 ## Examining Files
@@ -472,23 +502,11 @@ It will print out the contents of `ex_data.txt` twice. `cat` just
 takes a list of file names and writes them out one after another (this
 is where the name comes from, `cat` is short for concatenate).
 
-* * * *
-**Short Exercises**
-
-1.  Print out the contents of the `~/2012-10-gmu-shell/dictionary.txt`
-    file. What does this file contain?
-
-2.  Without changing directories, (you should still be in `2012-10-gmu-shell`),
-    use one short command to print the contents of all of the files in
-    the /home/swc/2012-10-gmu-shell/data/THOMAS directory.
-
-* * * *
-
 `cat` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, `less`, is useful for this
 case. Enter the following command:
 
-    less ~/2012-10-gmu-shell/dictionary.txt
+    less ~/2012-11-uh/dictionary.txt
 
 `less` opens the file, and lets you navigate through it. The commands
 are identical to the `man` program. Use "space" to go forward and hit
@@ -519,58 +537,45 @@ in reverse while using `less`.
 
 ## Redirection
 
-Let's turn to the experimental data from the hearing tests that we
-began with. This data is located in the `~/2012-10-gmu-shell/data`
-directory. Each subdirectory corresponds to a particular participant
-in the study. Navigate to the `Bert` subdirectory in `data`.  There
-are a bunch of text files which contain experimental data
-results. Lets print them all:
+Let's return to the FITS sample files. This data is located in the
+`~/2012-11-uh/fits_data` directory.  Recall the `filenames.txt` file
+we were looking at earlier.  Now we'll learn how we can make files like
+that by saving the output of one command to a file.  Recall the `ls`
+command.  Normally it outputs multiple columns, but upon checking the
+man page for `ls` we see that there's a `-1` option to output one column.
+Let's output all the `.fits` files in a single column:
 
-    cat au*
+    ls -1 *.fits
 
-Now enter the following command:
+Now let's run the command again, but instead save the output to a file like
+so:
 
-    cat au* > ../all_data
+    ls -1 *.fits > filenames.txt
 
-This tells the shell to take the output from the `cat au*` command and
-dump it into a new file called `../all_data`. To verify that this
-worked, examine the `all_data` file. If `all_data` had already
-existed, we would overwritten it. So the `>` character tells the shell
-to take the output from what ever is on the left and dump it into the
+This tells the shell to take the output from the `ls -1 *.fits` command and
+dump it into a new file called `filenames.txt`. To verify that this
+worked, examine the `filenames.txt` file. If `filenames.txt` file had already
+existed (which it did), we would overwritten it. So the `>` character tells
+the shell to take the output from what ever is on the left and dump it into the
 file on the right. The `>>` characters do almost the same thing,
 except that they will append the output to the file if it already
 exists.
 
-* * * *
-**Short Exercise**
 
-Use `>>`, to append the contents of all of the files which contain the
-number 4 in the directory:
+## Moving, copying, and removing
 
-    /home/swc/2012-10-gmu-shell/data/gerdal
+We've created a file called `filenames.txt` using the redirection operator
+`>`. Let's copy the file using the `cp` command. The `cp`
+command backs up the file. From within the `fits_data` directory enter:
 
-to the existing `all_data` file. Thus, when you are done `all_data`
-should contain all of the experiment data from Bert and any
-experimental data file from gerdal that contains the number 4.
+    cp filenames.txt filenames.txt.bak
 
-* * * *
-
-
-## Creating, moving, copying, and removing
-
-We've created a file called `all_data` using the redirection operator
-`>`. This is critical file so we have to make copies so that the data
-is backed up. Lets copy the file using the `cp` command. The `cp`
-command backs up the file. Navigate to the `data` directory and enter:
-
-    cp all_data all_data_backup
-
-Now `all_data_backup` has been created as a copy of `all_data`. We can
+Now `filenames.txt.bak` has been created as a copy of `filenames.txt`. We can
 move files around using the command `mv`. Enter this command:
 
-    mv all_data_backup /tmp/
+    mv filenames.txt.bak /tmp/
 
-This moves `all_data_backup` into the directory `/tmp`. The directory
+This moves `filenames.txt.bak` into the directory `/tmp`. The directory
 `/tmp` is a special directory that all users can write to. It is a
 temporary place for storing files. Data stored in `/tmp` is
 automatically deleted when the computer shuts down.
@@ -578,12 +583,12 @@ automatically deleted when the computer shuts down.
 The `mv` command is also how you rename files. Since this file is so
 important, let's rename it:
 
-    mv all_data all_data_IMPORTANT
+    mv filenames.txt fits_files.txt
 
-Now the file name has been changed to all_data_IMPORTANT. Let's delete
+Now the file name has been changed to fits_files.txt. Let's delete
 the backup file now:
 
-    rm /tmp/all_data_backup
+    rm /tmp/filenames.txt.bak
 
 The `mkdir` command is used to create a directory. Just enter `mkdir`
 followed by a space, then the directory name.
@@ -593,51 +598,16 @@ followed by a space, then the directory name.
 
 Do the following:
 
-1.  Rename the `all_data_IMPORTANT` file to `all_data`.
-2.  Create a directory in the `data` directory called `foo`
-3.  Then, copy the `all_data` file into `foo`
+1.  Rename the `fits_files.txt` file back to `filenames.txt`.
+2.  Create a directory in the `data` directory called `issue-001`
+3.  Then, copy the `image1.fits` file into `issue-001`
 
 * * * *
 
 By default, `rm`, will NOT delete directories. You can tell `rm` to
 delete a directory using the `-r` option. Enter the following command:
 
-    rm -r foo
-
-
-## Count the words
-
-The `wc` program (word count) counts the number of lines, words, and
-characters in one or more files. Make sure you are in the `data`
-directory, then enter the following command:
-
-    wc Bert/* gerdal/*4*
-
-For each of the files indicated, `wc` has printed a line with three
-numbers. The first is the number of lines in that file. The second is
-the number of words. Finally, the total number of characters is
-indicated. The final line contains this information summed over all of
-the files. Thus, there were 10445 characters in total.
-
-Remember that the `Bert/*` and `gerdal/*4*` files were merged
-into the `all_data` file. So, we should see that `all_data` contains
-the same number of characters:
-
-    wc all_data
-
-Every character in the file takes up one byte of disk space. Thus, the
-size of the file in bytes should also be 10445. Let's confirm this:
-
-    ls -l all_data
-
-Remember that `ls -l` prints out detailed information about a file and
-that the fifth column is the size of the file in bytes.
-
-* * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
+    rm -r issue-001
 
 * * * *
 
@@ -1031,3 +1001,4 @@ push to remote version control repositories later.
 **Permissions**
 
 **Chaining commands together**
+
