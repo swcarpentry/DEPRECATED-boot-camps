@@ -492,13 +492,13 @@ contents of directories, but how do we look at the contents of files?
 The easiest way to examine a file is to just print out all of the
 contents using the program `cat`. Enter the following command:
 
-    cat ex_data.txt
+    cat fits_data/filenames.txt
 
-This prints out the contents of the `ex_data.txt` file. If you enter:
+This prints out the contents of the `filenames.txt` file. If you enter:
 
-    cat ex_data.txt ex_data.txt
+    cat filenames.txt filenames.txt
 
-It will print out the contents of `ex_data.txt` twice. `cat` just
+It will print out the contents of `filenames.txt` twice. `cat` just
 takes a list of file names and writes them out one after another (this
 is where the name comes from, `cat` is short for concatenate).
 
@@ -615,271 +615,92 @@ delete a directory using the `-r` option. Enter the following command:
 
 ![UNIX magic](http://swcarpentry.github.com/2012-11-uh/images/learning_unix_is_not_magic.jpg)
 
-Suppose I wanted to only see the total number of character, words, and
-lines across the files `Bert/*` and `gerdal/*4*`. I don't want to
-see the individual counts, just the total. Of course, I could just do:
+Let's say we've already gone through and added issue numbers to each
+file that they're assocated with in filenames.txt.  This has already
+been done and the result is in `fits_data/issues_to_file.txt`.
 
-    wc all_data
+What if we wanted to list just the issue numbers listed in this file
+and not the associated filenames.  A program called `cut` can do that
+for us.  `cut` has many options that you can read about in its man
+page.  We won't go much detail about it, but in short if you use it like
 
-Since this file is a concatenation of the smaller files. Sure, this
-works, but I had to create the `all_data` file to do this. Thus, I
-have wasted a precious 7062 bytes of hard disk space. We can do this
-*without* creating a temporary file, but first I have to show you two
-more commands: `head` and `tail`. These commands print the first few,
-or last few, lines of a file, respectively. Try them out on
-`all_data`:
+    cut -c 1-5 issues_to_file.txt
 
-    head all_data
-    tail all_data
+it will return just the first 5 characters of each line in that file.
+If we look at `issues_to_file.txt` we can see that it's already
+formatted so that each issue actually takes up 9 chacters--6 for `issue-`
+and 3 for the number (with zero padding).  So now let's try
 
-The `-n` option to either of these commands can be used to print the
-first or last `n` lines of a file. To print the first/last line of the
-file use:
+    cut -c 1-9 issues_to_file.txt
 
-    head -n 1 all_data
-    tail -n 1 all_data
+Great.  This is still a long output (it was a long-ish file to begin with)
+so what if we want to view its output with the `less` command?  One
+way we could do that is to write this to a temporary file and then open
+that with `less`:
 
-Let's turn back to the problem of printing only the total number of
-lines in a set of files without creating any temporary files. To do
-this, we want to tell the shell to take the output of the `wc Bert/*
-gerdal/*4*` and send it into the `tail -n 1` command. The `|`
-character (called pipe) is used for this purpose. Enter the following
-command:
+    cut -c 1-9 issues_to_file.txt > /tmp/issues.txt
+    less /tmp/issues.txt
+    rm /tmp/issues.txt
 
-    wc Bert/* gerdal/Data0559 | tail -n 1
+But that seems like almost more hassle than its worth given that in most
+modern terminal emulators we can scroll the output anyways.  But this is
+where the "magic" of pipes comes in.  Give this a try:
 
-This will print only the total number of lines, characters, and words
-across all of these files. What is happening here? Well, `tail`, like
-many command line programs will read from the *standard input* when it
-is not given any files to operate on. In this case, it will just sit
-there waiting for input. That input can come from the user's keyboard
-*or from another program*. Try this:
+    cut -c 1-9 issues_to_file.txt | less
 
-    tail -n 2
+As you can see, the function of the `|` command is to take the output of
+one program and "pipe" it to another program.  The program to the right
+of the pipe takes the output of the program on the left of the pipe as its
+input.  Let's see another example.  Say we wanted to go through this list
+of issues in order by issue number.  There's a program called `sort` that
+will take lines of input and return those lines sorted by some criterion
+(which can be controlled by command-line arguments).  Try this:
 
-Notice that your cursor just sits there blinking. Tail is waiting for
-data to come in. Now type:
+    cut -c 1-9 issues_to_file.txt | sort
 
-    French
-    fries
-    are
-    good
+This looks like it worked, but it still gave us long output like before.
+Never fear: As you would hope pipes can be *chained* in a single command-
+line operation:
 
-then CONTROL+d. You should is the lines:
+    cut -c 1-9 issues_to_file.txt | sort | less
 
-    are
-    good
+This can be read simply left to right: Cut out the first 9 columns of
+the file, sort them, and then read the result in `less`.
 
-printed back at you. The CONTROL+d keyboard shortcut inserts an
-*end-of-file* character. It is sort of the standard way of telling the
-program "I'm done entering data". The `|` character is replaces the
-data from the keyboard with data from another command. You can string
-all sorts of commands together using the pipe.
+One more pipe example: You may have noticed that several issue numbers are
+repeated. This is because some issues required looking at multiple test files.
+It might be easier if we want to look at all the issues if we could cut out
+the duplicates.  This is exactly what the `uniq` command is for:
+
+    cut -c 1-9 issues_to_file.txt | uniq | sort
+
+A much shorter list than before.
 
 The philosophy behind these command line programs is that none of them
 really do anything all that impressive. BUT when you start chaining
 them together, you can do some really powerful things really
 efficiently. If you want to be proficient at using the shell, you must
 learn to become proficient with the pipe and redirection operators:
-`|`, `>`, `>>`.
+`|`, `>`, `>>`.  We haven't even scratched the surface of how powerful
+these tools really can be.
 
-
-**A sorting example**
-
-Let's create a file with some words to sort for the next example. We
-want to create a file which contains the following names:
-
-    Bob
-    Alice
-    Diane
-    Charles
-
-To do this, we need a program which allows us to create text
-files. There are many such programs, the easiest one which is
-installed on almost all systems is called `nano`. Navigate to `/tmp`
-and enter the following command:
-
-    nano toBeSorted
-
-Now enter the four names as shown above. When you are done, press
-CONTROL+O to write out the file. Press enter to use the file name
-`toBeSorted`. Then press CONTROL+x to exit `nano`.
-
-When you are back to the command line, enter the command:
-
-    sort toBeSorted
-
-Notice that the names are now printed in alphabetical order.
 
 * * * *
-**Short Exercise**
+**Exercise**
 
-Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it.
+Now that we have pipes in our toolkit we're getting close to doing what we
+originally set out to do: Organize these files sensibly.  We already have
+issues_to_file.txt telling us which files belong to which issue.
 
-* * * *
+Since each issue may have one or more files associated with it, and because
+we may want to keep the original filenames, let's create *directories* for
+each issue in which to place the associated files.
 
-Let's navigate back to `~/2012-10-gmu-shell/data`. You should still
-have the `all_data` file hanging around here. Enter the following command:
-
-    wc Bert/* | sort -k 3 -n
-
-We are already familiar with what the first of these two commands
-does: it creates a list containing the number of characters, words,
-and lines in each file in the `Bert` directory. This list is then
-piped into the `sort` command, so that it can be sorted. Notice there
-are two options given to sort:
-
-1.  `-k 3`: Sort based on the third column
-2.  `-n`: Sort in numerical order as opposed to alphabetical order
-
-Notice that the files are sorted by the number of characters.
-
-* * * *
-**Short Exercise**
-
-Use the `man` command to find out how to sort the output from `wc` in
-reverse order.
-
-* * * *
-
-* * * *
-**Short Exercise**
-
-Combine the `wc`, `sort`, `head` and `tail` commands so that only the
-`wc` information for the largest file is listed
-
-Hint: To print the smallest file, use:
-
-    wc Bert/* | sort -k 3 -n | head -n 1
-
-* * * *
-
-Printing the smallest file seems pretty useful. We don't want to type
-out that long command often. Let's create a simple script, a simple
-program, to run this command. The program will look at all of the
-files in the current directory and print the information about the
-smallest one. Let's call the script `smallest`. We'll use `nano` to
-create this file. Navigate to the `data` directory, then:
-
-    nano smallest
-
-Then enter the following text:
-
-    #!/bin/bash
-    wc * | sort -k 3 -n | head -n 1
-
-Now, `cd` into the `Bert` directory and enter the command
-`../smallest`. Notice that it says permission denied. This happens
-because we haven't told the shell that this is an executable
-file. Enter the following commands:
-
-    chmod a+x ../smallest
-    ../smallest
-
-The `chmod` command is used to modify the permissions of a file. This
-particular command modifies the file `../smallest` by giving all users
-(notice the `a`) permission to execute (notice the `x`) the file. If
-you enter:
-
-    ls ../smallest
-
-You will see that the file name is green. Congratulations, you just
-created your first shell script!
-
-# Searching files
-
-You can search the contents of a file using the command `grep`. The
-`grep` program is very powerful and useful especially when combined
-with other commands by using the pipe. Navigate to the `Bert`
-directory. Every data file in this directory has a line which says
-"Range". The range represents the smallest frequency range that can be
-discriminated. Lets list all of the ranges from the tests that Bert
-conducted:
-
-    grep Range *
-
-* * * *
-**Short Exercise**
-
-Create an executable script called `smallestrange` in the `data`
-directory, that is similar to the `smallest` script, but prints the
-file containing the file with the smallest Range. Use the commands
-`grep`, `sort`, and `tail` to do this.
-
-* * * *
-
-
-# Finding files
-
-The `find` program can be used to find files based on arbitrary
-criteria. Navigate to the `data` directory and enter the following
-command:
-
-    find . -print
-
-This prints the name of every file or directory, recursively, starting
-from the current directory. Let's exclude all of the directories:
-
-    find . -type f -print
-
-This tells `find` to locate only files. Now try these commands:
-
-    find . -type f -name "*1*"
-    find . -type f -name "*1*" -or -name "*2*" -print
-    find . -type f -name "*1*" -and -name "*2*" -print
-
-The `find` command can acquire a list of files and perform some
-operation on each file. Try this command out:
-
-    find . -type f -exec grep Volume {} \;
-
-This command finds every file starting from `.`. Then it searches each
-file for a line which contains the word "Volume". The `{}` refers to
-the name of each file. The trailing `\;` is used to terminate the
-command.  This command is slow, because it is calling a new instance
-of `grep` for each item the `find` returns.
-
-A faster way to do this is to use the `xargs` command:
-
-    find . -type f -print | xargs grep Volume
-
-`find` generates a list of all the files we are interested in,
-then we pipe them to `xargs`.  `xargs` takes the items given to it
-and passes them as arguments to `grep`.  `xargs` generally only creates
-a single instance of `grep` (or whatever program it is running).
-
-* * * *
-**Short Exercise**
-
-Navigate to the `data` directory. Use one find command to perform each
-of the operations listed below (except number 2, which does not
-require a find command):
-
-1.  Find any file whose name is "NOTES" within `data` and delete it
-
-2.  Create a new directory called `cleaneddata`
-
-3.  Move all of the files within `data` to the `cleaneddata` directory
-
-4.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is ok for the file name to end in `.txt.txt`
-
-Hint: If you make a mistake and need to start over just do the
-following:
-
-1.  Navigate to the `2012-10-gmu-shell` directory
-
-2.  Delete the `data` directory
-
-3.  Enter the command: `git checkout -- data` You should see that the
-    data directory has reappeared in its original state
-
-**BONUS**
-
-Redo exercise 4, except rename only the files which do not already end
-in `.txt`. You will have to use the `man` command to figure out how to
-search for files which do not match a certain name.
+We already learned how to get a unique list of issue numbers out of the
+`issues_to_file.txt` file.  Now using pipes (`|`), `cut`, `uniq`, `xargs`
+and `mkdir` create a single directory under `2012-11-uh/fits_data` for each
+issue.  The meaning and usage of the `xargs` command will be explained
+in class (or you can read the `man` page).
 
 * * * *
 
@@ -984,7 +805,15 @@ push to remote version control repositories later.
 
 ## Bonus:
 
-**backtick, xargs**: Example find all files with certain text
+**Permissions**
+
+**grep**
+
+**find**
+
+**shell scripts**
+
+**backtick**
 
 **alias** -> rm -i
 
@@ -994,13 +823,6 @@ push to remote version control repositories later.
 
 **du**
 
-**ln**
-
 **scp**
 
 **Regular Expressions**
-
-**Permissions**
-
-**Chaining commands together**
-
