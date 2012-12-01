@@ -168,7 +168,7 @@ like **nano** for example):
 ## git clone : Copying a Repository
 
 Today, we'll check out a git type repository at
-https://github.com/iguananaut/2012-10-gmu-sandbox
+https://github.com/swcarpentry/uh-sandbox
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
@@ -179,20 +179,20 @@ now, let's **clone** the repository from GitHub.
 
 ### Exercise : Cloning a Repository from GitHub
 
-Step 1 : Point your web browser to https://github.com/iguananaut/2012-10-gmu-sandbox
+Step 1 : Point your web browser to https://github.com/swcarpentry/uh-sandbox
 
 Step 2 : Look for the row of buttons like "ZIP", "SSH", "Git Read-Only".
 Click on "SSH" then copy the URL in text box to the right of it.
 
 Step 3 : In your shell, enter
 
-    $ git clone git@github.com:iguananaut/2012-10-gmu-sandbox.git
+    $ git clone https://github.com/swcarpentry/uh-sandbox.git
 
 This uses the same URL you just copied, so you can type "git clone " and
 then paste.  You'll see something like:
 
-    $ git clone git@github.com:iguananaut/2012-10-gmu-sandbox.git
-    Cloning into 2012-10-gmu-sandbox...
+    $ git clone https://github.com/swcarpentry/uh-sandbox.git
+    Cloning into uh-sandbox...
     remote: Counting objects: 24, done.
     remote: Compressing objects: 100% (21/21), done.
     remote: Total 24 (delta 7), reused 17 (delta 1)
@@ -204,7 +204,7 @@ code and list the contents.  You shouldn't see anything.  There is
 actually one hidden file called .gitignore but don't worry about that
 right now.  It's just a stub.
 
-    $ cd 2012-10-gmu-sandbox
+    $ cd uh-sandbox
 
 ## git add : Adding a File To Version Control
 
@@ -247,8 +247,7 @@ different about them in the terminal, try:
 
 The null result means that you're up to date with the current version of
 the repository online. This result indicates that the current difference
-between the repository HEAD (which, so far, is empty) and your
-good\_science directory is this new readme.rst file.
+between the repository HEAD (which, so far, is empty).
 
 ## git commit : Saving a Snapshot
 
@@ -392,9 +391,6 @@ commits to that remote is exactly analagous.
 
     $ git push upstream master
 
-In the case of the 2012-10-gmu code, new developer accounts will not allow
-this push to succeed. You're welcome to try it though.
-
 
 ## git branch : Listing, Creating, and Deleting Branches
 
@@ -497,13 +493,13 @@ Step 3 : Merge the two branches into the core
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the 2012-10-gmu code, you'll find a file called Readme.md. This is a
+In the uh-sandbox code, you'll find a file called Readme.md. This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/username/2012-10-gmu-sandbox/).
+fork on github, (https://github.com/username/uh-sandbox/).
 
 For illustration, let's imagine that, suddenly, each of the developers
-on the 2012-10-gmu code would like to welcome visitors in a language other
+on the 2012-11-uh code would like to welcome visitors in a language other
 than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
@@ -614,7 +610,7 @@ alterations,
     Compressing objects: 100% (6/6), done.
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:iguananaut/2012-10-gmu-sandbox.git
+    To git@github.com:swcarpentry/uh-sandbox.git
 
 ## git remote : Steps for Forking a Repository
 
@@ -629,29 +625,28 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the 2012-10-gmu-sandbox repository,
-GitHub doesn't know about it yet. You'll need to tell github you want to have
-an official fork of this repository.
+While you probably already have a copy of the uh-sandbox repository, GitHub
+doesn't know about it yet. You'll need to tell github you want to have an
+official fork of this repository.
 
 Step 1 : Go to our
-[repository](https://github.com/swcarpentry/2012-10-gmu-sandbox) from your
+[repository](https://github.com/swcarpentry/uh-sandbox) from your
 browser, and click on the Fork button. Choose to fork it to your username
 rather than any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ rm -rf 2012-10-gmu-sandbox
-    $ git clone git@github.com:username/2012-10-gmu-sandbox.git
-    $ cd 2012-10-gmu-sandbox
+    $ git clone git@github.com:username/uh-sandbox.git
+    $ cd uh-sandbox
 
 Step 3 :
 
-    $ git remote add upstream git://github.com:iguananaut/2012-10-gmu-sandbox.git
+    $ git remote add upstream git://github.com:swcarpentry/uh-sandbox.git
     $ git remote -v
-    origin  git@github.com:username/2012-10-gmu-sandbox.git (fetch)
-    origin  git@github.com:username/2012-10-gmu-sandbox.git (push)
-    upstream        git://github.com/iguananaut/2012-10-gmu-sandbox.git (fetch)
-    upstream        git://github.com/iguananaut/2012-10-gmu-sandbox.git (push)
+    origin  git@github.com:username/uh-sandbox.git (fetch)
+    origin  git@github.com:username/uh-sandbox.git (push)
+    upstream        git://github.com/swcarpentry/uh-sandbox.git (fetch)
+    upstream        git://github.com/swcarpentry/uh-sandbox.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
