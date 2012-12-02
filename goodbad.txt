@@ -1,0 +1,32 @@
+embray@stsci.edu
+fernando.perez@berkeley.edu
+
+@iguananaut
+
+Good
+====
+
+* Learning the command line basics.
+* Background about how computers work.
+* Really liked git.
+* Helpful for research.
+* Tied together concepts from different programming languages and experience.
+
+Bad
+===
+
+* Screen size made scrolling difficult.
+* Some things went too fast, were hard to keep up with.
+* Would be good to have some reading suggestions to get started with.
+* Expanded installations instructions please.
+* We should have had instructions for sharing notebooks.
+* Maybe git should be taught first.
+* Students falling behind from what was being typed on the screen, things scrolling 
+  out of view too fast or changing in-place.  We really need to only show sessions for
+  which we already have a record available on github they can fall back on.
+* Make sure we introduce the comment markers at the very beginning, and also explain
+  how to create text cells for long-form notes.  Students can thus use this to 
+  make their own notes while the session is going on.
+* Our example scripts need to be heavily commented in terms of their logic, so that
+  when students read them they have a bit more hand-holding for later understanding.
+* Build exercises with explanations that motivate each step for the work.
