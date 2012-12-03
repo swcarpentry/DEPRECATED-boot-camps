@@ -20,7 +20,7 @@ Use wget or curl e.g.
 ::
 
  wget --no-check-certificate https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/test-materials.zip
- curl --insecure https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/test-materials.zip > test-materials.zip
+ curl -L --insecure https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/test-materials.zip -o test-materials.zip
 
 to get test-materials.zip from BitBucket and unzip these.
 

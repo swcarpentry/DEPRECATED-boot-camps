@@ -31,7 +31,7 @@ wget is a simple way to download something via the command-line.
 Alternatively, there is curl which may be needed for MacOSX.
 ::
 
- curl --insecure https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/bash-materials.zip > bash-materials.zip
+ curl -L --insecure https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/bash-materials.zip -o bash-materials.zip
 
 Unzip.
 ::
