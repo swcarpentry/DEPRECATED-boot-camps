@@ -28,6 +28,23 @@ Create a repository directory and add a file
 --------------------------------------------
 
 hg and Mercury.
+
+Set an editor for providing commit messages e.g. nano.
+::
+
+ export EDITOR=nano
+
+Or xemacs
+::
+
+ export EDITOR=xemacs
+
+Or vi.
+::
+
+ export EDITOR=vi
+
+Create repository.
 ::
 
  hg init
@@ -42,7 +59,7 @@ hg and Mercury.
 "A" means repository has scheduled it for addition but not yet added it.
 ::
 
- hg commit -m ". . ." file.txt
+ hg commit file.txt
  abort: no username supplied message
 
 /home/user/.hgrc file contains common settings.
@@ -51,12 +68,12 @@ hg and Mercury.
  [ui]
  username = Boot Camp <bootcamp@gmail.com>
 
-Commit message records "why" changes were made. 
 ::
 
- hg commit -m ". . ." file.txt
+ hg commit file.txt
 
-"made a change" messages are redundant.
+Commit message records "why" changes were made. "made a change" messages are redundant. "Commit 1, 2..." messages are redundant. Messages must have meaning to others who may read them (or the original author 6 months from now).
+
 ::
 
  hg status file.txt
@@ -74,7 +91,7 @@ Add to repository.
 ::
 
  hg add .hgignore
- hg commit -m ". . ." .hgignore
+ hg commit .hgignore
 
 Log, status, difference and revert
 ----------------------------------
@@ -117,6 +134,11 @@ Alternative to remembering version numbers.
 Question: we can record our history of changes but we still have a problem, what is it?
 
 Answer: no backups!
+
+Alternative to using an editor for commit messages.
+::
+
+ hg commit -m "Fixed overflow bug" file.txt
 
 Working by yourself with backups
 --------------------------------
