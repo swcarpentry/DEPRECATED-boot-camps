@@ -1,0 +1,158 @@
+  371  cd
+  372  pwd
+  373  nano somefile.txt
+  374  wget --no-check-certificate https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/bash-materials.zip
+  375  curl -L --insecure https://bitbucket.org/softwaresaved/boot-camp-edinburgh-1212/downloads/bash-materials.zip -o bash-materials.zip
+  376  unzip bash-materials.zip 
+  377  # Bash comments start with a hash.
+  378  who
+  379  whoami
+  380  pwd
+  381  cd bash-materials/
+  382  pwd
+  383  ls
+  384  ls *.txt
+  385  ls h*
+  386  ls *_hai*
+  387  ls -R
+  388  ls -F
+  389  ls -s
+  390  ls -l
+  391  ls -a
+  392  ls .
+  393  ls ..
+  394  cd ..
+  395  cd bash-materials/
+  396  cat haiku.txt 
+  397  head haiku.txt 
+  398  head -2 haiku.txt 
+  399  tail haiku.txt 
+  400  tail -2 haiku.txt 
+  401  cp haiku.txt another_haiku.txt
+  402  cat another_haiku.txt 
+  403  mkdir haikus
+  404  cp *.txt haikus
+  405  cp -r haikus more_haikus
+  406  rm another_haiku.txt 
+  407  rm more_haikus/more_haikus.txt 
+  408  rm -rf more_haikus
+  409  mkdir yet_more_haikus
+  410  rmdir yet_more_haikus
+  411  history
+  412  cat haiku.txt  # Rerun command 393.
+  413  wc haiku.txt 
+  415  wc -l haiku.txt 
+  416  wc -w haiku.txt 
+  417  wc -l *.txt
+  418  grep the haiku.txt 
+  419  grep day haiku.txt 
+  420  grep is haiku.txt 
+  421  grep 'it is' haiku.txt 
+  422  grep -w is haiku.txt 
+  423  grep -n is haiku.txt 
+  424  grep -i is haiku.txt 
+  425  grep -wn is haiku.txt 
+  426  grep -wnv is haiku.txt 
+  427  grep -wnr Today *
+  428  man grep
+  429  grep -r not * > found_nots.txt
+  430  cat found_nots.txt 
+  431  ls *.txt > txt_files.txt
+  432  cat txt_files.txt 
+  433  cat
+  434  cat > myscript.txt
+  435  cat myscript.txt 
+  436  cat < haiku.txt 
+  438  ls idontexist.txt > output.txt
+  440  cat output.txt
+  441  ls idontexist.txt 2> output.txt
+  442  cat output.txt
+  443  ls haiku.txt 1> output.txt 
+  444  cat output.txt 
+  445  ls idontexist.txt haiku.txt > output.txt 2>&1
+  446  cat output.txt 
+  448  cd pdb
+  449  grep -w 'H' *pdb > hydrogen.txt
+  450  cat hydrogen.txt 
+  451  wc -l hydrogen.txt 
+  452  cd ..
+  453  find .
+  454  find . -type d
+  455  find . -type f
+  456  find . -maxdepth 2 -type f
+  457  find . -mindepth 3 -type f
+  464  find . -perm -u=r
+  465  find . -perm -u=x
+  466  find . -perm -o=x
+  467  find . -perm -o=w
+  468  find . -name *.txt
+  469  find . -name '*.txt'
+  470  find . -iname '*.TXT'
+  471  find . -empty
+  472  touch emptyfile.txt
+  473  find . -empty
+  474  wc -l `find . -name '*.txt'`
+  475  cat `find . -name '*.pdb'` > proteins.txt
+  476  cat proteins.txt 
+  477  wc -l proteins.txt 
+  478  find . -name '*.txt' > files.tmp
+  479  wc -l files.tmp 
+  480  find . -name '*.txt' | wc -l
+  481  echo "Number of .txt files:" ; find . -name '*.txt' | wc -l
+  482  ls | grep s | wc -l
+  483  history | grep 'wget'
+  484  cd pdb
+  485  cat `find . -name '*.pdb'` | grep -w 'H' | wc -l > hydrogen_count.txt
+  486  cat hydrogen_count.txt 
+  487  cd ..
+  488  set
+  489  MYFILE=data.txt
+  490  echo $MYFILE
+  491  echo "My file name is $MYFILE"
+  492  export $MYFILE
+  493  export MYFILE
+  494  NUM=1
+  495  if [ "$NUM" -eq 1 ]; then echo "Equal"; fi
+  496  WORD="Hello"
+  497  if [ "$WORD" = "Hello" ]; then echo "Equal"; fi
+  498  let NUM=$NUM+1
+  499  echo $NUM
+  500  TEXT_FILES=`ls *.txt`
+  501  echo $TEXT_FILES
+  502  for PDB in `find . -name '*.pdb'`; do     echo $PDB; done
+  503  nano protein_filter.sh
+  504  sh protein_filter.sh 
+  505  chmod +x protein_filter.sh 
+  506  ./protein_filter.sh 
+  507  ls -l haiku.txt 
+  508  chmod a+r haiku.txt 
+  509  ls -l haiku.txt 
+  510  chmod a-r haiku.txt 
+  511  ls -l haiku.txt 
+  512  chmod u+r haiku.txt 
+  513  ls -l haiku.txt 
+  514  chmod g+w haiku.txt 
+  515  ls -l haiku.txt 
+  518  chmod o+x haiku.txt 
+  519  ls -l haiku.txt 
+  520  chmod g+rx haiku.txt 
+  521  ls -l haiku.txt 
+  522  chmod go+rx haiku.txt 
+  523  ls -l haiku.txt 
+  524  chmod ugo=rwx haiku.txt 
+  525  ./counter.sh > output.txt 
+  526  wc -l output.txt 
+  527  jobs -l
+  528  ./counter.sh > output.txt 
+  529  jobs -l
+  530  fg
+  531  bg
+  532  wc -l output.txt 
+  533  ./counter.sh > output.txt &
+  534  kill 11039
+  537  jobs
+  538  ps
+  539  top
+  540  nohup ./counter.sh > output.txt &
+  541  wc -l output.txt 
+  542  script
