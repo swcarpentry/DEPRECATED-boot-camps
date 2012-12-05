@@ -20,6 +20,35 @@ Cover BashShell.pptx, slides 1 to 4.
 
 Bash, "Bourne again shell", is the most popular.
 
+Home directory
+--------------
+
+"directory" is bash shell name what is called a "folder" in Windows.
+
+Bash shell uses the notion of a "home directory" which is typically the directory a user is in when they first log in to a Linux server or start a Cygwin window, for example.
+
+Th home directory can be returned to at any time:
+
+::
+
+  cd
+
+To see the path to the current directory, in this case the home directory:
+::
+
+ pwd
+
+Editor
+------
+
+Bash shell has many editors including vi, xemacs and nano. Users are recommended to use the editor they are familiar with.
+
+::
+
+ nano somefile.txt
+
+nano is a basic editor good for Software Carpentry boot camps which can create, edit, and save files (CTRL-O) and is straightforward to exit (CTRL-X).
+
 Download files via the command-line
 -----------------------------------
 
@@ -59,7 +88,7 @@ Who am I logged in as.
 
  whoami
 
-Current directory, the bash name for a folder.
+Current directory.
 ::
 
  pwd
@@ -159,6 +188,22 @@ Empty directories can be removed with rmdir.
 ::
 
  rmdir yet_more_haikus
+
+History
+-------
+
+Using the up-arrow on the keyboard scrolls through the previous commands typed - the command history.
+
+Display the complete history
+::
+
+  history
+
+Rerun the 123rd command from the history:
+
+::
+
+  !123
 
 Word count
 ----------
@@ -377,7 +422,12 @@ Question: what does this do?
 
 Answer: counts the number of files with the letter "s" in their name.
 
-"Little pieces loosely joined".
+grep can be used with history e.g. look for all the commands ran that included "wget"
+::
+
+ history | grep 'wget'
+
+Pipelines contribute to the notion of "little pieces loosely joined".
 
 Exercise 3 - pipes
 ------------------
