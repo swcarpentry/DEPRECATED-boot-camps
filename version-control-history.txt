@@ -1,0 +1,100 @@
+  588  hg init
+  589  ls .hg
+  590  nano xmasdinner.txt
+  591  hg status xmasdinner.txt 
+  592  hg add xmasdinner.txt 
+  593  hg status xmasdinner.txt 
+  594  hg commit -m "Initial Xmas dinner thoughts" xmasdinner.txt 
+  595  cd
+  596  nano .hgrc
+  597  cd recipe/
+  598  ls
+  599  hg commit -m "Initial Xmas dinner thoughts" xmasdinner.txt 
+  600  hg status xmasdinner.txt 
+  601  nano .hgignore
+  602  hg status
+  603  hg add .hgignore 
+  604  hg commit -m "Ignore XEmacs scratch files" .hgignore 
+  605  hg status
+  606  hg log
+  607  nano xmasdinner.txt
+  608  hg commit -m "Added pudding" xmasdinner.txt 
+  609  nano xmasdinner.txt
+  610  hg commit -m "Added coffee'n'cake" xmasdinner.txt 
+  611  nano xmasdinner.txt
+  612  hg commit -m "Added starter" xmasdinner.txt 
+  613  hg log
+  614  nano xmasdinner.txt
+  615  hg diff xmasdinner.txt 
+  616  hg status xmasdinner.txt 
+  617  hg revert xmasdinner.txt 
+  618  hg status xmasdinner.txt 
+  619  cat xmasdinner.txt.orig 
+  620  hg update 0
+  621  cat xmasdinner.txt
+  622  hg update 1
+  623  cat xmasdinner.txt
+  624  hg update 2
+  625  cat xmasdinner.txt
+  626  hg update
+  627  cat xmasdinner.txt
+  628  hg tag MY_JOURNAL_LETTER
+  629  hg update 0
+  630  cat xmasdinner.txt
+  631  hg update MY_JOURNAL_LETTER
+  632  cat xmasdinner.txt
+  633  hg log
+  634  hg update
+  635  hg id -n
+  636  hg update MY_JOURNAL_LETTER
+  637  hg id -n
+  638  hg update
+  639  hg id -n
+  640  hg push http://mikej888@bitbucket.org/mikej888/boot-camp
+  641  cd
+  642  nano .hgrc 
+  643  cd recipe/
+  644  nano xmasdinner.txt
+  645  hg commit -m "Added after dinner mints" xmasdinner.txt 
+  646  hg push http://mikej888@bitbucket.org/mikej888/boot-camp
+  647  cd
+  648  rm -rf recipe/
+  649  hg clone http://mikej888@bitbucket.org/mikej888/boot-camp
+  650  cd boot-camp/
+  651  ls
+  652  hg log
+  653  cd
+  654  ls
+  655  hg clone http://mikej888@bitbucket.org/mikej888/boot-camp recipe-clone
+  656  cd recipe-clone/
+  657  ls
+  658  hg log
+  659  nano xmasdinner.txt
+  660  hg commit -m "Added more to starter and main course" xmasdinner.txt 
+  661  cd ../boot-camp/
+  662  hg incoming
+  663  cd ../recipe-clone/
+  664  hg push
+  665  cd ../boot-camp/
+  666  hg incoming
+  667  hg pull
+  668  hg log
+  669  hg id -n
+  670  hg diff -r 6 -r 7
+  671  hg update
+  672  nano xmasdinner.txt 
+  673  hg commit -m "Changed bread and added another starter"
+  674  hg push
+  675  cd ../recipe-clone/
+  676  nano xmasdinner.txt 
+  677  hg commit -m "Changed to wholemeal bread, boiled potatoes and ice cream for pudding"
+  678  hg push
+  679  hg pull
+  680  hg log
+  681  hg merge
+  682  cat xmasdinner.txt
+  683  nano xmasdinner.txt
+  684  ls
+  685  hg resolve -m
+  686  hg commit -m "Merged my changes with my partner's"
+  687  hg push
