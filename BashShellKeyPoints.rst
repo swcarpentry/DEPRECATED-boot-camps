@@ -27,13 +27,12 @@ Home directory
 
 Bash shell uses the notion of a "home directory" which is typically the directory a user is in when they first log in to a Linux server or start a Cygwin window, for example.
 
-Th home directory can be returned to at any time:
-
+The home directory can be returned to at any time.
 ::
 
   cd
 
-To see the path to the current directory, in this case the home directory:
+To see the path to the current directory, in this case the home directory.
 ::
 
  pwd
@@ -41,8 +40,9 @@ To see the path to the current directory, in this case the home directory:
 Editor
 ------
 
-Bash shell has many editors including vi, xemacs and nano. Users are recommended to use the editor they are familiar with.
+Bash shell has many editors including vi, xemacs and nano. 
 
+Attendees are recommended to use the editor they are familiar with. If they don't have one then recommend nano and give a quick demo.
 ::
 
  nano somefile.txt
@@ -135,7 +135,7 @@ List files ending in \*.txt.
 
  ls -l
 
--a option shows hidden files too. . is current directory and .. is parent directory
+-a option shows hidden files too. . is current directory and .. is parent directory.
 ::
 
  ls -a 
@@ -194,13 +194,12 @@ History
 
 Using the up-arrow on the keyboard scrolls through the previous commands typed - the command history.
 
-Display the complete history
+Display the complete history.
 ::
 
   history
 
-Rerun the 123rd command from the history:
-
+Rerun the 123rd command from the history.
 ::
 
   !123
@@ -230,7 +229,6 @@ Finding text
 ------------
 
 Find text in files with grep (global/regular expression/print).
-
 ::
 
  grep the haiku.txt
@@ -422,7 +420,7 @@ Question: what does this do?
 
 Answer: counts the number of files with the letter "s" in their name.
 
-grep can be used with history e.g. look for all the commands ran that included "wget"
+grep can be used with history e.g. look for all the commands ran that included "wget".
 ::
 
  history | grep 'wget'
@@ -471,7 +469,7 @@ Bash scripts
 
 Bash supports commands similar to programming languages.
 
-Conditional if statements
+Conditional if statements.
 ::
 
  NUM=1
@@ -507,7 +505,7 @@ Typing in the same command sequences over and over is time-wasting, error prone,
 
  nano protein_filter.sh
 
-Add
+Add.
 ::
 
  #!/bin/bash
