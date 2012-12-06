@@ -1,0 +1,19 @@
+# 5. What else should the boot camp have covered? (What was missing from the boot camp?)
+
+More info on make.
+
+I would have liked to see more advanced features of the bash shell.
+
+Networking oriented bash & python contents. I understand this might not be interesting for BioSciences for example. Also sed and awk might be good tools for everyone.
+
+How to use the internet to find answers. in Python the string % operator. In shell: how to number the lines of file (useful later when we're doing tracebacks in Python).
+
+Other versioning systems, e.g. git, would have been useful, as BitBucket provides access to them and I kno of other researchers who use git (in fact, I am not personally aware of any that use mercurial, but several who use git. This is probably just a (huge) selection bias, though.) It's a huge topic, and the documentation is... usually almost sufficient, but slightly more in-depth coverage of matplotlib would have been helpful, e.g. how to save files, change their sizes for publication.
+
+I think showing examples of the scientific libraries in python would have been useful e.g. numpy ans scipy
+
+I think databases are worth inflicting on people- metadata is starting to bite many people. Could mix it with an example illustrating what archive services need??
+
+More complex uses of matplotlib. What are the advantages of python over other languages? How fast is python?
+
+more details about makefile and more about tricks and tips on things you CAN'T find online

@@ -1,3 +1,16 @@
+# 5. How interested are you in each of the following...?
+# don't know about it and don't care
+# not sure but feel I should find out more about it
+# definitely want to know more about it
+# already know it but want to know how to use it better
+# already know about it so don't want to know more
+#
+# bash shell scripting
+# version control (also known as revision control) to record and "rollback" changes
+# make e.g. for automated build or analysis
+# simple Python including lists and dictionaries
+# writing unit tests in Python
+# plotting data using matplotlib
 0 "bash" 0 3 21 6 0
 1 "version control" 1 5 18 5 1
 2 "make" 0 8 16 5 1

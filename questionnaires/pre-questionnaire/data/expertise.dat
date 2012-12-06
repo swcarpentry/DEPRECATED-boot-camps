@@ -1,3 +1,16 @@
+# 4. How would you describe your expertise in the following...?
+# never heard of it
+# know what it is / might have used it occasionally
+# use it but don't really understand it
+# use it regularly and feel I understand it well
+# expert
+#
+# bash shell scripting
+# version control (also known as revision control) to record and "rollback" changes
+# make e.g. for automated build or analysis
+# simple Python including lists and dictionaries
+# writing unit tests in Python
+# plotting data using matplotlib
 0 "bash" 1 14 9 6 0
 1 "version control" 8 18 2 1 1
 2 "make" 7 13 6 3 1

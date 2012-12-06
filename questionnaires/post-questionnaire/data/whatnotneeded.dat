@@ -1,0 +1,19 @@
+# 6. What did the boot camp NOT need to cover? (What parts could have been dropped? What didn't you need to learn?)
+
+found it all pretty new and therefore necessary/
+
+I personally knew most of the bash features covered already, but of course this might not have been so for other participants. So for me it would have been useful to skip some of the basic bash features in favor of more advanced topics.
+
+Bash scripting, provided all attendees had experience with bash. I'm talking about unzip, tar, Not about the make and awk bits.
+
+in shell: backquote in python: tuples, the numeric % operator in shell: maxdepth and mindepth. in shell: fg and bg and job control.
+
+The python section was very long as compared to bash, versioning and particularly make.
+
+Everything covered was useful. Though I think the python introduction could have been covered much quicker. I'm slightly biased as I knew python before I attended but I would expect most attendees to have a knowledge of programming concepts such as string, int, floats etc. I thought too much time was spent covering these topics
+
+The bash commands were presented well - but I expected people to know this, and us to begin with scripting. (Yet some flags and details were things I'd not used, nonetheless! Maybe a crib-sheet would suffice and allow us to move more quickly.)
+
+Unit testing seemed quite trivial and needed a bit more context on when it can be really useful.
+
+basics of python

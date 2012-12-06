@@ -1,0 +1,12 @@
+# 4. I intend to use these tools to help my research...
+# strongly agree
+# agree
+# neither agree or disagree
+# disagree
+# strongly disagree
+0 "bash" 8 6 0 0 0
+1 "version control" 8 4 1 1 0
+2 "make" 3 6 4 1 0
+3 "Python" 6 4 3 1 0
+4 "unit testing" 5 2 5 2 0
+5 "matplotlib" 4 4 4 2 0
