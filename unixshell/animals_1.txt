@@ -1,0 +1,6 @@
+Species Observations Date
+Dog     5            2/11/2011
+Horse   1            4/7/2011
+Dog     2            5/17/2012
+Cat     1            7/23/2012
+Bird    2            7/23/2012 
