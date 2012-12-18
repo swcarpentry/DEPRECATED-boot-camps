@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include header.html %}
+    <style type="text/css">
+      /* need some space to match side margins */
+      .shadow {
+        padding-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container shadow">
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          {{content}}
+        </div>
+      </div>
+
+      {% include disqus-span.html %}
+      {% include footer.html %}
+
+    </div>
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
