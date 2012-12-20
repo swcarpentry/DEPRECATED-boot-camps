@@ -1,4 +1,5 @@
 ---
+root: ..
 layout: base
 title: Example Page
 ---
