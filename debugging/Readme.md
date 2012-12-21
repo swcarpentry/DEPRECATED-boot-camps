@@ -1,10 +1,5 @@
 # Debugging
 
-[Back To Remote Version
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3b-VersionControlRemote/)
-- [Forward To
-Testing](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/5-Testing/)
-
 **Presented by Patrick Fuller, shamelessly ripping off the work of Anthony Scopatz**
 
 ## Exercise: What is debugging?
