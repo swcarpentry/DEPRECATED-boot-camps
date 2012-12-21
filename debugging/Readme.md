@@ -141,7 +141,8 @@ but these few should be enough to get you running with pdb.
 ## Coding standards: the details matter!
 
 > The one skill that separates bad programmers from good programmers is attention to detail. 
-> -- <cite>Zed Shaw, _Learn Python the Hard Way_</cite>
+>
+> Zed Shaw, _Learn Python the Hard Way_
 
 In a written natural language, there are many ways to express the same idea. To 
 make the consumption of information easier, people define style guides to enforce 
