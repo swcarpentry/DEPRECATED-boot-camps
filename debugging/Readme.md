@@ -130,7 +130,7 @@ pdb.set_trace()
 Now, when you run the code, it will stop at whatever line you put `set_trace()`.
 You'll be prompted to give a command. Some common commands include:
 
- * `continue` continue on to the next time a `set_trace()` line is hit
+ * `continue` continues on to the next time a `set_trace()` line is hit
  * `print \*variable\*` prints the current value of a specified variable
  * `list` shows the source code around the `set_trace()` line
  * `args` prints the values of all the arguments in the current function
@@ -140,9 +140,8 @@ but these few should be enough to get you running with pdb.
 
 ## Coding standards: the details matter!
 
-> The one skill that separates bad programmers from good programmers is attention 
-  to detail. 
->   - Zed Shaw, _Learn Python the Hard Way_
+> The one skill that separates bad programmers from good programmers is attention to detail. 
+> -- <cite>Zed Shaw, _Learn Python the Hard Way_</cite>
 
 In a written natural language, there are many ways to express the same idea. To 
 make the consumption of information easier, people define style guides to enforce 
