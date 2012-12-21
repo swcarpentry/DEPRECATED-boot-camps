@@ -92,12 +92,12 @@ first exception.
 
 You can run pyflakes on your code by typing
 
-```bash
+```
 pyflakes my_code.py
 ```
 
 We can take this a step further with integrated development environments, or
-_IDE_s. IDEs are (basically) glorified text editors that dynamically lint,
+_IDEs_. IDEs are (basically) glorified text editors that dynamically lint,
 showing you typos as you write your code. You will find that coders generally
 have strong opinions on the use of IDEs, either positive or negative. Regardless,
 if you want to play around with one, I recommend [Eclipse](http://www.eclipse.org/) 
@@ -128,12 +128,12 @@ pdb.set_trace()
 ```
 
 Now, when you run the code, it will stop at whatever line you put `set_trace()`.
-You'll be prompted to give a command. Among these are
+You'll be prompted to give a command. Some common commands include:
 
-**continue** continue on to the next time a `set_trace()` line is hit
-**print \*variable\*** prints the current value of a specified variable
-**list** shows the source code around the `set_trace()` line
-**args** prints the values of all the arguments in the current function
+ * `continue` continue on to the next time a `set_trace()` line is hit
+ * `print \*variable\*` prints the current value of a specified variable
+ * `list` shows the source code around the `set_trace()` line
+ * `args` prints the values of all the arguments in the current function
 
 There are a lot more options, which can be found [here](http://docs.python.org/2/library/pdb.html), 
 but these few should be enough to get you running with pdb.
@@ -141,7 +141,8 @@ but these few should be enough to get you running with pdb.
 ## Coding standards: the details matter!
 
 > The one skill that separates bad programmers from good programmers is attention 
-  to detail. - Zed Shaw, _Learn Python the Hard Way_
+  to detail. 
+>   - Zed Shaw, _Learn Python the Hard Way_
 
 In a written natural language, there are many ways to express the same idea. To 
 make the consumption of information easier, people define style guides to enforce 
@@ -160,7 +161,7 @@ To help out coders, there are tools to test for compliance. The aptly named
 `autopep8` goes a step further by trying to fix all of your errors for you.
 These are both run from the shell, as
 
-```bash
+```
 pep8 my_code.py
 autopep8 my_code.py > my_new_code.py
 ```
@@ -184,6 +185,9 @@ rules to remember:
  * Avoid iterating through lists by index whenever possible.
  * Lambda functions should not be saved to a variable.
  
+These rules might seem random (probably because they are), but, trust me: they
+make collaborative coding _so much_ easier.
+ 
 ## Profiling: making code fast
 
 So, you've found your errors, those deep-rooted bugs, and even standardized
@@ -198,20 +202,24 @@ various points in your script.
 from time import time
 
 t0 = time()
-
-# run some code
-
+# run your code
 print time() - t0
 ```
 
-While this works, it's as messy as debugging with `print` statements. What we
+You can also time your entire script with:
+
+```
+time python my_code.py
+```
+
+While these both work, they're either too messy or not detailed enough. What we
 really want is a breakdown of how long the computer spends running each part
 of our code.
 
 _Profilers_ provide a way to do just this. With Python, run your script in a
 shell with this command
 
-```bash
+```
 python -m cProfile -s time my_code.py
 ```
 
@@ -238,7 +246,7 @@ improve the speed bottlenecks.
 
 ## Segfaults: the scourge of C
 
-Segmentation faults (_segfaults_) are the worst debug errors in existence. 
+Segmentation faults, abbreviated _segfaults_, are the worst debug errors in existence. 
 Segfaults occur when the program tries to access a part of memory that it 
 expects to be able to get to, and for whatever reason it is not available.
 Because of this, segfaults only occur at runtime, so many tools won't even
@@ -296,5 +304,5 @@ re-learn them with a clear mind.
 
 If you're an experienced coder, these tools are exactly what you need to up
 your game. Debuggers, profilers, and linters all save you valuable time, and
-the pep8 checker will really help in collaborative projects. Get used to them,
+the PEP8 checker will really help in collaborative projects. Get used to them,
 and the time investment will pay off.
