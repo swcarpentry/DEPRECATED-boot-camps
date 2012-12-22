@@ -33,11 +33,12 @@ library, and you'll be seeing many of them very soon. Exceptions to befriend
 include...
 
 ```python
-NameError # There's probably a variable name typo somewhere
-IOError # You're trying to use a file that doesn't exist
+NameError  # There's probably a variable name typo somewhere
+TypeError  # You're doing something with incompatible variable types
+IOError    # You're trying to use a file that doesn't exist
 IndexError # You're trying to reference a list element that doesn't exist
-KeyError # Similar to an IndexError, but for dictionaries
-Exception # This means "an error of any type". Hopefully you don't see it often.
+KeyError   # Similar to an IndexError, but for dictionaries
+Exception  # This means "an error of any type". Hopefully you don't see it often.
 ```
 
 When code returns an exception, we say that the exception was _thrown_ or
@@ -98,7 +99,7 @@ have strong opinions on the use of IDEs, either positive or negative. Regardless
 if you want to play around with one, I recommend [Eclipse](http://www.eclipse.org/) 
 with the [PyDev](http://pydev.org/) plugin.
 
-## PDB: for the other errors
+## Debuggers: for the other errors
 
 Linting will only catch the really obvious errors. For more deep-rooted issues,
 (ie. bugs), you're going to want to follow the code's logic line by line. One
@@ -172,6 +173,8 @@ rules to remember:
  * Variables and functions should be named  in `snake_case`. No capital letters.
    Classes are named in `UpperCamelCase`.
  * Multiline comments use `"""`, not `'''`.
+ * Private methods and variables should be prefixed with an underscore, ie. 
+   `_my_private_method()`
  
 **Special rules outside of PEP8**
 
