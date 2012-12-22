@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Conway's game of life
+Conway's game of life, final version.
 
 Rules:
  * Any cell with fewer than two neighbors dies (underpopulation)
@@ -20,7 +20,7 @@ def conway(population, generations=100):
 
 
 def evolve(population):
-    """Evolves the population by one generation"""
+    """Evolves the population by one generation."""
     # Get a unique set of discrete cells that need to be checked
     active_cells = population | set([neighbor for p in population
                                     for neighbor in neighbors(p)])
