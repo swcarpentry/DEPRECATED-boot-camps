@@ -14,9 +14,10 @@ starting populations.
 
 def conway(population, generations=100):
     """Runs Conway's game of life on an initial population."""
+    population = set(population)
     for i in range(generations):
         population = evolve(population)
-    return population
+    return list(population) 
 
 
 def evolve(population):
@@ -40,5 +41,5 @@ def neighbors(cell):
     return [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1), (x + 1, y + 1),
             (x + 1, y - 1), (x - 1, y + 1), (x - 1, y - 1)]
 
-glider = set([(0, 0), (1, 0), (2, 0), (0, 1), (1, 2)])
-print list(conway(glider))
+glider = [(0, 0), (1, 0), (2, 0), (0, 1), (1, 2)]
+print conway(glider)

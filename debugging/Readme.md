@@ -18,6 +18,7 @@ people. Follow these steps:
 Time limit: 5 min.
 
 ## Why does debugging matter?
+
 Unless you're perfect (ie. me), you're bound to make errors. Especially early 
 on, expect to spend much more time debugging than actually coding. The process 
 fits the Pareto principle - you're going to spend \~20% of your time writing 
@@ -99,41 +100,6 @@ have strong opinions on the use of IDEs, either positive or negative. Regardless
 if you want to play around with one, I recommend [Eclipse](http://www.eclipse.org/) 
 with the [PyDev](http://pydev.org/) plugin.
 
-## Debuggers: for the other errors
-
-Linting will only catch the really obvious errors. For more deep-rooted issues,
-(ie. bugs), you're going to want to follow the code's logic line by line. One
-lazy way to do this is to put `print` statements everywhere, which allows you
-to view variables over time. However, this gets messy quickly, and you lose
-control of what variables you can see once you start executing.
-
-This is where the Python DeBugger, or _pdb_, comes into play. With it, you can 
-step through your code and watch as variables are changed.
-
-All you have to do to use this is import the `pdb` module and call the 
-`set_trace()` method.
-
-```python
-import pdb
-
-# [ ... ]
-# Your code here
-# [ ... ]
-
-pdb.set_trace()
-```
-
-Now, when you run the code, it will stop at whatever line you put `set_trace()`.
-You'll be prompted to give a command. Some common commands include:
-
- * `continue` continues on to the next time a `set_trace()` line is hit
- * `print \*variable\*` prints the current value of a specified variable
- * `list` shows the source code around the `set_trace()` line
- * `args` prints the values of all the arguments in the current function
-
-There are a lot more options, which can be found [here](http://docs.python.org/2/library/pdb.html), 
-but these few should be enough to get you running with pdb.
-
 ## Coding standards: the details matter!
 
 > The one skill that separates bad programmers from good programmers is attention to detail. 
@@ -185,6 +151,41 @@ rules to remember:
  
 These rules might seem random (probably because they are), but, trust me: they
 make collaborative coding _so much_ easier.
+
+## Debuggers: for the deep-rooted errors
+
+Linting will only catch the really obvious errors. For more complex issues,
+(ie. bugs), you're going to want to follow the code's logic line by line. One
+lazy way to do this is to put `print` statements everywhere, which allows you
+to view variables over time. However, this gets messy quickly, and you lose
+control of what variables you can see once you start executing.
+
+This is where the Python DeBugger, or _pdb_, comes into play. With it, you can 
+step through your code and watch as variables are changed.
+
+All you have to do to use this is import the `pdb` module and call the 
+`set_trace()` method.
+
+```python
+import pdb
+
+# [ ... ]
+# Your code here
+# [ ... ]
+
+pdb.set_trace()
+```
+
+Now, when you run the code, it will stop at whatever line you put `set_trace()`.
+You'll be prompted to give a command. Some common commands include:
+
+ * `continue` continues on to the next time a `set_trace()` line is hit
+ * `print \*variable\*` prints the current value of a specified variable
+ * `list` shows the source code around the `set_trace()` line
+ * `args` prints the values of all the arguments in the current function
+
+There are a lot more options, which can be found [here](http://docs.python.org/2/library/pdb.html), 
+but these few should be enough to get you running with pdb.
  
 ## Profiling: making code fast
 
