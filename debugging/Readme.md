@@ -34,12 +34,14 @@ library, and you'll be seeing many of them very soon. Exceptions to befriend
 include...
 
 ```python
-NameError  # There's probably a variable name typo somewhere
-TypeError  # You're doing something with incompatible variable types
-IOError    # You're trying to use a file that doesn't exist
-IndexError # You're trying to reference a list element that doesn't exist
-KeyError   # Similar to an IndexError, but for dictionaries
-Exception  # This means "an error of any type". Hopefully you don't see it often.
+SyntaxError # You're probably missing a parenthesis or colon
+NameError   # There's probably a variable name typo somewhere
+TypeError   # You're doing something with incompatible variable types
+ValueError  # You're calling a function with the wrong parameter
+IOError     # You're trying to use a file that doesn't exist
+IndexError  # You're trying to reference a list element that doesn't exist
+KeyError    # Similar to an IndexError, but for dictionaries
+Exception   # This means "an error of any type" - hopefully you don't see it often
 ```
 
 When code returns an exception, we say that the exception was _thrown_ or
