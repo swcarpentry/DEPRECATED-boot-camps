@@ -7,12 +7,12 @@ tuples](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonData
 
 * * * * *
 
-**Presented By: Joshua R. Smith**
+**Presented By: Will Trimble**
 
-**Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy and Many More**
+**Forked from lecture by Joshua R. Smith, based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy and Many More**
 
 ## Introduction
-In this lecture, i'm going to talk about programming; specifically the python programming language. In order to do the examples, we are going to have to use an environment called iPython which I'll also talk about. I expect this lecture to be interactive, so stop me at any point if you have questions. Finally, I want everyone to understand that fundamentally computing is about people. The correct power dynamic is that people are the mastes and the machines are servants. The machines are there to make our lives easier. Programming is an act of written communication between people across time and space. Computers are just the medium.
+This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython notebook.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
 
 So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.python.org/dev/peps/pep-0020/)
 
@@ -77,12 +77,13 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 * modules
 
 ## iPython
-ipython is the tool that we are going to use to execute python commands and code. iPython is an alternative to the built-in Python interpreter with some nice features. Lets give the built-in interpreter a spin just this once.
+You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run iPython, or you can run iPython notebook.  iPython is an alternative to the built-in Python interpreter with some nice features.  iPython notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
+Lets give the built-in interpreter a spin just this once.
 
 ```
-jrsmith3@zoidberg:~$ python
-Python 2.7.2+ (default, Oct  4 2011, 20:03:08) 
-[GCC 4.6.1] on linux2
+swc@swc:~$ python
+Python 2.7.3 (default, Apr 20 2012, 22:44:07) 
+[GCC 4.6.3] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print "hello world"
 hello world
@@ -92,17 +93,27 @@ hello world
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line
 
 ```
-jrsmith3@zoidberg:~$ python hello.py
+swc@swc:~$ python hello.py
 ```
 
-iPython has more useful features than the standard python interpreter, so we'll use it from here on out.
+iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out.
 
 ```python
-jrsmith3@zoidberg:~$ ipython
+swc@swc:~$ ipython notebook
 In [1]: print "hello world"
 hello world
-
 In [2]: 
+```
+
+You may notice if you hit ENTER your current command does not execute.  ENTER puts a line break in your current command, and allows you to write multi-line commands and have them all executed at once.  
+SHIFT-ENTER sends the line that your cursor is on to the interpreter.  The output of the command, or the error message, appears below the line you entered it on.
+
+```
+In [2]: print "hello"
+        print "world"
+hello
+world
+In [3]: 
 ```
 
 ### Pasting
@@ -388,14 +399,14 @@ Out[57]: (<type 'float'>, <type 'float'>, <type 'float'>)
 There are operations that can be done with strings.
 
 ```python
-In [58]: firstName = "Joshua"
+In [58]: firstName = "Johann"
 
-In [59]: lastName = "Smith"
+In [59]: lastName = "Gambolputty"
 
 In [60]: fullName = firstName + lastName
 
 In [61]: print fullName
-JoshuaSmith
+JohannGambolputty
 ```
 
 When concatenating strings, you have to be explicit since computers don't understand context.
@@ -404,7 +415,7 @@ When concatenating strings, you have to be explicit since computers don't unders
 In [62]: fullName = firstName + " " + lastName
 
 In [63]: print fullName
-Joshua Smith
+Johann Gambolputty
 ```
 
 There are other operations deined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
@@ -425,7 +436,7 @@ So we can use it to upper-caseify a string.
 
 ```python
 In [65]: fullName.upper()
-Out[65]: 'JOSHUA SMITH'
+Out[65]: 'JOHANN GAMBOLPUTTY'
 ```
 
 You have to use the parenthesis at the end because upper is a method of the string class.
@@ -433,8 +444,11 @@ You have to use the parenthesis at the end because upper is a method of the stri
 For what its worth, you don't need to have a variable to use the upper() method, you could use it on the string itself.
 
 ```python
-In [66]: "Joshua Smith".upper()
-Out[66]: 'JOSHUA SMITH'
+In [66]: "Johann Gambolputty".upper()
+Out[66]: 'JOHANN GAMBOLPUTTY'
 ```
 
+What do you think should happen when you take upper of an int?  What about a string representation of an int?
+
 That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
+
