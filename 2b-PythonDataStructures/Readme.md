@@ -1,15 +1,15 @@
 # Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
 [Back To Python
-Variables](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2a-PythonVariables/)
+Variables](http://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/2a-PythonVariables)
 - [Forward to Python Flow
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/)
+Control](http://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/2c-PythonFlowControl/)
 
 * * * * *
 
-**Presented By : Joshua R. Smith**
+**Presented By : Will Trimble**
 
-**Based on lecture materials by Milad Fatenejad**
+**Based on lecture materials by Milad Fatenejad and Joshua R. Smith**
 
 Python would be a farily useless language if it weren't for the compound data types. The main two are lists and dictionaries, but I'll mention sets and tuples as well. I'll also go over reading text data from files. 
 
@@ -286,7 +286,7 @@ In [12]: dataDict["temperature"] = 3275.39
 You can also add new keys to the dictionary.
 
 ```python
-In [13]: dataDict["user"] = "Joshua R. Smith"
+In [13]: dataDict["user"] = "Johann G. von Ulm"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods. Lets say you wanted all the keys from a particular dictionary.
@@ -305,7 +305,7 @@ Out[15]:
  3275.39,
  [-1.0, -0.5, 0.0, 0.5, 1.0],
  'current vs. voltage',
- 'Joshua R. Smith',
+ 'Johann G. von Ulm',
  [-2.0, -1.0, 0.0, 1.0, 2.0]]
 ```
 
