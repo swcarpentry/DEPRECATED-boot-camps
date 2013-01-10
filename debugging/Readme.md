@@ -1,5 +1,4 @@
-[Back To Remote Version Control](https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/version-control/git/remote)
-- [Forward to Testing](https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/testing)
+[Back To Remote Version Control](https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/version-control/git/remote) - [Forward to Testing](https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/testing)
 
 # Debugging
 
