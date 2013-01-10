@@ -12,4 +12,3 @@ x = no_one_defined_me + 1
 
 # Using an uninitialized variable
 non_existent_dict["a_field"] = 100
-
