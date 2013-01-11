@@ -96,7 +96,8 @@ print "hello world"
 
 # <markdowncell> 
 # ## Navigating in ipython notebook
-# The box above is called the input cell; commands you put here will be fed to the python interpreter one at a time when you press Control-ENTER.  
+# The box above is called the input cell; commands you put here will be fed to the python interpreter one at a time when you press Shift-ENTER.  
+# The output of the command, or the error message, appears below the line you entered it on.
 
 # <codecell>
 print "Try and tell that to the young people"
@@ -107,20 +108,21 @@ print "of today--they won't believe you."
 # This allows you to compose multi-line commands and submit them to python all at once.
 # <markdowncell>
 # Up and down arrows will allow you to move the cursor to different cells in the notebook, including these cells containing text (which you can edit in your browser).  
-# Only the cells for which you press Shift-ENTER will be executed by the python interpreter.  
-# The output of the command, or the error message, appears below the line you entered it on.
+# Only the cells for which you press Shift-ENTER or Control-ENTER will be executed by the python interpreter.   
 
 # <markdowncell>
 # You can enter the same line over and over again into the interpreter.  It's wierd, but it's life. 
 # <codecell>
-i = 5
+i = 0
 # <markdowncell>
-# Try entering this cell a few times.  
+# Try entering this cell a few times:  
+# **Shift-ENTER** executes and moves to the next cell.
+# **Control-ENTER** executes and does *not* move to the next cell.
 # <codecell>
 i = i + 1
 print i
 # <markdowncell>
-# The output of the command, or the error message, appears below the line you entered it on.
+# If you want to create new empty cells, it's three keys: **Shift-Enter**, **Control-M**, and then  **a**  This will insert more cells in the middle of the notebook. 
 
 # <markdowncell> 
 # ## Getting Help
@@ -134,42 +136,46 @@ help(int)
 # <codecell>
 int?
 # <markdowncell>
-# Which displays a shorter help summary in the magic pane at the bottom of the screen.
+# Which displays a shorter help summary in the magic pane at the bottom of the screen.  You can minimize the magic pane when it gets in your way.
 
 # <markdowncell>
-# If you wanted to see all the built-in commands available for something, use the *dir* command. Check out all of the methods of the str type.
+# If you wanted to see all the built-in commands available for something, use the *dir* command. Check out all of the methods of the object "Hello world", which are shared by all objects of the str type.
 # <codecell>
 dir("Hello world")
 # <markdowncell>
-# There's a method that looks important -- swapcase.  Let's see what it does:
+# There's a method that looks important -- swapcase.  Let's see what it does:  
 # <codecell>
 "Hello world".swapcase()
 
 # <markdowncell>
-## Executing code in files
+# Hrm.  Ahem.
+# ## Executing code in files
 
 # If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so
 
 # <codecell>
-%run hellop.py
+%run hellp.py
 
 # <markdowncell>
-# *Ooops.*  We misspelled **hello.py**, and python is giving us an error message.  Change the line above to hello.py and see what it does.
+# *Ooops.*  We misspelled **hello.py**, and python is giving us an error message.  Change the line above to hello.py, hit **Shift-ENTER**, and see what it does.
 
 # <markdowncell>
-## Clearing iPython
+# ## Clearing iPython
 
-# To clear everything from iPython, use the reset command.
+# To clear everything from iPython, use the %reset command.
 # <codecell>
 mystring = "And three shall be the count." 
 print mystring
 
 # <codecell>
-reset
+%reset
+# <codecell>
 print mystring
 
 # <markdowncell>
-## Variables
+# Note that the error message contains a recap of the input that caused the error (with an arrow, no less!)   It is objecting that **mystring** is not defined, since we just reset it.
+
+# ## Variables
 
 # All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Let's set a variable.
 
@@ -185,7 +191,7 @@ current = 0.5
 print voltage, current
 
 # <markdowncell>
-## Types and Dynamic Typing
+# ## Types and Dynamic Typing
 
 # Like most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
 
@@ -226,7 +232,6 @@ type(voltage)
 
 # I'll let you ruminate on the pros and cons of this construction while I change the value of voltage back to an int:
 
-
 # <codecell>
 voltage = 2
 
@@ -266,7 +271,7 @@ resistanceString = "4.0 ohms"
 
 # <markdowncell> 
 # Do you think you can coerce that string to a numerical type?
-## On Being Precise with floats and ints
+# ## On Being Precise with floats and ints
 # Again, the following may seem esoteric and pedantic, but it is very important. So bear with me.
 # Let's say you had some voltage data that looks like the following
 # ```
@@ -306,7 +311,7 @@ type(voltage)
 
 # This point becomes important when we start operating on data in the next section.
 
-## Data Operations
+# ## Data Operations
 
 # What's the point of data if we aren't going to do something with it?  Let's get computing.
 
@@ -395,6 +400,7 @@ lastName = "Gambolputty"
 # <markdowncell> 
 # When concatenating strings, we must explicitly use the concatenation operator +.  Computers don't understand context.
 
+# <codecell>
 fullName = firstName + lastName
 # <codecell>
 print fullName
@@ -431,7 +437,7 @@ fullName.upper()
 
 # ## Pasting
 
-# You can paste things into the ipython console by copying text from your machine with **ctrl+c** and typing **%paste** at the iPython prompt.
+# You can paste things into the ipython console by copying text from your machine with **ctrl+c** and typing **%paste** at the iPython prompt.  The **%paste** is necessary syntax for multi-line clipboard deposits.
 
 # ## History
 
@@ -442,3 +448,9 @@ fullName.upper()
 # iPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
 
 # <codecell>
+print
+
+# <markdowncell> 
+# At the end of the notebook, you can just type commands (like in the command-line ipython interpreter).  Where do you want to go today?
+# <codecell>
+
