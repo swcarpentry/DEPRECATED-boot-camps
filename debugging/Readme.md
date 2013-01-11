@@ -1,3 +1,5 @@
+[Back To Remote Version Control](https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/version-control/git/remote) - [Forward to Testing](https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/testing)
+
 # Debugging
 
 **Presented by Patrick Fuller, shamelessly ripping off the work of Anthony Scopatz**
@@ -19,7 +21,7 @@ Time limit: 5 min.
 
 ## Why does debugging matter?
 
-Unless you're perfect (ie. me), you're bound to make errors. Especially early 
+Unless you're perfect, you are bound to make errors. Especially early 
 on, expect to spend much more time debugging than actually coding. The process 
 fits the Pareto principle - you're going to spend \~20% of your time writing 
 ~80% of your code, and the other ~80% of your time will be spent screaming 
