@@ -57,4 +57,11 @@
 
 # <codecell>
 
+# <markdowncell>
+# # Exercise 8
+# 1.  Check your answer to Exercise 5 (the value of 42!) using the **math.gamma()** function.
+# <codecell>
+import math
+
+
 
