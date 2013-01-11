@@ -1,0 +1,200 @@
+---
+root: ..
+title: Max Planck Institute, Tuebingen, 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .brand {
+        background-color: transparent;
+        background-image: url("{{page.root}}/logos/swc-logo.svg");
+        background-repeat: no-repeat;
+        background-size: auto 36px;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Installation</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="home" class="hero-unit">
+        <div>
+          <a href="http://software-carpentry.org">
+            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;">
+          </a>
+          <h1>Max Planck Institute Tuebingen</h1>
+        </div>
+        <br>
+        <div class="row-fluid">
+          <div class="span6">
+            <p>41 Spemannstrasse, 72076 Tuebingen, Germany</p>
+          </div>
+          <div class="span6" style="text-align: right;">
+            <p>January 25 - 25, 2013<br>
+               9:00 AM - 4:30 PM</p>
+          </div>
+        </div>
+      </div> <!-- hero-unit -->
+
+      <div id="schedule" class="row-fluid">
+        <h1>Schedule</h1>
+        <p class="muted" style="font-style: italic;">Subject to Change</p>
+        <div class="span4">
+          <strong>Day 1</strong>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>9:00 - 11:00</td>
+                <td style="text-align: right;">Introduction/"What we know about software development"</td>
+              </tr>
+              <tr>
+                <td>11:00 - 12:00</td>
+                <td style="text-align: right;">Bash shell scripting</td>
+              </tr>
+              <tr>
+                <td>12:00 - 1:00</td>
+                <td style="text-align: right;">Lunch</td>
+              </tr>
+              <tr>
+                <td>13:00 - 14:30</td>
+                <td style="text-align: right;">Introduction to Python</td>
+              </tr>
+              <tr>
+                <td>15:00 - 16:30</td>
+                <td style="text-align: right;">Databases and SQL</td>
+              </tr>
+            </tbody>
+          </table>
+          <strong>Day 2</strong>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>9:00 - 10:30</td>
+                <td style="text-align: right;">Version Control</td>
+              </tr>
+              <tr>
+                <td>11:00 - 12:30</td>
+                <td style="text-align: right;">Testing</td>
+              </tr>
+              <tr>
+                <td>12:30 - 13:30</td>
+                <td style="text-align: right;">Lunch</td>
+              </tr>
+              <tr>
+                <td>13:30 - 15:00</td>
+                <td style="text-align: right;">NumPy</td>
+              </tr>
+              <tr>
+                <td>15:30 - 16:30</td>
+                <td style="text-align: right;">Closing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> <!-- schedule -->
+      <hr>
+      <div>
+        <h1 id="install">Installation</h1>
+        <p>You should ensure the following software is installed on your laptop before you arrive at the bootcamp, so that we can get started promptly with the tutorials.</p>
+        <ul>
+          <li>Bash (the particular Unix shell we’ll be using)</li>
+          <li>Mercurial and EasyMercurial (for version control)</li>
+          <li>Python 2.6+ (the scripting language used in the course) including both <a href="http://numpy.scipy.org/">NumPy</a>
+            and <a href="http://matplotlib.org/">matplotlib</a>.</li>
+          <li>Firefox with SQLite Manager add-on (relational database)</li>
+          <li>A text editor (for programming!)</li>
+        </ul>
+        <p>You can also save time on the day by creating an account beforehand at <a href="http://bitbucket.org/" target="_blank">Bitbucket</a>.</p>
+        <p>Please make sure you install and test all the required software ahead of the bootcamp,
+          because it can be quite difficult to get everything set up correctly.</p>
+
+        <div class="row-fluid">
+          <div class="span6">
+            <h4 class="well well-small">Linux</h4>
+            <p>Bash, Firefox are available using the appropriate package management tool in all major Linux distributions. Please check that the Python version is 2.x, (2.6 or higher, preferrably). If not, you may need to install a newer version “by hand” or upgrade your Linux installation.</p>
+            <p>The SQLite Manager add-on can be installed through the “Add-ons Manager” in Firefox.</p>
+            <p>EasyMercurial can be downloaded as a .deb package (for Debian or Ubuntu installations) from&nbsp;<a title="EasyMercurial download page" href="http://easyhg.org/download.html">the EasyMercurial download page</a>. Your package manager should automatically install any dependencies, including Mercurial itself. On Red Hat or other Linux distributions you will probably need to install Mercurial first using your package manager, then download the EasyMercurial source code package and compile and install it using the instructions in the included file README.txt: just run qmake and then make. The qmake tool is part of the qt-devel package, which you may need to install first.</p>
+            <p>If you use Linux, you probably already have a favourite text editor. Emacs and Nano are popular choices, but there are many others.</p>
+          </div>
+          <div class="span6">
+            <h4 class="well well-small">Windows</h4>
+            <p>You should install <a href="http://www.mingw.org/">MinGW</a> and <a href="http://www.mingw.org/wiki/MSYS">MSYS</a>. Check that you can run&nbsp;(from the Windows Start menu) MinGW -&gt; MinGW Shell in order to open a&nbsp;Bash prompt.</p>
+            <p>You can download Firefox from the <a href="http://mozilla.org/">Mozilla web site</a>, and then the SQLite&nbsp;Manager add-on can be installed through the “Add-ons Manager” in&nbsp;Firefox.</p>
+            <p>EasyMercurial can be downloaded from <a href="http://easyhg.org/download.html">the EasyMercurial download&nbsp;page</a> and the Windows installer will also install Mercurial&nbsp;itself.</p>
+            <p>You can use Wordpad or Notepad as a text editor, or install another&nbsp;editor such as <a href="http://www.sublimetext.com/">Sublime Text</a>.</p>
+          </div>
+        </div> <!-- row1 -->
+
+        <div class="row-fluid">
+          <div class="span6">
+            <h4 class="well well-small">Mac OSX</h4>
+            <p>OSX comes with Bash.</p>
+            <p>You can download Firefox from the&nbsp;<a title="Mozilla home page" href="http://www.mozilla.org/">Mozilla web site</a>, and then the SQLite Manager add-on can be installed through the “Add-ons Manager” in Firefox.</p>
+            <p>You can download Mercurial from the&nbsp;<a title="Mercurial" href="http://mercurial.selenic.com/">Mercurial web site</a>&nbsp;and EasyMercurial from&nbsp;<a title="EasyMercurial download page" href="http://easyhg.org/download.html">the EasyMercurial download page</a>.</p>
+            <p>There are many text editors available for OSX. (we reccommend <a href="http://www.barebones.com/products/textwrangler/" target="_blank">TextWrangler</a> or <a href="http://www.sublimetext.com/" target="_blank">SublimeText</a>.</p>
+          </div>
+          <div class="span6">
+            <h4 class="well well-small">Python (all platforms)</h4>
+            <p>Installing everything you need
+               on your own can be a bit difficult so
+               we recommend just installing the
+               <a href="http://www.enthought.com/products/epd.php">
+                Enthought Python Distribution</a>, which comes in
+              <a href="http://www.enthought.com/products/epd_free.php">free</a>
+              and
+              <a href="http://www.enthought.com/products/edudownload.php">academic</a>
+              versions for Mac, Windows, and Linux.</p>
+            <p>For other options check the Python4Astronomers page on
+               <a href="http://python4astronomers.github.com/installation/python_install.html">
+                installing scientific Python</a>.</p>
+          </div>
+        </div> <!-- row2 -->
+      </div> <!-- installation -->
+      <hr>
+      <div id="contact">
+        <h1>Contact</h1>
+        <p>For more information contact <a href="mailto:info@software-carpentry.org">info@software-carpentry.org</a>.
+      </div> <!-- contact -->
+    </div> <!-- /container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+
