@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+"""
+A myriad of poor formatting, copied from Anthony Scopatz
+"""
+
 import os
 
 aNumber = 0.5
