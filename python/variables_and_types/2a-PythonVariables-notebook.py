@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# <nbformat>3.0</nbformat>
+# <nbformat>2.0</nbformat>
 
 # <markdowncell>
 
@@ -14,9 +14,11 @@
 # 
 # **Forked from lecture by Joshua R. Smith, based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy and Many More**
 # 
+# <markdowncell>
 # ## Introduction
 # This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython notebook.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
 # 
+# <markdowncell>
 # So now would be a good time to roll out [PEP 20, The Zen of Python](http://www.python.org/dev/peps/pep-0020/)
 # > Beautiful is better than ugly.  
 # > Explicit is better than implicit.  
@@ -38,6 +40,7 @@
 # > If the implementation is easy to explain, it may be a good idea.  
 # > Namespaces are one honking great idea -- let's do more of those!  
 # 
+# <markdowncell>
 # Here is the reference material.
 # 
 # * [Dive into Python](http://www.diveintopython.net/toc/index.html)
@@ -45,6 +48,7 @@
 # * [IPython: A System for Interactive Scientific Computing](http://dx.doi.org/10.1109/MCSE.2007.53)
 # * [How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 # 
+# <markdowncell>
 # ## Lesson 1
 # * print statements
 # * variables
@@ -54,22 +58,25 @@
 # * types
 # * type coersion
 # * basic operations: add numbers, concatenate strings, basic data type functionality
+# <markdowncell>
 # ## Lesson 2
 # * list
 # * dictionary
 # * set
 # * tuple
 # * file reading
+# <markdowncell>
 # ## Lesson 3
 # * for loop
 # * conditional (if) statements
 # * while loops
 # * iteration
 # * writing to files
-# 
+# <markdowncell>
 # ## Lesson 4
 # * methods
 # * modules
+# 
 # 
 # ## Python environments
 # You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run iPython, or you can run iPython notebook.  iPython is an alternative to the built-in Python interpreter with some nice features.  iPython notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
@@ -87,7 +94,10 @@
 # ``
 # <markdowncell>
 # Note the black-and-white wallpaper.
-
+# Escape from python with 
+# `` 
+# quit()
+# ``
 # <markdowncell>
 # ***
 # 
@@ -102,7 +112,7 @@ print "hello world"
 # ## Navigating in ipython notebook
 # The box above is called the input cell; commands you put here will be fed to the python interpreter one at a time when you press **Shift-ENTER**.  
 # The output of the command, or the error message, appears below the line you entered it on.
-
+# The panel which may appear on the left has some notebook options; you can minimize the panel by double-clicking on the bar separating the windows. 
 # <codecell>
 print "Try and tell that to the young people"
 print "of today--they won't believe you."
@@ -589,16 +599,4 @@ fullName.upper()
 %paste
    
 # <markdowncell>
-# ## History
-# 
-# iPython has a history. If you press the up and down keys, you can access the history.
-# <codecell>
- 
-# <markdowncell>
-# ## Tab Completion
-# 
-# iPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
-
-# <codecell>
-print
 

@@ -6,30 +6,37 @@
 # # Exercise 1
 # 1. Assign variables with the values 1, 5, and "ten" with the types int, float, and string respectively.
 # <codecell>
- 
+  
 # <markdowncell>
 # 2. Confirm that the types are int, float, and string
 # <codecell>
- 
+  
 # <markdowncell>
-# 3. Determine which for which pairs of the set of int, float, and string the + operation gives an error.  (That is, int-int, int-float, int-string, float-float, float-string, and string-string.)  Any surprises?
+# 3. Determine which for which pairs of the set of int, float, and string the + operation gives an error.  
+# > int-int :
+# > int-float : 
+# > int-string :
+# > float-float  :
+# > float-string :
+# > string-string : 
+# Any surprises?
 # <codecell>
-
+ 
 # <markdowncell>
 # 4. Determine which for which pairs of the set of int, float, and string) the * operation gives an error.  Any surprises?
 # <codecell>
- 
+  
 # <markdowncell>
 # 5. Assign a string the value of "1, 5, and ten" from these three variables.  
 # <codecell>
-
+ 
 # <markdowncell>
 # # Exercise 2
 # Here you will use math.log10() and math.floor(), which require the line import math for you to access these funcitons.  
 # 1. Determine the return type of log10()
 # <codecell>
 import math
- 
+  
 # <markdowncell>
 # 2. What is the value and type of log10(42) ?
 # <codecell>
@@ -58,15 +65,19 @@ pythonlist =[2.43, 1, 0.92, 0, "0.38"]
 print pythonlist
 # <codecell>
 print type(pythonlist[0]), type(pythonlist[1]), type(pythonlist[2]), type(pythonlist[3])
+# <markdowncell>
 # numpy is an extremely useful library that has its own data types; you will frequently need to specify the types as float or possibly higher-precision float at the time you create them.  The numpy data types are only sometimes compatible with the native data types.  
 import numpy as np
-numpyarray = np.array(python_array)
+numpyarray = np.array(pythonlist)
 # <markdowncell>
 # What is the default data type of a after the conversion?
 # <codecell>
+# 
 # Ack! The results of type() do not betray the representation.  For that we need 
 # <codecell>
 print a.dtype
+# <markdowncell>
+# Which is not a numeric data type.  We can cause it to be stored as numpy floats if we specify float when we convert it to numpy:
 # <codecell>
 numpyfloatarray = np.array(python_array, dtype="float")
 # <markdowncell>
