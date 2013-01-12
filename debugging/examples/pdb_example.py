@@ -3,7 +3,7 @@
 Setting a trace in some sample code with pdb.
 """
 
-import pdb 
+import pdb
 
 a = 2
 while True:
