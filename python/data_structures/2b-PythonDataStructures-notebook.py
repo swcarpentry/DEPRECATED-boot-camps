@@ -8,13 +8,14 @@
 # Control](http://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/2c-PythonFlowControl/)
 # 
 # * * * * *
-# 
+# <markdowncell>
 # **Presented By : Will Trimble**
 # 
 # **Based on lecture materials by Milad Fatenejad and Joshua R. Smith**
 # 
 # Python would be a farily useless language if it weren't for the compound data types. The main two are **lists** and **dictionaries**, but I'll mention **sets** and **tuples** as well. I'll also go over reading text data from files. 
 # 
+# <markdowncell>
 # ## Lists
 # 
 # A list is an ordered, indexable collection of data. Lets say you have collected some current and voltage data that looks like this:
@@ -83,6 +84,7 @@ voltageList[2:]
 # 
 # and so on.
 # 
+# <markdowncell>
 # ### Append and Extend
 # 
 # Just like strings have methods, lists do too.
@@ -120,12 +122,10 @@ currentList.extend([1.5, 2.0])
 # <codecell>
 currentList
 # <markdowncell>
-# 
 # ### Length of Lists
 # 
 # Sometimes you want to know how many items are in a list. Use the len command.
 # 
-# ```python
 # <codecell>
 len(voltageList)
 # <markdowncell>
@@ -134,8 +134,6 @@ len(voltageList)
 # 
 # Lists can contain hetergeneous data.
 # 
-# ```python
-# ```python
 # <codecell>
 dataList = ["experiment: current vs. voltage", \
     "run", 47, \
@@ -207,7 +205,7 @@ type(tup)
 # 
 # See if you can retrieve the third element of **tup**:
 # <codecell>
-
+ 
 # <markdowncell>
 # ## Sets
 # 
