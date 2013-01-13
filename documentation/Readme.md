@@ -295,10 +295,3 @@ LaTeX.
 Add docstrings to the functions in the `close_line.py` module. Then,
 using sphinx, generate a website which auto-documents this module.
 
-
-# Feedback
-
-If you've reached here, you are at the end of the boot camp. Please
-fill out this feedback form and let us know how we did:
-
-https://docs.google.com/spreadsheet/viewform?pli=1&formkey=dDlSWDEzMUt0Ri1TUDlTM21pUEwwSnc6MA#gid=0
