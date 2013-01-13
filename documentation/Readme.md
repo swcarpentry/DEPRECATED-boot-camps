@@ -141,7 +141,7 @@ def toast(slices, toastiness, msg=None):
     toastiness = int(toastiness) if 0 < toastiness else 5
 
     print "Engage the bread warming!"
-    for slice if slices:
+    for slice in slices:
         slice.toast(toastiness)
 
     # log the message, making a default if needed
