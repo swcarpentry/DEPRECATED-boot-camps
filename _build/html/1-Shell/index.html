@@ -1,0 +1,993 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Shell &mdash; labibi 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/labibi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="labibi 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Day 2 – Needs to be filled in" href="../day2.html" />
+    <link rel="prev" title="Introductions and Getting Started" href="../introductions.html" />
+
+
+<script src="../_static/labibi.js"></script>
+
+
+
+<!-- Google Analytics JS is disabled; set google_analytics_id -->
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../introductions.html" title="Introductions and Getting Started"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">labibi 0.1 documentation</a> &raquo;</li>
+          <li><a href="../day2.html" accesskey="U">Day 2 &#8211; Needs to be filled in</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  
+  <div class="section" id="the-shell">
+<h1>The Shell<a class="headerlink" href="#the-shell" title="Permalink to this headline">¶</a></h1>
+<p><strong>Updated and presented by: Tracy Teal</strong></p>
+<p><strong>Based on materials originally developed by: Milad Fatenejad, Katy Huff, Jonathon Dursi, and Sasha Wood</strong></p>
+<div class="section" id="what-is-the-shell">
+<h2>What is the shell?<a class="headerlink" href="#what-is-the-shell" title="Permalink to this headline">¶</a></h2>
+<p>The <em>shell</em> is a program that presents a command line interface
+which allows you to control your computer using commands entered
+with a keyboard instead of controlling graphical user interfaces
+(GUIs) with a mouse/keyboard combination.</p>
+<p>Use a browser to open the tutorial on github and type in the URL:</p>
+<blockquote>
+<div>github.com/swcarpentry/2012-11-scripps</div></blockquote>
+<p>Click on the directory named <cite>1-Shell</cite>.</p>
+<p>A <em>terminal</em> is a program you run that gives you access to the
+shell. There are many different terminal programs that vary across
+operating systems.</p>
+<p>There are many reasons to learn about the shell. In my opinion, the
+most important reasons are that:</p>
+<ol class="arabic simple">
+<li>It is very common to encounter the shell and
+command-line-interfaces in scientific computing, so you will
+probably have to learn it eventually</li>
+<li>The shell is a really powerful way of interacting with your
+computer. GUIs and the shell are complementary - by knowing both
+you will greatly expand the range of tasks you can accomplish with
+your computer. You will also be able to perform many tasks more
+efficiently.</li>
+</ol>
+<p>The shell is just a program and there are many different shell
+programs that have been developed. The most common shell (and the one
+we will use) is called the Bourne-Again SHell (bash). Even if bash is
+not the default shell, it usually installed on most systems and can be
+started by typing <cite>bash</cite> in the terminal. Many commands, especially a
+lot of the basic ones, work across the various shells but many things
+are different. I recommend sticking with bash and learning it well.</p>
+<p>To open a terminal, just single click on the &#8220;Terminal&#8221; icon on the
+Desktop.</p>
+</div>
+<div class="section" id="the-example-manipulating-experimental-data-files">
+<h2>The Example: Manipulating Experimental Data Files<a class="headerlink" href="#the-example-manipulating-experimental-data-files" title="Permalink to this headline">¶</a></h2>
+<p>We will spend most of our time learning about the basics of the shell
+by manipulating some experimental data from a set of hearing tests. To get
+the data for this test, you will need internet access. Just enter the
+command:</p>
+<div class="highlight-python"><pre>git clone https://github.com/swcarpentry/2012-11-scripps.git</pre>
+</div>
+<p>This will grab all of the data needed for this workshop from the
+internet.</p>
+</div>
+<div class="section" id="let-s-get-started">
+<h2>Let&#8217;s get started<a class="headerlink" href="#let-s-get-started" title="Permalink to this headline">¶</a></h2>
+<p>One very basic command is <cite>echo</cite>. This command is just prints text to
+the terminal. Try entering the command:</p>
+<div class="highlight-python"><pre>echo Hello, World</pre>
+</div>
+<p>Then press enter. You should see the text &#8220;Hello, World&#8221; printed back
+to you. The echo command is useful for printing from a shell script,
+for displaying variables, and for generating known values to pass
+to other programs.</p>
+<div class="section" id="moving-around-the-file-system">
+<h3>Moving around the file system<a class="headerlink" href="#moving-around-the-file-system" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s learn how to move around the file system using command line
+programs. This is really easy to do using a GUI (just click on
+things). Once you learn the basic commands, you&#8217;ll see that it is
+really easy to do in the shell too.</p>
+<p>First we have to know where we are. The program <cite>pwd</cite> (print working
+directory) tells you where you are sitting in the directory tree. The
+command <cite>ls</cite> will list the files in files in the current
+directory. Directories are often called &#8220;folders&#8221; because of how they
+are represented in GUIs. Directories are just listings of files. They
+can contain other files or directories.</p>
+<p>Whenever you start up a terminal, you will start in a special
+directory called the <em>home</em> directory. Every user has their own home
+directory where they have full access to do whatever they want. In
+this case, the <cite>pwd</cite> command tells us that we are in the <cite>/home/username</cite>
+directory. This is the home directory for the <cite>username</cite> user. That is our
+user name. You can always find out your user name by entering the
+command <cite>whoami</cite>.</p>
+<p><strong>File Types</strong></p>
+<p>When you enter the <cite>ls</cite> command lists the contents of the current
+directory. There are several items in the home directory, notice that
+they are all colored blue. This tells us that all of these items are
+directories as opposed to files.</p>
+<p>Lets create an empty file using the <cite>touch</cite> command. Enter the
+command:</p>
+<div class="highlight-python"><pre>touch testfile</pre>
+</div>
+<p>Then list the contents of the directory again. You should see that a
+new entry, called <cite>testfile</cite>, exists. It is colored white meaning that
+it is a file, as opposed to a directory. The <cite>touch</cite> command just
+creates an empty file.</p>
+<p>Some terminals will not color the directory entries in this very
+convenient way. In those terminals, use <cite>ls -F</cite> instead of <cite>ls</cite>. The
+<cite>-F</cite> argument modifies the results so that a slash is placed at the
+end of directories. If the file is <em>executable</em> meaning that it can be
+run like a program, then a star fill be placed of the file name.</p>
+<p>You can also use the command <cite>ls -l</cite> to see whether items in a
+directory are files or directories. <cite>ls -l</cite> gives a lot more
+information too, such as the size of the file and information about
+the owner. If the entry is a directory, then the first letter will be
+a &#8220;d&#8221;. The fifth column shows you the size of the entries in
+bytes. Notice that <cite>testfile</cite> has a size of zero.</p>
+<p>To get the size of the files in human readable format add a -h.  This is very
+nice when you&#8217;re working with big files and get tired of counting all the zeros.</p>
+<p>Also, some files are hidden.  They usually start with a .  If you want to see those
+files, you can add a -a.</p>
+<p>So, a standard &#8216;ls&#8217; command might be &#8216;ls -alFh&#8217; or &#8216;ls -lFh&#8217;</p>
+<p>Now, let&#8217;s get rid of <cite>testfile</cite>. To remove a file, just enter the
+command:</p>
+<div class="highlight-python"><pre>rm testfile</pre>
+</div>
+<p>The <cite>rm</cite> command can be used to remove files. If you enter <cite>ls</cite> again,
+you will see that <cite>testfile</cite> is gone.</p>
+<p><strong>Changing Directories</strong></p>
+<p>Now, let&#8217;s move to a different directory. The command <cite>cd</cite> (change
+directory) is used to move around. Let&#8217;s move into the <cite>2012-11-scripps</cite>
+directory. Enter the following command:</p>
+<div class="highlight-python"><pre>cd 2012-11-scripps</pre>
+</div>
+<p>Now use the <cite>ls</cite> command to see what is inside this directory. You
+will see that there is an entry which is green. This means that this
+is an executable. If you use <cite>ls -F</cite> you will see that this file ends
+with a star.</p>
+<p>This directory contains all of the material for this boot camp. Now
+move to the directory containing the data for the shell tutorial:</p>
+<div class="highlight-python"><pre>cd 1-Shell</pre>
+</div>
+<p>If you enter the <cite>cd</cite> command by itself, you will return to the home
+directory. Try this, and then navigate back to the <cite>1-Shell</cite>
+directory.</p>
+</div>
+<div class="section" id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h3>
+<p>Most programs take additional arguments that control their exact
+behavior. For example, <cite>-F</cite> and <cite>-l</cite> are arguments to <cite>ls</cite>.  The <cite>ls</cite>
+program, like many programs, take a lot of arguments. But how do we
+know what the options are to particular commands?</p>
+<p>Most commonly used shell programs have a manual. You can access the
+manual using the <cite>man</cite> program. Try entering:</p>
+<div class="highlight-python"><pre>man ls</pre>
+</div>
+<p>This will open the manual page for <cite>ls</cite>. Use the space key to go
+forward and b to go backwards. When you are done reading, just hit <cite>q</cite>
+to exit.</p>
+<p>Programs that are run from the shell can get extremely complicated. To
+see an example, open up the manual page for the <cite>find</cite> program,
+which we will use later this session. No one can possibly learn all of
+these arguments, of course. So you will probably find yourself
+referring back to the manual page frequently.</p>
+<p><strong>Examining the contents of other directories</strong></p>
+<p>By default, the <cite>ls</cite> commands lists the contents of the working
+directory (i.e. the directory you are in). You can always find the
+directory you are in using the <cite>pwd</cite> command. However, you can also
+give <cite>ls</cite> the names of other directories to view. Navigate to the
+home directory if you are not already there. Then enter the
+command:</p>
+<div class="highlight-python"><pre>ls 2012-11-scripps</pre>
+</div>
+<p>This will list the contents of the <cite>2012-11-scripps</cite> directory without
+you having to navigate there. Now enter:</p>
+<div class="highlight-python"><pre>ls 2012-11-scripps/1-Shell</pre>
+</div>
+<p>This prints the contents of <cite>1-Shell</cite>. The <cite>cd</cite> command works in a
+similar way. Try entering:</p>
+<div class="highlight-python"><pre>cd 2012-11-scripps/1-Shell</pre>
+</div>
+<p>and you will jump directly to <cite>1-Shell</cite> without having to go through
+the intermediate directory.</p>
+</div>
+<div class="section" id="full-vs-relative-paths">
+<h3>Full vs. Relative Paths<a class="headerlink" href="#full-vs-relative-paths" title="Permalink to this headline">¶</a></h3>
+<p>The <cite>cd</cite> command takes an argument which is the directory
+name. Directories can be specified using either a <em>relative</em> path a
+full <em>path</em>. The directories on the computer are arranged into a
+hierarchy. The full path tells you where a directory is in that
+hierarchy. Navigate to the home directory. Now, enter the <cite>pwd</cite>
+command and you should see:</p>
+<div class="highlight-python"><pre>/home/username</pre>
+</div>
+<p>which is the full name of your home directory. This tells you that you
+are in a directory called <cite>username</cite>, which sits inside a directory called
+<cite>home</cite> which sits inside the very top directory in the hierarchy. The
+very top of the hierarchy is a directory called <cite>/</cite> which is usually
+referred to as the <em>root directory</em>. So, to summarize: <cite>username</cite> is a
+directory in <cite>home</cite> which is a directory in <cite>/</cite>.</p>
+<p>Now enter the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">scripps</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">Shell</span>
+</pre></div>
+</div>
+<p>This jumps to <cite>1-Shell</cite>. Now go back to the home directory. We saw
+earlier that the command:</p>
+<div class="highlight-python"><pre>cd 2012-11-scripps/1-Shell</pre>
+</div>
+<p>had the same effect - it took us to the <cite>1-Shell</cite> directory. But,
+instead of specifying the full path
+(<cite>/home/username/2012-11-scripps/1-Shell</cite>), we specified a <em>relative path</em>. In
+other words, we specified the path relative to our current
+directory. A full path always starts with a <cite>/</cite>. A relative path does
+not. You can usually use either a full path or a relative path
+depending on what is most convenient. If we are in the home directory,
+it is more convenient to just enter the relative path since it
+involves less typing.</p>
+<p>Now, list the contents of the /bin directory. Do you see anything
+familiar in there?</p>
+</div>
+<div class="section" id="saving-time-with-shortcuts-wild-cards-and-tab-completion">
+<h3>Saving time with shortcuts, wild cards, and tab completion<a class="headerlink" href="#saving-time-with-shortcuts-wild-cards-and-tab-completion" title="Permalink to this headline">¶</a></h3>
+<p><strong>Shortcuts</strong></p>
+<p>There are some shortcuts which you should know about. Dealing with the
+home directory is very common. So, in the shell the tilde character,
+<cite>~</cite>, is a shortcut for your home directory. Navigate to the <cite>1-Shell</cite>
+directory, then enter the command:</p>
+<div class="highlight-python"><pre>ls ~</pre>
+</div>
+<p>This prints the contents of your home directory, without you having to
+type the full path. The shortcut <cite>..</cite> always refers to the directory
+above your current directory. Thus:</p>
+<blockquote>
+<div>ls ..</div></blockquote>
+<p>prints the contents of the <cite>/home/username/2012-11-scripps</cite>. You can chain
+these together, so:</p>
+<div class="highlight-python"><pre>ls ../../</pre>
+</div>
+<p>prints the contents of <cite>/home/username</cite> which is your home
+directory. Finally, the special directory <cite>.</cite> always refers to your
+current directory. So, <cite>ls</cite>, <cite>ls .</cite>, and <cite>ls ././././.</cite> all do the
+same thing, they print the contents of the current directory. This may
+seem like a useless shortcut right now, but we&#8217;ll see when it is
+needed in a little while.</p>
+<p>To summarize, the commands <cite>ls ~</cite>, <cite>ls ~/.</cite>, <cite>ls ../../</cite>, and <cite>ls
+/home/username</cite> all do exactly the same thing. These shortcuts are not
+necessary, they are provided for your convenience.</p>
+<p><strong>Our data set: Cochlear Implants</strong></p>
+<p>A cochlear implant is a small electronic device that is surgically
+implanted in the inner ear to give deaf people a sense of
+hearing. More than a quarter of a million people have them, but there
+is still no widely-accepted benchmark to measure their effectiveness.
+In order to establish a baseline for such a benchmark, a researcher
+got teenagers with CIs to listen to audio files on their computer and
+report:</p>
+<ol class="arabic simple">
+<li>the quietest sound they could hear</li>
+<li>the lowest and highest tones they could hear</li>
+<li>the narrowest range of frequencies they could discriminate</li>
+</ol>
+<p>To participate, subjects came to a laboratory and one of the lab
+techs played an audio sample, and recorded their data - when they
+first heard the sound, or first heard a difference in the sound.  Each
+set of test results were written out to a text file, one set per file.
+Each participant has a unique subject ID, and a made-up subject name.
+Each experiment has a unique experiment ID. The experiment has
+collected 351 files so far.</p>
+<p>The data is a bit of a mess! There are inconsistent file names, there
+are extraneous &#8220;NOTES&#8221; files that we&#8217;d like to get rid of, and the
+data is spread across many directories. We are going to use shell
+commands to get this data into shape. By the end we would like to:</p>
+<ol class="arabic simple">
+<li>Put all of the data into one directory called &#8220;alldata&#8221;</li>
+<li>Have all of the data files in there, and ensure that every file
+has a &#8221;.txt&#8221; extension</li>
+<li>Get rid of the extraneous &#8220;NOTES&#8221; files</li>
+</ol>
+<p>If we can get through this example in the available time, we will move
+onto more advanced shell topics...</p>
+<p><strong>Wild cards</strong></p>
+<p>Navigate to the <cite>~/2012-11-scripps/1-Shell/data/THOMAS</cite> directory. This
+directory contains our hearing test data for THOMAS. If we type <cite>ls</cite>,
+we will see that there are a bunch of files which are just four digit
+numbers. By default, <cite>ls</cite> lists all of the files in a given
+directory. The <cite>*</cite> character is a shortcut for &#8220;everything&#8221;. Thus, if
+you enter <cite>ls *</cite>, you will see all of the contents of a given
+directory. Now try this command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ls</span> <span class="o">*</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>This lists every file that ends with a <cite>1</cite>. This command:</p>
+<div class="highlight-python"><pre>ls /usr/bin/*.sh</pre>
+</div>
+<p>Lists every file in <cite>/usr/bin</cite> that ends in the characters <cite>.sh</cite>. And
+this command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ls</span> <span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>lists every file in the current directory which contains the number
+<cite>4</cite>, and ends with the number <cite>1</cite>. There are four such files: <cite>0241</cite>,
+<cite>0341</cite>, <cite>0431</cite>, and <cite>0481</cite>.</p>
+<p>So how does this actually work? Well...when the shell (bash) sees a
+word that contains the <cite>*</cite> character, it automatically looks for files
+that match the given pattern. In this case, it identified four such
+files. Then, it replaced the <cite>*4*1</cite> with the list of files, separated
+by spaces. In other the two commands:</p>
+<div class="highlight-python"><pre>ls *4*1
+ls 0241 0341 0431 0481</pre>
+</div>
+<p>are exactly identical. The <cite>ls</cite> command cannot tell the difference
+between these two things.</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Do each of the following using a single <cite>ls</cite> command without
+navigating to a different directory.</p>
+<ol class="arabic simple">
+<li>List all of the files in <cite>/bin</cite> that contain the letter <cite>a</cite></li>
+<li>List all of the files in <cite>/bin</cite> that contain the letter <cite>a</cite> or the letter <cite>b</cite></li>
+<li>List all of the files in <cite>/bin</cite> that contain the letter <cite>a</cite> AND the letter <cite>b</cite></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Tab Completion</strong></p>
+<p>Navigate to the home directory. Typing out directory names can waste a
+lot of time. When you start typing out the name of a directory, then
+hit the tab key, the shell will try to fill in the rest of the
+directory name. For example, enter:</p>
+<div class="highlight-python"><pre>cd 2&lt;tab&gt;</pre>
+</div>
+<p>The shell will fill in the rest of the directory name for
+<cite>2012-11-scripps</cite>. Now enter:</p>
+<div class="highlight-python"><pre>ls i&lt;tab&gt;&lt;tab&gt;</pre>
+</div>
+<p>When you hit the first tab, nothing happens. The reason is that there
+are multiple directories in the home directory which start with
+i. Thus, the shell does not know which one to fill in. When you hit
+tab again, the shell will list the possible choices.</p>
+<p>Tab completion can also fill in the names of programs. For example,
+enter <cite>e&lt;tab&gt;&lt;tab&gt;</cite>. You will see the name of every program that
+starts with an <cite>e</cite>. One of those is <cite>echo</cite>. If you enter <cite>ec&lt;tab&gt;</cite> you
+will see that tab completion works.</p>
+<p>** Command History**</p>
+<p>You can easily access previous commands.  Hit the up arrow.
+Hit it again.  You can step backwards through your command history.
+The down arrow takes your forwards in the command history.</p>
+<p>^-C will cancel the command you are writing, and give you a fresh prompt.</p>
+<p>^-R will do a reverse-search through your command history.  This
+is very useful.</p>
+</div>
+<div class="section" id="which-program">
+<h3>Which program?<a class="headerlink" href="#which-program" title="Permalink to this headline">¶</a></h3>
+<p>Commands like <cite>ls</cite>, <cite>rm</cite>, <cite>echo</cite>, and <cite>cd</cite> are just ordinary programs
+on the computer. A program is just a file that you can <em>execute</em>. The
+program <cite>which</cite> tells you the location of a particular program. For
+example:</p>
+<div class="highlight-python"><pre>which ls</pre>
+</div>
+<p>Will return &#8220;/bin/ls&#8221;. Thus, we can see that <cite>ls</cite> is a program that
+sits inside of the <cite>/bin</cite> directory. Now enter:</p>
+<div class="highlight-python"><pre>which find</pre>
+</div>
+<p>You will see that <cite>find</cite> is a program that sits inside of the
+<cite>/usr/bin</cite> directory.</p>
+<p>So ... when we enter a program name, like <cite>ls</cite>, and hit enter, how
+does the shell know where to look for that program? How does it know
+to run <cite>/bin/ls</cite> when we enter <cite>ls</cite>. The answer is that when we enter
+a program name and hit enter, there are a few standard places that the
+shell automatically looks. If it can&#8217;t find the program in any of
+those places, it will print an error saying &#8220;command not found&#8221;. Enter
+the command:</p>
+<div class="highlight-python"><pre>echo $PATH</pre>
+</div>
+<p>This will print out the value of the <cite>PATH</cite> environment variable. More
+on environment variables later. Notice that a list of directories,
+separated by colon characters, is listed. These are the places the
+shell looks for programs to run. If your program is not in this list,
+then an error is printed. The shell ONLY checks in the places listed
+in the <cite>PATH</cite> environment variable.</p>
+<p>Navigate to the <cite>1-Shell</cite> directory and list the contents. You will
+notice that there is a program (executable file) called <cite>hello</cite> in
+this directory. Now, try to run the program by entering:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">hello</span>
+</pre></div>
+</div>
+<p>You should get an error saying that hello cannot be found. That is
+because the directory <cite>/home/username/2012-11-scripps/1-Shell</cite> is not in the
+<cite>PATH</cite>. You can run the <cite>hello</cite> program by entering:</p>
+<div class="highlight-python"><pre>./hello</pre>
+</div>
+<p>Remember that <cite>.</cite> is a shortcut for the current working
+directory. This tells the shell to run the <cite>hello</cite> program which is
+located right here. So, you can run any program by entering the path
+to that program. You can run <cite>hello</cite> equally well by specifying:</p>
+<div class="highlight-python"><pre>/home/username/2012-11-scripps/1-Shell/hello</pre>
+</div>
+<p>Or by entering:</p>
+<div class="highlight-python"><pre>../1-Shell/hello</pre>
+</div>
+<p>When there are no <cite>/</cite> characters, the shell assumes you want to look
+in one of the default places for the program.</p>
+</div>
+<div class="section" id="examining-files">
+<h3>Examining Files<a class="headerlink" href="#examining-files" title="Permalink to this headline">¶</a></h3>
+<p>We now know how to switch directories, run programs, and look at the
+contents of directories, but how do we look at the contents of files?</p>
+<p>The easiest way to examine a file is to just print out all of the
+contents using the program <cite>cat</cite>. Enter the following command:</p>
+<div class="highlight-python"><pre>cat ex_data.txt</pre>
+</div>
+<p>This prints out the contents of the <cite>ex_data.txt</cite> file. If you enter:</p>
+<div class="highlight-python"><pre>cat ex_data.txt ex_data.txt</pre>
+</div>
+<p>It will print out the contents of <cite>ex_data.txt</cite> twice. <cite>cat</cite> just
+takes a list of file names and writes them out one after another (this
+is where the name comes from, <cite>cat</cite> is short for concatenate).</p>
+<p>If there&#8217;s a bunch of things on your screen and you want to clean it up a
+bit, you can type &#8216;clear&#8217; and that will clear your screen so you have a
+shiny prompt at the top of your screen.</p>
+<hr class="docutils" />
+<p><strong>Short Exercises</strong></p>
+<ol class="arabic simple">
+<li>Print out the contents of the <cite>~/2012-11-scripps/1-Shell/dictionary.txt</cite>
+file. What does this file contain?</li>
+<li>Without changing directories, (you should still be in <cite>1-Shell</cite>),
+use one short command to print the contents of all of the files in
+the /home/username/2012-11-scripps/1-Shell/data/THOMAS directory.</li>
+</ol>
+<hr class="docutils" />
+<p><cite>cat</cite> is a terrific program, but when the file is really big, it can
+be annoying to use. The program, <cite>less</cite>, is useful for this
+case. Enter the following command:</p>
+<div class="highlight-python"><pre>less ~/2012-11-scripps/1-Shell/dictionary.txt</pre>
+</div>
+<p><cite>less</cite> opens the file, and lets you navigate through it. The commands
+are identical to the <cite>man</cite> program. Use &#8220;space&#8221; to go forward and hit
+the &#8220;b&#8221; key to go backwards. The &#8220;g&#8221; key goes to the beginning of the
+file and &#8220;G&#8221; goes to the end. Also, the arrow keys work for navigating
+up and down.  Finally, hit &#8220;q&#8221; to quit.</p>
+<p><cite>less</cite> also gives you a way of searching through files. Just hit the
+&#8220;/&#8221; key to begin a search. Enter the name of the word you would like
+to search for and hit enter. It will jump to the next location where
+that word is found. Try searching the <cite>dictionary.txt</cite> file for the
+word &#8220;cat&#8221;. If you hit &#8220;/&#8221; then &#8220;enter&#8221;, <cite>less</cite> will just repeat
+the previous search. You can also type &#8220;n&#8221; for it to go to the next
+one it finds.  <cite>less</cite> searches from the current location and
+works its way forward. If you are at the end of the file and search
+for the word &#8220;cat&#8221;, <cite>less</cite> will not find it. You need to go to the
+beginning of the file and search.</p>
+<p>Remember, the <cite>man</cite> program uses the same commands, so you can search
+documentation using &#8220;/&#8221; as well!</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Use the commands we&#8217;ve learned so far to figure out how to search
+in reverse while using <cite>less</cite>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="redirection">
+<h3>Redirection<a class="headerlink" href="#redirection" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s turn to the experimental data from the hearing tests that we
+began with. This data is located in the <cite>~/2012-11-scripps/1-Shell/data</cite>
+directory. Each subdirectory corresponds to a particular participant
+in the study. Navigate to the <cite>Bert</cite> subdirectory in <cite>data</cite>.  There
+are a bunch of text files which contain experimental data
+results. Lets print them all:</p>
+<div class="highlight-python"><pre>cat au*</pre>
+</div>
+<p>Now enter the following command:</p>
+<div class="highlight-python"><pre>cat au* &gt; ../all_data</pre>
+</div>
+<p>This tells the shell to take the output from the <cite>cat au*</cite> command and
+dump it into a new file called <cite>../all_data</cite>. To verify that this
+worked, examine the <cite>all_data</cite> file. If <cite>all_data</cite> had already
+existed, we would overwritten it. So the <cite>&gt;</cite> character tells the shell
+to take the output from what ever is on the left and dump it into the
+file on the right. The <cite>&gt;&gt;</cite> characters do almost the same thing,
+except that they will append the output to the file if it already
+exists.</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Use <cite>&gt;&gt;</cite>, to append the contents of all of the files which contain the
+number 4 in the directory:</p>
+<div class="highlight-python"><pre>/home/username/2012-11-scripps/1-Shell/data/gerdal</pre>
+</div>
+<p>to the existing <cite>all_data</cite> file. Thus, when you are done <cite>all_data</cite>
+should contain all of the experiment data from Bert and any
+experimental data file from gerdal that contains the number 4.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="creating-moving-copying-and-removing">
+<h3>Creating, moving, copying, and removing<a class="headerlink" href="#creating-moving-copying-and-removing" title="Permalink to this headline">¶</a></h3>
+<p>We&#8217;ve created a file called <cite>all_data</cite> using the redirection operator
+<cite>&gt;</cite>. This is critical file so we have to make copies so that the data
+is backed up. Lets copy the file using the <cite>cp</cite> command. The <cite>cp</cite>
+command backs up the file. Navigate to the <cite>data</cite> directory and enter:</p>
+<div class="highlight-python"><pre>cp all_data all_data_backup</pre>
+</div>
+<p>Now <cite>all_data_backup</cite> has been created as a copy of <cite>all_data</cite>. We can
+move files around using the command <cite>mv</cite>. Enter this command:</p>
+<div class="highlight-python"><pre>mv all_data_backup /tmp/</pre>
+</div>
+<p>This moves <cite>all_data_backup</cite> into the directory <cite>/tmp</cite>. The directory
+<cite>/tmp</cite> is a special directory that all users can write to. It is a
+temporary place for storing files. Data stored in <cite>/tmp</cite> is
+automatically deleted when the computer shuts down.</p>
+<p>The <cite>mv</cite> command is also how you rename files. Since this file is so
+important, let&#8217;s rename it:</p>
+<div class="highlight-python"><pre>mv all_data all_data_IMPORTANT</pre>
+</div>
+<p>Now the file name has been changed to all_data_IMPORTANT. Let&#8217;s delete
+the backup file now:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">all_data_backup</span>
+</pre></div>
+</div>
+<p>The <cite>mkdir</cite> command is used to create a directory. Just enter <cite>mkdir</cite>
+followed by a space, then the directory name.</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Do the following:</p>
+<ol class="arabic simple">
+<li>Rename the <cite>all_data_IMPORTANT</cite> file to <cite>all_data</cite>.</li>
+<li>Create a directory in the <cite>data</cite> directory called <cite>foo</cite></li>
+<li>Then, copy the <cite>all_data</cite> file into <cite>foo</cite></li>
+</ol>
+<hr class="docutils" />
+<p>By default, <cite>rm</cite>, will NOT delete directories. You can tell <cite>rm</cite> to
+delete a directory using the <cite>-r</cite> option. Enter the following command:</p>
+<div class="highlight-python"><pre>rm -r foo</pre>
+</div>
+</div>
+<div class="section" id="count-the-words">
+<h3>Count the words<a class="headerlink" href="#count-the-words" title="Permalink to this headline">¶</a></h3>
+<p>The <cite>wc</cite> program (word count) counts the number of lines, words, and
+characters in one or more files. Make sure you are in the <cite>data</cite>
+directory, then enter the following command:</p>
+<div class="highlight-python"><pre>wc Bert/* gerdal/*4*</pre>
+</div>
+<p>For each of the files indicated, <cite>wc</cite> has printed a line with three
+numbers. The first is the number of lines in that file. The second is
+the number of words. Finally, the total number of characters is
+indicated. The final line contains this information summed over all of
+the files. Thus, there were 10445 characters in total.</p>
+<p>Remember that the <cite>Bert/*</cite> and <cite>gerdal/*4*</cite> files were merged
+into the <cite>all_data</cite> file. So, we should see that <cite>all_data</cite> contains
+the same number of characters:</p>
+<div class="highlight-python"><pre>wc all_data</pre>
+</div>
+<p>Every character in the file takes up one byte of disk space. Thus, the
+size of the file in bytes should also be 10445. Let&#8217;s confirm this:</p>
+<div class="highlight-python"><pre>ls -l all_data</pre>
+</div>
+<p>Remember that <cite>ls -l</cite> prints out detailed information about a file and
+that the fifth column is the size of the file in bytes.</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Figure out how to get <cite>wc</cite> to print just the number of lines in
+<cite>all_data</cite>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-awesome-power-of-the-pipe">
+<h3>The awesome power of the Pipe<a class="headerlink" href="#the-awesome-power-of-the-pipe" title="Permalink to this headline">¶</a></h3>
+<p>Suppose I wanted to only see the total number of character, words, and
+lines across the files <cite>Bert/*</cite> and <cite>gerdal/*4*</cite>. I don&#8217;t want to
+see the individual counts, just the total. Of course, I could just do:</p>
+<div class="highlight-python"><pre>wc all_data</pre>
+</div>
+<p>Since this file is a concatenation of the smaller files. Sure, this
+works, but I had to create the <cite>all_data</cite> file to do this. Thus, I
+have wasted a precious 7062 bytes of hard disk space. We can do this
+<em>without</em> creating a temporary file, but first I have to show you two
+more commands: <cite>head</cite> and <cite>tail</cite>. These commands print the first few,
+or last few, lines of a file, respectively. Try them out on
+<cite>all_data</cite>:</p>
+<div class="highlight-python"><pre>head all_data
+tail all_data</pre>
+</div>
+<p>The <cite>-n</cite> option to either of these commands can be used to print the
+first or last <cite>n</cite> lines of a file. To print the first/last line of the
+file use:</p>
+<div class="highlight-python"><pre>head -n 1 all_data
+tail -n 1 all_data</pre>
+</div>
+<p>Let&#8217;s turn back to the problem of printing only the total number of
+lines in a set of files without creating any temporary files. To do
+this, we want to tell the shell to take the output of the <cite>wc Bert/*
+gerdal/*4*</cite> and send it into the <cite>tail -n 1</cite> command. The <cite>|</cite>
+character (called pipe) is used for this purpose. Enter the following
+command:</p>
+<div class="highlight-python"><pre>wc Bert/* gerdal/Data0559 | tail -n 1</pre>
+</div>
+<p>This will print only the total number of lines, characters, and words
+across all of these files. What is happening here? Well, <cite>tail</cite>, like
+many command line programs will read from the <em>standard input</em> when it
+is not given any files to operate on. In this case, it will just sit
+there waiting for input. That input can come from the user&#8217;s keyboard
+<em>or from another program</em>. Try this:</p>
+<div class="highlight-python"><pre>tail -n 2</pre>
+</div>
+<p>Notice that your cursor just sits there blinking. Tail is waiting for
+data to come in. Now type:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">French</span>
+<span class="n">fries</span>
+<span class="n">are</span>
+<span class="n">good</span>
+</pre></div>
+</div>
+<p>then CONTROL+d. You should is the lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">are</span>
+<span class="n">good</span>
+</pre></div>
+</div>
+<p>printed back at you. The CONTROL+d keyboard shortcut inserts an
+<em>end-of-file</em> character. It is sort of the standard way of telling the
+program &#8220;I&#8217;m done entering data&#8221;. The <cite>|</cite> character is replaces the
+data from the keyboard with data from another command. You can string
+all sorts of commands together using the pipe.</p>
+<p>The philosophy behind these command line programs is that none of them
+really do anything all that impressive. BUT when you start chaining
+them together, you can do some really powerful things really
+efficiently. If you want to be proficient at using the shell, you must
+learn to become proficient with the pipe and redirection operators::
+<cite>|</cite>, <cite>&gt;</cite>, <cite>&gt;&gt;</cite>.</p>
+<p><strong>A sorting example</strong></p>
+<p>Let&#8217;s create a file with some words to sort for the next example. We
+want to create a file which contains the following names:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Bob</span>
+<span class="n">Alice</span>
+<span class="n">Diane</span>
+<span class="n">Charles</span>
+</pre></div>
+</div>
+<p>To do this, we need a program which allows us to create text
+files. There are many such programs, the easiest one which is
+installed on almost all systems is called <cite>nano</cite>. Navigate to <cite>/tmp</cite>
+and enter the following command:</p>
+<div class="highlight-python"><pre>nano toBeSorted</pre>
+</div>
+<p>Now enter the four names as shown above. When you are done, press
+CONTROL+O to write out the file. Press enter to use the file name
+<cite>toBeSorted</cite>. Then press CONTROL+x to exit <cite>nano</cite>.</p>
+<p>When you are back to the command line, enter the command:</p>
+<div class="highlight-python"><pre>sort toBeSorted</pre>
+</div>
+<p>Notice that the names are now printed in alphabetical order.</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Use the <cite>echo</cite> command and the append operator, <cite>&gt;&gt;</cite>, to append your
+name to the file, then sort it.</p>
+<hr class="docutils" />
+<p>Let&#8217;s navigate back to <cite>~/2012-11-scripps/1-Shell/data</cite>. You should still
+have the <cite>all_data</cite> file hanging around here. Enter the following command:</p>
+<div class="highlight-python"><pre>wc Bert/* | sort -k 3 -n</pre>
+</div>
+<p>We are already familiar with what the first of these two commands
+does: it creates a list containing the number of characters, words,
+and lines in each file in the <cite>Bert</cite> directory. This list is then
+piped into the <cite>sort</cite> command, so that it can be sorted. Notice there
+are two options given to sort:</p>
+<ol class="arabic simple">
+<li><cite>-k 3</cite>: Sort based on the third column</li>
+<li><cite>-n</cite>: Sort in numerical order as opposed to alphabetical order</li>
+</ol>
+<p>Notice that the files are sorted by the number of characters.</p>
+<p><strong>Short Exercise</strong></p>
+<p>Combine the <cite>wc</cite>, <cite>sort</cite>, <cite>head</cite> and <cite>tail</cite> commands so that only the
+<cite>wc</cite> information for the largest file is listed</p>
+<p>Hint: To print the smallest file, use:</p>
+<div class="highlight-python"><pre>wc Bert/* | sort -k 3 -n | head -n 1</pre>
+</div>
+<hr class="docutils" />
+<p>Printing the smallest file seems pretty useful. We don&#8217;t want to type
+out that long command often. Let&#8217;s create a simple script, a simple
+program, to run this command. The program will look at all of the
+files in the current directory and print the information about the
+smallest one. Let&#8217;s call the script <cite>smallest</cite>. We&#8217;ll use <cite>nano</cite> to
+create this file. Navigate to the <cite>data</cite> directory, then:</p>
+<div class="highlight-python"><pre>nano smallest</pre>
+</div>
+<p>Then enter the following text:</p>
+<div class="highlight-python"><pre>#!/bin/bash
+wc * | sort -k 3 -n | head -n 1</pre>
+</div>
+<p>Now, <cite>cd</cite> into the <cite>Bert</cite> directory and enter the command
+<cite>../smallest</cite>. Notice that it says permission denied. This happens
+because we haven&#8217;t told the shell that this is an executable
+file. Enter the following commands:</p>
+<div class="highlight-python"><pre>chmod a+x ../smallest
+../smallest</pre>
+</div>
+<p>The <cite>chmod</cite> command is used to modify the permissions of a file. This
+particular command modifies the file <cite>../smallest</cite> by giving all users
+(notice the <cite>a</cite>) permission to execute (notice the <cite>x</cite>) the file. If
+you enter:</p>
+<div class="highlight-python"><pre>ls ../smallest</pre>
+</div>
+<p>You will see that the file name is green. Congratulations, you just
+created your first shell script!</p>
+</div>
+</div>
+<div class="section" id="searching-files">
+<h2>Searching files<a class="headerlink" href="#searching-files" title="Permalink to this headline">¶</a></h2>
+<p>You can search the contents of a file using the command <cite>grep</cite>. The
+<cite>grep</cite> program is very powerful and useful especially when combined
+with other commands by using the pipe. Navigate to the <cite>Bert</cite>
+directory. Every data file in this directory has a line which says
+&#8220;Range&#8221;. The range represents the smallest frequency range that can be
+discriminated. Lets list all of the ranges from the tests that Bert
+conducted:</p>
+<div class="highlight-python"><pre>grep Range *</pre>
+</div>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Create an executable script called <cite>smallestrange</cite> in the <cite>data</cite>
+directory, that is similar to the <cite>smallest</cite> script, but prints the
+file containing the file with the smallest Range. Use the commands
+<cite>grep</cite>, <cite>sort</cite>, and <cite>tail</cite> to do this.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="finding-files">
+<h2>Finding files<a class="headerlink" href="#finding-files" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>find</cite> program can be used to find files based on arbitrary
+criteria. Navigate to the <cite>data</cite> directory and enter the following
+command:</p>
+<div class="highlight-python"><pre>find . -print</pre>
+</div>
+<p>This prints the name of every file or directory, recursively, starting
+from the current directory. Let&#8217;s exclude all of the directories:</p>
+<div class="highlight-python"><pre>find . -type f -print</pre>
+</div>
+<p>This tells <cite>find</cite> to locate only files. Now try these commands:</p>
+<div class="highlight-python"><pre>find . -type f -name "*1*"
+find . -type f -name "*1*" -or -name "*2*" -print
+find . -type f -name "*1*" -and -name "*2*" -print</pre>
+</div>
+<p>The <cite>find</cite> command can acquire a list of files and perform some
+operation on each file. Try this command out:</p>
+<div class="highlight-python"><pre>find . -type f -exec grep Volume {} \;</pre>
+</div>
+<p>This command finds every file starting from <cite>.</cite>. Then it searches each
+file for a line which contains the word &#8220;Volume&#8221;. The <cite>{}</cite> refers to
+the name of each file. The trailing <cite>;</cite> is used to terminate the
+command.  This command is slow, because it is calling a new instance
+of <cite>grep</cite> for each item the <cite>find</cite> returns.</p>
+<p>A faster way to do this is to use the <cite>xargs</cite> command:</p>
+<div class="highlight-python"><pre>find . -type f -print | xargs grep Volume</pre>
+</div>
+<p><cite>find</cite> generates a list of all the files we are interested in,
+then we pipe them to <cite>xargs</cite>.  <cite>xargs</cite> takes the items given to it
+and passes them as arguments to <cite>grep</cite>.  <cite>xargs</cite> generally only creates
+a single instance of <cite>grep</cite> (or whatever program it is running).</p>
+<hr class="docutils" />
+<p><strong>Short Exercise</strong></p>
+<p>Navigate to the <cite>data</cite> directory. Use one find command to perform each
+of the operations listed below (except number 2, which does not
+require a find command):</p>
+<ol class="arabic simple">
+<li>Find any file whose name is &#8220;NOTES&#8221; within <cite>data</cite> and delete it</li>
+<li>Create a new directory called <cite>cleaneddata</cite></li>
+<li>Move all of the files within <cite>data</cite> to the <cite>cleaneddata</cite> directory</li>
+<li>Rename all of the files to ensure that they end in <cite>.txt</cite> (note::
+it is ok for the file name to end in <cite>.txt.txt</cite></li>
+</ol>
+<p>Hint: If you make a mistake and need to start over just do the
+following:</p>
+<ol class="arabic simple">
+<li>Navigate to the <cite>1-Shell</cite> directory</li>
+<li>Delete the <cite>data</cite> directory</li>
+<li>Enter the command: <cite>git checkout &#8211; data</cite> You should see that the
+data directory has reappeared in its original state</li>
+</ol>
+<p><strong>BONUS</strong></p>
+<p>Redo exercise 4, except rename only the files which do not already end
+in <cite>.txt</cite>. You will have to use the <cite>man</cite> command to figure out how to
+search for files which do not match a certain name.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="bonus">
+<h2>Bonus<a class="headerlink" href="#bonus" title="Permalink to this headline">¶</a></h2>
+<p><strong>backtick, xargs</strong>: Example find all files with certain text</p>
+<p><strong>alias</strong> -&gt; rm -i</p>
+<p><strong>variables</strong> -&gt; use a path example</p>
+<p><strong>.bashrc</strong></p>
+<p><strong>du</strong></p>
+<p><strong>ln</strong></p>
+<p><strong>ssh and scp</strong></p>
+<p><strong>Regular Expressions</strong></p>
+<p><strong>Permissions</strong></p>
+<p><strong>Chaining commands together</strong></p>
+</div>
+</div>
+
+
+
+
+  
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'swc-nyc1'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The Shell</a><ul>
+<li><a class="reference internal" href="#what-is-the-shell">What is the shell?</a></li>
+<li><a class="reference internal" href="#the-example-manipulating-experimental-data-files">The Example: Manipulating Experimental Data Files</a></li>
+<li><a class="reference internal" href="#let-s-get-started">Let&#8217;s get started</a><ul>
+<li><a class="reference internal" href="#moving-around-the-file-system">Moving around the file system</a></li>
+<li><a class="reference internal" href="#arguments">Arguments</a></li>
+<li><a class="reference internal" href="#full-vs-relative-paths">Full vs. Relative Paths</a></li>
+<li><a class="reference internal" href="#saving-time-with-shortcuts-wild-cards-and-tab-completion">Saving time with shortcuts, wild cards, and tab completion</a></li>
+<li><a class="reference internal" href="#which-program">Which program?</a></li>
+<li><a class="reference internal" href="#examining-files">Examining Files</a></li>
+<li><a class="reference internal" href="#redirection">Redirection</a></li>
+<li><a class="reference internal" href="#creating-moving-copying-and-removing">Creating, moving, copying, and removing</a></li>
+<li><a class="reference internal" href="#count-the-words">Count the words</a></li>
+<li><a class="reference internal" href="#the-awesome-power-of-the-pipe">The awesome power of the Pipe</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#searching-files">Searching files</a></li>
+<li><a class="reference internal" href="#finding-files">Finding files</a></li>
+<li><a class="reference internal" href="#bonus">Bonus</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../introductions.html"
+                        title="previous chapter">Introductions and Getting Started</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/1-Shell/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../introductions.html" title="Introductions and Getting Started"
+             >previous</a> |</li>
+        <li><a href="../index.html">labibi 0.1 documentation</a> &raquo;</li>
+          <li><a href="../day2.html" >Day 2 &#8211; Needs to be filled in</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, C. Titus Brown.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+
+
+<div id="editor-trap">
+      <h3>Edit this document!</h3>
+
+      <p>
+        This file can be edited directly through the Web. Anyone can
+        update and fix errors in this document with few clicks --
+        no downloads needed.
+      <p>
+
+      <ol>
+
+        <li>
+          Go to
+        <a href="https://github.com/swcarpentry/2012-11-scripps/blob/master/1-Shell/index.rst">
+          The Shell
+        </a> on GitHub.
+      </li>
+
+        <li>
+        <b>Edit</b> files using GitHub's text editor in your web browser (see the 'Edit' tab on the top right of the file)
+      </li>
+
+      <li>
+        Fill in the <b>Commit message</b> text box at the bottom of the page describing <i>why</i>
+        you made the changes. Press the <b>Propose file change</b> button next to it when done.
+      </li>
+
+      <li>
+        Then click <b>Send a pull request</b>.
+      </li>
+
+      <li>
+        Your changes are now queued for review under the project's <a href="https://github.com/swcarpentry/2012-11-scripps/pulls">Pull requests</a> tab on GitHub!
+      </li>
+      </ol>
+
+      <p>
+        For an introduction to the documentation format please see <a href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">the reST primer</a>.
+      </p>
+
+  </div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', ]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+  </body>
+</html>

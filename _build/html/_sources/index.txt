@@ -6,10 +6,18 @@
 Software Carpentry workshop at Scripps, Nov 15-16, 2012
 =======================================================
 
-NOTE: For real-time help either before or during the workshop, you are welcome to try posting in our chat room: http://j.mp/SWCchat
+NOTE: For real-time help either before or during the workshop, you are welcome to try posting in our chat room: http://www.hipchat.com/glEeNhpyS
 
 
 Workshop materials
 ------------------
 
 .. toctree::
+   :maxdepth: 2
+
+   install
+
+   day1
+
+   day2
+
