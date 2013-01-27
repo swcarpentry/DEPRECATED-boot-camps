@@ -3,11 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Software Carpentry workshop at Scripps, Nov 15-16, 2012
-=======================================================
+Software Carpentry workshop at Columbia, Jan 29 & 30, 2013
+==========================================================
 
 NOTE: For real-time help either before or during the workshop, you are welcome to try posting in our chat room: http://www.hipchat.com/glEeNhpyS
 
+:doc:`instructors`
 
 Workshop materials
 ------------------

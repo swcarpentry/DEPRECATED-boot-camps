@@ -1,6 +1,6 @@
 Your Intrepid Instructors
 =========================
 
-Adina Howe <adina.chuang@gmail.com> -- `blog <http://adina.github.com`__
+Adina Howe <adina.chuang@gmail.com> -- `blog <http://adina.github.com`
 
-and thanks to <<<fill this in>> for arranging everything and helping out as well!
+and thanks to Ian Langmore and Chang She for arranging everything and helping out as well!
