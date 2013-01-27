@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python Data Structures &mdash; labibi 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/labibi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="labibi 0.1 documentation" href="../index.html" />
+
+
+<script src="../_static/labibi.js"></script>
+
+
+
+<!-- Google Analytics JS is disabled; set google_analytics_id -->
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">labibi 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  
+  <div class="section" id="python-data-structures">
+<h1>Python Data Structures<a class="headerlink" href="#python-data-structures" title="Permalink to this headline">¶</a></h1>
+<p><strong>Updated and presented by: Tracy Teal</strong></p>
+<p>Adapted from Software Carpentry materials
+<a class="reference external" href="http://software-carpentry.org/">http://software-carpentry.org/</a></p>
+<p>Starting an iPython notebook
+Mac
+~/anaconda/bin/ipython notebook &#8211;pylab=inline
+PC
+./run-in-vm.sh</p>
+<div class="section" id="python-lists">
+<h2>Python Lists<a class="headerlink" href="#python-lists" title="Permalink to this headline">¶</a></h2>
+<p>SWC Tutorial: <a class="reference external" href="http://software-carpentry.org/4_0/python/lists/">http://software-carpentry.org/4_0/python/lists/</a></p>
+<p>Collections let us store many values together</p>
+<p>The most common way we do this is with a list</p>
+<p>We create a list in Python with</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">listname</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gases</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;He&#39;</span><span class="p">,</span> <span class="s">&#39;Ne&#39;</span><span class="p">,</span> <span class="s">&#39;Ar&#39;</span><span class="p">,</span> <span class="s">&#39;Kr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The index for lists starts with 0 instead of 1, so the first item in a list
+is item 0</p>
+<div class="highlight-python"><pre>gases[0] would return 'He'
+gases[1] would return 'Ne'</pre>
+</div>
+<p>You can also get items from the end of the list</p>
+<div class="highlight-python"><pre>gases[-1] would return 'Kr'
+gases[-2] would return 'Ar'</pre>
+</div>
+<p>Use</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">listname</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to get the length of the list, or how many values are in the list.</p>
+<p>You can also change a list after you make it.  If you want to change,
+say Kr to K you can do</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gases</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;K&#39;</span>
+</pre></div>
+</div>
+<p>Now your list will be:  [&#8216;He&#8217;, &#8216;Ne&#8217;, &#8216;Ar&#8217;, &#8216;K&#8217;]</p>
+<p>Lists can store values of many kinds, even other lists</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">helium</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;He&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">neon</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ne&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="p">[</span><span class="n">helium</span><span class="p">,</span> <span class="n">neon</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Now if you want do something to every item in the list, you can use a loop</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gases</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;He&#39;</span><span class="p">,</span> <span class="s">&#39;Ne&#39;</span><span class="p">,</span> <span class="s">&#39;Ar&#39;</span><span class="p">,</span> <span class="s">&#39;Kr&#39;</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">gases</span><span class="p">):</span>
+   <span class="k">print</span> <span class="n">gases</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+   <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>This will print out each of the gases.</p>
+<p>A better way to do this would be to use a &#8216;for&#8217; loop</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gases</span><span class="p">:</span>
+   <span class="k">print</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p>This will also print out each gas.</p>
+<p>You can use if statements to see if something in the list is true</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="s">&#39;Pu&#39;</span> <span class="ow">in</span> <span class="n">gases</span><span class="p">:</span>
+   <span class="k">print</span> <span class="s">&#39;But plutonium is not a gas&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="k">print</span> <span class="s">&#39;The universe is well ordered&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="some-useful-list-methods">
+<h2>Some useful list methods<a class="headerlink" href="#some-useful-list-methods" title="Permalink to this headline">¶</a></h2>
+<p>You can append items to the list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;H&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can print out how many of something is in the list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">gases</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;He&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can print where the item is in the list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">gases</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;Ne&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>SWC Tutorial: <a class="reference external" href="http://software-carpentry.org/4_0/setdict/dict/">http://software-carpentry.org/4_0/setdict/dict/</a></p>
+<p>Dictionaries have key, value pairs.  Here is an example of a dictionary.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s">&#39;sape&#39;</span><span class="p">:</span> <span class="mi">4139</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span><span class="p">[</span><span class="s">&#39;guido&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4127</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span>
+<span class="go">{&#39;sape&#39;: 4139, &#39;guido&#39;: 4127, &#39;jack&#39;: 4098}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span><span class="p">[</span><span class="s">&#39;jack&#39;</span><span class="p">]</span>
+<span class="go">4098</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">tel</span><span class="p">[</span><span class="s">&#39;sape&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span><span class="p">[</span><span class="s">&#39;irv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4127</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span>
+<span class="go">{&#39;guido&#39;: 4127, &#39;irv&#39;: 4127, &#39;jack&#39;: 4098}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;guido&#39;, &#39;irv&#39;, &#39;jack&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;guido&#39;</span> <span class="ow">in</span> <span class="n">tel</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>You can loop over items in a dictionary the same way you can over items in a
+list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">tel</span><span class="p">:</span>
+  <span class="k">print</span> <span class="n">tel</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you want to mix some text in with your printing</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">tel</span><span class="p">:</span>
+  <span class="k">print</span> <span class="s">&#39;This is the number&#39;</span><span class="p">,</span> <span class="n">tel</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+  
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'swc-nyc1'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python Data Structures</a><ul>
+<li><a class="reference internal" href="#python-lists">Python Lists</a></li>
+<li><a class="reference internal" href="#some-useful-list-methods">Some useful list methods</a></li>
+<li><a class="reference internal" href="#dictionaries">Dictionaries</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/Python2/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">labibi 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, C. Titus Brown.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+
+
+<div id="editor-trap">
+      <h3>Edit this document!</h3>
+
+      <p>
+        This file can be edited directly through the Web. Anyone can
+        update and fix errors in this document with few clicks --
+        no downloads needed.
+      <p>
+
+      <ol>
+
+        <li>
+          Go to
+        <a href="https://github.com/swcarpentry/2012-11-scripps/blob/master/Python2/index.rst">
+          Python Data Structures
+        </a> on GitHub.
+      </li>
+
+        <li>
+        <b>Edit</b> files using GitHub's text editor in your web browser (see the 'Edit' tab on the top right of the file)
+      </li>
+
+      <li>
+        Fill in the <b>Commit message</b> text box at the bottom of the page describing <i>why</i>
+        you made the changes. Press the <b>Propose file change</b> button next to it when done.
+      </li>
+
+      <li>
+        Then click <b>Send a pull request</b>.
+      </li>
+
+      <li>
+        Your changes are now queued for review under the project's <a href="https://github.com/swcarpentry/2012-11-scripps/pulls">Pull requests</a> tab on GitHub!
+      </li>
+      </ol>
+
+      <p>
+        For an introduction to the documentation format please see <a href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">the reST primer</a>.
+      </p>
+
+  </div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', ]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+  </body>
+</html>
