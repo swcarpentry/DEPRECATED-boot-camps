@@ -1,0 +1,145 @@
+======================================
+Introducing Programming Through Python
+======================================
+
+Goals:
+
+Despite what the title above might suggest, the purpose of this Software 
+Carpentry bootcamp is __not__ to teach you how to program in Python. While we 
+do love Python for scientific computing, the goals of these modules is actually 
+to teach you the basic, core concepts of programming that transcend languages, 
+how they fit together, and how you can use them to become a better scientist.
+
+By the end of these scientific Python lessons, you will be able to:
+
+1. Describe and distinguish the seven core elements shared by all programming 
+   languages.
+2. Use Python to write simple programs that use these core elements, using 
+   both the core library and scientific packages such as numpy.
+3. Make and save simple publication-quality plots using matplotlib.
+4. Read, manipulate, and save data files in csv and text formats.
+5. Write unit tests to confirm the accuracy of your Python code.
+6. Create standalone Python scripts that can be run from the command line.
+
+The Seven Core Concepts
+-----------------------
+
+As noted by Greg Wilson (the founder of Software Carpentry), every programming 
+language shares [seven core elements][1]:
+
+1.	 Individual things (the number 2, the string 'hello', a matplotlib figure)
+2.	 Commands that operate on things (the + symbol, the `len` function)
+3.	 Groups of things (Python lists, tuples, and dictionaries)
+4.	 Ways to repeat yourself (for and while loops)
+5.	 Ways to make choices (if and try statements)
+6.	 Ways to create chunks (functions, objects/classes, and modules)
+7.	 Ways to combine chunks (function composition)
+
+The lines between these are often blurry in practice - for example, a string in 
+Python actually mixes some characteristics of a thing, a group, and a "chunk". 
+The distinction between these categories is not particularly relevant to the 
+computer - it's purely a conceptual framework that helps programmers write code 
+that does what they want it to do.
+
+We expect that you'll find the basics of 1 and 2 fairly straightforward, and 
+will go quickly through those, and will spend the most time on items 3-6. We 
+won't really talk about 7, as it is not as common in scientific Python 
+programming as it is in, say, shell scripting (pipes and redirection).
+
+Don't worry if you don't already know what all of the above examples mean - 
+you'll know by the end of this lesson.
+
+
+IPython Notebook
+================
+
+The Introduction to Python tutorial will be taught using the
+`IPython <http://ipython.org>`_ notebook.
+
+Launching the IPython Notebook
+------------------------------
+
+1. At the command line, `cd` to the `2-PythonIntro` directory.
+2. Type `ipython notebook`.
+
+ - This should open a new tab in a web browser. (We suggest Firefox.)
+ - You should see a list of existing notebooks in the `2-PythonIntro`
+   directory. Clicking on one will open it in a new tab.
+
+3. Click the `Exercises` notebook to open it in a new tab. This contains the
+   exercises you will work on today.
+4. Go back to the first tab opened by ipython and click the 'New Notebook'
+   button. You can use this notebook as your scratch pad today. Feel free
+   to rename and save it.
+
+IPython Notebook Commands
+-------------------------
+
+- `shift-Enter`: run the current cell
+- `control-m h`: show keyboard shortcuts
+- `control-m m`: convert cell to a text cell
+- `control-m c`: convert cell to a code cell
+- `control-m d`: delete cell
+- `control-m a`: insert a new cell above the current cell
+- `control-m b`: insert a new cell below the current cell
+
+Additional Resources on Python
+==============================
+
+`Python <http://www.python.org>`_ is a programming language gaining popularity
+in the sciences. It's open source, free, and an array of existing libraries
+mean you can often find code that will do some task for you.
+
+Python is also used outside science and engineering as a general scripting
+language, on the web, and powering desktop applications. There is a large,
+global community of Python users across many disciplines, making it a useful
+language to know when your work starts to intersect with that of others
+outside your lab or team.
+
+Useful Python Links
+-------------------
+
+Core Python
+~~~~~~~~~~~
+
+- Main Python Docs
+
+ - http://docs.python.org/
+
+- Global Module Index
+
+ - Built in modules like os, sys, datetime, math, random...
+ - http://docs.python.org/modindex.html
+
+- Built-in Functions
+
+ - Built-in, always available functions like open, range, enumerate, zip...
+ - http://docs.python.org/library/functions.html
+
+- String Formatting
+
+ - http://docs.python.org/library/string.html#formatstrings
+
+Python in Science
+~~~~~~~~~~~~~~~~~
+
+- `NumPy <http://numpy.scipy.org/>`_
+
+ - Fast arrays, used by almost every scientific Python package
+
+- `SciPy <http://www.scipy.org/>`_
+
+ - Minimization, fitting, solvers, statistics, and more
+
+- `matplotlib <http://matplotlib.sourceforge.net/>`_
+
+ - 2D and 3D plotting, maps
+
+- `AstroPy <http://astropy.org>`_ for astronomy
+- `Biopython <http://biopython.org/wiki/Biopython>`_ for bioinformatics
+- `Sage <http://www.sagemath.org/>`_ for mathematic analysis
+
+- `SymPy <http://sympy.org/en/index.html>`_ for symbolic mathematics
+- `pandas <http://pandas.pydata.org/>`_ data analysis and stats for categorical
+  and time series data
+

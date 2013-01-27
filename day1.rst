@@ -10,7 +10,7 @@ Day 1 -- the shell, and basic programming
 
    git
 
-   python-day1
+   1-Python/index.rst
 
 ----
 
