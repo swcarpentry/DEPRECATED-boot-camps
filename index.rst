@@ -13,5 +13,3 @@ Workshop materials
 ------------------
 
 .. toctree::
-
-dumb edit
