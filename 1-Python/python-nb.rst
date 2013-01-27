@@ -17,15 +17,8 @@ Obtaining Tutorial Notebooks
 
  - This should open a new tab in a web browser. (We suggest Firefox.)
  - To start a new notebook from scratch for today's demo, click on `New Notebook`
- - You should see a list of existing notebooks in the `2-PythonIntro`
-   directory. Clicking on one will open it in a new tab.
+ - You can see the notebook from the demo here `http://tinyurl.com/a55h5an` 
 
-
-3. Click the `Exercises` notebook to open it in a new tab. This contains the
-   exercises you will work on today.
-4. Go back to the first tab opened by ipython and click the 'New Notebook'
-   button. You can use this notebook as your scratch pad today. Feel free
-   to rename and save it.
 
 Useful IPython Notebook Commands
 --------------------------------
