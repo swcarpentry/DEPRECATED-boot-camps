@@ -8,6 +8,8 @@ Day 1 -- the shell, and basic programming
 
    1-Shell/index
 
+   git
+
    python-day1
 
 ----
@@ -18,6 +20,9 @@ The shell - focus: automating stuff
  - pipes and filters;
  - loops;
  - scripts;
+
+Git - focus:  version control and collaborating
+ - fill this in
 
 Intro Python - focus: data processing
  - Basic operations;
