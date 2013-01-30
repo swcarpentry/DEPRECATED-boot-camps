@@ -1,5 +1,3 @@
-`Back To The Shell <https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/shell>`_
-- `Forward to Version Control <https://github.com/thehackerwithin/boot-camps/tree/2013-01-chicago/version-control/git/local>`_
 
 ======
 Python
