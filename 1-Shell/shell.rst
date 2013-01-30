@@ -15,12 +15,6 @@ allows you to control your computer using commands entered with a
 keyboard instead of controlling graphical user interfaces (GUIs) with a
 mouse/keyboard combination.
 
-Use the GUI to open the tutorial on github. Single click on the "Firefox
-Web Browser". Type in the URL: TODO: modify:
-github.com/thehackerwithin/boot-camps/tree/2013-01-chicago
-
-Click on the directory named ``shell``.
-
 A *terminal* is a program you run that gives you access to the shell.
 There are many different terminal programs that vary across operating
 systems.
@@ -67,14 +61,13 @@ for this test, you will need internet access. Just enter the command:
 
 ::
 
-    TODO: Change git clone https://github.com/thehackerwithin/boot-camps.git
+    git clone https://github.com/adina/boot-camps.git
 
 Followed by:
 
 ::
 
     cd boot-camps
-    TODO: Change git checkout 2013-01-chicago
 
 These 2 commands will grab all of the data needed for this workshop from
 the internet.
@@ -181,7 +174,7 @@ to the directory containing the data for the shell tutorial:
 
 ::
 
-    cd shell
+    cd 1-Shell
 
 If you enter the ``cd`` command by itself, you will return to the home
 directory. Try this, and then navigate back to the ``shell`` directory.
@@ -229,16 +222,16 @@ having to navigate there. Now enter:
 
 ::
 
-    ls boot-camps/shell
+    ls boot-camps/1-Shell
 
-This prints the contents of ``shell``. The ``cd`` command works in a
+This prints the contents of ``1-Shell``. The ``cd`` command works in a
 similar way. Try entering:
 
 ::
 
-    cd boot-camps/shell
+    cd boot-camps/1-Shell
 
-and you will jump directly to ``shell`` without having to go through the
+and you will jump directly to ``1-Shell`` without having to go through the
 intermediate directory.
 
 Full vs. Relative Paths
@@ -265,18 +258,18 @@ Now enter the following command:
 
 ::
 
-    cd /home/your-username/boot-camps/shell
+    cd /home/your-username/boot-camps/1-Shell
 
-This jumps to ``shell``. Now go back to the home directory. We saw
+This jumps to ``1-Shell``. Now go back to the home directory. We saw
 earlier that the command:
 
 ::
 
-    cd boot-camps/shell
+    cd boot-camps/1-Shell
 
-had the same effect - it took us to the ``shell`` directory. But,
+had the same effect - it took us to the ``1-Shell`` directory. But,
 instead of specifying the full path
-(``/home/your-username/boot-camps/shell``), we specified a *relative
+(``/home/your-username/boot-camps/1-Shell``), we specified a *relative
 path*. In other words, we specified the path relative to our current
 directory. A full path always starts with a ``/``. A relative path does
 not. You can usually use either a full path or a relative path depending
@@ -294,7 +287,7 @@ Saving time with shortcuts, wild cards, and tab completion
 
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
-``~``, is a shortcut for your home directory. Navigate to the ``shell``
+``~``, is a shortcut for your home directory. Navigate to the ``1-Shell``
 directory, then enter the command:
 
 ::
@@ -365,7 +358,7 @@ onto more advanced shell topics...
 
 **Wild cards**
 
-Navigate to the ``~/boot-camps/shell/data/THOMAS`` directory. This
+Navigate to the ``~/boot-camps/1-Shell/data/THOMAS`` directory. This
 directory contains our hearing test data for THOMAS. If we type ``ls``,
 we will see that there are a bunch of files which are just four digit
 numbers. By default, ``ls`` lists all of the files in a given directory.
@@ -434,7 +427,7 @@ of the directory name. For example, enter:
 
     cd s<tab>
 
-The shell will fill in the rest of the directory name for ``shell``.
+The shell will fill in the rest of the directory name for ``1-Shell``.
 Using tab-completion, navigate to ``data/alexander``. Now enter:
 
 ::
@@ -507,7 +500,7 @@ looks for programs to run. If your program is not in this list, then an
 error is printed. The shell ONLY checks in the places listed in the
 ``PATH`` environment variable.
 
-Navigate to the ``shell`` directory and list the contents. You will
+Navigate to the ``1-Shell`` directory and list the contents. You will
 notice that there is a program (executable file) called ``hello`` in
 this directory. Now, try to run the program by entering:
 
@@ -516,7 +509,7 @@ this directory. Now, try to run the program by entering:
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory ``/home/your-username/boot-camps/shell`` is not in
+because the directory ``/home/your-username/boot-camps/1-Shell`` is not in
 the ``PATH``. You can run the ``hello`` program by entering:
 
 ::
@@ -530,7 +523,7 @@ You can run ``hello`` equally well by specifying:
 
 ::
 
-    /home/your-username/boot-camps/shell/hello
+    /home/your-username/boot-camps/1-Shell/hello
 
 Or by entering:
 
@@ -568,12 +561,12 @@ is where the name comes from, ``cat`` is short for concatenate).
 
 **Short Exercises**
 
-1. Print out the contents of the ``~/boot-camps/shell/dictionary.txt``
+1. Print out the contents of the ``~/boot-camps/1-Shell/dictionary.txt``
    file. What does this file contain?
 
-2. Without changing directories, (you should still be in ``shell``), use
+2. Without changing directories, (you should still be in ``1-Shell``), use
    one short command to print the contents of all of the files in the
-   ``/home/swc/boot-camps/shell/data/THOMAS`` directory.
+   ``/home/swc/boot-camps/1-Shell/data/THOMAS`` directory.
 
 --------------
 
@@ -583,7 +576,7 @@ Enter the following command:
 
 ::
 
-    less ~/boot-camps/shell/dictionary.txt
+    less ~/boot-camps/1-Shell/dictionary.txt
 
 ``less`` opens the file, and lets you navigate through it. The commands
 are identical to the ``man`` program. Here's some commands you can use:
@@ -610,7 +603,7 @@ Redirection
 -----------
 
 Let's turn to the experimental data from the hearing tests that we began
-with. This data is located in the ``boot-camps/shell/data`` directory.
+with. This data is located in the ``boot-camps/1-Shell/data`` directory.
 Each subdirectory corresponds to a particular participant in the study.
 Navigate to the ``Bert`` subdirectory in ``data``. There are a bunch of
 text files which contain experimental data results. Lets print them all:
@@ -643,7 +636,7 @@ number 4 in the directory:
 
 ::
 
-    boot-camps/shell/data/gerdal
+    boot-camps/1-Shell/data/gerdal
 
 to the existing ``all_data`` file. Thus, when you are done ``all_data``
 should contain all of the experiment data from Bert and any experimental
@@ -883,7 +876,7 @@ name to the file, then sort it and make a new file called Sorted.
 
 --------------
 
-Let's navigate back to ``~/boot-camps/shell/data``. Enter the following
+Let's navigate back to ``~/boot-camps/1-Shell/data``. Enter the following
 command:
 
 ::
