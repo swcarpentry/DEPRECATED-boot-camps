@@ -1,5 +1,6 @@
 # compiled Jekyll site
 _site
+_build
 
 # emacs
 *~

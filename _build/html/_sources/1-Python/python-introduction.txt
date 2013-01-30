@@ -2,7 +2,7 @@
 Introducing Programming Through Python
 ======================================
 
-Goals:
+Day 1 Goals:
 
 Despite what the title above might suggest, the purpose of this Software
 Carpentry bootcamp is __not__ to teach you how to program in Python. While we
@@ -16,10 +16,12 @@ By the end of these scientific Python lessons, you will be able to:
    languages.
 2. Use Python to write simple programs that use these core elements, using
    both the core library and scientific packages such as numpy.
+
+Day 2 Goals:  
+
 3. Make and save simple publication-quality plots using matplotlib.
 4. Read, manipulate, and save data files in csv and text formats.
 5. Write unit tests to confirm the accuracy of your Python code.
-6. Create standalone Python scripts that can be run from the command line.
 
 The Seven Core Concepts
 -----------------------

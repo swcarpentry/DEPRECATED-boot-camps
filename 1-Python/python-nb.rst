@@ -5,7 +5,6 @@ You'll need to obtain two things to work with this tutorial.
 
 Running IPython Notebook 
 ------------------------
-
 Link this to setup instructions
 
 Obtaining Tutorial Notebooks
@@ -17,13 +16,16 @@ Obtaining Tutorial Notebooks
 
  - This should open a new tab in a web browser. (We suggest Firefox.)
  - To start a new notebook from scratch for today's demo, click on `New Notebook`
- - You can see the notebook from the demo here `http://tinyurl.com/a55h5an` 
+ - You can see the notebook from the demo here  http://tinyurl.com/a55h5an 
 
 
 Useful IPython Notebook Commands
 --------------------------------
 
+The most important one:
 - `shift-Enter`: run the current cell
+
+Pro moves:
 - `control-m h`: show keyboard shortcuts
 - `control-m m`: convert cell to a text cell
 - `control-m c`: convert cell to a code cell

@@ -4,13 +4,9 @@ Day 2 -- Applied Programming and Testing
 .. toctree::
    :maxdepth: 2
 
-   functions
-
-   reading-writing
+   2-Python/index.rst
 
    sql
-
-   testing
 
    pandas
 
