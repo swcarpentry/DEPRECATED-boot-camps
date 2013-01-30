@@ -6,7 +6,7 @@ Day 1 -- the shell, and basic programming
 
    introductions
 
-   1-Shell/index
+   1-Shell/index.rst
 
    git
 

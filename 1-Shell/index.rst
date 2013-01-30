@@ -7,4 +7,4 @@ Shell materials
 .. toctree::
    :maxdepth: 2
 
-   shell
+   shell.rst
