@@ -5,7 +5,8 @@ You'll need to obtain two things to work with this tutorial.
 
 Running IPython Notebook 
 ------------------------
-Link this to setup instructions
+
+http://columbia-applied-data-science.github.com/swcsetup.html
 
 Obtaining Tutorial Notebooks
 ----------------------------
