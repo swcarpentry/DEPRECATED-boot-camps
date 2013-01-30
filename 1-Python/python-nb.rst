@@ -11,24 +11,19 @@ Obtaining Tutorial Notebooks
 ----------------------------
 
 1. Clone the github repository for this workshop
-1. At the command line, `cd` to the `1-Python/notebooks`.
-2. Type `ipython notebook`.
+
+2. At the command line, `cd` to the `1-Python/notebooks`.
+
+3. Type `ipython notebook`.
 
  - This should open a new tab in a web browser. (We suggest Firefox.)
  - To start a new notebook from scratch for today's demo, click on `New Notebook`
- - You can see the notebook from the demo here  http://tinyurl.com/a55h5an 
+ - You can see the notebook from the demo here  http://tinyurl.com/au7e4jn
 
 
 Useful IPython Notebook Commands
 --------------------------------
 
 The most important one:
-- `shift-Enter`: run the current cell
 
-Pro moves:
-- `control-m h`: show keyboard shortcuts
-- `control-m m`: convert cell to a text cell
-- `control-m c`: convert cell to a code cell
-- `control-m d`: delete cell
-- `control-m a`: insert a new cell above the current cell
-- `control-m b`: insert a new cell below the current cell
+- `shift-Enter`: run the current cell
