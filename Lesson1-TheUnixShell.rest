@@ -1,0 +1,9 @@
+
+[[Back to Home|Home]] - [[Forward to Version Control | Lesson2a-VersionControl]]
+----
+
+We honestly can't do any better than Jonathan Dursi's introduction to the bash shell. You can find it here.
+
+[[Jonathan Dursi's Slides|http://software-carpentry.org/blog/wp-content/uploads/2011/10/shell.pdf]]
+
+**Presented by Richard T. Guy**
