@@ -2,17 +2,7 @@ ______________________________________________________________________
 Python 3 : Flow Control - Loops, Conditionals, etc.
 ______________________________________________________________________
 
-[[Back to Lists, dictionaries, sets, and tuples |Python2-ListsDictsSetsTuples]] 
-- [[Forward to Functions and Standard Modules 
-|Python4-FunctionsAndStandardModules]]
-
-----
-
-**Presented By : Katy Huff**
-
-**Based on Lecture Materials By: Milad Fatenejad**
-
-
+**Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
 
 ----------------------------------------------------------------------
