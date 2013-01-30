@@ -5,5 +5,17 @@ _build
 # emacs
 *~
 
+# vi
+*.swp
+
 # Python
 *.pyc
+
+extra_names.txt
+madeit_emails.txt
+*.lprof
+*.out
+*simpleTest
+*cachegrind*
+6-Documentation/close_line.md
+6-Documentation/index.md
