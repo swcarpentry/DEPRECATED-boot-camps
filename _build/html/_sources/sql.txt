@@ -1,4 +1,0 @@
-Introducing SQL
-===============
-
-Place holder 
