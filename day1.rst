@@ -8,7 +8,9 @@ Day 1 -- the shell, and basic programming
 
    1-Shell/index.rst
 
-   git
+   1-Git/local.rst
+
+   1-Git/remote.rst
 
    1-Python/index.rst
 
