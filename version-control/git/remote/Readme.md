@@ -30,7 +30,7 @@ etc.) provides :
 want to share (in the most liberal sense) your stuff with the world, pay
 github money for private repos, or host your own.
 
-## github pasword
+## github password
 
 Setting up github at first requires a github user name and password.
 Please take a moment to [create a free one](https://github.com/signup/free)
