@@ -529,7 +529,7 @@ Or by entering:
 
 ::
 
-    ../shell/hello
+    ../1-Shell/hello
 
 When there are no ``/`` characters, the shell assumes you want to look
 in one of the default places for the program.
@@ -594,7 +594,7 @@ are identical to the ``man`` program. Here's some commands you can use:
 
 **Short Exercise**
 
-Use ``less`` to search for all the words in ``shell/dictionary.txt``
+Use ``less`` to search for all the words in ``1-Shell/dictionary.txt``
 that contain the string ``hi``.
 
 --------------
