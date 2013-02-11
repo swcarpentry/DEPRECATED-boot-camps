@@ -400,15 +400,15 @@ is very useful.
 
 Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
 on the computer. A program is just a file that you can *execute*. The
-program `which` tells you the location of a particular program. For
+program `command` tells you the location of a particular program. For
 example:
 
-    which ls
+    command -v ls
 
 Will return "/bin/ls". Thus, we can see that `ls` is a program that
 sits inside of the `/bin` directory. Now enter:
 
-    which find
+    command -v find
 
 You will see that `find` is a program that sits inside of the
 `/usr/bin` directory.
