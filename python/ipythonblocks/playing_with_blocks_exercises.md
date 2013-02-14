@@ -21,3 +21,17 @@ and first column.
 ## Exercise 5
 
 Use a `for` loop to change the color of every block in your grid.
+
+## Exercise 6
+
+Use a `for` loop and an `if` statement to change the color of every block
+in the fourth *column* of your grid.
+
+## Exercise 7
+
+Use an `if` with an `or` to change the color of the blocks in the first
+and fifth rows to black.
+
+## Exercise 8
+
+Use an `if` with an `and` to change the color of every black block.

@@ -78,6 +78,7 @@ The exercises are in the [play_with_blocks_exercises.md][exercises] file.
 
         block = grid[0, 0]
         block.rgb = (0, 0, 0)
+        grid
 
 - Explain Python's zero based indexing, the coordinate system of the grid
   and that indices are `[row, column]`.
@@ -99,6 +100,9 @@ That's enough changing blocks one at a time, now for loops!
         for block in grid:
             block.rgb = (0, 0, 0)
 
+    This will probably be the first introduction of Pythonic indentation,
+    so talk about that.
+
     Then demonstrate doing the same thing with the `.animate` attribute,
     which will show the changes as they happen:
 
@@ -110,6 +114,39 @@ That's enough changing blocks one at a time, now for loops!
 #### Introducing If
 
 Now to add logic so we can make some blocks different colors from others.
+
+- Show an example `if` statement by looping over the grid but changing only
+  one row. This will involve introducing the `block.row` attribute.
+
+        for block in grid.animate:
+            if block.row == 2:
+                block.rgb = (0, 0, 0)
+
+    A couple of new things are introduced here:
+
+    - Using `==` for comparison vs. `=` for assignment.
+      You might take this opportunity to introduce all of the comparison
+      operators.
+    - Indenting again for the `if` block.
+
+    Also mention the `block.col` attribute.
+
+- Exercise 6
+
+- Now for `and`/`or`. Demo using `or` to change color of multiple columns
+  with one loop through.
+
+        for block in grid.animate:
+            if block.col == 2 or block.col == 4:
+                block.rgb = (50, 50, 50)
+
+- Exercise 7
+
+- Show the students that blocks have `.red`, `.green`, and `.blue` attributes
+  they can use see the value of individual block color channels. (These can
+  also be used to change the color values one at a time.)
+
+- Exercise 8
 
 [`ipythonblocks`]: https://github.com/jiffyclub/ipythonblocks
 [`ipythonblocks.py`]: ./ipythonblocks.py
