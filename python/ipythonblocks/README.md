@@ -57,7 +57,8 @@ Two functions are pre-imported: `show_color` and `embed_colorpicker`.
 ### Playing with Blocks
 
 In this notebook the `BlockGrid` class has been imported for students.
-The exercises are in the [play_with_blocks_exercises.md][exercises] file.
+The exercises are in the [play_with_blocks_exercises.md][playing exercises]
+file.
 
 #### Variables
 
@@ -148,8 +149,45 @@ Now to add logic so we can make some blocks different colors from others.
 
 - Exercise 8
 
+#### Looping with `range`
+
+So far the students have been looping over the entire grid, but we should also
+introduce `range` so they can work on smaller sections of the grid without
+looping over the whole thing.
+
+- Show an example of changing the color of a single row by looping over
+  `range(grid.width)` and varying only the column index.
+
+- Exercise 9
+
+- Show an example of using a nested loop to change a 2D subsection of the
+  grid somewhere near the middle.
+
+- Exercise 10
+
+#### Free Play
+
+There are many opportunities for [creativity with `ipythonblocks`][fun blocks],
+give the students a while to try to make whatever they like. Suggest the
+possibilities if they relate block color to block position. Some possible
+prompts if they need ideas of things to draw:
+
+- Initials
+- Shape like a circle, heart, star, etc.
+- Repeating pattern
+- Rainbow
+- Maze
+
+If they've learned about [GitHub][] and set up accounts there they can put
+their notebooks in [gists][] and share them via nbviewer. Demo how to do this
+if it seems like something they'd be interested in. You can even show some
+of their work!
+
 [`ipythonblocks`]: https://github.com/jiffyclub/ipythonblocks
 [`ipythonblocks.py`]: ./ipythonblocks.py
 [RGB]: http://en.wikipedia.org/wiki/RGB_color_model
 [colorpicker]: http://www.colorpicker.com
-[exercises]: ./playing_with_blocks_exercises.md
+[playing exercises]: ./playing_with_blocks_exercises.md
+[fun blocks]: http://nbviewer.ipython.org/urls/raw.github.com/jiffyclub/ipythonblocks/master/demos/ipythonblocks_fun.ipynb
+[GitHub]: http://github.com
+[gists]: http://gist.github.com

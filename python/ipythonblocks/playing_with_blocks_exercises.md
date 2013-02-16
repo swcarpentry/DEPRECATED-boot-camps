@@ -34,4 +34,14 @@ and fifth rows to black.
 
 ## Exercise 8
 
-Use an `if` with an `and` to change the color of every black block.
+Use an `if` with an `and` to turn every black block green.
+
+## Exercise 9
+
+Make a new 20 by 20 block grid. Use a `for` loop with `range` to change the
+color of every block in the third, 10th, and 18th rows.
+
+## Exercise 10
+
+Use nested `for` loops with `range` to change the color of the bottom-left
+quadrant of your 20 by 20 grid.
