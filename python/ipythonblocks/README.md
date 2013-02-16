@@ -183,11 +183,53 @@ their notebooks in [gists][] and share them via nbviewer. Demo how to do this
 if it seems like something they'd be interested in. You can even show some
 of their work!
 
+### Building Blocks
+
+In this set of exercises we'll go into reading simple text files and
+encapsulating the reader code into a function so they can reuse it on several
+files. There is a sort of "standard" `ipythonblocks` file format that is the
+output of calling the `BlockGrid.to_text` method. Here's a small but complete
+example from [`grid1.txt`][]:
+
+    # width height
+    3 3
+    # block size
+    20
+    # initial color
+    0 0 0
+    # row column red green blue
+    1 1 255 255 255
+
+Lines beginning with `#` are comments. The first six lines specify the
+initial state of the grid and at the end are any further modifications,
+specified by block index and color.
+
+Exercises for this section are in the
+[building_blocks_exercises.md][building exercises] file.
+
+#### `cat` a File
+
+First we will write a little code to simply print the contents of a file.
+
+- Use IPython's help features to take a look at the docs for `open`.
+- Open a file and explain that you can loop over the lines in the file
+  just as the students have been looping over blocks in a grid.
+
+- Exercise 1
+    - when students are done make sure to show and have them run
+      the `.close()` method so we don't run into issues in the next exercise.
+
+#### Dealing with Strings
+
+
+
 [`ipythonblocks`]: https://github.com/jiffyclub/ipythonblocks
 [`ipythonblocks.py`]: ./ipythonblocks.py
 [RGB]: http://en.wikipedia.org/wiki/RGB_color_model
 [colorpicker]: http://www.colorpicker.com
 [playing exercises]: ./playing_with_blocks_exercises.md
+[building exercises]: ./building_blocks_exercises.md
 [fun blocks]: http://nbviewer.ipython.org/urls/raw.github.com/jiffyclub/ipythonblocks/master/demos/ipythonblocks_fun.ipynb
 [GitHub]: http://github.com
 [gists]: http://gist.github.com
+[`grid1.txt`]: ./grid1.txt
