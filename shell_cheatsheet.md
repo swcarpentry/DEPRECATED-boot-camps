@@ -30,18 +30,19 @@
 
 ## 3. Pipes and Filters
 ### a) How to use wildcards to match filenames...
-Wildcards are a shell feature that makes the command line much more powerful than any GUI file managers. You see, if you want to select a big group of files in a graphical file manager, you usually have to select them with your mouse. This may seem simple, but in some cases it can be very frustrating. For example, suppose you have a directory with a huge amount of all kinds of files and subdirectories, and you decide to move all the HTML files, that have the word "linux" somewhere in the middle of their names, from that big directory into another directory. What's a simple way to do this? If the directory contains a huge amount of differently named HTML files, your task is everything but simple!
+Wildcards are a shell feature that makes the command line much more powerful than any GUI file managers. 
 
 
-| Wildcard | Matches |
-----------------------
-| * | zero or more characters |
-| ? | exactly one character |
-| [abcde] | exactly one of the characters listed |
-| [a-e] | exactly one character in the given range |
-| [!abcde] | any character not listed |
-| [!a-e] | any character that is not in the given range |
-| {software,carpentry} | exactly one entire word from the options given |
+** Table of commonly used wildcards   
+| Wildcard               | Matches                                        |
+|------------------------|------------------------------------------------|
+| `*`                    | zero or more characters                        |  
+| `?`                    | exactly one character                          |  
+| `[abcde]`              | exactly one of the characters listed           |  
+| `[a-e]`                | exactly one character in the given range       |  
+| `[!abcde]`             | any character not listed                       |  
+| `[!a-e]`               | any character that is not in the given range   |  
+| `{software,carpentry}` | exactly one entire word from the options given |  
 
 
 
