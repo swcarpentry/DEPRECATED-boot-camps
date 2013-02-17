@@ -117,6 +117,8 @@ where,
 *  `for`, `in`, `do`, and `done` are keywords
 *  `list` contains a list of values separated by spaces. e.g. `list` can be replaced by `1 2 3 4 5 6` or by `Bob Mary Sue Greg`. `list` can also be a variable:
 
+--
+
     list[0]=Sam
     list[1]=Lynne
     list[2]=Dhavide
