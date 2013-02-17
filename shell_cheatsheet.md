@@ -23,21 +23,29 @@
 
 ### b) How to delete files and directories...
 #### _Remember that deleting is forever. There is NO going back_
-* **`rm ./filename`** --> deletes a file called `filename` from the current directory 
-* **`rmdir ./dirname`** --> deletes the directory `dirname` from the current directory. _Note:_ `dirname` must be empty for `rmdir` to run.
+
+| Command           | Definition                                                                                                       |  
+|-------------------|------------------------------------------------------------------------------------------------------------------|
+| `rm ./filename`   | deletes a file called `filename` from the current directory                                                      |  
+| `rmdir ./dirname` |  deletes the directory `dirname` from the current directory. _Note:_ `dirname` must be empty for `rmdir` to run. |  
 
 ### c) How to copy and rename files and directories...
-* **`mv tmp/filename .`** --> moves the file `filename` from the directory `tmp` to the current directory. _Note:_ _(i)_ the original `filename` in `tmp` is deleted. _(ii)_ `mv` can also be used to rename files (e.g., `mv filename newname`
-* **`cp tmp/filename .`** --> copies the file `filename` from the directory `tmp` to the current directory. _Note:_ _(i)_ the original file is still there
+
+| Command | Definition                                                                                                                                                                                                                    |  
+|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+| `mv tmp/filename .` | moves the file `filename` from the directory `tmp` to the current directory. _Note:_ _(i)_ the original `filename` in `tmp` is deleted. _(ii)_ `mv` can also be used to rename files (e.g., `mv filename newname` |  
+| `cp tmp/filename .` | copies the file `filename` from the directory `tmp` to the current directory. _Note:_ _(i)_ the original file is still there                                                                                      |  
 
 
 
 ## 3. Pipes and Filters
 ### a) How to use wildcards to match filenames...
 Wildcards are a shell feature that makes the command line much more powerful than any GUI file managers. 
+Wildcards are particularly useful when you are looking for directories, files, or file content that can
+vary along a given dimension.  These wildcards can be used with any command that accepts file names or 
+text strings as arguments.
 
-
-** Table of commonly used wildcards **
+#### Table of commonly used wildcards 
 
 | Wildcard               | Matches                                        |  
 |------------------------|------------------------------------------------|  
@@ -49,7 +57,7 @@ Wildcards are a shell feature that makes the command line much more powerful tha
 | `[!a-e]`               | any character that is not in the given range   |  
 | `{software,carpentry}` | exactly one entire word from the options given |  
 
-
+See the cheatsheet on regular expressions for more "wildcard" shortcuts.
 
 ### b) That wildcards are expanded by the shell before commands are run...
 ### c) How to redirect a command's output to a file...
