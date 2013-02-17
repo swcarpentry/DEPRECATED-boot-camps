@@ -59,8 +59,20 @@ text strings as arguments.
 
 See the cheatsheet on regular expressions for more "wildcard" shortcuts.
 
-### c) How to redirect a command's output to a file...
-### d) How to redirect a command's input from a file...
+### b) How to redirect to a file and get input from a file ...
+
+#### Definitions:
+*  **stdout**:
+*  **stdin**:
+*  **stderr**:
+
+| Command | Description |  
+|---------|-------------|
+| `>`     |
+| `>>`    |
+| `<`     |
+| `<<`    |
+
 ### e) How to use the output of one command as the input to another with a pipe...
 ### f) That combining single-purpose filters with pipes is the most productive way to use the shell...
 ### g) That if a program conforms to Unix conventions, it can easily be combined with others...
