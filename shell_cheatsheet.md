@@ -34,8 +34,8 @@ Wildcards are a shell feature that makes the command line much more powerful tha
 
 
 ** Table of commonly used wildcards   
-| Wildcard               | Matches                                        |
-|------------------------|------------------------------------------------|
+| Wildcard               | Matches                                        |  
+|------------------------|------------------------------------------------|  
 | `*`                    | zero or more characters                        |  
 | `?`                    | exactly one character                          |  
 | `[abcde]`              | exactly one of the characters listed           |  
