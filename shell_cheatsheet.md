@@ -112,6 +112,14 @@ NEED TO DO VARIABLE ASSIGNMENT FIRST!!!!
         command 2
     done
 
+where,
+
+*  `for`, `in`, `do`, and `done` are keywords
+*  `list` contains a list of values separated by spaces. e.g.,
+    list= 1 2 3 4 5 6 
+    list= Bob Mary Sue Greg
+    
+*  
 
 
 
