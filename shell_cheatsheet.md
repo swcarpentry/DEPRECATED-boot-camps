@@ -82,7 +82,7 @@ A special kind of redirection is called a pipe and is denoted by `|`.
 
 
 
-Example:   
+##### Example:   
 
     ls *.md | head | sed -i `s/markdown/software/g`
    
@@ -115,9 +115,18 @@ NEED TO DO VARIABLE ASSIGNMENT FIRST!!!!
 where,
 
 *  `for`, `in`, `do`, and `done` are keywords
-*  `list` contains a list of values separated by spaces. e.g.,
-    list= 1 2 3 4 5 6 
-    list= Bob Mary Sue Greg
+*  `list` contains a list of values separated by spaces. e.g. `list` can be replaced by `1 2 3 4 5 6` or by `Bob Mary Sue Greg`. `list` can also be a variable:
+
+    list[0]=Sam
+    list[1]=Lynne
+    list[2]=Dhavide
+    list[3]=Trevor
+    .
+    .
+    .
+    list[n]=Mark
+    
+ 
     
 *  
 
