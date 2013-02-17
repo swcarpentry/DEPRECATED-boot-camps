@@ -89,22 +89,10 @@ A special kind of redirection is called a pipe and is denoted by `|`.
 changes all the instances of the word `markdown` to `software` in the first 5 `*.md` files in your current directory.
 
 
-## 4. Variables
-### a) Assignment
-* **`varname=1`** -->
-
-### b) Indexing 
-* **`varname[0]`** --> _Note:_ the shell is zero indexed.  That means you always start counting from zero
-
-### c) Referencing
-* **`${varname}` -->
-* **`${varname[@]` --> 
-
  
 
-## 5. Loops
-NEED TO DO VARIABLE ASSIGNMENT FIRST!!!!
-### a) How to repeat operations using a loop...
+## 4. How to repeat operations using a loop...
+### a) For loop
 
     for varname in list
     do
@@ -128,17 +116,10 @@ where,
     .
     list[n]=Mark
     
- 
+_Note:_ Bash is zero indexed, so counting always starts at `0`, not `1`.
     
-*  
 
-
-
-* **`for`** -->  
-    `for filename in *.dat
-    do
-      mv ${filename} ${newname}
-    done`
+### b) While Loop
     
 * **`while`** -->
     `count=0   
