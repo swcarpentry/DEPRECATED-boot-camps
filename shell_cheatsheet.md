@@ -61,17 +61,16 @@ See the cheatsheet on regular expressions for more "wildcard" shortcuts.
 
 ### b) How to redirect to a file and get input from a file ...
 
-#### Definitions:
+| Command | Description                                                                                                                     |  
+|---------|---------------------------------------------------------------------------------------------------------------------------------|  
+| `>`     | write `stdout` to a new file; overwrites any file with that name (e.g., `ls *.md > mardkownfiles.txt`)                          |  
+| `>>`    | append `stdout` to a previously existing file; if the file does not exist, it is created (e.g., `ls *.md >> markdownfiles.txt`) |  
+| `<`     | |  
+| `<<`    | |  
+
+#### Glossary:
 *  **stdout**:
 *  **stdin**:
-*  **stderr**:
-
-| Command | Description |  
-|---------|-------------|
-| `>`     |
-| `>>`    |
-| `<`     |
-| `<<`    |
 
 ### e) How to use the output of one command as the input to another with a pipe...
 ### f) That combining single-purpose filters with pipes is the most productive way to use the shell...
