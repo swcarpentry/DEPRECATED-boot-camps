@@ -33,7 +33,8 @@
 Wildcards are a shell feature that makes the command line much more powerful than any GUI file managers. 
 
 
-** Table of commonly used wildcards   
+** Table of commonly used wildcards **
+
 | Wildcard               | Matches                                        |  
 |------------------------|------------------------------------------------|  
 | `*`                    | zero or more characters                        |  
