@@ -165,12 +165,10 @@ continues the loop as long as the value in the variable COUNTER is less than 10 
 
 ## 6. Finding Things
 ### a) How to select lines matching patterns in text files...
-
+To find information within files, you use a command called `grep`. 
 | Example command | Description |
 |-----------------|-------------|
-| `grep [options] day haiku.txt` | finds every instance of the string `day` in the file haiku.txt and pipes it to standard output |  
-
-| grep options |                                                                                                                                                                                                              |  
+| `grep [options] day haiku.txt` | finds every instance of the string `day` in the file haiku.txt and pipes it to standard output |                                                                                                                                                                                                                |  
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 | `-E` | tells grep you will be using a regular expression. Enclose the regular expression in quotes. _Note:_ the power of `grep` comes from using regular expressions. Please see the regular expressions sheet for examples |  
 | `-i` | makes matching case-insensitive |  
@@ -179,12 +177,12 @@ continues the loop as long as the value in the variable COUNTER is less than 10 
 | `-w` | outputs instances where the pattern is a whole word |  
 
 ### b) How to find files with certain properties...
+To find file and directory names, you use a command called `find`
+
+
 * **`find . -type d` -->
 	* **`-type [df]`** --> d lists directories; f lists files
 	* **`-maxdepth n`** --> `find` automatically searches subdirectories. If you don't want that, specify the number of levels below the working directory you would like to search
 	* **`-mindepth n`** --> starts `find`'s search n levels below the working directory
-	
-### c) How to use one command's output as arguments to another command...
 
-### d) How are text and binary files different?...
 
