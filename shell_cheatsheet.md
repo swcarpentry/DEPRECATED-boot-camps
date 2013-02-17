@@ -14,9 +14,11 @@
 
 
 ## 2. Creating Things:
-### a) How to create new files and directories...
-* **`mkdir ./dirname`** --> makes a new directory called dirname below the current directory. _Note:_ Windows users will need to use `\` instead of `/` for the path separator
-* **`nano filename`** --> if `filename` does not exist, `nano` creates it and opens the `nano` text editor. If the file exists, `nano` opens it. _Note:_ _(i)_ You can use a different text editor if you like.  In gnome Linux, `gedit` works really well too. _(ii)_ `nano` (or `gedit`) create text files. It doesn't matter what the file extension is (or if there is one)
+### a) How to create new files and directories..
+
+
+`mkdir ./dirname` | makes a new directory called dirname below the current directory. _Note:_ Windows users will need to use `\` instead of `/` for the path separator
+`nano filename`   | if `filename` does not exist, `nano` creates it and opens the `nano` text editor. If the file exists, `nano` opens it. _Note:_ _(i)_ You can use a different text editor if you like.  In gnome Linux, `gedit` works really well too. _(ii)_ `nano` (or `gedit`) create text files. It doesn't matter what the file extension is (or if there is one)
 
 ### b) How to delete files and directories...
 #### _Remember that deleting is forever. There is NO going back_
