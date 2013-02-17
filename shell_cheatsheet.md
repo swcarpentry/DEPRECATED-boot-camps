@@ -67,12 +67,9 @@ Redirection operators can be used to redirect the ouput from a program from the 
 |---------|---------------------------------------------------------------------------------------------------------------------------------|  
 | `>`     | write `stdout` to a new file; overwrites any file with that name (e.g., `ls *.md > mardkownfiles.txt`)                          |  
 | `>>`    | append `stdout` to a previously existing file; if the file does not exist, it is created (e.g., `ls *.md >> markdownfiles.txt`) |  
-| `<`     | |  
-| `<<`    | |  
+| `<`     | assigns the information in a file to a variable, loop, etc (e.g., `n < markdownfiles.md`)                                       | 
 
-#### Glossary:
-*  **stdout**:
-*  **stdin**:
+
 
 ### e) How to use the output of one command as the input to another with a pipe...
 ### f) That combining single-purpose filters with pipes is the most productive way to use the shell...
