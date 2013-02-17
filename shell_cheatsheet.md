@@ -2,13 +2,14 @@
 ***
 
 ## 1. Shell Basics:
-* **`.`** (a single period) --> refers to the current directory
-* **`..`** (a double period) --> refers to the directory above the current directory
-* **`~`** --> refers to your home directory. _Note:_ this command does NOT work on Windows machines (Mac and Linux are okay)
-* **`*`** --> wildcard (multiple characters). `*.txt` will match all files in the current directory that end with `.txt`
-* **`?`** --> wildcard (single character). `?.txt` will match `a.txt` and `b.txt`, but not `ab.txt`
-* **`cd ./dirname`** --> changes the current directory to the directory `dirname` 
-* **`ls -F`** --> tells you what files and directories are in the current directory
+
+| Symbol         | Definition                                                                                                     |
+|----------------|----------------------------------------------------------------------------------------------------------------|  
+| `.`            | a single period refers to the current directory                                                                |  
+| `..`           | a double period refers to the directory immediately above the current directory                                |  
+| `~`            | refers to your home directory. _Note:_ this command does NOT work on Windows machines (Mac and Linux are okay) |  
+| `cd ./dirname` | changes the current directory to the directory `dirname`                                                       |  
+| `ls -F`        | tells you what files and directories are in the current directory                                              |  
 
 
 
