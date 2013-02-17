@@ -92,7 +92,12 @@ changes all the instances of the word `markdown` to `software` in the first 5 `*
  
 
 ## 4. How to repeat operations using a loop...
+Loops assign a value in a list or counter to a variable that takes on a different value each time through the loop.
+There are 2 primary kinds of loops: `for` loops and `while` loops.
+
 ### a) For loop
+For loops loop through variables in a list
+
 
     for varname in list
     do
@@ -129,19 +134,21 @@ _Note:_ Bash is zero indexed, so counting always starts at `0`, not `1`.
     
 
 ### b) While Loop
+While loops loop through the commands until a condition is met. For example
     
     COUNTER=0
-    while [  ${COUNTER} -lt 10 ]; do
+    while [ ${COUNTER} -lt 10 ]; do
         command 1
         command 2
         COUNTER=`expr ${COUNTER} + 1` 
     done
 
-where
+continues the loop as long as the value in the variable COUNTER is less than 10 (incremented by 1 on each iteration of the loop).
+
+*  `while`, `do`, and `done` are keywords
 
 
-
-#### b.1) Conditional operators
+#### b.1) Commonly used conditional operators
 
 | Operator | Definition               |  
 |----------|--------------------------|  
@@ -153,25 +160,18 @@ where
 | `-le`    | less than or equal to    |
 
 
-### b) That the loop variable takes on a different value each time through the loop...
-### c) The difference between a variable's name and its value...
-### d) Why spaces and some punctuation characters shouldn't be used in files' names...
-### e) How to display history and re-use commands...
-* **`history`** --> displays your command history to the standard output (usually the screen)
 
 
 
-## 6. Shell Scripts
-### a) How to store shell commands in a file...
-### b) How to run a shell script...
-### c) How to pass filenames into a shell script...
-
-
-
-## 7. Finding Things
+## 6. Finding Things
 ### a) How to select lines matching patterns in text files...
-* **`grep [options] day haiku.txt`** --> finds every instance of the string `day` in the file haiku.txt and pipes it to standard output. 
-	* **`-E`** --> tells grep you will be using a regular expression. Enclose the regular expression in quotes. _Note:_ the power of `grep` comes from using regular expressions. Please see the regular expressions sheet for examples
+
+| Example command | Description |
+|-----------------|-------------|
+| `grep [options] day haiku.txt` | finds every instance of the string `day` in the file haiku.txt and pipes it to standard output |  
+| *  `-E`                  | tells grep you will be using a regular expression. Enclose the regular expression in quotes. _Note:_ the power of `grep` comes from using regular expressions. Please see the regular expressions sheet for examples |  
+
+
 	* **`-i`** --> makes matching case-insensitive
 	* **`-n`** --> limits the number of lines that match to the first n matches
 	* **`-v`** --> shows lines that do not match the pattern (inverts the match) 			
