@@ -116,17 +116,42 @@ where,
     .
     list[n]=Mark
     
+which is referenced in the loop by:
+
+    for varname in ${list[@]}
+    do
+        command 1
+        command 2
+    done
+
+
 _Note:_ Bash is zero indexed, so counting always starts at `0`, not `1`.
     
 
 ### b) While Loop
     
-* **`while`** -->
-    `count=0   
-     while ${count} -lte 6
-     do
-       COMMAND HERE
-     done`
+    COUNTER=0
+    while [  ${COUNTER} -lt 10 ]; do
+        command 1
+        command 2
+        COUNTER=`expr ${COUNTER} + 1` 
+    done
+
+where
+
+
+
+#### b.1) Conditional operators
+
+| Operator | Definition               |  
+|----------|--------------------------|  
+| `-eq`    | is equal to              |  
+| `-ne`    | is not equal to          |  
+| `-gt`    | greater than             |
+| `-ge`    | greater than or equal to |
+| `-lt`    | less than                |
+| `-le`    | less than or equal to    |
+
 
 ### b) That the loop variable takes on a different value each time through the loop...
 ### c) The difference between a variable's name and its value...
