@@ -83,7 +83,7 @@ A special kind of redirection is called a pipe and is denoted by `|`.
 
 Example:   
 
-   ls *.md | head | sed -i `s/markdown/software/g`
+    ls *.md | head | sed -i \`s/markdown/software/g\`
    
 changes all the instances of the word `markdown` to `software` in the first 5 `*.md` files in your current directory.
 
