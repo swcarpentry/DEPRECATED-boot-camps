@@ -74,9 +74,18 @@ Redirection operators can be used to redirect the ouput from a program from the 
 #### b.1) How to use the output of one command as the input to another with a pipe...
 A special kind of redirection is called a pipe and is denoted by `|`. 
 
-### f) That combining single-purpose filters with pipes is the most productive way to use the shell...
-### g) That if a program conforms to Unix conventions, it can easily be combined with others...
+| Command | Description                                                                                                                                           |  
+|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------|  
+| `|`     | Output from one command line program can be used as input to another one (e.g. `ls *.md | head` gives you the first 5 `*.md` files in your directory) |  
 
+*  Combining single-purpose filters with pipes is the most productive way to use the shell...
+   *   a program conforms that to Unix conventions, it can easily be combined with others...
+
+Example:   
+
+   ls *.md | head | sed -i `s/markdown/software/g`
+   
+changes all the instances of the word `markdown` to `software` in the first 5 `*.md` files in your current directory.
 
 
 ## 4. Variables
