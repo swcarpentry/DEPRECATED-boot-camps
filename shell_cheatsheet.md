@@ -169,13 +169,14 @@ continues the loop as long as the value in the variable COUNTER is less than 10 
 | Example command | Description |
 |-----------------|-------------|
 | `grep [options] day haiku.txt` | finds every instance of the string `day` in the file haiku.txt and pipes it to standard output |  
-| *  `-E`                  | tells grep you will be using a regular expression. Enclose the regular expression in quotes. _Note:_ the power of `grep` comes from using regular expressions. Please see the regular expressions sheet for examples |  
 
-
-	* **`-i`** --> makes matching case-insensitive
-	* **`-n`** --> limits the number of lines that match to the first n matches
-	* **`-v`** --> shows lines that do not match the pattern (inverts the match) 			
-	* **`-w`** --> outputs instances where the pattern is a whole word
+| grep options |  |
+|--------------|--|
+| `-E` | tells grep you will be using a regular expression. Enclose the regular expression in quotes. _Note:_ the power of `grep` comes from using regular expressions. Please see the regular expressions sheet for examples |  
+| `-i` | makes matching case-insensitive |  
+| `-n` | limits the number of lines that match to the first n matches |  
+| `-v` | shows lines that do not match the pattern (inverts the match) |  
+| `-w` | outputs instances where the pattern is a whole word |
 
 ### b) How to find files with certain properties...
 * **`find . -type d` -->
