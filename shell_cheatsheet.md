@@ -77,7 +77,7 @@ A special kind of redirection is called a pipe and is denoted by `|`.
 
 | Command | Description                                                                                                                                           |  
 |---------|-------------------------------------------------------------------------------------------------------------------------------------------------------|  
-| `\|`     | Output from one command line program can be used as input to another one (e.g. `ls *.md | head` gives you the first 5 `*.md` files in your directory) |  
+| `&#124;`     | Output from one command line program can be used as input to another one (e.g. `ls *.md | head` gives you the first 5 `*.md` files in your directory) |  
 
 
 
