@@ -105,6 +105,16 @@ changes all the instances of the word `markdown` to `software` in the first 5 `*
 ## 5. Loops
 NEED TO DO VARIABLE ASSIGNMENT FIRST!!!!
 ### a) How to repeat operations using a loop...
+
+    for varname in list
+    do
+        command 1
+        command 2
+    done
+
+
+
+
 * **`for`** -->  
     `for filename in *.dat
     do
