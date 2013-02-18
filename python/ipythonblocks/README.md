@@ -155,6 +155,7 @@ So far the students have been looping over the entire grid, but we should also
 introduce `range` so they can work on smaller sections of the grid without
 looping over the whole thing.
 
+- Take a look at the docstring for `range`.
 - Show an example of changing the color of a single row by looping over
   `range(grid.width)` and varying only the column index.
 
@@ -206,20 +207,6 @@ specified by block index and color.
 
 Exercises for this section are in the
 [building_blocks_exercises.md][building exercises] file.
-
-#### `cat` a File
-
-First we will write a little code to simply print the contents of a file.
-
-- Use IPython's help features to take a look at the docs for `open`.
-- Open a file and explain that you can loop over the lines in the file
-  just as the students have been looping over blocks in a grid.
-
-- Exercise 1
-    - when students are done make sure to show and have them run
-      the `.close()` method so we don't run into issues in the next exercise.
-
-#### Dealing with Strings
 
 
 
