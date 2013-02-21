@@ -205,10 +205,93 @@ Lines beginning with `#` are comments. The first six lines specify the
 initial state of the grid and at the end are any further modifications,
 specified by block index and color.
 
+Reading files introduces a lot of new concepts: files themselves, strings,
+and even lists depending how you do it. We'll try to approach these in a
+manageable fashion.
+
 Exercises for this section are in the
 [building_blocks_exercises.md][building exercises] file.
 
+#### Opening and Reading a File
 
+- Use IPython's help to look at how to use `open`.
+
+- Open `grid1.txt` and use tab completion or `help` to look at the methods
+  available on the file, review your favorites.
+
+- Go over `.readlines()` if you haven't already and then use it to read
+  `grid1.txt`.
+
+#### Lists and Strings
+
+- Show the result from `.readlines()` and note it's comprised of some new
+  things we haven't seen yet: some kind of sequence containing
+  character strings.
+
+- Explain the sequence thing is called a list and it works a lot like their
+  grids.
+    - zero based indexing and negative indices
+    - `for thing in sequence`
+- Use tab completion just to give the students some idea what lists can do.
+
+- Grab a line from the list and show it, explaining that it's a text sequence
+  we call a "string".
+- Show that strings are also sequences like lists and grids, e.g. indexable.
+- Again, use tab completion to show some of the methods on strings. Mention
+  `split()` because we'll be using it soon.
+- `print` the string and note the extra empty line that shows up, then echo
+  or `repr` the string and note the `\n` at the end.
+- Explain `\n` is the symbol for "new-line" and we'll take care of it soon.
+
+#### Recipe for a `BlockGrid`
+
+At this point we can grab things out of the list and we know a little about
+strings so let's get started on a "recipe" for building a `BlockGrid` out
+of the information in the file. Before getting started on the next step ask
+the students to figure out what the resulting grid should look like. You can
+lead them to the answer by first looking at the dimensions of the grid, then
+the fill color, and finally the modifications.
+
+- Work with the students on the recipe, asking them what to do first,
+  second, and so on until you've created a feasible looking block of code.
+- Try to run it. It will probably fail because the inputs haven't been
+  converted to integers.
+- Use this opportunity to introduce and show how to read backtraces.
+- Show how to convert strings to integers and floats.
+- Work with the students to fix the code and try again.
+- Repeat as necessary until you get the desired result.
+
+#### List Slicing
+
+For files with longer lists of grid modifications at the bottom students will
+want to use a loop to apply them, but we haven't yet covered list slicing.
+
+- `cat grid2.txt` to make the point that making all those modifications
+  one-per-line would be tedious, we want to automate it!
+- Show some examples of list slicing, noting common gotchas such as
+  exclusive endpoints.
+
+- Exercise 1
+
+#### Reading a File One Line at a Time
+
+In general in Python, and especially for large files, it's common to read
+files one line at a time instead of loading the whole thing with `readlines()`.
+
+- Work with the students again to make a new recipe for reading `grid2.txt`
+  in which lines are read from the file one at time.
+    - You will need to introduce `readline()` and `for line in file`.
+
+- Exercise 2
+
+### Bonus Blocks
+
+If students are interested in more the `animation` directory contains a number
+of `frame##.txt` files that, when turned into grids shown successively using
+the `BlockGrid.flash()` method, make a little animation. The [`glob`][]
+module will probably come in handy here, giving you a chance to introduce
+the standard library. Or you could show some really fancy IPython features and
+and do `frames = !ls frames*.txt`.
 
 [`ipythonblocks`]: https://github.com/jiffyclub/ipythonblocks
 [`ipythonblocks.py`]: ./ipythonblocks.py
@@ -220,3 +303,4 @@ Exercises for this section are in the
 [GitHub]: http://github.com
 [gists]: http://gist.github.com
 [`grid1.txt`]: ./grid1.txt
+[`glob`]: http://docs.python.org/2/library/glob.html
