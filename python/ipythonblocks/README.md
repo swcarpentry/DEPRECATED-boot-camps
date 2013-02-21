@@ -1,23 +1,5 @@
 # Practicing Python with `ipythonblocks`
 
-## Learning Goals
-
-- **Part 1:** Color
-    - Use IPython's help features
-    - Call functions
-    - Understand RGB colors
-
-- **Part 2:** Playing with Blocks
-    - Use IPython's help features
-    - Assign variables
-    - `for` loops (both iterator and `range` style)
-    - `if` statements
-    - indexing
-
-- **Part 3:** Building Blocks
-    - Reading files
-    - Writing a function
-
 ## Overview
 
 These lessons use [`ipythonblocks`][] to teach the basic usage of Python.
@@ -42,7 +24,17 @@ any effect.*
 
 ### Color
 
+#### Learning Goals
+
+- Use IPython's help features
+- Call functions
+- Understand RGB colors
+
+#### Introduction
+
 Two functions are pre-imported: `show_color` and `embed_colorpicker`.
+
+#### RGB Colors
 
 - Demonstrate using IPython's help features to see what these do, then explain
   [RGB colors][RGB] using `show_color` or other aids.
@@ -55,6 +47,16 @@ Two functions are pre-imported: `show_color` and `embed_colorpicker`.
     raw Markdown cell.*
 
 ### Playing with Blocks
+
+#### Learning Goals
+
+- Use IPython's help features
+- Assign variables
+- `for` loops (both iterator and `range` style)
+- `if` statements
+- indexing
+
+#### Introduction
 
 In this notebook the `BlockGrid` class has been imported for students.
 The exercises are in the [play_with_blocks_exercises.md][playing exercises]
@@ -185,6 +187,14 @@ if it seems like something they'd be interested in. You can even show some
 of their work!
 
 ### Building Blocks
+
+#### Learning Goals
+
+- Work with lists and strings
+- Read files
+- Write a function
+
+#### Introduction
 
 In this set of exercises we'll go into reading simple text files and
 encapsulating the reader code into a function so they can reuse it on several
