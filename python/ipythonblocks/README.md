@@ -191,7 +191,9 @@ of their work!
 #### Learning Goals
 
 - Work with lists and strings
+- Read a Python stacktrace
 - Read files
+- Use the standard library
 - Write a function
 
 #### Introduction
@@ -294,14 +296,53 @@ files one line at a time instead of loading the whole thing with `readlines()`.
 
 - Exercise 2
 
-### Bonus Blocks
+#### Code Re-use With Functions
 
-If students are interested in more the `animation` directory contains a number
-of `frame##.txt` files that, when turned into grids shown successively using
-the `BlockGrid.flash()` method, make a little animation. The [`glob`][]
-module will probably come in handy here, giving you a chance to introduce
-the standard library. Or you could show some really fancy IPython features and
-and do `frames = !ls frames*.txt`.
+In this section the students are going to construct 41 grids from 41 files
+and string them together into an animation using the `BlockGrid.flash()`
+method. Reading 41 files is obviously not something they'll want to do by
+copying out the file reading code 41 times.
+
+- Describe the problem the students are facing.
+- Introduce functions and give some demonstrations. Functions that:
+    - print something
+    - print an argument
+    - print multiple arguments
+    - return something
+    - return multiple somethings
+    - does something to an argument and returns the result
+- Ask the students what the input and output would be for the function we need.
+
+- Exercise 3
+
+#### Introduction to the Standard Library
+
+Now that we have a reader we need files to pass into it. This is a good
+opportunity to introduce the [`glob`][] module and point at the rest of the
+[standard library][pystd].
+
+- Talk about `import` and that fact that we've been importing things out of
+  the [`ipythonblocks.py`][] file located in this directory all along.
+- Python has a vast library of useful code accessible via `import`.
+  It may be helpful to open the [docs][pystd]. (IPython should have a link.)
+- Go to the [`glob`][] module docs and explain how we'll use the `glob` function
+  to get a list of the files.
+- Show the students `from glob import glob` and tell them about how it
+  works like `ls`.
+
+- Exercise 4
+
+- The students will probably need a reminder that they can loop over a list
+  with `for thing in list`.
+- Show how to use the `BlockGrid.flash()` method to put a grid on screen for
+  a split second.
+
+- Exercise 5
+
+#### More Free Play
+
+If there's more time to kill the students might have ideas for animations to
+try out.
 
 [`ipythonblocks`]: https://github.com/jiffyclub/ipythonblocks
 [`ipythonblocks.py`]: ./ipythonblocks.py
@@ -314,3 +355,4 @@ and do `frames = !ls frames*.txt`.
 [gists]: http://gist.github.com
 [`grid1.txt`]: ./grid1.txt
 [`glob`]: http://docs.python.org/2/library/glob.html
+[pystd]: http://docs.python.org/2/library/index.html
