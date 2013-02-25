@@ -187,4 +187,4 @@ This converts FASTQ to FASTA.
 An introduction to testing
 --------------------------
 
-...
+See notebooks/gc_content.ipynb.
