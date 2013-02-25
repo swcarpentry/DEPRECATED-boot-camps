@@ -14,11 +14,10 @@ title: University of Oxford Doctoral Training Centres Software Carpentry Boot Ca
  * Dates: 9-10 May 2013
  * Times: 9am - 5pm
 
-This is a stub at present.
-
 ## Schedule
 
 Timings are to be confirmed, but the sessions will be:
+
  * Registration and introduction
  * What we actually know about developing software, and why we believe it's true
  * Version control (with [git][])
@@ -43,10 +42,11 @@ The venue will provide Windows desktops with the necessary software installed.  
 
  * Bash (the particular Unix shell we'll be using)
  * Git (for version control)
- * Python (2.6 or 2.7) with [NumPy][], [SciPy][], the [iPython notebook][] and [matplotlib][]
+ * [Python][] (2.6 or 2.7) with [NumPy][], [SciPy][], the [iPython notebook][] and [matplotlib][]
  * [Matlab][]
  * Firefox with SQLite Manager Add-on (for relational databases)
 
+The subsections below explain how to install these tools on different operating systems.
 You can also save time on the day by creating an account beforehand at [GitHub][].
 
 [iPython notebook]: http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html
@@ -54,7 +54,7 @@ You can also save time on the day by creating an account beforehand at [GitHub][
 [Matlab]: http://people.maths.ox.ac.uk/gilesm/matlab.html
 [GitHub]: https://github.com/
 
-### Platform-independent
+### All platforms (Linux, Mac OS X, Windows)
 
 #### Python
 
