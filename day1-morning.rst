@@ -24,3 +24,7 @@ Next, go into 'repo/notebooks'::
 and run ::
 
   %% ipython notebook --pylab=inline
+
+At this point you'll be presented with a list of notebooks.  Click on
+the '10 bird counting' one; the main thing you need to know is that
+you can edit, etc., and the use Shift-ENTER to execute the notebook cell.
