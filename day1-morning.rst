@@ -1,0 +1,26 @@
+Day 1 / Morning: Python
+=======================
+
+Let's start by doing two things: first, getting some files for the
+morning; and second, running IPython Notebook.
+
+You'll need to start up a shell.  On Mac OS X, this can be done
+by starting up 'Terminal.app'.  On your VirtualBox, click on the
+lower left, "LXTerm" icon.
+
+Then type 'cd' just to make sure we're starting from your home directory.
+
+To get the files, we can use 'git' to clone a repository. ::
+
+   %% git clone https://github.com/swcarpentry/2013-02-uw-ctb.git repo
+
+This will take the contents of that source code repository (more on that
+tomorrow) and put it in the directory 'repo'.
+
+Next, go into 'repo/notebooks'::
+
+  %% cd repo/notebooks
+
+and run ::
+
+  %% ipython notebook --pylab=inline

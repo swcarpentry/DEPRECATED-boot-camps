@@ -1,0 +1,5 @@
+robin,kentucky,may 23
+robin,west virginia,may 24
+seagull,maine,may 24
+chickadee,kentucky,june 1
+seagull,maine,june 1
