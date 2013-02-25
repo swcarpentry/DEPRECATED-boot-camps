@@ -6,8 +6,7 @@
 Welcome to room A of the Feb 2013 Software Carpentry/UW bootcamp!
 =================================================================
 
-Instructors: Titus Brown <ctb@msu.edu> and Julia Gustavsen
-             <j.gustavsen@gmail.com>
+Instructors: Titus Brown <ctb@msu.edu> and Julia Gustavsen <j.gustavsen@gmail.com>
 
 .. toctree::
    :maxdepth: 2
