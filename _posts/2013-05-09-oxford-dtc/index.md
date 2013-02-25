@@ -18,18 +18,18 @@ title: University of Oxford Doctoral Training Centres Software Carpentry Boot Ca
 
 Timings are to be confirmed, but the sessions will be:
 
- * Registration and introduction
- * What we actually know about developing software, and why we believe it's true
- * Version control (with [git][])
- * The basics of [Python][]
-   * Functions
-   * Testing
- * Scientific programming in Python: [NumPy][] and [SciPy][]
- * Using relational databases
- * Applying software carpentry in Matlab
-   * Coding style, code organisation, testing, databases
- * Hopefully some flexible time to discuss attendee interests
- * Putting it all together
+* Registration and introduction
+* What we actually know about developing software, and why we believe it's true
+* Version control (with [git][])
+* The basics of [Python][]
+	* Functions
+	* Testing
+* Scientific programming in Python: [NumPy][] and [SciPy][]
+* Using relational databases
+* Applying software carpentry in Matlab
+	* Coding style, code organisation, testing, databases
+* Hopefully some flexible time to discuss attendee interests
+* Putting it all together
 
 [git]: http://git-scm.com/
 [Python]: http://python.org/
