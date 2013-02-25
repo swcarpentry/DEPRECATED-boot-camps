@@ -28,3 +28,11 @@ and run ::
 At this point you'll be presented with a list of notebooks.  Click on
 the '10 bird counting' one; the main thing you need to know is that
 you can edit, etc., and the use Shift-ENTER to execute the notebook cell.
+
+There are *two types* of notebook for the morning -- one is a completed
+notebook, and the other is an empty notebook where you can type in stuff
+as we go through it.  You can open both if you want -- they won't conflict
+with each other.
+
+We'll post code snippets to http://openetherpad.org/w6ffs4LN1L as we
+type them in, if you want to use the empty notebook.
