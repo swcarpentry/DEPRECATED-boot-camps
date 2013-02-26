@@ -3,6 +3,20 @@ Day 2 / Morning: Python scripts, and git, and github
 
 Etherpad: http://openetherpad.org/KTUX7IJJTx
 
+Scripting
+---------
+
+We're going to be combining the code in two notebooks,
+
+   `99-generate-lots-of-birds <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2013-02-uw-ctb/master/notebooks/99-generate-lots-of-birds.ipynb>`__
+
+and
+
+   `10-introducing-bird-counting <http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/2013-02-uw-ctb/master/notebooks/10-introducing-bird-counting-FULL.ipynb>`__
+
+into scripts that we can run at the command line and place under version
+control.
+
 Notes and tips on scripts in Python
 -----------------------------------
 
