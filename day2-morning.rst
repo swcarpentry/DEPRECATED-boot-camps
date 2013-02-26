@@ -3,6 +3,19 @@ Day 2 / Morning: Python scripts, and git, and github
 
 Etherpad: http://openetherpad.org/KTUX7IJJTx
 
+Miscellaneous notes
+-------------------
+
+To upgrade packages, you can do::
+
+   pip install -U <package>
+
+e.g.
+
+   pip install -U ipython
+
+will upgrade your IPython installation.
+
 Scripting
 ---------
 
