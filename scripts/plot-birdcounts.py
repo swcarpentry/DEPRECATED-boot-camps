@@ -7,7 +7,7 @@ birdcount_by_day = load(open(sys.argv[1]))
 
 plotme = []
 
-for day in birdcount_by_day:  # note, iterating over dictionaries gives you keys
+for day in birdcount_by_day:
     date = datetime.strptime(day + ' 2013', '%B %d %Y')
     day_of_year = date.strftime('%j')
     
@@ -25,4 +25,4 @@ plotme.sort()
 plotme = numpy.array(plotme)
 
 plot(plotme[:,0], plotme[:,1])
-savefig('test.pdf')
+savefig(sys.argv[2])

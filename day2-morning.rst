@@ -1,38 +1,45 @@
-Day 1 / Morning: Python
-=======================
+Day 2 / Morning: Python scripts, and git, and github
+====================================================
 
-Let's start by doing two things: first, getting some files for the
-morning; and second, running IPython Notebook.
+Etherpad: http://openetherpad.org/KTUX7IJJTx
 
-You'll need to start up a shell.  On Mac OS X, this can be done
-by starting up 'Terminal.app'.  On your VirtualBox, click on the
-lower left, "LXTerm" icon.
+Notes and tips on scripts in Python
+-----------------------------------
 
-Then type 'cd' just to make sure we're starting from your home directory.
+ - 'sys.argv' is a list of the command-line arguments.  For example, if
+    you run::
 
-To get the files, we can use 'git' to clone a repository. ::
+         python script.py foo bar baz
 
-   %% git clone https://github.com/swcarpentry/2013-02-uw-ctb.git repo
+    then sys.argv will contain ['script.py', 'foo', 'bar', 'baz']
 
-This will take the contents of that source code repository (more on that
-tomorrow) and put it in the directory 'repo'.
+ - You don't need to name Python scripts with '.py'; that's just a
+   convention.
 
-Next, go into 'repo/notebooks'::
+ - '#! /usr/bin/env python' is known as the she-bang line, and it tells
+    the UNIX operating system to use 'python' to run the text file.
 
-  %% cd repo/notebooks
+ - If you add the she-bang above, and the do 'chmod +x <filename>',
+   you will be able to run the script without specifying Python.
 
-and run ::
+ - 'nano' is a good, simple text editor that will get you 40% of the
+   way there.  Learn emacs or vim or one of the many text editors on the
+   `install page
+   <http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-A/>`__.
+   Do not, under any circumstances, use Word.
 
-  %% ipython notebook --pylab=inline
+Ways to improve these scripts:
 
-At this point you'll be presented with a list of notebooks.  Click on
-the '10 bird counting' one; the main thing you need to know is that
-you can edit, etc., and the use Shift-ENTER to execute the notebook cell.
+ - put everything in a function main(args), and then put::
 
-There are *two types* of notebook for the morning -- one is a completed
-notebook, and the other is an empty notebook where you can type in stuff
-as we go through it.  You can open both if you want -- they won't conflict
-with each other.
+      if __name__ == '__main__':
+         main(sys.argv)
 
-We'll post code snippets to http://openetherpad.org/w6ffs4LN1L as we
-type them in, if you want to use the empty notebook.
+   at the bottom.  This lets the scripts be imported and tested without
+   running them.
+
+ - write tests for them :)
+
+ - put shebangs and chmod +x them.
+
+ - put usage instructions in.

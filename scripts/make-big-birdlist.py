@@ -1,3 +1,7 @@
+#! /usr/bin/env python
+import sys
+import random, datetime
+
 birdnames = """\
 Common Teal
 Long-tailed Duck
@@ -17,8 +21,6 @@ Maine
 Michigan
 New York""".splitlines()
 
-import random, datetime
-
 def generate_random_day(year):
     doy = int(random.gauss(200, 50))
     doy = min(doy, 365)
@@ -35,7 +37,7 @@ def generate_random_observation():
     return bird, state, day
 
 import csv
-fp = file('long-birds.csv', 'wb')
+fp = file(sys.argv[1], 'wb')
 w = csv.writer(fp)
 
 for i in range(10000):
