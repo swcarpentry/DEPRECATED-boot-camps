@@ -6,6 +6,12 @@ Etherpad: http://openetherpad.org/KTUX7IJJTx
 Notes and tips on scripts in Python
 -----------------------------------
 
+See the scripts here:
+
+  `make-bigbirdlist.py <https://github.com/swcarpentry/2013-02-uw-ctb/blob/master/scripts/make-big-birdlist.py>`__
+  `make-birdcounts.py <https://github.com/swcarpentry/2013-02-uw-ctb/blob/master/scripts/make-birdcounts.py>`__
+  `plot-birdcounts.py <https://github.com/swcarpentry/2013-02-uw-ctb/blob/master/scripts/plot-birdcounts.py>`__
+
  - 'sys.argv' is a list of the command-line arguments.  For example, if
     you run::
 
@@ -43,3 +49,4 @@ Ways to improve these scripts:
  - put shebangs and chmod +x them.
 
  - put usage instructions in.
+
