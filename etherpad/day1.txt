@@ -1,0 +1,162 @@
+UW Software Carpentry Boot Camp -- EE 303
+
+Use this pad and the chat window to the left for collaboritive notes and questions!
+
+If you need wireless access, there is a temporary UW username for this conference:
+   username: event0153
+   password: Ep89;At25;Xz74
+   
+The website for the workshop can be found here: http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B/
+
+Windows users:
+ * use "command --help" instead of "man command"
+ * to get an editor type "notepad" instead of "nano"
+
+Getting the data:
+ >$ git clone -b 2013-02-25-uwash-B https://github.com/swcarpentry/boot-camps.git
+ >$ cd boot-camps
+ >$ git checkout 2013-02-25-uwash-B
+(you should already be on this branch)
+
+To get out of the "man" pager press q. Press h for help.
+
+~ is a shortcut for your "home folder"
+.. is a shortcut for one up
+. is a shortcut for your current directory
+
+ctrl+R = command history search.  This command is your best friend!
+
+CLICOLOR=true make different kinds of file in different colors
+pwd
+ls
+whoami
+touch: create file, touch file to change the last time it's being accessed
+
+ls -l: long listing
+man ls: manual of ls command (in windows if use Git Bash: ls --help)
+ls -l -F can be shorten as ls -lf (interesting)
+rm filename remove file
+rm -i remove file with a question
+.. means one directory up
+ls ..
+cd ..
+cd ../..
+~ shortcut for home
+ls ~ list directory in home
+. current directory
+ls . means list directory in current directory
+clear: clear stuff away and command line to top
+ls *1 will list all file ending 1
+ls *4*1 will match the order/sequence and such as 1412 or 41 or 1421
+
+ls *a*: file contains a
+list file in bin directory for files that has a OR b: ls /bin/*a* /bin/*b*
+list file in bin directory for files that has a AND b: ls /bin/*a*b* /bin/*b*a*
+control-R: reverse search
+
+
+
+cool commands:
+
+export CLICOLOR=true ; returns colors to folders when typing 'ls' or other commands
+Make this colour change permanent by doing this
+cd
+touch .bash_profile
+open .bash_profile
+Then type export CLICOLOR=true into that text file, save it
+
+touch testfile ; creates file called testfile
+
+ls -l ; long listing of files/directories
+ls -F ; distinguishes directories vs files in listing
+you can combine both to be:
+ls -lF or ls -l -F
+
+man ls ; manual for command 'ls'
+q ; quit browsing manual
+
+rm testfile ; remove file.
+rm -i testfile; will confirm to remove.
+
+git ; used to download/get data from a server/website.
+
+cd; take back to homedirectory
+
+cd shell; go into shell directory within the boot-camps dir
+cd boot-camps/shell; alternatively from home directory
+
+ls ..; ls of parent directory
+cd ..; change to that directory
+cd ../..; up 2 levels
+ls ~; ls home directory
+cd ~/boot-camps/shell; same as absolute or relative paths.
+ls .; ls this directory (same as just 'ls')
+
+clear; clears screen
+
+ls *1; list any files within dir with '1'
+ls /usr/bin/*.sh; lists any files within specified dir with '.sh' 
+ls *4*1; filenames with '4' and '1'
+ls *41; filenames with '41'
+ls /bin/*a*; list filenames with 'a'
+ls /bin/*a* /bin/*b*; list filenames with 'a' and 'b'
+
+control+r (buttons); search commands and type the command wanted
+control+c; cancel search
+
+
+
+./ runs a program not on your path in your current directory
+../ runs a program not on your path in the directory one level up
+
+
+cat prints files
+* is a wildcard
+less is like cat but lets you got thru line by line (type /word while in less to search for specific words, type ESC-N to do reverse search)
+
+mkdir -- make a new directory
+rmdir remove a directory
+rmdir -r removes a full directory
+> redirects output
+>> appends output
+
+cp copies files
+mv moves files
+wc word count
+head and tail : beginning and end of a file
+nano
+sort
+grep: find stuff in a file
+find: finds files (find . -print)
+
+
+http://en.wikipedia.org/wiki/Foobar
+
+editor in Git Bash: notepad
+
+How do we use "whoami" in conjunction with echo to append to the toBeSorted file?
+whoami >> tobesorted
+
+Concatenating and sorting all at once with pipes:
+ >$ echo Jake | cat tobesorted | sort > sorted
+The difference is this doesn't add 'Jake' to the tobesorted file, but concatenates it in the pipe.
+
+
+A great git reference/tutorial for anyone who is interested: http://gitref.org/ If today's presentation was too fast, spend some time going through this site.
+
+Git expects a certain url when pushing to remote, if you accidently clone the read-only 'git' url you'll get this error:
+nolan@d-69-91-176-249:~/Downloads/uw-things-to-learn$ git push origin master
+fatal: remote error: 
+  You can't push to git://github.com/jiffyclub/uw-things-to-learn.git
+  Use git@github.com:jiffyclub/uw-things-to-learn.git
+
+You can update the url like so:
+git remote set-url origin git@github.com:jiffyclub/uw-things-to-learn.git
+
+A cute little online tutorial & parctice of github:
+http://try.github.com/levels/1/challenges/1
+
+git log --oneline --graph
+shows short log messages in a graph of the commit history
+
+
