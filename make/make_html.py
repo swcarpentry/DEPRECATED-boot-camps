@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 
+'Make an HTML page of all the given figures.'
+
 import argparse
 import sys
 
+
+_MODULE_DOC = __doc__
 TEMPLATE = """<p>
 <h3>{fig}</h3>
 <a href="{fig}"><img src="{fig}" style="width: 500px;"></a>
@@ -28,8 +32,7 @@ def save_html(html, outfile):
 
 
 def parse_args(args=None):
-    d = 'Make an HTML page of all the given figures.'
-    parser = argparse.ArgumentParser(description=d)
+    parser = argparse.ArgumentParser(description=_MODULE_DOC)
     parser.add_argument('outfile', type=str, help='Name of output HTML file.')
     parser.add_argument('figures', type=str, nargs='+',
                         help='Figures to include in the webpage.')

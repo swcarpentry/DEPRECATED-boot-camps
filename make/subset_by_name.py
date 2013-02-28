@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 
+'Output a CSV subset of the exoplanet data filtering on name.'
+
 import sys
 
 from argparse import ArgumentParser
 
+
+_MODULE_DOC = __doc__
 
 def subset_by_name(match, infile, outfile):
     """
@@ -23,8 +27,7 @@ def subset_by_name(match, infile, outfile):
 
 
 def parse_args(args=None):
-    d = 'Output a CSV subset of the exoplanet data filtering on name.'
-    parser = ArgumentParser(description=d)
+    parser = ArgumentParser(description=__doc__)
     h = ('Only lines which contain this string in the name field will be'
          'included in the subset.')
     parser.add_argument('match', type=str, help=h)

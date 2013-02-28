@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
+'Plot histograms of planet mass and period for each CSV data file.'
+
 import sys
 import argparse
 import csv
 
 import matplotlib.pyplot as plt
 
+
+_MODULE_DOC = __doc__
 
 def read_mass_period(df):
     mass = []
@@ -43,9 +47,7 @@ def plot_data(df):
 
 
 def parse_args(args=None):
-    d = ('Plot histograms of planet mass and planet period for each'
-         'given CSV data file.')
-    parser = argparse.ArgumentParser(d)
+    parser = argparse.ArgumentParser(description=_MODULE_DOC)
     parser.add_argument('datafiles', type=str, nargs='+',
                         help='CSV files with data to plot.')
     return parser.parse_args(args)
