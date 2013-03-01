@@ -1,0 +1,73 @@
+UW Software Carpentry Boot Camp -- EE 303
+
+Use this pad and the chat window to the left for collaboritive notes and questions!
+
+If you need wireless access, there is a temporary UW username for this conference:
+   username: event0153
+   password: Ep89;At25;Xz74
+   
+The website for the workshop can be found here: http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B/
+
+
+Day two! Python!
+
+
+ipython
+_
+Under boot-camps dir,
+$cd python
+$ls
+$cd ipythonblocks
+$ipython notebook (this should start a new web-browsing window for iPython notebook
+iPython save result to a variable that you can reuse it, which is _
+so you can do _ + 1 to apply the recent expression to new equation
+_i2 means the copy of the "input text" of #2 cell
+_2 means the output of cell #2
+
+
+you can set the PATH under ipythonblocks if using MAC
+export PATH=/Users/(you name)/anaconda/bin:$PATH
+
+IPython Notebook galleries:
+   http://nbviewer.ipython.org
+   https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks
+
+Colors:
+ show_color(red, green, blue)
+ embed_colorpicker() to pick a color
+ 
+ ? after command will show description 
+ ?? will show source code
+
+There are 10 types of people in the world: those who understand hexadecimal... and I don't know who the other F are :)
+
+grid = BlockGrid(5,5,fill=(r,g,b))  -> r,g,b is 0-255
+block = grid[0,0]  -> first row and first column
+block = grid[-4,-5];  -> second row and first column
+block.rgb = (255,0,0)
+grid
+
+for loop and if statement:
+for block in grid.animate:
+    if block.row == 2:
+        block.rgb = (0,0,255)
+    elif block.col == 4:
+        block.rgb = (0,0,0)
+    else:
+        block.rgb = (255,255,255)
+
+
+A couple of things for people using Windows 7 and Anaconda:
+
+In Git Bash you can add the /c/Anaconda/Scripts directory to your PATH so that you can launch ipython notebook from the command line:
+
+export PATH=/c/Anaconda/Scripts:$PATH
+
+If you don't get output when you hit Shift-Enter in a notebook, the problem may be a software firewall issue. See http://stackoverflow.com/a/13075334/371740 for a possible resolution.
+
+
+matplotlib gallery site: http://matplotlib.org/gallery.html
+
+Another good numpy/scipy reference in addition to the ones in the lecture: http://scipy-lectures.github.com/
+This also has information on matplotlib and other topics as well.
+
