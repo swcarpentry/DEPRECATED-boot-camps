@@ -1,0 +1,11 @@
+Learning about Python and NumPy, especially the practice exercises.
+We talked about best practice issues in software development.
+Great holistic crash course on Python and git. Did well with a range of expertise the room.
+Overall great intro to many great topics.
+The one-on-one help and the exercises.
+Pace was quick, almost too fast, but not quite!
+Intuitive approach.
+Intro to IPython Notebook.
+Very well structured. Good collection of topics for introduction. Staff very responsive.
+Very helpful and useful.
+The existence of Software Carpentry and the integrated exercises.
