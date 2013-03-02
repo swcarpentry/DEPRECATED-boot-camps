@@ -13,3 +13,4 @@ Wanted just Python.
 I agree with the comments regarding switching between screen.  It was extremely difficult to type what the instructor had before he would switch to a different screen.
 Wasn't much explanation of python basics.  Fortunately, I had some experience, but for those who didn't, I'm sure they were lost.
 Too much time spent on version control.  I know it's important, but if you don't how to program, it's a mute point.
+This may be something out of the instructors control, but there were not enough places to sit as well as outlets to plug in your laptop.  I think the problem might have been avoided had they checked your ticket, to make sure people were in the correct group.
