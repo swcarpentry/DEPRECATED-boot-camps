@@ -77,4 +77,27 @@ Followed by:
     cd boot-camps
     git checkout YYYY-MM-PLACE
 
+You should now have all the data you need for this tutorial (yea!)
+
+** Navigation
+
+To find out where you are in the filesystem use **pwd** (print working directory):
+
+    pwd
+
+msysgit prompt
+
+/c/Documents and Settings/Administrator/My Documents/boot-camps
+
+or (via ipython prompt)
+
+C:\\Documents and Settings\\Administrator\\My Documents\\boot-camps
+
+or (OSX)
+
+/Users/cindeem/Documents/Talks/softwarecarpentry/boot-camps
+
+or (linux)
+
+/home/jagust/cindeem
 
