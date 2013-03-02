@@ -201,8 +201,9 @@ filename:
 
     touch .hiddenfile
 
-If we use **ls** again this file will not show up, this is beacuse of the leading **.**, However, we can see these files
-using the **-a** flag:
+If we use **ls** again this file will not show up, this is beacuse of the leading **.**
+
+However, we can see these files using the **-a** flag:
 
     ls -a
 
