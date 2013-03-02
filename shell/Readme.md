@@ -85,19 +85,71 @@ To find out where you are in the filesystem use **pwd** (print working directory
 
     pwd
 
-msysgit prompt
+Which will give results looking like the following
+
+using (msysgit prompt)
 
     /c/Documents and Settings/Administrator/My Documents/boot-camps
 
-or (via ipython prompt)
+using (ipython prompt)
 
     C:\\Documents and Settings\\Administrator\\My Documents\\boot-camps
 
-or (OSX)
+using (OSX)
 
-    /Users/cindeem/Documents/Talks/softwarecarpentry/boot-camps
+    /Users/cindeem/Documents/boot-camps
 
-or (linux)
+using (linux)
 
-    /home/jagust/cindeem
+    /home/jagust/cindeem/boot-camps
+
+Note that the results are dependent on the OS/terminal combo you are using...
+from here on out in the tutorial, I will stick to a standard OSX terminal output
+(very simliar to linux output). 
+
+### cd
+
+**cd** allows you to change directories.
+
+* Used above to get into boot-camps directory
+* We want to move into the **shell** directory
+
+command to move to shell directory:
+
+    cd shell
+    pwd
+
+    /Users/cindeem/Documents/boot-camps/shell
+
+If we wanted to go backward to the original directory we use ../ to signify going backward,
+use **pwd** to get a sense of where you are:
+
+    cd ../
+    pwd
+
+You can be anywhere in the filesystem, if you want to go to your home directory just typing **cd** alone
+will take you home:
+
+    cd
+    pwd
+
+Lets get back to our shell directory, we can use a full path directive to get there:
+
+    cd /Users/cindeem/Documents/boot-camps/shell
+
+
+
+### touch
+
+touch creates an empty file:
+
+    touch myemptyfile.txt
+
+### ls
+
+To see the file you just created type:
+
+    ls
+
+
 
