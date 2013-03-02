@@ -1,3 +1,9 @@
+* [The Shell][#The Shell]
+* [Access the Shell][#access the shell]
+* [pwd] [#pwd]
+
+
+
 # The Shell
 
 What is Shell/ Terminal?
@@ -258,7 +264,14 @@ and then us **ls -a**  to make sure it is gone:
 
     rm: data: is a directory
 
-Luckily it will only remove local files
+Luckily it will only remove local files.
+
+rm also has a **-r** (recursive) flag. to get rid of a directory and all of its
+contents you could use rm -r, but be careful, it will bite you. (with great power comes great responsibility)
+
+
+
+
 
 
 
