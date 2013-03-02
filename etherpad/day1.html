@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/swc-tutorial-2</title>
+</head>
+<body>UW Software Carpentry Boot Camp -- EE 303<br
+/><br
+/>Use this pad and the chat window to the left for collaboritive notes and questions!<br
+/><br
+/>If you need wireless access, there is a temporary UW username for this conference:<br
+/>&nbsp;&nbsp; username: event0153<br
+/>&nbsp;&nbsp; password: Ep89;At25;Xz74<br
+/>&nbsp;&nbsp;&nbsp;<br
+/>The website for the workshop can be found here: <a href="http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B/">http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B/</a><br
+/><br
+/>Windows users:<br
+/><ul><li>use "command --help" instead of "man command"</li
+><li>to get an editor type "notepad" instead of "nano"<br/><br
+/></li></ul
+>Getting the data:<br
+/>&nbsp;&gt;$ git clone -b 2013-02-25-uwash-B <a href="https://github.com/swcarpentry/boot-camps.git">https://github.com/swcarpentry/boot-camps.git</a><br
+/>&nbsp;&gt;$ cd boot-camps<br
+/>&nbsp;&gt;$ git checkout 2013-02-25-uwash-B<br
+/>(you should already be on this branch)<br
+/><br
+/>To get out of the "man" pager press q. Press h for help.<br
+/><br
+/>~ is a shortcut for your "home folder"<br
+/>.. is a shortcut for one up<br
+/>. is a shortcut for your current directory<br
+/><br
+/>ctrl+R = command history search.&nbsp; This command is your best friend!<br
+/><br
+/>CLICOLOR=true make different kinds of file in different colors<br
+/>pwd<br
+/>ls<br
+/>whoami<br
+/>touch: create file, touch file to change the last time it's being accessed<br
+/><br
+/>ls -l: long listing<br
+/>man ls: manual of ls command (in windows if use Git Bash: ls --help)<br
+/>ls -l -F can be shorten as ls -lf (interesting)<br
+/>rm filename remove file<br
+/>rm -i remove file with a question<br
+/>.. means one directory up<br
+/>ls ..<br
+/>cd ..<br
+/>cd ../..<br
+/>~ shortcut for home<br
+/>ls ~ list directory in home<br
+/>. current directory<br
+/>ls . means list directory in current directory<br
+/>clear: clear stuff away and command line to top<br
+/>ls *1 will list all file ending 1<br
+/>ls *4*1 will match the order/sequence and such as 1412 or 41 or 1421<br
+/><br
+/>ls *a*: file contains a<br
+/>list file in bin directory for files that has a OR b: ls /bin/*a* /bin/*b*<br
+/>list file in bin directory for files that has a AND b: ls /bin/*a*b* /bin/*b*a*<br
+/>control-R: reverse search<br
+/><br
+/><br
+/><br
+/>cool commands:<br
+/><br
+/>export CLICOLOR=true ; returns colors to folders when typing 'ls' or other commands<br
+/>Make this colour change permanent by doing this<br
+/>cd<br
+/>touch .bash_profile<br
+/>open .bash_profile<br
+/>Then type export CLICOLOR=true into that text file, save it<br
+/><br
+/>touch testfile ; creates file called testfile<br
+/><br
+/>ls -l ; long listing of files/directories<br
+/>ls -F ; distinguishes directories vs files in listing<br
+/>you can combine both to be:<br
+/>ls -lF or ls -l -F<br
+/><br
+/>man ls ; manual for command 'ls'<br
+/>q ; quit browsing manual<br
+/><br
+/>rm testfile ; remove file.<br
+/>rm -i testfile; will confirm to remove.<br
+/><br
+/>git ; used to download/get data from a server/website.<br
+/><br
+/>cd; take back to homedirectory<br
+/><br
+/>cd shell; go into shell directory within the boot-camps dir<br
+/>cd boot-camps/shell; alternatively from home directory<br
+/><br
+/>ls ..; ls of parent directory<br
+/>cd ..; change to that directory<br
+/>cd ../..; up 2 levels<br
+/>ls ~; ls home directory<br
+/>cd ~/boot-camps/shell; same as absolute or relative paths.<br
+/>ls .; ls this directory (same as just 'ls')<br
+/><br
+/>clear; clears screen<br
+/><br
+/>ls *1; list any files within dir with '1'<br
+/>ls /usr/bin/*.sh; lists any files within specified dir with '.sh'&nbsp;<br
+/>ls *4*1; filenames with '4' and '1'<br
+/>ls *41; filenames with '41'<br
+/>ls /bin/*a*; list filenames with 'a'<br
+/>ls /bin/*a* /bin/*b*; list filenames with 'a' and 'b'<br
+/><br
+/>control+r (buttons); search commands and type the command wanted<br
+/>control+c; cancel search<br
+/><br
+/><br
+/><br
+/>./ runs a program not on your path in your current directory<br
+/>../ runs a program not on your path in the directory one level up<br
+/><br
+/><br
+/>cat prints files<br
+/>* is a wildcard<br
+/>less is like cat but lets you got thru line by line (type /word while in less to search for specific words, type ESC-N to do reverse search)<br
+/><br
+/>mkdir -- make a new directory<br
+/>rmdir remove a directory<br
+/>rmdir -r removes a full directory<br
+/>&gt; redirects output<br
+/>&gt;&gt; appends output<br
+/><br
+/>cp copies files<br
+/>mv moves files<br
+/>wc word count<br
+/>head and tail : beginning and end of a file<br
+/>nano<br
+/>sort<br
+/>grep: find stuff in a file<br
+/>find: finds files (find . -print)<br
+/><br
+/><br
+/><a href="http://en.wikipedia.org/wiki/Foobar">http://en.wikipedia.org/wiki/Foobar</a><br
+/><br
+/>editor in Git Bash: notepad<br
+/><br
+/>How do we use "whoami" in conjunction with echo to append to the toBeSorted file?<br
+/>whoami &gt;&gt; tobesorted<br
+/><br
+/>Concatenating and sorting all at once with pipes:<br
+/>&nbsp;&gt;$ echo Jake | cat tobesorted | sort &gt; sorted<br
+/>The difference is this doesn't add 'Jake' to the tobesorted file, but concatenates it in the pipe.<br
+/><br
+/><br
+/>A great git reference/tutorial for anyone who is interested: <a href="http://gitref.org/">http://gitref.org/</a> If today's presentation was too fast, spend some time going through this site.<br
+/><br
+/>Git expects a certain url when pushing to remote, if you accidently clone the read-only 'git' url you'll get this error:<br
+/>nolan@d-69-91-176-249:~/Downloads/uw-things-to-learn$ git push origin master<br
+/>fatal: remote error:&nbsp;<br
+/>&nbsp; You can't push to git://github.com/jiffyclub/uw-things-to-learn.git<br
+/>&nbsp; Use git@github.com:jiffyclub/uw-things-to-learn.git<br
+/><br
+/>You can update the url like so:<br
+/>git remote set-url origin git@github.com:jiffyclub/uw-things-to-learn.git<br
+/><br
+/>A cute little online tutorial &amp; parctice of github:<br
+/><a href="http://try.github.com/levels/1/challenges/1">http://try.github.com/levels/1/challenges/1</a><br
+/><br
+/>git log --oneline --graph<br
+/>shows short log messages in a graph of the commit history<br
+/><br
+/><br
+/></body>
+</html>

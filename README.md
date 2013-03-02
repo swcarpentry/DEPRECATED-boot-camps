@@ -1,15 +1,9 @@
-Software Carpentry Boot Camps
-=============================
+![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-This repository contains material useful when preparing and running a
-boot camp. This can include lecture notes, lesson plans, IPython
-Notebooks, exercises, and some types of presentations. Please see the
-[contributor guidelines][contrib] for more information on preferred
-file formats and other instructions for contributing.
+# University of Washington - February 25-26, 2013
 
-This repository is also used to store material specific to boot
-camps. Refer to the [wiki][] for instructions on making your own boot
-camp branch and/or making a boot camp website.
+For a schedule and installation instructions check out the bootcamp webpage at
+http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B.
 
-[contrib]: https://github.com/swcarpentry/boot-camps/blob/master/CONTRIBUTING.md
-[wiki]: https://github.com/swcarpentry/boot-camps/wiki
+Visit this EtherPad for a collaborative note taking space and chat window in
+which to ask questions: http://openetherpad.org/8mr7VxWyET.

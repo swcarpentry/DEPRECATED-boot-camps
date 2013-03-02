@@ -1,0 +1,16 @@
+Too much shell stuff (already shell proficient).
+Difficult to keep up with instructor when switching between screens.
+Too much typing while trying to listen.
+Would have preferred basic Python scripting instead of NumPy intro.
+matplotlib and NumPy were a little dry.
+The Python part was rushed and we didn't have time to see all of the code.
+Command line tutorial was slow (but that was probably necessary for some).
+A bit too fast in some content.
+NumPy section could use more exercises/interaction.
+Wanted to learn about SciPy.
+The software engineering felt too rushed -- if I made an error in my code I easily fell behind and was lost.
+Wanted just Python.
+I agree with the comments regarding switching between screen.  It was extremely difficult to type what the instructor had before he would switch to a different screen.
+Wasn't much explanation of python basics.  Fortunately, I had some experience, but for those who didn't, I'm sure they were lost.
+Too much time spent on version control.  I know it's important, but if you don't how to program, it's a mute point.
+This may be something out of the instructors control, but there were not enough places to sit as well as outlets to plug in your laptop.  I think the problem might have been avoided had they checked your ticket, to make sure people were in the correct group.

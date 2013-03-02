@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/swc-tutorial-2</title>
+</head>
+<body>UW Software Carpentry Boot Camp -- EE 303<br
+/><br
+/>Use this pad and the chat window to the left for collaboritive notes and questions!<br
+/><br
+/>If you need wireless access, there is a temporary UW username for this conference:<br
+/>&nbsp;&nbsp; username: event0153<br
+/>&nbsp;&nbsp; password: Ep89;At25;Xz74<br
+/>&nbsp;&nbsp;&nbsp;<br
+/>The website for the workshop can be found here: <a href="http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B/">http://swcarpentry.github.com/boot-camps/2013-02-25-uwash-B/</a><br
+/><br
+/><br
+/>Day two! Python!<br
+/><br
+/><br
+/>ipython<br
+/>_<br
+/>Under boot-camps dir,<br
+/>$cd python<br
+/>$ls<br
+/>$cd ipythonblocks<br
+/>$ipython notebook (this should start a new web-browsing window for iPython notebook<br
+/>iPython save result to a variable that you can reuse it, which is _<br
+/>so you can do _ + 1 to apply the recent expression to new equation<br
+/>_i2 means the copy of the "input text" of #2 cell<br
+/>_2 means the output of cell #2<br
+/><br
+/><br
+/>you can set the PATH under ipythonblocks if using MAC<br
+/>export PATH=/Users/(you name)/anaconda/bin:$PATH<br
+/><br
+/>IPython Notebook galleries:<br
+/>&nbsp;&nbsp; <a href="http://nbviewer.ipython.org">http://nbviewer.ipython.org</a><br
+/>&nbsp;&nbsp; <a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks">https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks</a><br
+/><br
+/>Colors:<br
+/>&nbsp;show_color(red, green, blue)<br
+/>&nbsp;embed_colorpicker() to pick a color<br
+/>&nbsp;<br
+/>&nbsp;? after command will show description&nbsp;<br
+/>&nbsp;?? will show source code<br
+/><br
+/>There are 10 types of people in the world: those who understand hexadecimal... and I don't know who the other F are :)<br
+/><br
+/>grid = BlockGrid(5,5,fill=(r,g,b))&nbsp; -&gt; r,g,b is 0-255<br
+/>block = grid[0,0]&nbsp; -&gt; first row and first column<br
+/>block = grid[-4,-5];&nbsp; -&gt; second row and first column<br
+/>block.rgb = (255,0,0)<br
+/>grid<br
+/><br
+/>for loop and if statement:<br
+/>for block in grid.animate:<br
+/>&nbsp;&nbsp;&nbsp; if block.row == 2:<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; block.rgb = (0,0,255)<br
+/>&nbsp;&nbsp;&nbsp; elif block.col == 4:<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; block.rgb = (0,0,0)<br
+/>&nbsp;&nbsp;&nbsp; else:<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; block.rgb = (255,255,255)<br
+/><br
+/><br
+/>A couple of things for people using Windows 7 and Anaconda:<br
+/><br
+/>In Git Bash you can add the /c/Anaconda/Scripts directory to your PATH so that you can launch ipython notebook from the command line:<br
+/><br
+/>export PATH=/c/Anaconda/Scripts:$PATH<br
+/><br
+/>If you don't get output when you hit Shift-Enter in a notebook, the problem may be a software firewall issue. See <a href="http://stackoverflow.com/a/13075334/371740">http://stackoverflow.com/a/13075334/371740</a> for a possible resolution.<br
+/><br
+/><br
+/>matplotlib gallery site: <a href="http://matplotlib.org/gallery.html">http://matplotlib.org/gallery.html</a><br
+/><br
+/>Another good numpy/scipy reference in addition to the ones in the lecture: <a href="http://scipy-lectures.github.com/">http://scipy-lectures.github.com/</a><br
+/>This also has information on matplotlib and other topics as well.<br
+/><br
+/></body>
+</html>
