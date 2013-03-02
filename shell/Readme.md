@@ -16,13 +16,12 @@ There are many different flavors of Shells/Terminals
 * sh   - Bourne shell
 * bash - Bourne again shell
 
-
+Most system default to the Bourne-again (bash) shell,  we will
+use *bash* in these tutorials.
 
 Unix philosophy:
 **Make each program do one thing well**
 
-Most system default to the Bourne-again (bash) shell,  we will
-use *bash* in these tutorials.
 
 # Access The Shell
 
@@ -162,7 +161,21 @@ To see the file you just created type:
     data			generate_data.py	linux-term2.jpg
     dictionary.txt	hello			    myemptyfile.txt
 
-to get more information use the **-l** flag (stands for *long format*):
+You can also use a *relative* path with ls. For example if I want to see what is in data
+
+    ls data
+
+We could also look up a directory
+
+    ls ../
+
+Or put in an absolute or **full path**  eg /Users/cindeem/Documents/boot-camps/shell/data
+
+    ls /Users/cindeem/Documents/boot-camps/shell/data
+
+Most unix commands will also take additional arguments or flags.
+
+For example, to get more information use the **-l** flag (stands for *long format*):
 
     ls -l
 
@@ -186,7 +199,7 @@ But the first character **-**, signifies that this item is a file, not a directo
 
     -rw-rw-r-- 1 cindeem staff    0 Mar  2 14:39 myemptyfile.txt
 
-In contrast, look at *data*. Data is a directory, so the first character is **d**.
+In contrast, look at *data*. Data is a directory, so the first character in **drwxrwxr-x** is **d**.
 
     drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
 
@@ -211,12 +224,13 @@ However, we can see these files using the **-a** flag:
     ../    ex_data.txt       .hiddenfile      myemptyfile.txt
     data/  generate_data.py  linux-term2.jpg  Readme.md
 
-We can now see the *hidden* file. Often these files are configuration files or temporary files, and in general you do
-not edit or work with them. But they will be useful to know about, and sometimes you do want to access them.
+We can now see the *hidden* file (.hiddenfile). Often these files are configuration files or temporary files, 
+and in general you do not edit or work with them. 
+But they will be useful to know about, and sometimes you do want to access them.
 
-Lets see one more useful **ls** flag, **-rt**.  This flag combo (t for *"order by time"* and r for *"reverse"*) will
+Lets see one more useful **ls** flag, **-rt**.  This flag combo (-t for *"order by time"* and -r for *"reverse"*) will
 order your files by the time they were last changed, but with the oldest first, and youngest last.
-In the example below I will also add **l** so we can see the timestamps:
+In the example below I will also add **-l** so we can see the timestamps:
        
     -rwxr-xr-x  1 cindeem  staff     33 Feb 27 21:28 hello
     -rw-r--r--  1 cindeem  staff   8667 Feb 27 21:28 generate_data.py
@@ -230,6 +244,21 @@ In the example below I will also add **l** so we can see the timestamps:
            
 This can be a useful tool if you want to see what you have most recently changed in a large directory.
 
+## rm
+
+Sometimes we make things we dont want to keep. This is where **rm** (remove) comes in.  Lets get rid of our hidden file,
+and then us **ls -a**  to make sure it is gone:
+
+    rm .hiddenfile
+    ls -a
+
+**rm** can be a little scary, what if we had chosen **rm data**, would we lose all our precious data?
+
+    rm data
+
+    rm: data: is a directory
+
+Luckily it will only remove local files
 
 
 
