@@ -81,6 +81,8 @@ You should now have all the data you need for this tutorial (yea!)
 
 ## Navigation
 
+### pwd
+
 To find out where you are in the filesystem use **pwd** (print working directory):
 
     pwd
@@ -126,17 +128,22 @@ use **pwd** to get a sense of where you are:
 
     cd ../
     pwd
+    /Users/cindeem/Documents/boot-camps/
+
 
 You can be anywhere in the filesystem, if you want to go to your home directory just typing **cd** alone
 will take you home:
 
     cd
     pwd
+    /Users/cindeem
 
 Lets get back to our shell directory, we can use a full path directive to get there:
 
     cd /Users/cindeem/Documents/boot-camps/shell
+    pwd
 
+    /Users/cindeem/Documents/boot-camps/shell
 
 
 ### touch
@@ -150,6 +157,83 @@ touch creates an empty file:
 To see the file you just created type:
 
     ls
+
+    Readme.md		ex_data.txt		    linux-term.jpg
+    data			generate_data.py	linux-term2.jpg
+    dictionary.txt	hello			    myemptyfile.txt
+
+to get more information use the **-l** flag (stands for *long format*):
+
+    ls -l
+
+    total 88K
+    drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
+    -rw-rw-r-- 1 cindeem staff 5.2K Mar  2 14:38 dictionary.txt
+    -rw-rw-r-- 1 cindeem staff  236 Mar  2 14:38 ex_data.txt
+    -rw-rw-r-- 1 cindeem staff 8.5K Mar  2 14:38 generate_data.py
+    -rwxrwxr-x 1 cindeem staff   33 Mar  2 14:38 hello*
+    -rw-rw-r-- 1 cindeem staff  41K Mar  2 14:38 linux-term2.jpg
+    -rw-rw-r-- 1 cindeem staff 9.6K Mar  2 14:38 linux-term.jpg
+    -rw-rw-r-- 1 cindeem staff    0 Mar  2 14:39 myemptyfile.txt
+    -rw-rw-r-- 1 cindeem staff 3.4K Mar  2 14:38 Readme.md
+
+If we look at the output we see a number of things, consider your new file *myemptyfile.txt*
+The first part gives us info about permissions on the file (we will talk about this later).
+But the first character **-**, signifies that this item is a file, not a directory.
+
+**-rw-rw-r--** 1 cindeem cindeem    0 Mar  2 14:39 myemptyfile.txt
+
+
+In contrast, look at *data*. Data is a directory, so the first character is **d**.
+
+**drwxrwxr-x** 9 cindeem cindeem  139 Mar  2 14:38 data/
+
+Both show the user, group pair **cindeem staff**.  this tells use a little about who created the file.
+
+We also see timestamps on the file, showing it was created (or modified) on **Mar  2  14:38** (March 2 at 2:38pm).
+
+drwxrwxr-x 9 cindeem cindeem  139 **Mar  2 14:38** data/
+
+Lets create a new file, but we are going to do something odd, we are going to add a **.** to the beginning of the
+filename:
+
+    touch .hiddenfile
+
+If we use **ls** again this file will not show up, this is beacuse of the leading **.**, However, we can see these files
+using the **-a** flag:
+
+    ls -a
+
+    ./     dictionary.txt    hello*           linux-term.jpg
+    ../    ex_data.txt       .hiddenfile      myemptyfile.txt
+    data/  generate_data.py  linux-term2.jpg  Readme.md
+
+We can now see the *hidden* file. Often these files are configuration files or temporary files, and in general you do
+not edit or work with them. But they will be useful to know about, and sometimes you do want to access them.
+
+Lets see one more useful **ls** flag, **-rt**.  This flag combo (t for *"order by time"* and r for *"reverse"*) will
+order your files by the time they were last changed, but with the oldest first, and youngest last.
+In the example below I will also add **l** so we can see the timestamps:
+       
+    -rwxr-xr-x  1 cindeem  staff     33 Feb 27 21:28 hello
+    -rw-r--r--  1 cindeem  staff   8667 Feb 27 21:28 generate_data.py
+    -rw-r--r--  1 cindeem  staff    236 Feb 27 21:28 ex_data.txt
+    -rw-r--r--  1 cindeem  staff   5321 Feb 27 21:28 dictionary.txt
+    drwxr-xr-x  9 cindeem  staff    306 Feb 27 21:28 data
+    -rw-r--r--  1 cindeem  staff  41166 Mar  2 13:32 linux-term2.jpg
+    -rw-r--r--  1 cindeem  staff   9737 Mar  2 13:32 linux-term.jpg
+    -rw-r--r--  1 cindeem  staff   3702 Mar  2 14:21 Readme.md
+    -rw-r--r--  1 cindeem  staff      0 Mar  2 15:03 myemptyfile.txt
+           
+This can be a useful tool if you want to see what you have most recently changed in a large directory.
+
+
+
+
+
+        
+
+
 
 
 
