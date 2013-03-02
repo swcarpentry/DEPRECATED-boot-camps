@@ -178,21 +178,23 @@ to get more information use the **-l** flag (stands for *long format*):
     -rw-rw-r-- 1 cindeem staff 3.4K Mar  2 14:38 Readme.md
 
 If we look at the output we see a number of things, consider your new file *myemptyfile.txt*
+
+**-rw-rw-r--** 
+
 The first part gives us info about permissions on the file (we will talk about this later).
 But the first character **-**, signifies that this item is a file, not a directory.
 
-**-rw-rw-r--** 1 cindeem cindeem    0 Mar  2 14:39 myemptyfile.txt
-
+    -rw-rw-r-- 1 cindeem staff    0 Mar  2 14:39 myemptyfile.txt
 
 In contrast, look at *data*. Data is a directory, so the first character is **d**.
 
-**drwxrwxr-x** 9 cindeem cindeem  139 Mar  2 14:38 data/
+    drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
 
 Both show the user, group pair **cindeem staff**.  this tells use a little about who created the file.
 
 We also see timestamps on the file, showing it was created (or modified) on **Mar  2  14:38** (March 2 at 2:38pm).
 
-drwxrwxr-x 9 cindeem cindeem  139 **Mar  2 14:38** data/
+    drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
 
 Lets create a new file, but we are going to do something odd, we are going to add a **.** to the beginning of the
 filename:
