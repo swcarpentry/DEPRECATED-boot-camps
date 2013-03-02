@@ -66,5 +66,15 @@ Noble WS (2009) A Quick Guide to Organizing Computational Biology Projects. PLoS
 
 But often we inherit badly organized and badly labelled data:
 
+To get
+the data for this test, you will need internet access and an open shell. 
+Just enter the command:
+
+    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+
+Followed by:
+
+    cd boot-camps
+    git checkout YYYY-MM-PLACE
 
 
