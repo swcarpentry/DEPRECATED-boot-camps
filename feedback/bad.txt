@@ -10,3 +10,6 @@ NumPy section could use more exercises/interaction.
 Wanted to learn about SciPy.
 The software engineering felt too rushed -- if I made an error in my code I easily fell behind and was lost.
 Wanted just Python.
+I agree with the comments regarding switching between screen.  It was extremely difficult to type what the instructor had before he would switch to a different screen.
+Wasn't much explanation of python basics.  Fortunately, I had some experience, but for those who didn't, I'm sure they were lost.
+Too much time spent on version control.  I know it's important, but if you don't how to program, it's a mute point.
