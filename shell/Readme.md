@@ -1,7 +1,7 @@
 # Quick links into sections of document
 
-* [The Shell] 
-* [Access the Shell]
+* [The Shell](#theshell) 
+* [Access the Shell](#accesstheshell)
 * [pwd] (#pwd)
 * [cd](#cd)
 * [touch](#touch)
