@@ -29,9 +29,11 @@ Useful commands:
 	cd .. # goes to directory one up from the working directory.
 		
 - To make a new directory:
+
 	mkdir 2013-02-26
 		
 - If we want to make a new directory not nested in the one we are in we can also do that 
+
 	mkdir /users/newstuff/
 
 - Create a file in text editor nano:
@@ -75,6 +77,7 @@ Dealing with data in a file
 	sort -k 2 -t, -n mammal_abundance_UW.txt
 	
 - Lowest to highest:
+
 	sort -k 2 n -r mammal_abundance_UW.txt
 	
 - We can find out many things about these unix commands on the internet, but also by going to the manual that comes with the programs. 
