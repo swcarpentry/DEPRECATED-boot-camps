@@ -7,7 +7,10 @@
 * [touch](#touch)
 * [ls](#ls)
 * [rm](#rm)
-
+* [DataSet](#dataset)
+* [less](#less)
+* [Wildcards](#wildcards)
+* [ExerciseOne](#exerciseone)
 
 # Shell
 
@@ -274,7 +277,103 @@ Luckily it will only remove local files.
 rm also has a **-r** (recursive) flag. to get rid of a directory and all of its
 contents you could use rm -r, but be careful, it will bite you. (with great power comes great responsibility)
 
+# DataSet
 
+**Our data set: Cochlear Implants**
+
+A cochlear implant is a small electronic device that is surgically
+implanted in the inner ear to give deaf people a sense of
+hearing. More than a quarter of a million people have them, but there
+is still no widely-accepted benchmark to measure their effectiveness.
+In order to establish a baseline for such a benchmark, our supervisor
+got teenagers with CIs to listen to audio files on their computer and
+report:
+
+1.  the quietest sound they could hear
+2.  the lowest and highest tones they could hear
+3.  the narrowest range of frequencies they could discriminate
+
+To participate, subjects attended our laboratory and one of our lab
+techs played an audio sample, and recorded their data - when they
+first heard the sound, or first heard a difference in the sound.  Each
+set of test results were written out to a text file, one set per file.
+Each participant has a unique subject ID, and a made-up subject name.
+Each experiment has a unique experiment ID. The experiment has
+collected 351 files so far.
+
+## less 
+Less allows you to view the contents of a text file
+Lets use it to look at ex_data.txt
+
+    less ex_data.txt
+
+
+The data is a bit of a mess! 
+* inconsistent file names, there
+* extraneous "NOTES" files
+* data is spread across many directories.
+
+We are going to use shell commands to get this data into shape. By the end we would like to:
+
+1.  Put all of the data into one directory called "alldata"
+
+2.  Have all of the data files in there, and ensure that every file
+    has a ".txt" extension
+
+3.  Get rid of the extraneous "NOTES" files
+
+If we can get through this example in the available time, we will move
+onto more advanced shell topics...
+
+## Wildcards
+
+Navigate to the `~/boot-camps/shell/data/THOMAS` directory. This
+directory contains our hearing test data for THOMAS. If we type `ls`,
+we will see that there are a bunch of files which are just four digit
+numbers. By default, `ls` lists all of the files in a given
+directory. The `*` character is a shortcut for "everything". Thus, if
+you enter `ls *`, you will see all of the contents of a given
+directory. Now try this command:
+
+    ls *1
+
+This lists every file that ends with a `1`. This command:
+
+    ls /usr/bin/*.sh
+
+Lists every file in `/usr/bin` that ends in the characters `.sh`. And
+this command:
+
+    ls *4*1
+
+lists every file in the current directory which 
+* contains the number `4`
+* ends with the number `1`
+There are four such files: `0241`,`0341`, `0431`, and `0481`. 
+
+So how does this actually work? Well...when the shell (bash) sees a
+word that contains the `*` character, it automatically looks for files
+that match the given pattern. In this case, it identified four such
+files. Then, it replaced the `*4*1` with the list of files, separated
+by spaces. In other the two commands:
+
+    ls *4*1
+    ls 0241 0341 0431 0481
+
+are exactly identical. The `ls` command cannot tell the difference
+between these two things.
+
+* * * *
+### ExerciseOne
+
+Do each of the following using a single `ls` command without
+navigating to a different directory.
+
+1.  List all of the files in `/bin` that contain the letter `a`
+2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
+3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+
+* * * *
 
 
 
