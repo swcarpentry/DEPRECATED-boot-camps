@@ -1,4 +1,4 @@
-Day 2 / Shell Basics:
+Day 2 / Afternoon: Shell Basics:
 =====================================
 
 A few commands used in the shell in the afternoon. 
