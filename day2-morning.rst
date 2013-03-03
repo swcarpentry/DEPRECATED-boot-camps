@@ -116,18 +116,50 @@ Possible workflow:
 
    git diff file1 file2
 
+- To check the git log of commits:
+
+   git log
+
 Branching:
 --------------------------------------------------
 
 -Test this
 
-Using remote repository:
+Using a remote repository:
 --------------------------------------------------
 
--Set up your github account see here: http://github.com>
+- Set up your github account see here: http://github.com
 
+- Create new repository on github. Give it a useful name. 
 
+- Copy the address for your repository. Should be something like: https://github.com/username/Descriptive_Repository_Name_Here.git
 
+- In your local git repository:
 
+   git remote add origin https://github.com/username/Descriptive_Repository_Name_Here.git
 
+- To check that your remote has been added properly:
 
+   git remote -v
+
+- To send your local repository commits to your remote repository:
+
+   git push origin master
+
+- To get commits from the remote repository (updates local repository):
+
+   git pull origin master
+
+- If you want to get the changes from the remote without changing your local repository use fetch:
+
+   git branch newbranch
+
+   git checkout newbranch
+
+   git fetch origin
+
+- If you want to integrate these changes into your local copy then you need to merge (pull is like doing fetch+merge):
+
+   git checkout master
+
+   git merge newbranch
