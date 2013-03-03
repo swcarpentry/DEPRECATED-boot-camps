@@ -1,30 +1,40 @@
 Shell Basics:
 =====================================
 
+A few commands used in the shell in the afternoon. 
+
 Useful commands:
 --------------------------------
 
-  whoami #which user is logged on. In the virtual box you should see that you are software carpentry. 
-		
-	pwd  #Unix for "print working directory". 
-	
-	ls #list directory
+- Which user is logged on. In the virtual box you should see that you are software carpentry. 
 
-  ls -a "list all"
+	whoami
+
+- Unix for "print working directory". 
+
+	pwd  
+
+- List directory
+
+	ls 
+
+	ls -a  #"list all"
 		
 	ls -la  # long all
+
+-Change directories:
 		
 	cd mydir #change directories
 
 	cd .. # goes to directory one up from the working directory.
 		
-	#So if we want to make a new directory you can type 
+- To make a new directory:
 	mkdir 2013-02-26
 		
-	#If we want to make a new directory not nested in the one we are in we can also do that 
+- If we want to make a new directory not nested in the one we are in we can also do that 
 	mkdir /users/newstuff/
 
-  #Create a file in text editor nano:
+- Create a file in text editor nano:
 
 	nano Seattle.txt
 
