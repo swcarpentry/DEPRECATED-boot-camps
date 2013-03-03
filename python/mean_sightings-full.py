@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 '''
-Module/script to calculate mean numbe of sightings of a given animal in a given 
-sightings csv file.
+Module/script to calculate mean number of sightings of a given animal in a 
+given sightings csv file.
 '''
 
 import sys
