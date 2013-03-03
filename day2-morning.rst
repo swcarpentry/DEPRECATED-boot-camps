@@ -77,3 +77,57 @@ Ways to improve these scripts:
 
  - put usage instructions in.
 
+
+Git
+=====================================================
+
+Setting up:
+-------------------------------------------------------
+
+Possible workflow:
+
+- Tell git who you are:
+
+   git config --global user.name "YOUR NAME"
+
+   git config --global user.email "YOUR EMAIL"
+
+- Initiate a local repository in the folder you are currently working in:
+
+   git init
+
+- Add files to be tracked under version control. If you want to track file.txt :
+
+   git add file.txt
+
+- Check git status to see if you have properly added the file to version control:
+
+   git status
+
+- Commit file (or files). Use descriptive commit messages:
+
+   git commit -m "Changed introductory paragraph on the manuscript to reflect new publications."
+
+- Check git status to make sure that your commit was successful:
+
+   git status
+
+- To see changes between 2 files:
+
+   git diff file1 file2
+
+Branching:
+--------------------------------------------------
+
+-Test this
+
+Using remote repository:
+--------------------------------------------------
+
+-Set up your github account see here: http://github.com>
+
+
+
+
+
+
