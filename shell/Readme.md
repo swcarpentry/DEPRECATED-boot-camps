@@ -1,6 +1,6 @@
-* [The Shell][#The Shell]
-* [Access the Shell][#access the shell]
-* [pwd] [#pwd]
+* [The Shell] (#shell)
+* [Access the Shell](#access)
+* [pwd] (#pwd)
 
 
 
