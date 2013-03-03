@@ -43,7 +43,7 @@ Useful commands:
 		
 - Quick way to read file in shell
 		
-  cat data.txt
+ 	cat data.txt
 		
 - Copying- Let's say that we need to make a copy of this file. We will type the name of the file and then its new name's. Let's make a copy and call it something more descriptive. So in this case the command is "cp." So first give it the name of the file you are trying to copy and then the new file name for the copy. 
 		
@@ -62,9 +62,9 @@ Useful commands:
 		
 - To delete something we can use rm-for remove. And just a note that there is no "trash" or "recycling" bin in the unix shell.  Type rm file to remove a file or rmdir directory to remove a directory if it is empty. 
 		
-		rm data.txt
+	rm data.txt
 		
-		rmdir emptyfolder 
+	rmdir emptyfolder 
 
 
 Dealing with data in a file
@@ -75,7 +75,7 @@ Dealing with data in a file
 	sort -k 2 -t, -n mammal_abundance_UW.txt
 	
 - Lowest to highest:
-  sort -k 2 n -r mammal_abundance_UW.txt
+	sort -k 2 n -r mammal_abundance_UW.txt
 	
 - We can find out many things about these unix commands on the internet, but also by going to the manual that comes with the programs. 
 	
@@ -114,7 +114,7 @@ Dealing with data in a file
 	
 - Cut column from a file:
 
-  cut -d, -f 1 data.txt
+	cut -d, -f 1 data.txt
 
 - Use word count wc to count the number of lines in a file
 	
@@ -128,14 +128,15 @@ Dealing with data in a file
 	
 - See history of commands run in the shell session:
 
-  history
+	history
 	
 - If we want we can send the print out of this command to a file. Good for our record keeping:
 	
 	history > command_log_2013_02_26.txt
 	
 - Find all lines in several files that contained "squirrels" and then aggregate these:
-		grep squirrels mammal_abundance_*.txt
+
+	grep squirrels mammal_abundance_*.txt
 
 
 
