@@ -57,7 +57,7 @@ Useful commands:
 		rmdir emptyfolder 
 
 
-	Dealing with data in a file
+Dealing with data in a file
 -------------------------------------
 
 - To sort this by column  from highest to lowest. 
@@ -138,7 +138,7 @@ For loops:
 	        sort -k 2 -n $datafile
 	    done
 	 
--So starting to get a bit unwieldy so save this in a text editor as a .sh file and run in bash. 
+- To make as a bash script save commands in a text editor as a .sh file and run in bash. 
 	
 	bash sorting_abundances.sh
 	
