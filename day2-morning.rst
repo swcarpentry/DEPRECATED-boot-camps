@@ -120,10 +120,63 @@ Possible workflow:
 
    git log
 
+- To remove a file from staging area (ignores changes):
+
+   git reset filename
+
+- To remove a file from the git repository (not tracking file anymore):
+
+   git rm filename
+
+Undoing things in git:
+-----------------------------------
+
+- If you made a commit and decide that it should not have been done then use git revert. Find the commit hash using the git log command:
+
+   git revert 4717a5c
+
+- If you want to take a project back in time to a certain commit and discard the history of commits that came after it use reset with that commit's hash. You can also use this to remove a commit that you have not pushed to a repository:
+
+   git reset 4717a5c
+
+
+- If you want to make a new branch based on the repository at a certain commit use:
+
+   git checkout 4717a5c
+
+
 Branching:
 --------------------------------------------------
 
--Test this
+- Use branches to create parallel copies of your repository that can be changed and commited in parallel to the original
+
+- To see which branch you are currently working on:
+
+   git branch
+
+- To add a new branch:
+
+   git branch March2013Experiment
+
+- To switch to another branch:
+
+   git checkout March2013Experiment
+
+- To swithc back to your original branch:
+
+   git checkout master
+
+- If you have been working on one branch (let's say March2013Experiment) and want to merge the contents into another branch (let's say master) use merge.
+
+- Make sure you are on the branch you want it to be merged into:
+
+   git branch #checks to see what branch you are on
+   
+   git checkout master 
+   
+   git merge March2013Experiment
+
+
 
 Using a remote repository:
 --------------------------------------------------
