@@ -16,6 +16,7 @@ Instructors: Titus Brown <ctb@msu.edu> and Julia Gustavsen <j.gustavsen@gmail.co
    day1-morning
    day1-afternoon
    day2-morning
+   day2-afternoon
 
 
 Indices and tables
