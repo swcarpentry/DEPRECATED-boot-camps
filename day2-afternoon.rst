@@ -22,7 +22,7 @@ Useful commands:
 		
 	ls -la  # long all
 
--Change directories:
+- Change directories:
 		
 	cd mydir #change directories
 
@@ -84,7 +84,7 @@ Dealing with data in a file
 - Exit by pressing "q".
 	
 	
--Save this sorted file to a new file:
+- Save this sorted file to a new file:
 	
 	sort -k 1 mammal_abundance_UW.txt > sorted_mammal_abundance_UW.txt
 	
