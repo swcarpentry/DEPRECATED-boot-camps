@@ -1,7 +1,7 @@
 # Quick links into sections of document
 
-* [The Shell](#theshell) 
-* [Access the Shell](#accesstheshell)
+* [Shell](#shell) 
+* [Data](#data)
 * [pwd] (#pwd)
 * [cd](#cd)
 * [touch](#touch)
@@ -9,7 +9,7 @@
 * [rm](#rm)
 
 
-# The Shell
+# Shell
 
 What is Shell/ Terminal?
 
@@ -63,7 +63,7 @@ I wanted to add a shortcut on my Desktop:
 
     /share/msysGit/add-shortcut.tcl Desktop
 
-# Some Data
+# Data
 
 Shell has many uses, today we are going to focus on using it to manage and setup
 directories holding project data and related files.  
