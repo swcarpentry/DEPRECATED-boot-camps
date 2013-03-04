@@ -410,6 +410,10 @@ Another option is the bracket **[ ]**  which can allow you to look for multiple 
 * [0-9] match any number
 * [a-c] match anything that has *a* or *b* or *c*
 
+For example, this allows us to find any lines that contain a x or a z
+
+    cat dictionary.txt | grep [xz]
+
 ### ExerciseTwo
 
 1. are there any lines in dictionary.txt that contain numbers?
@@ -430,7 +434,8 @@ To append to the end of the file
 
 ### ExerciseThree
 
-1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* into a new file **g_dictionary.txt*
+1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt
+   into a new file **g_dictionary.txt*
 
 
     
