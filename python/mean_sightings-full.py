@@ -36,6 +36,9 @@ def get_sightings_loop(filename, focusanimal):
     # Load table
     tab = ml.csv2rec(filename)
 
+    # Standardize capitalization of focusanimal
+    focusanimal = focusanimal.capitalize()
+
     # Loop through all records, countings recs and animals
     totalrecs = 0
     totalcount = 0
