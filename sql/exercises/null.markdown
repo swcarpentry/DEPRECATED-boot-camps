@@ -2,12 +2,12 @@
 
 
 In these exercises we will be using a database of that contains information
-about experiments: [databases_experiments_null.sqlite](databases_experiments_null.sqlite).
+about experiments: [experiments_null.sqlite](experiments_null.sqlite).
 
 ## The exercises
 
 The Experiments database is described in the [JOIN
-exercises](databases_join.markdown). In the version of the database given above,
+exercises](join.markdown). In the version of the database given above,
 some of the data in the tables is missing, which you'll have to take into
 account.
 

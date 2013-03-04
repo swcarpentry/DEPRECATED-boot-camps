@@ -2,7 +2,7 @@
 
 Let's try out your new shell skills on some real data.
 
-The file `shell_1000gp.vcf` is a small sample (1%) of a very large text file
+The file `1000gp.vcf` is a small sample (1%) of a very large text file
 containing human genetics data. Specifically, it describes genetic variation in
 three African individuals sequenced as part of the [1000 Genomes
 Project](http://www.1000genomes.org). 
@@ -16,7 +16,7 @@ path of all files with that name on the computer (using the shell)?
   > `$ man find`
 
   **Answer:**
-  > `$ find / -name "shell_1000gp.vcf"`
+  > `$ find / -name "1000gp.vcf"`
 
 * It's usually a good idea to use an empty directory as a workspace so that
   other files don't get in the way (or accidentally get overwritten or deleted).
@@ -28,7 +28,7 @@ path of all files with that name on the computer (using the shell)?
   **Answer:**
   > ```bash
   > $ mkdir sandbox
-  > $ mv /home/orion/Downloads/shell_1000gp.vcf sandbox
+  > $ mv /home/orion/Downloads/1000gp.vcf sandbox
   > $ cd sandbox
   > ```
 
@@ -68,12 +68,12 @@ path of all files with that name on the computer (using the shell)?
 
   **Answer:**
   > We should get a file size around 3.6 MB with:
-  > `$ ls -lh shell_1000gp.vcf`
+  > `$ ls -lh 1000gp.vcf`
   > Alternatively, the command `du` can be used to achieve a similar result:
-  > `$ du -h shell_1000gp.vcf`
+  > `$ du -h 1000gp.vcf`
   > 
   > We find there are 45034 lines with:
-  > `$ wc -l shell_1000gp.vcf`
+  > `$ wc -l 1000gp.vcf`
 
 
 * Because this file is so large, you're going to almost always want to pipe
@@ -84,14 +84,14 @@ print 45,000 lines to the screen.
   Let's start by printing the first 5 lines to see what it looks like.  
 
   **Answer:**
-  > `$ head -5 shell_1000gp.vcf`
+  > `$ head -5 1000gp.vcf`
 
 * That isn't very interesting; it's just a bunch of the comments at the
 beginning of the file (they all start with "#")! Print the first 20 lines to see
 more of the file.
 
   **Answer:**
-  > `$ head -20 shell_1000gp.vcf`
+  > `$ head -20 1000gp.vcf`
 
 
 * Okay, so now we can see the basic structure of the file. A few comment lines
@@ -127,11 +127,11 @@ more of the file.
     $ grep -v "^$" file
 
   **Our answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | head
+  >     $ grep -v "^#" 1000gp.vcf | head
   > 
   > Why are neither of these correct?
-  >     $ grep -v "#" shell_1000gp.vcf | head
-  >     $ grep -v "^##" shell_1000gp.vcf | head
+  >     $ grep -v "#" 1000gp.vcf | head
+  >     $ grep -v "^##" 1000gp.vcf | head
 
 * How many lines of data are in the file (rather than counting the number of
   header lines and subtracting, try just counting the number of data lines)?
@@ -140,7 +140,7 @@ more of the file.
   > Instead of piping to `head`, try piping to `wc`.
 
   **Our Answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | wc -l
+  >     $ grep -v "^#" 1000gp.vcf | wc -l
   >
   > should print `45024`
 
@@ -159,7 +159,7 @@ more of the file.
   > chromosome column.
 
   **Our Answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | cut -f 1 | head
+  >     $ grep -v "^#" 1000gp.vcf | cut -f 1 | head
 
 * As you should have observed, the first 10 lines are on numbered chromosomes.
   Every normal cell in your body has 23 pairs of chromosomes, 22 pairs of
@@ -179,7 +179,7 @@ more of the file.
   > `sort` has an option that should make this easier.
 
   **Our Answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | cut -f 1 | sort -u
+  >     $ grep -v "^#" 1000gp.vcf | cut -f 1 | sort -u
 
 
 * Rather than using `sort` to print unique results, a common pipeline is to
@@ -199,7 +199,7 @@ more of the file.
   > the result to `uniq`.
 
   **Our Answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | cut -f 1 | sort | uniq -c
+  >     $ grep -v "^#" 1000gp.vcf | cut -f 1 | sort | uniq -c
 
 
 * Add to your previous solution to list the chromosomes from most frequently
@@ -213,7 +213,7 @@ more of the file.
   > ascending order.
 
   **Our Answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | cut -f 1 | sort | uniq -c | sort -n -r
+  >     $ grep -v "^#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -n -r
   >
   > should output the following:
   >
@@ -276,12 +276,12 @@ more of the file.
   > only need to sort on one field.
 
   **Answer:**
-  >     $ grep -v "^#" shell_1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n
+  >     $ grep -v "^#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n
 
 
 ## Exercise Part 3 (scripts and svn)
 * Wonderful! Now we have a (long) command for printing chromosome statistics
-  from our `shell_1000gp.vcf` file. Using `nano`, create a new file, "chrom_stats.sh",
+  from our `1000gp.vcf` file. Using `nano`, create a new file, "chrom_stats.sh",
   with just your answer to the previous question in it.
 
   **Answer:**
@@ -301,7 +301,7 @@ more of the file.
   > single-quotes or escape these with back-slashes.
 
   **Answer:**
-    $ echo 'grep -v "^#" shell_1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n' > chrom_stats.sh
+    $ echo 'grep -v "^#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n' > chrom_stats.sh
     $ cat chrom_stats.sh
 
 * Now, execute your new script to print the chromosome statistics.
@@ -323,7 +323,7 @@ more of the file.
   > allow anyone to execute it.
 
 * We'd like to be able to use this script in the future with arbitrary VCF
-  files, instead of just our `shell_1000gp.vcf` file. Edit the script so that it takes
+  files, instead of just our `1000gp.vcf` file. Edit the script so that it takes
   VCF-formatted text input on stdin and prints out chromosome statistics on
   stdout. This is simpler than you might think.
 
@@ -332,7 +332,7 @@ more of the file.
 
   **Answer:**
   > Change
-  > `grep -v "^#" shell_1000gp.vcf | ...`
+  > `grep -v "^#" 1000gp.vcf | ...`
   > to
   > `grep -v "^#" | ...`
   > 
@@ -340,7 +340,7 @@ more of the file.
   > "$" at the beginning of the line.
 
 * Now that we have a script that reads from stdin and prints to stdout, how do
-  we run it on the `shell_1000gp.vcf` file to get the same output as before?
+  we run it on the `1000gp.vcf` file to get the same output as before?
 
   **Hint:**
   > The `cat` command is used to print files to stdout.
@@ -354,7 +354,7 @@ more of the file.
   > `./chrom_stats.sh`.
 
   **Answer:**
-  `$ cat shell_1000gp.vcf | ./chrom_stats.sh`
+  `$ cat 1000gp.vcf | ./chrom_stats.sh`
 
 * Finally, add a copy of this file to your folder in the class SVN repository.
   1. `cp chrom_stats.sh /path/to/repo/participants/user/`

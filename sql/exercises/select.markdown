@@ -1,7 +1,7 @@
 ## Getting Started
 
 In these exercises we will be using a database of that contains information
-about Nobel Prizes [databases_nobel_prizes.sqlite](databases_nobel_prizes.sqlite). 
+about Nobel Prizes [nobel_prizes.sqlite](nobel_prizes.sqlite). 
 
 This database only contains one table: `Nobel_Prizes`. 
 

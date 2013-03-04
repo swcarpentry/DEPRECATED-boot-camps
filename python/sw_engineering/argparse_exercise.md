@@ -1,5 +1,3 @@
-
-
 ## Exercise 1
 
 In the episode on [Randomness](http://software-carpentry.org/4_0/invperc/random)

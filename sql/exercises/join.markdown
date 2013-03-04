@@ -1,7 +1,7 @@
 ## Getting Started
 
 In these exercises we will be using a database of that contains information
-about experiments: [databases_experiments.sqlite](databases_experiments.sqlite). 
+about experiments: [experiments.sqlite](experiments.sqlite). 
 
 ## The exercises
 

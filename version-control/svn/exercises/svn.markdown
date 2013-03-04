@@ -104,7 +104,7 @@ can check in your changes.
 We have written a special program that modifies the `planets.txt` in your
 repository folder as if it were another user.  Visit the following URL: 
 
-    http://svn.software-carpentry.org/vc_exercise_4.cgi
+    http://svn.software-carpentry.org/exercise_4.cgi
 
 and type in your username.  When you hit submit you should receive a message
 saying `planets.txt` was successfully modified. DO NOT UPDATE YOUR WORKING COPY
