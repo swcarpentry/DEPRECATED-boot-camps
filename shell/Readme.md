@@ -9,7 +9,7 @@
 * [Help](#help)
 * [rm](#rm)
 * [Tab](#tab)
-* [History](#history)
+* [history](#history)
 * [cat](#cat)
 * [head](#head)
 * [tail](#tail)
@@ -388,6 +388,52 @@ to navigate:
 1. use less and see if dictionary.txt contains *egg*
 
 
+## grep
+
+**grep** allows you to search for patterns 
+
+## pipe  **|**
+
+Allows you to take output from one command and feed it into another command
+
+For example, we can use **cat** to list the contents of dictionary.txt, and then use the **pipe |**
+to send this to **grep** and look for words that contain **egg**
+
+    cat dictionary.txt | grep egg
+
+To get all the words that start with **y**  we use the carrot symbol **^**
+
+    cat dictionary.txt | grep ^y
+
+Another option is the bracket **[ ]**  which can allow you to look for multiple items.
+
+* [0-9] match any number
+* [a-c] match anything that has *a* or *b* or *c*
+
+### ExerciseTwo
+
+1. are there any lines in dictionary.txt that contain numbers?
+2. are there any lines in ex_data.txt that contain numbers?
+3. combine ls and grep with pipe to find all the directories in data that contain an **e**
+
+## redirect 
+
+In the shell you can use **>** or **>>** to redirect output the a new file. This is like **pipe**
+
+To save output to a file
+
+    cat dictionary.txt > newdictionary
+
+To append to the end of the file
+
+    cat dictionary.txt >> newdictionary
+
+### ExerciseThree
+
+1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* into a new file **g_dictionary.txt*
+
+
+    
 # DataSet
 
 **Our data set: Cochlear Implants**
@@ -459,7 +505,7 @@ There are four such files: `0241`,`0341`, `0431`, and `0481`.
 
 
 * * * *
-### ExerciseOne
+### ExerciseThree
 
 Do each of the following using a single `ls` command without
 navigating to a different directory.
