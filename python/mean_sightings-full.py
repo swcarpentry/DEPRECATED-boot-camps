@@ -40,7 +40,7 @@ def get_sightings_loop(filename, focusanimal):
     totalrecs = 0
     totalcount = 0
     for rec in tab:
-        if rec['animal'] == 'Owl':
+        if rec['animal'] == focusanimal:
             totalrecs += 1
             totalcount += rec['count']
 
