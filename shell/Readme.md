@@ -6,11 +6,15 @@
 * [cd](#cd)
 * [touch](#touch)
 * [ls](#ls)
+* [Help](#help)
 * [rm](#rm)
-* [DataSet](#dataset)
+* [Tab](#tab)
+* [History](#history)
 * [less](#less)
 * [Wildcards](#wildcards)
 * [ExerciseOne](#exerciseone)
+* [DataSet](#dataset)
+
 
 # Shell
 
@@ -258,6 +262,31 @@ In the example below I will also add **-l** so we can see the timestamps:
            
 This can be a useful tool if you want to see what you have most recently changed in a large directory.
 
+## Help
+
+Command line programs have many additional arguments or flags. It is quite easy to access this information from the
+command line:
+
+### man (short for manual)
+
+Prints out usage for a given command:
+
+    man ls
+
+To move around in man
+
+* q  (quit)
+* arrow-down, arrow-up to navigate up and down
+* g (beginning of file), G (end of file)
+* /<pattern> to search for pattern eg. /-t
+
+
+### --help (msysgit, windows)
+
+On msysgit, **man** is not implemented, but to get usage information for a command
+
+    ls --help
+
 ## rm
 
 Sometimes we make things we dont want to keep. This is where **rm** (remove) comes in.  Lets get rid of our hidden file,
@@ -276,6 +305,85 @@ Luckily it will only remove local files.
 
 rm also has a **-r** (recursive) flag. to get rid of a directory and all of its
 contents you could use rm -r, but be careful, it will bite you. (with great power comes great responsibility)
+
+# Laziness
+
+One of the nice things about using the shell, it allows you to be lazy. Here are some tips for being lazy.
+
+## Tab
+
+when using any command in a terminal, the terminal will try to guess what you are trying to do. To see how this works
+at the shell prompt enter **ls h <tab>**:
+
+    ls h<tab>
+
+You should find it prints out hello for you (as this file exists in the directory and is the only file that starts with
+**h** ).
+
+Now try this with **d**
+
+    ls d<tab>
+    ls d<tab><tab>
+
+With **d** you had to hit the tab key twice. This is because there was not a unique option, instead there are multiple
+files/directories that begin with **d**. Hitting tab twice shows your possible options. What do you think will happen if
+you try?
+
+    ls da<tab>
+
+## History
+
+When at an empty promt, you can use your *up arrow* and *down arrow* to cycle through your previously used commands.
+This can save you alot of typing.
+
+In addition there is a *history* command which will print out the history of your recently used shell commands
+
+    history
+
+# Read File
+Make sure you are in the **<basedir>/boot-camps/shell** directory
+(what tool should you use, can you navigate to this direcotry?)
+
+There should be a file called **dictionary.txt**. How do we read the contents of this file?
+
+## Cat
+
+**cat** is a tool to concatenate or list files. Use cat to look at the contents of **dictionary.txt**
+
+    cat dictionary.txt
+
+Thats alot of text...
+
+## Head
+
+**head** allows us to look at just the first lines of a file
+
+    head dictionary.txt
+
+## Tail
+
+**tail** allows us to look at the last few lines of a file
+
+    tail dictionary.txt
+
+## less 
+Less allows you to view the contents of a text file, with control over 
+navigating the file:
+
+    less dictionary.txt
+
+to navigate:
+* **esc**  closes the file
+* **g**  go to start of file
+* **G** go to end of file
+* you can also use *up-arrow* and *down-arrow*
+* **spacebar**  scroll down page
+* **/<pattern>**  looks for pattern in file
+
+###ExcerciseOne
+
+1. use less and see if dictionary.txt contains *egg*
+
 
 # DataSet
 
@@ -300,12 +408,6 @@ set of test results were written out to a text file, one set per file.
 Each participant has a unique subject ID, and a made-up subject name.
 Each experiment has a unique experiment ID. The experiment has
 collected 351 files so far.
-
-## less 
-Less allows you to view the contents of a text file
-Lets use it to look at ex_data.txt
-
-    less ex_data.txt
 
 
 The data is a bit of a mess! 
@@ -359,9 +461,8 @@ There are four such files: `0241`,`0341`, `0431`, and `0481`.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+1.  List all of the files in `/bin` that contain the letters `sh`
+2.  List all of the files in `/bin` that contain the letter `a` or the letter `z`
 
 * * * *
 
