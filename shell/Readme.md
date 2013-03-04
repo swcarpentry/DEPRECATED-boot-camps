@@ -373,7 +373,7 @@ navigating the file:
     less dictionary.txt
 
 to navigate:
-* **esc**  closes the file
+* **q**  (short for quit) closes the file
 * **g**  go to start of file
 * **G** go to end of file
 * you can also use *up-arrow* and *down-arrow*
