@@ -214,7 +214,7 @@ written this code in the previous lesson, so we can simply erase our existing
 `get_sightings` function and replace it with this code instead:
 
 
-	def get_sightings_loop(filename, focusanimal):
+	def get_sightings(filename, focusanimal):
 	
 	    # Load table
 	    tab = ml.csv2rec(filename)
@@ -223,7 +223,7 @@ written this code in the previous lesson, so we can simply erase our existing
 	    totalrecs = 0
 	    totalcount = 0
 	    for rec in tab:
-	        if rec['animal'] == 'Owl':
+			if rec['animal'] == focusanimal:
 	            totalrecs += 1
 	            totalcount += rec['count']
 	
@@ -232,8 +232,10 @@ written this code in the previous lesson, so we can simply erase our existing
 	    # Return num of records and animals seen
 	    return totalrecs, meancount
 
-Since this code worked before, we're confident that it will work now. Just to 
-be sure, though we run our test suite again.
+Thinking ahead, we made sure to add a line to fix the capitalization problem 
+right away so that our fourth unit test should pass. Since this code worked 
+before, we're confident that it will work now. Just to be sure, though we run 
+our test suite again.
 
 >### Exercise 4 - Examining and fixing regressions
 >
@@ -242,9 +244,10 @@ be sure, though we run our test suite again.
 >output before to convince ourselves that it was correct...
 >
 >Try to uncover the causes of this regression. One failure should have a fairly 
->obvious cause (it relates to the special case that we added with the third 
->test). The second failure has a more subtle cause - try to figure out the 
->problem, and correct the function to give the right answer.
+>obvious cause (it relates to the issue of an animal not being present, which 
+>we check with the third test). The second failure has a more subtle cause - 
+>try to figure out the problem, and correct the function to give the right 
+>answer.
 
 
 Making a Standalone Script
@@ -273,10 +276,11 @@ number of records and the mean number of animals per record for the Owl in the
 This is interesting, but it would be much more useful if we could give our 
 command line program arguments, in the same way that we would type `cat 
 myfile.txt`. For example, we may want to type `python mean_sightings.py 
-sightings_tab_sm.csv Owl`, and be able to choose any file and any animal.
+sightings_tab_sm.csv Owl` instead of having to make a change in the file itself 
+each time we want to use a different file and focal animal.
 
-This is actually pretty easy to do using another Python module called `sys`. At 
-the top of the `make_sightings.py` file, add the line
+This is actually pretty easy to do using a Python module called `sys`. At the 
+top of the `make_sightings.py` file, add the line
 
 	import sys
 
@@ -303,9 +307,9 @@ addressed before, like the capitalization of the animal name being incorrect.
 
 Two more small changes will make our command line script extra professional.
 
-First, we have now changed our file `make_sightings.py` so that it runs from the 
-command line, but what if we want to also be able to import functions from it 
-as a module from other Python programs (such as in notebooks when we run 
+First, we have now changed our file `make_sightings.py` so that it runs from 
+the command line, but what if we want to also be able to import functions from 
+it as a module from other Python programs (such as in notebooks when we run 
 `import mean_sightings`)? The best way to do this is to wrap all of the lines 
 at the bottom of our file (the ones that produce the command line output, not 
 the functions themselves) into a special if statement like so:
@@ -342,7 +346,7 @@ statement
 
 That annoying little `./` at the front is because the shell, by default, 
 doesn't look inside your current directory for executable programs - it only 
-looks for executables on within directories specified by the PATH variable. 
+looks for executables within directories specified by the PATH shell variable. 
 We'll leave it as an exercise to you to look up how to add a directory to your 
 PATH. If you have certain scripts that you run very often, a common trick is to 
 create a single directory, such as `~/bin/`, add this to your PATH permanently 
