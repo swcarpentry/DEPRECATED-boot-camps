@@ -53,28 +53,14 @@ Unix philosophy:
 
 Depending on the flavor of linux you use Terminal
 
-Centos6 example
+Virual Machine ubuntu example
 
-Applications Menu -> Teminal Emulator
-
-![Linux Term](linux-term.jpg "Linux Term")
-![Linux Term2](linux-term2.jpg "Linux Term2")
+![Linux Term](term.jpg "Linux Term")
 
 ## Mac OS
 
 Applications -> Utilities -> Terminal
 
-## Install msysgit on Windows
-
-[msysgit download link](https://code.google.com/p/msysgit/downloads/list?q=label:Featured)
-
-eg  on a windowsXP I installed **msysGit-fullinstall-1.8.1.2-preview20130201.exe**	
-
-double-Click to install, when finished you will see a window with a prompt
-
-I wanted to add a shortcut on my Desktop:
-
-    /share/msysGit/add-shortcut.tcl Desktop
 
 # Data
 
