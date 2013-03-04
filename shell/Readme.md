@@ -14,6 +14,9 @@
 * [head](#head)
 * [tail](#tail)
 * [less](#less)
+* [grep](#grep)
+* [pipe](#pipe)
+* [redirect](#redirect)
 * [Wildcards](#wildcards)
 * [ExerciseOne](#exerciseone)
 * [DataSet](#dataset)
@@ -422,7 +425,10 @@ For example, this allows us to find any lines that contain a x or a z
 
 ## redirect 
 
-In the shell you can use **>** or **>>** to redirect output the a new file. This is like **pipe**
+In the shell you can use **>** or **>>** to redirect output the a new file. This works like **pipe**
+(so note, if you are using a redirect, this is the once place you dont need an extra pipe)
+
+eg DO NOT do this:  **cat file | >> newfile**
 
 To save output to a file
 
@@ -434,11 +440,32 @@ To append to the end of the file
 
 ### ExerciseThree
 
-1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt
-   into a new file **g_dictionary.txt*
+1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt 
+into a new file **g_dictionary.txt**
+2. append all words that start with *h* in dictionary.txt to g_dictionary.txt, check with less
+3. *flashback* remove newdictionary
+
+## wc
+
+**wc** stands for *word count*, and can be used to count words or lines.
+Lets see how many words are in **dictionary.txt** and then compare that to g_dictionary.txt
+
+    wc dictionary.txt g_dictionary.txt
+
+    850     852    5321 dictionary.txt
+    54      54     318 g_dictionary.txt
+    904     906    5639 total
+   
+* column 1 : number of newlines   (850 for dictionary.txt, 54 for g_dictionary.txt, 904 combined)
+* column 2 : number of words  (54 for g_dictionary.txt)
+* column 3 : number of characters in each file (318 in g_dictionary.txt, 5639 combined)
+
+You can also use this to count the number of items in a directory using the **-l** (for count lines) flag
+
+    ls | wc -l
 
 
-    
+
 # DataSet
 
 **Our data set: Cochlear Implants**
@@ -510,13 +537,19 @@ There are four such files: `0241`,`0341`, `0431`, and `0481`.
 
 
 * * * *
-### ExerciseThree
+### ExerciseFour
 
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
 1.  List all of the files in `/bin` that contain the letters `sh`
 2.  List all of the files in `/bin` that contain the letter `a` or the letter `z`
+3.  (remember *grep*) List all files in `/bin` that start with `a`
+    (sad aside, this does not work in msysgit, it is a bug as both grep and ls do work)
+4.  Count the number of files in /bin that start with `a`
+    (this works in msysgit)
+
+
 
 * * * *
 
