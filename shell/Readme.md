@@ -280,6 +280,14 @@ rm also has a **-r** (recursive) flag. to get rid of a directory and all of its
 contents you could use rm -r, but be careful, it will bite you. You can use the **-i** flag to prompt you before each
 removal. (y for `yes please remove` n for `no, my mistake`
 
+Also if you plan to remove files, it is often a good idea to use **ls** to check that you are removing the correct files
+
+    ls myemptyfile.txt
+
+If you see the file, and you know it is the one you want to remove
+
+    rm myemptyfile.txt
+
 (with great power comes great responsibility)
 
 # Laziness
