@@ -73,18 +73,18 @@ keeping an organized lab book.
 [A Quick Guide to Organizinf Computational Biology Projects](http://bit.ly/AADX8F)
 Noble WS (2009) A Quick Guide to Organizing Computational Biology Projects. PLoS Comput Biol 5(7): e1000424. doi:10.1371/journal.pcbi.1000424
 
-But often we inherit badly organized and badly labelled data:
+But often we inherit badly organized data:
 
 To get
-the data for this test, you will need internet access and an open shell. 
+the data for this tutorial, you will need internet access and an open shell. 
 Just enter the command:
 
-    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+    git clone -b 2013-03-lbl-2 https://github.com/jkitzes/boot-camps.git
 
 Followed by:
 
     cd boot-camps
-    git checkout YYYY-MM-PLACE
+    git checkout 2013-03-lbl-2
 
 You should now have all the data you need for this tutorial (yea!)
 
