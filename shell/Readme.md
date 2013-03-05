@@ -290,6 +290,15 @@ If you see the file, and you know it is the one you want to remove
 
 (with great power comes great responsibility)
 
+Lets return to our data that we need to clean up. Often you will inherit data that has files you do not want to keep
+(they might be empty, or contain bad data etc). In our current data set, there is a jnkfile in data/Bert.
+
+#### Exercise
+
+1. find jnkdata, and validate that it does not contain any useful data
+2. remove jnkdata
+
+
 # Laziness
 
 One of the nice things about using the shell, it allows you to be lazy. Here are some tips for being lazy.
@@ -367,7 +376,7 @@ to navigate:
 Side note:: cat, head, tail, and less are meant to be used to look at text files, not binary files. 
 You will get unexpected results looking at binary files, but you will be able to see them.
 
-###ExcerciseOne
+### Excercise
 
 1. use less and see if dictionary.txt contains *egg*
 2. use less to look at /home/swc/boot-camps/shell/data/bert_data.csv
@@ -400,7 +409,7 @@ For example, this allows us to find any lines that contain a x or a z
 
     cat dictionary.txt | grep [xz]
 
-### ExerciseTwo
+### Exercise
 
 1. are there any lines in dictionary.txt that contain numbers?
 2. are there any lines in ex_data.txt that contain numbers?
@@ -421,7 +430,7 @@ To append to the end of the file
 
     cat dictionary.txt >> newdictionary
 
-### ExerciseThree
+### Exercise
 
 1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt 
 into a new file **g_dictionary.txt**
@@ -479,7 +488,7 @@ lists every file in the current directory which
     0348    0438    0448    0488
 
 * * * *
-### ExerciseFour
+### Exercise
 
 Do each of the following using a single `ls` command without
 navigating to a different directory.
@@ -487,7 +496,64 @@ navigating to a different directory.
 1.  List all of the files in `/bin` that contain the letters `sh`
 2.  List all files in /bin that start with `d`
 3.  (remember *grep*) List all files in `/bin` that start with `d` using grep
-4.  Count the number of files in /bin that start with `d`
+
+Lets investigate out data a little more
+
+data contain two directories
+
+    Bert  THOMAS
+
+and four files
+
+    bert_data.csv    bert_data.xls    generate_data.py    hello
+
+The directories **Bert** and **THOMAS** contain raw data files.
+
+bert_data.csv and bert_data.xls are spreadsheets that contain the data collected by Bert.
+
+generate_data.py is a script (at this point it doesnmatter what it does, lets think of it as a script that manipulates
+the data)
+
+hello is a program
+
+What we want to do is create a file structure that organizes this data.   We have learned how to look at this data, now
+lets see how to move it around
+
+# mv
+
+**mv** is used to `rename` or change the location of a file or directory.  We will use it to rename the directory `data`
+to `ImplantProject`
+
+Navigate to make sure you are in `/home/swc/boot-camps/shell`
+
+Then use **mv** to rename data. In this case the syntax to rename a file is 
+
+`mv oldname newname`
+
+    mv data ImplantProject
+
+Use `ls` to see that you have successfully renamed the directory
+
+# mkdir 
+
+**mkdir** is used to create a directory.  We want to make a new directory called rawdata, and put the files collected by
+Bert and THOMAS in that directory.
+
+First make new directory **rawdata**  
+
+    cd ImplantProject
+
+    mkdir rawdata
+
+Use *ls* to verify you made the directory. We will now use **mv** again, but this time instead of renaming a file, we
+will move it to a new location. In this case the syntax to relocate a file is
+
+`mv original  newlocation`
+
+    mv Bert rawdata
+    mv THOMAS rawdata
+
+Again use **ls** to make sure things are where you expected.
 
 * * * *
 
