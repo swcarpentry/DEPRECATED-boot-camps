@@ -356,9 +356,14 @@ to navigate:
 * **spacebar**  scroll down page
 * **/<pattern>**  looks for pattern in file
 
+Side note:: cat, head, tail, and less are meant to be used to look at text files, not binary files. 
+You will get unexpected results looking at binary files, but you will be able to see them.
+
 ###ExcerciseOne
 
 1. use less and see if dictionary.txt contains *egg*
+2. use less to look at /home/swc/boot-camps/shell/data/bert_data.csv
+3. use less to look at /home/swc/boot-camps/shell/data/bert_data.xls
 
 
 ## grep
@@ -436,6 +441,48 @@ You can also use this to count the number of items in a directory using the **-l
     
     7
 
+## Wildcards
+
+**Wildcards**  (*) are used to match anything, but we can use them to match specific things.
+
+Navigate to the `/home/swc/boot-camps/shell/data/THOMAS` directory. This
+directory contains our hearing test data from THOMAS.
+
+    ls *
+
+This will give us everything in the directory
+
+
+    ls *8
+
+This lists every file that ends with a `8`. This command:
+
+    ls /usr/bin/*.sh
+
+Lists every file in `/usr/bin` that ends in the characters `.sh`. And
+this command:
+
+    ls *4*8
+
+lists every file in the current directory which 
+* contains the number `4`
+* ends with the number `8`
+
+    0348    0438    0448    0488
+
+* * * *
+### ExerciseFour
+
+Do each of the following using a single `ls` command without
+navigating to a different directory.
+
+1.  List all of the files in `/bin` that contain the letters `sh`
+2.  List all files in /bin that start with `d`
+3.  (remember *grep*) List all files in `/bin` that start with `d` using grep
+4.  Count the number of files in /bin that start with `d`
+
+* * * *
+
 # DataSet
 
 **Our data set: Cochlear Implants**
@@ -461,8 +508,8 @@ Each experiment has a unique experiment ID. The experiment has
 collected 351 files so far.
 
 
-The data is a bit of a mess! 
-* inconsistent file names, there
+The data is a bit of a mess, but often this is what we inherit! 
+* scripts and 
 * extraneous "NOTES" files
 * data is spread across many directories.
 
@@ -477,51 +524,6 @@ We are going to use shell commands to get this data into shape. By the end we wo
 
 If we can get through this example in the available time, we will move
 onto more advanced shell topics...
-
-## Wildcards
-
-Navigate to the `~/boot-camps/shell/data/THOMAS` directory. This
-directory contains our hearing test data for THOMAS. If we type `ls`,
-we will see that there are a bunch of files which are just four digit
-numbers. By default, `ls` lists all of the files in a given
-directory. The `*` character is a shortcut for "everything". Thus, if
-you enter `ls *`, you will see all of the contents of a given
-directory. Now try this command:
-
-    ls *1
-
-This lists every file that ends with a `1`. This command:
-
-    ls /usr/bin/*.sh
-
-Lists every file in `/usr/bin` that ends in the characters `.sh`. And
-this command:
-
-    ls *4*1
-
-lists every file in the current directory which 
-* contains the number `4`
-* ends with the number `1`
-
-There are four such files: `0241`,`0341`, `0431`, and `0481`. 
-
-
-* * * *
-### ExerciseFour
-
-Do each of the following using a single `ls` command without
-navigating to a different directory.
-
-1.  List all of the files in `/bin` that contain the letters `sh`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `z`
-3.  (remember *grep*) List all files in `/bin` that start with `a`
-    (sad aside, this does not work in msysgit, it is a bug as both grep and ls do work)
-4.  Count the number of files in /bin that start with `a`
-    (this works in msysgit)
-
-
-
-* * * *
 
 
 
