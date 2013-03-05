@@ -341,7 +341,7 @@ Make sure you are in the **<basedir>/boot-camps/shell** directory
 
 There should be a file called **dictionary.txt**. How do we read the contents of this file?
 
-## Cat
+## cat
 
 **cat** is a tool to concatenate or list files. Use cat to look at the contents of **dictionary.txt**
 
@@ -349,13 +349,13 @@ There should be a file called **dictionary.txt**. How do we read the contents of
 
 Thats alot of text...
 
-## Head
+## head
 
 **head** allows us to look at just the first lines of a file
 
     head dictionary.txt
 
-## Tail
+## tail
 
 **tail** allows us to look at the last few lines of a file
 
