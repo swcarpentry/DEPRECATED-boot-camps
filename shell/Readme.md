@@ -16,6 +16,8 @@
 * [pipe](#pipe)
 * [redirect](#redirect)
 * [Wildcards](#wildcards)
+* [mkdir](#mkdir)
+* [mv](#mv)
 
 
 # Shell
@@ -497,6 +499,8 @@ navigating to a different directory.
 2.  List all files in /bin that start with `d`
 3.  (remember *grep*) List all files in `/bin` that start with `d` using grep
 
+# Data Revisited
+
 Lets investigate out data a little more
 
 data contain two directories
@@ -555,49 +559,63 @@ will move it to a new location. In this case the syntax to relocate a file is
 
 Again use **ls** to make sure things are where you expected.
 
-* * * *
+#### Exercise
 
-# DataSet
+1. make `spreadsheets` directory, put bert_data.csv and bert_data.txt into spreadsheets directory
+2. make `scripts` directory and move generate_data.py into scripts directory
+3. make `bin` directory and put hello into this directory
 
-**Our data set: Cochlear Implants**
+So now the data is a little more organized, and you are ready to start moving onto the next level. There are just a few
+extra things you will want to know.
 
-A cochlear implant is a small electronic device that is surgically
-implanted in the inner ear to give deaf people a sense of
-hearing. More than a quarter of a million people have them, but there
-is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
-got teenagers with CIs to listen to audio files on their computer and
-report:
+# env
 
-1.  the quietest sound they could hear
-2.  the lowest and highest tones they could hear
-3.  the narrowest range of frequencies they could discriminate
+**env** prints your environment variables. Your system uses this to keep track of vaiables within and across programs.
+For example, lets find out who you are
 
-To participate, subjects attended our laboratory and one of our lab
-techs played an audio sample, and recorded their data - when they
-first heard the sound, or first heard a difference in the sound.  Each
-set of test results were written out to a text file, one set per file.
-Each participant has a unique subject ID, and a made-up subject name.
-Each experiment has a unique experiment ID. The experiment has
-collected 351 files so far.
+    env | grep USER
 
+    USER=swc
 
-The data is a bit of a mess, but often this is what we inherit! 
-* scripts and 
-* extraneous "NOTES" files
-* data is spread across many directories.
+This tells us that you (the current user) is swc.  Programs can take advantge of this to let us know who created certain
+files or ran different programs.
 
-We are going to use shell commands to get this data into shape. By the end we would like to:
+The environment variable `PATH` is important for your computer to find executable programs
 
-1.  Put all of the data into one directory called "alldata"
+    env | grep PATH
 
-2.  Have all of the data files in there, and ensure that every file
-    has a ".txt" extension
+You will see there are a few env variables that have `PATH` in them, we want the simeple one so we can do one of two
+things
 
-3.  Get rid of the extraneous "NOTES" files
+    env | grep ^PATH
 
-If we can get through this example in the available time, we will move
-onto more advanced shell topics...
+    echo $PATH
+
+echo just prints what it is told to the terminal. the **$**, will give us the contents of the **PATH** variable on the
+system. Your system uses the directories defined in `PATH` to find programs it can run.
+
+One of mu favorite tools is a python tool called **grin**.  If you type grin at the command prompt, what do you get?
+
+    No command `grin` found did you mean:
+    ...
+
+**grin** is a tool written in python. We will want to install it so we will use a simple package manager for python to
+install it called **pip**
+
+    pip install grin
+
+Hmmmm, it doesnt like us, and we get a permission denied error. Now we could ask for the sys-admin to install for
+us....but we are impatient, and we now have tools to get this to work.  Here is what we can do:
+
+1. make a directory called `local` in our home direcotry
+2. use pip to install `grin` to this local directory using **--install-options="--prefix=/hom swc/local"**
+3. add /home/swc/local/bin to our `PATH` so we can use grin, the binary **grin** was installed in /home/swc/local/bin, 
+but because this is not defined in **$PATH** the system can *NOT* find it
+
+    cd /home/swc
+    mkdir local
+    pip install --install-option='--prefix=/home/swc/local' grin
+
 
 
 
