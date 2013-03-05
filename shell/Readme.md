@@ -1,7 +1,5 @@
 # Quick links into sections of document
 
-* [Shell](#shell) 
-* [Data](#data)
 * [pwd] (#pwd)
 * [cd](#cd)
 * [touch](#touch)
@@ -18,8 +16,8 @@
 * [pipe](#pipe)
 * [redirect](#redirect)
 * [Wildcards](#wildcards)
-* [ExerciseOne](#exerciseone)
-* [DataSet](#dataset)
+* [mkdir](#mkdir)
+* [mv](#mv)
 
 
 # Shell
@@ -53,28 +51,14 @@ Unix philosophy:
 
 Depending on the flavor of linux you use Terminal
 
-Centos6 example
+Virual Machine ubuntu example
 
-Applications Menu -> Teminal Emulator
-
-![Linux Term](linux-term.jpg "Linux Term")
-![Linux Term2](linux-term2.jpg "Linux Term2")
+![Linux Term](term.jpg "Linux Term")
 
 ## Mac OS
 
 Applications -> Utilities -> Terminal
 
-## Install msysgit on Windows
-
-[msysgit download link](https://code.google.com/p/msysgit/downloads/list?q=label:Featured)
-
-eg  on a windowsXP I installed **msysGit-fullinstall-1.8.1.2-preview20130201.exe**	
-
-double-Click to install, when finished you will see a window with a prompt
-
-I wanted to add a shortcut on my Desktop:
-
-    /share/msysGit/add-shortcut.tcl Desktop
 
 # Data
 
@@ -87,18 +71,18 @@ keeping an organized lab book.
 [A Quick Guide to Organizinf Computational Biology Projects](http://bit.ly/AADX8F)
 Noble WS (2009) A Quick Guide to Organizing Computational Biology Projects. PLoS Comput Biol 5(7): e1000424. doi:10.1371/journal.pcbi.1000424
 
-But often we inherit badly organized and badly labelled data:
+But often we inherit badly organized data:
 
 To get
-the data for this test, you will need internet access and an open shell. 
+the data for this tutorial, you will need internet access and an open shell. 
 Just enter the command:
 
-    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+    git clone -b 2013-03-lbl-2 https://github.com/jkitzes/boot-camps.git
 
 Followed by:
 
     cd boot-camps
-    git checkout YYYY-MM-PLACE
+    git checkout 2013-03-lbl-2
 
 You should now have all the data you need for this tutorial (yea!)
 
@@ -112,25 +96,17 @@ To find out where you are in the filesystem use **pwd** (print working directory
 
 Which will give results looking like the following
 
-using (msysgit prompt)
+using virtual machine
 
-    /c/Documents and Settings/Administrator/My Documents/boot-camps
-
-using (ipython prompt)
-
-    C:\\Documents and Settings\\Administrator\\My Documents\\boot-camps
+    /home/swc/boot-camps
 
 using (OSX)
 
     /Users/cindeem/Documents/boot-camps
 
-using (linux)
-
-    /home/jagust/cindeem/boot-camps
-
 Note that the results are dependent on the OS/terminal combo you are using...
-from here on out in the tutorial, I will stick to a standard OSX terminal output
-(very simliar to linux output). 
+from here on out in the tutorial, I will stick to virtual machine terminal output
+(very simliar to Mac OSX, linus output). 
 
 ### cd
 
@@ -144,29 +120,29 @@ command to move to shell directory:
     cd shell
     pwd
 
-    /Users/cindeem/Documents/boot-camps/shell
+    /home/swc/boot-camps/shell
 
 If we wanted to go backward to the original directory we use ../ to signify going backward,
 use **pwd** to get a sense of where you are:
 
     cd ../
     pwd
-    /Users/cindeem/Documents/boot-camps/
+    /home/swc/boot-camps
 
 
 You can be anywhere in the filesystem, if you want to go to your home directory just typing **cd** alone
-will take you home:
+will take you home (in this example your user name is **swc**):
 
     cd
     pwd
-    /Users/cindeem
+    /home/swc
 
 Lets get back to our shell directory, we can use a full path directive to get there:
 
-    cd /Users/cindeem/Documents/boot-camps/shell
+    cd /home/swc/boot-camps/shell
     pwd
 
-    /Users/cindeem/Documents/boot-camps/shell
+    /home/swc/boot-camps/shell
 
 
 ### touch
@@ -181,21 +157,21 @@ To see the file you just created type:
 
     ls
 
-    Readme.md		ex_data.txt		    linux-term.jpg
-    data			generate_data.py	linux-term2.jpg
-    dictionary.txt	hello			    myemptyfile.txt
+    data    dictionary.txt  ex_data.txt myemptyfile.txt Readme.md   term.jpg
 
 You can also use a *relative* path with ls. For example if I want to see what is in data
 
     ls data
 
+    Bert    bert_data.csv   bert_data.xls   generate_data.py    hello   Thomas
+
 We could also look up a directory
 
     ls ../
 
-Or put in an absolute or **full path**  eg /Users/cindeem/Documents/boot-camps/shell/data
+Or put in an absolute or **full path**  eg /home/swc/boot-camps/shell/data
 
-    ls /Users/cindeem/Documents/boot-camps/shell/data
+    ls /home/swc/boot-camps/shell/data
 
 Most unix commands will also take additional arguments or flags.
 
@@ -204,34 +180,31 @@ For example, to get more information use the **-l** flag (stands for *long forma
     ls -l
 
     total 88K
-    drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
-    -rw-rw-r-- 1 cindeem staff 5.2K Mar  2 14:38 dictionary.txt
-    -rw-rw-r-- 1 cindeem staff  236 Mar  2 14:38 ex_data.txt
-    -rw-rw-r-- 1 cindeem staff 8.5K Mar  2 14:38 generate_data.py
-    -rwxrwxr-x 1 cindeem staff   33 Mar  2 14:38 hello*
-    -rw-rw-r-- 1 cindeem staff  41K Mar  2 14:38 linux-term2.jpg
-    -rw-rw-r-- 1 cindeem staff 9.6K Mar  2 14:38 linux-term.jpg
-    -rw-rw-r-- 1 cindeem staff    0 Mar  2 14:39 myemptyfile.txt
-    -rw-rw-r-- 1 cindeem staff 3.4K Mar  2 14:38 Readme.md
+    drwxrwxr-x 9 swc swc  139  Mar  2 14:38 data/
+    -rw-rw-r-- 1 swc swc 5.2K  Mar  2 14:38 dictionary.txt
+    -rw-rw-r-- 1 swc swc  236  Mar  2 14:38 ex_data.txt
+    -rw-rw-r-- 1 swc swc    0  Mar  2 14:39 myemptyfile.txt
+    -rw-rw-r-- 1 swc swc 3.4K  Mar  2 14:38 Readme.md
+    -rw-rw-r-- 1 swc swc 13973 Mar  2 19:48 term.jpg
 
 If we look at the output we see a number of things, consider your new file *myemptyfile.txt*
 
 **-rw-rw-r--** 
 
-The first part gives us info about permissions on the file (we will talk about this later).
+The first part gives us info about permissions on the file (we *may* talk about this later).
 But the first character **-**, signifies that this item is a file, not a directory.
 
-    -rw-rw-r-- 1 cindeem staff    0 Mar  2 14:39 myemptyfile.txt
+    -rw-rw-r-- 1 swc swc    0 Mar  2 14:39 myemptyfile.txt
 
 In contrast, look at *data*. Data is a directory, so the first character in **drwxrwxr-x** is **d**.
 
-    drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
+    drwxrwxr-x 9 swc swc  139 Mar  2 14:38 data/
 
-Both show the user, group pair **cindeem staff**.  this tells use a little about who created the file.
+Both show the user, group pair **swc swc**.  this tells use a little about who created the file.
 
 We also see timestamps on the file, showing it was created (or modified) on **Mar  2  14:38** (March 2 at 2:38pm).
 
-    drwxrwxr-x 9 cindeem staff  139 Mar  2 14:38 data/
+    drwxrwxr-x 9 swc swc  139 Mar  2 14:38 data/
 
 Lets create a new file, but we are going to do something odd, we are going to add a **.** to the beginning of the
 filename:
@@ -244,28 +217,31 @@ However, we can see these files using the **-a** flag:
 
     ls -a
 
-    ./     dictionary.txt    hello*           linux-term.jpg
-    ../    ex_data.txt       .hiddenfile      myemptyfile.txt
-    data/  generate_data.py  linux-term2.jpg  Readme.md
+    .   data            ex_data.txt     myemptyfile.txt     term.jpg 
+    ..  dictionary.txt  .hiddenfile     Readme.md
 
 We can now see the *hidden* file (.hiddenfile). Often these files are configuration files or temporary files, 
 and in general you do not edit or work with them. 
 But they will be useful to know about, and sometimes you do want to access them.
 
+#### Excercise
+
+there are usually many hidden files in your home directory, use ls -a to see them
+
+
 Lets see one more useful **ls** flag, **-rt**.  This flag combo (-t for *"order by time"* and -r for *"reverse"*) will
 order your files by the time they were last changed, but with the oldest first, and youngest last.
 In the example below I will also add **-l** so we can see the timestamps:
        
-    -rwxr-xr-x  1 cindeem  staff     33 Feb 27 21:28 hello
-    -rw-r--r--  1 cindeem  staff   8667 Feb 27 21:28 generate_data.py
-    -rw-r--r--  1 cindeem  staff    236 Feb 27 21:28 ex_data.txt
-    -rw-r--r--  1 cindeem  staff   5321 Feb 27 21:28 dictionary.txt
-    drwxr-xr-x  9 cindeem  staff    306 Feb 27 21:28 data
-    -rw-r--r--  1 cindeem  staff  41166 Mar  2 13:32 linux-term2.jpg
-    -rw-r--r--  1 cindeem  staff   9737 Mar  2 13:32 linux-term.jpg
-    -rw-r--r--  1 cindeem  staff   3702 Mar  2 14:21 Readme.md
-    -rw-r--r--  1 cindeem  staff      0 Mar  2 15:03 myemptyfile.txt
-           
+    total 48
+    -rw-rw-r--  1   swc swc 13973   Mar  4 19:48    term.jpg
+    -rw-rw-r--  1   swc swc 15621   Mar  4 19:48    Readme.md
+    -rw-rw-r--  1   swc swc   236   Mar  4 19:48    ex_data.txt
+    -rw-rw-r--  1   swc swc  5231   Mar  4 19:48    dictionary.txt
+    -rw-rw-r--  1   swc swc  4096   Mar  4 19:48    data
+    -rw-rw-r--  1   swc swc     0   Mar  6 19:53    myemptyfile.txt
+
+
 This can be a useful tool if you want to see what you have most recently changed in a large directory.
 
 ## Help
@@ -286,13 +262,6 @@ To move around in man
 * g (beginning of file), G (end of file)
 * /<pattern> to search for pattern eg. /-t
 
-
-### --help (msysgit, windows)
-
-On msysgit, **man** is not implemented, but to get usage information for a command
-
-    ls --help
-
 ## rm
 
 Sometimes we make things we dont want to keep. This is where **rm** (remove) comes in.  Lets get rid of our hidden file,
@@ -305,12 +274,32 @@ and then us **ls -a**  to make sure it is gone:
 
     rm data
 
-    rm: data: is a directory
+    rm: cannot remove `data': Is a directory
 
 Luckily it will only remove local files.
 
 rm also has a **-r** (recursive) flag. to get rid of a directory and all of its
-contents you could use rm -r, but be careful, it will bite you. (with great power comes great responsibility)
+contents you could use rm -r, but be careful, it will bite you. You can use the **-i** flag to prompt you before each
+removal. (y for `yes please remove` n for `no, my mistake`
+
+Also if you plan to remove files, it is often a good idea to use **ls** to check that you are removing the correct files
+
+    ls myemptyfile.txt
+
+If you see the file, and you know it is the one you want to remove
+
+    rm myemptyfile.txt
+
+(with great power comes great responsibility)
+
+Lets return to our data that we need to clean up. Often you will inherit data that has files you do not want to keep
+(they might be empty, or contain bad data etc). In our current data set, there is a jnkfile in data/Bert.
+
+#### Exercise
+
+1. find jnkdata, and validate that it does not contain any useful data
+2. remove jnkdata
+
 
 # Laziness
 
@@ -319,12 +308,12 @@ One of the nice things about using the shell, it allows you to be lazy. Here are
 ## Tab
 
 when using any command in a terminal, the terminal will try to guess what you are trying to do. To see how this works
-at the shell prompt enter **ls h <tab>**:
+at the shell prompt enter **ls e <tab>**:
 
-    ls h<tab>
+    ls e<tab>
 
-You should find it prints out hello for you (as this file exists in the directory and is the only file that starts with
-**h** ).
+You should find it prints out ex_data.txt for you (as this file exists in the directory and is the only file that starts with
+**e** ).
 
 Now try this with **d**
 
@@ -352,7 +341,7 @@ Make sure you are in the **<basedir>/boot-camps/shell** directory
 
 There should be a file called **dictionary.txt**. How do we read the contents of this file?
 
-## Cat
+## cat
 
 **cat** is a tool to concatenate or list files. Use cat to look at the contents of **dictionary.txt**
 
@@ -360,13 +349,13 @@ There should be a file called **dictionary.txt**. How do we read the contents of
 
 Thats alot of text...
 
-## Head
+## head
 
 **head** allows us to look at just the first lines of a file
 
     head dictionary.txt
 
-## Tail
+## tail
 
 **tail** allows us to look at the last few lines of a file
 
@@ -386,9 +375,14 @@ to navigate:
 * **spacebar**  scroll down page
 * **/<pattern>**  looks for pattern in file
 
-###ExcerciseOne
+Side note:: cat, head, tail, and less are meant to be used to look at text files, not binary files. 
+You will get unexpected results looking at binary files, but you will be able to see them.
+
+### Excercise
 
 1. use less and see if dictionary.txt contains *egg*
+2. use less to look at /home/swc/boot-camps/shell/data/bert_data.csv
+3. use less to look at /home/swc/boot-camps/shell/data/bert_data.xls
 
 
 ## grep
@@ -417,7 +411,7 @@ For example, this allows us to find any lines that contain a x or a z
 
     cat dictionary.txt | grep [xz]
 
-### ExerciseTwo
+### Exercise
 
 1. are there any lines in dictionary.txt that contain numbers?
 2. are there any lines in ex_data.txt that contain numbers?
@@ -426,7 +420,7 @@ For example, this allows us to find any lines that contain a x or a z
 ## redirect 
 
 In the shell you can use **>** or **>>** to redirect output the a new file. This works like **pipe**
-(so note, if you are using a redirect, this is the once place you dont need an extra pipe)
+(so note, if you are using a redirect, this is the one place you dont need an extra pipe)
 
 eg DO NOT do this:  **cat file | >> newfile**
 
@@ -438,7 +432,7 @@ To append to the end of the file
 
     cat dictionary.txt >> newdictionary
 
-### ExerciseThree
+### Exercise
 
 1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt 
 into a new file **g_dictionary.txt**
@@ -453,7 +447,7 @@ Lets see how many words are in **dictionary.txt** and then compare that to g_dic
     wc dictionary.txt g_dictionary.txt
 
     850     852    5321 dictionary.txt
-    54      54     318 g_dictionary.txt
+     54      54     318 g_dictionary.txt
     904     906    5639 total
    
 * column 1 : number of newlines   (850 for dictionary.txt, 54 for g_dictionary.txt, 904 combined)
@@ -463,95 +457,165 @@ Lets see how many words are in **dictionary.txt** and then compare that to g_dic
 You can also use this to count the number of items in a directory using the **-l** (for count lines) flag
 
     ls | wc -l
-
-
-
-# DataSet
-
-**Our data set: Cochlear Implants**
-
-A cochlear implant is a small electronic device that is surgically
-implanted in the inner ear to give deaf people a sense of
-hearing. More than a quarter of a million people have them, but there
-is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
-got teenagers with CIs to listen to audio files on their computer and
-report:
-
-1.  the quietest sound they could hear
-2.  the lowest and highest tones they could hear
-3.  the narrowest range of frequencies they could discriminate
-
-To participate, subjects attended our laboratory and one of our lab
-techs played an audio sample, and recorded their data - when they
-first heard the sound, or first heard a difference in the sound.  Each
-set of test results were written out to a text file, one set per file.
-Each participant has a unique subject ID, and a made-up subject name.
-Each experiment has a unique experiment ID. The experiment has
-collected 351 files so far.
-
-
-The data is a bit of a mess! 
-* inconsistent file names, there
-* extraneous "NOTES" files
-* data is spread across many directories.
-
-We are going to use shell commands to get this data into shape. By the end we would like to:
-
-1.  Put all of the data into one directory called "alldata"
-
-2.  Have all of the data files in there, and ensure that every file
-    has a ".txt" extension
-
-3.  Get rid of the extraneous "NOTES" files
-
-If we can get through this example in the available time, we will move
-onto more advanced shell topics...
+    
+    7
 
 ## Wildcards
 
-Navigate to the `~/boot-camps/shell/data/THOMAS` directory. This
-directory contains our hearing test data for THOMAS. If we type `ls`,
-we will see that there are a bunch of files which are just four digit
-numbers. By default, `ls` lists all of the files in a given
-directory. The `*` character is a shortcut for "everything". Thus, if
-you enter `ls *`, you will see all of the contents of a given
-directory. Now try this command:
+**Wildcards**  (*) are used to match anything, but we can use them to match specific things.
 
-    ls *1
+Navigate to the `/home/swc/boot-camps/shell/data/THOMAS` directory. This
+directory contains our hearing test data from THOMAS.
 
-This lists every file that ends with a `1`. This command:
+    ls *
+
+This will give us everything in the directory
+
+
+    ls *8
+
+This lists every file that ends with a `8`. This command:
 
     ls /usr/bin/*.sh
 
 Lists every file in `/usr/bin` that ends in the characters `.sh`. And
 this command:
 
-    ls *4*1
+    ls *4*8
 
 lists every file in the current directory which 
 * contains the number `4`
-* ends with the number `1`
+* ends with the number `8`
 
-There are four such files: `0241`,`0341`, `0431`, and `0481`. 
-
+    0348    0438    0448    0488
 
 * * * *
-### ExerciseFour
+### Exercise
 
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
 1.  List all of the files in `/bin` that contain the letters `sh`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `z`
-3.  (remember *grep*) List all files in `/bin` that start with `a`
-    (sad aside, this does not work in msysgit, it is a bug as both grep and ls do work)
-4.  Count the number of files in /bin that start with `a`
-    (this works in msysgit)
+2.  List all files in /bin that start with `d`
+3.  (remember *grep*) List all files in `/bin` that start with `d` using grep
 
+# Data Revisited
 
+Lets investigate out data a little more
 
-* * * *
+data contain two directories
+
+    Bert  THOMAS
+
+and four files
+
+    bert_data.csv    bert_data.xls    generate_data.py    hello
+
+The directories **Bert** and **THOMAS** contain raw data files.
+
+bert_data.csv and bert_data.xls are spreadsheets that contain the data collected by Bert.
+
+generate_data.py is a script (at this point it doesnmatter what it does, lets think of it as a script that manipulates
+the data)
+
+hello is a program
+
+What we want to do is create a file structure that organizes this data.   We have learned how to look at this data, now
+lets see how to move it around
+
+# mv
+
+**mv** is used to `rename` or change the location of a file or directory.  We will use it to rename the directory `data`
+to `ImplantProject`
+
+Navigate to make sure you are in `/home/swc/boot-camps/shell`
+
+Then use **mv** to rename data. In this case the syntax to rename a file is 
+
+`mv oldname newname`
+
+    mv data ImplantProject
+
+Use `ls` to see that you have successfully renamed the directory
+
+# mkdir 
+
+**mkdir** is used to create a directory.  We want to make a new directory called rawdata, and put the files collected by
+Bert and THOMAS in that directory.
+
+First make new directory **rawdata**  
+
+    cd ImplantProject
+
+    mkdir rawdata
+
+Use *ls* to verify you made the directory. We will now use **mv** again, but this time instead of renaming a file, we
+will move it to a new location. In this case the syntax to relocate a file is
+
+`mv original  newlocation`
+
+    mv Bert rawdata
+    mv THOMAS rawdata
+
+Again use **ls** to make sure things are where you expected.
+
+#### Exercise
+
+1. make `spreadsheets` directory, put bert_data.csv and bert_data.txt into spreadsheets directory
+2. make `scripts` directory and move generate_data.py into scripts directory
+3. make `bin` directory and put hello into this directory
+
+So now the data is a little more organized, and you are ready to start moving onto the next level. There are just a few
+extra things you will want to know.
+
+# env
+
+**env** prints your environment variables. Your system uses this to keep track of vaiables within and across programs.
+For example, lets find out who you are
+
+    env | grep USER
+
+    USER=swc
+
+This tells us that you (the current user) is swc.  Programs can take advantge of this to let us know who created certain
+files or ran different programs.
+
+The environment variable `PATH` is important for your computer to find executable programs
+
+    env | grep PATH
+
+You will see there are a few env variables that have `PATH` in them, we want the simeple one so we can do one of two
+things
+
+    env | grep ^PATH
+
+    echo $PATH
+
+echo just prints what it is told to the terminal. the **$**, will give us the contents of the **PATH** variable on the
+system. Your system uses the directories defined in `PATH` to find programs it can run.
+
+One of mu favorite tools is a python tool called **grin**.  If you type grin at the command prompt, what do you get?
+
+    No command `grin` found did you mean:
+    ...
+
+**grin** is a tool written in python. We will want to install it so we will use a simple package manager for python to
+install it called **pip**
+
+    pip install grin
+
+Hmmmm, it doesnt like us, and we get a permission denied error. Now we could ask for the sys-admin to install for
+us....but we are impatient, and we now have tools to get this to work.  Here is what we can do:
+
+1. make a directory called `local` in our home direcotry
+2. use pip to install `grin` to this local directory using **--install-options="--prefix=/hom swc/local"**
+3. add /home/swc/local/bin to our `PATH` so we can use grin, the binary **grin** was installed in /home/swc/local/bin, 
+but because this is not defined in **$PATH** the system can *NOT* find it
+
+    cd /home/swc
+    mkdir local
+    pip install --install-option='--prefix=/home/swc/local' grin
+
 
 
 
