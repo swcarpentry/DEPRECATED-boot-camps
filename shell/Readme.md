@@ -121,6 +121,10 @@ from here on out in the tutorial, I will stick to virtual machine terminal outpu
 user name is **swc**  (software carpentry). If you are using an install on your own machine, this will 
 reflect your user name on that machine.
 
+    whoami
+
+    swc
+
 ### cd
 
 **cd** allows you to change directories.
@@ -239,12 +243,16 @@ But they will be useful to know about, and sometimes you do want to access them.
 
 #### Excercise
 
-there are usually many hidden files in your home directory, use ls -a to see them
+1. There are usually many hidden files in your home directory, use ls -a to see them
 
 
-Lets see one more useful **ls** flag, **-rt**.  This flag combo (-t for *"order by time"* and -r for *"reverse"*) will
+One more useful **ls** flag, is **-rt**.  
+
+This flag combo (`-t` for *"order by time"* and `-r` for *"reverse"*) will
 order your files by the time they were last changed, but with the oldest first, and youngest last.
 In the example below I will also add **-l** so we can see the timestamps:
+
+    ls -lrt
        
     total 48
     -rw-rw-r--  1   swc swc 13973   Mar  4 19:48    term.jpg
@@ -321,23 +329,23 @@ One of the nice things about using the shell, it allows you to be lazy. Here are
 ### Tab
 
 when using any command in a terminal, the terminal will try to guess what you are trying to do. To see how this works
-at the shell prompt enter **ls e <tab>**:
+at the shell prompt enter **ls e [tab]**:
 
-    ls e<tab>
+    ls e[tab]
 
 You should find it prints out ex_data.txt for you (as this file exists in the directory and is the only file that starts with
 **e** ).
 
 Now try this with **d**
 
-    ls d<tab>
-    ls d<tab><tab>
+    ls d[tab]
+    ls d[tab][tab]
 
 With **d** you had to hit the tab key twice. This is because there was not a unique option, instead there are multiple
 files/directories that begin with **d**. Hitting tab twice shows your possible options. What do you think will happen if
 you try?
 
-    ls da<tab>
+    ls da[tab]
 
 ### history
 
@@ -389,7 +397,7 @@ to navigate:
 * **/<pattern>**  looks for pattern in file
 
 Side note:: cat, head, tail, and less are meant to be used to look at text files, not binary files. 
-You will get unexpected results looking at binary files, but you will be able to see them.
+You will get unexpected results looking at binary files, but you will be able to see them. 
 
 #### Excercise
 
@@ -437,20 +445,20 @@ In the shell you can use **>** or **>>** to redirect output the a new file. This
 
 eg DO NOT do this:  **cat file | >> newfile**
 
-To save output to a file
+To save output to a file, **>** puts output into a newfile
 
     cat dictionary.txt > newdictionary
 
-To append to the end of the file
+To append to the end of the file, **>>** `appends` output to an existing file 
 
     cat dictionary.txt >> newdictionary
 
 #### Exercise
 
-1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt 
+1. combine *cat*, *pipe*, and *redirect* to put all words starting with `g` in `dictionary.txt` 
 into a new file **g_dictionary.txt**
-2. append all words that start with *h* in dictionary.txt to g_dictionary.txt, check with less
-3. *flashback* remove newdictionary
+2. append all words that start with *h* in `dictionary.txt` to `g_dictionary.txt`, check with less
+3. *flashback* remove newdictionary 
 
 ### wc
 
@@ -480,6 +488,7 @@ You can also use this to count the number of items in a directory using the **-l
 Navigate to the `/home/swc/boot-camps/shell/data/THOMAS` directory. This
 directory contains our hearing test data from THOMAS.
 
+    cd /home/swc/boot-camps/shell/data/THOMAS
     ls *
 
 This will give us everything in the directory
@@ -583,7 +592,7 @@ extra things you will want to know.
 
 ### env
 
-**env** prints your environment variables. Your system uses this to keep track of vaiables within and across programs.
+**env** prints your environment variables. Your system uses this to keep track of variables within and across programs.
 For example, lets find out who you are
 
     env | grep USER
@@ -597,8 +606,11 @@ The environment variable `PATH` is important for your computer to find executabl
 
     env | grep PATH
 
-You will see there are a few env variables that have `PATH` in them, we want the simeple one so we can do one of two
+You will see there are a few env variables that have `PATH` in them, we want the simple one so we can do one of two
 things
+
+1. grep using **^**  so it maches items that start with PATH
+2. use **echo**  
 
     env | grep ^PATH
 
@@ -607,12 +619,14 @@ things
 echo just prints what it is told to the terminal. the **$**, will give us the contents of the **PATH** variable on the
 system. Your system uses the directories defined in `PATH` to find programs it can run.
 
-One of mu favorite tools is a python tool called **grin**.  If you type grin at the command prompt, what do you get?
+One of my favorite tools is a python tool called **grin**.  If you type grin at the command prompt, what do you get?
 
     No command `grin` found did you mean:
     ...
 
-**grin** is a tool written in python. We will want to install it so we will use a simple package manager for python to
+Looks like it is not installed, but we can fix this.
+
+**grin** is a tool written in python. We will want to install it, so we will use a simple package manager for python to
 install it called **pip**
 
     pip install grin
@@ -621,8 +635,9 @@ Hmmmm, it doesnt like us, and we get a permission denied error. Now we could ask
 us....but we are impatient, and we now have tools to get this to work.  Here is what we can do:
 
 1. make a directory called `local` in our home direcotry
-2. use pip to install `grin` to this local directory using **--install-options="--prefix=/hom swc/local"**
-3. add /home/swc/local/bin to our `PATH` so we can use grin, the binary **grin** was installed in /home/swc/local/bin, 
+2. use pip to install `grin` to this local directory using **--install-options="--prefix=/home/swc/local"**
+3. add /home/swc/local/bin to our `PATH` so we can use grin, (the binary **grin** was installed in /home/swc/local/bin) 
+4. add /home/swc/local/lib/python2.7/site-packages to our `PYTHONPATH`
 
 Here are the commands
 
@@ -637,7 +652,7 @@ So for your last part of the day, lets look at a text editor.
 
 ### gedit
 
-gedit is a simple text editor, much like Microsoft Word is a text editor, but it is specially designed to work with code
+**gedit** is a simple text editor, much like Microsoft Word is a text editor, but it is specially designed to work with code
 and scripts.  Top open gedit, you can just type `gedit` at the command line.
 
     gedit
@@ -657,7 +672,7 @@ To close gedit, use the menu File -> Quit, or click on the `X` in the upper righ
 ### Hidden files revisited
 
 Remember when we used `ls -a` to find hidden files.  We are going to edit one of those hidden files.  First go to your
-home directory `/home/swc` (a quick was to do this is just type `cd` as it always takes you home.  Use `pwd` to verify
+home directory `/home/swc` (a quick way to do this is just type `cd` as it always takes you home.  Use `pwd` to verify
 
     cd
     pwd
@@ -667,7 +682,7 @@ We are going to update your bash resource file.
 
 ### .bashrc
 
-The .bashrc file in your home directory controls the behavior of your shell. Our goal is to update it so
+The **.bashrc** file in your home directory controls the behavior of your shell. Our goal is to update it so
 the system will look in `/home/swc/local/bin` for executable programs, and look in
 `/home/swc/local/lib/python2.7/site-packages` for your newly installed python module. 
 
@@ -679,7 +694,8 @@ So lets use gedit to open our `.bashrc` file.
 
     gedit .bashrc
 
-There is no syntax higlighting, and this will help, so use your mouse to click on **Plain Text**, you want to choose the
+There is no syntax higlighting, (and syntax highlighting is helpful) so use your mouse to click on **Plain Text**, 
+you want to choose the
 **sh** interpreter to highlight your text. There is alot of text in this file, and we do not have time to cover it in
 this course.  For now just scroll to the bottom of the text file, and add a couple new lines. 
 
@@ -696,7 +712,7 @@ NOTE::
 
 **Save** your edited file   File -> Save
 
-For your changes to take effect, you need to open a new shell
+**IMPT**: For your changes to take effect, you need to open a new shell
 
 ### grin 
 
