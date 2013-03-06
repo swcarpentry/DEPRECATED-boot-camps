@@ -1,5 +1,7 @@
 # Quick links into sections of document
 
+[Cheat Sheet](shell-cheatsheet.pdf)
+
 * [pwd] (#pwd)
 * [whoami](#whoami)
 * [cd](#cd)
