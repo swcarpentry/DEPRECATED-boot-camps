@@ -1,6 +1,7 @@
 # Quick links into sections of document
 
 * [pwd] (#pwd)
+* [whoami](#whoami)
 * [cd](#cd)
 * [touch](#touch)
 * [ls](#ls)
@@ -110,7 +111,13 @@ using (OSX)
 
 Note that the results are dependent on the OS/terminal combo you are using...
 from here on out in the tutorial, I will stick to virtual machine terminal output
-(very simliar to Mac OSX, linux output). 
+(very simliar to Mac OSX, linux output).
+
+### whoami
+
+**whoami** is a command that identifies your user name. If you are using the virtual machine, your 
+user name is **swc**  (software carpentry). If you are using an install on your own machine, this will 
+reflect your user name on that machine.
 
 ### cd
 
