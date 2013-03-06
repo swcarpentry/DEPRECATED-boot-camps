@@ -16,8 +16,12 @@
 * [pipe](#pipe)
 * [redirect](#redirect)
 * [Wildcards](#wildcards)
-* [mkdir](#mkdir)
 * [mv](#mv)
+* [mkdir](#mkdir)
+* [env](#env)
+* [gedit](#gedit)
+* [.bashrc](#.bashrc)
+* [grin](#grin)
 
 
 # Shell
@@ -682,6 +686,8 @@ NOTE::
 **Save** your edited file   File -> Save
 
 For your changes to take effect, you need to open a new shell
+
+### grin 
 
 Now when you type **grin** at the prompt you should see this:
 
