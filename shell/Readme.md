@@ -1,6 +1,9 @@
 # Quick links into sections of document
 
+[Cheat Sheet](shell-cheatsheet.pdf)
+
 * [pwd] (#pwd)
+* [whoami](#whoami)
 * [cd](#cd)
 * [touch](#touch)
 * [ls](#ls)
@@ -16,8 +19,12 @@
 * [pipe](#pipe)
 * [redirect](#redirect)
 * [Wildcards](#wildcards)
-* [mkdir](#mkdir)
 * [mv](#mv)
+* [mkdir](#mkdir)
+* [env](#env)
+* [gedit](#gedit)
+* [.bashrc](#.bashrc)
+* [grin](#grin)
 
 
 # Shell
@@ -65,7 +72,7 @@ Applications -> Utilities -> Terminal
 Shell has many uses, today we are going to focus on using it to manage and setup
 directories holding project data and related files.  
 
-Keeping your projects organized is am important as
+Keeping your projects organized is as important as
 keeping an organized lab book.
 
 [A Quick Guide to Organizinf Computational Biology Projects](http://bit.ly/AADX8F)
@@ -106,7 +113,17 @@ using (OSX)
 
 Note that the results are dependent on the OS/terminal combo you are using...
 from here on out in the tutorial, I will stick to virtual machine terminal output
-(very simliar to Mac OSX, linus output). 
+(very simliar to Mac OSX, linux output).
+
+### whoami
+
+**whoami** is a command that identifies your user name. If you are using the virtual machine, your 
+user name is **swc**  (software carpentry). If you are using an install on your own machine, this will 
+reflect your user name on that machine.
+
+    whoami
+
+    swc
 
 ### cd
 
@@ -226,12 +243,16 @@ But they will be useful to know about, and sometimes you do want to access them.
 
 #### Excercise
 
-there are usually many hidden files in your home directory, use ls -a to see them
+1. There are usually many hidden files in your home directory, use ls -a to see them
 
 
-Lets see one more useful **ls** flag, **-rt**.  This flag combo (-t for *"order by time"* and -r for *"reverse"*) will
+One more useful **ls** flag, is **-rt**.  
+
+This flag combo (`-t` for *"order by time"* and `-r` for *"reverse"*) will
 order your files by the time they were last changed, but with the oldest first, and youngest last.
 In the example below I will also add **-l** so we can see the timestamps:
+
+    ls -lrt
        
     total 48
     -rw-rw-r--  1   swc swc 13973   Mar  4 19:48    term.jpg
@@ -262,7 +283,7 @@ To move around in man
 * g (beginning of file), G (end of file)
 * /<pattern> to search for pattern eg. /-t
 
-## rm
+### rm
 
 Sometimes we make things we dont want to keep. This is where **rm** (remove) comes in.  Lets get rid of our hidden file,
 and then us **ls -a**  to make sure it is gone:
@@ -305,28 +326,28 @@ Lets return to our data that we need to clean up. Often you will inherit data th
 
 One of the nice things about using the shell, it allows you to be lazy. Here are some tips for being lazy.
 
-## Tab
+### Tab
 
 when using any command in a terminal, the terminal will try to guess what you are trying to do. To see how this works
-at the shell prompt enter **ls e <tab>**:
+at the shell prompt enter **ls e [tab]**:
 
-    ls e<tab>
+    ls e[tab]
 
 You should find it prints out ex_data.txt for you (as this file exists in the directory and is the only file that starts with
 **e** ).
 
 Now try this with **d**
 
-    ls d<tab>
-    ls d<tab><tab>
+    ls d[tab]
+    ls d[tab][tab]
 
 With **d** you had to hit the tab key twice. This is because there was not a unique option, instead there are multiple
 files/directories that begin with **d**. Hitting tab twice shows your possible options. What do you think will happen if
 you try?
 
-    ls da<tab>
+    ls da[tab]
 
-## History
+### history
 
 When at an empty promt, you can use your *up arrow* and *down arrow* to cycle through your previously used commands.
 This can save you alot of typing.
@@ -341,7 +362,7 @@ Make sure you are in the **<basedir>/boot-camps/shell** directory
 
 There should be a file called **dictionary.txt**. How do we read the contents of this file?
 
-## cat
+### cat
 
 **cat** is a tool to concatenate or list files. Use cat to look at the contents of **dictionary.txt**
 
@@ -349,19 +370,19 @@ There should be a file called **dictionary.txt**. How do we read the contents of
 
 Thats alot of text...
 
-## head
+### head
 
 **head** allows us to look at just the first lines of a file
 
     head dictionary.txt
 
-## tail
+### tail
 
 **tail** allows us to look at the last few lines of a file
 
     tail dictionary.txt
 
-## less 
+### less 
 Less allows you to view the contents of a text file, with control over 
 navigating the file:
 
@@ -376,20 +397,20 @@ to navigate:
 * **/<pattern>**  looks for pattern in file
 
 Side note:: cat, head, tail, and less are meant to be used to look at text files, not binary files. 
-You will get unexpected results looking at binary files, but you will be able to see them.
+You will get unexpected results looking at binary files, but you will be able to see them. 
 
-### Excercise
+#### Excercise
 
 1. use less and see if dictionary.txt contains *egg*
 2. use less to look at /home/swc/boot-camps/shell/data/bert_data.csv
 3. use less to look at /home/swc/boot-camps/shell/data/bert_data.xls
 
 
-## grep
+### grep
 
 **grep** allows you to search for patterns 
 
-## pipe  **|**
+### pipe  **|**
 
 Allows you to take output from one command and feed it into another command
 
@@ -411,35 +432,35 @@ For example, this allows us to find any lines that contain a x or a z
 
     cat dictionary.txt | grep [xz]
 
-### Exercise
+#### Exercise
 
 1. are there any lines in dictionary.txt that contain numbers?
 2. are there any lines in ex_data.txt that contain numbers?
 3. combine ls and grep with pipe to find all the directories in data that contain an **e**
 
-## redirect 
+### redirect 
 
 In the shell you can use **>** or **>>** to redirect output the a new file. This works like **pipe**
 (so note, if you are using a redirect, this is the one place you dont need an extra pipe)
 
 eg DO NOT do this:  **cat file | >> newfile**
 
-To save output to a file
+To save output to a file, **>** puts output into a newfile
 
     cat dictionary.txt > newdictionary
 
-To append to the end of the file
+To append to the end of the file, **>>** `appends` output to an existing file 
 
     cat dictionary.txt >> newdictionary
 
-### Exercise
+#### Exercise
 
-1. combine *cat*, *pipe*, and *redirect* to put all words starting with *g* in dictionary.txt 
+1. combine *cat*, *pipe*, and *redirect* to put all words starting with `g` in `dictionary.txt` 
 into a new file **g_dictionary.txt**
-2. append all words that start with *h* in dictionary.txt to g_dictionary.txt, check with less
-3. *flashback* remove newdictionary
+2. append all words that start with *h* in `dictionary.txt` to `g_dictionary.txt`, check with less
+3. *flashback* remove newdictionary 
 
-## wc
+### wc
 
 **wc** stands for *word count*, and can be used to count words or lines.
 Lets see how many words are in **dictionary.txt** and then compare that to g_dictionary.txt
@@ -460,13 +481,14 @@ You can also use this to count the number of items in a directory using the **-l
     
     7
 
-## Wildcards
+### Wildcards
 
 **Wildcards**  (*) are used to match anything, but we can use them to match specific things.
 
 Navigate to the `/home/swc/boot-camps/shell/data/THOMAS` directory. This
 directory contains our hearing test data from THOMAS.
 
+    cd /home/swc/boot-camps/shell/data/THOMAS
     ls *
 
 This will give us everything in the directory
@@ -489,8 +511,8 @@ lists every file in the current directory which
 
     0348    0438    0448    0488
 
-* * * *
-### Exercise
+
+#### Exercise
 
 Do each of the following using a single `ls` command without
 navigating to a different directory.
@@ -523,7 +545,7 @@ hello is a program
 What we want to do is create a file structure that organizes this data.   We have learned how to look at this data, now
 lets see how to move it around
 
-# mv
+### mv
 
 **mv** is used to `rename` or change the location of a file or directory.  We will use it to rename the directory `data`
 to `ImplantProject`
@@ -538,7 +560,7 @@ Then use **mv** to rename data. In this case the syntax to rename a file is
 
 Use `ls` to see that you have successfully renamed the directory
 
-# mkdir 
+### mkdir 
 
 **mkdir** is used to create a directory.  We want to make a new directory called rawdata, and put the files collected by
 Bert and THOMAS in that directory.
@@ -568,9 +590,9 @@ Again use **ls** to make sure things are where you expected.
 So now the data is a little more organized, and you are ready to start moving onto the next level. There are just a few
 extra things you will want to know.
 
-# env
+### env
 
-**env** prints your environment variables. Your system uses this to keep track of vaiables within and across programs.
+**env** prints your environment variables. Your system uses this to keep track of variables within and across programs.
 For example, lets find out who you are
 
     env | grep USER
@@ -584,8 +606,11 @@ The environment variable `PATH` is important for your computer to find executabl
 
     env | grep PATH
 
-You will see there are a few env variables that have `PATH` in them, we want the simeple one so we can do one of two
+You will see there are a few env variables that have `PATH` in them, we want the simple one so we can do one of two
 things
+
+1. grep using **^**  so it maches items that start with PATH
+2. use **echo**  
 
     env | grep ^PATH
 
@@ -594,12 +619,14 @@ things
 echo just prints what it is told to the terminal. the **$**, will give us the contents of the **PATH** variable on the
 system. Your system uses the directories defined in `PATH` to find programs it can run.
 
-One of mu favorite tools is a python tool called **grin**.  If you type grin at the command prompt, what do you get?
+One of my favorite tools is a python tool called **grin**.  If you type grin at the command prompt, what do you get?
 
     No command `grin` found did you mean:
     ...
 
-**grin** is a tool written in python. We will want to install it so we will use a simple package manager for python to
+Looks like it is not installed, but we can fix this.
+
+**grin** is a tool written in python. We will want to install it, so we will use a simple package manager for python to
 install it called **pip**
 
     pip install grin
@@ -608,15 +635,125 @@ Hmmmm, it doesnt like us, and we get a permission denied error. Now we could ask
 us....but we are impatient, and we now have tools to get this to work.  Here is what we can do:
 
 1. make a directory called `local` in our home direcotry
-2. use pip to install `grin` to this local directory using **--install-options="--prefix=/hom swc/local"**
-3. add /home/swc/local/bin to our `PATH` so we can use grin, the binary **grin** was installed in /home/swc/local/bin, 
-but because this is not defined in **$PATH** the system can *NOT* find it
+2. use pip to install `grin` to this local directory using **--install-options="--prefix=/home/swc/local"**
+3. add /home/swc/local/bin to our `PATH` so we can use grin, (the binary **grin** was installed in /home/swc/local/bin) 
+4. add /home/swc/local/lib/python2.7/site-packages to our `PYTHONPATH`
+
+Here are the commands
 
     cd /home/swc
+    
     mkdir local
+    
     pip install --install-option='--prefix=/home/swc/local' grin
 
+but because this is not defined in **$PATH** the system can *NOT* find it
+So for your last part of the day, lets look at a text editor.
 
+### gedit
+
+**gedit** is a simple text editor, much like Microsoft Word is a text editor, but it is specially designed to work with code
+and scripts.  Top open gedit, you can just type `gedit` at the command line.
+
+    gedit
+
+This will open a blank text editor.  If you use the menu to open `generate_data.py`, it will open the text file.
+Two important things to notice
+
+1. The text is highlighted, and you will see a `python` tab at the bottom of the window.  This lets you know that it is
+   higlighting the text in the file as if it were python code.  In the next session, you will find this very helpful.
+2. There will be line numbers on the left side of the page. This will also help in communicating to others where you are
+  in the document. If I tell you to look at line `20`, you should all see that this line contains the text
+
+    birthmonths= range(1,13)
+
+To close gedit, use the menu File -> Quit, or click on the `X` in the upper right hand corner of the window.
+
+### Hidden files revisited
+
+Remember when we used `ls -a` to find hidden files.  We are going to edit one of those hidden files.  First go to your
+home directory `/home/swc` (a quick way to do this is just type `cd` as it always takes you home.  Use `pwd` to verify
+
+    cd
+    pwd
+
+
+We are going to update your bash resource file.
+
+### .bashrc
+
+The **.bashrc** file in your home directory controls the behavior of your shell. Our goal is to update it so
+the system will look in `/home/swc/local/bin` for executable programs, and look in
+`/home/swc/local/lib/python2.7/site-packages` for your newly installed python module. 
+
+This is done by adding `/home/swc/local/bin` to your *$PATH* environment variable.
+
+And adding `/home/swc/local/lib/python2.7/site-packages` to your *$PYTHONPATH* variable.
+
+So lets use gedit to open our `.bashrc` file.
+
+    gedit .bashrc
+
+There is no syntax higlighting, (and syntax highlighting is helpful) so use your mouse to click on **Plain Text**, 
+you want to choose the
+**sh** interpreter to highlight your text. There is alot of text in this file, and we do not have time to cover it in
+this course.  For now just scroll to the bottom of the text file, and add a couple new lines. 
+
+To update your **PATH** and **PYTHONPATH** environment variables, add the following lines
+
+    export PATH=$PATH:/home/swc/local/bin
+    export PYTHONPATH=$PYTHONPATH:/home/swc/local/lib/python2.7/site-packages
+
+NOTE::  
+1. no spaces between PATH and =
+2. There is a colon **:** between $PATH and /home/swc/local/bin
+3. **$PATH** gets the current value of PATH, and makes sure you dont lose these paths, if you did not do this, many
+   other programs would stop working, as your system would not know where to find them.
+
+**Save** your edited file   File -> Save
+
+**IMPT**: For your changes to take effect, you need to open a new shell
+
+### grin 
+
+Now when you type **grin** at the prompt you should see this:
+
+    usage: grin [-h] [-v] [-i] [-A AFTER_CONTEXT] [-B BEFORE_CONTEXT] [-C CONTEXT]
+                [-I INCLUDE] [-n] [-N] [-H] [--without-filename] [--emacs] [-l]
+                [-L] [--no-color] [--use-color] [--force-color] [-s]
+                [--skip-hidden-files] [-b] [--skip-backup-files] [-S]
+                [--skip-hidden-dirs] [-d SKIP_DIRS] [-D] [-e SKIP_EXTS] [-E]
+                [--no-follow] [--follow] [-f FILE] [-0] [--sys-path]
+                regex [files [files ...]]
+    grin: error: too few arguments
+
+Congradulate yourself, you just installed a python module and it works!!
+
+Now lets see why **grin** is so cool. Basically it lets you search recursively into directories for a pattern in text
+files.  So lets do something crazy. Go back to your project directory
+
+    cd boot-camps/shell/ImplantProject
+
+Lets look for the text `prince` in any file in the `rawdata` directory
+
+    grin prince rawdata/
+
+You should see
+
+1. a list of files that have prince in them along with the line number where the text was found.
+2. each instance of `prince` is highlighted
+
+This can be a very intuitive, and very useful tool
+
+
+
+
+    
+
+
+
+
+    
 
 
 
