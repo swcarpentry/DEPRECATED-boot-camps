@@ -615,6 +615,8 @@ us....but we are impatient, and we now have tools to get this to work.  Here is 
 2. use pip to install `grin` to this local directory using **--install-options="--prefix=/hom swc/local"**
 3. add /home/swc/local/bin to our `PATH` so we can use grin, the binary **grin** was installed in /home/swc/local/bin, 
 
+Here are the commands
+
     cd /home/swc
     
     mkdir local
@@ -702,7 +704,7 @@ Now when you type **grin** at the prompt you should see this:
 
 Congradulate yourself, you just installed a python module and it works!!
 
-Now lets see why **grin** is so cool. Basically it lets you search recursivly into directories for a pattern in text
+Now lets see why **grin** is so cool. Basically it lets you search recursively into directories for a pattern in text
 files.  So lets do something crazy. Go back to your project directory
 
     cd boot-camps/shell/ImplantProject
@@ -712,6 +714,7 @@ Lets look for the text `prince` in any file in the `rawdata` directory
     grin prince rawdata/
 
 You should see
+
 1. a list of files that have prince in them along with the line number where the text was found.
 2. each instance of `prince` is highlighted
 
