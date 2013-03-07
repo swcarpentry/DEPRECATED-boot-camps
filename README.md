@@ -12,7 +12,7 @@ We are running 3 sessions on useful software development skills for researchers.
 
 * 11:00 - Using version control to record provenance and collaborate more easily. This session includes an introduction to [Git](http://git-scm.com/) and [GitHub](http://github.com).
 * 14:00 - Using testing to help ensure your software, and results, are correct. 
-* 17:00 - Data management using files and [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
+* 16:00 - Data management using files and [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
 
 The sessions are drawn from Software Carpentry's highly successful [boot camps](http://software-carpentry.org/bootcamps). Boot camps are for researchers who know how to program but want to develop skills that help them to achieve more in less time, to free up more time for science and to contribute to correct, reproducible and reusable research.
 
