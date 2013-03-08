@@ -292,13 +292,11 @@ through the following code.
 -   MatPlotLib has several other [supported events](http://matplotlib.sourceforge.net/api/backend_bases_api.html?highlight=canvas#matplotlib.backend_bases.FigureCanvasBase.mpl_connect)
 
 ```python
-
   from matplotlib import pyplot as plt
   import numpy as np
   
   class MovingPlot(object):
-  """ MovingPlot plots a figure that flows across the screen.  Right and left 
-  arrows move the figure one step"""
+      """ MovingPlot plots a figure that flows across the screen.  Right and left arrows move the figure one step"""
       def __init__(self, r0= [-0.8, 1.0], v0 = [0.1, 0.]):
           # set up grid
           r = np.linspace(0.2,2,20)
@@ -326,8 +324,7 @@ through the following code.
           plt.show()
   
       def update(self, event):
-          """Changes the frame number based on event and draws a new frame if the 
-          frame changed"""
+          """Changes the frame number based on event and draws a new frame if the frame changed"""
           if event.key ==  'right':
               print 'forward'
               self.frame += 1
@@ -372,9 +369,8 @@ It plots 4 subplots
       img = plt.imread('bunny.png')
   except RuntimeError:
       print "can't find bunny.png, trying to download"
-      # the image probably doesn't exits
-      url = 
-      'http://github.com/thehackerwithin/PyTrieste.wiki/images/bunny.png'
+      # the image probably doesn't exist
+      url = 'https://github.com/jonc125/boot-camps/raw/2013-05-oxford-dtc/python/scipy/images/bunny.png'
       urllib.urlretrieve(url, filename='bunny.png')
       img = plt.imread('bunny.png')
   
@@ -411,7 +407,7 @@ It plots 4 subplots
   ax = fig.add_subplot(224)
   image = ax.pcolor(z)
   plt.colorbar(image)
-  ax.set_title('pcolor() of same array array')
+  ax.set_title('pcolor() of same array')
   
   plt.show()
 ```
@@ -441,8 +437,7 @@ axes (top right).
   ax1.axhline(0, color='r', lw=3)
   
   ## share x only
-  ax2= fig.add_subplot(221, sharex
-  ax1)
+  ax2 = fig.add_subplot(221, sharex=ax1)
   ax2.plot(t, s2)
   ax2.axvline(2, color='k', lw=3)
   ax2.axhline(0, color='r', lw= 3)
@@ -450,20 +445,20 @@ axes (top right).
   plt.setp( ax2.get_xticklabels(), visible=False)
   
   ## share x and y
-  ax3 = fig.add_subplot(222,  sharex= ax1, sharey=ax1)
+  ax3 = fig.add_subplot(222, sharex=ax1, sharey=ax1)
   ax3.plot(t, s3)
   ax3.axvline(2, color='k', lw=3)
-  ax3.axhline(0, color= 'r', lw=3)
+  ax3.axhline(0, color='r', lw=3)
   ax3.set_xlim(0.01,5.0)
   # make tick labels small
   plt.setp( ax3.get_xticklabels(), fontsize=6)
   plt.setp( ax3.get_yticklabels(), fontsize=6)
   
   ## share y only
-  ax4 = fig.add=subplot(224, sharey = ax1)
+  ax4 = fig.add_subplot(224, sharey=ax1)
   ax4.plot(t, s3)
-  ax4.axvline(2, color= 'k', lw = 3)
-  ax4.axhline(0, color= 'r', lw = 3)
+  ax4.axvline(2, color='k', lw = 3)
+  ax4.axhline(0, color='r', lw = 3)
   # make y tick labels invisible
   plt.setp( ax4.get_yticklabels(), visible=False)
   
