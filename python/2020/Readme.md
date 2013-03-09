@@ -32,7 +32,6 @@ Useful Python Links
 
  - Main Python Docs
    - [http://docs.python.org](http://docs.python.org)/
-
  - Global Module Index
    - Built in modules like os, sys, datetime, math, random...
    - [http://docs.python.org/modindex.html](http://docs.python.org/modindex.html)
@@ -40,7 +39,6 @@ Useful Python Links
    - Built-in, always available functions like open, range, enumerate,
 >     zip...
    - [http://docs.python.org/library/functions.html](http://docs.python.org/library/functions.html)
-
  - String Formatting
    - [http://docs.python.org/library/string.html\#formatstrings](http://docs.python.org/library/string.html#formatstrings)
 
@@ -48,13 +46,10 @@ Useful Python Links
 
  - [NumPy](http://numpy.scipy.org/)
    - Fast arrays, used by almost every scientific Python package
-
  - [SciPy](http://www.scipy.org/)
    - Minimization, fitting, solvers, statistics, and more
-
  - [matplotlib](http://matplotlib.sourceforge.net/)
    - 2D and 3D plotting, maps
-
  - [AstroPy](http://astropy.org) for astronomy
  - [Biopython](http://biopython.org/wiki/Biopython) for bioinformatics
  - [Sage](http://www.sagemath.org/) for mathematic analysis
@@ -147,8 +142,8 @@ In the code snippet:
 ```
 
  - What is the value of the variable `c`?
- - What is the value of the variable b ?
- - What is the name given to the variable 2 ?
+ - What is the value of the variable `b` ?
+ - What is the name given to the value `2` ?
 
 (The last one is a trick, the value 2 has two names.)
 
@@ -191,7 +186,7 @@ floating point value 3.5 (a floating point number is just a
 real/non-integer number) and `c` to the value 1.0 + 2j (Notice, how
 easy and intuitive it is in python to set multiple variables to
 something. You'll discover a lot of similar syntax that is designed to
-make your life easier). Lets use the built-in type function to determine
+make your life easier). Let's use the built-in type function to determine
 the type of each of the three variables we just created:
 
 ```python
@@ -341,7 +336,7 @@ You should see:
 This is an interesting feature. Can you think of ways it can be helpful?
 Are there ways it might be troublesome?
 
-What is the type of sillystring be after this :
+What is the type of sillystring after this :
 
 ```python
     sillystring += 0.1
@@ -352,7 +347,7 @@ What is the type of sillystring be after this :
 What is the += syntax about? This is an in-place way to write `sillystring =
 sillystring + 0.1`. It is common in a number of languages.
 
-Importantly, though we do not explcity state them, variables always have
+Importantly, though we do not explicitly state them, variables always have
 exactly one type. The number 98 is an **int**. For the variable holding
 this value to be treated as a float, it must be assigned as **98.0**.
 
@@ -379,7 +374,7 @@ Getting Help
 One of the really nice features in Python is that a lot of the help and
 documentation is built into the code. Practically, this means that much
 of the time you don't have to go digging through some web site to find
-help. You can get help in Python using the `help` function. Lets look
+help. You can get help in Python using the `help` function. Let's look
 at an example - enter
 
 ```python
@@ -427,8 +422,6 @@ which can be used to convert strings to uppercase. Now enter:
 At which point, you should see the word "COOPER" printed to the screen.
 
 **Aside: Using Methods Directly on Data**
-
-* * * * *
 
 In the previous example, we first created a string variable, `name`,
 assigned it the value "cooper", then used the `upper` string method to
@@ -575,7 +568,7 @@ The python set type is similar to the idea of a mathematical set: it is an unord
 unique things. Consider:
 
 ```python
-In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+In [3]: fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
 ```
 
 Since sets contain only unique items, there's only one banana in the set fruit.
@@ -606,7 +599,7 @@ A dictionary is basically an efficient table that maps keys to values. It is an 
 
 
 ```python
-In [7] dataDict = {"experiment": "current vs. voltage", \
+In [7]: dataDict = {"experiment": "current vs. voltage", \
                    "run": 47, \
                    "temperature": 372.756, \
                    "current": [-1.0, -0.5, 0.0, 0.5, 1.0], \
@@ -649,7 +642,7 @@ In [13]: dataDict["user"] = "Johann G. von Ulm"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
-Lets say you wanted all the keys from a particular dictionary.
+Let's say you wanted all the keys from a particular dictionary.
 
 ```python
 In [14]: dataDict.keys()
@@ -757,7 +750,7 @@ Try entering this into IPython:
 While Loops
 ===========
 
-Lets start by looking at while loops since they function like while
+Let's start by looking at while loops since they function like while
 loops in many other languages. The example below takes a list of
 integers and computes the product of each number in the list up to the
 -1 element.
@@ -814,7 +807,7 @@ For Loops
 =========
 
 For loops in python operate a little differently from other languages.
-Lets start with a simple example which prints all of the numbers from 0
+Let's start with a simple example which prints all of the numbers from 0
 to 9:
 
 ```python
@@ -984,10 +977,10 @@ That is :
       print string
 ```
 
-Final Example
-=============
+Larger Example
+==============
 
-We've seen a lot so far. Lets work through a slightly lengthier example
+We've seen a lot so far. Let's work through a slightly lengthier example
 together. I'll use some of the concepts we already saw and introduce a
 few new concepts. To run the example, you'll need to locate a short file
 containing phone numbers, called phonenums.txt.
@@ -1016,8 +1009,8 @@ occurs is the value.
   print areacodes # Print the answer
 ```
 
-Example : Iteritems
--------------------
+Exercise : Iteritems
+--------------------
 
 Use the iteritems dictionary method in combination with a for loop to
 print the keys/values of the areacodes dictionary one to a line. In
@@ -1154,6 +1147,7 @@ for line in f:
 date
 time
 number
+```
 
 ### Exercise
 1. Read the file 'big_animals.txt' and print each line on which more than 10 moose were sighted.
@@ -1161,7 +1155,7 @@ number
 
 # Modules
 
-Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like sin, we need to `import` the math module. Lets take a look at a simple example:
+Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like sin, we need to `import` the math module. Let's take a look at a simple example:
 
 ```python
 print sin(3) # Error! Python doesn't know what sin is...yet
@@ -1171,7 +1165,7 @@ print dir(math) # See a list of everything in the math module
 help(math) # Get help information for the math module
 ```
 
-It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Lets take a look at an example:
+It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Let's take a look at an example:
 
 ```python
 from math import *  # import everything from math into the global namespace (A BAD IDEA IN GENERAL)
@@ -1314,3 +1308,15 @@ functions" in python.
  - Slicing ie brackets) (a[1:2]) uses \_\_get\_\_
  - Calling ie parentheses (a(3)) uses \_\_call\_\_
  - Help uses \_\_doc\_\_
+
+
+# Extra topics
+
+- http://scipy-lectures.github.com/advanced/advanced_python/index.html
+    - Iterators, generator expressions and generators
+    - Decorators
+    - Context managers
+- http://scipy-lectures.github.com/advanced/debugging/index.html#using-the-python-debugger
+    - Using the Python debugger
+- https://github.com/jonc125/boot-camps/tree/2013-05-oxford-dtc/python/debugging#profiling-making-code-fast
+    - Profiling
