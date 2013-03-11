@@ -31,7 +31,7 @@ Friday 19th
 
 You'll need to bring your laptop and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
 
-You will also need to have created a free account on GitHub.
+You will also need to have created a free account on [BitBucket](https://bitbucket.org/account/signup/).
 
 ## Instructors
 
