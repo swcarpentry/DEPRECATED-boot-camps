@@ -21,3 +21,9 @@ Version control, also known as revision control, helps with all of these by reco
 * User documentation, manuals, conference papers, journal papers, book chapters, whether they be plain-text, LaTeX, XML, or whatever.
 
 For this session, we'll be using [Git](http://git-scm.com/), a popular version control system.
+
+* [Tracking our changes with a local repository](Local.md)
+* [Working from multiple locations with a remote repository](Remote.md)
+* [Collaborating with our colleagues](Collaboration.md)
+* [Conclusions and further information](Conclusion.md)
+* [Git hints and tips](HintsAndTips.md)
