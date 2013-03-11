@@ -19,6 +19,8 @@ Below there are brief instructions for RedHat/Scientific Linux 6 and Ubuntu.
 
 For more detailed installation instructions and those for Windows and Mac OSX, check out the [general boot camp set-up instructions](http://software-carpentry.org/setup/) and the installation instructions specific to each product.
 
+If you have any problems then please e-mail the boot camp mailing list at [manchester@lists.software-carpentry.org](mailto:manchester@lists.software-carpentry.org).
+
 ## To install under RedHat/Scientific Linux 6
 
 Scientific Linux 6 already comes with shell and vi text editor. To install the other packages run,
