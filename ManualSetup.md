@@ -17,15 +17,15 @@ You will need,
 Scientific Linux 6 already comes with shell and vi text editor. To install the other packages run,
 
     $ sudo su -
-    $ yum install nano
-    $ yum install git
+    # yum install nano
+    # yum install git
 
 ### To install under Ubuntu
 
 Ubuntu 11.04 and above already comes with shell, vi and nano text editors. To install the other packages run,
 
     $ sudo su -
-    $ apt-get install git
+    # apt-get install git
 
 ## Testing session
 
@@ -46,19 +46,19 @@ You will need,
 Scientific Linux 6 already comes with shell and vi text editor. To install the other packages run,
 
     $ sudo su -
-    $ yum install nano
-    $ yum install python
-    $ yum install python-setuptools
-    $ easy_install nose
-    $ nosetests
+    # yum install nano
+    # yum install python
+    # yum install python-setuptools
+    # easy_install nose
+    # nosetests
     ------------------------------------------------------------------
     Ran 0 tests in 0.003s
     OK
-    $ yum install python-pip
-    $ easy_install coverage
-    $ pip install pytest
-    $ pip-python install pytest-cov
-    $ py.test
+    # yum install python-pip
+    # easy_install coverage
+    # pip install pytest
+    # pip-python install pytest-cov
+    # py.test
     ===================== test session starts ======================
     platform linux2 -- Python 2.6.6 -- pytest-2.3.4
     plugins: cov
@@ -70,17 +70,17 @@ Scientific Linux 6 already comes with shell and vi text editor. To install the o
 Ubuntu 11.04 and above already comes with shell, vi and nano text editors, Python 2.7. To install the other packages run,
 
     $ sudo su -
-    $ apt-get install python-setuptools
-    $ easy_install nose
-    $ nosetests
+    # apt-get install python-setuptools
+    # easy_install nose
+    # nosetests
     ------------------------------------------------------------------
     Ran 0 tests in 0.003s
     OK
-    $ apt-get install python-pip
-    $ easy_install coverage
-    $ pip install pytest
-    $ pip install pytest-cov
-    $ py.test
+    # apt-get install python-pip
+    # easy_install coverage
+    # pip install pytest
+    # pip install pytest-cov
+    # py.test
     ===================== test session starts ===================== 
     platform linux2 -- Python 2.7.3 -- pytest-2.3.4
     plugins: cov
@@ -103,9 +103,9 @@ You will need,
 Scientific Linux 6 already comes with shell and vi text editor. To install the other packages run,
 
     $ sudo su -
-    $ yum install nano
-    $ yum install python
-    $ yum install python-setuptools
+    # yum install nano
+    # yum install python
+    # yum install python-setuptools
 
 Edit `/etc/yum.repos.d/10gen.repo` and, for a 32-bit system add the lines,
 
@@ -122,32 +122,32 @@ For a 64-bit system add the lines,
     gpgcheck=0
     enabled=1
 
-    $ yum install mongo-10gen
-    $ yum install mongo-10gen-server
-    $ /sbin/service mongod start
+    # yum install mongo-10gen
+    # yum install mongo-10gen-server
+    # /sbin/service mongod start
     Starting mongod: forked process: 4357
                                          [  OK  ]
     all output going to: /var/log/mongo/mongod.log
-    $ /sbin/service mongod status
+    # /sbin/service mongod status
     mongod (pid 4357) is running...
-    $ easy_install pymongo
+    # easy_install pymongo
 
 ### To install under Ubuntu
 
 Ubuntu 11.04 and above already comes with shell, vi and nano text editors, Python 2.7. To install the other packages run,
 
     $ sudo su -
-    $ apt-get install python-setuptools
-    $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+    # apt-get install python-setuptools
+    # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
 Edit `/etc/apt/sources.list.d/10gen.list` and add the lines,
 
     deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 
-    $ apt-get update
-    $ apt-get install mongodb-10gen
-    $ service mongodb start
-    $ easy_install pymongo
+    # apt-get update
+    # apt-get install mongodb-10gen
+    # service mongodb start
+    # easy_install pymongo
 
 ### To check MongoDB and pymongo are OK...
 
