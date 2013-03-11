@@ -8,7 +8,6 @@ You should ensure you have the following software and tools available.
 * Make
 * [Git](http://git-scm.com/)
 * Python 2.6 or 2.7
-* Python [setuptools](https://pypi.python.org/pypi/setuptools)
 * Python [pip](https://pypi.python.org/pypi/pip)
 * Python [nose](https://nose.readthedocs.org/en/latest/)
 * Python [coverage](http://nedbatchelder.com/code/coverage/)
