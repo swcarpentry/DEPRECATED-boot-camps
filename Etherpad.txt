@@ -1,0 +1,211 @@
+ Class Info:
+* http://jkitzes.github.com/boot-camps/2013-03-06-lbl/
+
+Shell
+* https://github.com/jkitzes/boot-camps/blob/2013-03-lbl-2/shell/Readme.md
+
+Python
+* https://github.com/jkitzes/boot-camps/tree/2013-03-lbl-2/python
+
+Download Anaconda:
+http://continuum.io/anacondace.html
+
+Matlab -> Python
+http://www.scipy.org/NumPy_for_Matlab_Users
+
+To clone the repo:
+git clone -b 2013-03-lbl-2 https://github.com/jkitzes/boot-camps.git
+
+To start:
+
+ipython notebook
+
+in ipython nb:
+- Shift+Enter will run 
+- 
+
+
+If you'd like to use TextWrangler as your editor for git, see the following. However, it's probably easiest if you just use nano -
+
+Use nano:
+git config --global core.editor nano
+
+Use TextWrangler:
+http://stackoverflow.com/questions/13257519/how-to-change-the-default-editor-for-git
+Just answered my own question with the help of the above comments... to switch to TextWrangler as the default for Git, you must open TextWrangler, click on TextWrangler in the tool bar and select "install command line tools" from the drop down. Then go into command line and type:
+
+git config --global core.editor "edit -w"
+
+
+After this session, feel free to join the coders group @ LBL if you want to connect with other folks at the lab working on software:
+https://groups.google.com/a/lbl.gov/forum/?fromgroups#!forum/coders
+
+
+http://www.scipy.org/NumPy_for_Matlab_Users
+http://mathesaurus.sourceforge.net/matlab-numpy.html
+
+
+Some "Best Practices":
+---------------------------------
+use version control ( git will be covered by Ariel and Matthew tomorrow )
+unit testing ( tomorrow )
+Test driven development: write test first, then write code to make it pass.
+here's a talk I (Paul) gave at the Python bootcamp this past year:
+http://youtu.be/kZKex0Y-EXY 
+PDF: https://github.com/profjsb/python-bootcamp/blob/master/Lectures/12_Testing/ivanov2012-08-22.pdf?raw=true
+Tarball: http://www.pythonbootcamp.info/agenda/testing.tgz?attredirects=0
+
+
+
+BEST PART OF TODAY
+-------------------------------------------------------
+Introduction to python and how to install things with command lines
+Good Danish and coffee
+Good snacks in the morning
+Understanding python objects, classes, functions, methods, etc.
+Thinking  about how to structure the directories for a project
+breakfast and lunch
+orange juice
+
++2 The party on the notepad !!!!!
+
+- Hearing how regular Python users use Python. Since I work in a vacuum, this is very helpful. And not communicated through reading textbooks. Definitely. I felt better when I learned that I should not worry about classes yet.
+
+Just getting finally to write some .py code!
+
+Real world example-driven exercises.  Things only make sense to me when I see how they are going to be used in the real world.
+
+I got a knowledge that python got a very helpful data types for sciectific computing..
+
+notebook and etherpad are nifty(amazing?)
+
+
+WORST/MOST CONFUSING PART OR TOPIC
+---------------------------------------------------------------------
+It would be nice to have a glossary for those that have never used python before
+
+++1+1+1 most of the Unix tutorial was extremely basic. And not relevant to the rest of the day, so I feel like the day could have started quicker. -1 I needed that tutorial badly
+
+Worrying about whether to abandon perl and R for python. Then I'd have to start the learning curve all over.
+iPython Notebook vs the default Python interpretor. +1
+
++1Seems like there are two kinds of people here.  Those who are beginers, and those who can already program and just want to learnhow to switch.  I found it hard to keep up with the pace that others in the room seemed bored with.That's fair. Would an online "getting started with Unix" tutorial have been acceptable? Yes! yes please.YES
+
+THING I WANT TO HEAR MORE ABOUT THE MOST
+-------------------------------------------------------------------------------
+
+making and annotating/labelling plots
+what role does the iPython notebook play in day-to-day code development?
+Computational and memory efficiency
+++++1"best practices" for developing and maintaining code
+simply reading in a file of data...!+1
+Yes, more on plots. And about fitting data...+1+1
+
+
+
+Will we have cookies tomorrow?What cookies we will have tomorrow!
+More practical tricks on list, array and tuple types to apply on the large data set.
+Matplotlib!
++++Python version issues. Installing multiple Python versions on same system. Also, how can we circulate our code to other collaborators without creating a nightmare of compatibility/dependency problems?
+iPython Notebooks.
+Relationship between Anaconda/IPython vs. default Python interpreter from python.org/downloads ("Alternative Implementations")
+I'd like to try examples of working with DNA data, and downoading/accessing data online
+
+More about modules and importing. common bugs, etc.
+when stuck, is there a better way to find a solution than google and stackoverflow?  :)
+
+Is overhead an issue when working with extremeley large data sets?
+
+
+
+DAY 2
+---------
+
+Git setup commands:
+git config --global user.name 'my name'
+git config --global user.email my@email.edu
+git config --global core.editor gedit
+
+git remote -v
+git fetch origin
+
+
+British "Playground" Slang...
+http://www.urbandictionary.com/define.php?term=git
+(2nd def)
+
+http://www.urbandictionary.com/define.php?term=pull
+(again 2nd def)
+
+http://www.urbandictionary.com/define.php?term=init
+(3rd def)
+
+A highly complex alias to show the git graph
+
+git config --global alias.lg log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=relative
+
+git log --graph works pretty well, too, add --oneline to it to make it more concise.
+
+http://netsplit.com/2009/02/17/git-sucks/ - in the spirit of mutt's motto: all version control systems suck. git just sucks less.
+
+Here's an example of a conversation around some code in IPython:
+https://github.com/ipython/ipython/pull/2959
+
+Testing link
+https://github.com/jkitzes/boot-camps/blob/2013-03-lbl-2/python/testing.md
+
+Are we having fun yet? Python is winning!
+
+Two things for distributing python: The distutils library. Also: take a look at optparse, for super-sophisticated parsing of command line inputs.  
+Argparse is part of the standard library, also wonderful for command line inputs
+
+
+BEST PART OF TODAY
+------------------------------------
+
+patient, fast, specific help+1
+
+an explanation of git from people who use git+1+1+1
+
+Inside structure of git gave deeper understandings.  Part of my brain burnt..
+
+Excellent work. You put a lot of things in my brain in a very short time.+1
+
+Standalone scripts is my new goal for my code! (see Victoria Stodden)
+
+It was helpful to start thinking about how to test code for reusability
+
+
+
+WORST/MOST CONFUSING PART OF TODAY
+------------------------------------
+it's over now :\
+
+cookies in the afternoon?+1
+
+In general, you guys did a great job! But you could do more 'signposting' during your talks. e.g. "Here is a goal. Here's a sentence about how we're going to accomplish the goal.' Maybe each lecture sub-section needs a docstring? Or unit testing? :)
+
+THINGS YOU WISH WE COVERED THAT WE DIDNT
+------------------------------------
+how  to get a file from a previous commit that meanwhile I deleted (with git)
+( git checkout HASH filename.py ; git commit; )
+More complex examples of reading data files and plotting
+
+LOTS OF EXAMPLES:
+http://matplotlib.org/gallery.html
+
+Some examples of notebooks:
+https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks
+
+how to get git working on BitBucket for LBNL employees+1+1
+Introduction of more numpy, scipy functions would be quite helpful
+It would be nice to have one central place in which you put a lot of links to further information. Google is fine, but it would be convenient to get pointed to particularly good resources for beginners, clear/fun resources that don't just reproduce man pages, etc.
+
+
+
+
+Suggestions for the future:
+------------------------------------
+It would/could've been very cool if the group had worked on a git project together. e.g. leave time at the end of git session where everyone has a tiny task, but has to upload to a common repository...??+1
+
+
