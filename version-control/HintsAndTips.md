@@ -7,9 +7,10 @@ Like many Unix/Linux commands, `git` has a `man` page,
     $ man git
 
 You can scroll the manual page up and down using the up and down arrows.
-You can search for keywords by typing **/** followed by the search term e.g. if interested in help, I type **/help** and then hit enter. It looks like the syntax for getting help with git is **git --help**.
 
-To exit the manual page, type q.
+You can search for keywords by typing `/` followed by the search term e.g. if interested in help, type `/help` and then hit enter.
+
+To exit the manual page, type `q`.
 
 ## Command-line help
 

@@ -22,6 +22,8 @@ Version control, also known as revision control, helps with all of these by reco
 
 For this session, we'll be using [Git](http://git-scm.com/), a popular version control system.
 
+## Let's dive in...
+
 * [Tracking our changes with a local repository](Local.md)
 * [Working from multiple locations with a remote repository](Remote.md)
 * [Collaborating with our colleagues](Collaboration.md)

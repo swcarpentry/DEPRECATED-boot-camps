@@ -166,8 +166,8 @@ Let us suppose we've made a change to our file and not yet commited it. We can s
 
 This shows the difference between the latest copy in the repository and the changes we've made. 
 
-* "-" means a line was deleted. 
-* "+" means a line was added. 
+* `-` means a line was deleted. 
+* `+` means a line was added. 
 * A line that has been edited is shown as a removal of the old line and an addition of the updated line.
 
 We may have made our change just to see how something looks, or, for code, to quickly try something out. But we may be unhappy with our changes. If so, we can just throw them away and return our file to the most recent version we commited to the repository by using,
@@ -219,7 +219,7 @@ So we can get any version of our files from any point in time - sort of like an 
 
 > **Top tip: Commit often**
 
-> In the same way that it is wise to frequently save a document that you are working on, so too is it wise to save numerous revisions of your files. More frequent commits increase the granularity of your **undo** button.
+> In the same way that it is wise to frequently save a document that you are working on, so too is it wise to save numerous revisions of your files. More frequent commits increase the granularity of your "undo" button.
 
 While DropBox and GoogleDrive also preserve every version, they delete old versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for old versions to be stored for longer but you have to pay for this. Using revision control the only bound is how much space you have!
 

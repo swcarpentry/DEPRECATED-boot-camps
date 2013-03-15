@@ -4,7 +4,7 @@ We're going to set up a remote repository that we can use from multiple location
 
 ### GitHub
 
-[GitHub](github.com) is a site where many people store their open (and closed) source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. GitHub, like other services such as [Launchpad](https://launchpad.net), [Bitbucket](https://bitbucket.org),
+[GitHub](http://github.com) is a site where many people store their open (and closed) source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. GitHub, like other services such as [Launchpad](https://launchpad.net), [Bitbucket](https://bitbucket.org),
 [GoogleCode](http://code.google.com), and [SourceForge](http://sourceforge.net) provides a wealth of resources to support projects including:
 
 * Network graphs and time histories changes to repositories
