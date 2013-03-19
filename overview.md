@@ -38,7 +38,8 @@ on the path to writing software as part of your research by:
     + **automating your workflow**
     + **encouraging experimentation**
 
-Keywords in **bold** are important concepts, notes in *italics* are my own personal advocacy.
+Keywords in **bold** are important concepts, notes in *italics* are my own
+personal advocacy.
 
 # More About Software Carpentry
 
