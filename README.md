@@ -48,6 +48,10 @@ If you want to install the software onto your laptop yourself, please see our [m
 
 However, we very *strongly* recommend options 1 or 2.
 
+## Hints and tips
+
+[Hints and tips](HintsAndTips.md) on common Bash and editor commands.
+
 ## About the organisers
 
 The workshop will be led by Mike Jackson of The Software Sustainability Institute and Software Carpentry. Björn Hagemeier of the Jülich Supercomputing Centre and Mike's colleagues from The Software Sustainability Institute will be on hand to help.
