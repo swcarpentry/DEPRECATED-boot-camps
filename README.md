@@ -9,7 +9,7 @@ Thursday 18-Friday 19th April 2013.
 Thursday 18th
 
 * 09:00 Arrival
-* 09:30 [Welcome](Welcome.md) - Mike
+* 09:30 [Welcome](Welcome.ppt) - Mike
 * 10:00 Using the shell to do more in less time - David
 * 12:00 Lunch
 * 13:30 Using version control to manage and share information - Aleksandra
@@ -24,7 +24,7 @@ Friday 19th
 * 12:00 Lunch
 * 13:30 Automation and make - David
 * 15:00 Break
-* 15:30 [Pulling it all together](Conclusion.md) - Mike
+* 15:30 [Pulling it all together](Conclusion.ppt) - Mike
 * 16:30 Close
 
 ## Hints and tips
