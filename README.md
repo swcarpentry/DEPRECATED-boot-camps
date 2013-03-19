@@ -27,6 +27,10 @@ Friday 19th
 * 15:30 Pulling it all together - Mike
 * 16:30 Close
 
+## Hints and tips
+
+[Hints and tips](HintsAndTips.md) on common Bash and editor commands.
+
 ## Before you arrive...
 
 You'll need to bring your laptop and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
