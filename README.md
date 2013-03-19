@@ -19,7 +19,7 @@ Thursday 18th
 Friday 19th
 
 * 09:00 Arrival
-* 09:30 How (and how much) to test software - Mike
+* 09:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Mike
 * 11:30 How to find out information from the web - David
 * 12:00 Lunch
 * 13:30 Automation and make - David
