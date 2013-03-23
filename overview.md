@@ -16,12 +16,14 @@
 
 ## Introduction
 
-<comment> There are a plethora of techniques, tools, languages, and
+Our goal:
+
+<!-- There are a plethora of techniques, tools, languages, and
 platforms available to help you scientifically compute. It is likely
 that you will only be able to afford a limited amount of time learning
 a subset of them. The purpose of this bootcamp is to help orient you
 on the path to writing software as part of your research by:
-</comment>
+-->
 
 >
 * introducing the important tools and paradigms of software construction with:
@@ -43,9 +45,44 @@ personal advocacy.
 
 # More About Software Carpentry
 
-## Who We Are
+## History
 
-## What We Do
+* Founded by Greg Wilson in 1998.
+* Open sourced materials 2004-06
+* Currently funded by Sloan Foundation
+
+## What We Teach
+
+* Unix Command Line Interface (Shell)
+* Version Control
+* Python
+* Testing
+
+## What We *Actually* Teach
+
+* A program is just another piece of lab equipment
+* Programming is a human activity
+* Little pieces loosely joined
+* Let the computer repeat it
+* Paranoia makes us productive
+* Better algorithms beat better hardware
+
+*How to THINK like a programmer*
+
+## Who We Teach
+
+<div align="center">
+<table>
+<tr>
+<td><img src="swc-demographics/thumb-age.png" /></td>
+<td><img src="swc-demographics/thumb-role.png" /></td>
+</tr>
+<tr>
+<td><img src="swc-demographics/thumb-gender.png" /></td>
+<td><img src="swc-demographics/thumb-platform.png" /></td>
+</tr>
+</table>
+</div>
 
 ## My Goals for You
 
@@ -54,7 +91,7 @@ You will understand the principles of:
 * Command Line Interface and the Bash Shell
 * Python as a Scientific Computing Platform
 * Collaborating with Git and GitHub
-* Continuously Verifying and Validating Your Cod
+* Continuously Verifying and Validating Your Code
 
 ## Schedule
 
@@ -62,9 +99,11 @@ Today:
 
 * Understanding the Shell
 * Version Control with Git and Collaborating with GitHub
-* Scientific Computing with Python
+* Scientific Computing with Python (Start)
 
 Tomorrow:
+
+* Scientific Computing with Python (Finish)
 * Verifying, Validating, and Driving Your Development with Tests
 * Bring Your Code!
 
@@ -141,8 +180,7 @@ u = Function(V)
 solve(a == L, u, bc)
 ```
 
-## Self-Promotin
-g Example: PyClaw solving Acoustics
+## Self-Promoting Example: PyClaw solving Acoustics
 
 [PyClaw example](http://numerics.kaust.edu.sa/pyclaw/tutorial.html)
 from [the paper submitted to the SIAM Journal of Scientific Computing](http://numerics.kaust.edu.sa/papers/pyclaw-sisc/pyclaw-sisc.html).
@@ -195,8 +233,8 @@ MATLAB                       Java
 Mathematica                  Fortran
 LISP
 
-*We will work with the command line in the first lecture unit, then IPython for
-the remaining lecture units today and tomorrow*
+*We will work with the command line and IPython for
+the interactive lecture units today and tomorrow*
 
 ## Understand the limitations of floating-point numbers, learn symbolic tools as well
 * As a computational scientist, you will likely be working with numerical
@@ -221,8 +259,6 @@ repeat your actions
 * Use scripts to explore new ideas, they are easy to write and throw away
 * **Don't repeat commands into your REPL, save them to a script**
 
-*We will write scripts in the second lecture unit today.*
-
 ## Refactor commonly used blocks of code into **functions**
 >
 * Eventually, you will find that your scripts have a lot of repeated code,
@@ -233,8 +269,6 @@ implement the **function** either in the same file or a separate one
 * Be comfortable with the calling and return syntax of your programming language
 environment, whether it is bash or Python
 * **Don't repeat code in scripts, refactor them to functions**
-
-*We will write Python functions in the second session today*
 
 ## Group commonly used functions into **libraries**
 >
@@ -325,6 +359,7 @@ it
     + Convince others of its usefulness
 * The **reproducibility** of your publication will greatly benefit both of
 these goals
+* See <http://
 * See <http://figshare.com> for an easy way to store and share your data in
 an easily-cited way
 
