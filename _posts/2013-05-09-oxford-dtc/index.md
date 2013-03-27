@@ -22,12 +22,12 @@ Timings are to be confirmed, but the sessions will be:
 * What we actually know about developing software, and why we believe it's true
 * Version control (with [git][])
 * The basics of [Python][]
-	* Functions
-	* Testing
+    - Functions
+    - Testing
 * Scientific programming in Python: [NumPy][] and [SciPy][]
 * Using relational databases
 * Applying software carpentry in Matlab
-	* Coding style, code organisation, testing, databases
+    - Coding style, code organisation, testing, databases
 * Hopefully some flexible time to discuss attendee interests
 * Putting it all together
 
@@ -77,7 +77,7 @@ You can download Firefox from the [Mozilla web site][mozilla] (if it's not avail
 
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing `bash`.
 
-If git is not already available on your machine you can try to install it via your distro's package manager (e.g. `apt-get` or `yum`).
+If git is not already available on your machine you should be able to install it via your distro's package manager (e.g. `apt-get` or `yum`).
 
 Many different text editors suitable for programming are available.  If you don't already have a favourite, you could look at [Kate].
 
