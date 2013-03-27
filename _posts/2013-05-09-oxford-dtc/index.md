@@ -21,13 +21,10 @@ Timings are to be confirmed, but the sessions will be:
 * Registration and introduction
 * What we actually know about developing software, and why we believe it's true
 * Version control (with [git][])
-* The basics of [Python][]
-    * Functions
-    * Testing
+* The basics of [Python][], Functions and Testing
 * Scientific programming in Python: [NumPy][] and [SciPy][]
 * Using relational databases
-* Applying software carpentry in Matlab
-    * Coding style, code organisation, testing, databases
+* Applying software carpentry in Matlab: coding style, code organisation, testing, databases
 * Hopefully some flexible time to discuss attendee interests
 * Putting it all together
 
