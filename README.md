@@ -38,13 +38,19 @@ This is the easiest option. Just turn up on the day and we'll give you a login t
 
 You'll need to ensure your laptop has a secure shell (SSH) program. Linux/UNIX/MAC OSX should already have one of these. Windows users can download an SSH client, for example, [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty).
 
+The hostname is:
+
+    TODO.ed.ac.uk
+
+The username is `guestID` and password `guestSID` where `ID` and `SID` are numbers you'll be given in the session.
+
 ### 2. Use our VMWare Ubuntu image
 
-You can [download and run a VMWare Ubuntu image](VMSetup.md) on your laptop. For this you need to install VMWare player on your laptop and you'll need at least 5GB of space to run the virtual machine. The image is an Ubuntu 12.10 image with all the required software installed.
+You can [download and run a VMWare Ubuntu image](VMSetup.md) on your laptop. For this you need to install VMWare player on your laptop and you'll need at least 5GB of space to run the virtual machine. The image is an Ubuntu 12.10 image with all the required software installed. The page also describes how to download the sample data for the data management session.
  
 ### 3. Install the required software on your own laptop
 
-If you want to install the software onto your laptop yourself, please see our [manual set-up](ManualSetup.md).
+If you want to install the software onto your laptop yourself, please see our [manual set-up](ManualSetup.md). The page also describes how to download the sample data for the data management session.
 
 However, we very *strongly* recommend options 1 or 2.
 
