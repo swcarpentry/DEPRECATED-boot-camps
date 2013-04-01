@@ -42,7 +42,7 @@ The hostname is:
 
     TODO.ed.ac.uk
 
-The username is `guestID` and password `guestSID` where `ID` and `SID` are numbers you'll be given in the session.
+Usernames and passwords will be distributed during each session.
 
 ### 2. Use our VMWare Ubuntu image
 
