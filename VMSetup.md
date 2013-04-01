@@ -23,3 +23,7 @@ We provide an Ubuntu 12.10 virtual machine image which runs under VMWare. To use
 * You should see some files and a `README.TXT` with information about installed software packages
 
 The VM's root username is `vm` and password is `ubuntu`.
+
+## For the data management session...populate MongoDB with our test data...
+
+Please see our [sample data](data/DATA.md) page and our [CSV to JSON Python script](data/csv_to_json.py) for information on how to populate your MongoDB database with the data we'll use for this session.
