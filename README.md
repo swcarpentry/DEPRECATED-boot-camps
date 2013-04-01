@@ -10,9 +10,9 @@ Run by [Software Carpentry](http://software-carpentry.org), [The Software Sustai
 
 We are running 3 sessions on useful software development skills for researchers. Each session will provide a hands-on overview of skills and tools that enable researchers to do more, in less time and with less pain. Our sessions will look at,
 
-* 11:00 - Using version control to record provenance and collaborate more easily. This session includes an introduction to [Git](http://git-scm.com/) and [GitHub](http://github.com).
-* 14:00 - Using testing to help ensure your software, and results, are correct. 
-* 16:00 - Data management using files and [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
+* 11:00 - [Using version control](version-control/README.md) to record provenance and collaborate more easily. This session includes an introduction to [Git](http://git-scm.com/) and [GitHub](http://github.com).
+* 14:00 - [Using testing](testing/README.md) to help ensure your software, and results, are correct. 
+* 16:00 - [Data management](data/README.md) using a [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
 
 The sessions are drawn from Software Carpentry's highly successful [boot camps](http://software-carpentry.org/bootcamps). Boot camps are for researchers who know how to program but want to develop skills that help them to achieve more in less time, to free up more time for science and to contribute to correct, reproducible and reusable research.
 
@@ -38,15 +38,25 @@ This is the easiest option. Just turn up on the day and we'll give you a login t
 
 You'll need to ensure your laptop has a secure shell (SSH) program. Linux/UNIX/MAC OSX should already have one of these. Windows users can download an SSH client, for example, [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty).
 
+The hostname is:
+
+    TODO.ed.ac.uk
+
+Usernames and passwords will be distributed during each session.
+
 ### 2. Use our VMWare Ubuntu image
 
-You can [download and run a VMWare Ubuntu image](VMSetup.md) on your laptop. For this you need to install VMWare player on your laptop and you'll need at least 5GB of space to run the virtual machine. The image is an Ubuntu 12.10 image with all the required software installed.
+You can [download and run a VMWare Ubuntu image](VMSetup.md) on your laptop. For this you need to install VMWare player on your laptop and you'll need at least 5GB of space to run the virtual machine. The image is an Ubuntu 12.10 image with all the required software installed. The page also describes how to download the sample data for the data management session.
  
 ### 3. Install the required software on your own laptop
 
-If you want to install the software onto your laptop yourself, please see our [manual set-up](ManualSetup.md).
+If you want to install the software onto your laptop yourself, please see our [manual set-up](ManualSetup.md). The page also describes how to download the sample data for the data management session.
 
-However, we *strongly* recommend options 1 or 2.
+However, we very *strongly* recommend options 1 or 2.
+
+## Hints and tips
+
+[Hints and tips](HintsAndTips.md) on common Bash and editor commands.
 
 ## About the organisers
 

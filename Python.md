@@ -22,7 +22,7 @@ Variables are not typed,
     >>> print value
     [1, 2, 3, 'Hello']
 
-Dictionaries,
+Dictionaries are sets of key-value pairs (equivalent to association lists or hash-tables in other languages),
 
     >>> data = {}
     >>> data['id'] = 123
@@ -37,7 +37,7 @@ Dictionaries,
     >>> print data.items()
     [('id', 123), ('name', 'fred'), ('count', 456)]
 
-To exit, press `CTRL-D` or type,
+To exit Python, press `CTRL-D` or type,
 
     exit()
 
@@ -50,7 +50,7 @@ We can write Python scripts,
  
     $ python hello.py
     
-Loops and iteration,
+Python supports loops and iteration,
 
     data = [4,5,6]
     for i in data: 
@@ -60,7 +60,7 @@ Loops and iteration,
     for i in data: 
         print i
 
-Blocks are denoted by indentation (typically 2 or 4 spaces). There are no brackets, braces or other block delimiters, so to end a block, use a blank line.
+Indentation is significant - blocks are denoted by indentation (typically 2 or 4 spaces). There are no brackets, braces or other block delimiters, so to end a block, use a blank line.
 
     $ python hello.py
 

@@ -166,6 +166,10 @@ Edit `/etc/apt/sources.list.d/10gen.list` and add the lines,
     # service mongodb start
     # apt-get install python-pymongo
 
+### Populate MongoDB with our test data...
+
+Please see our [sample data](data/DATA.md) page and our [CSV to JSON Python script](data/csv_to_json.py) for information on how to populate your MongoDB database with the data we'll use for this session.
+
 ### To check MongoDB and pymongo are OK...
 
 Do the following to create a new MongoDB database called "example", collection called "students" and add a document to the collection,
