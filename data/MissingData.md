@@ -44,3 +44,5 @@ Our documents with a `null` `Distance` are not counted.
 It is up to us when we create our databases, or use them, to decide what it means for a field to be absent, or for a field to be present but with a `null` value. Likewise, it is up to us how we'll handle them. For example, when calculating the average distance, do we want to treat `null` or missing distances as 0, or not include documents containing such values in our total counts.
 
 As we've seen MongoDB does allow both missing and `null` values to be checked for and handled explicitly.
+
+Previous: [Counting and aggregating data](CountAggregate.md) Next: [Conclusions and further information](Conclusion.md)

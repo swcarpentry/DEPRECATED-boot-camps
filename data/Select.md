@@ -132,3 +132,4 @@ We now use a dictionary rather than a list to specify the fields we want, and we
 
 Note how many the `ProperName`s are `''`. Our data is incomplete, not all stars have been named.
 
+Previous: [Data management](README.md) Next: [Filtering and sorting data](FilterSort.md)

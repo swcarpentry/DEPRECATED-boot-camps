@@ -62,3 +62,5 @@ And for descending,
 Note how `sort` specifies a list of pairs. This allows us to determine how to sort by a secondary field should some of the values of a primary field all be equal,
 
     >>> docs = stars.find({'ProperName':{'$ne':''}}, fields, sort=[('Distance', ASCENDING), ('ProperName', ASCENDING)])
+
+Previous: [Connecting to our database, browsing and selecting documents](Select.md) Next: [Counting and aggregating data](CountAggregate.md)
