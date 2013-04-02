@@ -29,3 +29,5 @@ For this session, we'll be using [Git](http://git-scm.com/), a popular version c
 * [Collaborating with our colleagues](Collaboration.md)
 * [Conclusions and further information](Conclusion.md)
 * [Git hints and tips](HintsAndTips.md)
+
+Next: [Tracking our changes with a local repository](Local.md)

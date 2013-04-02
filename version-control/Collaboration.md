@@ -15,3 +15,5 @@ Now both Owner and partner clone the owner's repository e.g.
 Now, both edit the same file, add it, commit it and push it. Resolve any conflicts you have.
 
 Keep doing the cycle of pull, edit, add, commit, push, resolve any conflicts and have a play around!
+
+Previous: [Working from multiple locations with a remote repository](Remote.md) Next: [Conclusions and further information](Conclusion.md)

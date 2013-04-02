@@ -56,3 +56,5 @@ Then, add `.gitignore` to your repository,
 ## Add colour to `diff`
 
     $ git config --global color.diff auto
+
+Previous: [Conclusions and further information](Conclusion.md)

@@ -287,3 +287,5 @@ But, we still have some problems. What might these be?
 
 * If we delete our repository not only have we lost our files we've lost all our changes!
 * Suppose we're away from our usual computer, for example we've taken our laptop to a conference and are far from our workstation, how do we get access to our repository then?
+
+Previous: [Version control and Git](README.md) Next: [Working from multiple locations with a remote repository](Remote.md)

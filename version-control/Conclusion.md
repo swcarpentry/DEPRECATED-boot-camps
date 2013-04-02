@@ -32,3 +32,5 @@ It also allows you to work with others on a project, whether that be writing cod
 * [Gitolite](https://github.com/sitaramc/gitolite) - a way for you to host
 your own multi-user Git repositories. Your collaborators send you their public SSH keys then they can pull and push from/to the repositories.
 * G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M. Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
+
+Previous: [Collaborating with our colleagues](Collaboration.md) Next: [Git hints and tips](HintsAndTips.md)
