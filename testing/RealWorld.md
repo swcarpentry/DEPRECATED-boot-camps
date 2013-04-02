@@ -52,7 +52,7 @@ For example,
 
     def test_critical_correctness():
         # TODO - will complete this tomorrow!
-         pass
+        pass
 
 Yes, tests like this *do* occur on projects!
 
