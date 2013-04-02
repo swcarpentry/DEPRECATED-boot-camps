@@ -310,6 +310,8 @@ One popular model is to have,
 * A master branch, representing the most up-to-date stable version of the code.
 * Various feature and/or developer-specific branches representing work-in-progress, new features etc.
 
+For example,
+
              0.1      0.2        0.3
               o---------o------o------    release
              /         /      /
