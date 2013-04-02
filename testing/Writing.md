@@ -144,3 +144,5 @@ Let's spend a few minutes coming up with some more tests for `calculate_weight`.
 * Have we covered all the nucleotides? 
 * Have we covered all the types of string we can expect? 
 * In addition to test functions, other types of runtime test could we add to `calculate_weight`?
+
+Previous: [Testing](README.md) Next: [Testing in practice](RealWorld.md)

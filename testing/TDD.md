@@ -57,3 +57,5 @@ Let's discuss the tests you've come up with.
 Now update `complement` to make your tests pass. You may want to reuse some of the logic of `calculate_weight`!
 
 When we're done, not only do we have a working function, we also have a set of tests. There's no risk of us leaving the tests "till later" and then never having time to write them.
+
+Previous: [Testing in practice](RealWorld.md) Next: [Conclusions and further information](Conclusion.md)
