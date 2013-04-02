@@ -50,11 +50,7 @@ This is the easiest option. Just turn up on the day and we'll give you a login t
 
 You'll need to ensure your laptop has a secure shell (SSH) program. Linux/UNIX/MAC OSX should already have one of these. Windows users can download an SSH client, for example, [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty).
 
-The hostname is:
-
-    TODO.ed.ac.uk
-
-Usernames and passwords will be distributed during each session.
+The VM name, usernames and passwords will be distributed during each session.
 
 ### 2. Use our VMWare Ubuntu image
 
