@@ -103,6 +103,13 @@ Typically, a test function,
 * Runs the function or component being tested on the inputs to get some actual outputs.
 * Checks that the actual outputs match the expected outputs. We use assertions as part of this checking. We can check both that conditions hold and that conditions do not hold.
 
+So, we could rewrite `test_a`, as the more, verbose, but equivalent,
+
+    def test_a():
+        expected = NUCLEOTIDES['A']
+        actual = calculate_weight('A')                     
+        assert expected == actual
+
 Python `assert` allows us to check,
 
     assert should_be_true()
