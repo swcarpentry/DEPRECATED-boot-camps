@@ -45,7 +45,14 @@ If the input is not a string, or a list of characters then the `for...in` statem
 
 This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
 
-But these tests don't test our functions behaviour or whether it's implemented correctly. So, we can add some tests,
+Often, we want to pass such errors to other points in our program rather than just print a message and continue. So, for example we could do,
+
+    except TypeError:
+        raise ValueError("The input is not a sequence e.g. a string or list")
+
+which raises a new exception, with a more meaningful message. If writing a complex application, our user interface could then present this to the user e.g. as a dialog box.
+
+Runtime tests don't test our functions behaviour or whether it's implemented correctly. So, we can add some tests,
 
     print calculate_weight('A')
     print calculate_weight('G')
@@ -151,5 +158,28 @@ Let's spend a few minutes coming up with some more tests for `calculate_weight`.
 * Have we covered all the nucleotides? 
 * Have we covered all the types of string we can expect? 
 * In addition to test functions, other types of runtime test could we add to `calculate_weight`?
+
+Examples of tests we could add include,
+
+* `calculate_weight('T')`
+* `calculate_weight('C')`
+* `calculate_weight('TC')`
+* `calculate_weight(123)` 
+
+The latter requires us to check whether an exception was raised which we can do as follows:
+
+    try:
+        calculate_weight(123) 
+        assert False
+    except ValueError:
+        assert True
+
+This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails.
+
+One other test we could do is `calculate_weight('GATCX')` for which we can add another runtime test,
+
+        ...
+    except KeyError:
+        raise ValueError("The input is not a sequence of G,T,C,A")
 
 Previous: [Testing](README.md) Next: [Testing in practice](RealWorld.md)
