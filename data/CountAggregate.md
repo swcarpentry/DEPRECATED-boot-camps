@@ -1,4 +1,4 @@
-## Counting and aggregation
+## Counting and aggregating data
 
 Let's suppose we're interested in the number of stars within 10 parsecs. We'd run
 

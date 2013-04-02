@@ -1,4 +1,4 @@
-## Filtering
+## Filtering and sorting data
 
 One of the most powerful features of a database is the ability to filter through our data to find that which matches certain criteria. We've done that above, by simple matching on fields.
 

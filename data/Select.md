@@ -1,4 +1,4 @@
-## Connect to our database server
+## Connecting to our database, browsing and selecting documents
 
 First we will connect to our database server which is running on our local server on MongoDB's default port,
 

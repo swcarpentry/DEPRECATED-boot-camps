@@ -1,4 +1,4 @@
-## Conclusion
+## Conclusions and further information
 
 Databases offer a number of powerful capabilities for data access, management and analysis. They allow us to drive computation down to the database to,
 

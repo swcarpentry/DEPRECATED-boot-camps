@@ -1,4 +1,4 @@
-## Missing Data
+## Missing data
 
 Remember, when we added our stars named after ourselves and we only provided a `ProperName` value but no values for the other data in our database, for example a `Distance`. 
 
