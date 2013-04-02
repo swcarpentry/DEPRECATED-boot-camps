@@ -48,7 +48,7 @@ This is a *runtime test*. It alerts the user to exceptional behavior in the code
 Often, we want to pass such errors to other points in our program rather than just print a message and continue. So, for example we could do,
 
     except TypeError:
-        raise ValueError("The input is not a sequence e.g. a string or list")
+        raise ValueError('The input is not a sequence e.g. a string or list')
 
 which raises a new exception, with a more meaningful message. If writing a complex application, our user interface could then present this to the user e.g. as a dialog box.
 
@@ -180,6 +180,6 @@ One other test we could do is `calculate_weight('GATCX')` for which we can add a
 
         ...
     except KeyError:
-        raise ValueError("The input is not a sequence of G,T,C,A")
+        raise ValueError('The input is not a sequence of G,T,C,A')
 
 Previous: [Testing](README.md) Next: [Testing in practice](RealWorld.md)
