@@ -1,4 +1,4 @@
-## Working with colleagues
+## Collaborating with our colleagues
 
 Form into pairs and swap your GitHub user names.
 

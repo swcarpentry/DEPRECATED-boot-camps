@@ -1,4 +1,4 @@
-## Working with remote repositories
+## Working from multiple locations with a remote repository
 
 We're going to set up a remote repository that we can use from multiple locations, and, as we'll see, we can share with colleagues, if we want to.
 

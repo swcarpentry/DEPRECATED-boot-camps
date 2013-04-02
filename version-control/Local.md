@@ -1,4 +1,4 @@
-## Working with a local repository
+## Tracking our changes with a local repository
 
 Version control is centred round the notion of a *repository* which holds our directories and files. We'll start by looking at a local repository which lives in a directory in your local file system.
 

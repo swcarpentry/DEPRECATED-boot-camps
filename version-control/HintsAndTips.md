@@ -1,4 +1,4 @@
-# Hints and tips
+# Git hints and tips
 
 ## `man` page
 
