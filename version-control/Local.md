@@ -266,11 +266,58 @@ and when we wanted to get back to our most recent version of the repository, we 
 
 Not only can our repository store the changes made to files and directories, it can store multiple sets of these, which we can use and edit and update in parallel. Each of these sets, or parallel instances, is termed a *branch* and `master` is Git's default branch. 
 
-A new branch can be created from any commit. Branches can also be *merged* together. To see how they are used in practice, consider developing software where we want to release code, fix bugs in the released code but also develop new features. One popular model is to have,
+A new branch can be created from any commit. Branches can also be *merged* together. 
+
+Why is this useful? 
+Suppose we've developed some software and released this to our users.
+We then rewrite some functionality and add some more.
+Suppose a user finds a bug and we want to fix it and get this user a bug-fixed version.
+Our rewrites may not be complete and we have the choice of either releasing a half-complete, rewrites-in-progress version, or telling our user to wait until the next release comes out - which may cause them to lose interest if the bug is preventing them from using our software.
+
+Branches are a solution to this. When we release our software we can create a new branch:
+
+    -o---o---o                               master
+              \
+               o                             release1.0
+
+We can then continue developing our software in our default, or master, branch,
+
+    -o---o---o---o---o---o                   master
+              \
+               o                             release
+
+And, if a user reports a bug, we can fix it in the release branch, and immediately release the bug-fixed version,
+
+    -o---o---o---o---o                       master
+              \
+               o---o---o                     release
+
+We can then merge the changes we've made to the release back into our master branch:
+
+    -o---o---o---o---o---M                   master
+              \         /
+               o---o---o                     release
+
+And continue developing,
+
+    -o---o---o---o---o---M---o---o           master
+              \         /
+               o---o---o                     release
+
+One popular model is to have,
 
 * A release branch, representing a released version of the code.
 * A master branch, representing the most up-to-date stable version of the code.
 * Various feature and/or developer-specific branches representing work-in-progress, new features etc.
+
+             0.1      0.2        0.3
+              o---------o------o------    release
+             /         /      /
+     o---o---o--o--o--o--o---o---o---    master
+     |            /     /
+     o---o---o---o     /                 fred
+     |                /
+     o---o---o---o---o                   kate
 
 If a bug is found by a user, a bug fix can be applied to the release branch, and then merged with the master branch. When a feature or developer-specific branch, is stable and has been reviewed and tested it can be merged with the master branch. When the master branch has been reviewed and tested and is ready for release, a new release branch can be created from it.
 
