@@ -66,7 +66,7 @@ These queries return the whole document. We may just be interested in parts of e
     >>> fields = ['ProperName', 'Distance']
     >>> print stars.find_one({'ProperName':'Betelgeuse'}, fields)
 
-This is termed a *projection*. Since BSON documents can be nested - a field's value is a document itself - MongDB also allows the sub-documents to be projected.
+This is termed a *projection*. Since BSON documents can be nested - a field's value is a document itself - MongoDB also allows the sub-documents to be projected.
 
 ## Adding a document
 
