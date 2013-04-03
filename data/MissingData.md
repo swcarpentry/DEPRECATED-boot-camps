@@ -20,8 +20,13 @@ This behaves in the same way as `find` but then removes all matching documents. 
     >>> doc['ProperName'] = 'YOURNAME'
     >>> doc['Group'] = 'EGI'
     >>> doc['Distance'] = None
+    >>> stars.insert(doc)
 
-We can look for documents with `null` values,
+Now,
+
+    >>> print stars.find_one({'Distance':{'$exists':False}})
+
+returns nothing since our document does have a `Distance` field. We can look for documents with `null` values by doing,
 
     >>> print stars.find_one({'Distance':None})
 
