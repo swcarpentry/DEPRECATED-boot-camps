@@ -1,6 +1,6 @@
 ## Let's start writing some tests
 
-In the file `dna.py` we have a Python dictionary that stores the molecular weights of the 4 standard DNA nucleotides, A, T, C and G, 
+In the file `[dna.py](python/dna/dna.py)` we have a Python dictionary that stores the molecular weights of the 4 standard DNA nucleotides, A, T, C and G, 
 
     NUCLEOTIDES = {'A':131.2, 'T':304.2, 'C':289.2, 'G':329.2}
 
