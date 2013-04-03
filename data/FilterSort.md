@@ -45,11 +45,11 @@ MongoDB has a rich set of [operators](http://docs.mongodb.org/manual/reference/o
 
 We can also request the data be sorted. So let's query for all the documents, pull out the name and distance, then sort by name. But we'll ignore stars that have no name, so,
 
+    >>> from pymongo import ASCENDING
     >>> docs = stars.find({'ProperName':{'$ne':''}}, fields, sort=ASCENDING)
 
 And to sort by name in ascending order, we do,
 
-    >>> from pymongo import ASCENDING
     >>> docs = stars.find({'ProperName':{'$ne':''}}, fields, sort=[('ProperName', ASCENDING)])
     >>> for doc in docs: print doc
 
