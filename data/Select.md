@@ -1,4 +1,4 @@
-## Connect to our database server
+## Connecting to our database, browsing and selecting documents
 
 First we will connect to our database server which is running on our local server on MongoDB's default port,
 
@@ -66,7 +66,7 @@ These queries return the whole document. We may just be interested in parts of e
     >>> fields = ['ProperName', 'Distance']
     >>> print stars.find_one({'ProperName':'Betelgeuse'}, fields)
 
-This is termed a *projection*. Since BSON documents can be nested - a field's value is a document itself - MongDB also allows the sub-documents to be projected.
+This is termed a *projection*. Since BSON documents can be nested - a field's value is a document itself - MongoDB also allows the sub-documents to be projected.
 
 ## Adding a document
 
@@ -132,3 +132,4 @@ We now use a dictionary rather than a list to specify the fields we want, and we
 
 Note how many the `ProperName`s are `''`. Our data is incomplete, not all stars have been named.
 
+Previous: [Data management](README.md) Next: [Filtering and sorting data](FilterSort.md)

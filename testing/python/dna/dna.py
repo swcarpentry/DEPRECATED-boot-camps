@@ -9,9 +9,6 @@ def calculate_weight(sequence):
     @return molecular weight.
     """
     weight = 0.0
-    try:
-        for ch in sequence:
-            weight += NUCLEOTIDES[ch]
-        return weight
-    except TypeError:
-        print 'The input is not a sequence e.g. a string or list'
+    for ch in sequence:
+        weight += NUCLEOTIDES[ch]
+    return weight

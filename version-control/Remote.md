@@ -1,4 +1,4 @@
-## Working with remote repositories
+## Working from multiple locations with a remote repository
 
 We're going to set up a remote repository that we can use from multiple locations, and, as we'll see, we can share with colleagues, if we want to.
 
@@ -231,3 +231,5 @@ So far, we've now seen how we can,
 * Identify and resolve conflicts when the same file is edited within two repositories
 
 We now have everything we need to collaborate with our colleagues!
+
+Previous: [Tracking our changes with a local repository](Local.md) Next: [Collaborating with our colleagues](Collaboration.md)

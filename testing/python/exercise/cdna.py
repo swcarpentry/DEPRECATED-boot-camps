@@ -13,4 +13,6 @@ def complement(sequence):
             cdna += COMPLEMENTS[ch]
         return cdna
     except TypeError:
-        print 'The input is not a sequence e.g. a string or list'
+        raise ValueError('The input is not a sequence e.g. a string or list')
+    except KeyError:
+        raise ValueError('The input is not a sequence of G,T,C,A')

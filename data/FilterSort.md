@@ -1,4 +1,4 @@
-## Filtering
+## Filtering and sorting data
 
 One of the most powerful features of a database is the ability to filter through our data to find that which matches certain criteria. We've done that above, by simple matching on fields.
 
@@ -43,11 +43,7 @@ MongoDB has a rich set of [operators](http://docs.mongodb.org/manual/reference/o
 
 ## Sorting
 
-We can also request the data be sorted. So let's query for all the documents, pull out the name and distance, then sort by name. But we'll ignore stars that have no name, so,
-
-    >>> docs = stars.find({'ProperName':{'$ne':''}}, fields, sort=ASCENDING)
-
-And to sort by name in ascending order, we do,
+We can also request the data be sorted. So let's query for all the documents, pull out the name and distance, then sort by name. But we'll ignore stars that have no name, so, to sort by name in ascending order, we do,
 
     >>> from pymongo import ASCENDING
     >>> docs = stars.find({'ProperName':{'$ne':''}}, fields, sort=[('ProperName', ASCENDING)])
@@ -62,3 +58,5 @@ And for descending,
 Note how `sort` specifies a list of pairs. This allows us to determine how to sort by a secondary field should some of the values of a primary field all be equal,
 
     >>> docs = stars.find({'ProperName':{'$ne':''}}, fields, sort=[('Distance', ASCENDING), ('ProperName', ASCENDING)])
+
+Previous: [Connecting to our database, browsing and selecting documents](Select.md) Next: [Counting and aggregating data](CountAggregate.md)
