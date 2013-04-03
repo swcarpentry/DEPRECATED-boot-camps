@@ -1,4 +1,4 @@
-## Test Driven Development
+## Test-driven development
 
 Traditionally, we'd write our code, then write the tests. [Test driven development](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530) (TDD), proposed by Kent Beck, is a philosophy that turns this on its head - we write code by *writing the tests first*, then write the code to make the tests pass. If a new feature is needed, another test is written and the code is expanded to meet this new use case. This continues until the code does what is needed. This can be summarised as red-green-refactor:
 
@@ -57,3 +57,5 @@ Let's discuss the tests you've come up with.
 Now update `complement` to make your tests pass. You may want to reuse some of the logic of `calculate_weight`!
 
 When we're done, not only do we have a working function, we also have a set of tests. There's no risk of us leaving the tests "till later" and then never having time to write them.
+
+Previous: [Testing in practice](RealWorld.md) Next: [Conclusions and further information](Conclusion.md)

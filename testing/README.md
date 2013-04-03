@@ -90,3 +90,5 @@ Before we test our code, it can be very productive to get a colleague to look at
 * [Testing in practice](RealWorld.md)
 * [Test-driven development](TDD.md)
 * [Conclusions and further information](Conclusion.md)
+
+Next: [Let's start writing some tests](Writing.md)
