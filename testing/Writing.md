@@ -54,9 +54,9 @@ which raises a new exception, with a more meaningful message. If writing a compl
 
 Runtime tests don't test our functions behaviour or whether it's implemented correctly. So, we can add some tests,
 
-    print calculate_weight('A')
-    print calculate_weight('G')
-    print calculate_weight('GA')
+    print "A is ", calculate_weight('A')
+    print "G is ", calculate_weight('G')
+    print "GA is ", calculate_weight('GA')
 
 But we'd have to visually inspect the results to see they are as expected. So, let's have the computer do that for us and make our lives easier, and save us time in checking,
 
