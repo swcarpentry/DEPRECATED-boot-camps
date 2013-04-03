@@ -174,7 +174,14 @@ The latter requires us to check whether an exception was raised which we can do 
     except ValueError:
         assert True
 
-This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails.
+This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails. Alternatively, we can use `assert_raises` from `nose`,
+
+    from nose.tools import assert_raises
+
+    def test_123():
+        assert_raises(ValueError, calculate_weight, 123)
+
+The assert fails if the named exception is *not* raised.
 
 One other test we could do is `calculate_weight('GATCX')` for which we can add another runtime test,
 
