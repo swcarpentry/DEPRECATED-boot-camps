@@ -41,6 +41,7 @@ What do we consider to be a suitable threshold for equality? That is application
 
 We should test,
 
+* Always!
 * Early, and not wait till after we've used it to generate data for our important paper, or given it to someone else to use.
 * Often, so that we know that any changes we've made to our code, or to things that our code needs (e.g. libraries, configuration files etc.) haven't introduced any bugs.
 
