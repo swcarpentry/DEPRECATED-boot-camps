@@ -1,4 +1,4 @@
-## Counting and aggregation
+## Counting and aggregating data
 
 Let's suppose we're interested in the number of stars within 10 parsecs. We'd run
 
@@ -70,3 +70,5 @@ And, we can confirm the count,
 This is just a dip in the water of the capabilities of MongoDB's aggregation framework.
 
 Rather than pulling all the data out of the database and writing a program to process it and calculate these values, instead we are driving our computation to the database, telling it what we want and letting it worry about how to do it.
+
+Previous: [Filtering and sorting data](FilterSort.md) Next: [Missing data](MissingData.md)

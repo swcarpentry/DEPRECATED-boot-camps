@@ -10,9 +10,18 @@ Run by [Software Carpentry](http://software-carpentry.org), [The Software Sustai
 
 We are running 3 sessions on useful software development skills for researchers. Each session will provide a hands-on overview of skills and tools that enable researchers to do more, in less time and with less pain. Our sessions will look at,
 
-* 11:00 - [Using version control](version-control/README.md) to record provenance and collaborate more easily. This session includes an introduction to [Git](http://git-scm.com/) and [GitHub](http://github.com).
-* 14:00 - [Using testing](testing/README.md) to help ensure your software, and results, are correct. 
-* 16:00 - [Data management](data/README.md) using a [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
+* 11:00 - Using version control to record provenance and collaborate more easily. This session includes an introduction to [Git](http://git-scm.com/) and [GitHub](http://github.com).
+ * [Pre-questionnaire](TODO)
+ * [Start...](version-control/README.md)
+ * [Post-questionnaire](TODO)
+* 14:00 - Using testing to help ensure your software, and results, are correct. 
+ * [Pre-questionnaire](TODO)
+ * [Start...](testing/README.md)
+ * [Post-questionnaire](TODO)
+* 16:00 - Data management using a [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
+ * [Pre-questionnaire](TODO)
+ * [Start...](data/README.md)
+ * [Post-questionnaire](TODO)
 
 The sessions are drawn from Software Carpentry's highly successful [boot camps](http://software-carpentry.org/bootcamps). Boot camps are for researchers who know how to program but want to develop skills that help them to achieve more in less time, to free up more time for science and to contribute to correct, reproducible and reusable research.
 
@@ -38,11 +47,7 @@ This is the easiest option. Just turn up on the day and we'll give you a login t
 
 You'll need to ensure your laptop has a secure shell (SSH) program. Linux/UNIX/MAC OSX should already have one of these. Windows users can download an SSH client, for example, [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty).
 
-The hostname is:
-
-    TODO.ed.ac.uk
-
-Usernames and passwords will be distributed during each session.
+The VM name, usernames and passwords will be distributed during each session.
 
 ### 2. Use our VMWare Ubuntu image
 

@@ -1,6 +1,6 @@
 ## Let's start writing some tests
 
-In the file `dna.py` we have a Python dictionary that stores the molecular weights of the 4 standard DNA nucleotides, A, T, C and G, 
+In the file [dna.py](python/dna/dna.py) we have a Python dictionary that stores the molecular weights of the 4 standard DNA nucleotides, A, T, C and G, 
 
     NUCLEOTIDES = {'A':131.2, 'T':304.2, 'C':289.2, 'G':329.2}
 
@@ -45,11 +45,18 @@ If the input is not a string, or a list of characters then the `for...in` statem
 
 This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
 
-But these tests don't test our functions behaviour or whether it's implemented correctly. So, we can add some tests,
+Often, we want to pass such errors to other points in our program rather than just print a message and continue. So, for example we could do,
 
-    print calculate_weight('A')
-    print calculate_weight('G')
-    print calculate_weight('GA')
+    except TypeError:
+        raise ValueError('The input is not a sequence e.g. a string or list')
+
+which raises a new exception, with a more meaningful message. If writing a complex application, our user interface could then present this to the user e.g. as a dialog box.
+
+Runtime tests don't test our functions behaviour or whether it's implemented correctly. So, we can add some tests,
+
+    print "A is ", calculate_weight('A')
+    print "G is ", calculate_weight('G')
+    print "GA is ", calculate_weight('GA')
 
 But we'd have to visually inspect the results to see they are as expected. So, let's have the computer do that for us and make our lives easier, and save us time in checking,
 
@@ -103,6 +110,13 @@ Typically, a test function,
 * Runs the function or component being tested on the inputs to get some actual outputs.
 * Checks that the actual outputs match the expected outputs. We use assertions as part of this checking. We can check both that conditions hold and that conditions do not hold.
 
+So, we could rewrite `test_a`, as the more, verbose, but equivalent,
+
+    def test_a():
+        expected = NUCLEOTIDES['A']
+        actual = calculate_weight('A')                     
+        assert expected == actual
+
 Python `assert` allows us to check,
 
     assert should_be_true()
@@ -144,3 +158,35 @@ Let's spend a few minutes coming up with some more tests for `calculate_weight`.
 * Have we covered all the nucleotides? 
 * Have we covered all the types of string we can expect? 
 * In addition to test functions, other types of runtime test could we add to `calculate_weight`?
+
+Examples of tests we could add include,
+
+* `calculate_weight('T')`
+* `calculate_weight('C')`
+* `calculate_weight('TC')`
+* `calculate_weight(123)` 
+
+The latter requires us to check whether an exception was raised which we can do as follows:
+
+    try:
+        calculate_weight(123) 
+        assert False
+    except ValueError:
+        assert True
+
+This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails. Alternatively, we can use `assert_raises` from `nose`,
+
+    from nose.tools import assert_raises
+
+    def test_123():
+        assert_raises(ValueError, calculate_weight, 123)
+
+The assert fails if the named exception is *not* raised.
+
+One other test we could do is `calculate_weight('GATCX')` for which we can add another runtime test,
+
+        ...
+    except KeyError:
+        raise ValueError('The input is not a sequence of G,T,C,A')
+
+Previous: [Testing](README.md) Next: [Testing in practice](RealWorld.md)

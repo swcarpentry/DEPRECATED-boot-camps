@@ -12,25 +12,36 @@ This was the approach taken by EPCC and the Colon Cancer Genetics Group (CCGG) o
 
 The [Muon Ion Cooling Experiment](http://www.mice.iit.edu/) (MICE) have a large number of tests written in Python. They use [Jenkins](), a *continuous integration server* to build their code and trigger the running of the tests which are then [published online](https://micewww.pp.rl.ac.uk/tab/show/maus).
 
-## When 1 + 1 = 2.000000000000001
+## When 1 + 1 = 2.0000001
 
-Computers don't do floating point arithmetic too well. This can make simple tests for the equality of two floating point values problematic due to imprecision in the values being compared. We can get round this by comparing to within a given threshold, or delta, for example we may consider *expected* and *actual* to be equal if *expected - actual < 0.000000000001*.
+Computers don't do floating point arithmetic too well. This can make simple tests for the equality of two floating point values problematic due to imprecision in the values being compared. 
+
+    $ python
+    >>> expected = 1 + 1 
+    >>> actual = 2.0000001
+    >>> assert expected == actual
+
+We can get round this by comparing to within a given threshold, or delta, for example we may consider *expected* and *actual* to be equal if *expected - actual < 0.000000000001*.
 
 Test frameworks such as `nose`, often provide functions to handle this for us. For example, to test that 2 numbers are equal when rounded to a given number of decimal places,
 
     $ python
     >>> from nose.tools import assert_almost_equal
-    >>> assert_almost_equal(1.000001, 1.000002, 0)
-    >>> assert_almost_equal(1.000001, 1.000002, 1)
-    >>> assert_almost_equal(1.000001, 1.000002, 3)
-    >>> assert_almost_equal(1.000001, 1.000002, 6)
+    >>> assert_almost_equal(expected, actual, 0)
+    >>> assert_almost_equal(expected, actual, 1)
+    >>> assert_almost_equal(expected, actual, 3)
+    >>> assert_almost_equal(expected, actual, 6)
+    >>> assert_almost_equal(expected, actual, 7)
     ...
-    AssertionError: 1.000001 != 1.000002 within 6 places
+    AssertionError: 2 != 2.0000000999999998 within 7 places
+
+What do we consider to be a suitable threshold for equality? That is application-specific - for some domains we might be happy to round to the nearest whole number, for others we may want to be far, far more accurate.
 
 ## When should we test?
 
 We should test,
 
+* Always!
 * Early, and not wait till after we've used it to generate data for our important paper, or given it to someone else to use.
 * Often, so that we know that any changes we've made to our code, or to things that our code needs (e.g. libraries, configuration files etc.) haven't introduced any bugs.
 
@@ -52,6 +63,8 @@ For example,
 
     def test_critical_correctness():
         # TODO - will complete this tomorrow!
-         pass
+        pass
 
 Yes, tests like this *do* occur on projects!
+
+Previous: [Let's start writing some tests](Writing.md) Next: [Test-driven development](TDD.md)

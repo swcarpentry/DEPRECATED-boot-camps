@@ -1,4 +1,4 @@
-## Conclusion
+## Conclusions and further information
 
 We've seen how we can use version control to,
 
@@ -24,11 +24,13 @@ It also allows you to work with others on a project, whether that be writing cod
 
 ### Find out more...
 
-* K. Ram  (2013) "[git can facilitate greater reproducibility and increased transparency in science]", Source Code for Biology and Medicine 2013, 8:7 doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey of the range of ways in which version control can help research.
-* [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html) - pictorial representations of whatGit commands do.
+* K. Ram  (2013) "git can facilitate greater reproducibility and increased transparency in science", Source Code for Biology and Medicine 2013, 8:7 doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey of the range of ways in which version control can help research.
+* [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html) - pictorial representations of what Git commands do.
 * [Pro Git](http://git-scm.com/book) - the "official" online Git book.
 * [Version control by example](http://www.ericsink.com/vcbe/) - an acclaimed online book on version control by Eric Sink.
 * [Git commit policies](http://osteele.com/posts/2008/05/commit-policies) - images on what Git commands to with reference to the working directory, staging area, local and remote repositories.
 * [Gitolite](https://github.com/sitaramc/gitolite) - a way for you to host
 your own multi-user Git repositories. Your collaborators send you their public SSH keys then they can pull and push from/to the repositories.
 * G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M. Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
+
+Previous: [Collaborating with our colleagues](Collaboration.md) Next: [Git hints and tips](HintsAndTips.md)

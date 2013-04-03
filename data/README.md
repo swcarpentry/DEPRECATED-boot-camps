@@ -101,3 +101,5 @@ MongoDB has [drivers](http://api.mongodb.org/) in many languages including C, C+
 * [Missing data](MissingData.md)
 * [Conclusions and further information](Conclusion.md)
 * [If there is time...](BitsAndBobs.md)
+
+Next: [Connecting to our database, browsing and selecting documents](Select.md)

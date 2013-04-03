@@ -77,3 +77,5 @@ Replace `inline` with `result` to create new a `result` collection.
     >>> finalize = Code("function(key, values) { return {count: values.count, distance: values.distance, mag: values.mag, absmag: values.absmag, avgdistance: values.distance / values.count, avgmag: values.mag / values.count, avgabsmag: values.absmag / values.count}}")
     >>> stars.map_reduce(map, reduce, {'inline':1}, query={'ProperName':'Sol'}, finalize=finalize)
     >>> stars.map_reduce(map, reduce, {'inline':1}, finalize=finalize)
+
+Previous: [Conclusions and further information](Conclusion.md)
