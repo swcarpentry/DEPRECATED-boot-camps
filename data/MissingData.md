@@ -30,15 +30,11 @@ returns nothing since our document does have a `Distance` field. We can look for
 
     >>> print stars.find_one({'Distance':None})
 
-Note that while both versions of our document don't define a distance, in the original one we didn't define a distance at all, whereas in our new one, we have a distance whose value is undefined. We can see the difference as follows,
-
-    >>> print stars.find_one({'Distance':{'$exists':False}})
-
-This returns no document as it only succeeds if there is a document that has no `Distance` field.
+Note that while both versions of our document don't define a distance, in the original one we didn't define a distance at all, whereas in our new one, we have a distance whose value is undefined. 
 
 The presence of `null` also affects the behaviour of operators. If we count the number of stars we have we get,
 
-    >>> print docs.count()
+    >>> print stars.count()
 
 If we now query the number of stars which have a distance greater than or equal to 0, we get,
 
