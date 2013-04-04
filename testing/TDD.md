@@ -1,18 +1,6 @@
 ## Test-driven development
 
-Traditionally, we'd write our code, then write the tests. [Test driven development](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530) (TDD), proposed by Kent Beck, is a philosophy that turns this on its head - we write code by *writing the tests first*, then write the code to make the tests pass. If a new feature is needed, another test is written and the code is expanded to meet this new use case. This continues until the code does what is needed. This can be summarised as red-green-refactor:
-
- * Red - write tests based on requirements. They fail as there is no code!
- * Green - write/modify code to get tests to pass.
- * Refactor code - clean it up.
-
-By writing tests first, we're forced to think about what our code should do. In contrast, in writing our code then tests, we risk testing what the code actually does, rather than what it should do.
-
-TDD operates on the YAGNI principle (You Ain't Gonna Need It) to avoid developing code for which there is no need.
-
-## TDD of a DNA complement function
-
-Given a DNA sequence consisting of A, C, T and G, we can create its complementary DNA, cDNA, by applying a mapping to each nucleotide in turn,
+Given a DNA sequence consisting of A, C, T and G, we can create its *complement*, cDNA, by applying a mapping to each nucleotide in turn,
 
 * A => T
 * C => G
@@ -21,41 +9,65 @@ Given a DNA sequence consisting of A, C, T and G, we can create its complementar
 
 For example, given DNA strand GTCA, the cDNA is CAGT. 
 
-So, let's write a `complement` function that creates the cDNA strand, given a DNA strand in a string. We'll use TDD, so to start, let's create a file `test_cdna.py` and add a test,
+We can then create its *antiparallel* by calculating the *inverse* of the sequence, by reversing it. So, the anti-parallel of GTCA is TGAC.
 
-    from cdna import complement
+Let's write a function to calculate this antiparallel. Now, before, we had our code and wrote some tests. This time we're going to turn this on it's head and try some test-driven development.
 
-    def test_complement_a():
-        assert_equals complement('A') == 'T'
+[Test driven development](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530) (TDD), proposed by Kent Beck, is a philosophy and approach where we write code by *writing the tests first*, then write the code to make the tests pass. If a new feature is needed, another test is written and the code is expanded to meet this new use case. This continues until the code does what is needed. This can be summarised as red-green-refactor:
 
-And let's run the test,
+ * Red - write tests based on requirements. They fail as there is no code!
+ * Green - write/modify code to get tests to pass.
+ * Refactor code - clean it up.
 
-    $ nosetests test_cdna.py
+By writing tests first, we're forced to think about what our code should do. In contrast, in writing our code then tests, we risk testing what the code actually *does*, rather than what it *should* do.
 
-Which fails as we have no function! So, let's create a file `cdna.py`. Our initial function to get the tests to pass could be,
+TDD operates on the YAGNI principle (You Ain't Gonna Need It) to avoid developing code for which there is no need.
 
-    def complement(sequence):
-        return 'T'
+So, back to our example. We'll start by creating a file `test_dnautils.py` and import our function,
 
-This is simplistic, but the test passes. Now let's add another test,
+    from dnautils import antiparallel
 
-    def test_complement_c():
-        assert complement('C') == 'G'
+And then run `nosetests`,
 
-To get both our tests to pass, we can change our function to be,
+    $ nosetests test_dnautils.py
 
-    def complement(sequence):
-        if (sequence == 'A'):
-            return 'T'
-        else:
-            return 'G'
+This fails as not only are there no tests, there's no module or function. Let's create a file, `dnautils.py`, and add a function that does nothing,
 
-Now, add some more tests. Don't worry about `complement` just now.
+    def antiparallel(sequence):
+        """
+        Calculate the antiparallel of a DNA sequence.
+ 
+        @param sequence: a DNA sequence expressed as an upper-case string.
+        @return antiparallel as an upper-class string. 
+        """
+        pass
 
-Let's discuss the tests you've come up with.
+And let's run the tests to date,
 
-Now update `complement` to make your tests pass. You may want to reuse some of the logic of `calculate_weight`!
+    $ nosetests test_dnautils.py
+
+Zero tests, as we expected! Nnow we need to add some tests. Someone propose a test...
+
+OK we'll add that test...
+
+And let's run the tests to date,
+
+    $ nosetests test_dnautils.py
+
+This fails as our function does nothing. So let's change it to pass...
+
+Now let's add another test...someone give me one...
+
+To get both our tests to pass, we can change our function to be...
+
+Now, add some more tests to `test_dnautils.py` but do not make any more changes to `dnautils.py` or your function, yet.
+
+Let's discuss the tests you've come up with...
+
+Now update `antiparallel` to make your tests pass...
 
 When we're done, not only do we have a working function, we also have a set of tests. There's no risk of us leaving the tests "till later" and then never having time to write them.
+
+We now may want to spend time refactoring our function to clean up our code. We can do this with the security of our tests which allow us to detect if any changes we make introduce a bug.
 
 Previous: [Testing in practice](RealWorld.md) Next: [Conclusions and further information](Conclusion.md)
