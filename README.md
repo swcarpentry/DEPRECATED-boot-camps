@@ -9,7 +9,7 @@ Thursday 18-Friday 19th April 2013.
 Thursday 18th
 
 * 09:00 Arrival
-* 09:30 Introduction - Mike
+* 09:30 [Welcome](Welcome.ppt) - Mike
 * 10:00 Using the shell to do more in less time - David
 * 12:00 Lunch
 * 13:30 Using version control to manage and share information - Aleksandra
@@ -19,13 +19,17 @@ Thursday 18th
 Friday 19th
 
 * 09:00 Arrival
-* 09:30 How (and how much) to test software - Mike
+* 09:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Mike
 * 11:30 How to find out information from the web - David
 * 12:00 Lunch
 * 13:30 Automation and make - David
 * 15:00 Break
-* 15:30 Pulling it all together - Mike
+* 15:30 [Pulling it all together](Conclusion.ppt) - Mike
 * 16:30 Close
+
+## Hints and tips
+
+[Hints and tips](HintsAndTips.md) on common Bash and editor commands.
 
 ## Before you arrive...
 
