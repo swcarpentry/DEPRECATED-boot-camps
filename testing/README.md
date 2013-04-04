@@ -24,7 +24,12 @@ Software testing is exercising and confirming expected behaviours and results fr
 * Our code can handle extreme boundaries of input domains, output ranges, parametric combinations or any other edge cases.
 * Our code's existing behaviour is still the same after we've changed it (this is called *regression testing*).
 
-It also gives us the confidence to:
+In testing, you'll come across the terms *verification* and *validation*,
+
+* Verification is the process of asking, "Have we built the software correctly?" That is, is the code bug free, precise, accurate, and repeatable?
+* Validation is the process of asking, "Have we built the right software?" That is, is the code designed in such a way as to produce the answers we are interested in, data we want, etc.
+
+Testing also gives us the confidence to...
 
 * Add new features.
 * Optimise our code.
