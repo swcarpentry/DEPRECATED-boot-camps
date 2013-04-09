@@ -1,38 +1,26 @@
-Testing Cheat Sheet
-===================
+Python Testing Cheat Sheet
+==========================
 
-Terminology
------------
+Defensive programming
+---------------------
 
-* A *unit test* acts on an isolated component within an application.
-* A *test fixture* is the input data that a test acts on.
-* The *interface* of a function is its public face, defined by its
-  input and output.
-* The *implementation* of a function is how it gets from the input to
-  the output.
-* A *stub* is a very simple implementation of one function that is
-  used in a test of a different function.
+Using an assertion to ensure input is acceptable:
 
-Unit Testing
-------------
+    def some_function(x):
+        assert x >= 0
+        # ... continue safe in knowledge that x > 0
 
-* A *normal case* is a test case that reflects what is expected to be
-  typical usage of a function.
-* A *boundary case* is a test case that reflects a less typical but
-  potentially troublesome type of usage.
+Adding an explanatory message to the assertion:
 
-Exceptions
-----------
+        assert x >= 0, "Function not defined for negative x."
 
-* raise
-* catch
-* define
+Alternatively, raise an exception to indicate what the problem is:
 
-Assertions
-----------
+    def some_function(x):
+        if x < 0:
+            raise TypeError, "Function not defined for negative x."
+        return 0
 
-* syntax
-* stops execution
 
 Unittest
 --------
@@ -40,11 +28,44 @@ Unittest
 * extending TestCase
 * assertions, e.g. self.assertEquals
 
+
 Nose
 ----
 
-* invocation: nosetests
-* naming conventions: test_*
-* fixtures: setup
+To run tests, at the shell prompt, type
+
+    nosetests
+
+TODO: finish this
+
+By default, Nose will find tests in files named `test_*`.
+
+
+### A simple test
+
+    from nose.tools import assert_equal
+
+    from mystatscode import mean
+
+    def test_single_value():
+        observed = mean([1.0])
+        expected = 1.0
+        assert_equal(observed, expected)
+
+### Other assertions
+
+TODO: finish this
+
+### Floating point tests
+
+* assert_almost_equal...
+
+### Fixtures
+
+TODO:
+
+* setup...
 * per-test fixtures with @with_setup decorator
-* assertions, e.g. assert_equal, assert_almost_equal...
+
+
+
