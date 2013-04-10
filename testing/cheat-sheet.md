@@ -46,7 +46,6 @@ By default, Nose will
 
 There are some additional rules, and you can configure your own, but this should be enough to get started.
 
-
 ### A simple test
 
     from nose.tools import assert_equal
@@ -60,7 +59,16 @@ There are some additional rules, and you can configure your own, but this should
 
 ### Other assertions
 
-TODO: finish this
+Nose provides a range of assertions that can be used when a test is not just checking a simple equality, e.g.
+
+    from nose.tools import assert_items_equal
+
+    from mycode import find_factors
+
+    def test_6():
+        observed = find_factors(6)
+        expected = [2, 3]
+        assert_items_equal(observed, expected) # order of factors is not guaranteed
 
 ### Floating point tests
 
