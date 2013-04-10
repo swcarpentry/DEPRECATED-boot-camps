@@ -25,6 +25,8 @@ Alternatively, raise an exception to indicate what the problem is:
 Unittest
 --------
 
+TODO: write this section
+
 * extending TestCase
 * assertions, e.g. self.assertEquals
 
@@ -36,9 +38,13 @@ To run tests, at the shell prompt, type
 
     nosetests
 
-TODO: finish this
+By default, Nose will
 
-By default, Nose will find tests in files named `test_*`.
+* look for test functions that have a name starting with `test`
+* look for them in files with names starting with `test`
+* look for such files in the current working directory, and in subdirectories with names starting with `test`
+
+There are some additional rules, and you can configure your own, but this should be enough to get started.
 
 
 ### A simple test
@@ -66,6 +72,3 @@ TODO:
 
 * setup...
 * per-test fixtures with @with_setup decorator
-
-
-
