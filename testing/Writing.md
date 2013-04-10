@@ -79,7 +79,7 @@ But this isn't very modular, and modularity is a good design principle, so let's
     def test_g():
         assert calculate_weight('G') == NUCLEOTIDES['G']
     def test_ga():
-        assert calculate_weight('GA') == NUCLEOTIDES['GA'] + NUCLEOTIDES['A']
+        assert calculate_weight('GA') == NUCLEOTIDES['G'] + NUCLEOTIDES['A']
 
     test_a()
     test_g()
