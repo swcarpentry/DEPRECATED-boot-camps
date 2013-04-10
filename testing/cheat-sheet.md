@@ -1,6 +1,11 @@
 Python Testing Cheat Sheet
 ==========================
 
+Why testing?
+------------
+
+(todo)
+
 Defensive programming
 ---------------------
 
@@ -62,10 +67,17 @@ TODO: finish this
 
 ### Fixtures
 
+
+Test-driven deveopment
+----------------------
+
+todo: red-green-refactor(-commit)
+
+
 TODO:
 
 * setup...
 * per-test fixtures with @with_setup decorator
-
+* put bugs into test cases
 
 
