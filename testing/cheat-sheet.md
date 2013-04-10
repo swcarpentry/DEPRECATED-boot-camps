@@ -84,6 +84,12 @@ the way values are represented and rounded.
         expected = 5.0
         assert_almost_equal(observed, expected)
 
+### Testing exceptions
+
+TODO:
+
+* using `@raises` decorator
+
 ### Fixtures
 
 TODO:
