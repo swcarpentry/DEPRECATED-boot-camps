@@ -72,7 +72,7 @@ and add headings for Title, Author, Introduction, Conclusion and References, and
 
     $ git status journal.txt
 
-Information about what Git knows about the file is displayed. For now, the important bit of information is that our file is listed as `Untracked` which means its in our working directory but Git knows nothing about it. To tell Git about it we first need to add it to Git's *staging area*, which is also known as the *index* or the *cache*.
+Information about what Git knows about the file is displayed. For now, the important bit of information is that our file is listed as `Untracked` which means it's in our working directory but Git knows nothing about it. To tell Git about it we first need to add it to Git's *staging area*, which is also known as the *index* or the *cache*.
 
     $ git add journal.txt
     $ git status journal.txt
@@ -83,7 +83,7 @@ Now, to tell Git to record our change, our new file, into the repository. This i
 
     $ git commit
 
-Our editor will now pop up. Why? Well, Git can automatically figure out when directories and files are commited, and who by (thanks to the information we provided before) and even, what changes were made, but it cannot figure out why. So we need to provide this in a *commit message*. So let's type in a message.
+Our editor will now pop up. Why? Well, Git can automatically figure out when directories and files are committed, and who by (thanks to the information we provided before) and even, what changes were made, but it cannot figure out why. So we need to provide this in a *commit message*. So let's type in a message.
 
 > **Top tip: Write useful commit messages**
 
@@ -103,7 +103,7 @@ Now, if we look at its status,
     # On branch master
     nothing to commit (working directory clean)
 
-`nothing to commit` means that our file is now in the repository, our working directory is up-to-date and we have no uncommited changes in our staging area.
+`nothing to commit` means that our file is now in the repository, our working directory is up-to-date and we have no uncommitted changes in our staging area.
 
 We can get a list of all the changes made to our repository as follows,
 
@@ -117,7 +117,7 @@ Now let's make some more changes to our file and extend our paper. If we now run
 
     $ git status journal.txt
 
-we see a `Changes not staged for commit` section and our file is marked as `modified`. This means that a file Git knows about has been modified by us but has not yet been commited. So we can add it to the staging area and then commit the changes,
+we see a `Changes not staged for commit` section and our file is marked as `modified`. This means that a file Git knows about has been modified by us but has not yet been committed. So we can add it to the staging area and then commit the changes,
 
     $ git add journal.txt
     $ git commit
@@ -160,7 +160,7 @@ and Git will add, then commit, both the directory and the file.
 
 ### Discarding changes
 
-Let us suppose we've made a change to our file and not yet commited it. We can see the changes that we've made,
+Let us suppose we've made a change to our file and not yet committed it. We can see the changes that we've made,
 
     $ git diff journal.txt
 
@@ -170,7 +170,7 @@ This shows the difference between the latest copy in the repository and the chan
 * `+` means a line was added. 
 * A line that has been edited is shown as a removal of the old line and an addition of the updated line.
 
-We may have made our change just to see how something looks, or, for code, to quickly try something out. But we may be unhappy with our changes. If so, we can just throw them away and return our file to the most recent version we commited to the repository by using,
+We may have made our change just to see how something looks, or, for code, to quickly try something out. But we may be unhappy with our changes. If so, we can just throw them away and return our file to the most recent version we committed to the repository by using,
 
     $ git checkout -- journal.txt
 
