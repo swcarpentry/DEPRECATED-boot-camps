@@ -72,7 +72,17 @@ Nose provides a range of assertions that can be used when a test is not just che
 
 ### Floating point tests
 
-* assert_almost_equal...
+When comparing floating-point numbers for equality, allow some tolerance for small differences due to
+the way values are represented and rounded.
+
+    from nose.tools import assert_almost_equal
+
+    from mycode import hypotenuse
+
+    def test_hypotenuse_345():
+        observed = hypotenuse(3.0, 4.0)
+        expected = 5.0
+        assert_almost_equal(observed, expected)
 
 ### Fixtures
 
