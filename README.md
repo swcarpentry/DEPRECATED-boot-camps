@@ -11,17 +11,17 @@ Run by [Software Carpentry](http://software-carpentry.org), [The Software Sustai
 We are running 3 sessions on useful software development skills for researchers. Each session will provide a hands-on overview of skills and tools that enable researchers to do more, in less time and with less pain. Our sessions will look at,
 
 * 11:00 - Using version control to record provenance and collaborate more easily. This session includes an introduction to [Git](http://git-scm.com/) and [GitHub](http://github.com).
- * [Pre-questionnaire](TODO)
+ * [Pre-questionnaire](https://docs.google.com/forms/d/1x7_roPtyyZHhZM53h6xC0TL3Elv29l30NFeF-miz9tM/viewform)
  * [Start...](version-control/README.md)
- * [Post-questionnaire](TODO)
+ * [Post-questionnaire](https://docs.google.com/forms/d/1bhD4MyCKKBQJcjAMBZAE-QBMqjtwKw9A1EuWlDSkCp4/viewform)
 * 14:00 - Using testing to help ensure your software, and results, are correct. 
- * [Pre-questionnaire](TODO)
+ * [Pre-questionnaire](https://docs.google.com/forms/d/1bJkJWxaAchiIvIoo0CQ63DQyRi8raOtCu26A0IUW6xI/viewform)
  * [Start...](testing/README.md)
- * [Post-questionnaire](TODO)
+ * [Post-questionnaire](https://docs.google.com/forms/d/1vS-50RFWjILytZxTTH-bu088rVJEnuuYYCLReT_PFMg/viewform)
 * 16:00 - Data management using a [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases to manage your data more easily. This session includes an introduction to the NoSQL database [MongoDB](http://www.mongodb.org/).
- * [Pre-questionnaire](TODO)
+ * [Pre-questionnaire](https://docs.google.com/forms/d/18AtA0bYjh5TTKudrQPT_EA5vLRZsVfqXHFWqUaUBsuc/viewform)
  * [Start...](data/README.md)
- * [Post-questionnaire](TODO)
+ * [Post-questionnaire](https://docs.google.com/forms/d/14nkNUJGOr1bAiIDZ1Y1qaXpU_9Xe9wFC7gH-gjycEbw/viewform)
 
 The sessions are drawn from Software Carpentry's highly successful [boot camps](http://software-carpentry.org/bootcamps). Boot camps are for researchers who know how to program but want to develop skills that help them to achieve more in less time, to free up more time for science and to contribute to correct, reproducible and reusable research.
 
