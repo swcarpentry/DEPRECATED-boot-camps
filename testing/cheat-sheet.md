@@ -86,9 +86,15 @@ the way values are represented and rounded.
 
 ### Testing exceptions
 
-TODO:
+Testing that a method raises the appropriate exception when the input is invalid:
 
-* using `@raises` decorator
+    from nose.tools import raises
+
+    from mystatscode import mean
+
+    @raises(TypeError)
+    def test_not_a_list():
+        observed = mean(1)
 
 ### Fixtures
 
