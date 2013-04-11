@@ -256,7 +256,7 @@ our test suite again.
 Making a Standalone Script
 --------------------------
 
-Now that our module has been tested, lets turn this program into a standalone 
+Now that our module has been tested, let's turn this program into a standalone 
 script that we can run from the command line. This takes very little additional 
 work, now that we have our function in a module.
 
