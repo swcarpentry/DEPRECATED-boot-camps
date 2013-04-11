@@ -4,10 +4,10 @@ Python Testing Cheat Sheet
 Why testing?
 ------------
 
-# Helps you to think about expected behavior, especially boundary cases,
-# documents expected behavior,
-# confidence recent changes didn't break anything that worked before,
-# confidence code is correct.
+1. Helps you to think about expected behavior, especially boundary cases,
+2. documents expected behavior,
+3. confidence recent changes didn't break anything that worked before,
+4. confidence code is correct.
 
 
 Defensive programming
@@ -85,8 +85,11 @@ Test-driven deveopment
 ----------------------
 
 ***Red.*** Write test function that checks one new functionality you want to add to your code. -- tests have to fail.
+
 ***Green.*** Write minimal code that implements desired features until all tests pass.
+
 ***Refactor.*** Improve code wrt. readability and speed. Constantly check that tests still pass.
+
 ***Commit.*** Commit working code to version control.
 
 Repeat.
