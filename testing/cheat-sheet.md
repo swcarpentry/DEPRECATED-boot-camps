@@ -1,6 +1,15 @@
 Python Testing Cheat Sheet
 ==========================
 
+Why testing?
+------------
+
+1. Helps you to think about expected behavior, especially boundary cases,
+2. documents expected behavior,
+3. confidence recent changes didn't break anything that worked before,
+4. confidence code is correct.
+
+
 Defensive programming
 ---------------------
 
@@ -51,6 +60,12 @@ There are some additional rules, and you can configure your own, but this should
 ### Other assertions
 
 Nose provides a range of assertions that can be used when a test is not just checking a simple equality, e.g.
+* assertTrue, assertFalse
+* assertIn, assertNotIn
+* assertIs, assertIsNot
+* assertRaises
+* (what else?)
+
 
     from nose.tools import assert_items_equal
 
@@ -65,6 +80,7 @@ Nose provides a range of assertions that can be used when a test is not just che
 
 When comparing floating-point numbers for equality, allow some tolerance for small differences due to
 the way values are represented and rounded.
+* assertGreater, assertLess
 
     from nose.tools import assert_almost_equal
 
@@ -123,3 +139,29 @@ step must be executed once before each test function is called:
     def test_clear_long_list():
         clear(long_list)
 	assert_equal(len(long_list), 0)
+
+
+
+Test-driven deveopment
+----------------------
+
+***Red.*** Write test function that checks one new functionality you want to add to your code. -- tests have to fail.
+
+***Green.*** Write minimal code that implements desired features until all tests pass.
+
+***Refactor.*** Improve code wrt. readability and speed. Constantly check that tests still pass.
+
+***Commit.*** Commit working code to version control.
+
+Repeat.
+
+
+General advice
+--------------
+
+* Perfect test-case coverage is impossible.
+* Try to test distinct functionalities.
+* If you find a bug yet undiscovered by previous test, make it a new test case.
+
+
+
