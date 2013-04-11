@@ -22,15 +22,6 @@ Alternatively, raise an exception to indicate what the problem is:
         return 0
 
 
-Unittest
---------
-
-TODO: write this section
-
-* extending TestCase
-* assertions, e.g. self.assertEquals
-
-
 Nose
 ----
 
