@@ -22,8 +22,8 @@ Alternatively, raise an exception to indicate what the problem is:
         return 0
 
 
-Nose
-----
+Unit testing with Nose
+----------------------
 
 To run tests, at the shell prompt, type
 
