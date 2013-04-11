@@ -4,7 +4,11 @@ Python Testing Cheat Sheet
 Why testing?
 ------------
 
-(todo)
+# Helps you to think about expected behavior, especially boundary cases,
+# documents expected behavior,
+# confidence recent changes didn't break anything that worked before,
+# confidence code is correct.
+
 
 Defensive programming
 ---------------------
@@ -41,7 +45,7 @@ To run tests, at the shell prompt, type
 
     nosetests
 
-TODO: finish this
+TODO: finish this (what do you want to add here?)
 
 By default, Nose will find tests in files named `test_*`.
 
@@ -60,24 +64,44 @@ By default, Nose will find tests in files named `test_*`.
 ### Other assertions
 
 TODO: finish this
+* assertTrue, assertFalse
+* assertIn, assertNotIn
+* assertIs, assertIsNot
+* assertRaises
+* (what else?)
+
 
 ### Floating point tests
 
 * assert_almost_equal...
+* assertGreater, assertLess
 
 ### Fixtures
+
+(todo)
 
 
 Test-driven deveopment
 ----------------------
 
-todo: red-green-refactor(-commit)
+***Red.*** Write test function that checks one new functionality you want to add to your code. -- tests have to fail.
+***Green.*** Write minimal code that implements desired features until all tests pass.
+***Refactor.*** Improve code wrt. readability and speed. Constantly check that tests still pass.
+***Commit.*** Commit working code to version control.
+
+Repeat.
+
+
+General advice
+--------------
+
+* Perfect test-case coverage is impossible.
+* Try to test distinct functionalities.
+* If you find a bug yet undiscovered by previous test, make it a new test case.
 
 
 TODO:
 
 * setup...
 * per-test fixtures with @with_setup decorator
-* put bugs into test cases
-
 
