@@ -98,7 +98,37 @@ Testing that a method raises the appropriate exception when the input is invalid
 
 ### Fixtures
 
-TODO:
+A *fixture* is what the test function uses as input, e.g. values, objects and arrays.
 
-* setup...
-* per-test fixtures with @with_setup decorator
+To set up a fixture once before any tests are run, define a method called `setup` in the same files
+as the test functions. This can assign values to global variables for use in the test functions.
+
+    long_list = None
+
+    def setup():
+        long_list = [0]
+        # append more values to long_list...
+
+If the global variables assigned in `setup` might be modified by some of the test functions, the set-up
+step must be executed once before each test function is called:
+
+    from nose.tools import with_setup
+
+    from mycode import mean, clear
+
+    long_list = None
+
+    def setup_each():
+        long_list = [0]
+        # append more values to long_list...
+
+    @with_setup(setup_each)
+    def test_mean_long_list():
+        observed = mean(long_list)
+        expected = 0.0
+        assert_equal(observed, expected)
+
+    @with_setup(setup_each)
+    def test_clear_long_list():
+        clear(long_list)
+	assert_equal(len(long_list), 0)
