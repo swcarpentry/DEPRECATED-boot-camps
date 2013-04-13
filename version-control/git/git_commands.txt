@@ -1,0 +1,91 @@
+ ⮀ take temp
+
+mkdir temp
+cd temp
+
+git init
+Initialized empty Git repository in /private/tmp/temp/.git/
+ls -la
+total 0
+drwxr-xr-x   3 karthik  wheel   102 Apr 12 16:05 .
+drwxrwxrwt  48 root     wheel  1632 Apr 12 16:05 ..
+drwxr-xr-x  10 karthik  wheel   340 Apr 12 16:05 .git
+ 
+
+ echo "My first file" > file1.txt
+  git status
+
+
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#   file1.txt
+nothing added to commit but untracked files present (use "git add" to track)
+  git add file1.txt
+  git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#   new file:   file1.txt
+#
+  git commit -m"My first commit"
+[master (root-commit) c173899] My first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+  git status
+# On branch master
+nothing to commit, working directory clean
+ 
+ echo "Another exciting data point to my file" >> file1.txt
+
+
+ git status
+
+ # On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#   modified:   file1.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ git ci -am "Updated file 1 with new awesome information"
+
+[master ee10d63] Updated file 1 with new awesome information
+ 1 file changed, 1 insertion(+)
+
+ git log
+
+ commit ee10d636d5859340a37e2a9b5e1d2f1138858b20
+Author: Karthik Ram <karthik.ram@gmail.com>
+Date:   Fri Apr 12 17:33:52 2013 -0700
+
+    Updated file 1 with new awesome information
+
+commit c1738998b90db8e76172fb23338aa605a4c6d34f
+Author: Karthik Ram <karthik.ram@gmail.com>
+Date:   Fri Apr 12 16:06:25 2013 -0700
+
+    My first commit
+(END)
+
+
+
+
+
+
+
+
+ee10d636d5859340a37e2a9b5e1d2f1138858b20 Updated file 1 with new awesome information
+c1738998b90db8e76172fb23338aa605a4c6d34f My first commit
+
+
