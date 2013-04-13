@@ -1,7 +1,7 @@
 
-# My Git into to the Berkeley Software Carpentry group
+# Git intro as a slide deck
 
-Question, comments, pull requests welcome.
+Just run `index.html` from this folder. Will also work through github pages if copied to a `gh-pages` branch.
 
 
 ## Image sources
