@@ -169,7 +169,7 @@ And then check that we have our changes,
 
 ### Conflicts and how to resolve them
 
-Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to GitHub,
+Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket,
 
     $ nano journal.txt
     $ git add journal.txt
