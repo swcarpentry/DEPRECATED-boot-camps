@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Git for Science</title>
+    <meta name="description" content="A short introduction to git">
+        <meta name="author" content="Karthik Ram">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="css/slides/reveal.min.css" />
+    <link rel="stylesheet" href="css/slides/oscar.css" id="theme" />
+    <link rel="stylesheet" href="css/slides/ted.css" />
+    <link rel="stylesheet" href="css/slides/github.css">
+
+<!-- Licensed as CC-BY, please edit and use as you see fit. -->
+
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+      <section id="slide-title" data-state="bluesky">
+  <h1>Git for scientists</h1>
+  <p>
+    <div class="attribution">
+    <a href="http://www.inundata.org/">Karthik Ram </a><br />
+    @_inundata
+    </div>
+  </p>
+</section>
+
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ## Have you heard of a Version Control System?
+    </script>
+</section>
+
+<!-- ......Let's jump into git, hooray! .......... -->
+
+
+<!-- .......................................... -->
+<section id="plan" data-markdown>
+    <script type="text/template">
+        ![](img/vcs_for_science.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="Transparency" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ## Uses of version control
+          * An amazing backup
+          * promotes transparency
+          * facilitates reproducibility
+          * faster recovery from errors
+          * easier collaboration
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="benefits_for_you" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ## Uses of version control
+          * Writing papers (either alone or collaboratively)
+          * Manage spreadsheet data
+          * Writing lectures
+          * Writing syllabi
+          * maintain your scripts (R, Python, whatever else)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="not_dropobox" data-markdown data-state="bluesky">
+    <script type="text/template">
+        This is much more robust than a system like Dropbox <br>
+        You decide when to version and what to version.
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="snapshots" data-markdown>
+
+    <script type="text/template">
+    ### Version control captures snapshots of your work through time
+    ![](http://git-scm.com/figures/18333fig0105-tn.png)
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="how_it_works" data-markdown data-state="bluesky">
+    <script type="text/template">
+         ## What is Git?
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="distributed" data-markdown>
+    <script type="text/template">
+        ##  Git is an open source, distributed, version control system.
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="whatgoesintoagitrepo">
+  <h2>A git repository is two things</h2>
+  <ul>
+    <li>A <b>key value store</b> maps checksum &rarr; file</li>
+    <li><b>A tree</b>: How these checksums correspond to versions and branches.</li>
+  </ul>
+  </aside>
+  </section>
+
+  <!-- .......................................... -->
+<section id="a_tree" data-markdown>
+      <script type="text/template">
+      ## How Git internally tracks changes
+      <br><br>
+          ![](img/acommit_tree.png)
+      </script>
+  </section>
+
+<!-- .......................................... -->
+<section id="a_commit" data-markdown>
+    <script type="text/template">
+    ##  Examine a commit (snapshot)
+        ![](img/commit_anatomy.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="three_commits" data-markdown>
+    <script type="text/template">
+        ![](img/threecommits.png)
+    </script>
+</section>
+<!-- ~~~~~~~~~~~~~ Start Chacon  ~~~~~~~~~~~~~~~~~~ -->
+<section id="how_git_works" data-markdown data-state="bluesky">
+    <script type="text/template">
+        # What happens underneath the hood
+    </script>
+</section>
+
+<section id="chacon51" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0051.png)
+    </script>
+</section>
+
+<section id="chacon52" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0052.png)
+    </script>
+</section>
+
+<section id="chacon53" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0053.png)
+    </script>
+</section>
+
+<section id="chacon54" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0054.png)
+    </script>
+</section>
+
+<section id="chacon55" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0055.png)
+    </script>
+</section>
+
+<section id="chacon56" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0056.png)
+    </script>
+</section>
+
+<section id="chacon57" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0057.png)
+    </script>
+</section>
+
+<section id="chacon58" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0058.png)
+    </script>
+</section>
+
+<section id="chacon59" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0059.png)
+    </script>
+</section>
+
+<section id="chacon60" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0060.png)
+    </script>
+</section>
+
+<section id="chacon61" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0061.png)
+    </script>
+</section>
+
+<section id="chacon62" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0062.png)
+    </script>
+</section>
+
+<section id="chacon63" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0063.png)
+    </script>
+</section>
+
+<section id="chacon64" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0064.png)
+    </script>
+</section>
+
+<section id="chacon65" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0065.png)
+    </script>
+</section>
+
+<section id="chacon66" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0066.png)
+    </script>
+</section>
+
+<section id="chacon67" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0067.png)
+    </script>
+</section>
+
+<section id="chacon68" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0068.png)
+    </script>
+</section>
+
+<section id="chacon69" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0069.png)
+    </script>
+</section>
+
+<section id="chacon70" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0070.png)
+    </script>
+</section>
+
+<section id="chacon71" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0071.png)
+    </script>
+</section>
+
+<section id="chacon72" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0072.png)
+    </script>
+</section>
+
+<section id="chacon73" data-markdown>
+    <script type="text/template">
+        ![](chacon/foo-0073.png)
+    </script>
+</section>
+
+<!-- ~~~~~~~~~~~~~ End Chacon, damn that was long  ~~~~~~~~~~~~~~~~~~ -->
+
+<!-- .......................................... -->
+<section id="lets_start" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ## Lets start using Git!
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="shell_git" data-markdown>
+    <script type="text/template">
+        ## Type in git from the terminal
+<br>
+```
+git
+```
+</script>
+</section>
+
+<!-- .......................................... -->
+<section id="configuration" data-markdown>
+    <script type="text/template">
+        ## Configuration
+        <br><br>
+        ```
+        git config --global user.name "Karthik Ram"
+        git config --global user.email "kram@berkeley.edu"
+        git config --global color.ui "auto"
+        ```
+<p class="small" align="left">See your current setings</p>
+```
+git config --list
+git config user.name
+```
+    </script>
+</section>
+
+
+
+<!-- .......................................... -->
+<section id="basic_workflow" data-markdown>
+    <script type="text/template">
+      ## There are 4 main steps to a basic Git workflow
+<br><br>
+
+1. Edit files (grab a tub of ice cream off the shelf)
+2. Review these changes (Do you really want ice cream?)
+3. Stage the changes (put it in your cart)
+4. Commit these changes (pay for it)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="lifecycle_more">
+<img src="img/lifecycle2.png" />
+</section>
+
+<!-- .......................................... -->
+<section id="workflow_fleshed_out" data-markdown>
+<script type="text/template">
+  ## There are 4 main steps to a basic Git workflow
+
+ 1. Edit files (create a file)
+ 2. Review these changes (<code>git diff</code>)
+ 3. Stage the changes (<code>git add</code>)
+ 4. Commit these changes (<code>git commit</code>)
+    </script>
+</section>
+
+
+
+
+<!-- .......................................... -->
+<section id="even-simpler-workflow-ice-cream">
+     <h2>An even simpler workflow</h2>
+<ol>
+ <li class="fragment"> edit files (Grab tub of ice cream)</li>
+ <li class="fragment"> Stage the changes and commit  (run to cashier and pay for it)</li>
+</ol>
+</section>
+
+<!-- .......................................... -->
+<section id="even-simpler-workflow" data-markdown>
+    <script type="text/template">
+      ## An even simpler workflow
+      1. edit files (Use your favorite editor)
+      2. Stage the changes and commit  (`git commit -am`)
+    </script>
+</section>
+
+
+
+<!-- .......................................... -->
+<section id="create_new_folder" data-markdown>
+    <script type="text/template">
+    ## Create a folder and initialize a git repository
+    <br><br>
+```
+mkdir temp
+cd temp
+git init
+```
+
+```
+Initialized empty Git repository in /private/tmp/temp/.git/
+```
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="examine_the_directory" data-markdown>
+    <script type="text/template">
+### Now examine the folder
+
+```
+ls -la
+```
+
+```
+total 0
+drwxr-xr-x   3 karthik  wheel   102 Apr 12 16:05 .
+drwxrwxrwt  48 root     wheel  1632 Apr 12 16:05 ..
+drwxr-xr-x  10 karthik  wheel   340 Apr 12 16:05 .git
+```
+```
+ls -l .git
+
+total 40
+-rw-r--r--   1 karthik  wheel   16 Apr 12 16:06 COMMIT_EDITMSG
+-rw-r--r--   1 karthik  wheel   23 Apr 12 16:05 HEAD
+drwxr-xr-x   2 karthik  wheel   68 Apr 12 16:05 branches
+-rw-r--r--   1 karthik  wheel  138 Apr 12 16:05 config
+-rw-r--r--   1 karthik  wheel   73 Apr 12 16:05 description
+drwxr-xr-x  11 karthik  wheel  374 Apr 12 16:05 hooks
+-rw-r--r--   1 karthik  wheel  104 Apr 12 16:06 index
+drwxr-xr-x   3 karthik  wheel  102 Apr 12 16:05 info
+drwxr-xr-x   4 karthik  wheel  136 Apr 12 16:06 logs
+drwxr-xr-x   7 karthik  wheel  238 Apr 12 16:06 objects
+drwxr-xr-x   4 karthik  wheel  136 Apr 12 16:05 refs
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="Create-a-file" data-markdown>
+    <script type="text/template">
+  ## Create a file
+
+  ```
+  echo "My first file" > file1.txt
+  git status
+  ```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="git_status" data-markdown>
+    <script type="text/template">
+    ## git status
+```
+git status
+```
+
+```
+  # On branch master
+  #
+  # Initial commit
+  #
+  # Untracked files:
+  #   (use "git add <file>..." to include in what will be committed)
+  #
+  #   file1.txt
+nothing added to commit but untracked files present (use "git add" to track)
+```
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="add_a_file" data-markdown>
+    <script type="text/template">
+## git add
+
+```
+  git add file1.txt
+  git status
+```
+
+```
+  # On branch master
+  #
+  # Initial commit
+  #
+  # Changes to be committed:
+  #   (use "git rm --cached <file>..." to unstage)
+  #
+  #   new file:   file1.txt
+  #
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="your_first_commit" data-markdown>
+    <script type="text/template">
+## git commit
+
+```
+  git commit -m"My first commit"
+
+
+[master (root-commit) c173899] My first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+  git status
+  # On branch master
+nothing to commit, working directory clean
+```
+<br>
+<p class="small" align="left">Now another quick status check</p>
+<br>
+```
+git status
+
+  # On branch master
+nothing to commit, working directory clean
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="make_changes" data-markdown>
+    <script type="text/template">
+      ## Make some changes
+
+<pre><code>echo "Another exciting data point to my file" >> file1.txt
+</code></pre>
+
+<pre><code>git status
+
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#   modified:   file1.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="log" data-markdown>
+    <script type="text/template">
+## View the logs
+
+```
+git log
+```
+
+```
+commit ee10d636d5859340a37e2a9b5e1d2f1138858b20
+Author: Karthik Ram <karthik.ram@gmail.com>
+Date:   Fri Apr 12 17:33:52 2013 -0700
+
+    Updated file 1 with new awesome information
+
+commit c1738998b90db8e76172fb23338aa605a4c6d34f
+Author: Karthik Ram <karthik.ram@gmail.com>
+Date:   Fri Apr 12 16:06:25 2013 -0700
+
+    My first commit
+(END)
+```
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="exercise_1" data-markdown>
+    <script type="text/template">
+## Exercise
+<hr>
+1. Create a new folder
+2. Initialize a git repository (<code>use git init</code>)
+3. Create a file and add it
+4. Commit the file.
+5. View the logs (<code>git log</code>)
+6. Modify and commit the file again
+7. Now view the logs to see your commit history
+8. Take a break!
+    </script>
+</section>
+
+
+
+<!-- .......................................... -->
+<section id="branch_title" data-markdown>
+    <script type="text/template">
+        # Git Branching
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="masters">
+<h3>Master branch</h3>
+<img src="img/threecommits.png" />
+<hr>
+<img src="img/masterbranch.png" />
+</section>
+
+<!-- .......................................... -->
+<section id="curr_br">
+<h3>Current branch</h3>
+<img src="img/HEAD.png" />
+</section>
+
+<!-- .......................................... -->
+<section id="new_br">
+<h3>New branch</h3>
+<img src="img/newbranch.png" />
+</section>
+
+<!-- .......................................... -->
+<section id="new_branch">
+<h3>New branch</h3>
+<img src="img/HEAD_testing.png" />
+</section>
+
+<!-- .......................................... -->
+<section id="create_a_branch" data-markdown>
+    <script type="text/template">
+    ## Lets branch out!
+    <br><br>
+
+```
+ # What branches do I have?
+git branch
+ # create a new branch
+git branch new_idea
+git branch
+git checkout new_idea
+git branch
+echo "Another new line" >> file1.txt
+echo "Added a sentence in my new branch" >> file1.txt
+```
+    </script>
+</section>
+
+<section id="commit_to_new_branch" data-markdown>
+    <script type="text/template">
+Make some changes to this <code>new_idea</code> branch
+
+```
+echo "Another new line" >> file1.txt
+echo "Added a sentence in my new branch" >> file1.txt
+```
+Do a <code>git diff</code>
+
+```
+git diff
+```
+Then commit your changes (Capitalized, short summary (less than 50 chars))
+
+```
+git commit
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="comparing-two-branches">
+  <h3>Compare the two branches</h3>
+<table  width=80%>
+<tr>
+<td>
+<pre>
+<code>git checkout master
+git branch
+* master
+  new_idea
+
+cat file1.txt
+
+My first file
+Another exciting data point
+</code>
+</pre>
+</td>
+
+<td>
+<pre>
+<code>git branch
+git checkout new_idea
+  master
+* new_idea
+
+cat file1.txt
+
+My first file
+Another exciting data point
+Another new line
+Added a sentence in my new branch
+</code>
+</pre>
+</td>
+
+
+</tr></table>
+</section>
+
+
+<section id="new_files" data-markdown>
+    <script type="text/template">
+### Also create a couple of new files in this branch
+
+```
+touch a.txt
+touch b.txt
+git add .
+git commit -m "Add new files"
+git status
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="merging" data-markdown>
+    <script type="text/template">
+## Merging two branches
+
+```
+git checkout master
+git merge new_idea
+git status
+cat file1.txt
+```
+    </script>
+</section>
+
+
+<!-- ..........................................
+ <section id="what_merge_looks" data-markdown>
+     <script type="text/template">
+     ## What a merge looks like
+ <br>
+         ![](img/after_merge.png)
+     </script>
+ </section>
+ -->
+
+<!-- .......................................... -->
+<section title="after_merge">
+<h2>What a merge looks like</h2>
+<img src="http://git-scm.com/figures/18333fig0328-tn.png" />
+</section>
+
+
+<!-- .......................................... -->
+<section id="adding-a-remotes" data-markdown>
+    <script type="text/template">
+        # Add a remote to mirror your repository
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="adding_a_remote" data-markdown>
+    <script type="text/template">
+### What remotes do you have?
+
+```
+git remote -v
+```
+### Now we can add a remote
+
+```
+git remote add ...
+```
+
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="remote-hosts" data-markdown  data-state="bluesky">
+    <script type="text/template">
+        # Using a Git hosting service
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="hosting_options" data-markdown>
+<script type="text/template">
+### Where to host your code
+
+* **Bitbucket.com**: unlimited free private hosting for students
+* **GitHub.com**: offers 5 free private repositories for students
+* Both offer unlimited public repositories
+</script>
+</section>
+
+<!-- .......................................... -->
+<section id="clone_this_repo" data-markdown>
+    <script type="text/template">
+    ### Clone the repo you are currently viewing!
+```
+git clone git@github.com:karthikram/git_intro.git
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="five_min_break" data-markdown data-state="skyblue">
+    <script type="text/template">
+## Take 15 minutes to poke around my repo.
+## See my logs, branches (or just take a break)
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="github" data-markdown>
+  # Using a Git hosting service like GitHub
+    <script type="text/template">
+    ## GitHub.com
+        ![](img/github_com.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="push_and_pull" data-markdown>
+    <script type="text/template">
+        # Syncing with a remote repository
+```
+git push
+```
+
+```
+git pull
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="review" data-markdown>
+    <script type="text/template">
+        ## Git command review
+1. git add
+2. git commit
+3. git status
+4. git clone
+5. git diff
+6. git branch
+7. git merge
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="resources" data-markdown>
+    <script type="text/template">
+        ## Additional resources
+1. git-scm.com
+2. gitref.org
+3. progit.com
+    </script>
+</section>
+
+<!-- .......................................... -->
+<!-- Prius Dashboard image source: http://www.flickr.com/photos/shinerclay/5020338937/ -->
+<!-- This is how you are using Git now, which is fine. -->
+<section id="prius" data-markdown  data-state="bluesky">
+    <script type="text/template">
+        ![](img/prius.jpg)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<!-- Endeavor image source: http://www.flickr.com/photos/jurvetson/6912974136/ -->
+<!-- But really, this is the true power of Git. You can expose every wire and button under the hood if you wanted to. -->
+<section id="shuttle" data-markdown  data-state="bluesky">
+    <script type="text/template">
+        ![](img/endavour.jpg)
+    </script>
+</section>
+
+
+
+<section id="things-i-didnt-cover" data-state="bluesky">
+<h3>Other things you can do</h3>
+<ul>
+<li>Collaborate with your coauthors</li>
+<li>Use various free/paid tools including guis</li>
+<li>Manage everything with git</li>
+</ul>
+</section>
+
+
+<section id="vcs_all_the_things" data-markdown data-state="bluesky">
+    <script type="text/template">
+![](img/kid_like_a_boss.jpg)
+    </script>
+</section>
+<!-- ~~~~~~~~~~~~~ end divs  ~~~~~~~~~~~~~~~~~~ -->
+
+      </div>
+    </div>
+
+<script src="js/slides/head.min.js"></script>
+<script src="js/slides/reveal.min.js"></script>
+
+<!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="js/jquery.dropkick-1.0.0.js"></script>
+    <script src="js/custom_checkbox_and_radio.js"></script>
+    <script src="js/custom_radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    // <script src="js/bootstrap-tooltip.js"></script>
+    // <script src="js/jquery.placeholder.js"></script>
+    // <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <script src="js/application.js"></script>
+<script>
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+        { src: 'js/slides/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'js/slides/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'js/slides/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'js/slides/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                ]
+            });
+</script>
+
+  </body>
+</html>
