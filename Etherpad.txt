@@ -1,0 +1,693 @@
+Using the Etherpad
+
+Please start by entering your name to the left. Feel free to ask questions in the pad or in the chat window on the right. We'll be posting notes and links here in the pad throughout the course.
+
+Downloading workshop materials
+
+http://jkitzes.github.io/boot-camps/2013-04-13-ucb/
+
+Open a Terminal window, navigate to a easy-to-find location on your hard drive, and run the command:
+
+git clone https://github.com/jkitzes/boot-camps.git --branch 2013-04-ucb --single-branch SWC_UCB
+
+Simple Python program: helloworld.py
+#!/usr/bin/env python
+print("Hello, world!")
+
+Copy the helloworld.py into the parent directory:
+cp helloworld.py ../
+
+Rename helloworld.py to helloworld:
+mv helloworld.py helloworld
+
+Remove helloworld (-i for interactively, to be safe)
+rm -i helloworld
+
+Change permissions of helloworld.py (make it executable by the user):
+chmod u+x helloworld.py
+
+Execte helloworld.py:
+./helloworld.py
+
+https://etherpad.mozilla.org/swcucb20130413
+
+Shell
+
+pwd = print working directory = "show us where we are"
+ls = list files and directories
+cp = copy a file
+cd = change directory
+man = ("manual") show help for a command
+mkdir = make a new directory
+mv = move/rename a file
+rm = remove/delete a file (no recycle bin! this is permanent!)
+rmdir = remove/delete a directory (must be empty)
+cat = ("concatenate") print the contents of a file or files
+
+To differentiate files from directories, use 
+
+ls - F (directories will have a / at the end)
+
+To show special files and locations:
+
+ls -a
+
+To search for something in a man page, type a forward slash '/' and then what you want to search for, then enter. Type 'n' to search for the next match.
+
+If you are stuck on the man page, hit q
+
+root: /
+current directory: . or ./
+parent directory: .. or ../
+home directory: ~ (tilde)
+
+Pressing 'up' and 'down' in the terminal will move back or forward (respectively) in your command history so you don't have to retype commands.
+
+Text Editor Options
+
+Sublime Text - new, Karthik's favorite (free unlimited trial)
+Text Wrangler - basic, classic
+TextMate - very popular, free license for Berkeley affiliates
+
+(All of these are popular with programmers and have slightly different ways of giving you shortcuts, colors, highlighting, etc. to make your work go faster - it's not a bad idea to download a few to see what they can do.)
+
+Other editors (harder to use): emacs, vim
+(To get out of vim, enter :q and press return)
+(To get out of emacs, enter Ctrl-x-c)
+
+Type in whoami to find out who you are
+
+Hash bang line explanation:
+
+http://en.wikipedia.org/wiki/Shebang_(Unix)
+
+Permissions
+
+Commands:
+groups = show the groups a user is in
+
+Every user has different "permissions" that specify what that user is allowed to do
+
+Users can be in "groups" which have their own set of permissions. Users in a particular group have the permissions of that group.
+
+To show permissions for files and directories (and other information, like size), use:
+ls -l
+
+Permissions look like:
+drwxr--r--
+
+The letters mean that the permission is given, a dash means it is not.
+2, 5, 8: read permission
+3, 6, 9: write permission
+4, 7, 10: execute permission
+
+1: directory
+2, 3, 4: user permissions
+5, 6, 7: group permissions
+8, 9, 10: permissions for everyone else
+
+2, 5, 8: read permission
+3, 6, 9: write permission
+4, 7, 10: execute permission
+
+chmod -- change file modes
+
+chmod u+x -- executable for user
+chmod a+x -- executable for everybody
+chmod a-x -- executable for nobody
+chmod g+x -- executable for group
+(use r or w instead of x to change read/write permissions)
+
+Why do I have "@" at the end of my file permission listing? (OSX users)
+
+https://discussions.apple.com/thread/1202723?start=0&tstart=0
+
+Q: I'm using TextWrangler and my Python script is already executable, but that's not true for Geoff (teaching bash).  Why is that?
+
+A: TextWrangler detects the "#!" first line in Python scripts, and automatically saves the script as an executable file. 
+
+Python
+
+Follow along:
+https://github.com/jkitzes/boot-camps/tree/2013-04-ucb/python
+
+Bash Resources
+
+software-carpentry.org - see Lessons -> Shell, for example
+http://software-carpentry.org/4_0/shell/index.html
+
+List of bash guides (with accessibility & quality) rankings:
+http://wiki.bash-hackers.org/scripting/tutoriallist
+
+
+Other commands that are useful that we didn't cover:
+less -- display a file incrementally rather than all at once
+grep -- search the contents of a file or files
+find -- find the location of files
+
+Enabling the Windows Clipboard When Running a Linux OS in VirtualBox
+ - More detailed instructions: http://www.virtualbox.org/manual/ch04.html#idp12039536
+ - this seems to work for text, but may need additional steps to copy/paste files
+
+CAVEAT: This will probably reboot your Linux instance, after which you'll have log in and then restart ipython to continue the workshop. Hence you might want to do it when you have a few minutes.
+
+1. Enable bidirectional clipboard for your Ubuntu Virtual Machine. 
+In VirtualBox, right-click on the Ubuntu Virtual Machine and select Settings -- General -- Advanced tab. Change Shared Clipboard: Bidirectional
+
+This isn't enough though. Oh no, you're just getting started. In addition to that, you also have to install a program/driver called 'Guest Additions' on the guest OS. For a Ubuntu Virtual Machine running, do the following:
+
+2. First make sure dkms is installed (type dkms at the console). 
+If not installed, you can install it (small download) by typing
+sudo apt-get install dkms
+
+3. Mount the 'Guest Additions.iso' CD Imgage that comes with UBuntu. 
+Go to 'Device' menu on your running virtual machine, then 'Install Guest Additions' (or press Host+D, aka right-ctrl+D). This will mount the CD and open it in a new explorer window. After you mount it, the files in the cd image will appear as a directory under \media
+
+4. Navigate to the directory of the mounted CD
+cd /media/swc/VBOXADDITIONS_4.2.12_84980
+
+5. To install the Guest Additions, you need to be logged in as an administrator. Switch yourself to the root user group
+sudo su root
+
+6. Execute the install script
+sh ./VBoxLinuxAdditions.run
+
+7. This may restart the Virtual Machine. When you log back in, the password for the Software Carpentry account is 'swc'
+
+8. To restart ipython, navigate to the python folder and once again enter:
+ipython notebook
+
+
+Feedback
+
+we should do introductions!
+
+GOOD THINGS
+Great self contained exercises +1+1
+Learned a lot, good tutorials to run through again later, nice to have numerous people helping+1+1+1
+good explanations (clear) (+1)+1
+coherent order+1
+well summarized +1
+very good to have helpers (+1 +1)+1+1
+It filled in a lot of holes that I had from learning everything on my own +1
+pace (+1, +1)(+1)
+interactive (+1, +1, +1)
+well-structured (+1,+1, +1)(+1)+1+1+1+1+1+1
+Great examples, and fun
+structure of ipython notebook: interactive vs full versions
+Clear overview of many things+1
+great to have so many helpers so problems individuals are having don't slow down the pace of things+1(+1)+1+1
+pacing, one-on-one help (+1)
+bash help was really clear.  it was good to step through various functions.
+good to have full notebook completed to compare answers on the notebook we were filling in.(+1+1)
+resources in order do more later
+Logic flow is clear, got comfortable with the interface fast
+places to go for more info were provided
+good exercises! Helpful notes. +1+1
+lead into python applications for GIS
+apprciated the plotting overview
+etherpad+1
+the full notes are useful for looking at later+1
+sharing notes
+smart, helpful teachers(+1)
+
+BAD THINGS
+Should set up guest additions and shared folers for virtual machines before hand on windows
+If you have any issues along the way it is hard to catch back up 
+the room is kind of cold? need more coffee? (+1)
+Maybe separate into two weekends? A little bit too intense
+small desks (+1 +1 +1 +1+1+1+1+1
+The bash unix part was slow and thin, python part was thick and fast (+1, +1)+1
+need to stop occasionally to help people catch up.. within reason
+unix part went too slow and python part went too fast; a lot of presumed knowledge on what is a string, float, integer, etc(+1)+1+1
+maybe it could be useful to have something read before the workshop so we could all be in a similar level+1+1
+overview of other langs and why python
+feels like we've spent a lot of time on this today, but just scratched the surface of programming in python (might be helpful to also have a step 2, i.e. a next level course some time soon)(+1)+1+1
+need more time for exercises
+unix commands for installation still a mystery (+1)
+A  good overview of file manipulation operations in bash; covering examples of common workflows (find and grep operations, pipes, concatenating data files) would be helpful...
+occasionally assume we already know what something is, so a quick explanation would help
+learning everything on a linux virtual machine on a windows PC is not super efficient in the long run, since i will either be running this on a pc or will learn how to actually use linux+1+1+1
+my brain hurts (+1, eyes too)
+really intense as a two-day weekend session.  spread over three days?
+not enough sunshine or surfing , you know?-1 go home hippie
+not enough alcohol?+infinity (+1, happy hour tomorrow)
+too much time spent on troubleshooting installations; perhaps provide pipelines for each person to test their installations prior to arrival?
+the range of abilities is probably frustrating for people on both ends of the spectrum, too slow or too quick
+if you work a lot with Arcgis you are limited to Windows OS...
+also, using the virtual machine just kind of sucks+1 +1
+some terminology is used that we might not be clear on. not always clear which terms are key to understand and which aren't+1
+
+LINGERING QUESTIONS
+
+How do you do statistics with python? Import R into python? is this easier than just using R?
+    Statistics functionality in Python is much more limited than R. Most of the good stuff is in the module scipy.stats, which is installed with Enthought and Anaconda. You can check that out to do statistics natively in Python.
+    Often, however, you'll still need to use R. For that, check out the package rpy2. Or, as we'll discuss in the reproducible workflow lesson, you can write a set of scripts in Python along with some in R and use them together to complete your entire research pipeline.
+    
+The link of Python to terminal is still confusing and how to pull up python
+    Launching 'python' from the terminal is a bit confusing because Python itself is a programming language, and what you launch from the terminal is a Python interpreter. This is a special program that lets you execute python code interactively as opposed to running a python file. So, if you run the command 'python', this brings up an interpreter; if you run the command 'python file.py', this executes the python code in file.py.
+    
+a few things that I need to reinforce on my own
+    Ok, let us know if you have any questions along the way!
+
+Working with servers on comand line +1
+    This is somewhat of a broad topic so I'm not sure if I'll give exactly the type of answer that you're looking for, but I can try. To access a server on the command line, people typically use ssh ("secure shell"). For example, 'ssh jhamrick@myserver.com' will connect to 'myserver.com' and try to log in as the user 'jhamrick' (and it may prompt you for a password as well). You can then navigate around the server using the command line the same way you would your local computer. By default, you can't run graphical applications (only text-based, terminal applications), but if you run ssh with the -X flag, it will allow you to run graphical apps (but they will probably be slow).
+    You can transfer files between computers using programs like scp ("secure copy") or rsync (I personally prefer rsync). For example, to copy a file from your computer to a server, you'd use something like 'rsync myfile.txt user@server.com:myfile.txt'. This will copy myfile.txt to the home directory of user on server.com. Note the colon after user@server.com -- this tells rsync that the path after the color is the path to copy to on the remote machine.
+    (This is what I was looking for-- thanks!)
+
+Grep on command line (+1+1)
+    For those unfamiliar with grep, it is really powerful way of searching through text and text files. It uses regular expressions (see http://www.regular-expressions.info/quickstart.html) (also see https://xkcd.com/208/) which are used to do string matching, for example 'ap.*' would match 'apple', 'apartment', etc., because the . symbol means "match any single character " and the * symbol means "match zero or more of the previous query" (which in this case is a .).
+    Ok, so the most basic way of using grep is 'grep regex file', which will search through the contents of 'file' and find strings that match the regular expression 'regex'. You can search through multiple files with 'grep regex file1 file2 ...' or recursively search all files in a directory with 'grep -r regex directory'. Some other useful flags are:
+    -i : ignore case ('grep a file' will match both A and a, for example)
+    -v : invert match (return lines that do not match the regular expression)
+    
+    In practice, I (Jess) only really use grep in a very simplified form (I don't know about the other instructors). So for example, if I need to change a variable name from 'foo' to 'bar', I might use grep to search for all instances of 'foo' so I can then replace them with 'bar'. It is useful to have a basic working knowledge of regular expressions but you probably don't need to do really complex matching.
+
+Tarballs and installation on command line
+Installation on the command line is a really hairy topic we've struggled teaching because everyone's machine is different.
+
+For Macs, there are a few different avenues for installing things. If you're installing an app from a dmg, you mount the dmg (which is a disk image), and then copy the app over to your applications folder. (There's a way to do this on the command line, too.) Sometimes, apps aren't contained in disk images, so all you have to do is copy things. The thing that's a pain about apps is that they have preference files and other things associated with them, so deleting the app doesn't mean you've completely uninstalled it.
+
+There are also pkg files that may or may not be in dmgs; double-clicking on them in Finder (after mounting a disk image, if any) will run an installer. The package is basically compressed, and runs a script that decompresses it and copies everything in the right location. 
+
+Then there are packages that are tarred up (and possibly compressed). Tar is a program that creates archives of files; it's a way of bundling together a bunch of separate files while preserving their directory structure. The command to bundle (also referred to as "tarring") and undbundle (also referred to as "untarring") is called "tar", and you can read about the command options at the command line using "man tar". Generally, if you want to create a tar file, you put everything you want in a folder, and then one directory level up from that folder, you'd use the command
+
+tar cvf my_tar_file.tar folder_name
+
+where the flags mean:
+c = create
+v = verbose (it'll list all of the files it's tarring as output on the command line)
+f = file (so right after the f, you specify the file name of the tar archive you're creating)
+
+If you want to zip up the archive, you'll add a "z" flag (usually after "c" and before "v", but the order of "c", "z", and "v" doesn't really matter); you'll also want to change the suffix of the archive from ".tar" to ".tar.gz".
+
+To unbundle a tar archive within your current working directory, you'll use:
+
+tar xvf my_tar_file.tar
+
+where the flags mean:
+x = extract
+v = verbose (it'll list all of the files it's untarring as output on the command line)
+f = file (again, specifies file name)
+
+If you want to unzip the archive, because it has the extension ".tar.gz" or ".tar.bz2", you'll use:
+
+tar xzvf my_zipped_tar_file.tar.gz
+
+or 
+
+tar xzvf my_zipped_tar_file.tar.bz2
+
+The different extensions for compressed tar archives just refer to different methods for compression.
+
+Okay, now you've untarred everything. Then what? If it's a standard UNIX package, you'll usually go to the main folder of the untarred tar-file, and type the following sequence of commands:
+
+./configure [plus possibly some options]
+make
+make install
+
+On a UNIX machine, this sequence will typically work. On a Mac, you'll need to install the Xcode Command Line Tools, or you won't have "make" installed. Assuming everything works, your package will compile and install everything somewhere within "/usr/local" in some UNIX standard locations.
+
+However, things may not work. And that is tough to debug. There's really no good blanket advice I can give about what you should do if things don't work. Also, you may or may not need to modify environment variables like PATH, and so on. In some cases, I've struggled for a week or more to install a scientific software package I need. There's been some discussion within the Software Carpentry community about how to teach installing software, because we struggle with installation, too.
+
+
+    
+still unclear on structure of optional arguments/flags in basic commands (shell) ...
+    Typically shell commands look like this:
+    command flags arguments
+    
+    'command' is going to be the name of the program, like 'cat' or 'grep' or 'echo'.
+    'flags' are the options you're setting when you run the program. This is sort of like changing your preferences in a gui program: you are overriding the default behavior of the program. Flags are usually a single character prefixed by a hypen (e.g. -a) or a longer string/word prefixed by two hypens (e.g. --all). If you see longer string prefixed by a single hyphen (e.g. -aTl), this means there are several single character flags, i.e. -aTl is equivalent to -a -T -l
+    'arguments' are the inputs to the program. On the shell, they are frequently the names of files or directories, but could be a regular expression, a string, etc. -- it depends on the program.
+    
+    In a man page, you can tell what flags and arguments are optional by looking for square brackets. For example, the man page for ls says:
+    
+    ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file ...]
+    
+    That looks long and confusing, but that's really only because ls has a lot of different flags. None of them are required because they are all in square brackets, so you can specify as many or as few as you would like. This also tells us that ls takes an optional argument that is the name of a file or directory, and that you can actually give it multiple arguments which are the names of multiple files or directory (that's what the ... means).
+
+
+A little more on bash scripting in order to queue in remote clusters (+1)+1
+Queuing systems are cluster-specific. What I typically do is take a script that someone already has, put it under version control (with Git), hack on it, and pray it works. Do you have a specific queuing system in mind? Maybe I can paste an example script.
+
+I'm not so worried about the queuing system specifically (it's Sun fwiw), but just how to write a bash script in general. A recommendation for  a good tutorial would be great
+Good general bash scripting tutorials can be found at http://wiki.bash-hackers.org/scripting/tutoriallist. For example scripts, sometimes you can poke around and find example scripts (like scripts for using PBS, or SLURM, or MOAB, or SGE) that will get you started.
+
+I'm guessing you're talking about SGE? There are definitely tutorials for that available on the web; they normally include some tweaks for a particular cluster or server. Examples include:
+
+http://web.njit.edu/topics/HPC/basement/sge/SGE.html
+https://wikis.utexas.edu/display/CCBB/sge-tutorial
+https://www.wiki.ed.ac.uk/display/EaStCHEMresearchwiki/How+to+write+a+SGE+job+submission+script
+
+
+Run things and do more magic with shell (Any specific kind of magic?)
+
+To run something, it either needs to be in a folder that is on your PATH, or you have to run it by specifying a relative or absolute file name (also called "path"; note the lowercase).
+
+You can see which directories are on your PATH by typing:
+
+echo $PATH
+
+and you'll see a list of directories that are separated by colons; the shell will search the directories in the PATH for your command in left-to-right order unless you specify a relative or absolute file name. The case that usually stumps people is when you have a command you want to run in your current working directory. If
+
+my_command
+
+doesn't work (but my_command is an executable file), and your current working directory isn't in the PATH,
+
+./my_command
+
+should work.
+
+I'm still struggling a bit with accessing different types of files and information in other files from the notebook
+how to get data into ipython notebook?
+    We'll talk about loading files in more detail today. Basically, there are functions in numpy and elsewhere (like np.loadtxt) that will load up different types of files and get them into Python variables. Usually you'll just need to give the path to the file as an argument to that function and you'll be all set.
+
+a set of notes to share ? 
+a paper based cheat sheet possible?
+    We'll keep thoseo both in mind for the future? Want to create one for us? ;-)
+
+Specifics on how to Import data: how to select a column or iterate on a column of data
+    To select a column of an array, for example, you'll just use a colon with no beginning or end for the column, and the index of the row. For example, a[:,2] will give you every row, column 2. You can use a for loop to go through each column in an array - just figure out the number of columns, use np.arange (or just range) to get a list of integers from 0 to the number of columns, then loop through those numbers, extracting the columns one by one.
+
+How to grab data from the internet?(+1, how to search online databases)(without downloading the whole thing!)(+1)+1
+    There are (at least) two major use cases here - one is the case where you have a true database (like a SQL server that you an connect to), and the other is a case where you want to scrape data from a webpage (that is, download and extract data from an html page). For the former, you'll want something like SQLAlchemy. For the latter (which is called web scraping), you can start by checking out the classic library urllib2 - the most basic process is to automatically download the page, read the HTML line by line, and depending on what's in each line (for example, it starts with a <td> tag), do something with the rest of the line. I've never used the package scrapy, but it looks popular.
+    
+    If you want a shell command to download data into a file, you can use "curl" (installed by default on a Mac, and something that's also available on Linux and Windows) or "wget" (not installed by default on a Mac, but usually installed by default on Linux; available on all platforms).
+
+Relationship between shell, IPython notebook, and Python
+ipython notebook vs. terminal environment (or text editor?) (+1)(+1)
+    The shell (ie, bash) is a way of accessing the data on your computer - in some ways, it works like your operating system (like Finder) to allow you to access files, directories, etc and to run programs (like ls, cat, etc).
+    Python is a command line program, just like ls. It can read code written using its specialized syntax (ie, the Python language) and use those instructions to do things. If you run 'python' at the command line, it will open an interpreter, which allows you to enter commands line by line and watch things happen (like the notebook we used yesterday, but one line at a time).
+    The IPython notebook is a convenient way to access a Python kernel that can interpret your commands and do things with them. It's functionally the same as entering each line one at a time into an interpreter, but handier for saving your work.
+    We'll talk about workflow/stack issues (like when to use which tool) during the reproducible workflow section.
+
+how to close/save ipython notebook (+1)
+    See the File menu when you have an open notebook.
+
+when I can use Windows and when i need to use the virutal machine
+How I'd do any of this on a PC +1+1
+which of the tools we're covering i can use on windows without a virtual machine
+
+So...Git can be used on Windows (via msysgit http://msysgit.github.io/), and there are graphical clients for Git on all platforms. Text editors are also available on all platforms. Really, the tough thing is the shell. There are mostly complete Linux-shell-like environments like Cygwin (http://www.cygwin.com/), and MinGW (http://www.mingw.org/) that are supposed to replicate the Unix-shell-like experience for Windows users. For compilers (we don't cover compiler usage, but you may need to compile things to install certain tools), you're usually limited to some free version of Microsoft Visual Studio (http://www.microsoft.com/visualstudio/eng/downloads). You can do a lot of the shell-type commands and shell scripting in Powershell (more recent versions of Windows) or MS-DOS (Windows 95 and earlier versions of Windows), but the commands are different. Python is also cross-platform, but Python packages may not be. Christoph Gohlke builds a lot of Windows versions of Python packages; you can find them at http://www.lfd.uci.edu/~gohlke/pythonlibs/.
+
+
+it'd be cool to show an example of using python in arcgis(+1)(+1)
+lead into python applications for GIS+1
+    Unfortunately we probably don't have time for this today (plus none of the instructors have ArcGIS installed on their computers :P). The basic workflow, though, will be to write a Python file containing some code (just like we did yesterday) in which you import arcpy at the top. This will give you access to a huge number of functions bundled with the arcpy module (which are the same functions that you access from the ArcGIS graphical program). Then you execute this Python file from within ArcGIS. You should be able to find tutorials on this online, or you might stop by GIF.
+If you open a tool within ArcGIS (example "buffer"), there is a link in the GUI for showing you the python code to run that tool, plus a link to online help for more info to code it properly. Paste the code from ArcGIS into your own python code
+
+How to select from an two-dimension array a sub-matrix containing multiple non-contiguous columns and rows (not just the elements at the corners of the sub-matrix, which name_of_the_array[[1,3],[2,4]] does)?
+    I think what you're looking for is something like a[[1,4],:][:,[2,6]]. The first part of this, a[[1,4],:], gets rows 1 and 4, all columns as a new matrix. The second part, [:,[2,6]], takes those resulting two rows (with all columns) and takes just columns 2 and 6.
+
+Programming for fast performance
+    Good question - if you have legacy code in C, FORTRAN (or another compiled language), this will generally run faster than pure Python code. Check out Cython. IPython also now has some built in parallel computer tools that you can look up.
+    Also check out the answers on http://scicomp.stackexchange.com/questions/2493/what-tools-or-approaches-are-available-to-speed-up-code-written-in-python.
+
+how to call code in other languages from python
+    You can run any program or terminal command using the subprocess module. So, for example, if you had a bash script (or perl/ruby/javascript/whatever) called script.sh in the current directory, then you could do subprocess.call('./script.sh', shell=True). Check out http://docs.python.org/2/library/subprocess.html for more information on passing arguments and getting output.
+    IPython notebook has some really cool magic functions that let you run other  languages in a notebook cell. Check out http://nbviewer.ipython.org/url/github.com/ipython/ipython/raw/master/examples/notebooks/Script%20Magics.ipynb for some examples. I'm not sure if this functionality is in the enthought version of ipython, though.
+    
+If I do my statistics in R, what would I use Python for?(+1 and general comparison maybe?... im still confused as to why Python is better...)+1
+    It depends on what your use case is. In my research, I also use Python to write and run behavioral experiments, and to run model simulations. I run some of my experiments online, and so for that I'll use web development modules (e.g. the cgi module, or if I'm doing something complicated, perhaps Django). I run other experiments in the lab and for that use interactive gui/application packages, e.g. Panda3D (but that's more for video games -- if you just want an application window you might use TKinter).
+    For running simulations, I just write my models in Python and then run them -- I don't need to rely on too many external libraries. Python isn't super fast for this, but it is excellent for prototyping. I can get a model working really quickly and then if I need to optimize it, can write C extensions or use an optimized version of Python like cython or pypy.
+    In general, you can do basically anything with python. So even if you just need to automate something (e.g. rename a bunch of files), you can write a Python script for that which will probably end up being much faster than doing it by hand.
+
+    (I can't give a comparison between Python and R -- I haven't used R much before. But, I believe Python is better if you need to be able to do a lot of different things in addition to statistics -- create a GUI, serve a webpage, etc.)
+
+how to open and close the ipython notebook(+1)
+    The ipython notebook runs through your browser, but you need to run it from the command line first. Open a terminal and navigate to the directory with your ipython notebook files, then run 'ipython notebook'. By default, this opens up a tab in your browser with the url localhost:8888 which lists all the notebooks you have available. From there you can click on the notebook links to open specific notebooks.
+    To close a notebook, you can just close the tab that it is in (make sure you save first, though, or you'll lose all your work!). To close the notebook server, go back to the command line and type Ctrl-c (control key + c key). It will ask you if you're sure you want to quit; type y and hit enter and it will shutdown.
+
+How to work with larger databases(+1)+1+1+1
+    This will depend on the format of the database, of course. Check out the full-featured SQLAlchemy for SQL, or the lightweight h5py for HDF. If you really work with large data a lot, you might also be interested in PyTables. We'll talk a bit more about this before the data reading lesson.
+
+Statistical methods toolbox? +1
+    The standard scientific python library is called scipy (which should have been installed with enthought), see http://docs.scipy.org/doc/scipy/reference/. Scipy has a ton of stuff in it -- not just statistics, but signal processing, linear algebra, etc. For statistics specifically, check out http://docs.scipy.org/doc/scipy/reference/tutorial/stats.html (tutorial) and http://docs.scipy.org/doc/scipy/reference/stats.html (documentation).
+    If you can't find the thing you want in scipy, it's probably in R which you can access through rpy2 (http://rpy.sourceforge.net/rpy2/doc-2.2/html/index.html).
+    If you want to do more machine learning type statistics, you can use scikit-learn (http://scikit-learn.org/stable/) which is also included in Enthought.
+
+do ipython notebooks have to be saved where data is?
+how should I store/organize my data and my python scripts?+1+1+1+1
+would love to see you take actual data, import it, manipulate it, and report it out in some way (i.e a figure)(+1 datafiles)(+1)(+1)(+1)+1+1+1+1
+    We'll do exactly this in the reproducible workflow lesson!
+
+Hotkeys in ipython notebook?
+    They're listed in the menus at the top under Keyboard Shortcuts.
+
+BioPython+1
+    I don't think any of the instructors have used these packages, so no specific advice :P. I hope that you'll have the background at this point to work through the tutorials on your own, though.
+
+Optimization in python
+    Check out the functions in scipy.optimization, which are very well developed. Some other major optimization software (such as GAMS) has a Python API, which lets you write Python files that will access that software's functionality (basically, you can write a Python script that imports many of the functions from that software).
+    For linear and mixed-integer linear programming, Gurobi and CPLEX both have Python APIs. There's also a Python package called PuLP that works well as a blanket interface for a bunch of linear and mixed-integer linear programming solvers (including Gurobi, CPLEX, various COIN-OR solvers, lpsolve, and some other packages). Coopr is a heavier-weight linear programming framework in Python.
+    For nonlinear programming, the support is not as good for the types of solvers typically used by researchers in optimization. PyIPOPT (https://github.com/xuy/pyipopt) and cyipopt (https://bitbucket.org/amitibo/cyipopt) are both Python bindings to the IPOPT solver, but look to be in beta still, and may be tough to use or incomplete. CVXOPT (http://abel.ee.ucla.edu/cvxopt/) is a convex optimization solver out of Lieven Vandenberghe's lab that looks reputable. CVXPY looks to be a Python port of the disciplined convex programming solver CVX, but it's in the very early stages. Other packages potentially worth trying are pyOPT or NLOPT, depending on the type of optimization you want to do.
+    Having worked in an optimization laboratory, I'm confident that serious research in linear and mixed-integer linear programming can be done in Python. I'm less confident that research in nonlinear programming can be done in Python, though my biases are towards nonconvex and mixed-integer nonlinear programming, which are notoriously difficult classes of problems that don't even have great solver support in C++ (or any language other than GAMS). If you're doing unconstrained (convex) nonlinear optimization, there's a lot of Python solvers out there, and I'd definitely use Python.
+
+
+Best way to save these notes?
+what do you mean by "my stack?"
+what is a stack?
+    We'll talk about in the reproducible workflow lesson.
+
+What tool did Karthik use to make his online slides? They're very clean and effective.
+    Looks like it's reveal.js - http://lab.hakim.se/reveal-js/. See the git repo containing the presentation at https://github.com/karthikram/git_intro. and it's CC-BY so feel free to edit and reuse.
+
+
+========================================
+Sunday Morning
+
+CHECK OUT KARTHIK'S GIT PAPER: http://www.scfbm.org/content/8/1/7/abstract (he's being humble)
+
+
+Slides for the morning: http://karthikram.github.io/git_intro/
+The git repo behind it:  https://github.com/karthikram/git_intro
+
+Instructions for setting up and linking to a GitHub account (We'll leave time for this after the intro)
+
+Get an account at GitHub.com
+Then follow these instructions to generate and add ssh keys 
+https://help.github.com/articles/generating-ssh-keys
+
+Here's also an ipython notebook on using git, with a focus for scientists:
+http://nbviewer.ipython.org/urls/github.com/fperez/reprosw/raw/master/Version%2520Control.ipynb
+
+Git questions / notes
+--------------------------------
+
+git is often used at the command line, but there are many GUIs for git : http://git-scm.com/downloads/guis
+
+What is a checksum? : a short signature of a file that is (very nearly) unique for the contents of a file.  Let's say I have a file <myfile.doc> and a I have the checksum for the file <thechecksum>. If you give me another file <yourfile.doc>, and it has the same checksum, that means that the contents of <myfile.doc> and <yourfile.doc> are very very very likely to be exactly the same.
+
+http://en.wikipedia.org/wiki/Checksum
+http://en.wikipedia.org/wiki/Hash_function
+
+Editor configuration
+------------------------------
+
+Using gedit (with the virtual machines)
+----------------------------------------------------------
+
+git config --global core.editor gedit
+
+Using TextWrangler with git
+------------------------------------------
+
+From the textwrangler help:
+
+"The first time you run TextWrangler after installation, it will offer to install the “edit”, “twdiff”, and “twfind” command line tools for you. If you initially chose not to do so, you can choose “Install Command Line Tools” from the TextWrangler menu (the application menu) at any time."
+
+Use TextWrangler with git with:
+
+git config --global core.editor "edit --wait --resume "$@""
+
+http://www.inteist.com/2012/03/os-x-setup-textwrangler-as-your-default-editor-for-git/
+
+Using Sublime text with git
+----------------------------------------
+
+https://help.github.com/articles/using-sublime-text-2-as-your-default-editor
+
+Ask for help if that's not clear
+
+Using emacs with git
+-----------------------------------------
+
+git config --global core.editor 'emacs -nw'
+
+(the -nw flag will prevent emacs from launching an X window, if it normally does on your system; if it doesn't, no harm including the flag)
+
+If you get stuck in vi or vim
+--------------------------------------------
+
+Press ESCAPE a couple times to make sure that the last line of your terminal window is blank. Then type ":q!" and press Enter.
+
+
+Aliases for git commands
+---------------------------------
+You have two choices here - adding an alias to your git config file, and adding an alias to your shell environment.
+
+If you run 
+
+git config --global alias.ci commit
+
+for example, you can then type 'git ci' instead of 'git commit'.
+
+If you want something even shorter, like 'gst' for 'git status', you'll need to tell your shell to recognize that the "program" 'gst' actually stands for 'git status'. To do this, you'll need a .bash_profile file (use this if you're on a Mac) or .bashrc or .profile. To that file, add the line
+
+alias gst='git status'
+
+(Or something equivalent for whichever command you'd like.) Try not to override a command for another useful program - for example, don't make an alias called ls! To check if your preferred alias is taken already, try typing it at the shell - if it says 'not found', you're safe.
+
+Karthik's Paper on Github
+---------------------------------------
+
+https://github.com/karthikram/smb_git
+
+To get it:
+
+git clone https://github.com/karthikram/smb_git
+
+
+Some aliases you can add for using git commands.
+
+git config alias.ci commit
+# Now you can just type in git ci -m "foo" instead of git commit -m "foo"
+git config alias.co checkout
+git config alias.br branch
+
+git config alias.st status 
+# Now just type in git st
+git config ls.log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+# Then just type in git ls
+
+=========================================
+SUNDAY AFTERNOON
+
+Reading/Saving Data
+
+csv's
+    mlab - good > 100,000 lines
+    pandas good for bigger than that 
+    numpy load - np.loadtxt, np.genfromtxt (for big arrays of a single datatype)
+
+tabular data
+    consider enormous text file
+    sqlite
+    SQL - SQLAlchemy
+    HDF5 - h5py (good for less well-structured data)
+    Pytables
+
+structured files (xml html)
+    element tree - etree
+
+unstructured files
+    line-by-line file reading with string parse
+    if html - urllib2
+    
+spatial data
+    raster - np.loadtxt
+    vector - ArcGIS python modules
+        (top of file - import arcpy)
+        
+Matlab
+    scipy.io
+
+Reading/Saving Data
+
+csv's
+    mlab - good < 100,000 lines
+    pandas good for bigger than that 
+    numpy load - np.loadtxt, np.genfromtxt (for big arrays of a single datatype)
+
+tabular data
+    consider enormous text file
+    sqlite
+    SQL - SQLAlchemy
+    HDF5 - h5py (good for less well-structured data)
+    Pytables
+
+structured files (xml html)
+    element tree - etree
+
+unstructured files
+    line-by-line file reading with string parse
+    if html - urllib2
+    
+spatial data
+    raster - np.loadtxt
+    vector - ArcGIS python modules
+        (top of file - import arcpy)
+        
+Matlab
+    scipy.io
+
+Testing Lesson
+
+https://github.com/jkitzes/boot-camps/blob/2013-04-ucb/python/testing.md
+
+R users: Here is a package to do testing in R. 
+install with install.packages('testthat')
+
+Also see here: https://github.com/hadley/test_that (for current version on GitHub)
+Paper on testthat: http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf
+
+How to override integer division issue:
+
+At the top of your file, put
+    from __future__ import division
+
+---------------------------------------
+
+Reproducible Workflows
+
+https://github.com/jkitzes/boot-camps/blob/2013-04-ucb/python/reproducible_workflow.md
+
+Also a presentation on why reproducibility is worth it from a productivity standpoint (with references):
+http://figshare.com/articles/How_to_succeed_in_reproducible_research_without_really_trying/640512
+
+
+View ipython notebooks on the web from your GitHub repo:
+http://nbviewer.ipython.org/
+example: http://nbviewer.ipython.org/urls/raw.github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/Chapter1_Introduction/Chapter1_Introduction.ipynb
+(I love how the probabilistic programming notebooks look!)
+
+More on markdown cells:
+http://nbviewer.ipython.org/url/github.com/ipython/ipython/raw/master/examples/notebooks/Part%204%20-%20Markdown%20Cells.ipynb
+
+
+GOOD
+helpful for understanding the links between the utility of Python and my research
+Learning about folder stuctures and good workflow habits was incredibly  helpful!!+1+1+1+1+1
+pace of git work was perfect think i might actually be able to use it. wooo!+1
+The example reproducible workflow was not only interesting, but empowering!
+Great workshop, the workflow of doing a project was very helpful+1+1+1
+This should be extended to a full-semester course, all 1st-year grad students should have to take it (+1)(+1 - at least option to)(+1)+1+1+1
+Excellent overview. +1+1I+1+1
+I like the emphasis on the goals of producing reproducible work efficiently rather than on specific programming skills (though these were very useful also). These skills are sure to save me a lot of time and a lot of misery.+1+1
+Very generalizable
+Very useful workflow organization!+1
+good organization of ideas and examples
+Great to actually set up the SSH for github or bitbucket+1
+great to see what is possible to do with the tools we've learned+1+1
+Hope for future workshop where we can work from the level of individual projects and be able to get specific help on things that do/don't work?
+great intro to git - i feel like i have what i need to go for it+1+1
+having the correct answers i the notebook is very helpful for when you've fallen behind+1
+would be great to have the correct answers for the testing stuff too.. 
+version control had a better pace (for me), testing was a little fast in the end (but doable)
+REALLY appreciate the expertise of the trainers and helpers and the time you took to put this together+1
+
+BAD
+hard to process everything at once+1
+Not bad, but would be helpful -- a brief tutorial on piping I/O between programs+1
+slow for people with more experience
+fast for people without experience+1
+python part a little too fast +1+1+1
+Need more time to digest all the information. A little bit too fast for me+1+1
+lack of "full results" file in the final example (data/CSV import)
+unsure how much I can alter my workflow now...+1
+so much more to learn, can we really use GIT productively?  can we email the team for any other questions?
+not sure if it would work but by the time we got to testing i was brain dead....would be nice to do that earlier +1
+Having this all in a weekend - might have been better to have the two sessions in consecutive weekends, to let things settle a bit (+1)
+(follow on) --> Maybe a future workshop/longer term class where we would come prepared with data from our projects and get help to set up the file structure and workflow and git infrastructure so we can directly apply these principles, and get specific help on things that do/don't work?
+have longer courses to learn ore detail, with more homewrok, etc. (if possible)
+
