@@ -1,7 +1,7 @@
 Python
 ======
 
-(based on the materials by Greg Wilson, Katy Huff, Ethan White, Matt Davis and Jon Pipitone)
+(based on the materials by Mike Jackson, Greg Wilson, Katy Huff, Ethan White, Matt Davis and Jon Pipitone)
 
 [Python](http://www.python.org) is a programming language gaining
 popularity in the sciences. It's open source, free, and an array of
