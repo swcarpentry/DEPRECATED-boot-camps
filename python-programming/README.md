@@ -1,7 +1,7 @@
 Python
 ======
 
-(based on the materials by Greg Wilson, Katy Huff, Ethan White, Matt Davis, Milad Fatenejad, Joshua R. Smith, and Will Trimble)
+**based on lecture materials by Greg Wilson, Katy Huff, Ethan White, Matt Davis, Milad Fatenejad, Joshua R. Smith, and Will Trimble**
 
 [Python](http://www.python.org) is a programming language gaining
 popularity in the sciences. It's open source, free, and an array of
