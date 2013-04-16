@@ -9,10 +9,10 @@ will learn how to utilize available Python functions as well as write our own.
 * Writing our own functions
 
 ```python
-   def initials(line)
+   def initials(line):
       names = line.split()
       i = 0 
-      while i < len(names)
+      while i < len(names):
          initials.append(names[i][0])
          i = i+1
       return initials
