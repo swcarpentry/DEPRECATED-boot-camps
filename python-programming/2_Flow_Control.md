@@ -2,28 +2,10 @@
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
-Pasting into iPython
-====================
-
-This part of the lesson includes a lot of text, but it will be useful to
-run it yourself in iPython.
-
-To paste text from another application (i.e. these lecture notes) into
-iPython :
-
-1.  select text from the wiki
-2.  copy with **ctrl+c**
-3.  in iPython, type **%paste**
-
-The code should paste and execute in iPython.
-
-If you also type %autocall to turn autocall OFF, you may be able to
-paste with **ctrl+v** though this won't work with all ipython builds.
-
 Conditionals
 ============
 
-A conditional (if statement) is some statement that in general says :
+A conditional (if statement) is some statement that in general says : 
 "When some boolean is true, do the following. Elsewise, do this other
 thing."
 
@@ -79,15 +61,7 @@ pretty - it tells Python what the body of the if-statement is. This is
 true when ever we create any code blocks, such as the bodies of loops,
 functions or classes.
 
-**Aside: Compact if-statement:**
 
-Python has an easy to use if-syntax for setting the value of a variable.
-Try entering this into IPython:
-
-```python
-  i = 5
-  sign = "positive" if i > 0 else "negative"
-```
 
 While Loops
 ===========
@@ -342,16 +316,4 @@ occurs is the value.
   print areacodes # Print the answer
 ```
 
-Example : Iteritems
--------------------
-
-Use the iteritems dictionary method in combination with a for loop to
-print the keys/values of the areacodes dictionary one to a line. In
-other words, the goal is to write a loop that prints:
-
-    203 4
-    800 4
-    608 8
-    773 3
-
-This example is a little tricky to figure out, but give it a shot.
+Previous: [Data types](1_Data_Types.md) Next: [Functions and modules](3_Functions_and_Modules.md)
