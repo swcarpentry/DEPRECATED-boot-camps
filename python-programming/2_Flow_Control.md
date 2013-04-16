@@ -1,4 +1,4 @@
-# Python 3 : Flow Control - Loops, Conditionals, etc
+# Python 2 : Flow Control - Loops, Conditionals, etc
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
