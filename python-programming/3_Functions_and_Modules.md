@@ -6,24 +6,49 @@ will learn how to write our own functions and modules, and import them. The exam
 
 Writing our own functions
 ============
+So far we have used Python prompt and write Python scripts (typing up the source code in a file and then running it from the Python prompt). We will now show how to "package" this source code into functions. This will allow us to reuse the same code easily multiple times (without having to run it each time manually).
 
-
+Let's say we want to extract people's initials from their full name. The code below should do it.
 
 ```python
-   def get_initials(line):
-      names = line.split()
+   def get_initials(full_name):
+      names = full_name.split() 
       initial = ''
       i = 0
       while i < len(names):
-         initial=initial+(names[i][0])
+         initial=initial+(names[i][0]) #From each part of the name we get the first letter
          i = i+1
       return initial
    
-   b = 'Thomas Mann'
+   a = 'Thomas Mann'
+   b = 'James Bond'
+   print get_initials(a)
    print get_initials(b)
    print get_initials('Anna Karenina')
 ```
 
+Now instead of rerunning the code for each person, we just had to call our function. Note that our function takes one `argument` (full_name). 
+
+We can now use our function with the data file (famousauthors.txt)[famousauthors.txt]
+
+
 
 Importing Python modules
 ============
+
+
+Exercise
+============
+```python
+  def get_initials(line):
+      names = line.split()
+      initial = ''
+      i = 0
+      while i < len(names):
+         if not names[i][0].islower():
+             initial=initial+(names[i][0])
+             i = i+1
+         else:
+             i = i+1
+      return initial
+```
