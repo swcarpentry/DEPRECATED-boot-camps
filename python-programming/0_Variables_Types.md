@@ -21,6 +21,8 @@ Let's get Python to talk to us:
    print 'Thomas ' + 'Mann'
 ```
 
+## Assigning values
+
 Python does not require us to declare variables as they are created when we first use them:
 
 ```python
@@ -38,13 +40,49 @@ Variables in Python are not typed as you can see. They can be thought of as bein
    print b
 ```
 
+What happens when we try to "combine" two Python variables: string and integer:
+
+```python
+   string = "text"
+   number = 4
+   print string * number #What is the output?
+```
+
+We can convert types as values are typed:
+
+```python
+   print int('2') + 3
+   print '2' + str('3')
+   print string + str(number)
+```
+
+Python supports typical (and popular) arithmetic operations: 
+
+Adding:
+```python
+   print 10 + 3
+```
+
+Integer division:
+```python
+   print 10 / 3
+```
+
+Reminder:
+```python
+   print 10 % 3
+```
+
+Floating point division:
+```python
+   print 10 % 3
+```
 
 
-## Assigning values
 
-## Variable types
+## String operations
 
 
-## 
+
 
 Next: [Data Types](1_Data_Types.md)
