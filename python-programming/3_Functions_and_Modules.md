@@ -33,7 +33,7 @@ We can now use our function with the data file [famousauthors.txt](famousauthors
 
 ##Importing Python modules
 
-First, let's save our function in a file named "namehandler.py" (deleting the last 5 lines - beginning from b='Thomas Mann'). Now, we can import 
+First, let's save our function in a file named "namehandler.py" (deleting the last 5 lines - beginning from b='Thomas Mann'). Now, we can import our function from our own module:
 
 ```python
   from namehandler import get_initials
@@ -44,6 +44,7 @@ First, let's save our function in a file named "namehandler.py" (deleting the la
   f.close()
 ```
 
+In some Python code you may notice the following statements `from module import *`. This means that all methods are imported from the module. 
 
 
 ##Exercise
