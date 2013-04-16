@@ -156,7 +156,7 @@ This is a standard format that that is supported by a number of xUnit frameworks
 
 We can add more information to the failure messages by providing additional string arguments e.g.
 
-    >>> assert_false(expected in actual, "Expected value was not in the output list")
+    >>> assert_true("GTA" in actual, "Expected value was not in the output list")
 
 ## Write some more tests
 
