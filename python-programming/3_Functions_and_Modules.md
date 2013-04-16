@@ -6,8 +6,16 @@ will learn how to utilize available Python functions as well as write our own.
 
 # Sections:
 
-* Python methods for strings
-
 * Writing our own functions
+
+```python
+   def initials(line)
+      names = line.split()
+      i = 0 
+      while i < len(b)
+         initials.append(b[i][0])
+      return initials
+```
+
 
 * Importing Python modules
