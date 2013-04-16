@@ -4,9 +4,8 @@
 A function is a block of code that performs a specifc task. In this section we
 will learn how to utilize available Python functions as well as write our own.
 
-# Sections:
-
-* Writing our own functions
+Writing our own functions
+============
 
 ```python
    def initials(line):
@@ -25,4 +24,5 @@ will learn how to utilize available Python functions as well as write our own.
 ```
 
 
-* Importing Python modules
+Importing Python modules
+============
