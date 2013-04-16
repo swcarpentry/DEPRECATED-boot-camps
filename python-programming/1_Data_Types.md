@@ -355,4 +355,4 @@ When you architect software in python, most data will end up looking either
 like a list or a dictionary. These two data types are very important in
 python and you'll end up using them all the time.
 
-Next: [Flow control](2_Flow_Control.md)
+Previous: [Variable types](0_Variables_Types.md)Next: [Flow control](2_Flow_Control.md)
