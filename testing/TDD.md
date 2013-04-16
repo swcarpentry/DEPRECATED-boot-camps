@@ -38,7 +38,7 @@ This fails as not only are there no tests, there's no module or function. Let's 
         Calculate the antiparallel of a DNA sequence.
  
         @param sequence: a DNA sequence expressed as an upper-case string.
-        @return antiparallel as an upper-class string. 
+        @return antiparallel as an upper-case string. 
         """
         pass
 
