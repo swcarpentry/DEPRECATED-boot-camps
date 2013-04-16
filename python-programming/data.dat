@@ -1,0 +1,5 @@
+experiment: weight vs. volume
+run: 47
+temperature: 372.756
+weight: [11, 10, 20, 500, 5, 900, 300, 280]
+volume: [100, 50, 1134, 10, 850]
