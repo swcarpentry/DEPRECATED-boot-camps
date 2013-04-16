@@ -22,6 +22,12 @@ We can calculate the molecular weight of a sequence by,
     weight = calculate_weight('GATGCTGTGGATAA')
     print weight
 
+Now, what if we do,
+
+    print calculate_weight(123)
+
+If the input is not a string, or a list of characters, then the `for...in` statement will *raise an exception*, in this case a `TypeError`.
+
 We can add a test to our code as follows,
 
     def calculate_weight(sequence):
@@ -39,11 +45,7 @@ We can add a test to our code as follows,
         except TypeError:
             print 'The input is not a sequence e.g. a string or list'
 
-If the input is not a string, or a list of characters then the `for...in` statement will *raise an exception* which is *caught* by the `except` block. For example,
-
-    print calculate_weight(123)
-
-This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
+Now, the exception is *caught* by the `except` block. This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
 
 Often, we want to pass such errors to other points in our program rather than just print a message and continue. So, for example we could do,
 
@@ -98,12 +100,6 @@ Then we can add all our test functions and function calls to this file. And run 
 
     $ python test_dna.py
 
-## `nose` - a Python test framework
-
-`nose` is a test framework for Python that will automatically find, run and report on tests written in Python. It is an example of what has been termed an *[xUnit test framework](http://en.wikipedia.org/wiki/XUnit)*, perhaps the most famous being JUnit for Java.
-
-To use `nose`, we write test functions, as we've been doing, with the prefix `test_` and put these in files, likewise prefixed by `test_`. The prefixes `Test-`, `Test_` and `test-` can also be used.
-
 Typically, a test function,
 
 * Sets up some inputs and the associated expected outputs. The expected outputs might be a single number, a range of numbers, some text, a file, a set of files, or whatever.
@@ -122,18 +118,11 @@ Python `assert` allows us to check,
     assert should_be_true()
     assert not should_not_be_true()
 
-`nose` defines additional functions which can be used to check for a rich range of conditions e.g..
+## `nose` - a Python test framework
 
-    from nose.tools import *
+`nose` is a test framework for Python that will automatically find, run and report on tests written in Python. It is an example of what has been termed an *[xUnit test framework](http://en.wikipedia.org/wiki/XUnit)*, perhaps the most famous being JUnit for Java.
 
-    assert_equal(a, b)
-    assert_almost_equal(a, b, 3)
-    assert_true(a)
-    assert_false(a)
-    assert_raises(exception, func, *args, **kwargs)
-    ...
-
-`assert_raises` is used for where we want to test that an exception is raised if, for example, we give a function a bad input.
+To use `nose`, we write test functions, as we've been doing, with the prefix `test_` and put these in files, likewise prefixed by `test_`. The prefixes `Test-`, `Test_` and `test-` can also be used.
 
 To run `nose` for our tests, we can do,
 
@@ -149,6 +138,25 @@ nosetests can output an "xUnit" test report,
     $ cat nosetests.xml
 
 This is a standard format that that is supported by a number of xUnit frameworks which can then be converted to HTML and presented online. 
+
+`nose` defines additional functions which can be used to check for a rich range of conditions e.g..
+
+    $ python
+    >>> from nose.tools import *
+
+    >>> expected = 123
+    >>> actual = 123
+    >>> assert_equal(expected, actual)
+    >>> actual = 456
+    >>> assert_equal(expected, actual)
+    >>> expected = "GATTACCA"
+    >>> actual = ["GATC", "GATTACCA"]
+    >>> assert_true(expected in actual)
+    >>> assert_false(expected in actual)
+
+We can add more information to the failure messages by providing additional string arguments e.g.
+
+    >>> assert_true("GTA" in actual, "Expected value was not in the output list")
 
 ## Write some more tests
 
@@ -174,7 +182,7 @@ The latter requires us to check whether an exception was raised which we can do 
     except ValueError:
         assert True
 
-This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails. Alternatively, we can use `assert_raises` from `nose`,
+This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails. Alternatively, we can use `assert_raises` from `nose.tools`,
 
     from nose.tools import assert_raises
 

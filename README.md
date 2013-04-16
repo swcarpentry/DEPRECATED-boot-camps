@@ -27,6 +27,10 @@ Friday 19th
 * 15:30 [Pulling it all together](Conclusion.ppt) - Mike
 * 16:30 Close
 
+## Etherpad
+
+We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/7) to provide additional information on the day.
+
 ## Hints and tips
 
 [Hints and tips](HintsAndTips.md) on common Bash and editor commands.
