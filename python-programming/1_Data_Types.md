@@ -1,12 +1,11 @@
-# Python 1 Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+# Python 1: Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
 * * * * *
 
 **Based on lecture materials by Milad Fatenejad, Joshua R. Smith, and Will
 Trimble**
 
-Python would be a farily useless language if it weren't for the compound
-data types. The main two are lists and dictionaries, but I'll mention sets
+One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but I'll mention sets
 and tuples as well. I'll also go over reading text data from files. 
 
 ## Lists
@@ -38,7 +37,7 @@ voltageList = [-2.0, -1.0, 0.0, 1.0, 2.0]
 currentList = [-1.0, -0.5, 0.0, 0.5, 1.0]
 ```
 
-obviously voltageList is of type list:
+We can check the voltageList type (obviously it is of type list):
 
 ```python
 type(voltageList)
@@ -133,6 +132,8 @@ currentList.extend([1.5, 2.0])
 currentList
 [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 ```
+
+Question: Is it possible to extend the currentList with the values from the voltageList without typing all the values from the voltageList?
 
 ### Length of Lists
 
