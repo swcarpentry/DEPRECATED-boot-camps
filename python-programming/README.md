@@ -10,9 +10,9 @@ Python is also used outside science and engineering as a general scripting langu
 
 
 ## We will focus on:
-
+0. [Variable types](0_Variables_Types.md)
 1. [Data types](1_Data_Types.md)
 2. [Flow control](2_Flow_Control.md)
 3. [Functions and modules](3_Functions_and_Modules.md)
 
-Next: [Data types](1_Data_Types.md)
+Next: [Variable types](0_Variables_Types.md)
