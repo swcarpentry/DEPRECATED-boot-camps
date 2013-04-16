@@ -2,7 +2,7 @@
 -----------------------
 
 A function is a block of code that performs a specifc task. In this section we
-will learn how to write our own functions and modules, and import them. The example used in this section is a simple one. But the main purpose of this part of the tutorial is not only to show you how to write our own functions and modules but `why` do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
+will learn how to write our own functions and modules, and import them. The example used in this section is a simple one. But the main purpose of this part of the tutorial is not only to show you how to write our own functions and modules but also why do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
 
 Writing our own functions
 ============
@@ -27,18 +27,23 @@ Let's say we want to extract people's initials from their full name. The code be
    print get_initials('Anna Karenina')
 ```
 
-Now instead of rerunning the code for each person, we just had to call our function. Note that our function takes one `argument` (full_name). 
+Now instead of rerunning the code for each person, we just had to call our function. Note that our function takes one argument (full_name). 
 
-We can now use our function with the data file [famousauthors.txt](famousauthors.txt)
-
-
+We can now use our function with the data file [famousauthors.txt](famousauthors.txt).
 
 Importing Python modules
 ============
 
 
+
+
 Exercise
 ============
+You probably noticed that there are two authors whose initials were not correctly extracted. It's Stan and Jan Berenstain and Gérard de Villiers. How can we modify our function to address this problem? Hint: check the methods available for string variables ( dir(str) ).
+
+
+Solution:
+
 ```python
   def get_initials(line):
       names = line.split()
