@@ -33,7 +33,16 @@ We can now use our function with the data file [famousauthors.txt](famousauthors
 
 ##Importing Python modules
 
+First, let's save our function in a file named "namehandler.py" (deleting the last 5 lines - beginning from b='Thomas Mann'). Now, we can import 
 
+```python
+  from namehandler import get_initials
+
+  f = open('famousautors.txt')
+  for l in f:
+     print get_initials(l)
+  f.close()
+```
 
 
 
