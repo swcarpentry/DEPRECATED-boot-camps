@@ -22,7 +22,7 @@ def inverse(sequence):
     Calculate the inverse of a DNA sequence.
 
     @param sequence: a DNA sequence expressed as an upper-case string.
-    @return inverse as an upper-class string. 
+    @return inverse as an upper-case string. 
     """
     # Reverse string using approach recommended on StackOverflow
     # http://stackoverflow.com/questions/931092/reverse-a-string-in-python
@@ -33,6 +33,6 @@ def antiparallel(sequence):
     Calculate the antiparallel of a DNA sequence.
 
     @param sequence: a DNA sequence expressed as an upper-case string.
-    @return antiparallel as an upper-class string. 
+    @return antiparallel as an upper-case string. 
     """
     return inverse(complement(sequence))
