@@ -100,12 +100,6 @@ Then we can add all our test functions and function calls to this file. And run 
 
     $ python test_dna.py
 
-## `nose` - a Python test framework
-
-`nose` is a test framework for Python that will automatically find, run and report on tests written in Python. It is an example of what has been termed an *[xUnit test framework](http://en.wikipedia.org/wiki/XUnit)*, perhaps the most famous being JUnit for Java.
-
-To use `nose`, we write test functions, as we've been doing, with the prefix `test_` and put these in files, likewise prefixed by `test_`. The prefixes `Test-`, `Test_` and `test-` can also be used.
-
 Typically, a test function,
 
 * Sets up some inputs and the associated expected outputs. The expected outputs might be a single number, a range of numbers, some text, a file, a set of files, or whatever.
@@ -124,18 +118,11 @@ Python `assert` allows us to check,
     assert should_be_true()
     assert not should_not_be_true()
 
-`nose` defines additional functions which can be used to check for a rich range of conditions e.g..
+## `nose` - a Python test framework
 
-    from nose.tools import *
+`nose` is a test framework for Python that will automatically find, run and report on tests written in Python. It is an example of what has been termed an *[xUnit test framework](http://en.wikipedia.org/wiki/XUnit)*, perhaps the most famous being JUnit for Java.
 
-    assert_equal(a, b)
-    assert_almost_equal(a, b, 3)
-    assert_true(a)
-    assert_false(a)
-    assert_raises(exception, func, *args, **kwargs)
-    ...
-
-`assert_raises` is used for where we want to test that an exception is raised if, for example, we give a function a bad input.
+To use `nose`, we write test functions, as we've been doing, with the prefix `test_` and put these in files, likewise prefixed by `test_`. The prefixes `Test-`, `Test_` and `test-` can also be used.
 
 To run `nose` for our tests, we can do,
 
@@ -151,6 +138,19 @@ nosetests can output an "xUnit" test report,
     $ cat nosetests.xml
 
 This is a standard format that that is supported by a number of xUnit frameworks which can then be converted to HTML and presented online. 
+
+`nose` defines additional functions which can be used to check for a rich range of conditions e.g..
+
+    from nose.tools import *
+
+    assert_equal(a, b)
+    assert_almost_equal(a, b, 3)
+    assert_true(a)
+    assert_false(a)
+    assert_raises(exception, func, *args, **kwargs)
+    ...
+
+`assert_raises` is used for where we want to test that an exception is raised if, for example, we give a function a bad input.
 
 ## Write some more tests
 
