@@ -1,4 +1,4 @@
-Python Functions and Modules
+#Python 3 : Functions and Modules
 -----------------------
 
 A function is a block of code that performs a specifc task. In this section we
