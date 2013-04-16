@@ -141,16 +141,22 @@ This is a standard format that that is supported by a number of xUnit frameworks
 
 `nose` defines additional functions which can be used to check for a rich range of conditions e.g..
 
-    from nose.tools import *
+    $ python
+    >>> from nose.tools import *
 
-    assert_equal(a, b)
-    assert_almost_equal(a, b, 3)
-    assert_true(a)
-    assert_false(a)
-    assert_raises(exception, func, *args, **kwargs)
-    ...
+    >>> expected = 123
+    >>> actual = 123
+    >>> assert_equal(expected, actual)
+    >>> actual = 456
+    >>> assert_equal(expected, actual)
+    >>> expected = "GATTACCA"
+    >>> actual = ["GATC", "GATTACCA"]
+    >>> assert_true(expected in actual)
+    >>> assert_false(expected in actual)
 
-`assert_raises` is used for where we want to test that an exception is raised if, for example, we give a function a bad input.
+We can add more information to the failure messages by providing additional string arguments e.g.
+
+    >>> assert_false(expected in actual, "Expected value was not in the output list")
 
 ## Write some more tests
 
@@ -176,7 +182,7 @@ The latter requires us to check whether an exception was raised which we can do 
     except ValueError:
         assert True
 
-This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails. Alternatively, we can use `assert_raises` from `nose`,
+This is like catching a runtime error. If an exception is raised then our test passes (`assert True`), else if no exception is raised, it fails. Alternatively, we can use `assert_raises` from `nose.tools`,
 
     from nose.tools import assert_raises
 
