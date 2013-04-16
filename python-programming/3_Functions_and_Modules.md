@@ -29,7 +29,7 @@ Let's say we want to extract people's initials from their full name. The code be
 
 Now instead of rerunning the code for each person, we just had to call our function. Note that our function takes one `argument` (full_name). 
 
-We can now use our function with the data file (famousauthors.txt)[famousauthors.txt]
+We can now use our function with the data file [famousauthors.txt](famousauthors.txt)
 
 
 
