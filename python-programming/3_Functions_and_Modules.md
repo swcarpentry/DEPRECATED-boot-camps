@@ -12,8 +12,9 @@ will learn how to utilize available Python functions as well as write our own.
    def initials(line)
       names = line.split()
       i = 0 
-      while i < len(b)
-         initials.append(b[i][0])
+      while i < len(names)
+         initials.append(names[i][0])
+         i = i+1
       return initials
 ```
 
