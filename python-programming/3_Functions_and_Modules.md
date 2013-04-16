@@ -38,13 +38,13 @@ First, let's save our function in a file named "namehandler.py" (deleting the la
 ```python
   from namehandler import get_initials
 
-  f = open('famousautors.txt')
+  f = open('famousauthors.txt')
   for l in f:
      print get_initials(l)
   f.close()
 ```
 
-In some Python code you may notice the following statements `from module import *`. This means that all methods are imported from the module. 
+In some Python code you may notice the following statements `from module import *`. This means that all names defined in the module are imported. However, this is not a good practice as the code becomes more difficult to read. 
 
 
 ##Exercise
