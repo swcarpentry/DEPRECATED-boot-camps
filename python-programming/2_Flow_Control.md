@@ -289,14 +289,11 @@ Final Example
 We've seen a lot so far. Lets work through a slightly lengthier example
 together. I'll use some of the concepts we already saw and introduce a
 few new concepts. To run the example, you'll need to locate a short file
-containing phone numbers. The file can be found in your PyTrieste
-repository within the phonenums directory and is called phonenums.txt.
-Now we have to move ipython to that directory so it can find the
-phonenums.txt file. You navigate within ipython in the same way that you
-navigate in the shell, by entering "cd [path]" .
+containing phone numbers. The file is in your repository is called phonenums.txt.
+
 
 This example opens a text file containing a list of phone numbers. The
-phone numbers are in the format \#\#\#-\#\#\#-\#\#\#\#, one to a line.
+phone numbers are in the format \#\#\#\#-\#\#\#-\#\#\#, one to a line.
 The example code loops through each line in the file and counts the
 number of times each area code appears. The answer is stored in a
 dictionary, where the area code is the key and the number of times it
