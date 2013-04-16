@@ -1,4 +1,4 @@
-# Python 1 Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+# Python 0 Variable Types (with focus on String and String methods)
 
 * * * * *
 
