@@ -12,8 +12,8 @@ Thursday 18th
 * 09:30 [Welcome](Welcome.ppt) - Mike
 * 10:00 Using the shell to do more in less time - David
 * 12:00 Lunch
-* 13:30 [Using version control to manage and share information](version-control/README.md) - Aleksandra
-* 15:30 [Python and good programming practice](python-programming/README.md) - Aleksandra
+* 13:30 [Using version control to manage and share information](version-control/README.md) ([slides](version-control/Version-control.ppt))- Aleksandra
+* 15:30 [Python and good programming practice](python-programming/README.md) ([slides](python-programming/Python.ppt))- Aleksandra
 * 17:30 Close 
 
 Friday 19th
