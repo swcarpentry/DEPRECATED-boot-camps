@@ -30,7 +30,7 @@ unique to python. To check whether an object is contained in a list :
   beatle="John"
   beatles=["George", "Ringo","John", "Paul"]
   print beatle in beatles # is John one of the beatles? : TRUE
-  print "Katy" not in beatles # this is also TRUE. 
+  print "Tom" not in beatles # this is also TRUE. 
 ```
 
 Conditionals (if statements) are also really easy to use in python. Take
@@ -108,7 +108,7 @@ true, a **poorly formed** while loop might repeat forever. For example :
   print "Well, there's egg and bacon, egg and spam, egg bacon and"
   while i is 1:
     print "spam "
-  print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..." 
+  print "When will this be printed?!" 
 ```
 
 Since the variable **i** never changes within the while loop, we can
@@ -118,7 +118,7 @@ nothing but spam. (If you try this at home, please note that one way to
 interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
 
 To create nested if loops, the indentation (preferably two or four
-spaces) should increase for each looping level.
+spaces) should increase for each looping level. Let's put the following source code in a file and save it as "script.py".
 
 ```python
   weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
@@ -133,7 +133,7 @@ spaces) should increase for each looping level.
       script += weapons[tries]
       script += ". "
       if tries == len(weapons) - 1 :
-          script += " and nice red uniforms. Oh damn!"
+          script += " and nice red uniforms."
       tries +=1
   print script
 ```
