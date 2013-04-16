@@ -22,6 +22,12 @@ We can calculate the molecular weight of a sequence by,
     weight = calculate_weight('GATGCTGTGGATAA')
     print weight
 
+Now, what if we do,
+
+    print calculate_weight(123)
+
+If the input is not a string, or a list of characters, then the `for...in` statement will *raise an exception*, in this case a `TypeError`.
+
 We can add a test to our code as follows,
 
     def calculate_weight(sequence):
@@ -39,11 +45,7 @@ We can add a test to our code as follows,
         except TypeError:
             print 'The input is not a sequence e.g. a string or list'
 
-If the input is not a string, or a list of characters then the `for...in` statement will *raise an exception* which is *caught* by the `except` block. For example,
-
-    print calculate_weight(123)
-
-This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
+Now, the exception is *caught* by the `except` block. This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
 
 Often, we want to pass such errors to other points in our program rather than just print a message and continue. So, for example we could do,
 
