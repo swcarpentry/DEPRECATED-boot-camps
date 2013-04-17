@@ -1,0 +1,193 @@
+---
+root: ..
+title: University of Wisconsin-Madison 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .brand {
+        background-color: transparent;
+        background-image: url("{{page.root}}/logos/swc-logo.svg");
+        background-repeat: no-repeat;
+        background-size: auto 36px;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Installation</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="https://github.com/UW-Madison-ACI/boot-camps">GitHub Repo</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="home" class="hero-unit">
+        <div>
+          <a href="http://software-carpentry.org">
+            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;">
+          </a>
+          <h1>University of Wisconsin-Madison</h1>
+        </div>
+        <br>
+        <div class="row-fluid">
+          <div class="span6">
+            <p>Union South, Fifth Quarter Room</p>
+          </div>
+          <div class="span6" style="text-align: right;">
+            <p>April 29-30, 2013<br>
+               9:00 AM - 4:30 PM</p>
+          </div>
+        </div>
+      </div> <!-- hero-unit -->
+
+      <div id="alt-install">
+        <h1 id="install">Alternate Installation Options</h1>
+
+	<p>For this bootcamp, we intend to have all learners login
+	remotely to a server that will be prepared with the correct
+	environment.  Instructions on how to prepare your laptop for
+	this are available on our <a href="http://uw-madison-aci.github.io/boot-camps/2013-04-29-uwmadison/index.html">
+	boot camp web page</a>.</p>
+
+	<p>Below are some other options that you may be interested in for
+	the long term.</p>
+
+        <h3>Virtual Machine</h3>
+        <p>To give everyone a consistent, pre-configured environment we
+           provide a Linux virtual machine. Install
+           <a href="https://www.virtualbox.org/">VirtualBox</a> and download
+           <a href="https://s3.amazonaws.com/SWC_JHU2012/swc_jhu2012_r03.ova">
+           this virtual machine image</a>. Load the VM into VirtualBox by
+           doing Import Appliance and loading the .ova file.</p>
+
+        <h3>Other Options</h3>
+        <p>To complete the entire workshop you need several things:
+           a Bash shell, git, a code editor (though any plain text editor
+           will work in a pinch), and a scientific Python installation
+           that includes the
+           <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
+            IPython Notebook</a>,
+            <a href="http://numpy.scipy.org/">NumPy</a>,
+            and <a href="http://matplotlib.org/">matplotlib</a>.</p>
+        <p>Even if you plan to install things yourself please download
+           VirtualBox and the virtual machine as a backup. It can be
+           extremely difficult to get everything set up correctly.</p>
+
+        <div class="row-fluid">
+          <div class="span6">
+            <h4 class="well well-small">Bash</h4>
+            <h5>Mac</h5>
+            <p>The default shell in Mac OS X is bash.</p>
+            <h5>Windows</h5>
+            <p>Install <a href="http://msysgit.github.com/">Git Bash</a>
+               following the instructions
+               <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>.</p>
+            <h5>Linux</h5>
+            <p>The default shell is usually bash but if not you can
+               get to bash by opening a terminal and typing <code>bash</code>.</p>
+          </div>
+          <div class="span6">
+            <h4 class="well well-small">Git</h4>
+            <h5>Mac</h5>
+            <p>Install
+               <a href="https://developer.apple.com/xcode/">Xcode</a>
+               and the command line tools (from the Download
+               preferences pane) or
+               <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">install just git</a>.</p>
+            <h5>Windows</h5>
+            <p>Install <a href="http://msysgit.github.com/">Git Bash</a>
+               following the instructions
+               <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>.</p>
+            <h5>Linux</h5>
+            <p>If git is not already available on your machine you can try
+               to install it via your distro's package manager
+               (e.g. <code>apt-get</code>).</p>
+          </div>
+        </div> <!-- row1 -->
+
+        <div class="row-fluid">
+          <div class="span6">
+            <h4 class="well well-small">Code Editor</h4>
+            <h5>Mac</h5>
+            <p>We recommend
+               <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+               <a href="http://www.sublimetext.com/">Sublime Text</a>.</p>
+            <h5>Windows</h5>
+            <p><a href="http://notepad-plus-plus.org/">Notepad++</a> is a
+               popular free code editor for Windows.</p>
+            <h5>Linux</h5>
+            <p><a href="http://kate-editor.org/">Kate</a> is one option for
+               Linux users.</p>
+          </div>
+          <div class="span6">
+            <h4 class="well well-small">Python</h4>
+            <p>Installing everything you need
+               on your own can be a bit difficult so
+               we recommend just installing the
+               <a href="http://www.enthought.com/products/epd.php">
+                Enthought Python Distribution</a>, which comes in
+              <a href="http://www.enthought.com/products/epd_free.php">free</a>
+              and
+              <a href="http://www.enthought.com/products/edudownload.php">academic</a>
+              versions for Mac, Windows, and Linux.</p>
+            <p>For other options check the Python4Astronomers page on
+               <a href="http://python4astronomers.github.com/installation/python_install.html">
+                installing scientific Python</a>.</p>
+          </div>
+        </div> <!-- row2 -->
+      </div> <!-- alt-install -->
+      <hr>
+      <div id="contact">
+        <h1>Contact</h1>
+        <p>This workshop will be presented by revered faculty and staff:
+           Paul Wilson, 
+           <a href="http://wid.wisc.edu/profile/lauren-michael/">Lauren Michael</a>, 
+           <a href="http://www.ncl.ac.uk/computing/people/profile/stephen.mcgough">Stephen McGough</a>, 
+           and new(ish) blood:
+           <a href="http://gidden.github.com">Matt Gidden</a>, and
+           Aronne Merrelli.
+           For more information contact
+           <a href="mailto:info@software-carpentry.org">
+            info@software-carpentry.org</a>.
+      </div> <!-- contact -->
+    </div> <!-- /container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+
