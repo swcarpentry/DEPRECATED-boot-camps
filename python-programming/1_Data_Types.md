@@ -1,94 +1,92 @@
-# Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+# Python 1: Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
 * * * * *
 
 **Based on lecture materials by Milad Fatenejad, Joshua R. Smith, and Will
 Trimble**
 
-Python would be a farily useless language if it weren't for the compound
-data types. The main two are lists and dictionaries, but I'll mention sets
+One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but I'll mention sets
 and tuples as well. I'll also go over reading text data from files. 
 
 ## Lists
 
 A list is an ordered, indexable collection of data. Lets say you have
-collected some data with sample weight (g) and volume (cm3)  that looks like this:
+collected some current and voltage data that looks like this:
 
 ```
-weight:
-11
-10
-20
-500
-5
+voltage:
+-2.0
+-1.0
+0.0
+1.0
+2.0
 
-
-volume:
-100
-50
-1134
-10
-850
-
+current:
+-1.0
+-0.5
+0.0
+0.5
+1.0
 ```
 
 So you could put that data into lists like
 
 ```python
-weightList = [11, 10, 20, 500, 5]
-volumeList = [100, 50, 1134, 10, 850]
+voltageList = [-2.0, -1.0, 0.0, 1.0, 2.0]
+
+currentList = [-1.0, -0.5, 0.0, 0.5, 1.0]
 ```
 
-obviously weightList is of type list:
+We can check the voltageList type (obviously it is of type list):
 
 ```python
-type(weightList)
+type(voltageList)
 <type 'list'>
 ```
 
 Python lists have the charming (annoying?) feature that they are indexed
-from zero. Therefore, to find the value of the first item in weightList:
+from zero. Therefore, to find the value of the first item in voltageList:
 
 ```python
-weightList[0]
-11
+voltageList[0]
+-2.0
 ```
 
 And to find the value of the third item
 
 ```python
-weightList[2]
-20
+voltageList[2]
+0.0
 ```
 
 Lists can be indexed from the back using a negative index. The last item of
 currentList
 
 ```python
-In [6]: currentList[-1]
-Out[6]: 1.0
+currentList[-1]
+1.0
 ```
 
 and the next-to-last
 
 ```python
-In [7]: currentList[-2]
-Out[7]: 0.5
+currentList[-2]
+0.5
 ```
 
 You can "slice" items from within a list. Lets say we wanted the second
 through fourth items from voltageList
 
 ```python
-In [8]: voltageList[1:4]
-Out[8]: [-1.0, 0.0, 1.0]
+voltageList[1:4]
+[-1.0, 0.0, 1.0]
 ```
 
 Or from the third item to the end
 
 ```python
-In [9]: voltageList[2:]
-Out[9]: [0.0, 1.0, 2.0]
+voltageList[2:]
+[0.0, 1.0, 2.0]
 ```
 
 and so on.
@@ -98,7 +96,7 @@ and so on.
 Just like strings have methods, lists do too.
 
 ```python
-In [10] dir(list)
+dir(list)
 ```
 
 One useful method is append. Lets say we want to stick the following data
@@ -117,31 +115,33 @@ current:
 If you want to append items to the end of a list, use the append method.
 
 ```python
-In [11]: voltageList.append(3.)
+voltageList.append(3.)
 
-In [12]: voltageList.append(4.)
+voltageList.append(4.)
 
-In [13]: voltageList
-Out[13]: [-2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
+voltageList
+[-2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
 ```
 
 You can see how that approach might be tedious in certain cases. If you
 want to concatenate a list onto the end of another one, use extend.
 
 ```python
-In [14]: currentList.extend([1.5, 2.0])
+currentList.extend([1.5, 2.0])
 
-In [15]: currentList
-Out[15]: [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
+currentList
+[-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 ```
+
+Question: Is it possible to extend the currentList with the values from the voltageList without typing all the values from the voltageList?
 
 ### Length of Lists
 
 Sometimes you want to know how many items are in a list. Use the len command.
 
 ```python
-In [16]: len(voltageList)
-Out[16]: 7
+len(voltageList)
+7
 ```
 
 ### Heterogeneous Data
@@ -149,7 +149,7 @@ Out[16]: 7
 Lists can contain hetergeneous data.
 
 ```python
-In [17]: dataList = ["experiment: current vs. voltage", \
+dataList = ["experiment: current vs. voltage", \
    ....:             "run", 47, \
    ....:             "temperature", 372.756, \
    ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
@@ -169,14 +169,14 @@ to another, both variables point to the same thing. Changing the first one
 ends up changing the second. Be careful about this fact.
 
 ```python
-In [19]: a = [1,2]
+a = [1,2]
 
-In [20]: b = a
+b = a
 
-In [21]: a.append(10)
+a.append(10)
 
-In [22]: b
-Out[22]: [1, 2, 10]
+b
+[1, 2, 10]
 ```
 
 There's a ton more to know about lists, but lets press on. Check out Dive
@@ -200,14 +200,14 @@ voltage: [-2.0, -1.0, 0.0, 1.0, 2.0]
 We can read this data into a list type variable pretty easily.
 
 ```python
-In [1]: f = open("data.dat")
+f = open("data.dat")
 
-In [2]: ivdata = f.readlines()
+ivdata = f.readlines()
 
-In [3]: f.close()
+f.close()
 
-In [4]: ivdata
-Out[4]: 
+ivdata
+
 ['experiment: current vs. voltage\n',
  'run: 47\n',
  'temperature: 372.756\n',
@@ -227,10 +227,10 @@ like lists. The difference is that a tuple is immutable; once you set the
 data in it, the tuple cannot be changed. You define a tuple as follows.
 
 ```python
-In [1]: tup = ("red", "white", "blue")
+tup = ("red", "white", "blue")
 
-In [2]: type(tup)
-Out[2]: <type 'tuple'>
+type(tup)
+<type 'tuple'>
 ```
 
 You can slice and index the tuple exactly like you would a list. Tuples are
@@ -245,7 +245,7 @@ similar to the idea of a mathematical set: it is an unordered collection of
 unique things. Consider:
 
 ```python
-In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
 ```
 
 Since sets contain only unique items, there's only one banana in the set
@@ -256,12 +256,12 @@ math. Here's an example of an intersection of two sets (the common items in
 both sets).
 
 ```python
-In [4]: firstBowl = set(["apple", "banana", "pear", "peach"])
+firstBowl = set(["apple", "banana", "pear", "peach"])
 
-In [5]: secondBowl = set(["peach", "watermelon", "orange", "apple"])
+secondBowl = set(["peach", "watermelon", "orange", "apple"])
 
-In [6]: set.intersection(firstBowl, secondBowl)
-Out[6]: set(['apple', 'peach'])
+set.intersection(firstBowl, secondBowl)
+set(['apple', 'peach'])
 ```
 
 You can check out more info using the help docs. We won't be returning to
@@ -278,7 +278,7 @@ Here's a way to create a dictionary that contains all the data in our
 data.dat file in a more sensible way than a list.
 
 ```python
-In [7] dataDict = {"experiment": "current vs. voltage", \
+dataDict = {"experiment": "current vs. voltage", \
                    "run": 47, \
                    "temperature": 372.756, \
                    "current": [-1.0, -0.5, 0.0, 0.5, 1.0], \
@@ -290,50 +290,50 @@ the run number is in the second position of the list, you just refer
 directly to "run":
 
 ```python
-In [9]: dataDict["run"]
-Out[9]: 47
+dataDict["run"]
+47
 ```
 
 If you wanted the voltage data list:
 
 ```python
-In [10]: dataDict["voltage"]
-Out[10]: [-2.0, -1.0, 0.0, 1.0, 2.0]
+dataDict["voltage"]
+[-2.0, -1.0, 0.0, 1.0, 2.0]
 ```
 
 Or perhaps you wanted the last element of the current data list
 
 ```python
-In [11]: dataDict["current"][-1]
-Out[11]: 1.0
+dataDict["current"][-1]
+1.0
 ```
 
 Once a dictionary has been created, you can change the values of the data
 if you like.
 
 ```python
-In [12]: dataDict["temperature"] = 3275.39
+dataDict["temperature"] = 3275.39
 ```
 
 You can also add new keys to the dictionary.
 
 ```python
-In [13]: dataDict["user"] = "Johann G. von Ulm"
+dataDict["user"] = "Johann G. von Ulm"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
 Lets say you wanted all the keys from a particular dictionary.
 
 ```python
-In [14]: dataDict.keys()
-Out[14]: ['run', 'temperature', 'current', 'experiment', 'user', 'voltage']
+dataDict.keys()
+['run', 'temperature', 'current', 'experiment', 'user', 'voltage']
 ```
 
 also, values
 
 ```python
-In [15]: dataDict.values()
-Out[15]: 
+dataDict.values()
+ 
 [47,
  3275.39,
  [-1.0, -0.5, 0.0, 0.5, 1.0],
@@ -354,3 +354,5 @@ Lists are mutable, and therefore cannot.
 When you architect software in python, most data will end up looking either
 like a list or a dictionary. These two data types are very important in
 python and you'll end up using them all the time.
+
+Previous: [Variable types](0_Variables_Types.md) Next: [Flow control](2_Flow_Control.md)

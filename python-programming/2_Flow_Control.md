@@ -1,29 +1,11 @@
-# Python 3 : Flow Control - Loops, Conditionals, etc
+# Python 2 : Flow Control - Loops, Conditionals, etc
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
-
-Pasting into iPython
-====================
-
-This part of the lesson includes a lot of text, but it will be useful to
-run it yourself in iPython.
-
-To paste text from another application (i.e. these lecture notes) into
-iPython :
-
-1.  select text from the wiki
-2.  copy with **ctrl+c**
-3.  in iPython, type **%paste**
-
-The code should paste and execute in iPython.
-
-If you also type %autocall to turn autocall OFF, you may be able to
-paste with **ctrl+v** though this won't work with all ipython builds.
 
 Conditionals
 ============
 
-A conditional (if statement) is some statement that in general says :
+A conditional (if statement) is some statement that in general says : 
 "When some boolean is true, do the following. Elsewise, do this other
 thing."
 
@@ -48,7 +30,7 @@ unique to python. To check whether an object is contained in a list :
   beatle="John"
   beatles=["George", "Ringo","John", "Paul"]
   print beatle in beatles # is John one of the beatles? : TRUE
-  print "Katy" not in beatles # this is also TRUE. 
+  print "Tom" not in beatles # this is also TRUE. 
 ```
 
 Conditionals (if statements) are also really easy to use in python. Take
@@ -79,15 +61,7 @@ pretty - it tells Python what the body of the if-statement is. This is
 true when ever we create any code blocks, such as the bodies of loops,
 functions or classes.
 
-**Aside: Compact if-statement:**
 
-Python has an easy to use if-syntax for setting the value of a variable.
-Try entering this into IPython:
-
-```python
-  i = 5
-  sign = "positive" if i > 0 else "negative"
-```
 
 While Loops
 ===========
@@ -134,7 +108,7 @@ true, a **poorly formed** while loop might repeat forever. For example :
   print "Well, there's egg and bacon, egg and spam, egg bacon and"
   while i is 1:
     print "spam "
-  print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..." 
+  print "When will this be printed?!" 
 ```
 
 Since the variable **i** never changes within the while loop, we can
@@ -144,7 +118,7 @@ nothing but spam. (If you try this at home, please note that one way to
 interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
 
 To create nested if loops, the indentation (preferably two or four
-spaces) should increase for each looping level.
+spaces) should increase for each looping level. Let's put the following source code in a file and save it as "script.py".
 
 ```python
   weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
@@ -159,7 +133,7 @@ spaces) should increase for each looping level.
       script += weapons[tries]
       script += ". "
       if tries == len(weapons) - 1 :
-          script += " and nice red uniforms. Oh damn!"
+          script += " and nice red uniforms."
       tries +=1
   print script
 ```
@@ -315,14 +289,11 @@ Final Example
 We've seen a lot so far. Lets work through a slightly lengthier example
 together. I'll use some of the concepts we already saw and introduce a
 few new concepts. To run the example, you'll need to locate a short file
-containing phone numbers. The file can be found in your PyTrieste
-repository within the phonenums directory and is called phonenums.txt.
-Now we have to move ipython to that directory so it can find the
-phonenums.txt file. You navigate within ipython in the same way that you
-navigate in the shell, by entering "cd [path]" .
+containing phone numbers. The file is in your repository is called phonenums.txt.
+
 
 This example opens a text file containing a list of phone numbers. The
-phone numbers are in the format \#\#\#-\#\#\#-\#\#\#\#, one to a line.
+phone numbers are in the format \#\#\#\#-\#\#\#-\#\#\#, one to a line.
 The example code loops through each line in the file and counts the
 number of times each area code appears. The answer is stored in a
 dictionary, where the area code is the key and the number of times it
@@ -342,16 +313,4 @@ occurs is the value.
   print areacodes # Print the answer
 ```
 
-Example : Iteritems
--------------------
-
-Use the iteritems dictionary method in combination with a for loop to
-print the keys/values of the areacodes dictionary one to a line. In
-other words, the goal is to write a loop that prints:
-
-    203 4
-    800 4
-    608 8
-    773 3
-
-This example is a little tricky to figure out, but give it a shot.
+Previous: [Data types](1_Data_Types.md) Next: [Functions and modules](3_Functions_and_Modules.md)
