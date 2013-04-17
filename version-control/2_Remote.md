@@ -28,13 +28,13 @@ Now, we can create a repository on Bitbucket,
 
 * Log in to [Bitbucket](https://github.com)
 * Click on the Create  icon on the top left, next to the Bitbucket logo
-* Enter Repository name: `bootcamp`
+* Enter Repository name: "bootcamp"
 * Make sure that the private repository option is ticked
-* Make sure that you select Git in the `repository type` section
+* Make sure that you select Git in the "repository type" section
 * Make sure the Initialize this repository with a README is *unselected*
 * Click Create Repository
 
-You'll get a page with new information about your repository. We already have our local repository and we will be copying it to Bitbucket. On the page which just opened (`Add some code`) click `I have code I want to import`. Copy the following line (from Bitbucket) and paste it into your command line
+You'll get a page with new information about your repository. We already have our local repository and we will be copying it to Bitbucket. On the page which just opened ("Add some code") click "I have code I want to import". Copy the following line (from Bitbucket) and paste it into your command line
 
     $ git remote add origin https://USERNAME@bitbucket.org/USERNAME/bootcamp.git
 
@@ -168,7 +168,7 @@ And then check that we have our changes,
 
 ### Conflicts and how to resolve them
 
-Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket,
+Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket:
 
     $ nano journal.txt
     $ git add journal.txt
