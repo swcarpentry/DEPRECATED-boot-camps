@@ -1,0 +1,220 @@
+---
+root: ..
+title: University of Wisconsin-Madison 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .brand {
+        background-color: transparent;
+        background-image: url("{{page.root}}/logos/swc-logo.svg");
+        background-repeat: no-repeat;
+        background-size: auto 36px;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Installation</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="https://github.com/UW-Madison-ACI/boot-camps">GitHub Repo</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="home" class="hero-unit">
+        <div>
+          <a href="http://software-carpentry.org">
+            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;">
+          </a>
+          <h1>University of Wisconsin-Madison</h1>
+        </div>
+        <br>
+        <div class="row-fluid">
+          <div class="span6">
+            <p>Union South, Fifth Quarter Room</p>
+          </div>
+          <div class="span6" style="text-align: right;">
+            <p>April 29-30, 2013<br>
+               9:00 AM - 4:30 PM</p>
+          </div>
+        </div>
+      </div> <!-- hero-unit -->
+
+      <div id="schedule" class="row-fluid">
+        <h1>Schedule</h1>
+        <p class="muted" style="font-style: italic;">Subject to Change</p>
+	<p>This bootcamp has been structured around the concepts put forth in the recent paper 
+	  "<a href="http://arxiv.org/abs/1210.0530">Best Practices for Scientific Computing</a>" by G. Wilson, et al.
+          In so doing, the sessions names have been chosen to correspond with some of the most important 
+          practices to start early.</p>
+        <div class="span6">
+          <strong>Day 1</strong>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>8:30 - 9:00</td>
+                <td style="text-align: right;">Setup Help</td>
+              </tr>
+              <tr>
+                <td>9:00 - 9:45</td>
+                <td style="text-align: right;">What we know about software engineering.</td>
+              </tr>
+              <tr>
+                <td>9:45 - 10:45</td>
+                <td style="text-align: right;">Introducing the Shell</td>
+              </tr>
+              <tr>
+                <td>10:45 - 11:00</td>
+                <td style="text-align: right;">Break</td>
+              </tr>
+              <tr>
+                <td>11:00 - 12:30</td>
+                <td style="text-align: right;">Automating workflows <br/ ><span class="muted">(Shell scripts & Makefiles)</span></td>
+              </tr>
+              <tr>
+                <td>12:30 - 1:30</td>
+                <td style="text-align: right;">Lunch</td>
+              </tr>
+              <tr>
+                <td>1:30 - 3:00</td>
+                <td style="text-align: right;">Write Code for People I<br/ ><span class="muted">(Variables & Data Structures)</span></td>
+              </tr>
+              <tr>
+                <td>3:00 - 3:15</td>
+                <td style="text-align: right;">Break</td>
+              </tr>
+              <tr>
+                <td>3:15 - 4:30</td>
+                <td style="text-align: right;">Write Code for People II<br/ ><span class="muted">(Flow Control)</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <strong>Day 2</strong>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>9:00 - 10:30</td>
+                <td style="text-align: right;">Don't Repeat Yourself<br/ ><span class="muted">(Functions & Modules)</span></td>
+              </tr>
+              <tr>
+                <td>10:30 - 10:45</td>
+                <td style="text-align: right;">Break</td>
+              </tr>
+              <tr>
+                <td>10:45 - 12:00</td>
+                <td style="text-align: right;">Plan for Mistakes<br/ ><span class="muted">(Testing)</span></td>
+              </tr>
+              <tr>
+                <td>12:00 - 1:00</td>
+                <td style="text-align: right;">Lunch</td>
+              </tr>
+              <tr>
+                <td>1:00 - 2:30</td>
+                <td style="text-align: right;">Use Version Control<br/ ><span class="muted">(Using git locally)</span></td>
+              </tr>
+              <tr>
+                <td>2:30 - 2:45</td>
+                <td style="text-align: right;">Break</td>
+              </tr>
+              <tr>
+                <td>2:45 - 4:00</td>
+                <td style="text-align: right;">Collaborate<br/ ><span class="muted">(Using git remotely & github)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> <!-- schedule -->
+      <hr>
+      <div id="installation">
+        <h1 id="install">Installation</h1>
+
+	<p>For this bootcamp, we intend to have all learners login
+	remotely to a server that will be prepared with the correct
+	environment.  The server host name and a user account for each 
+	learner will be given out at the beginning of the boot camp. 
+	Please follow the below instructions based upon 
+	your laptop's operating system.
+	<br/><br/>(Note: We will be providing plugs for power and 
+	utilizing Union South's wireless network.)</p>
+
+	<h3>Mac OS or Linux</h3>
+	<p>As long as you have a shell terminal on your laptop (a default 
+	for these operating systems), you shouldn't need to download 
+	additional software.</p>
+
+	<h3>Windows</h3>
+	<p>Please follow the instructions at the following links for downloading 
+	and installing Putty, which will allow you to ssh from your Windows 
+	laptop:<br/>
+	<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">
+	Download Putty</a><br/>
+	<a href="http://rcc.its.psu.edu/user_guides/remote_connectivity/putty/">
+	Install Putty</a>(Please follow through "Tip 1". For subsequent steps, 
+	your assigned username and the server Host Name will be given out on 
+	the morning of the boot camp.)</p>
+ 
+	<h3>Alternate Installation Options</h3>
+	<p>Other Software Carpentry boot camps have provided virtual machines 
+	and options to download boot camp software packages directly to a laptop 
+	(rather than having attendees login to a remote server). These options depend 
+	a bit more on the version and configuration of your operating system, but 
+	you are welcome to try them by following the instructions 
+	<a href="http://http://uw-madison-aci.github.io/boot-camps/2013-04-29-uwmadison/alt-install.html">
+	here</a>.</p>
+      
+      </div> <!-- installation -->
+      <hr>
+      <div id="contact">
+        <h1>Contact</h1>
+        <p>This workshop will be presented by revered faculty and staff:
+           Paul Wilson, 
+           <a href="http://wid.wisc.edu/profile/lauren-michael/">Lauren Michael</a>, 
+           <a href="http://www.ncl.ac.uk/computing/people/profile/stephen.mcgough">Stephen McGough</a>, 
+           and new(ish) blood:
+           <a href="http://gidden.github.com">Matt Gidden</a>, and
+           Aronne Merrelli.
+           For more information contact
+           <a href="mailto:info@software-carpentry.org">
+            info@software-carpentry.org</a>.
+      </div> <!-- contact -->
+    </div> <!-- /container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+
