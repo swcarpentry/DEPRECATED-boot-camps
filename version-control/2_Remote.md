@@ -16,7 +16,7 @@ We're going to set up a remote repository that we can use from multiple location
 * Varying permissions for various groups of users
 * Other service hooks e.g. to Twitter.
 
-**Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. GitHub and others offer pricing plans different pricing plans, for more details, check out their websites.
+**Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. 
 
 ### Get an account
 
