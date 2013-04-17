@@ -177,7 +177,7 @@ Let's continue to pretend that our two local, cloned, repositories are hosted on
 
 Now let us suppose, at a later, date, we use our other repository (for example, we may have been working on a local repository on our laptop, and now are using the one on our workstation) and we come up with a better idea for a title,
 
-    $ cd ../anotherbootcamp
+    $ cd ../bootcamp2
     $ git add journal.txt
     $ git commit -m "Changed the first author" journal.txt
     $ git push
@@ -206,9 +206,9 @@ we can see that our file is listed as `Unmerged` and if we look at `journal.txt`
 
 The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to *resolve* the conflict. This means removing the mark-up and doing one of
 
-* Keep the local version, which, here, is the one marked-up by `HEAD` i.e. `Title: A paper about proteines`
-* Keep the remote version, which, here, is the one marked-up by the commit identifier i.e. `Title: A paper everything but proteines`
-* Or keep a combination of the two e.g. `Title: A paper about proteines and eveything else`
+* Keep the local version, which, here, is the one marked-up by `HEAD` i.e. "Title: A paper about proteines"
+* Keep the remote version, which, here, is the one marked-up by the commit identifier i.e. "Title: A paper everything but proteines"
+* Or keep a combination of the two e.g. "Title: A paper about proteines and eveything else"
 
 We edit the file. Then commit our changes e.g.
 
