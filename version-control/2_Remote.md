@@ -122,7 +122,7 @@ And let us clone our repository again, but this time specify the local directory
 So we now have two clones of our repository,
 
     $ ls
-    $ bootcamp anotherbootcamp
+    $ bootcamp bootcamp2
 
 Let's pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we're still pretending!) and one on Bitbucket. So let's go into one of our clones, make some changes, commit these and push these to Bitbucket:
 
@@ -134,7 +134,7 @@ Let's pretend these clones are on two separate machines! So we have 3 versions o
 
 Now let's change to our other repository and *fetch* the changes from our remote repository,
 
-    $ cd ../anotherbootcamp
+    $ cd ../bootcamp2
     $ git fetch
 
 We can now see what the differences are by doing,
