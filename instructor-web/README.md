@@ -16,7 +16,7 @@ trial search:
  Python?
 
 Pasting bits of cryptic error messages into google often works
-well. But when it doesn't work... xkcd.com/609
+well. But when it doesn't work... xkcd.com/979
 
 # Stack Overflow
 
