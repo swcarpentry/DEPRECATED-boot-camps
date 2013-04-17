@@ -7,12 +7,11 @@ We're going to set up a remote repository that we can use from multiple location
 [Bitbucket](http://bitbucket.org) is a web service which allows users to set up  their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. Bitbucket, like other services such as [Launchpad](https://launchpad.net), [GitHub](https://github.com),
 [GoogleCode](http://code.google.com), and [SourceForge](http://sourceforge.net) provides a wealth of resources to support projects including:
 
-* Network graphs and time histories changes to repositories
+* Time histories changes to repositories
 * Commit-triggered e-mails
 * Browsing code from within a web browser, with syntax highlighting
 * Software release management
 * Issue (ticket) and bug tracking
-* Wikis
 * Download
 * Varying permissions for various groups of users
 * Other service hooks e.g. to Twitter.
