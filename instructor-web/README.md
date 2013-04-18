@@ -12,8 +12,12 @@ twitter
 # Google
 
 trial search:
- How do I cope with unicode characters in a CSV file, using
- Python?
+ "github markdown to html"
+ then I spotted that it's called "github flavoured markdown"
+ and changed my search to
+ "rendering github flavoured markdown"
+ The top hit is the same. The second hit is more interesting.
+ And the third hit is what I want.
 
 Pasting bits of cryptic error messages into google often works
 well. But when it doesn't work... xkcd.com/979
