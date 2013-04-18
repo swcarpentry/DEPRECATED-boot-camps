@@ -213,7 +213,7 @@ If we look at `journal.txt` we'll see it's our very first version. And if we loo
 
 then we see that our `common` directory is gone. But, rest easy, while it's gone from our working directory, it's still in our repository. We can jump back to the latest commit by doing:
 
-    4 git checkout master
+    $ git checkout master
 
 And `common` will be there once more,
 

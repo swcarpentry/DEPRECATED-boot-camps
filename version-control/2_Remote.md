@@ -7,17 +7,16 @@ We're going to set up a remote repository that we can use from multiple location
 [Bitbucket](http://bitbucket.org) is a web service which allows users to set up  their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. Bitbucket, like other services such as [Launchpad](https://launchpad.net), [GitHub](https://github.com),
 [GoogleCode](http://code.google.com), and [SourceForge](http://sourceforge.net) provides a wealth of resources to support projects including:
 
-* Network graphs and time histories changes to repositories
+* Time histories changes to repositories
 * Commit-triggered e-mails
 * Browsing code from within a web browser, with syntax highlighting
 * Software release management
 * Issue (ticket) and bug tracking
-* Wikis
 * Download
 * Varying permissions for various groups of users
 * Other service hooks e.g. to Twitter.
 
-**Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. GitHub and others offer pricing plans different pricing plans, for more details, check out their websites.
+**Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. 
 
 ### Get an account
 
@@ -29,13 +28,13 @@ Now, we can create a repository on Bitbucket,
 
 * Log in to [Bitbucket](https://github.com)
 * Click on the Create  icon on the top left, next to the Bitbucket logo
-* Enter Repository name: `bootcamp`
+* Enter Repository name: "bootcamp"
 * Make sure that the private repository option is ticked
-* Make sure that you select Git in the `repository type` section
+* Make sure that you select Git in the "repository type" section
 * Make sure the Initialize this repository with a README is *unselected*
 * Click Create Repository
 
-You'll get a page with new information about your repository. We already have our local repository and we will be copying it to Bitbucket. On the page which just opened (`Add some code`) click `I have code I want to import`. Copy the following line (from Bitbucket) and paste it into your command line
+You'll get a page with new information about your repository. We already have our local repository and we will be copying it to Bitbucket. On the page which just opened ("Add some code") click "I have code I want to import". Copy the following line (from Bitbucket) and paste it into your command line
 
     $ git remote add origin https://USERNAME@bitbucket.org/USERNAME/bootcamp.git
 
@@ -123,7 +122,7 @@ And let us clone our repository again, but this time specify the local directory
 So we now have two clones of our repository,
 
     $ ls
-    $ bootcamp anotherbootcamp
+    $ bootcamp bootcamp2
 
 Let's pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we're still pretending!) and one on Bitbucket. So let's go into one of our clones, make some changes, commit these and push these to Bitbucket:
 
@@ -135,7 +134,7 @@ Let's pretend these clones are on two separate machines! So we have 3 versions o
 
 Now let's change to our other repository and *fetch* the changes from our remote repository,
 
-    $ cd ../anotherbootcamp
+    $ cd ../bootcamp2
     $ git fetch
 
 We can now see what the differences are by doing,
@@ -169,7 +168,7 @@ And then check that we have our changes,
 
 ### Conflicts and how to resolve them
 
-Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket,
+Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket:
 
     $ nano journal.txt
     $ git add journal.txt
@@ -178,7 +177,7 @@ Let's continue to pretend that our two local, cloned, repositories are hosted on
 
 Now let us suppose, at a later, date, we use our other repository (for example, we may have been working on a local repository on our laptop, and now are using the one on our workstation) and we come up with a better idea for a title,
 
-    $ cd ../anotherbootcamp
+    $ cd ../bootcamp2
     $ git add journal.txt
     $ git commit -m "Changed the first author" journal.txt
     $ git push
@@ -207,9 +206,9 @@ we can see that our file is listed as `Unmerged` and if we look at `journal.txt`
 
 The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to *resolve* the conflict. This means removing the mark-up and doing one of
 
-* Keep the local version, which, here, is the one marked-up by `HEAD` i.e. `Title: A paper about proteines`
-* Keep the remote version, which, here, is the one marked-up by the commit identifier i.e. `Title: A paper everything but proteines`
-* Or keep a combination of the two e.g. `Title: A paper about proteines and eveything else`
+* Keep the local version, which, here, is the one marked-up by `HEAD` i.e. "Title: A paper about proteines"
+* Keep the remote version, which, here, is the one marked-up by the commit identifier i.e. "Title: A paper everything but proteines"
+* Or keep a combination of the two e.g. "Title: A paper about proteines and eveything else"
 
 We edit the file. Then commit our changes e.g.
 
