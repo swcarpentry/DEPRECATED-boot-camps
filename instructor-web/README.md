@@ -103,6 +103,8 @@ asking questions. If the mailing list has a public archive you
 can search it, and you may find archived messages are sometimes
 the result of a google search.
 
+"numpy mailing list"
+
 If the list is dauntingly large (the python mailing list), join
 a smaller one! Maybe your instution has one?
 
@@ -114,7 +116,7 @@ Naivety is acceptable, rudeness generally not.
 
 The internet works because we all contribute to it. So if you've
 found a useful answer on Stack Overflow and it works, give it
-some love and upvote it!
+some love and upvote it! "how do i read a shape file in python".
 
 If you've worked out how to do something tricky, and no-one else
 seems to have documented, and you think it's a useful thing,
