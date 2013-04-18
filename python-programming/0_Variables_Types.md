@@ -66,10 +66,6 @@ Reminder:
    print 10 % 3
 ```
 
-Floating point division:
-```python
-   print 10 % 3
-```
 
 
 
@@ -83,9 +79,26 @@ We can check the string length:
    print len(a)
 ```
 
+We can also split the string - splitting at space:
+```python
+   a = 'Thomas Mann'
+   b = a.split()
+   print b
+```
+
+Or by any other character:
+```python
+   a = 'Thomas-Mann'
+   b = a.split('-')
+   print b
+```
+
+
 In order to list all Python built-in methods for string:
 ```python
    dir(str)
 ```
+
+
 
 Next: [Data Types](1_Data_Types.md)
