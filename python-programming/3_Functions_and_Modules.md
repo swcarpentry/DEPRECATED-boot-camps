@@ -47,9 +47,28 @@ First, let's save our function in a file named "namehandler.py" (deleting the la
 In some Python code you may notice the following statements `from module import *`. This means that all names defined in the module are imported. However, this is not a good practice as the code becomes more difficult to read. 
 
 
+What if we want to process different files and provide the name of the file with the input data not in the source code but in the command line? We need to pass the file name as one of the Python arguments:
+
+```python
+import sys
+from namehandler import get_initials
+
+def main():
+  f = open(sys.argv[1])
+  for l in f:
+     print get_initials(l)
+  f.close()
+
+
+if __name__ == "__main__":
+   main()
+```
+
+
+
 ##Exercise
 
-You probably noticed that there are two authors whose initials were not correctly extracted. It's Stan and Jan Berenstain and Gérard de Villiers. How can we modify our function to address this problem? Hint: check the methods available for string variables ( dir(str) ).
+You probably noticed that there are two authors whose initials were not correctly extracted. It's Erich von Däniken and Gérard de Villiers. How can we modify our function to address this problem? Hint: check the methods available for string variables ( dir(str) ).
 
 
 ####Solution:
@@ -67,5 +86,9 @@ You probably noticed that there are two authors whose initials were not correctl
              i = i+1
       return initial
 ```
+
+
+
+
 
 Previous: [Flow control](2_Flow_Control.md)
