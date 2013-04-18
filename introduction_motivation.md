@@ -14,7 +14,7 @@
 
 **Instructors**
 - Konrad Bernhard  
-- [Paul Ivanov](http://nomeans.net/)
+- [Paul Ivanov](http://pirsquared.org/)
 - [Ariel Rokem](http://arokem.org)
 
 **Helpers**
