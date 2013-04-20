@@ -281,3 +281,9 @@ ubuntu](https://help.ubuntu.com/community/Installation/MinimalCD), then
 sudo apt-get install gitolite will pull in everything you need. At that
 point, your collaborators will only need to send you their public ssh keys
 for you to configure pull and push access to the repos.
+
+## Test your overall version control skills!
+
+Feel up to testing all of your skills? Check out [this](http://pcottle.github.com/learnGitBranching/) excellent website. We haven't
+taught you all the things you'll need to progress through the entire exercise,
+but feel free to take a look and try it out!
