@@ -10,7 +10,7 @@ Imagine you have two computers: the first is a big, powerful desktop machine
 with a big, dual monitor setup. The second is a tiny lightweight netbook you 
 take with you when you travel. Imagine also that you have a presentation at a 
 conference overseas. You know that no matter how "finished" you think you are 
-with your slide deck, inevitably you will realize you need to add an exta figure 
+with your slide deck, inevitably you will realize you need to add an extra figure 
 or recalculate some data AFTER leaving the country and your main desktop 
 workstation. How can you be sure your slide deck, data, and the programs you've 
 written are synchronized between your two machines? How can you be sure that 
@@ -23,12 +23,12 @@ need to drop back to the slide deck you had five days ago?
 Very briefly, version control is a way to keep a backup of changing
 files, to store a history of those changes, and most importantly to
 allow many people in a collaboration to make changes to the same files
-concurrently. There are a lot of verson control systems. Wikipedia
+concurrently. There are a lot of version control systems. Wikipedia
 provides both a nice vocabulary list and a fairly complete table of some
 popular version control systems and their equivalent commands.
 
 Today, we'll be using git. Git is an example of a distributed version
-control system, distinct from centralized verson control systems. I'll
+control system, distinct from centralized versing control systems. I'll
 make the distinction clear later, but for now, the table below will
 suffice.
 
@@ -105,7 +105,7 @@ as their descriptions.
 ## git init : Creating a Local Repository
 
 To keep track of numerous versions of your work without saving numerous
-copies, you can make a local repoitory for it on your computer. What git
+copies, you can make a local repository for it on your computer. What git
 does is to save the first version, then for each subsequent version it
 saves only the changes. That is, git only records the difference between
 the new version and the one before it. With this compact information,
@@ -114,7 +114,7 @@ the original in order up to the version of interest.
 
 To create your own local (on your own machine) repository, you must
 initialize the repository with the infrastructure git needs in order to
-keep a record of things within the repsitory that you're concerned
+keep a record of things within the repository that you're concerned
 about. The command to do this is **git init** .
 
 ### Exercise : Create a Local Repository
@@ -301,7 +301,7 @@ There are some useful flags for this command, such as
 ## git reset : Unstaging a staged file
     git reset filename     (opposite of 'git add filename')
 
-## git checkout : Discardind unstaged modifications (git checkout has other purposes)
+## git checkout : Discarding unstaged modifications (git checkout has other purposes)
     git checkout -- filename     
     
 ## git rm : Removing s file
@@ -422,7 +422,7 @@ now, let's **fork** the repository from GitHub.
 ### Exercise : Cloning a Repository from GitHub
 
 Step 1 : Pick any repository you like. There are many cool projects
-hosted on github. Take a few minutes here, and pick a piece of code.
+hosted on GitHub. Take a few minutes here, and pick a piece of code.
 
 Step 2 : Clone it. If you didn't find anything cool, you can chose the
 "instructional" Spoon-Knife repository:
