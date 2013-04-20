@@ -1,5 +1,4 @@
-Remote Version Control
-
+# Remote Version Control
 ----
 
 **Based on material by Katy Huff, Anthony Scopatz, and Sri Hari Krishna
