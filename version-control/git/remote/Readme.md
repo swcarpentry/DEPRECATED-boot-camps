@@ -25,9 +25,9 @@ etc.) provides :
 -   commit triggered mailing lists
 -   other service hooks (twitter, etc.)
 
-**NOTE** Public repos have public licences **by default**. If you don't
+**NOTE** Public repos have public licenses **by default**. If you don't
 want to share (in the most liberal sense) your stuff with the world, pay
-github money for private repos, or host your own.
+girths money for private repos, or host your own.
 
 ## github password 
 
@@ -112,10 +112,10 @@ Step 3 : Check out what happened by browsing the directory.
 ## git pull : Pull = Fetch + Merge
 
 The command **git pull** is the same as executing **git fetch** followed
-by **git merge**. Though it is not recommened for cases in which there
+by **git merge**. Though it is not recommend for cases in which there
 are many branches to consider, the pull command is shorter and simpler
 than fetching and merging as it automates the branch matching.
-Specificially, to perform the same task as we did in the previous
+Specifically, to perform the same task as we did in the previous
 exercise, the pull command would be :
 
     $ git pull upstream
@@ -145,7 +145,7 @@ your fork, the "origin."
     $ git push origin 2013-04-uwmadison
 
 If you have permission to push to the upstream repository, sending
-commits to that remote is exactly analagous.
+commits to that remote is exactly analogous.
 
     $ git push upstream 2013-04-uwmadison
 
@@ -208,7 +208,7 @@ Step 3 : You want to push it to the internet eventually, so you pull
 updates from the upstream repository, but will experience a conflict.
 
     $ git merge development
-    Auto-merging Readme.md
+    Auto-merging Ream.md
     CONFLICT (content): Merge conflict in Readme.md
     Automatic merge failed; fix conflicts and then commit the result.
 
