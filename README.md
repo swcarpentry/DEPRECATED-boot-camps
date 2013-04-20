@@ -2,6 +2,7 @@
 
 UW-Madison Softare Carpentry Boot Camp
 =======================================
+Welcome!
 
 April 29 & 30, 2013
 --------------------
