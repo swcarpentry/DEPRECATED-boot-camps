@@ -1,4 +1,4 @@
-Version Control WITH KATY!!!
+Remote Version Control
 
 ----
 
@@ -106,7 +106,7 @@ Step 2 : Make certain you are in the 2013-04-uwmadison branch and merge the
 upstream 2013-04-uwmadison branch into your 2013-04-uwmadison branch
 
     $ git checkout 2013-04-uwmadison
-    $ git merge upstream\2013-04-uwmadison
+    $ git merge upstream/2013-04-uwmadison
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -132,7 +132,11 @@ The **git push** command pushes commits in a local working copy to a
 remote repository. The syntax is git push [remote] [local branch].
 Before pushing, a developer should always pull (or fetch + merge), so
 that there is an opportunity to resolve conflicts before pushing to the
-remote.
+remote. 
+
+Note: Depending on your connection set-up with git, you may need to add an ssh
+key, following [these](https://help.github.com/articles/generating-ssh-keys)
+steps. We will walk through them if needed.
 
 ### Exercise : Push a change to github
 We'll talk about conflicts later, but first, since we have no conflicts
@@ -165,12 +169,9 @@ than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
 
-I, for example, am from Tamil Nadu, India, so I'll push (to the upstream
-repository) my own version of Welcome on line 5 of Readme.md.
-
-You may speak another language, perhaps even English, however, and may want
-to replace the Tamil word 'vanakkam' with an equivalent word that you
-prefer (welcome, willkommen, bienvenido, benvenuti, etc.).
+You may speak another language, perhaps even English, however, and may the word
+'welcome' with an equivalent word that you prefer (willkommen, bienvenido,
+benvenuti, etc.).
 
 You'll want to start a new branch for development. It's a good convention
 to think of your master branch (in this case your 2013-04-uwmadison branch) as
