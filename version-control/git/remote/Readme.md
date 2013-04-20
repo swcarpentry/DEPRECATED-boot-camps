@@ -54,7 +54,7 @@ GitHub doesn't know about it yet. You'll need to tell github you want to
 have an official fork of this repository.
 
 Step 1 : Go to our
-[repository](https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE)
+[repository](https://github.com/UW-Madison-ACI/boot-camps/tree/YYYY-MM-PLACE)
 from your browser, and click on the Fork button. Choose to fork it to your
 username rather than any organizations.
 
@@ -65,12 +65,12 @@ Step 2 : Clone it. From your terminal :
 
 Step 3 : 
 
-    $ git remote add upstream https://github.com/USERNAME/boot-camps.git
+    $ git remote add upstream https://github.com/UW-Madison-ACI/boot-camps.git
     $ git remote -v
     origin  https://github.com/YOU/boot-camps.git (fetch)
     origin  https://github.com/YOU/boot-camps.git (push)
-    upstream        https://github.com/USERNAME/boot-camps.git (fetch)
-    upstream        https://github.com/USERNAME/boot-camps.git (push)
+    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
@@ -91,7 +91,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case USERNAME/boot-camps) into your local working copy, you
+this case UW-Madison-ACI/boot-camps) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
@@ -102,11 +102,11 @@ Step 1 : Fetch the recent remote repository history
 
     $ git fetch upstream
 
-Step 2 : Make certain you are in the YYYY-MM-PLACE branch and merge the
-upstream YYYY-MM-PLACE branch into your YYYY-MM-PLACE branch
+Step 2 : Make certain you are in the 2013-04-uwmadison branch and merge the
+upstream 2013-04-uwmadison branch into your 2013-04-uwmadison branch
 
-    $ git checkout YYYY-MM-PLACE
-    $ git merge upstream\YYYY-MM-PLACE
+    $ git checkout 2013-04-uwmadison
+    $ git merge upstream\2013-04-uwmadison
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -139,14 +139,14 @@ We'll talk about conflicts later, but first, since we have no conflicts
 and are up to date, we can make a minor change and send our changes to
 your fork, the "origin."
 
-    $ git push origin YYYY-MM-PLACE
+    $ git push origin 2013-04-uwmadison
 
 If you have permission to push to the upstream repository, sending
 commits to that remote is exactly analagous.
 
-    $ git push upstream YYYY-MM-PLACE
+    $ git push upstream 2013-04-uwmadison
 
-In the case of the YYYY-MM-PLACE code, new developer accounts will not allow
+In the case of the 2013-04-uwmadison code, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
 
 ## git merge : Conflicts
@@ -154,13 +154,13 @@ this push to succeed. You're welcome to try it though.
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the YYYY-MM-PLACE code, you'll find a file called Readme.md. This is a
+In the 2013-04-uwmadison code, you'll find a file called Readme.md. This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/YOU/boot-camps/tree/YYYY-MM-PLACE/README.md).
+fork on github, (https://github.com/YOU/boot-camps/tree/2013-04-uwmadison/README.md).
 
 For illustration, let's imagine that, suddenly, each of the developers
-on the YYYY-MM-PLACE code would like to welcome visitors in a language other
+on the 2013-04-uwmadison code would like to welcome visitors in a language other
 than English. Since we're all from so many different places and speak
 so many languages, there will certainly be disagreements about what to
 say instead of "Welcome."
@@ -173,7 +173,7 @@ to replace the Tamil word 'vanakkam' with an equivalent word that you
 prefer (welcome, willkommen, bienvenido, benvenuti, etc.).
 
 You'll want to start a new branch for development. It's a good convention
-to think of your master branch (in this case your YYYY-MM-PLACE branch) as
+to think of your master branch (in this case your 2013-04-uwmadison branch) as
 the "production branch," typically by keeping that branch clean of your
 local edits until they are ready for release. Developers typically use the
 master branch of their local fork to track other developers changes in the
@@ -193,12 +193,12 @@ commit your changes.
     $ git commit -am "Changed the welcome message to ... "
 
 Step 2 : Mirror the remote upstream repository in your master branch (in
-this case your YYYY-MM-PLACE branch) by pulling down my changes
+this case your 2013-04-uwmadison branch) by pulling down my changes
 
-    $ git checkout YYYY-MM-PLACE
-    Switched to branch 'YYYY-MM-PLACE'
+    $ git checkout 2013-04-uwmadison
+    Switched to branch '2013-04-uwmadison'
     $ git fetch upstream
-    $ git merge upstream/YYYY-MM-PLACE
+    $ git merge upstream/2013-04-uwmadison
     Updating 43844ea..3b36a87
     Fast-forward
      README.rst |   2 +-
@@ -219,7 +219,7 @@ Now what?
 Git has paused the merge. You can see this with the **git status**
 command.
 
-    # On branch YYYY-MM-PLACE
+    # On branch 2013-04-uwmadison
     # Unmerged paths:
     #   (use "git add/rm <file>..." as appropriate to mark resolution)
     #
@@ -262,7 +262,7 @@ alterations,
     # .git/MERGE_HEAD
     # and try again.
     #
-    $ git push origin YYYY-MM-PLACE
+    $ git push origin 2013-04-uwmadison
     Counting objects: 10, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (6/6), done.
