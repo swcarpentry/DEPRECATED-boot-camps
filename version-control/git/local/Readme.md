@@ -410,7 +410,7 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Yesterday, you checked out a git type repository at
-https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+https://github.com/UW-Madsion-CLI/boot-camps/tree/2013-04-uwmadison
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
