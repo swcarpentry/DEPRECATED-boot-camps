@@ -1,8 +1,8 @@
 # Local Version Control
 ----
 
-**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, and Sri 
-Hari Krishna Narayanan**
+**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
+Hari Krishna Narayanan, and Matthew Gidden**
 
 ## Example: A Slide Deck for a Presentation
 
@@ -457,6 +457,55 @@ without asking, so don't get nervous. When in doubt, update.
 Since we just pulled the repository down, we will be up to date unless
 there has been a commit by someone else to the Original repository in
 the meantime.
+
+## Make your prompt pretty
+
+In the next section, we'll get into the gritty details of remotes and branches
+as we head toward web-based storage of your repositories. It turns out that some
+folks have created a way to make this kind of navigation more convenient,
+showing you what branch you're on using your bash prompt. Some super nice
+properties also include color-coding when you've got changed files or when your
+branch is fresh.
+
+### Exercise : Create a Local Repository
+
+Step 1 : Download [git-prompt.sh](http://volnitsky.com/project/git-prompt/git-prompt.sh).
+
+Step 2 : Move it to a local directory.
+    
+    $ mkdir ~/.source
+    $ mv ~/download-dir/git-prompt.sh ~/.source/
+
+Step 3 : Copy the following lines into your ~/.bashrc file (taken from Mike
+Stewart's [website](http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt)).
+    
+    source ~/.source/git-prompt.sh
+
+    Color_Off="\[\033[0m\]"       # Text Reset                                                                                                           
+    Yellow="\[\033[0;33m\]"       # Yellow                                                                                                               
+    Green="\[\033[0;32m\]"        # Green                                                                                                                
+    IBlack="\[\033[0;90m\]"       # Black                                                                                                                
+    IRed="\[\033[0;91m\]"         # Red                                                                                                                  
+    BYellow="\[\033[1;33m\]"      # Yellow                                                                                                               
+    Time12h="\T"
+    PathShort="\w"
+
+    export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\                                                                                      
+    if [ $? -eq 0 ]; then \                                                                                                                              
+      echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \                                                                           
+      if [ "$?" -eq "0" ]; then \                                                                                                                        
+        # @4 - Clean repository - nothing to commit                                                                                                      
+        echo "'$Green'"$(__git_ps1 " (%s)"); \                                                                                                           
+      else \                                                                                                                                             
+        # @5 - Changes to working tree                                                                                                                   
+        echo "'$IRed'"$(__git_ps1 " {%s}"); \                                                                                                            
+      fi) '$BYellow$PathShort$Color_Off'\$ "; \                                                                                                          
+    else \                                                                                                                                               
+      # @2 - Prompt when not in GIT repo                                                                                                                 
+      echo " '$Yellow$PathShort$Color_Off'\$ "; \                                                                                                        
+    fi)'
+
+Step 4 : Play around with it.
 
 ## Resources
 
