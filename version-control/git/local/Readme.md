@@ -304,7 +304,7 @@ There are some useful flags for this command, such as
 ## git checkout : Discarding unstaged modifications (git checkout has other purposes)
     git checkout -- filename     
     
-## git rm : Removing s file
+## git rm : Removing files
    git rm filename   (Removes a file from the repository)
    
 ### Exercise : 
