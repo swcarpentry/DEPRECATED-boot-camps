@@ -370,8 +370,6 @@ would - of course - start by writing the test, possibly testing a single value:
 ```python
 from nose.tools import assert_equal
 
-from pisa import fib
-
 def test_fib1():
     obs = fib(2)
     exp = 1
