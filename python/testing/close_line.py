@@ -64,6 +64,7 @@ def closest_data_to_line3(data, p1, p2):
 #
 
 def closest_data_to_line4(data, p1, p2):
-    return data[np.argmin(np.sqrt(np.sum((p1 - data)**2, axis=1)) + \
-                np.sqrt(np.sum((p2 - data)**2, axis=1)))]
+    imin = np.argmin(np.sqrt(np.sum((p1 - data)**2, axis=1)) + \
+                np.sqrt(np.sum((p2 - data)**2, axis=1)))
+    return imin, data[imin]
 
