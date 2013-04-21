@@ -1,7 +1,5 @@
 # Version Control and Git
 
-Aleksandra Pawlik, The Software Sustainability Institute. 
-
 **Based on materials by Mike Jackson, Greg Wilson, Chris Cannam, Katy Huff, Anthony Scopatz, Joshua R. Smith, and Sri Hari Krishna Narayanan.**
 
 ## Some questions for you
