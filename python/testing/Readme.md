@@ -490,7 +490,7 @@ def test_fib3():
     assert_equal(obs, exp)
 
 
-def test_fib3():
+def test_fib4():
     obs = fib(13.37)
     exp = NotImplemented
     assert_equal(obs, exp)
