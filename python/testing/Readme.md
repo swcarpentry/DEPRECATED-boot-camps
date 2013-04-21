@@ -518,6 +518,10 @@ def fib(n):
 
 Can you think of other tests to make for the fibonacci function? I promise there 
 are at least two. 
+<!---
+	1. How about fib(string) or fib(array)?
+	2. How about fib(None)?
+--->
 
 Implement one new test in test_fib.py, run nosetests, and if it fails, implement 
 a more robust function for that case.
