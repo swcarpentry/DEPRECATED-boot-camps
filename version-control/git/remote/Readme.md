@@ -297,7 +297,7 @@ Feel free to read
 [this](http://blogs.biomedcentral.com/bmcblog/2013/02/28/version-control-for-scientific-research/)
 blog post, which talks about the usefulness of version control in scientific
 work. Furthermore, how many people use Google Drive to get work done, especially
-in a collaborative mode? It turns out that the Drive app (includes version
-control)[http://support.google.com/drive/bin/answer.py?hl=en&answer=190843] as
+in a collaborative mode? It turns out that the Drive app [includes version
+control](http://support.google.com/drive/bin/answer.py?hl=en&answer=190843) as
 one of its features, albeit in a limited mode (you can't really control how
 often it commits, nor can you give messages to your commits).
