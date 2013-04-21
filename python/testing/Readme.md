@@ -363,9 +363,9 @@ style was put forth most strongly by [Kent Beck in
 
 ## A TDD Example
 
-Say you want to write a fib() function which generates values of the
-Fibonacci sequence of given indexes. You would - of course - start by
-writing the test, possibly testing a single value:
+Say you want to write a fib() function which generates values of the [Fibonacci
+sequence](http://en.wikipedia.org/wiki/Fibonacci_number) of given indexes. You
+would - of course - start by writing the test, possibly testing a single value:
 
 ```python
 from nose.tools import assert_equal
