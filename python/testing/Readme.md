@@ -278,10 +278,12 @@ teardown()
 
 # Nose: A Python Testing Framework
 
-The testing framework we'll discuss today is called nose. However, there
-are several other testing frameworks available in most language. Most
-notably there is [JUnit](http://www.junit.org/) in Java which can
-arguably attributed to inventing the testing framework.
+The testing framework we'll discuss today is called nose. However, there are
+several other testing frameworks available in most language. Most notably there
+is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
+inventing the testing framework. Google also provides a [test
+framework](code.google.com/p/googletest/) for C++ applications (note, there's
+also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).
 
 ## Where do nose tests live?
 
