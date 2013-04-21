@@ -281,8 +281,20 @@ sudo apt-get install gitolite will pull in everything you need. At that
 point, your collaborators will only need to send you their public ssh keys
 for you to configure pull and push access to the repos.
 
-## Test your overall version control skills!
+## Test your version control skills!
 
-Feel up to testing all of your skills? Check out [this](http://pcottle.github.com/learnGitBranching/) excellent website. We haven't
-taught you all the things you'll need to progress through the entire exercise,
-but feel free to take a look and try it out!
+Feel up to testing all of your skills? Check out
+[this](http://pcottle.github.com/learnGitBranching/) excellent website. We
+haven't taught you all the things you'll need to progress through the entire
+exercise, but feel free to take a look and try it out!
+
+## A little nudge
+
+Feel free to read
+[this](http://blogs.biomedcentral.com/bmcblog/2013/02/28/version-control-for-scientific-research/)
+blog post, which talks about the usefulness of version control in scientific
+work. Furthermore, how many people use Google Drive to get work done, especially
+in a collaborative mode? It turns out that the Drive app (includes version
+control)[http://support.google.com/drive/bin/answer.py?hl=en&answer=190843] as
+one of its features, albeit in a limited mode (you can't really control how
+often it commits, nor can you give messages to your commits).
