@@ -1,11 +1,13 @@
-# Testing
+[Back To Functions & Modules](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/python/functions_and_modules) -
+[Forward To Local Version Control](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/version-control/git/local)
 
-* * * * *
+# Testing
+----
 
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
-![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
+![image](https://github.com/UW-Madison-ACI/boot-camps/blob/2013-04-uwmadison/python/testing/test_prod.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
@@ -537,7 +539,7 @@ file which tests the closest\_data\_to\_line() functions.
 *Hint:* you can use one implementation function to test another. Below
 is some sample data to help you get started.
 
-![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
+![image](https://github.com/UW-Madison-ACI/boot-camps/blob/2013-04-uwmadison/python/testing/evo_sol1.png)
 > -
 
 ```python
