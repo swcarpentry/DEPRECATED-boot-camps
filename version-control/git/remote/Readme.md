@@ -1,3 +1,5 @@
+[Back To Local Version Control](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/version-control/git/local)
+
 # Remote Version Control
 ----
 
