@@ -7,7 +7,7 @@
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
-![image](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/python/testing/test_prod.jpg)
+![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/test_prod.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
@@ -539,7 +539,7 @@ file which tests the closest\_data\_to\_line() functions.
 *Hint:* you can use one implementation function to test another. Below
 is some sample data to help you get started.
 
-![image](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/python/testing/evo_sol1.png)
+![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/evo_sol1.png)
 > -
 
 ```python
