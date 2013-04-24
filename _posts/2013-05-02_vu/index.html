@@ -47,7 +47,6 @@ title: Vrije Universiteit, May 2013
               <li><a href="#install">Installation</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="divider-vertical"></li>
-              <li><a href="https://github.com/swcarpentry/boot-camps/tree/2013-02-25-uwash-B">GitHub Repo</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -76,17 +75,17 @@ title: Vrije Universiteit, May 2013
 
       <div id="schedule" class="row-fluid">
         <h1>Schedule</h1>
-        <p class="muted" style="font-style: italic;">Subject to Change</p>
+        <p class="muted" style="font-style: italic;">This is a rough schedule that is subject to change.  There will progress at the speed of the class, and may re-arrange or substitute items as works best for the class.</p>
         <div class="span4">
           <strong>Day 1</strong>
           <table class="table">
             <tbody>
               <tr>
-                <td>8:30 - 9:00</td>
+                <td>9:00 - 9:30</td>
                 <td style="text-align: right;">Setup Help</td>
               </tr>
               <tr>
-                <td>9:00 - 12:00</td>
+                <td>9:30 - 12:00</td>
                 <td style="text-align: right;">Shell</td>
               </tr>
               <tr>
@@ -95,7 +94,7 @@ title: Vrije Universiteit, May 2013
               </tr>
               <tr>
                 <td>1:00 - 4:30</td>
-                <td style="text-align: right;">Version Control</td>
+                <td style="text-align: right;">Intro Python</td>
               </tr>
             </tbody>
           </table>
@@ -104,19 +103,27 @@ title: Vrije Universiteit, May 2013
             <tbody>
               <tr>
                 <td>9:00 - 12:00</td>
-                <td style="text-align: right;">Introductory Python</td>
+                <td style="text-align: right;">Version Control with SVN</td>
               </tr>
               <tr>
                 <td>12:00 - 1:00</td>
                 <td style="text-align: right;">Lunch</td>
               </tr>
               <tr>
-                <td>1:00 - 3:30</td>
-                <td style="text-align: right;">Software Engineering with Python</td>
+                <td>1:00 - 1:30</td>
+                <td style="text-align: right;">Data Management</td>
               </tr>
               <tr>
-                <td>3:30 - 4:30</td>
-                <td style="text-align: right;">Scientific Python</td>
+                <td>1:30 - 3:30</td>
+                <td style="text-align: right;">Advanced and Scientific Python</td>
+              </tr>
+              <tr>
+                <td>3:30 - 4:00</td>
+                <td style="text-align: right;">Other Topics (plotting, etc)</td>
+              </tr>
+              <tr>
+                <td>4:00 - 4:30</td>
+                <td style="text-align: right;">Wrap-up</td>
               </tr>
             </tbody>
           </table>
@@ -135,11 +142,9 @@ title: Vrije Universiteit, May 2013
 
         <h3>Other Options</h3>
         <p>To complete the entire workshop you need several things:
-           a Bash shell, git, a code editor (though any plain text editor
+           a Bash shell, svn, a code editor (though any plain text editor
            will work in a pinch), and a scientific Python installation
-           that includes the
-           <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
-            IPython Notebook</a>,
+           that includes
             <a href="http://numpy.scipy.org/">NumPy</a>,
             and <a href="http://matplotlib.org/">matplotlib</a>.</p>
         <p>Even if you plan to install things yourself please download
@@ -154,25 +159,24 @@ title: Vrije Universiteit, May 2013
             <h5>Windows</h5>
             <p>Install <a href="http://msysgit.github.com/">Git Bash</a>
                following the instructions
-               <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>.</p>
+               <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>,  Or download the
+	       <a href="http://www.cygwin.com/install.html">Cygwin</a> package. </p>
             <h5>Linux</h5>
             <p>The default shell is usually bash but if not you can
                get to bash by opening a terminal and typing <code>bash</code>.</p>
           </div>
           <div class="span6">
-            <h4 class="well well-small">Git</h4>
+            <h4 class="well well-small">SVN</h4>
             <h5>Mac</h5>
             <p>Install
                <a href="https://developer.apple.com/xcode/">Xcode</a>
                and the command line tools (from the Download
-               preferences pane) or
-               <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">install just git</a>.</p>
+               preferences pane).
             <h5>Windows</h5>
-            <p>Install <a href="http://msysgit.github.com/">Git Bash</a>
-               following the instructions
-               <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>.</p>
+            <p>Download the
+	       <a href="http://www.cygwin.com/install.html">Cygwin</a> package.</p>
             <h5>Linux</h5>
-            <p>If git is not already available on your machine you can try
+            <p>If svn is not already available on your machine you can try
                to install it via your distro's package manager
                (e.g. <code>apt-get</code>).</p>
           </div>
@@ -197,7 +201,8 @@ title: Vrije Universiteit, May 2013
           <div class="span6">
             <h4 class="well well-small">Python</h4>
             <p>We recommend the all-in-one scientific Python installer
-               <a href="http://continuum.io/anacondace.html">Anaconda CE</a>.
+               <a href="http://continuum.io/anacondace.html">Anaconda CE</a> or 
+	       <a href="https://www.enthought.com/products/canopy/">Enthought Canopy</a>.
                Installation on Mac and Linux requires using the shell and if
                you aren't comfortable doing the installation yourself just
                download the installer and we'll help you at the boot camp.
@@ -210,9 +215,8 @@ title: Vrije Universiteit, May 2013
       <hr>
       <div id="contact">
         <h1>Contact</h1>
-        <p>This workshop will be presented by
-           <a href="http://">Justin Ely</a>
-           and <a href="http://">Stefano Cozzini</a>.
+        <p>This workshop will be presented by Justin Ely 
+           and Stefano Cozzini.
            For more information contact
            <a href="mailto:info@software-carpentry.org">
             info@software-carpentry.org</a>.
