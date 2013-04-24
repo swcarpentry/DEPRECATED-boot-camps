@@ -1,6 +1,6 @@
 ![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-UW-Madison Softare Carpentry Boot Camp
+UW-Madison Software Carpentry Boot Camp
 =======================================
 Welcome!
 
