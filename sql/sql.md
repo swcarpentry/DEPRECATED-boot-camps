@@ -15,8 +15,8 @@ Getting setup
 -------------
 
 1. Install Firefox
-2. Install the SQLite Manager add on **Tools -> Add-ons -> Search -> SQLite Manager -> Install -> Restart**
-3. Download the [Portal Database](https://github.com/swcarpentry/2012-11-UNC/raw/master/SQL/portal_mammals.sqlite)
+2. Install the SQLite Manager version [0.8.0](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/versions/) 
+3. Download the [Portal Database](https://github.com/shoaibsufi/boot-camps/blob/2013-05-oxford-dtc/sql/portal_mammals.sqlite)
 4. Open SQLite Manage **Tools -> SQLite Manager**
 
 The data
