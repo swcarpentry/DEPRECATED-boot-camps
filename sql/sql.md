@@ -44,9 +44,9 @@ Import
 6. Make sure the delimiter and quotation options are correct
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field
+9. Set the data types for each field (it is important to set the column type of any number based columns to INTEGER to allow SQL number functions to work with them - this will be demonstrated)
 
-***Exercise: Import the plota, surveys and species tables***
+***Exercise: Import the plots, surveys and species tables***
 
 Basic queries
 -------------
