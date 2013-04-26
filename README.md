@@ -27,7 +27,7 @@ Day 1
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 8:30-9:00    | Setup Help                              | Paul Wilson  |
+| 8:30-9:00    | Setup & Intro                           | Paul Wilson  |
 | 9:00-9:45    | What we know about software engineering | Steve McGough|
 | 9:45-10:45   | [Introducing the Shell](shell/Readme.md)| Paul Wilson  |
 | 10:45-11:00  | Break                                   |              |
