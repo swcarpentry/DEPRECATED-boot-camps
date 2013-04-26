@@ -36,3 +36,16 @@ Day 1
 | 1:30-3:00    | Write Code for People I                 |
 | 3:00-3:15    | Break                                   |
 | 3:15-4:30    | Write Code for People II                |
+
+Day 2
+======
+
+| Time         | Topic                                   |
+| ------------ | --------------------------------------- |
+| 9:00-10:30   | Don't Repeat Yourself                   |
+| 10:30-10:45  | Break                                   |
+| 10:45-12:00  | Plan for Mistakes                       |
+| 12:00-1:00   | Lunch                                   |
+| 1:00-2:30    | Use Version Control                     |
+| 2:30-2:45    | Break                                   |
+| 2:45-4:00    | Collaborate                             |
