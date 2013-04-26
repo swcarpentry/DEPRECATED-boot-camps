@@ -29,7 +29,7 @@ Day 1
 | ------------ | --------------------------------------- |
 | 8:30-9:00    | Setup Help                              |
 | 9:00-9:45    | What we know about software engineering |
-| 9:45-10:45   | Introducing the Shell                   |
+| 9:45-10:45   | [Introducing the Shell](shell/Readme.md)|
 | 10:45-11:00  | Break                                   |
 | 11:00-12:30  | Automating workflows                    |
 | 12:30-1:30   | Lunch                                   |
