@@ -65,3 +65,17 @@ We will have structured moments throughout the day to go over these questions
 - Data visualization and exploration : with all the tools at our disposal, we will now attack a scientific question with some data from neuroscience experiments.
 
 ## Questions?
+
+
+## Before we move on
+
+Does everyone have everything they need installed?
+
+- Let's open a terminal
+- Navigate to an easy to find location on your hard-drive. For example:
+    $cd ~/Documents
+
+- And get this repository, by running this command (we will explain this command later this afternoon):
+	git clone https://github.com/arokem/boot-camps.git --branch 2013-05-06-stanford --single-branch SWC
+
+- Now change your working directory to the `SWC` directory. The files that we will be using in the workshop (+much more!) should now be in there.
