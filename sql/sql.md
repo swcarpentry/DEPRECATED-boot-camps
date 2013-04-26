@@ -46,7 +46,7 @@ Import
 8. When asked if you want to modify the table, click **OK**
 9. Set the data types for each field
 
-***Exercise: Import the plots and species tables***
+***Exercise: Import the plota, surveys and species tables***
 
 Basic queries
 -------------
@@ -55,9 +55,9 @@ Here we have data on every individual that was captured at the site,
 including when they were captured, what plot they were captured on,
 their species ID, sex and weight in grams.
 
-Let’s write an SQL query that selects only the year column from the surveys table.
+Let’s write an SQL query that selects only the species column from the surveys table.
 
-    SELECT scientific_name FROM species;
+    SELECT species FROM surveys;
 
 We have capitalized the words SELECT and FROM because they are SQL keywords.
 SQL is case insensitive, but it helps for readability – good style.
@@ -70,13 +70,11 @@ Or we can select all of the columns in a table using the wildcard *
 
     SELECT * FROM surveys;
 
-***Exercise: Write a query that returns only the species column***
+***Exercise: Write a query that returns only the weight column***
 
 ### Unique values
 
 So, we've all written a query that pulls out the species column from the database,
-but what if we want only the unique values so that we can quickly see what
-species have been sampled.
 
     SELECT DISTINCT species FROM surveys;
 
@@ -99,6 +97,10 @@ and a variety of built-in functions (). For example, we could round the values t
 make them easier to read.
 
     SELECT plot, species, sex, wgt, ROUND(wgt / 1000.0, 2) FROM surveys;
+
+You can even give the calculated column a more sensible name in the results by using column aliasing; this is a useful way of documenting your query to make it easier to understand.
+
+    SELECT plot, species, sex, wgt, ROUND(wgt / 1000.0, 2) as "wgt_kg" FROM surveys;
 
 Filtering
 ---------
