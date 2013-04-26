@@ -44,8 +44,8 @@ Day 2
 | ------------ | --------------------------------------- |
 | 9:00-10:30   | Don't Repeat Yourself                   |
 | 10:30-10:45  | Break                                   |
-| 10:45-12:00  | Plan for Mistakes                       |
+| 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) |
 | 12:00-1:00   | Lunch                                   |
-| 1:00-2:30    | Use Version Control                     |
+| 1:00-2:30    | [Use Version Control](version-control/git/local/Readme.md) |
 | 2:30-2:45    | Break                                   |
-| 2:45-4:00    | Collaborate                             |
+| 2:45-4:00    | [Collaborate](version-control/git/remote/Readme.md)        |
