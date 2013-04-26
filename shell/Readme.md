@@ -1,4 +1,7 @@
-# The Shell
+[Up To Schedule](Readme.md) -
+Forward To [Automating Workflows](shell/automation/Readme.md)
+
+# Introduction to The Shell
 
 **Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
@@ -10,7 +13,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+    https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison
 
 Click on the directory named `shell`.
 
@@ -50,7 +53,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+    git clone -b 2013-04-uwmadison https://github.com/UW-Madison-ACI/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
 the internet.  (We will talk about the `git` command later in the
