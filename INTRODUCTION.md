@@ -30,25 +30,6 @@ What are helpers for? Well, they're here to *help*!
 - Don't let your computer do what you could do better.
 - But don't bother doing all the things your computer should be doing!
 
-## Examples: a day in the life of a cognitive neuroscientist:
-
-- Go down to the scanner, collect data.
-- Get the data onto lab server using command line utilites.
-- Mung the data into a different format, using a variety of command line utilities written by others or special software written by myself.
-
-"Mung"?
-
-*trans. To spoil, ruin, mangle; (Computing) to make damaging and usually irrevocable changes to (a file); to destroy or corrupt (data, etc.).*
-
-- Analyze the data, using Matlab, libraries implemented in python, and a variety of command line utilities. Sometimes use R to do statistical analysis.
-
-- Visualize the data using libraries implemented in python, Matlab, and other good stuff.
-
-- Write the paper.
-- Wait for the call from Stockholm.
-
-- Recent example: MR spectroscopy (switch to demo this thing).
-
 ## [The schedule](http://arokem.github.io/boot-camps/2013-05-06-stanford/#schedule)
 
 ### In numbers:
