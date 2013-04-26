@@ -23,9 +23,9 @@ et al. In so doing, the sessions names have been chosen to correspond
 with some of the most important practices to start early.
 
 Day 1
-~~~~~~
+--------
 
-Why is this happening??
+Why is this happening??		
 
 8:30-9:00   -  Setup & Introduction
 9:00-9:45   -  What we know about software engineering
