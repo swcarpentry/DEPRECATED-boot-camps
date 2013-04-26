@@ -25,6 +25,8 @@ with some of the most important practices to start early.
 Day 1
 ~~~~~~
 
+| Time         | Topic                                   |
+| ------------ | --------------------------------------- |
 | 8:30-9:00    | Setup Help                              |
 | 9:00-9:45    | What we know about software engineering |
 | 9:45-10:45   | Introducing the Shell                   |
