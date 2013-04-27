@@ -1,0 +1,26 @@
+Day 1(April 27)
+
+ - 09:00 - 09:30: Arrive, introductions
+ - 09:30 - 10:00: Intro to class
+ - 10:00 - 10:30: Basic shell
+ - 10:30 - 10:45: Break (Coffee and snacks will be provided)
+ - 10:45 - 12:00: Intro to version control
+ - 12:00 - 01:00: Lunch (Catered lunch – vegetarian options also included)
+ - 01:00 - 02:15: Python
+ - 02:15 - 02:30: Break (Coffee and snacks will be provided)
+ - 02:30 - 03:45: Python
+ - 03:45 - 04:00: Break
+ - 04:00 - 05:00: Python
+Any interested attendees can join for a Happy hour at Camden pub at the end of workshop Day-1 http://www.camdenpub.com/ . The pub is walking distance from the campus
+ 
+- Day 2 (April 28)
+
+ - 09:00 - 10:30: Local Git
+ - 10:30 - 10:45: Break (Coffee and snacks will be provided)
+ - 10:45 - 12:00: Testing
+ - 12:00 - 01:00: Lunch (Catered lunch – vegetarian options also included)
+ - 01:00 - 02:15: Advanced Git
+ - 02:15 - 02:30: Break (Coffee and snacks will be provided)
+ - 02:30 - 03:45: Databases
+ - 03:45 - 04:00: Break
+ - 04:00 - 05:00: Wrap up and post assessment
