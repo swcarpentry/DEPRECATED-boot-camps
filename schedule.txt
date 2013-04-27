@@ -3,7 +3,7 @@ Day 1(April 27)
  - 09:00 - 09:30: Arrive, introductions
  - 09:30 - 10:00: Intro to class
  - 10:00 - 10:30: Basic shell
- - 10:30 - 10:45: Break (Coffee and snacks will be provided)
+ - 10:35 - 10:50: Break (Coffee and snacks will be provided)
  - 10:45 - 12:00: Intro to version control
  - 12:00 - 01:00: Lunch (Catered lunch – vegetarian options also included)
  - 01:00 - 02:15: Python
