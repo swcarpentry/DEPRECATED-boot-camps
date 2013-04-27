@@ -3,14 +3,23 @@ Creating a Reproducible Workflow
 
 Introduction
 ------------
+We're now in the home stretch of the workshop - congratulations! Up to this
+point, we've talked quite a bit about how to make your code efficient (good
+programming practice), accurate (testing), and maintainable (modularization +
+version control).
 
-We're now in the home stretch of the workshop - congratulations! Up to this 
-point, we've talked about how to make your code efficient (good programming 
-practice), accurate (testing), and maintainable (modularization + version 
-control). Now we're going to talk about a final and very important concept 
-known as reproducibility. Victoria Stodden has written extensively about the 
-idea of reproducibility in scientific software - you may want to look up [some 
-of her papers][1] for reference.
+Now we're going to talk about a final and very important concept
+known as reproducibility. This idea has a long tradition here at Stanford,
+starting with the Earth Scientist Jon Claerbout and Prof. David Donoho at our
+stats department, who wrote in a paper with Buckheit the following:
+
+	 An article about a computational result is advertising, not
+	 scholarship. The actual scholarship is the full software environment,
+	 code and data, that produced the result.
+
+In particular, one of Donoho's former student's Victoria Stodden
+has written extensively about the idea of reproducibility in scientific
+software - you may want to look up [some of her papers][1] for reference.
 
 For our purposes, we can summarize the goal of reproducibility in two related 
 ways, one technical and one colloquial.
@@ -62,28 +71,31 @@ this topic for more ideas.
 ------------------------------------
 
 Let's create a project (a reasonably self-contained set of code, data, and 
-results to answer a discrete scientific question) that will count the animals 
-sighted in two years of camera trap surveys. We begin by creating a directory 
-called `camera_analysis` in a convenient place on our hard drive. You might 
-want to create a main directory called `Projects` or `Research` in your home 
-folder or in your Documents folder to hold the directories for all of your 
-individual research projects.
+results to answer a discrete scientific question) that will analyze responses
+in auditory receptors of grasshopper neurons.
 
-Now, within the `camera_analysis` directory, create four subdirectories:
+We begin by creating a directory called `grasshopper` in a convenient place on
+our hard drive. You might want to create a main directory called `Projects` or
+`Research` in your home folder or in your Documents folder to hold the
+directories for all of your individual research projects.
 
-    .
+Now, within the `grasshopper` directory, create four subdirectories:
+
+        .
 	├── data
 	├── man
 	├── results
 	├── src
 
-The `data` directory will hold all of the raw data associated with the project, 
-which in this case will be just a single large csv file containing data on the 
-animal sightings. The `man` folder, short for manuscript, will (someday) 
-contain the manuscript that we'll write describing the results of our analysis 
-(you were planning on using version control for your manuscript too, weren't 
-you?). The `results` folder will contain the results of our analysis, including 
-both tables and figures, and the `src` directory will contain all of our code.
+The `data` directory will hold all of the raw data associated with the project,
+which in this case will be files containing spike-time data and a file
+containing auditory stimuli. 
+
+The `man` folder, short for manuscript, will (someday) contain the manuscript
+that we'll write describing the results of our analysis (you were planning on
+using version control for your manuscript too, weren't you?). The `results`
+folder will contain the results of our analysis, including both tables and
+figures, and the `src` directory will contain all of our code.
 
 In a more complex project, each of these directories may have additional 
 subdirectories to help keep things organized.
@@ -96,7 +108,7 @@ For bonus points, do this all from the command line.
 Since we want to use version control to track the development of our project, 
 we'll start off right away by initializing an empty Git repository within this 
 directory. To do this, open a Terminal window, navigate to the main 
-`camera_analysis` directory, and run the command `git init`.
+`grasshoppers` directory, and run the command `git init`.
 
 As you add things to the project directory, and modify old things, you'll want 
 to frequently commit your changes as we discussed in the Git tutorial.
@@ -104,10 +116,13 @@ to frequently commit your changes as we discussed in the Git tutorial.
 3.	Add raw data
 ----------------
 
-Often, we start a project with a particular data file, or set of data files. In 
-this case, we have the file `sightings_tab_lg.csv`, which contains the records 
-that we want to analyze. Copy this file from our Github repo into the `data` 
-subdirectory.
+Often, we start a project with a particular data file, or set of data files.
+In this case, we will look at a data set that is available on the [CRCNS
+data-sharing website][crcns.org]. For the purposes of this tutorial, we will
+look at a small subset of the data available for download
+[here][http://arokem.org/data/grasshoppers.zip].
+
+Download the data and move the files into the `data` subdirectory.
 
 Now we reach an interesting question - should your `data` directory be placed 
 under version control (ie, should you `git add` and `git commit` these files)? 
@@ -117,46 +132,46 @@ version!), and it will never be updated. As a result, it's not necessarily
 useful to place this file under version control for the purpose of tracking 
 changes to it.
 
-A reasonable rule of thumb for getting started is that if the file is 
-realatively small (ours is < 100k), go ahead and commit it to the Git 
-repository, as you won't be wasting much hard disk space. Additionally, the 
-file will then travel with your code, so if you push your repository to Github 
-(for example) and one of your collaborators clones a copy, they'll have 
-everything they need to generate your results.
+A reasonable rule of thumb for getting started is that if the file is
+realatively small, go ahead and commit it to the Git repository, as you won't
+be wasting much hard disk space. Additionally, the file will then travel with
+your code, so if you push your repository to Github (for example) and one of
+your collaborators clones a copy, they'll have everything they need to generate
+your results.
 
-However, if your file is realatively large AND is backed up elsewhere, you 
-might want to avoid making a duplicate copy in the `.git` directory.
+However, if your file is relatively large (the stimuli files here are about 3.5
+MB) AND is backed up elsewhere, you might want to avoid making a duplicate copy
+in the `.git` directory.
 
-In either case, you'll want to ensure that every one of your data files has 
-some sort of metadata associated with it to describe where it came from, how it 
-got to you, the meaning of the columns, etc. There are many formats for 
-metadata that vary from simple to very complex. If you're interested in 
-following good ecological best practices, you may want to review the 
-[Ecological Metadata Language][3] and the tool [Morpho][4] for creating 
-metadata files. For your own private work, make sure that, at a minimum, you 
-create a `README.txt` file that describes your data as best you can.
+In either case, you'll want to ensure that every one of your data files has
+some sort of metadata associated with it to describe where it came from, how it
+got to you, the meaning of the columns, etc. There are many formats for
+metadata that vary from simple to very complex. At a minimum, make sure to create a
+`README.txt` file that describes your data as best you can. This is also
+helpful because empty directories do not get 
 
 Copy and paste the text below into a `README.txt` file and place it in the data 
 subdirectory. Remember that this is a bare-bones description - in your own 
 work, you'll want to include as much information as you have.
 
-	Data received via email on April 1, 2013 from Professor Smith. Includes 
-	records from camera trap surveys conducted by John Doe and Jane Doe from 
-	2011-2012. Method of collection, site locations, and additional 
-	descriptions are found in John Doe's dissertation, Chapter 3 Appendix, 
-	filed August 2012 at UC Berkeley.
+	Data from grasshopper auditory receptor recordings, donwloaded from the
+	CRCNS ia-1 data-set. Includes files with spike times and files with
+	auditory stimuli. For full methods, refer to Rokem et al. J Neurophys (2006). 
 
 At this point, your project directory should look like this:
 
 	.
 	├── data
 	│   ├── README.txt
-	│   ├── sightings_tab_lg.csv
+	│   ├── grasshopper_spike_times1.txt
+	│   ├── grasshopper_spike_times2.txt
+	│   ├── grasshopper_stimulus1.txt
+	│   ├── grasshopper_stimulus2.txt
 	├── man
 	├── results
 	├── src
 
-Add both the data file and readme file to your git repository.
+Add the readme file to your git repository.
 
 What about the case in which your raw data is hosted elsewhere, on a SQL 
 server, for example, or a shared hard drive with your lab? Now your data is 
@@ -177,11 +192,9 @@ want to look into making yourself a local copy.
 ---------------------------------
 
 Now for the real work - writing the code that will perform our analysis. We'd 
-like to generate two outputs. First, we want to make and save a table that 
-contains a column with the names of the four mammalian carnivores found in our 
-data set - Fox, Wolf, Grizzly, and Wolverine - and a second column that 
-contains the total number of records associated with each species. Second, we'd 
-like to create and save a simple histogram that shows this result visually.
+like to generate two outputs. First, we want to figure out what the
+spike-triggered average stimulus (or STA) is and plot it. Then, we want to create a csv
+file that contains a table with the STA for each one of the two stimuli. 
 
 #### Modules and tests
 
@@ -237,7 +250,7 @@ for this test data set as well so that you can remember how you created it.
 Just to be sure we did everything right, go ahead and run `nosetests` from the 
 Terminal and make sure that your functions still pass. If they don't for some 
 reason, you can try to debug your function or just cheat by copying the file 
-`mean_sightings-full.py` and `tes_mean_sightings-full.py` from our workshop's 
+`mean_sightings-full.py` and `test_mean_sightings-full.py` from our workshop's 
 git repo into your `src` directory. Be sure to remove the `-full` portion of 
 the file names and to add a second `t` to the word `test` in the second file 
 name.
