@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/KJJobz0pMa</title>
+</head>
+<body>Welcome to MoPad!<br
+/><br
+/>This pad text is synchronized as you type, so that everyone viewing this page sees the same text.&nbsp; This allows you to collaborate seamlessly on documents!<br
+/><br
+/>Please be cognizant of whether you are using a public pad or private/team pad, and take appropriate precautions with data you post here!<br
+/>&nbsp;<br
+/>&nbsp;<a href="https://etherpad.mozilla.org/KJJobz0pMa">https://etherpad.mozilla.org/KJJobz0pMa</a><br
+/>&nbsp;<br
+/><u>&nbsp;Shell</u><br
+/><br
+/><ul><li><b>pwd</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print working directoy&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li><b>ls&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list contents of directory&nbsp;<ul><li><b>ls --color</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color code text files and directories:</li
+><li><b>ls -G&nbsp;</b>&nbsp; (unix)</li
+><li>l<b>s -l</b> gives more information on files and directories</li
+><li><b>ls -ltr&nbsp;</b>&nbsp; lists files in reverse time order</li></ul
+></li
+><li><b>mkdir&nbsp;</b>&nbsp;&nbsp; make a directory</li
+><li><b>cd&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; change directory</li
+><li><b>command --help</b>&nbsp;&nbsp;&nbsp;&nbsp; get information on what a file does</li
+><li><b>touch filename&nbsp;</b>&nbsp;&nbsp; creates an empty file</li
+><li><b>mv -v filename_old filename_new</b>&nbsp;&nbsp;&nbsp; Rename a file</li
+><li><b>more/less filename</b>&nbsp;&nbsp;&nbsp; view contents of a file</li
+><li><b>cp --verbose fileaname_old filename_new</b>&nbsp; copy a file</li
+><li><b>rm --verbose filename </b>delete a file<br/><br
+/><br/><br
+/></li></ul
+>Stack Overflow<br
+/><br
+/>File permission:<br
+/>&nbsp;&nbsp;&nbsp; r - read<br
+/>&nbsp;&nbsp;&nbsp; w - write<br
+/>&nbsp;&nbsp;&nbsp; x - execute<br
+/>&nbsp;&nbsp;&nbsp; owner/group/other<br
+/><br
+/><br
+/>#You only have to configure git once per machine<br
+/>git config --global user.name "Your Name"<br
+/>git config --global user.email email_address<br
+/><br
+/><br
+/><br
+/><br
+/>git clone -b 2013-04-umd <a href="https://github.com/swcarpentry/boot-camps.git">https://github.com/swcarpentry/boot-camps.git</a><br
+/><br
+/><br
+/><br
+/><br
+/>#Un-modify a modified file<br
+/>git checkout -- schedule.txt<br
+/><br
+/>Additional git Resources<br
+/><ul><li><a href="http://think-like-a-git.net/">http://think-like-a-git.net/</a></li
+><li><a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html">http://tom.preston-werner.com/2009/05/19/the-git-parable.html</a></li
+><li><a href="http://gitref.org/">http://gitref.org/</a></li
+><li>Offical Documentation: <a href="http://git-scm.com/">http://git-scm.com/</a></li
+><li><br/></li
+><li><br/></li
+><li>#Open file</li
+><li>open_file = open('run20.mod', 'r')</li
+><li>#read inlines</li
+><li>all_lines = open_file.readlines()</li
+><li>#Close open file</li
+><li>open_file.close()</li
+><li>for iline in all_lines:</li
+><li>&nbsp;&nbsp;&nbsp; print iline</li
+><li>print all_lines[13]</li
+><li>#Split string</li
+><li>one_line = all_lines[13].split()</li
+><li>print one_line</li
+><li>#Modify array</li
+><li>one_line[1] = float(one_line[1])+0.2</li
+><li><br/><br/><br
+/><br/><br
+/></li></ul
+>#Step 1: Open a files to write into, in write mode<br
+/>write_file = open('run21.mod', 'w')<br
+/>#Like before<br
+/>#Increment the last number by 0.3<br
+/>#Open file<br
+/>open_file = open('run20.mod', 'r')<br
+/>#read inlines<br
+/>all_lines = open_file.readlines()<br
+/>#Close open file<br
+/>open_file.close()<br
+/>#Split string<br
+/>one_line = all_lines[13].split()<br
+/>#Modify array<br
+/>one_line[1] = float(one_line[1])+0.2<br
+/>print one_line<br
+/>#Format one_line back into a string - python 3 format statement<br
+/>one_line_string = '{} {}\n'.format(one_line[0], one_line[1])<br
+/>#Put changed line back into all_lines<br
+/>all_lines[13] = one_line_string<br
+/>#Write out each line<br
+/>for iline in all_lines:<br
+/>&nbsp;&nbsp;&nbsp; write_file.write(iline)<br
+/>write_file.close()<br
+/><br
+/><br
+/>save as create_new_param_file.py<br
+/><br
+/><br
+/>Day 2:<br
+/>cp ../&nbsp;&nbsp; go back one directory<br
+/>.&nbsp; here<br
+/><br
+/>--&gt; cp ../filename .&nbsp; copy filename from one directory back to current directory<br
+/><br
+/>to insert text-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i<br
+/>exit insert mode- ESC<br
+/>write and quit-&nbsp;&nbsp;&nbsp;&nbsp; :wq<br
+/><br
+/><br
+/><a href="https://github.com/hhassan/swc_carpentry_hassan.git">https://github.com/hhassan/swc_carpentry_hassan.git</a><br
+/><br
+/>Advanced Git Notes:<br
+/><a href="https://github.com/abostroem/2013-04-umd/tree/master/version-control/git/local">https://github.com/abostroem/2013-04-umd/tree/master/version-control/git/local</a><br
+/><br
+/>swc_umd_local - name of local repository we created this morning<br
+/><br
+/>Location of database file:<br
+/><a href="https://www.dropbox.com/sh/zcz7p8hiwjizofi/qWOQfvG1tb">https://www.dropbox.com/sh/zcz7p8hiwjizofi/qWOQfvG1tb</a><br
+/><br
+/>CREATE TABLE id(ptid INTEGER PRIMARY KEY);<br
+/>CREATE TABLE pk(ptid INTEGER PRIMARY KEY, time, pkconc);<br
+/>CREATE TABLE pd(ptid INTEGER PRIMARY KEY, time, pdvar);<br
+/><br
+/>INSERT INTO id (ptid)<br
+/>VALUES (1);<br
+/><br
+/>INSERT INTO pk (ptid, time, pkconc)<br
+/>VALUES (1, 0, 10);<br
+/><br
+/>INSERT INTO pd (ptid, time, pdvar)<br
+/>VALUES (1, 0, 20);<br
+/><br
+/><br
+/><br
+/><br
+/></body>
+</html>
