@@ -769,8 +769,8 @@ want to create a file which contains the following names:
 
 To do this, we need a program which allows us to create text
 files. There are many such programs, the easiest one which is
-installed on almost all systems is called `nano`. Navigate to `/tmp`
-and enter the following command:
+installed on almost all systems is called `nano`. Navigate to
+`/tmp/<username>` and enter the following command:
 
     nano toBeSorted
 
