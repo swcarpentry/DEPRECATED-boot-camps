@@ -1,8 +1,8 @@
 #Python: Functions and Modules#
 
-** Presented by: Aronne Merrelli **
-** Material by: John Blischak and other Software Carpentry instructors (Joshua R. Smith, Milad Fatenejad, Katy Huff, Tommy Guy and many more) **
+**Presented by: Aronne Merrelli**
 
+**Material by: John Blischak and other Software Carpentry instructors (Joshua R. Smith, Milad Fatenejad, Katy Huff, Tommy Guy and many more)**
 
 A function is a block of code that performs a specifc task. In this section we
 will learn how to utilize available Python functions as well as write our own. The topics in this section are:
@@ -21,20 +21,14 @@ The base distribution comes with many useful functions. When a function works on
 # Find the start codon of a gene
 dna = 'CTGTTGACATGCATTCACGCTACGCTAGCT'
 dna.find('ATG')
-```
 
-```python
 # parsing a line from a comma-delimted file
 lotto_numbers = '4,8,15,16,23,42\n'
 lotto_numbers.strip().split(',')
-```
 
-```python
 question = '%H%ow%z%d%@d%z%th%ez$%@p%ste%rzb%ur%nz%$%@szt%on%gue%?%'
 print question.replace('%', '').replace('@', 'i').replace('$', 'h').replace('z', ' ')
-```
 
-```python
 answer = '=H=&!dr=a=nk!c=~ff&&!be=f~r&=!i=t!w=as!c=~~l.='
 print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', ' ')
 ```
@@ -63,9 +57,7 @@ When there is not an available function to perform a task, you can write your ow
 def square(x):
     return x * x
 print square(2), square(square(2))
-```
 
-```python
 def hello(time, name):
     """Print a nice message. Time and name should both be strings.
     
@@ -127,7 +119,9 @@ reset # Clear everything from IPython
 from math import sin  # Import just sin from the math module. This is a good idea.
 print sin(3)          # We can use sin because we just imported it
 print tan(3)          # Error: We only imported sin - not tan
+```
 
+```python
 reset                 # Clear everything
 import math as m      # Same as import math, except we are renaming the module m
 print m.sin(3)        # This is really handy if you have module names that are long
