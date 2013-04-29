@@ -429,9 +429,9 @@ on the computer. A program is just a file that you can *execute*. The
 program `which` tells you the location of a particular program. For
 example:
 
-    which ls
+    which rm
 
-Will return "/bin/ls". Thus, we can see that `ls` is a program that
+Will return "/bin/rm". Thus, we can see that `rm` is a program that
 sits inside of the `/bin` directory. Now enter:
 
     which find
