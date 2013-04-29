@@ -24,3 +24,54 @@ In this order, these will produce;
 ```
 
 * * * *
+**Short Exercise**
+
+Now, list the contents of the /bin directory. Do you see anything
+familiar in there?
+
+```
+ls /bin
+
+In this listing, you might recognize the different colors indicating
+different file types, especially executables.  You might specifically
+recognize that we have programs like 'ls' and 'cp' in this directory.
+```
+
+* * * *
+**Short Exercise**
+
+Do each of the following using a single `ls` command without
+navigating to a different directory.
+
+1.  List all of the files in `/bin` that contain the letter `a`
+
+    ls /bin/*a*
+
+2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
+
+    ls /bin/*a* /bin/*b*
+
+3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+
+    ls /bin/*a*b* /bin/*b*a*
+
+* * * *
+
+**Short Exercises**
+
+1.  Print out the contents of the `~/boot-camps/shell/dictionary.txt`
+    file. What does this file contain?
+
+```
+cat ~/boot-camps/shell/dictionary.txt
+
+This file contains a list of english language words in alphabetical order.
+```
+
+2.  Without changing directories, (you should still be in `shell`),
+    use one short command to print the contents of all of the files in
+    the `/home/<username>/boot-camps/shell/data/THOMAS` directory.
+
+```
+cat data/THOMAS/*
+```
