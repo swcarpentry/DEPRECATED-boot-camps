@@ -49,3 +49,8 @@ Day 2
 | 1:00-2:30    | [Use Version Control](version-control/git/local/Readme.md) | Matt Gidden |
 | 2:30-2:45    | Break                                   |      |
 | 2:45-4:00    | [Collaborate](version-control/git/remote/Readme.md)        | Matt Gidden |
+
+Coincidence?
+============
+
+![Today's XKCD Comic](http://xkcd.com/1205/)
