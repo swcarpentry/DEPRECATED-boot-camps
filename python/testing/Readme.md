@@ -1,11 +1,14 @@
-# Testing
 
-* * * * *
+[Up To Schedule](../../README.md) - Back To [Don't Repeat Yourself](../functions_and_modules/Readme.md) -
+Forward To [Use Version Control](../../version-control/git/local/Readme.md)
+
+# Plan for Mistakes (or: Testing)
+----
 
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
-![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
+![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/test_prod.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
@@ -276,10 +279,12 @@ teardown()
 
 # Nose: A Python Testing Framework
 
-The testing framework we'll discuss today is called nose. However, there
-are several other testing frameworks available in most language. Most
-notably there is [JUnit](http://www.junit.org/) in Java which can
-arguably attributed to inventing the testing framework.
+The testing framework we'll discuss today is called nose. However, there are
+several other testing frameworks available in most language. Most notably there
+is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
+inventing the testing framework. Google also provides a [test
+framework](code.google.com/p/googletest/) for C++ applications (note, there's
+also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).
 
 ## Where do nose tests live?
 
@@ -359,14 +364,12 @@ style was put forth most strongly by [Kent Beck in
 
 ## A TDD Example
 
-Say you want to write a fib() function which generates values of the
-Fibonacci sequence of given indexes. You would - of course - start by
-writing the test, possibly testing a single value:
+Say you want to write a fib() function which generates values of the [Fibonacci
+sequence](http://en.wikipedia.org/wiki/Fibonacci_number) of given indexes. You
+would - of course - start by writing the test, possibly testing a single value:
 
 ```python
 from nose.tools import assert_equal
-
-from pisa import fib
 
 def test_fib1():
     obs = fib(2)
@@ -486,7 +489,7 @@ def test_fib3():
     assert_equal(obs, exp)
 
 
-def test_fib3():
+def test_fib4():
     obs = fib(13.37)
     exp = NotImplemented
     assert_equal(obs, exp)
@@ -514,6 +517,10 @@ def fib(n):
 
 Can you think of other tests to make for the fibonacci function? I promise there 
 are at least two. 
+<!---
+	1. How about fib(string) or fib(array)?
+	2. How about fib(None)?
+--->
 
 Implement one new test in test_fib.py, run nosetests, and if it fails, implement 
 a more robust function for that case.
@@ -537,7 +544,7 @@ file which tests the closest\_data\_to\_line() functions.
 *Hint:* you can use one implementation function to test another. Below
 is some sample data to help you get started.
 
-![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
+![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/evo_sol1.png)
 > -
 
 ```python

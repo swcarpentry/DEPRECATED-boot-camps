@@ -1,8 +1,10 @@
-# Local Version Control
+[Up To Schedule](../../../README.md) - Bacl To [Plan for Mistakes](../../../python/testing) - Forward To [Collaborate](../remote/Readme.md)
+
+# Use Version Control
 ----
 
-**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, and Sri 
-Hari Krishna Narayanan**
+**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
+Hari Krishna Narayanan, and Matthew Gidden**
 
 ## Example: A Slide Deck for a Presentation
 
@@ -10,7 +12,7 @@ Imagine you have two computers: the first is a big, powerful desktop machine
 with a big, dual monitor setup. The second is a tiny lightweight netbook you 
 take with you when you travel. Imagine also that you have a presentation at a 
 conference overseas. You know that no matter how "finished" you think you are 
-with your slide deck, inevitably you will realize you need to add an exta figure 
+with your slide deck, inevitably you will realize you need to add an extra figure 
 or recalculate some data AFTER leaving the country and your main desktop 
 workstation. How can you be sure your slide deck, data, and the programs you've 
 written are synchronized between your two machines? How can you be sure that 
@@ -23,12 +25,12 @@ need to drop back to the slide deck you had five days ago?
 Very briefly, version control is a way to keep a backup of changing
 files, to store a history of those changes, and most importantly to
 allow many people in a collaboration to make changes to the same files
-concurrently. There are a lot of verson control systems. Wikipedia
+concurrently. There are a lot of version control systems. Wikipedia
 provides both a nice vocabulary list and a fairly complete table of some
 popular version control systems and their equivalent commands.
 
 Today, we'll be using git. Git is an example of a distributed version
-control system, distinct from centralized verson control systems. I'll
+control system, distinct from centralized versing control systems. I'll
 make the distinction clear later, but for now, the table below will
 suffice.
 
@@ -105,7 +107,7 @@ as their descriptions.
 ## git init : Creating a Local Repository
 
 To keep track of numerous versions of your work without saving numerous
-copies, you can make a local repoitory for it on your computer. What git
+copies, you can make a local repository for it on your computer. What git
 does is to save the first version, then for each subsequent version it
 saves only the changes. That is, git only records the difference between
 the new version and the one before it. With this compact information,
@@ -114,7 +116,7 @@ the original in order up to the version of interest.
 
 To create your own local (on your own machine) repository, you must
 initialize the repository with the infrastructure git needs in order to
-keep a record of things within the repsitory that you're concerned
+keep a record of things within the repository that you're concerned
 about. The command to do this is **git init** .
 
 ### Exercise : Create a Local Repository
@@ -301,10 +303,10 @@ There are some useful flags for this command, such as
 ## git reset : Unstaging a staged file
     git reset filename     (opposite of 'git add filename')
 
-## git checkout : Discardind unstaged modifications (git checkout has other purposes)
+## git checkout : Discarding unstaged modifications (git checkout has other purposes)
     git checkout -- filename     
     
-## git rm : Removing s file
+## git rm : Removing files
    git rm filename   (Removes a file from the repository)
    
 ### Exercise : 
@@ -410,7 +412,7 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Yesterday, you checked out a git type repository at
-https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+https://github.com/UW-Madsion-CLI/boot-camps/tree/2013-04-uwmadison
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
@@ -422,7 +424,7 @@ now, let's **fork** the repository from GitHub.
 ### Exercise : Cloning a Repository from GitHub
 
 Step 1 : Pick any repository you like. There are many cool projects
-hosted on github. Take a few minutes here, and pick a piece of code.
+hosted on GitHub. Take a few minutes here, and pick a piece of code.
 
 Step 2 : Clone it. If you didn't find anything cool, you can chose the
 "instructional" Spoon-Knife repository:
@@ -457,6 +459,55 @@ without asking, so don't get nervous. When in doubt, update.
 Since we just pulled the repository down, we will be up to date unless
 there has been a commit by someone else to the Original repository in
 the meantime.
+
+## Make your prompt pretty
+
+In the next section, we'll get into the gritty details of remotes and branches
+as we head toward web-based storage of your repositories. It turns out that some
+folks have created a way to make this kind of navigation more convenient,
+showing you what branch you're on using your bash prompt. Some super nice
+properties also include color-coding when you've got changed files or when your
+branch is fresh.
+
+### Exercise : Create a Local Repository
+
+Step 1 : Download [git-prompt.sh](http://volnitsky.com/project/git-prompt/git-prompt.sh).
+
+Step 2 : Move it to a local directory.
+    
+    $ mkdir ~/.source
+    $ mv ~/download-dir/git-prompt.sh ~/.source/
+
+Step 3 : Copy the following lines into your ~/.bashrc file (taken from Mike
+Stewart's [website](http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt)).
+    
+    source ~/.source/git-prompt.sh
+
+    Color_Off="\[\033[0m\]"       # Text Reset                                                                                                           
+    Yellow="\[\033[0;33m\]"       # Yellow                                                                                                               
+    Green="\[\033[0;32m\]"        # Green                                                                                                                
+    IBlack="\[\033[0;90m\]"       # Black                                                                                                                
+    IRed="\[\033[0;91m\]"         # Red                                                                                                                  
+    BYellow="\[\033[1;33m\]"      # Yellow                                                                                                               
+    Time12h="\T"
+    PathShort="\w"
+
+    export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\                                                                                      
+    if [ $? -eq 0 ]; then \                                                                                                                              
+      echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \                                                                           
+      if [ "$?" -eq "0" ]; then \                                                                                                                        
+        # @4 - Clean repository - nothing to commit                                                                                                      
+        echo "'$Green'"$(__git_ps1 " (%s)"); \                                                                                                           
+      else \                                                                                                                                             
+        # @5 - Changes to working tree                                                                                                                   
+        echo "'$IRed'"$(__git_ps1 " {%s}"); \                                                                                                            
+      fi) '$BYellow$PathShort$Color_Off'\$ "; \                                                                                                          
+    else \                                                                                                                                               
+      # @2 - Prompt when not in GIT repo                                                                                                                 
+      echo " '$Yellow$PathShort$Color_Off'\$ "; \                                                                                                        
+    fi)'
+
+Step 4 : Play around with it.
 
 ## Resources
 
