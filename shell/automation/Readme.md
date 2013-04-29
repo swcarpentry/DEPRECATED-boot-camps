@@ -1,5 +1,5 @@
 [Up To Schedule](../../README.md) -
-Back To [Instroduction to the Shell](../Readme.md) - Forward To [Write Code for People I](../../python/variables_and_types/Readme.md)
+Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People I](../../python/variables_and_types/Readme.md)
 
 # Automating Workflows
 
@@ -234,6 +234,63 @@ file containing the file with the smallest Range. Use the commands
 
 * * * * 
 
+# Variables
+
+We were earlier introduced to the `$PATH` variable.  This is a
+variable that the shell expects to be able to function properly.
+There are other variables defined and used by default.  To see a list
+of variables just enter:
+
+    set
+
+or better yet, pipe that through `less` like:
+
+   set | less
+
+Now you will see a long list of variables that are already set.  Some
+of these are built-in to the bash shell, others are set by the system
+administrator for all users.
+
+
+
+# Aliases
+
+Another way to avoid having to retype commands is to use an **alias**.
+Most shells allow you to define an alias after which it is available
+to use in that shell.  Let's define an alias to perform the same
+funtion as the `smallest` script that we made earlier.  If you enter:
+
+    alias my_smallest='wc * | sort -k 3 -n | head -n 1'
+
+you will have created a new command `my_smallest` that will be
+available in any directory.
+
+Some people also like to guard against accidentally deleting a file
+and will create an alias for the `rm` command:
+
+    alias rm='rm -i'
+
+that double checks their intent every time they delete a file.  After
+creating the above alias, try:
+
+    touch testfile
+    rm testfile
+
+Some system administrators will make this a default, and some users
+find it annoying.  You can find a list of aliases by just entering:
+
+    alias
+
+If you would like to remove this constant questioning, you can just
+enter:
+
+    unalias rm
+
+
+# Startup Scripts
+
+One of the most common scripts is one that is invoked every time you
+login.  When using the bash shell it is called the `.bashrc` file.
 
 
 ## Bonus:
