@@ -115,3 +115,85 @@ cat gerdal/*4* >> all_data
 ```
 
 * * * * 
+**Short Exercise**
+
+Do the following:
+
+1.  Rename the `all_data_IMPORTANT` file to `all_data`.
+2.  Create a directory in the `data` directory called `foo`
+3.  Then, copy the `all_data` file into `foo`
+
+```
+
+This assmes that a file named `all_data_IMPORTANT` has already been created.
+Then the following commands:
+
+    mv all_data_IMPORTANT all_data
+    mkdir foo
+    cp all_data foo/.
+```
+
+**Short Exercise**
+
+Navigate to the `data` directory. Use one `find` command to perform each
+of the operations listed below (except number 2, which does not
+require a `find` command):
+
+1.  Find any file whose name is "NOTES" within `data` and delete it 
+
+```
+One solution is to use find with its -exec argument:
+
+find . -name "*NOTES*" -exec rm {} \;
+
+This will find all files in the hierarchy beginning with the current
+directory (.), with a name containing the word NOTES, and execute the
+remove (rm) command on each {}.
+
+Another solution is to use find and pipe the results to xargs:
+
+find . -name "*NOTES*" | xargs rm
+
+This is similar but instead of using find to run the rm command, it
+passes all of the results of find as if they were command line
+arguments for rm.
+```
+
+2.  Create a new directory called `cleaneddata`
+
+```
+mkdir cleaneddata
+```
+
+3.  Move all of the files within `data` to the `cleaneddata` directory
+
+```
+mv */* cleaneddata
+
+Will move all the files (*) in each directory (*/) into the director cleaneddata.
+```
+
+4.  Rename all of the files to ensure that they end in `.txt` (note:
+    it is ok for the file name to end in `.txt.txt`
+```
+find cleaneddata -type f -exec mv {} {}.txt \;
+
+This will find only files and not directories (-type f) in the
+hierarchy starting with cleaneddata and for each one {} will move it
+to the same name with .txt added.
+```
+
+**BONUS**
+
+Redo exercise 4, except rename only the files which do not already end
+in `.txt`. You will have to use the `man` command to figure out how to
+search for files which do not match a certain name. 
+
+```
+find cleaneddata -type f -not -name "*.txt" -exec mv {} {}.txt \;
+
+This adds the condition that the name does not end in ".txt".
+```
+
+* * * *
+
