@@ -45,15 +45,15 @@ navigating to a different directory.
 
 1.  List all of the files in `/bin` that contain the letter `a`
 
-    ls /bin/*a*
+    `ls /bin/*a*`
 
 2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
 
-    ls /bin/*a* /bin/*b*
+    `ls /bin/*a* /bin/*b*`
 
 3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
 
-    ls /bin/*a*b* /bin/*b*a*
+    `ls /bin/*a*b* /bin/*b*a*`
 
 * * * *
 
