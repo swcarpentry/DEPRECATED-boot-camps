@@ -299,4 +299,5 @@ work. Furthermore, how many people use Google Drive to get work done, especially
 in a collaborative mode? It turns out that the Drive app [includes version
 control](http://support.google.com/drive/bin/answer.py?hl=en&answer=190843) as
 one of its features, albeit in a limited mode (you can't really control how
-often it commits, nor can you give messages to your commits).
+often it commits, nor can you give messages to your commits). Here's an
+[example](https://docs.google.com/document/d/115sweom_AnEdTvDjipsSK6Ml1HMnIKuQwz2ys52A2Bo/edit?usp=sharing).
