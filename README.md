@@ -33,16 +33,16 @@ Day 1
 | 10:45-11:00  | Break                                   |              |
 | 11:00-12:30  | Automating workflows                    | Paul Wilson  |
 | 12:30-1:30   | Lunch                                   |              |
-| 1:30-3:00    | Write Code for People I                 | Steve McGough|
+| 1:30-3:00    | [Write Code for People I](python/variables_and_types/Readme.md)| Steve McGough|
 | 3:00-3:15    | Break                                   |              |
-| 3:15-4:30    | Write Code for People II                | Aronne Mirelli |
+| 3:15-4:30    | [Write Code for People II](python/flow_control/Readme.md)| Aronne Mirelli |
 
 Day 2
 ======
 
 | Time         | Topic                                   | Instructor  |
 | ------------ | --------------------------------------- |-------------|
-| 9:00-10:30   | Don't Repeat Yourself                   | Aronne Mirelli |
+| 9:00-10:30   | [Don't Repeat Yourself](python/functions_and_modules/Readme.md) | Aronne Mirelli |
 | 10:30-10:45  | Break                                   |             |
 | 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
 | 12:00-1:00   | Lunch                                   |             |

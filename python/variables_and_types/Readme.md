@@ -1,3 +1,10 @@
+[Up To Schedule](../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People II](../flow_control/Readme.md)
+
+
+# Write Code for People I: Variables and Data Structures
+  
+(but first...)
+
 # Python, iPython, and the basics
 
 * * * * *
