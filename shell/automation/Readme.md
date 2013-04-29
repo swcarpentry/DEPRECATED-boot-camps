@@ -490,7 +490,7 @@ After we save and exit, we can now run that script on an entire set of files:
 
 
 * * * * 
-Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)a
+Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)
 
 
 ## Bonus topics:
