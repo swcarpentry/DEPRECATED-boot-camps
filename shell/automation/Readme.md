@@ -494,7 +494,6 @@ After we save and exit, we can now run that script on an entire set of files:
 
 **backtick, xargs**: Example find all files with certain text
 
-
 **du**
 
 **ln**
