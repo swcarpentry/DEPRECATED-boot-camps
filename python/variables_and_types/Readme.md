@@ -263,6 +263,7 @@ The '#' character denotes a comment in python. Comments should describe meaning 
 In [15]: voltage = 4 # set the voltage to 4 <- bad comment
 
 In [16]: voltage = 4 # The voltage in the circuit <- good, provides more information
+```
 
 ## What's in a name?
 
