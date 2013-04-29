@@ -6,22 +6,22 @@
 1. Use the manual page for `ls` to guess what you would expect from
 using the arguments `-l`, '-t', '-r' at the same time.
 
-``` 
+***Solution***
+
 This will produce a long listing `-l`, sorted by the time that the
 file last changed `-t`, and in the reverse order `-r`.
-```
 
 2. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
    * `ls -lS` (equivalent to `ls -l -S`)
    * `ls -lt` (equivalent to `ls -l -t`)
    * `ls -1`  (that's the number one, not a letter 'ell')
 
-```
+***Solutions***
+
 In this order, these will produce;
 * `ls -lS` lists files in a long listing sorted by their size
 * `ls -lt` lists files in a long listing sorted by its time
 * `ls -1`  lists files in a brief listing, but 1 per line
-```
 
 * * * *
 **Short Exercise**
@@ -29,6 +29,7 @@ In this order, these will produce;
 Now, list the contents of the /bin directory. Do you see anything
 familiar in there?
 
+***Solution***
 ```
 ls /bin
 ```
@@ -62,6 +63,8 @@ navigating to a different directory.
 1.  Print out the contents of the `~/boot-camps/shell/dictionary.txt`
     file. What does this file contain?
 
+***Solution***
+
 ```
 cat ~/boot-camps/shell/dictionary.txt
 ```
@@ -71,6 +74,8 @@ This file contains a list of english language words in alphabetical order.
 2.  Without changing directories, (you should still be in `shell`),
     use one short command to print the contents of all of the files in
     the `/home/<username>/boot-camps/shell/data/THOMAS` directory.
+
+***Solution***
 
 ```
 cat data/THOMAS/*
@@ -82,11 +87,13 @@ cat data/THOMAS/*
 Use the commands we've learned so far to figure out how to search
 in reverse while using `less`.
 
-```
-Once you have started a search with `/` you can continue it forward with `n` and in reverse with `N`.
+***Solution***
+
+Once you have started a search with `/` you can continue it forward
+with `n` and in reverse with `N`.
 
 You can start a search in the reverse direction with `?`.
-```
+
 
 * * * * 
 
@@ -102,6 +109,7 @@ should contain all of the experiment data from Bert and any
 experimental data file from gerdal with filenames that contain the
 number 4.
 
+***Solution***
 
 This exercise starts after a learners have already created a file
 named `all_data` as follows:
@@ -126,6 +134,7 @@ Do the following:
 2.  Create a directory in the `data` directory called `foo`
 3.  Then, copy the `all_data` file into `foo`
 
+***Solution***
 This assmes that a file named `all_data_IMPORTANT` has already been created.
 Then the following commands:
 
@@ -143,6 +152,7 @@ require a `find` command):
 
 1.  Find any file whose name is "NOTES" within `data` and delete it 
 
+***Solution***
 One solution is to use find with its -exec argument:
 
 ```
@@ -165,11 +175,15 @@ arguments for rm.
 
 2.  Create a new directory called `cleaneddata`
 
+***Solution***
+
 ```
 mkdir cleaneddata
 ```
 
 3.  Move all of the files within `data` to the `cleaneddata` directory
+
+***Solution***
 
 ```
 mv */* cleaneddata
@@ -180,6 +194,8 @@ Will move all the files (*) in each directory (*/) into the director cleaneddata
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
     it is ok for the file name to end in `.txt.txt`
+
+***Solution***
 
 ```
 find cleaneddata -type f -exec mv {} {}.txt \;
@@ -195,6 +211,8 @@ to the same name with .txt added.
 Redo exercise 4, except rename only the files which do not already end
 in `.txt`. You will have to use the `man` command to figure out how to
 search for files which do not match a certain name. 
+
+***Solution***
 
 ```
 find cleaneddata -type f -not -name "*.txt" -exec mv {} {}.txt \;
