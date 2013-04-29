@@ -750,3 +750,5 @@ in `.txt`. You will have to use the `man` command to figure out how to
 search for files which do not match a certain name. 
 
 * * * * 
+
+Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)
