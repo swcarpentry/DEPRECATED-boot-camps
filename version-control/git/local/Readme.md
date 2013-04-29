@@ -1,6 +1,6 @@
 [Up To Schedule](../../../README.md) - Bacl To [Plan for Mistakes](../../../python/testing) - Forward To [Collaborate](../remote/Readme.md)
 
-# Local Version Control
+# Use Version Control
 ----
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
