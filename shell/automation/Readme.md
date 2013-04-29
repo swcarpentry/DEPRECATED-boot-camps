@@ -1,7 +1,7 @@
-[Up To Schedule](../README.md) -
-Forward To [Automating Workflows](shell/automation/Readme.md)
+[Up To Schedule](../../README.md) -
+Back To [Instroduction to the Shell](../Readme.md) - Forward To [Write Code for People I](../../python/variables_and_types/Readme.md)
 
-# Introduction to The Shell
+# Automating Workflows
 
 **Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
