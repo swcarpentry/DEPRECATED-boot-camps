@@ -75,3 +75,43 @@ This file contains a list of english language words in alphabetical order.
 ```
 cat data/THOMAS/*
 ```
+
+* * * *
+**Short Exercise**
+
+Use the commands we've learned so far to figure out how to search
+in reverse while using `less`.
+
+```
+Once you have started a search with `/` you can continue it forward with `n` and in reverse with `N`.
+
+You can start a search in the reverse direction with `?`.
+```
+
+* * * * 
+
+**Short Exercise**
+
+Use `>>`, to append the contents of all of the files whose names
+contain the number 4 in the directory:
+
+    /home/<username>/boot-camps/shell/data/gerdal
+
+to the existing `all_data` file. Thus, when you are done `all_data`
+should contain all of the experiment data from Bert and any
+experimental data file from gerdal with filenames that contain the
+number 4.
+
+``` 
+This exercise starts after a learners have already created a file
+named `all_data` as follows:
+
+cat Bert/* > all_data
+
+To now add the data from the files with a 4 in the name in the
+`gerdal` directory:
+
+cat gerdal/*4* >> all_data
+```
+
+* * * * 
