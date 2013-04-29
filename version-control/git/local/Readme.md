@@ -1,6 +1,6 @@
-[Back To Testing](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/python/testing) - [Forward To Remote Version Control](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/version-control/git/remote)
+[Up To Schedule](../../../README.md) - Bacl To [Plan for Mistakes](../../../python/testing) - Forward To [Collaborate](../remote/Readme.md)
 
-# Local Version Control
+# Use Version Control
 ----
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 

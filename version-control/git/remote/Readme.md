@@ -1,6 +1,6 @@
-[Back To Local Version Control](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/version-control/git/local)
+[Up To Schedule](../../../README.md) - Back To [Use Version Control](../local/Readme.md)
 
-# Remote Version Control
+# Collaborate: Remote Version Control
 ----
 
 **Based on material by Katy Huff, Anthony Scopatz, and Sri Hari Krishna

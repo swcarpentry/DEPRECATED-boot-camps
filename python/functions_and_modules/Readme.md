@@ -1,4 +1,6 @@
-#Python: Functions and Modules#
+[Up To Schedule](../../README.md) - Back To [Write Code for People II](../flow_control/Readme.md) - Forward To [Plan for Mistakes](../testing/Readme.md)
+
+# Don't Repeat Yourself: Python Functions and Modules
 
 **Presented by: Aronne Merrelli**
 

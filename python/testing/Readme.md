@@ -1,7 +1,8 @@
-[Back To Functions & Modules](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/python/functions_and_modules) -
-[Forward To Local Version Control](https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison/version-control/git/local)
 
-# Testing
+[Up To Schedule](../../README.md) - Back To [Don't Repeat Yourself](../functions_and_modules/Readme.md) -
+Forward To [Use Version Control](../../version-control/git/local/Readme.md)
+
+# Plan for Mistakes (or: Testing)
 ----
 
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
