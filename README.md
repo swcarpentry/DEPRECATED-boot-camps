@@ -53,4 +53,6 @@ Day 2
 Coincidence?
 ============
 
-![Today's XKCD Comic](http://xkcd.com/1205/)
+On the first day of our boot camp, we were offered this [XKCD Comic](http://xkcd.com/1205/):
+![Today's XKCD Comic](http://imgs.xkcd.com/comics/is_it_worth_the_time.png)
+
