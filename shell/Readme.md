@@ -605,15 +605,23 @@ command backs up the file. Navigate to the `data` directory and enter:
 
     cp all_data all_data_backup
 
+Let's make a temporary directory to store that file.  The `mkdir`
+command is used to make a directory. Just enter `mkdir` followed by a
+space, then the directory name:
+
+    mkdir /tmp/<username>
+
+This makes a directory with your username in the directory `/tmp`.
+The directory `/tmp` is a special directory that all users can write
+to. It is a temporary place for storing files. Data stored in `/tmp`
+is automatically deleted when the computer shuts down.
+
 Now `all_data_backup` has been created as a copy of `all_data`. We can
 move files around using the command `mv`. Enter this command:
 
-    mv all_data_backup /tmp/
+    mv all_data_backup /tmp/<username>
 
-This moves `all_data_backup` into the directory `/tmp`. The directory
-`/tmp` is a special directory that all users can write to. It is a
-temporary place for storing files. Data stored in `/tmp` is
-automatically deleted when the computer shuts down.
+This moves `all_data_backup` into the directory `/tmp`. 
 
 The `mv` command is also how you rename files. Since this file is so
 important, let's rename it:
@@ -623,10 +631,7 @@ important, let's rename it:
 Now the file name has been changed to all_data_IMPORTANT. Let's delete
 the backup file now:
 
-    rm /tmp/all_data_backup
-
-The `mkdir` command is used to make a directory. Just enter `mkdir`
-followed by a space, then the directory name. 
+    rm /tmp/<username>/all_data_backup
 
 * * * *
 **Short Exercise**
