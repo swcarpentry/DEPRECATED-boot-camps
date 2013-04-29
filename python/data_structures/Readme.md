@@ -1,3 +1,5 @@
+[Up To Schedule](../../README.md) - Back To [Write Code for People Ia](../variables_and_types/Readme.md) - Forward To [Write Code for People II](../flow_control/Readme.md)
+
 # Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
 * * * * *
