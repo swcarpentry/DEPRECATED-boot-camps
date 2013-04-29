@@ -408,7 +408,7 @@ tab again, the shell will list the possible choices.
 
 Tab completion can also fill in the names of programs. For example,
 enter `e<tab><tab>`. You will see the name of every program that
-starts with an `e`. One of those is `echo`. If you enter `ec<tab>` you
+starts with an `e`. One of those is `echo`. If you enter `ech<tab>` you
 will see that tab completion works.
 
 ## Command History
@@ -439,10 +439,10 @@ sits inside of the `/bin` directory. Now enter:
 You will see that `find` is a program that sits inside of the
 `/usr/bin` directory.
 
-So ... when we enter a program name, like `ls`, and hit enter, how
-does the shell know where to look for that program? How does it know
-to run `/bin/ls` when we enter `ls`. The answer is that when we enter
-a program name and hit enter, there are a few standard places that the
+So when we enter a program name, like `ls`, and hit enter, how does
+the shell know where to look for that program? How does it know to run
+`/bin/ls` when we enter `ls`. The answer is that when we enter a
+program name and hit enter, there are a few standard places that the
 shell automatically looks. If it can't find the program in any of
 those places, it will print an error saying "command not found". Enter
 the command:
