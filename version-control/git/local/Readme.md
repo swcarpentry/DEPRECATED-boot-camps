@@ -143,10 +143,10 @@ description. You can describe your repository by opening the description
 file and replacing the text with a name for the repository. Mine will be
 called "Reproducible Science". You may call yours anything you like.
 
-    $ kate description &
+    $ nano description
 
 Step 4 : Applications sometimes create files that are not needed. For
-example, kate creates a temporary file called 'filename~' when you edit
+example, emacs creates a temporary file called 'filename~' when you edit
 the file 'filename'. You can ask git to ignore such files by editing
 the file '.git/info/exclude'. Edit the file to ignore files the end with '~'.
 
@@ -167,7 +167,7 @@ create one, then we'll learn the **git add** command.
 
 Step 1 : Create a file to add to your repository.
 
-    $ kate readme.rst &
+    $ touch readme.rst
 
 Step 2 : Inform git that you would like to keep track of future changes
 in this file.
@@ -429,7 +429,7 @@ hosted on GitHub. Take a few minutes here, and pick a piece of code.
 Step 2 : Clone it. If you didn't find anything cool, you can chose the
 "instructional" Spoon-Knife repository:
 
-    $ git clone git@github.com/octocat/Spoon-Knife.git
+    $ git clone https://github.com/octocat/Spoon-Knife.git
     Cloning into Spoon-Knife...
     remote: Counting objects: 24, done.
     remote: Compressing objects: 100% (21/21), done.
