@@ -175,6 +175,7 @@ Will move all the files (*) in each directory (*/) into the director cleaneddata
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
     it is ok for the file name to end in `.txt.txt`
+
 ```
 find cleaneddata -type f -exec mv {} {}.txt \;
 
