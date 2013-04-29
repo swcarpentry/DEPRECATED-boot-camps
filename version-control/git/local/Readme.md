@@ -460,7 +460,7 @@ Since we just pulled the repository down, we will be up to date unless
 there has been a commit by someone else to the Original repository in
 the meantime.
 
-## Make your prompt pretty
+## Aside: Make your Prompt Pretty
 
 In the next section, we'll get into the gritty details of remotes and branches
 as we head toward web-based storage of your repositories. It turns out that some
@@ -469,7 +469,7 @@ showing you what branch you're on using your bash prompt. Some super nice
 properties also include color-coding when you've got changed files or when your
 branch is fresh.
 
-### Exercise : Create a Local Repository
+### Exercise : Update your prompt
 
 Step 1 : Download [git-prompt.sh](http://volnitsky.com/project/git-prompt/git-prompt.sh).
 
