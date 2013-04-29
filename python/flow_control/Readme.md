@@ -1,4 +1,4 @@
-[Up To Schedule](../README.md) - Back To [Write Code for People I](../variables_and_types/Readme.md) - Forward to [Don't Repeat Yourself](../functions_and_modules/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Write Code for People I](../variables_and_types/Readme.md) - Forward to [Don't Repeat Yourself](../functions_and_modules/Readme.md)
 
 # Writing Code for People II : Flow Control - Loops, Conditionals, etc
 

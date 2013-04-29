@@ -1,4 +1,4 @@
-[Up To Schedule](../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People II](../flow_control/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People II](../flow_control/Readme.md)
 
 
 # Write Code for People I: Variables and Data Structures
@@ -50,7 +50,7 @@ Here is the reference material.
 Once we briefly deal with ipython, I'll cover python in the following order:
 
 ## What We'll cover
-### Lesson 1a
+### Lesson 1a (Write Code for People Ia)
 * print statements
 * variables
 * integers
@@ -60,21 +60,21 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 * type coercion
 * basic operations: add numbers, concatenate strings, basic data type functionality
 
-### Lesson 1b
+### Lesson 1b (Write Code for People Ib)
 * list
 * dictionary 
 * set 
 * tuple
 * file reading
 
-### Lesson 2
+### Lesson 2 (Write Code for People II)
 * for loop
 * conditional (if) statements
 * while loops
 * iteration
 * writing to files
 
-### Lesson 3
+### Lesson 3 (Don't Repeat Yourself)
 * methods
 * modules
 

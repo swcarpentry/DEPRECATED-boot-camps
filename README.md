@@ -31,7 +31,7 @@ Day 1
 | 9:00-9:45    | What we know about software engineering | Steve McGough|
 | 9:45-10:45   | [Introducing the Shell](shell/Readme.md)| Paul Wilson  |
 | 10:45-11:00  | Break                                   |              |
-| 11:00-12:30  | Automating workflows                    | Paul Wilson  |
+| 11:00-12:30  | [Automating Workflows](shell/automation/Readme.md)     | Paul Wilson  |
 | 12:30-1:30   | Lunch                                   |              |
 | 1:30-3:00    | [Write Code for People I](python/variables_and_types/Readme.md)| Steve McGough|
 | 3:00-3:15    | Break                                   |              |
