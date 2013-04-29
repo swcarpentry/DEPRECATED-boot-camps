@@ -489,10 +489,12 @@ After we save and exit, we can now run that script on an entire set of files:
     ./data2csv THOMAS/*
 
 
+* * * * 
+Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)a
 
-## Bonus:
 
-**backtick, xargs**: Example find all files with certain text
+## Bonus topics:
+
 
 **du**
 
