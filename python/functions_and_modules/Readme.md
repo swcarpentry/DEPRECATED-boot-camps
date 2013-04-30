@@ -6,14 +6,14 @@
 
 **Material by: John Blischak and other Software Carpentry instructors (Joshua R. Smith, Milad Fatenejad, Katy Huff, Tommy Guy and many more)**
 
-A function is a block of code that performs a specifc task. In this section we
+A function is a block of code that performs a specific task. In this section we
 will learn how to utilize available Python functions as well as write our own. The topics in this section are:
 
 * Python methods for strings
 * Writing our own functions
 * Importing Python modules
 
-As you saw in the last lesson, computers are very useful for doing the same operation over and over. When you know you will be performing the same operation many times, it is best to abstract this functionality into a function (aka method). For example, you used the function `open` in an earlier section. This allowed you to easily open a conncetion to a file without worrying about the underlying code that made it possible (this idea is known as abstraction).   
+As you saw in the last lesson, computers are very useful for doing the same operation over and over. When you know you will be performing the same operation many times, it is best to abstract this functionality into a function (aka method). For example, you used the function `open` in an earlier section. This allowed you to easily open a connection to a file without worrying about the underlying code that made it possible (this idea is known as abstraction).   
 
 ##Built-in string methods##
 
@@ -129,11 +129,19 @@ import math as m      # Same as import math, except we are renaming the module m
 print m.sin(3)        # This is really handy if you have module names that are long
 ```
 
+If you intend to use python in your workflow, it is a good idea to skim the standard library documentation at the main Python documentation site, [docs.python.org](http://docs.python.org) to get a general idea of the capabilities of python "out of the box".
+
 ###Short exercise: Make a module###
 
-We have written a number of short functions. Collect these in a text file, "myFunctions.py", and test out the different import methods listed above. You may want to reset the ipython session between imports in the same way as the examples.
+We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the ipython session between imports in the same way as the examples.
 
-Try adding a new function to the module. You will need to `reload` the module in python to update it, if the module is already imported.
+Try adding a new function to the module. Note that you need to `reload` the module in python to update it, if the module is already imported. For example:
+
+```python
+import myFunctions as myFun
+# ... editing myFunctions.py in nano or other text editor...
+reload(myFun)
+```
 
 
 ###Short exercise: Write a function to calculate content fraction of DNA###
