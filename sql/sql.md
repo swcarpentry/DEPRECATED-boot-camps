@@ -102,6 +102,8 @@ You can even give the calculated column a more sensible name in the results by u
 
     SELECT plot, species, sex, wgt, ROUND(wgt / 1000.0, 2) as "wgt_kg" FROM surveys;
 
+Please read the [SQLite Core functions reference](http://www.sqlite.org/lang_corefunc.html) if you are interested in seeing other functions which are available.
+
 Filtering
 ---------
 One of the most powerful features of a database is the ability to filter data –
@@ -216,11 +218,11 @@ and calculate combined values in groups.
 Let’s go to the surveys table and find out how many individuals there are.
 Using the wildcard simply counts the number of records (rows)
 
-    SELECT COUNT(*) FROM individuals
+    SELECT COUNT(*) FROM surveys
 
 We can also find out how all of those individuals weigh.
 
-    SELECT SUM(wgt) FROM individuals
+    SELECT SUM(wgt) FROM surveys
 
 ***Do you think you could output this value in kilograms,
 rounded to 3 decimal places?***
@@ -228,7 +230,7 @@ rounded to 3 decimal places?***
     SELECT ROUND(SUM(wgt)/1000.0, 3) FROM surveys
 
 There are many other aggregate functions included in SQL including
-MAX, MIN, and AVG.
+MAX, MIN, and AVG again, check [SQLite Core functions reference](http://www.sqlite.org/lang_corefunc.html) for details.
  
 ***From the surveys table, can you use one query to output the total weight, average weight, and the min and max weights?***
 
