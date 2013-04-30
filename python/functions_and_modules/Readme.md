@@ -94,7 +94,7 @@ print round(calculate_gc('ATaGtTCaAGcTCgATtGaATaGgTAaCt'), ndigits = 2) == 0.34
 
 One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases.
 
-```
+```python
 def calculate_dna_fraction(x, bases):
     """Calculate the fraction of DNA sequence x, for a set of input bases.
     x: a string composed only of A's, T's, G's, and C's.
