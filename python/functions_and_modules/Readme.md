@@ -90,6 +90,36 @@ print round(calculate_gc('AGCGTCGTCAGTCGT'), ndigits = 2) == 0.60
 print round(calculate_gc('ATaGtTCaAGcTCgATtGaATaGgTAaCt'), ndigits = 2) == 0.34
 ```
 
+###Short exercise: Write a function to calculate content fraction of DNA###
+
+One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases.
+
+```
+def calculate_dna_fraction(x, bases):
+    """Calculate the fraction of DNA sequence x, for a set of input bases.
+    x: a string composed only of A's, T's, G's, and C's.
+    bases: a string containing the bases of interest (A, T, G, C, or 
+       some combination)"""
+```
+
+Check your work. Note that since this is a generalization of `calculate_gc`, it should reproduce the same results as that function with the proper input:
+
+
+```python
+test_x = 'AGCGTCGTCAGTCGT'
+print calculate_gc(test_x) == calculate_dna_fraction(test_x, 'GC')
+print round(calculate_dna_fraction(test_x, 'C'), ndigits = 2) == 0.27
+print round(calculate_dna_fraction(test_x, 'TGC'), ndigits = 2) == 0.87
+```
+
+Generalization can bring problems, due to "corner cases", and unexpected inputs. You need to keep these in mind while writing the function; this is also where you should think about test cases. For example, what should the results from these calls be?
+
+```python
+print calculate_dna_fraction(test_x, 'AA')
+print calculate_dna_fraction(test_x, '')
+print calculate_dna_fraction(test_x, 2.0)
+```
+
 ##Modules##
 
 Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like sin, we need to `import` the math module. Lets take a look at a simple example:
@@ -128,6 +158,13 @@ reset                 # Clear everything
 import math as m      # Same as import math, except we are renaming the module m
 print m.sin(3)        # This is really handy if you have module names that are long
 ```
+
+###Short exercise: Make a module###
+
+We have written a number of short functions. Collect these in a text file, "myFunctions.py", and test out the different import methods listed above. You may want to reset the ipython session between imports in the same way as the examples.
+
+Try adding a new function to the module. You will need to `reload` the module in python to update it, if the module is already imported.
+
 
 ##The General Problem##
 

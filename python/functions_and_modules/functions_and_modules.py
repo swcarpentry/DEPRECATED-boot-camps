@@ -19,6 +19,33 @@ def calculate_gc(x):
     return float(x.count('G') + x.count('C')) / (x.count('G') + x.count('C') + x.count('A') + x.count('T'))
 
 """
+Short exercise: Write a function to calculate content fraction of DNA
+One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases.
+"""
+def calculate_dna_fraction(x, bases):
+    """Calculate the fraction of DNA sequence x, for a set of input bases.
+    x: a string composed only of A's, T's, G's, and C's.
+    bases: a string containing the bases of interest (A, T, G, C, or 
+       some combination)"""
+    x = x.upper()
+    
+    # This is optional: use a set as an easy way to make sure we don't 
+    # search for the same base twice.
+    search_bases = set()
+    for b in bases:
+        search_bases.add(b)
+
+    base_count = 0.0
+    for b in search_bases:
+        base_count = base_count + x.count(b)
+
+    total_base_count = 0.0
+    for b in ('G', 'C', 'A', 'T'):
+        total_base_count = total_base_count + x.count(b)
+
+    return base_count / total_base_count
+
+"""
 Longer exercise: Reading Cochlear implant into Python
 
 Part 1:
