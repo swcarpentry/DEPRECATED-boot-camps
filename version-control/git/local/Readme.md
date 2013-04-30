@@ -509,7 +509,11 @@ Stewart's [website](http://mediadoneright.com/content/ultimate-git-ps1-bash-prom
       echo " '$Yellow$PathShort$Color_Off'\$ "; \                                                                                                        
     fi)'
 
-Step 4 : Play around with it.
+Step 4 : Source your bashrc (it'll change immediately)
+
+    $ source ~/.bashrc
+
+Step 5 : Play around with it.
 
 ## Resources
 
