@@ -284,7 +284,9 @@ several other testing frameworks available in most language. Most notably there
 is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
 inventing the testing framework. Google also provides a [test
 framework](code.google.com/p/googletest/) for C++ applications (note, there's
-also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).
+also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).  There
+is at least one testing framework for R:
+[testthat](http://cran.r-project.org/web/packages/testthat/index.html).
 
 ## Where do nose tests live?
 
@@ -515,14 +517,14 @@ def fib(n):
 
 # Quality Assurance Exercise
 
-Can you think of other tests to make for the fibonacci function? I promise there 
-are at least two. 
+Can you think of other tests to make for the fibonacci function? I promise there
+are at least two.
 <!---
 	1. How about fib(string) or fib(array)?
 	2. How about fib(None)?
 --->
 
-Implement one new test in test_fib.py, run nosetests, and if it fails, implement 
+Implement one new test in test_fib.py, run nosetests, and if it fails, implement
 a more robust function for that case.
 
 And thus - finally - we have a robust function together with working
@@ -554,4 +556,3 @@ p1 = np.array([0.0, 0.0])
 p2 = np.array([1.0, 1.0])
 data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
 ```
-
