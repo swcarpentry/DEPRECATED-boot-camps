@@ -181,7 +181,7 @@ view_cochlear('/home/swc/boot-camps/shell/data/Lawrence/Data0525')
 Adapt your function above to return a dictionary containing the contents of the file. Split each line of the file by a colon followed by a space (': '). The first half of the string should be the key of the dictionary, and the second half should be the value of the dictionary.
 
 ```python
-def save_cochlear(filename):
+def load_cochlear(filename):
     """Write your docstring here.
     """
 ```
@@ -189,10 +189,10 @@ def save_cochlear(filename):
 Check your work:
 
 ```python
-data_216 = save_cochlear("/home/swc/boot-camps/shell/data/alexander/data_216.DATA")
+data_216 = load_cochlear("/home/swc/boot-camps/shell/data/alexander/data_216.DATA")
 print data_216["Subject"]
 
-Data0525 = save_cochlear("/home/swc/boot-camps/shell/data/alexander/data_216.DATA")
+Data0525 = load_cochlear("/home/swc/boot-camps/shell/data/Lawrence/Data0525")
 print Data0525["CI type"]
 ```
 

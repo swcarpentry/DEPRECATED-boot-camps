@@ -53,8 +53,8 @@ def view_cochlear(filename):
 Part 3:
 Adapt your function above to return a dictionary containing the contents of the file. Split each line of the file by a colon followed by a space (': '). The first half of the string should be the key of the dictionary, and the second half should be the value of the dictionary.
 """
-def save_cochlear(filename):
-    """Reads in data file and saves data.
+def load_cochlear(filename):
+    """Reads in data file and stores data in a python dictionary.
     Input: Filename as string.
     Output: A dictionary of the data.
     """
