@@ -301,3 +301,10 @@ control](http://support.google.com/drive/bin/answer.py?hl=en&answer=190843) as
 one of its features, albeit in a limited mode (you can't really control how
 often it commits, nor can you give messages to your commits). Here's an
 [example](https://docs.google.com/document/d/115sweom_AnEdTvDjipsSK6Ml1HMnIKuQwz2ys52A2Bo/edit?usp=sharing).
+
+## Why should you share your code with the world?
+
+Take the time to do a little [background
+reading](http://www.siam.org/news/news.php?id=2064&goback=.gde_112393_member_232769759).
+There are arguments for and agaisnt sharing your code. Why would you,
+personally, choose to do so or not?
