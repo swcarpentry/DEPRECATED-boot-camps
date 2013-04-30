@@ -472,11 +472,13 @@ branch is fresh.
 ### Exercise : Update your prompt
 
 Step 1 : Download [git-prompt.sh](http://volnitsky.com/project/git-prompt/git-prompt.sh).
+    
+    $ wget http://volnitsky.com/project/git-prompt/git-prompt.sh
 
 Step 2 : Move it to a local directory.
     
     $ mkdir ~/.source
-    $ mv ~/download-dir/git-prompt.sh ~/.source/
+    $ mv git-prompt.sh ~/.source/
 
 Step 3 : Copy the following lines into your ~/.bashrc file (taken from Mike
 Stewart's [website](http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt)).
