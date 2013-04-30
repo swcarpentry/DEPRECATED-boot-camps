@@ -190,8 +190,8 @@ commit your changes.
     $ git branch development
     $ git checkout development
     Switched to branch 'development'
-    $ kate Readme.md &
-    <edit the readme file and exit kate>
+    $ nano Readme.md
+    <edit the readme file and exit nano>
     $ git commit -am "Changed the welcome message to ... "
 
 Step 2 : Mirror the remote upstream repository in your master branch (in
