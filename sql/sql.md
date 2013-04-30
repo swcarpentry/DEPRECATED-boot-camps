@@ -102,7 +102,7 @@ You can even give the calculated column a more sensible name in the results by u
 
     SELECT plot, species, sex, wgt, ROUND(wgt / 1000.0, 2) as "wgt_kg" FROM surveys;
 
-Please read the [SQLite Core functions reference](http://www.sqlite.org/lang_corefunc.html) if you are interested in seeing other functions which are available.
+Please check the [SQLite Core functions reference](http://www.sqlite.org/lang_corefunc.html) if you would like to see other core functions which are available.
 
 Filtering
 ---------
@@ -230,13 +230,13 @@ rounded to 3 decimal places?***
     SELECT ROUND(SUM(wgt)/1000.0, 3) FROM surveys
 
 There are many other aggregate functions included in SQL including
-MAX, MIN, and AVG again, check [SQLite Core functions reference](http://www.sqlite.org/lang_corefunc.html) for details.
+MAX, MIN, and AVG - [SQLite Aggregate functions](http://www.sqlite.org/lang_aggfunc.html) for details.
  
-***From the surveys table, can you use one query to output the total weight, average weight, and the min and max weights?***
+***From the surveys table, can you use one query to output the total weight, average weight, and the min and max weights? - see if you can use column aliasing to make the results table columns more readable ***
 
 Now, let's try to see how many individuals were counted in each species?
 
-    SELECT species, COUNT(*) FROM individuals
+    SELECT species, COUNT(*) FROM surveys
 
 Why does this NOT work?
 
@@ -253,7 +253,6 @@ aggregate, and we can do that using GROUP BY clause
     GROUP BY species
 
 ***Exercise: How many individuals were counted in each year?***
-SELECT month, COUNT(DISTINCT sp_code) FROM individuals GROUP BY month
 
 ***Exercise: How many individuals were counted in each species in each year?***
 
@@ -265,11 +264,11 @@ ordered by the count
     SELECT species, COUNT(*)
     FROM surveys
     GROUP BY species
-    ORDER BY COUNT(sp_code)
+    ORDER BY COUNT(*)
 
 ***Exercise: Write a query that lets us look at which years contained the most individuals and which had the least?***
 
-***Exercise: Write a query that shows us which species had the largest individuals on average?***
+***Exercise: Write a query that shows us which species had the heaviest individuals on average?***
 
 Database Design
 ---------------
@@ -343,8 +342,3 @@ type of treatment, we could do something like
 
 
 
-Creating tables
----------------
-
-Adding data to existing tables
-------------------------------
