@@ -154,8 +154,8 @@ def view_cochlear(filename):
 Test it out:
 
 ```python
-view_cochlear('/home/swc/boot-camps/shell/data/alexander/data_216.DATA')
-view_cochlear('/home/swc/boot-camps/shell/data/Lawrence/Data0525')
+view_cochlear('/home/<username>/boot-camps/shell/data/alexander/data_216.DATA')
+view_cochlear('/home/<username>/boot-camps/shell/data/Lawrence/Data0525')
 ```
 
 ###Part 2:###
@@ -172,8 +172,8 @@ Test it out:
 
 
 ```python
-view_cochlear('/home/swc/boot-camps/shell/data/alexander/data_216.DATA')
-view_cochlear('/home/swc/boot-camps/shell/data/Lawrence/Data0525')
+view_cochlear('/home/<username>/boot-camps/shell/data/alexander/data_216.DATA')
+view_cochlear('/home/<username>/boot-camps/shell/data/Lawrence/Data0525')
 ```
 
 ###Part 3:###
@@ -189,10 +189,10 @@ def load_cochlear(filename):
 Check your work:
 
 ```python
-data_216 = load_cochlear("/home/swc/boot-camps/shell/data/alexander/data_216.DATA")
+data_216 = load_cochlear("/home/<username>/boot-camps/shell/data/alexander/data_216.DATA")
 print data_216["Subject"]
 
-Data0525 = load_cochlear("/home/swc/boot-camps/shell/data/Lawrence/Data0525")
+Data0525 = load_cochlear("/home/<username>/boot-camps/shell/data/Lawrence/Data0525")
 print Data0525["CI type"]
 ```
 
