@@ -34,7 +34,7 @@ Scientific Linux 6 already comes with shell and vi text editor. To install the o
     
 ## To install under Ubuntu
 
-Ubuntu 11.04 and above already comes with shell, vi and nano text editors, Python 2.7. To install the other packages run,
+Ubuntu 11.04 and above already comes with shell, vi and nano text editors. To install the other packages run,
 
     $ sudo su -
     # apt-get install git
