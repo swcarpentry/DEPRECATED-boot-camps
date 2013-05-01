@@ -1,20 +1,40 @@
 ## Tracking your changes with a local repository
 
-Version control is centred round the notion of a *repository* which holds your directories and files. We'll start by looking at a local repository. The local repository is set up in a directory in your local filesystem (local machine).
+Version control is centred round the notion of a *repository* which holds your directories and files. We'll start by looking at a local repository. The local repository is set up in a directory in your local file system (local machine).
 
+### Check we have Git
+
+Can check that we have a git client by typing:
+
+    $ git --version
+
+and you should get a response with the client you are running. Git comes with its own help system that can be useful. You can always do:
+
+    $ git help
+
+and you will get a list of the more common git commands. If you want a more exhaustive list you can do:
+
+    $ git help --all
+
+which will return a list of all the commands. If you want help on a particular command, say the `checkout` command, then you can do:
+
+    $ git help checkout
+
+If ever you get an error message you don't understand or you want to do something you are not quite sure on how to do then Googling will return something that will help you.
+ 
 ### Create a new repository with Git
 
 First, create a directory:
 
-    $ mkdir papers
-    $ cd papers
+    $ mkdir html
+    $ cd html
 
 Now, we need to set up this directory up to be a Git repository (or "initiate the repository"):
 
     $ git init
-    Initialized empty Git repository in /home/user/papers/.git/
+    Initialized empty Git repository in /home/user/html/.git/
 
-The directory "papers" is now our *working directory*. 
+The directory "html" is now our *working directory*. 
 
 If we look in this directory, we'll find a `.git` directory:
 
@@ -30,6 +50,8 @@ As part of the information about changes made to files Git records who made thos
 
     $ git config --global user.name "Your Name"
     $ git config --global user.email "yourname@yourplace.org"
+
+The fact that you are using the `--global` flag means that this will work for several repositories so you don't have to do it again. In practice it puts a file in your home directory with this information - `ls ~/.gitconfig`. We shall look at this file a little later again.
 
 ### Set a default editor
 
@@ -53,29 +75,45 @@ We can now preview (and edit, if necessary) Git's global configuration (such as 
 
     $ cat ~/.gitconfig
     [user]
-  name = Your Name
+    name = Your Name
 	email = yourname@yourplace.org
     [core]
 	editor = nano
 
 This file holds global configuration that is applied to any Git repository in your file system.
 
+You can get git to tell you the values that have been set as well:
+
+    git config -l 
+
 ### Add a file to the repository
 
-Now, we'll create a file. Let's say we're going to write a journal paper:
+Now, we'll create a file. Let's say we're going to write a web page:
 
-    $ nano journal.txt
+    $ nano template.html
 
-and add headings for Title, Author, Introduction, Conclusion and References, and save the file.
+We can create a template html file:
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title></title>
+    </head>
+    <body>
+ 
+    </body>
+    </html>
+
+ and save the file.
 
 `git status` allows us to find out about the current status of files in the repository. So, we can run,
 
-    $ git status journal.txt
+    $ git status template.html
 
 Information about what Git knows about the file is displayed. For now, the important bit of information is that our file is listed as `Untracked` which means it's in our working directory but Git is not tracking it - that is, any changes made to  this file will not be recorded by Git. To tell Git about the file, we first need to add it to Git's *staging area*, which is also known as the *index* or the *cache*.
 
-    $ git add journal.txt
-    $ git status journal.txt
+    $ git add template.html
+    $ git status template.html
 
 Now, our file is now listed as one of some `Changes to be committed`. The *staging area* can be viewed as a "loading dock", a place to hold files  we've added, or changed, until we're ready to tell Git to record those  changes in the repository. 
 
@@ -91,15 +129,15 @@ Our default editor will now pop up. Why? Well, Git can automatically figure out 
 
 If we save our commit message, Git will now commit our file.
 
-     [master (root-commit) c381e68] This is my journal paper.
-     1 file changed, 9 insertions(+)
-     create mode 100644 journal.txt
+     [master (root-commit) 1a4abeb] Template html file.
+     1 files changed, 8 insertions(+), 0 deletions(-)
+     create mode 100644 template.html
 
 This output shows the number of files changed and the number of lines inserted or deleted across all those files. Here, we've changed (by adding) 1 file and inserted 8 lines.
 
 Now, if we look at its status,
 
-    $ git status journal.txt
+    $ git status template.html
     # On branch master
     nothing to commit (working directory clean)
 
@@ -113,19 +151,34 @@ The output shows: the commit identifier (also called revision number) which uniq
 
     $ git log --relative-date
 
-Now let's make some more changes to our journal.txt file . If we now run,
+Now let's create our index.html file from our template: 
 
-    $ git status journal.txt
+    $ cp template.html index.html
+
+Edit the file to add a title 
+     
+    <title>My Home Page</title>
+
+and a header in the body as well:
+
+    <h1>My Home Page</h1>
+
+Now register the changes and commit:
+
+    $ git add index.html
+    $ git commit -m"Create index file from template."
+
+Note that it can be quicker to add the commit message at the command line instead of going via an editor.
+
+Now make some minor changes to our index.html file. If we now run,
+
+    $ git status index.html
 
 we see a `Changes not staged for commit` section and our file is marked as `modified`. This means that a file Git knows about has been modified by us but has not yet been committed. So we can add it to the staging area and then commit the changes:
 
-    $ git add journal.txt
-    $ git commit
-
-It can sometimes be quicker to provide our commit messages at the command-line by doing:
-
-    $ git add journal.txt
-    $ git commit -m "Added subsection headings." 
+    $ git add index.html
+    $ git commit -m"Added titles."
+ 
 
 > **Top tip: When to commit changes**
 
@@ -142,32 +195,47 @@ It can sometimes be quicker to provide our commit messages at the command-line b
 > Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial.
 > J. Cohen (2006). [Best Kept Secrets of Peer Code Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
 
-Let's add a directory, `common` and a file `references.txt` for references we may want to reuse:
+Let's add a directory, `imgs` for images and an image file of yourself `me.png`:
 
-    $ mkdir common
-    $ nano common/references.txt
+    $ mkdir imgs
+    $ cd imgs
+    $ # Use wget to pull an image of yourself from the web or find
+    $ # a suitable replacement (call it me.jpg or use whatever
+    $ # extension).
+    $ cd ..
 
-And add Fagan and Cohen to this:
+Edit the index file to include the picture of yourself:
 
-    $ git add common
-    $ git commit -m "Added common directory and references file with Cohen and Fagan"
+    <p>
+    <img src="imgs/me.jpg" alt="This is me." />
+    This is me.</p>
 
-and Git will add, then commit, both the directory and the file.
+Now add your images to the repository:
+
+    $ git add imgs
+    $ git commit -m "Added an images directory and pic of me."
+
+and Git will add, then commit, both the directory and the file. Note that if you run `git status` you will see that you still have to commit your index.html file (do not do this yet!).
 
 > **Top tip: Commit anything that cannot be automatically recreated**
 
-> Typically we use version control to save anything that we create manually e.g. source code, scripts, notes, plain-text documents, LaTeX documents. Anything that we create using a compiler or a tool e.g. object files (`.o`, `.a`, `.class`, `.pdf`, `.dvi` etc), binaries (`exe` files), libraries (`dll` or `jar` files) we don't save as we can recreate it from the source. Adopting this approach also means there's no risk of the auto-generated files becoming out of synch with the manual ones.
+> Typically we use version control to save anything that we create manually, e.g. source code, scripts, notes, plain-text documents, LaTeX documents. Anything that we create using a compiler or a tool, e.g. object files (`.o`, `.a`, `.class`, `.pdf`, `.dvi` etc), binaries (`exe` files), libraries (`dll` or `jar` files) we don't save as we can recreate it from the source. Adopting this approach also means there's no risk of the auto-generated files becoming out of synch with the manual ones.
 
 In order to add all tracked files to the staging area (which may be very useful when you edited, let's say, 10 files and now you want to commit all of them):
 
     $ git commit -a
 
+or suppose you started your repository in an established code base and you wanted to add all the files to the repository you could do:
+
+    $ git add .
+
+Remember that you still have to commit these files.
 
 ### Discarding changes
 
 Let us suppose we've made a change to our file and not yet committed it. We can see the changes that we've made:
 
-    $ git diff journal.txt
+    $ git diff index.html
 
 This shows the difference between the latest copy in the repository and the changes we've made. 
 
@@ -175,13 +243,13 @@ This shows the difference between the latest copy in the repository and the chan
 * `+` means a line was added. 
 * Note that, a line that has been edited is shown as a removal of the old line and an addition of the updated line.
 
-Maybe we made our change just to see how something looks, or, for code, to quickly try something out. But we may be unhappy with our changes. If so, we can just throw them away and return our file to the most recent version we committed to the repository by using:
+Maybe we made our change just to see how something looks, or, for code, to quickly try something out. But we may be unhappy with our changes. If so, we can just throw them away and return our file to the most recent version we committed to the repository by using (if you do this on your uncommitted index.html file you will lose whatever changes you had so take care):
 
-    $ git checkout -- journal.txt
+    $ git checkout -- index.html
 
 and we can see that our file has *reverted* to being the most up-to-date one in the repository:
 
-    $ git status journal.txt
+    $ git status index.html
 
 ### Looking at our history
 
@@ -191,7 +259,7 @@ As we saw above, we can see the history of changes to our repository:
 
 Or to a specific file in our repository:
 
-    $ git log journal.txt
+    $ git log index.html
 
 Git automatically assigns an identifier (*COMMITID*) to each commit made to the repository. In order to see the changes made between any earlier commit and our current version, we can use  `git diff`  providing the commit identifier of the earlier commit:
 
@@ -206,19 +274,19 @@ Using our commit identifiers we can set our working directory to contain the sta
     $ git log
     $ git checkout COMMITID
 
-If we look at `journal.txt` we'll see it's our very first version. And if we look at our directory,
+If we look at `template.html` we'll see it's our very first version. And if we look at our directory,
 
     $ ls
-    journal.txt
+    template.html
 
-then we see that our `common` directory is gone. But, rest easy, while it's gone from our working directory, it's still in our repository. We can jump back to the latest commit by doing:
+then we see that our `imgs` directory and `index.html` file is gone. But, rest easy, while it's gone from our working directory, it's still in our repository. We can jump back to the latest commit by doing:
 
     $ git checkout master
 
-And `common` will be there once more,
+And `imgs` and `index.html` will be there once more,
 
     $ ls
-    common journal.txt
+    imgs index.html template.html
 
 So we can get any version of our files from any point in time. In other words, we can set up our working directory back to any stage it was when we made a commit.
 
@@ -234,7 +302,7 @@ Commit identifiers are long and cryptic. Git allows us to create tags, which act
 
 For example,
 
-    $ git tag VER_REVIEWED_BY_JOHN
+    $ git tag v1.0
 
 We can list tags by doing:
 
@@ -242,12 +310,12 @@ We can list tags by doing:
 
 Now if we change our file,
 
-    $ git add journal.txt
-    $ git commit -m "..." journal.txt
+    $ git add index.html
+    $ git commit -m "..." index.html
 
 We can checkout our previous version using our tag instead of a commit identifier.
 
-    $ git checkout VER_REVIEWED_BY_JOHN
+    $ git checkout v1.0
 
 And return to the latest checkout,
 
@@ -261,7 +329,7 @@ And return to the latest checkout,
 
 You might have noticed the term `branch` in status messages,
 
-    $ git status journal.txt
+    $ git status index.html
     # On branch master
     nothing to commit (working directory clean)
 
@@ -273,7 +341,7 @@ Not only can our repository store the changes made to files and directories, it 
 
 A new branch can be created from any commit. Branches can also be *merged* together. 
 
-Why is this useful? 
+### Why is this useful? 
 Suppose we've developed some software and released this to our users.
 We then rewrite some functionality and add some more.
 Suppose a user finds a bug and we want to fix it and get this user a bug-fixed version.
@@ -283,7 +351,7 @@ Branches are a solution to this. When we release our software we can create a ne
 
     -o---o---o                               master
               \
-               o                             release1.0
+               o                             release
 
 We can then continue developing our software in our default, or master, branch,
 
@@ -313,11 +381,11 @@ One popular model is to have,
 
 * A release branch, representing a released version of the code.
 * A master branch, representing the most up-to-date stable version of the code.
-* Various feature and/or developer-specific branches representing work-in-progress, new features etc.
+* Various feature and/or developer-specific branches representing work-in-progress, new features, etc.
 
 For example,
 
-             0.1      0.2        0.3
+            v1.0       v2.0   v3.0
               o---------o------o------    release
              /         /      /
      o---o---o--o--o--o--o---o---o---    master
