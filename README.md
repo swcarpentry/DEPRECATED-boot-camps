@@ -1,15 +1,12 @@
-Software Carpentry Boot Camps
-=============================
+boot-camps
+==========
+![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-This repository contains material useful when preparing and running a
-boot camp. This can include lecture notes, lesson plans, IPython
-Notebooks, exercises, and some types of presentations. Please see the
-[contributor guidelines][contrib] for more information on preferred
-file formats and other instructions for contributing.
+Welcome!
 
-This repository is also used to store material specific to boot
-camps. Refer to the [wiki][] for instructions on making your own boot
-camp branch and/or making a boot camp website.
+# University of Oxford DTCs - 9-10 May 2013
+Software Carpentry boot camp material
+for the 9-10 May 2013 boot camp at the University of Oxford Doctoral Training Centres.
 
-[contrib]: https://github.com/swcarpentry/boot-camps/blob/master/CONTRIBUTING.md
-[wiki]: https://github.com/swcarpentry/boot-camps/wiki
+For a schedule and installation instructions check out the boot camp webpage at
+http://jonc125.github.com/boot-camps/2013-05-09-oxford-dtc.
