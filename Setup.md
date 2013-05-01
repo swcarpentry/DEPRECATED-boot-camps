@@ -10,7 +10,7 @@ You should ensure you have the following software and tools available.
 * Python 2.6 or 2.7
 
 Below there are setup instructions for Windows (XP, Vista) RedHat/Scientific Linux 6 and Ubuntu and Mac OSX.
-If you have any problems then please e-mail Aleksandra at [aleksandra.n.pawlik@gmail.com].
+If you have any problems then please e-mail [Aleksandra](aleksandra.n.pawlik@gmail.com).
 
 ## To install under Windows 
 
