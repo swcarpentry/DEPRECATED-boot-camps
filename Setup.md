@@ -14,9 +14,9 @@ If you have any problems then please e-mail the boot camp mailing list at [list 
 
 ## To install under Windows 
 
-In order to work shell, scripting, make and git on Windows, you 'll need [Cygwin](http://www.cygwin.com/])
+In order to work shell, scripting, make and git on Windows, you 'll need [Cygwin](http://www.cygwin.com/]).
 Once you download and run the installation package make sure that you install:
-* nano
+* A text editor (we recommend "nano")
 * Make
 * Git
 * Python 2.6 or 2.7
