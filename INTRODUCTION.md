@@ -13,7 +13,7 @@
 ### The instructors and helpers: 
 
 **Instructors**
-- Konrad Bernhard  
+- Bernhard Konrad
 - [Paul Ivanov](http://pirsquared.org/)
 - [Ariel Rokem](http://arokem.org)
 
