@@ -1,6 +1,6 @@
 # Manual set-up
 
-You should ensure you have the following software and tools available. 
+You should ensure you have the following software and tools available: 
 
 * Web browser (preferably Firefox or Google Chrome)
 * Bash shell
@@ -9,19 +9,19 @@ You should ensure you have the following software and tools available.
 * [Git](http://git-scm.com/)
 * Python 2.7 or higher
 
-Below there are setup instructions for Windows (XP, Vista) RedHat/Scientific Linux 6 and Ubuntu and Mac OSX.
-If you have any problems then please send an email to: admin [_at_] software-carpentry.org.
+Below there are setup instructions for Windows, RedHat/Scientific Linux 6 and Ubuntu. The setup instructions for Mac OSX can be found on the [Software Carpentry website](http://software-carpentry.org/setup/osx.html).  
+If you experience any problems, please send an email to: admin [_at_] software-carpentry.org.
 
 ## To install under Windows 
 
-In order to work shell, scripting, make and git on Windows, you 'll need [Cygwin](http://www.cygwin.com/]).
-Once you download and run the installation package make sure that you install:
+In order to practice working with shell, scripting, Make and Git on Windows, we will use [Cygwin](http://www.cygwin.com/]).
+Once you download and run the installation package, make sure that you install:
 * A text editor (during the tutorials we will be using "nano")
 * Make
 * Git
 * Python 2.7 or higher
 
-To install the above modules simply type in their names in the "Select packages" window during the installation process (note that Make and Git will be listed in the 'Devel' section).
+To install the above packages simply type in their names in the "Select packages" window during the installation process (note that Make and Git will be listed in the 'Devel' section).
 
 ## To install under RedHat/Scientific Linux 6
 
