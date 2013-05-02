@@ -2,7 +2,6 @@
 root: ..
 layout: base
 title: University of Oxford Doctoral Training Centres Software Carpentry Boot Camp
-markdown: rdiscount
 ---
 
 <div>
@@ -37,7 +36,7 @@ Links to the materials for each session are also provided, although these will n
     * _13:00 Lunch_
     * 14:00 Applying software carpentry in MATLAB \[[materials][m matlab]]
     * _15:00 Coffee break_
-    * 15:30 Hopefully some flexible time to discuss attendee interests
+    * 15:30 Some flexible time to discuss attendee interests (hopefully!)
     * 16:15 What we actually know about developing software, and why we believe it's true
     * 16:30 Putting it all together
     * 16:45 Feedback
