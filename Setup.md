@@ -10,7 +10,7 @@ You should ensure you have the following software and tools available.
 * Python 2.6 or 2.7
 
 Below there are setup instructions for Windows (XP, Vista) RedHat/Scientific Linux 6 and Ubuntu and Mac OSX.
-If you have any problems then please send an email to: poland [ at ] lists.software-carpentry.org.
+If you have any problems then please send an email to: admin [_at_] software-carpentry.org.
 
 ## To install under Windows 
 
