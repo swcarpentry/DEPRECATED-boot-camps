@@ -16,22 +16,43 @@ title: University of Oxford Doctoral Training Centres Software Carpentry Boot Ca
 
 ## Schedule
 
-Timings are to be confirmed, but the sessions will be:
+The sessions will run (roughly) as follows.
+Links to the materials for each session are also provided, although these will not be finalised until a day or two before the workshop.
 
-* Registration and introduction
-* What we actually know about developing software, and why we believe it's true
-* Version control (with [git][])
-* The basics of [Python][], Functions and Testing
-* Scientific programming in Python: [NumPy][] and [SciPy][]
-* Using relational databases
-* Applying software carpentry in Matlab: coding style, code organisation, testing, databases
-* Hopefully some flexible time to discuss attendee interests
-* Putting it all together
+* Day 1, Thursday 9th May
+    * 09:00 Registration and introduction
+    * 09:30 Version control (with [git][]) [[materials][m vcs]]
+    * 11:00 _Coffee break_
+    * 11:30 Version control continued
+    * 12:00 The basics of [Python][] [[materials][m python]]
+    * 13:00 _Lunch_
+    * 14:00 Organising code: Python functions [[materials][m func]]
+    * 15:00 _Coffee break_
+    * 15:30 Testing your code [[materials][m test]]
+* Day 2, Friday 10th May
+    * 09:00 Scientific programming in Python: [NumPy][] and [SciPy][] [[materials][m numpy]]
+    * 11:00 _Coffee break_
+    * 11:30 Using relational databases [[materials][m sql]]
+    * 13:00 _Lunch_
+    * 14:00 Applying software carpentry in MATLAB [[materials][m matlab]]
+    * 15:00 _Coffee break_
+    * 15:30 Hopefully some flexible time to discuss attendee interests
+    * 16:15 What we actually know about developing software, and why we believe it's true
+    * 16:30 Putting it all together
+    * 16:45 Feedback
 
 [git]: http://git-scm.com/
 [Python]: http://python.org/
 [NumPy]: http://www.numpy.org/
 [SciPy]: http://www.scipy.org/
+
+[m vcs]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/version-control/
+[m python]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/intro/
+[m func]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/functions/
+[m test]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/testing/
+[m numpy]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/numpy/
+[m sql]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/sql/
+[m matlab]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/matlab/
 
 ## Installation
 
