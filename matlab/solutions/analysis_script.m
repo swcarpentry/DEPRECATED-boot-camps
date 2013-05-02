@@ -1,7 +1,7 @@
 %% Exploring data example
 
 % First we load some sample data, containing x and y variables
-load('data/sample6');
+load('../data/sample1');
 
 %% Compute summary statistics
 x_mean = sum(x) / length(x);

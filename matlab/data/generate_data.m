@@ -37,9 +37,9 @@ data(6).y = 1.1 + ((data(6).x - 10)/3).^2 + 1.5*randn(n_points, 1);
 
 
 % Write data to file
-save('data/all_samples', 'data');
+save('all_samples', 'data');
 for i=1:6
-    fname = ['data/sample' num2str(i)];
+    fname = ['sample' num2str(i)];
     x = data(i).x;
     y = data(i).y;
     save(fname, 'x', 'y');
