@@ -73,7 +73,7 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 
 ## iPython
 You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run iPython, or you can run iPython notebook.  iPython is an alternative to the built-in Python interpreter with some nice features.  iPython notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
-Lets give the built-in interpreter a spin just this once.
+Let's give the built-in interpreter a spin just this once.
 
 ```
 swc@swc:~$ python
@@ -125,7 +125,7 @@ iPython also has tab completion of previous commands. Try typing "print" and the
 
 ### Getting Help
 
-iPython has some nice help features. Lets say we want to know more about the integer data type. There are at least two ways to do this task:
+iPython has some nice help features. Let's say we want to know more about the integer data type. There are at least two ways to do this task:
 
 ```python
 In [1] help(int)
@@ -162,7 +162,7 @@ Once deleted, variables cannot be recovered. Proceed (y/[n])?
 
 ## Variables
 
-All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Lets set a variable.
+All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Let's set a variable.
 
 ```python
 In [1]: experiment = "current vs. voltage"
@@ -195,7 +195,7 @@ Out[8]: <type 'float'>
 
 Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. Its actually important, but its importance may not be clear to you until long after this class is over.
 
-Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Lets say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
+Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Let's say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
 
 Here's an example of dynamic typing. What's the type of data assigned to voltage?
 
@@ -204,7 +204,7 @@ In [9]: type(voltage)
 Out[9]: <type 'int'>
 ```
 
-Lets assign a value of 2.7 (which is clearly a float) to voltage. What happens to the type?
+Let's assign a value of 2.7 (which is clearly a float) to voltage. What happens to the type?
 
 ```python
 In [10]: voltage = 2.7
@@ -243,7 +243,7 @@ In [22]: type(voltageString)
 Out[22]: <type 'str'>
 ``` 
 
-As you might imagine, you can go the other way in certain cases. Lets say you had numerical data in a string.
+As you might imagine, you can go the other way in certain cases. Let's say you had numerical data in a string.
 
 ```python
 In [23]: resistanceString = "4.0"
@@ -269,7 +269,7 @@ Do you think you can coerce that string to a numerical type?
 
 Again, the following may seem esoteric and pedantic, but it is very important. So bear with me.
 
-Lets say you had some voltage data that looks like the following
+Let's say you had some voltage data that looks like the following
 
 ```
 0
@@ -308,7 +308,7 @@ This point becomes important when we start operating on data in the next section
 
 ## Data Operations
 
-In this section all of the discussion in the previous section becomes important. I don't know if I'd call this stuff fundamental to the language, but its pretty important and it will zing you if you aren't careful. The takeaway is that you need to be precise with what you are doing. Lets say you want to add some integers.
+In this section all of the discussion in the previous section becomes important. I don't know if I'd call this stuff fundamental to the language, but its pretty important and it will zing you if you aren't careful. The takeaway is that you need to be precise with what you are doing. Let's say you want to add some integers.
 
 ```python
 In [31]: a = 1
@@ -413,7 +413,7 @@ In [63]: print fullName
 Johann Gambolputty
 ```
 
-There are other operations deined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
+There are other operations deined on string data. Use the dir command to find them. One example I'll show is the upper method. Let's take a look at the documentation.
 
 ```python
 In [64]: str.upper?
