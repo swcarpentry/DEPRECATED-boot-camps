@@ -11,10 +11,11 @@ We've seen how we can use version control to,
 
 Now, consider again our initial questions,
 
-* If someone asks you, "can I have the code you used to create the data that you graphed in your conference paper?" You can use your version control logs and tags to immediately retrieve the exact version of the code that you used.
-* If someone tells you, "er, your laptop's just been stolen!" ideally you'll have lost no work as you push it regularly to a remote repository.
-* If you're working with a colleague on a journal paper who storms into your office and shouts, "you've just deleted my analysis section" you can just ask them to retrieve the previous version from the repository.
-* If you're working with colleagues on a code and you find that a function you wrote has been rewritten and you want to know why, you could just look through the logs at the commit messages and, hopefully, these'll explain why it was changed.
+* Someone emails you, "Can I have a copy of the code you used to analyse the data that you graphed in a journal paper?". How easy would it be for you to get the code, or even the data, that generated that particular graph for them?
+* If your laptop were stolen today how much would cost you to reproduce the work that went with it?
+* How would you work on a piece of code, or a paper, on your home PC, a work PC and a laptop? How would you ensure that you kept all your files synchronized?
+* How would you develop a piece of software collaboratively with colleagues? How would you ensure your sources were kept up to date? How would you deal with conflicts? 
+
 
 Version control serves as a log book for your software and documents, ideas you've explored, fixes you've made, refactorings you've done, false paths you've explored - what was changed, who by, when and why - with a powerful undo and redo feature!
 

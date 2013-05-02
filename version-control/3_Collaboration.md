@@ -6,9 +6,9 @@ One of you choose to be generous and share your repository with your partner - w
 
 The Owner can go to Bitbucket and click on the Share link (on the top) for your repository.
 
-Now, add your partner's Bitbucket user name.
+Now, add your partner's Bitbucket user name. Give them write access.
 
-Now both Owner and partner clone the owner's repository e.g.
+Now both Owner and partner clone the owner's repository, e.g.
 
     $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git 
 
