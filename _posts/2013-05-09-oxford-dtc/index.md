@@ -20,22 +20,25 @@ The sessions will run (roughly) as follows.
 Links to the materials for each session are also provided, although these will not be finalised until a day or two before the workshop.
 
 * Day 1, Thursday 9th May
+
     * 09:00 Registration and introduction
-    * 09:30 Version control (with [git][]) [[materials][m vcs]]
-    * 11:00 _Coffee break_
+    * 09:30 Version control (with [git][]) [ [materials][m vcs] ]
+    * _11:00 Coffee break_
     * 11:30 Version control continued
-    * 12:00 The basics of [Python][] [[materials][m python]]
-    * 13:00 _Lunch_
-    * 14:00 Organising code: Python functions [[materials][m func]]
-    * 15:00 _Coffee break_
-    * 15:30 Testing your code [[materials][m test]]
+    * 12:00 The basics of [Python][] [ [materials][m python] ]
+    * _13:00 Lunch_
+    * 14:00 Organising code: Python functions [ [materials][m func] ]
+    * _15:00 Coffee break_
+    * 15:30 Testing your code [ [materials][m test] ]
+
 * Day 2, Friday 10th May
-    * 09:00 Scientific programming in Python: [NumPy][] and [SciPy][] [[materials][m numpy]]
-    * 11:00 _Coffee break_
-    * 11:30 Using relational databases [[materials][m sql]]
-    * 13:00 _Lunch_
-    * 14:00 Applying software carpentry in MATLAB [[materials][m matlab]]
-    * 15:00 _Coffee break_
+
+    * 09:00 Scientific programming in Python: [NumPy][] and [SciPy][] [ [materials][m numpy] ]
+    * _11:00 Coffee break_
+    * 11:30 Using relational databases [ [materials][m sql] ]
+    * _13:00 Lunch_
+    * 14:00 Applying software carpentry in MATLAB [ [materials][m matlab] ]
+    * _15:00 Coffee break_
     * 15:30 Hopefully some flexible time to discuss attendee interests
     * 16:15 What we actually know about developing software, and why we believe it's true
     * 16:30 Putting it all together
