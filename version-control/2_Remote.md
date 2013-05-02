@@ -4,7 +4,9 @@ We're going to set up a remote repository that we can use from multiple location
 
 ### Bitbucket
 
-[Bitbucket](http://bitbucket.org) is a web service which allows users to set up  their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. Bitbucket, like other services such as [Launchpad](https://launchpad.net), [GitHub](https://github.com),
+[Bitbucket](http://bitbucket.org) is a web service which allows users to set up  their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. 
+
+Bitbucket, like other services such as [Launchpad](https://launchpad.net), [GitHub](https://github.com),
 [GoogleCode](http://code.google.com), and [SourceForge](http://sourceforge.net) provides a wealth of resources to support projects including:
 
 * Time histories changes to repositories
@@ -14,7 +16,7 @@ We're going to set up a remote repository that we can use from multiple location
 * Issue (ticket) and bug tracking
 * Download
 * Varying permissions for various groups of users
-* Other service hooks e.g. to Twitter.
+* Other service hooks, e.g. to Twitter.
 
 **Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. 
 
@@ -64,7 +66,7 @@ Our local repository is now available on Bitbucket. So, anywhere we can access B
 Now, let's do something drastic!
 
     $ cd ..
-    $ rm -rf papers
+    $ rm -rf html
 
 Gulp! We've just wiped our local repository! But, as we've a copy on Bitbucket we can just copy, or *clone* that,
 
@@ -87,9 +89,9 @@ Now, if we change into `bootcamp` we can see that we have our repository,
 and we can see our Git configuration files too,
 
     $ ls -A
-    common  .git  journal.txt
+    .git imgs index.html template.html
 
-But where is the `papers` directory, you might ask? `papers` was the directory that held our local repository but was not a part of it.
+But where is the `html` directory, you might ask? `html` was the directory that held our local repository but was not a part of it.
 
 ### Push changes to a remote repository
 
@@ -127,9 +129,9 @@ So we now have two clones of our repository,
 Let's pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we're still pretending!) and one on Bitbucket. So let's go into one of our clones, make some changes, commit these and push these to Bitbucket:
 
     $ cd bootcamp
-    $ nano journal.txt
-    $ git add journal.txt
-    $ git commit -m "Added some notes to the sections" journal.txt
+    $ nano index.html
+    $ git add index.html
+    $ git commit -m "Added a new paragraph about Oxford." index.html
     $ git push
 
 Now let's change to our other repository and *fetch* the changes from our remote repository,
@@ -149,37 +151,37 @@ We can then *merge* these changes into our current repository, which merges the 
 
 And then we can check that we have our changes,
 
-    $ cat journal.txt
+    $ cat index.html
     $ git log
 
 As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
 
-    $ nano journal.txt
-    $ git add journal.txt
-    $ git commit -m "Added some references" journal.txt
+    $ nano index.html
+    $ git add index.html
+    $ git commit -m "Qualified the paragraph." index.html
     $ git push
     $ cd ../bootcamp
     $ git pull
 
 And then check that we have our changes,
 
-    $ cat journal.txt
+    $ cat index.html
     $ git log
 
 ### Conflicts and how to resolve them
 
 Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket:
 
-    $ nano journal.txt
-    $ git add journal.txt
-    $ git commit -m "Rewrote the title" journal.txt
+    $ nano index.html
+    $ git add index.html
+    $ git commit -m "Changed the title" index.html
     $ git push
 
 Now let us suppose, at a later, date, we use our other repository (for example, we may have been working on a local repository on our laptop, and now are using the one on our workstation) and we come up with a better idea for a title,
 
     $ cd ../bootcamp2
-    $ git add journal.txt
-    $ git commit -m "Changed the first author" journal.txt
+    $ git add index.html
+    $ git commit -m "Got a better title." index.html
     $ git push
 
 Our push fails, as we've not yet pulled down our changes from our remote repository. Before pushing we should always pull, so let's do that...
@@ -188,32 +190,32 @@ Our push fails, as we've not yet pulled down our changes from our remote reposit
 
 and we get
 
-    Auto-merging journal.txt
-    CONFLICT (content): Merge conflict in journal.txt
+    Auto-merging index.html
+    CONFLICT (content): Merge conflict in index.html
     Automatic merge failed; fix conflicts and then commit the result.
 
 As we saw earlier, with the fetch and merge, a pull pulls down changes from the repository and tries to merge these. It does this on a file-by-file basis, merging files line by line. We get a *conflict* when if a file has changes that affect the same lines and those changes can't be seamlessly merged. If we look at the status,
 
     $ git status
 
-we can see that our file is listed as `Unmerged` and if we look at `journal.txt`, we may see something like,
+we can see that our file is listed as `Unmerged` and if we look at `index.html`, we may see something like,
 
     <<<<<<< HEAD 
-    Title: A paper about proteines
+    <title>This is My Home Page in Oxford</title>
     =======
-    Title: A paper everything but proteines
+    <title>This is My Home Page in Edinburgh</title>
     >>>>>>> 71d34decd32124ea809e50cfbb7da8e3e354ac26 
 
 The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to *resolve* the conflict. This means removing the mark-up and doing one of
 
-* Keep the local version, which, here, is the one marked-up by `HEAD` i.e. "Title: A paper about proteines"
-* Keep the remote version, which, here, is the one marked-up by the commit identifier i.e. "Title: A paper everything but proteines"
-* Or keep a combination of the two e.g. "Title: A paper about proteines and eveything else"
+* Keep the local version, which, here, is the one marked-up by `HEAD`, i.e. "&lt;title>This is My Home Page in Oxford&lt;/title>"
+* Keep the remote version, which, here, is the one marked-up by the commit identifier, i.e. "&lt;title>This is My Home Page in Edinburgh&lt;/title>"
+* Or keep a combination of the two, e.g. "&lt;title>This is My Home Page&lt;/title>"
 
-We edit the file. Then commit our changes e.g.
+We edit the file. Then commit our changes, e.g.
 
-    $ git add journal.txt
-    $ git commit -m "Resolved conflict in journal.txt by rewriting title to combine best of both originals"
+    $ git add index.html
+    $ git commit -m "Resolved conflict in index.html by removing location."
 
 Now if we push,
 
