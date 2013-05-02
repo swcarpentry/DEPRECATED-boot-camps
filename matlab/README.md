@@ -17,7 +17,6 @@ Notes for things to include somewhere:
 * http://www.mathworks.co.uk/help/matlab/matlab_prog/add-reminders-to-files.html and relation to issue tracker
 * http://www.mathworks.co.uk/help/matlab/error-handling.html
 * Defensive programming: http://www.mathworks.co.uk/help/matlab/input-and-output-arguments.html
-* TODO: Move my versions into a solutions folder
 
 The data analysis
 -----------------
@@ -119,15 +118,48 @@ due to running the sections in a different order?  Instead, we want to
 transform the script into a function that takes the _x_ and _y_ data
 to process as inputs.
 
-## Exercise
+### Exercise
 
 Create a new .m file defining a function to perform the whole
 analysis, returning the results.
 
-TODO: Use as an opportunity to loop over datasets in all_samples and
-talk about structs.  (Also useful for returning results.)
 
-## Exercise
+One consideration that arises from this exercise is how to return the
+results.  MATLAB allows you to return multiple values from functions,
+so you could use this feature to return each computed statistic as a
+separate variable.  However, when the number of things to return is
+more than a couple, this makes life difficult for users of the
+function.  A better approach here is to return a [struct][] with
+separate fields for each item.  Much like a Python dictionary, these
+more structured data types are great for keeping related data together
+and organised.
+
+The data file `all_samples.mat` contains each of our test datasets
+within an array of structs.  We can therefore loop over these to run
+our analysis function on each in turn.
+
+```matlab
+    clear all
+    load('data/all_samples'); % Contains a single struct array 'data'
+    whos
+    for i=1:length(data)
+        figure;
+        results = analysis_func(data(i).x, data(i).y);
+        disp(results);
+    end
+```
+
+While structs are useful for keeping related data together, they don't
+allow you to associate behaviour with that data, or enforce
+constraints to make sure that relationships between the data are
+maintained.  This kind of functionality is the topic of [Object
+Oriented Programming][OOP], and it's worth exploring MATLAB's (and
+Python's) capabilities here if you're going to be writing any
+moderately large programs.  We don't have time to do into it now
+though.
+
+
+### Exercise
 
 Create a 'distance from line' function and incorporate this into your
 analysis program.
@@ -157,12 +189,85 @@ lines of:
     addpath([pwd '\matlab_xunit\xunit']);
 ```
 
+Several examples are shipped with xUnit, so we'll go through a few of
+these to demonstrate its abilities, and then set you loose to write
+your own tests.  So, firstly we need to get into the directory
+containing the examples.
+
+```matlab
+    cd matlab_xunit/doc
+    cd example_quick_start
+```
+
+Tests are M-file functions that return no results, and the function
+name must start or end with 'test' or 'Test'.  Test cases are
+considered to pass if the function runs with no errors produced.  Your
+tests should thus raise an error if the output is not as expected.
+The first simple example checks that `fliplr` of a vector works.
+
+```matlab
+    type testFliplrVector
+```
+
+Raising errors yourself gets rather tedious, so as with other
+frameworks xUnit provides various utility functions to perform common
+checks.  `assertEqual` is demonstrated in the second example.
+
+```matlab
+    type testFliplrMatrix
+```
+
 To run tests, we use xUnit's `runtests` function.  Much like
 `nosetests`, this will automatically find tests matching its rules.
 
-Notes:
-* Go through examples similar to xUnit documentation.
-* Mention suggested structure of projects, with data/tests folders as in repo.
+```matlab
+>> runtests
+Test suite: C:\cygwin\home\jonc\work\git_repos\swc\boot-camps\matlab\matlab_xunit\doc\example_quick_start
+02-May-2013 14:18:02
+
+Starting test run with 2 test cases.
+..
+PASSED in 0.022 seconds.
+```
+
+Writing many files, one for each test, quickly makes file organisation
+tricky.  As in Python, it's possible to combine multiple test cases in
+a single file to make up a test suite.  The file name is the same, but
+this time the function returns one variable, which must be named
+`test_suite`.  It first calls the xUnit function `initTestSuite`, then
+defines a subfunction for each test case, the names of which start or
+end with 'test'.
+
+```matlab
+    cd ../example_subfunction_tests
+    type testFliplr
+    runtests
+```
+
+The `runtests` command also takes arguments allowing you to select
+specific tests to run, rather than running all tests found.  This is
+useful while developing code to make a particular test case or test
+suite pass.
+
+```matlab
+    runtests testFliplr
+    runtests testFliplr:testFliplrVector
+    cd ..
+    runtests example_subfunction_tests
+```
+
+### Exercise
+
+Write tests that check the output of the `sin` function for a few
+well-known values, including `pi`.  You may find the following list of
+utility functions provided by xUnit helpful.
+- assertTrue
+- assertFalse
+- assertEqual
+- assertFilesEqual
+- assertElementsAlmostEqual
+- assertVectorsAlmostEqual
+- assertExceptionThrown
 
 
 Testing exercise
@@ -180,6 +285,14 @@ regression line, or consider what further analyses could be performed
 and how to test these.  Another test is to verify the expected
 statistical properties of the [Anscombe datasets][Anscombe], the first
 four of our samples.
+
+For this exercise, it's easiest to place test files alongside your
+source code, so that when running the tests they can find the
+functions they're testing!  In a larger project, it makes more sense
+to organise tests into their own subfolder (say 'tests') alongside
+'source' and 'data' folders, and ensure that your source code is on
+the MATLAB search path.  You can also use [packages][] to add further
+structure to your code.
 
 As an alternative exercise, try adding tests to some of your own
 MATLAB code.
@@ -208,6 +321,9 @@ queries programmatically.
 
 [MATLAB]: http://www.mathworks.co.uk/products/matlab/
 [code sections]: http://www.mathworks.co.uk/help/matlab/matlab_prog/run-sections-of-programs.html
+[OOP]: http://www.mathworks.co.uk/help/matlab/object-oriented-programming.html
+[struct]: http://www.mathworks.co.uk/help/matlab/structures.html
+[packages]: http://www.mathworks.co.uk/help/matlab/matlab_oop/scoping-classes-with-packages.html
 
 [GF sqlite]: https://bitbucket.org/GarrettFoster/sqlite-matlab/src
 [mksqlite]: http://mksqlite.berlios.de/mksqlite_eng.html
