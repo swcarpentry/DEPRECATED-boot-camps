@@ -11,12 +11,6 @@ As a setting we will imagine performing some exploratory analysis on a
 few datasets, and build towards a robust, tested program for
 summarising new, similar data.
 
-Notes for things to include somewhere:
-* Structs, cell arrays, objects, function handles, etc.  Some of this at least should be familiar.
-* Distinction between nested & local functions?
-* http://www.mathworks.co.uk/help/matlab/matlab_prog/add-reminders-to-files.html and relation to issue tracker
-* http://www.mathworks.co.uk/help/matlab/error-handling.html
-* Defensive programming: http://www.mathworks.co.uk/help/matlab/input-and-output-arguments.html
 
 The data analysis
 -----------------
@@ -159,13 +153,15 @@ moderately large programs.  We don't have time to do into it now
 though.
 
 
-### Exercise
-
-Create a 'distance from line' function and incorporate this into your
-analysis program.
-
-
-TODO: Talk about functions for reuse, and for testing (lead into next section).
+The next topic we're going to cover is _testing_ your MATLAB code.
+One of the general principles taught in Software Carpentry is that
+breaking your code up into small functions is good for understanding
+it.  It's also good for testing, as each small piece can be tested
+individually.  When dealing with some legacy code not written with
+testing in mind, identifying portions that can be split into functions
+and tested is thus a good starting point, and that's what we'll do
+next with our analysis program.  Firstly, however, we'll find out how
+to write tests in MATLAB.
 
 
 Unit testing in MATLAB
@@ -270,8 +266,8 @@ utility functions provided by xUnit helpful.
 - assertExceptionThrown
 
 
-Testing exercise
-----------------
+Longer testing exercise
+-----------------------
 
 Take the data analysis script we developed in the first part of the
 session, split it into functions wherever appropriate, and write unit
@@ -279,12 +275,19 @@ tests for these.
 
 While normally you would assume that routines provided by MATLAB are
 correct, you could for instance, write tests for the basic stats
-methods (mean, var, etc.) and linear regression to verify these.  You
-can also test the code for finding the nearest/furthest point from the
-regression line, or consider what further analyses could be performed
-and how to test these.  Another test is to verify the expected
-statistical properties of the [Anscombe datasets][Anscombe], the first
-four of our samples.
+methods (mean, var, etc.) and linear regression to verify these.
+Another test is to verify the expected statistical properties of the
+[Anscombe datasets][Anscombe], the first four of our samples.
+
+Next, extend your testing to _test driven development_, where the
+tests for a new feature are written _before_ implementing the feature!
+Suppose we want to identify which points lie respectively nearest and
+furthest from the regression line.  Write tests for a new function
+`distances_from_line` which will compute all the distances, then write
+the function and use it within your main analysis pipeline.  See
+http://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line for help
+in working out the calculation.
+
 
 For this exercise, it's easiest to place test files alongside your
 source code, so that when running the tests they can find the
@@ -294,8 +297,22 @@ to organise tests into their own subfolder (say 'tests') alongside
 the MATLAB search path.  You can also use [packages][] to add further
 structure to your code.
 
+
 As an alternative exercise, try adding tests to some of your own
 MATLAB code.
+
+
+Further topics
+--------------
+
+There's obviously much more to good programming in MATLAB than we've
+been able to cover in this session.  If you're going to be using it in
+anger, it's worth becoming familiar with topics such as:
+
+* The distinction between [local, nested and anonymous functions](http://www.mathworks.co.uk/help/matlab/matlab_prog/types-of-functions.html), and the use of function handles to pass functions to functions
+* Defensive programming, for instance [checking that function inputs are as expected](http://www.mathworks.co.uk/help/matlab/input-and-output-arguments.html), and the related topic of [dealing with errors](http://www.mathworks.co.uk/help/matlab/error-handling.html)
+* Keeping track of tasks with MATLAB's [reminder system](http://www.mathworks.co.uk/help/matlab/matlab_prog/add-reminders-to-files.html), as a simple form of issue tracker
+* [Object Oriented Programming][OOP]
 
 
 Postscript: accessing Sqlite databases from MATLAB
