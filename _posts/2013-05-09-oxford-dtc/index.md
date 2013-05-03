@@ -60,17 +60,21 @@ The venue will provide Windows desktops with the necessary software installed.  
 
  * Bash (the particular Unix shell we'll be using)
  * Git (for version control)
- * [Python][] (2.6 or 2.7) with [NumPy][], [SciPy][], the [iPython notebook][] and [matplotlib][]
+ * For convenience when using git, you will also want a friendly command-line-based editor, such as [nano][].
+ * [Python][] (2.6 or 2.7) with [NumPy][], [SciPy][], [iPython][] and [matplotlib][]
  * [Matlab][]
  * Firefox with SQLite Manager Add-on (for relational databases)
 
 The subsections below explain how to install these tools on different operating systems.
-You can also save time on the day by creating an account beforehand at [GitHub][].
+You can also save time on the day by creating a free account beforehand at [Bitbucket][].
 
+[iPython]: http://ipython.org/
 [iPython notebook]: http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html
 [matplotlib]: http://matplotlib.org/
 [Matlab]: http://people.maths.ox.ac.uk/gilesm/matlab.html
 [GitHub]: https://github.com/
+[Bitbucket]: https://bitbucket.org/
+[nano]: http://www.nano-editor.org/
 
 ### All platforms (Linux, Mac OS X, Windows)
 
@@ -95,7 +99,7 @@ You can download Firefox from the [Mozilla web site][mozilla] (if it's not avail
 
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing `bash`.
 
-If git is not already available on your machine you should be able to install it via your distro's package manager (e.g. `apt-get` or `yum`).
+If git is not already available on your machine you should be able to install it via your distro's package manager (e.g. `apt-get` or `yum`).  Similarly for nano.
 
 Many different text editors suitable for programming are available.  If you don't already have a favourite, you could look at [Kate].
 
@@ -105,7 +109,7 @@ Many different text editors suitable for programming are available.  If you don'
 
 The default shell in Mac OS X is bash.
 
-For git, either install [Xcode][] and the command line tools (from the Download preferences pane) or [install just git][Mac git].
+For git, either install [Xcode][] and the command line tools (from the Download preferences pane) or [install just git][Mac git].  I believe Mac OS X comes with pico, which is very similar to nano.
 
 Many different text editors suitable for programming are available.  We recommend [Text Wrangler][] or [Sublime Text][].
 
@@ -116,15 +120,19 @@ Many different text editors suitable for programming are available.  We recommen
 
 ### Windows
 
-For a bash shell and git, the simplest route is to install '[Git Bash][]' following the instructions [here][gitbash].  Alternatively, you can use [Cygwin][] and install its git package.
+For a bash shell and git, the simplest route is to install '[msysgit][]' following the instructions [here][gitbash].  We provide a script [swc_windows_installer.py][] to install nano for you; download it and double-click to run, assuming you're using the Enthought Python Distribution.
+
+Alternatively, you can use [Cygwin][] and install its git and nano packages.  This is probably a better route if you are likely to use the command-line much long term.
 
 The Enthought Python Distribution includes the [SciTE] editor.  [Notepad++] is a popular free code editor for Windows.
 
-[Git Bash]: http://msysgit.github.com/
+
+[msysgit]: http://msysgit.github.com/
 [gitbash]: https://openhatch.org/missions/windows-setup/install-git-bash
 [Cygwin]: http://www.cygwin.com/
 [SciTE]: http://www.scintilla.org/SciTE.html
 [Notepad++]: http://notepad-plus-plus.org/
+[swc_windows_installer.py]: https://github.com/jonc125/boot-camps/tree/2013-05-oxford-dtc/setup/swc_windows_installer.py
 
 ## Contact
 
