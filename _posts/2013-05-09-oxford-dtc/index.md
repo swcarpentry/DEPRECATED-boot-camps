@@ -13,11 +13,13 @@ title: University of Oxford Doctoral Training Centres Software Carpentry Boot Ca
 
  * Dates: 9-10 May 2013
  * Times: 9am - 5pm
+ * Location: Computer Room C21, Department of Zoology, South Parks Road, Oxford, OX1 3PS
 
 ## Schedule
 
 The sessions will run (roughly) as follows.
-Links to the materials for each session are also provided, although these will not be finalised until a day or two before the workshop.
+Drinks and edibles will be provided for the coffee breaks, but you will need to make your own lunch arrangements.
+Links to the materials for each session are also given, although these will not be finalised until a day or two before the workshop.
 
 * Day 1, Thursday 9th May
     * 09:00 Registration and introduction
@@ -54,9 +56,20 @@ Links to the materials for each session are also provided, although these will n
 [m sql]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/sql/
 [m matlab]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/matlab/
 
+## Before you arrive
+
+The venue will provide Windows desktops with the necessary software installed.
+However, if you have your own laptop we recommend that you bring it with you to work on during the boot camp.
+In this case you will need to ensure you have installed some software on your laptop, following the instructions below.
+Please do this well in advance of turning up (not the night before and certainly not on the first morning!).
+Jonathan will be available in the DTC from 9.30am-12.30pm on Wednesday to troubleshoot any issues.
+
+A pre-camp [questionnaire](http://goo.gl/FFr6R) is available at http://goo.gl/FFr6R.
+If you could take a minute to fill this in it will help us get an idea as to what level we should pitch our material.
+
 ## Installation
 
-The venue will provide Windows desktops with the necessary software installed.  However, if you have your own laptop we recommend that you bring it with you to work on during the boot camp.  In this case you should ensure the following software is installed before you arrive, so that we can get started promptly with the tutorials.
+If bringing your own machine, please ensure the following software is installed before you arrive, so that we can get started promptly with the tutorials.
 
  * Bash (the particular Unix shell we'll be using)
  * Git (for version control)
@@ -125,7 +138,7 @@ For a bash shell and git, the simplest route is to install '[msysgit][]' followi
 
 Alternatively, you can use [Cygwin][] and install its git and nano packages.  This is probably a better route if you are likely to use the command-line much long term.
 
-The Enthought Python Distribution includes the [SciTE] editor.  [Notepad++] is a popular free code editor for Windows.
+The full Enthought Python Distribution includes the [SciTE] editor (the free version only includes [IDLE][]).  [Notepad++] is a popular free code editor for Windows.
 
 
 [msysgit]: http://msysgit.github.com/
@@ -133,6 +146,7 @@ The Enthought Python Distribution includes the [SciTE] editor.  [Notepad++] is a
 [Cygwin]: http://www.cygwin.com/
 [SciTE]: http://www.scintilla.org/SciTE.html
 [Notepad++]: http://notepad-plus-plus.org/
+[IDLE]: http://docs.python.org/2/library/idle.html
 [swc-windows-installer.py]: https://github.com/jonc125/boot-camps/blob/2013-05-oxford-dtc/setup/swc-windows-installer.py
 
 ## Contact
