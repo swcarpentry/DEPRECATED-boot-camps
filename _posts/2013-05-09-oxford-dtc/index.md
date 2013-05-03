@@ -149,6 +149,16 @@ The full Enthought Python Distribution includes the [SciTE] editor (the free ver
 [IDLE]: http://docs.python.org/2/library/idle.html
 [swc-windows-installer.py]: https://github.com/jonc125/boot-camps/blob/2013-05-oxford-dtc/setup/swc-windows-installer.py
 
+## Venue directions
+
+1. Enter at main reception on South Parks Road.  You may need to show your University card.
+2. Go straight ahead into Zoology.
+3. Go up the stairs to the left, following signs for Darwins Cafe & Teaching Labs.
+4. Do a u-turn right at the top through Darwins gallery.
+5. Take the first right and the room (C21) is in front of you.
+
+Coffee breaks & toilets are just down the stairs by the door to C21.
+
 ## Contact
 
 This workshop is being organised by [Jonathan Cooper][].
