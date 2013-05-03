@@ -1,0 +1,6 @@
+# MATLAB auto-save files
+*.asv
+
+# Emacs backup files
+\#*#
+.#*

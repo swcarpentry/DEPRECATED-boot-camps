@@ -1,11 +1,11 @@
-Python 9 : NumPy
-================
+Scientific Python : NumPy
+=========================
 
-**Presented By : Katy Huff**
+**Presented By : Jonathan Cooper**
 
-**Based on Lecture Materials By Matthew Terry**
+**Based on Lecture Materials By Matthew Terry and Katy Huff**
 
-This class will cover a broad overview of NumPy with brief illustrative
+This session will cover a broad overview of NumPy with brief illustrative
 examples geared towards getting people familiar with the basic use
 cases. Since NumPy has many advanced features that may be useful to
 experienced programmers, these notes will occasionally link to more
@@ -13,15 +13,15 @@ advanced examples that readers can peruse on their own time.
 
 **Aside: Code Examples**
 
-In all the examples below, we assume that import numpy has already been
+In all the examples below, we assume that `import numpy` has already been
 executed. If any other modules are needed, we will import them
 explicitly.
 
 NumPy basics
 ============
 
-What is NumPy ?
----------------
+What is NumPy?
+--------------
 
 NumPy is a Python package implementing efficient collections of specific
 types of data (generally numerical), similar to the standard array
@@ -440,7 +440,7 @@ on. Calling a ufunc is a simple matter:
           0.77815125,  0.84509804,  0.90308999,  0.95424251])
 ```
 
-In addition to basic operation like above, ufuncs that take two input
+In addition to a basic operation like the above, ufuncs that take two input
 arrays and return an output array can be used in more advanced ways.
 
 ufuncs
