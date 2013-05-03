@@ -18,7 +18,7 @@ Bitbucket, like other services such as [Launchpad](https://launchpad.net), [GitH
 * Varying permissions for various groups of users
 * Other service hooks, e.g. to Twitter.
 
-**Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. 
+**Note** Bitbucket allows you to set up private repositories for free for a limited number of users. GitHub's free repositories are public, you will need to pay for the private GitHub repositories. All rights are reserved on unlicensed GitHub repositories, so if you are going to publish your code you should licence it to let people know what they can and cannot do with it - see this [article](http://www.infoworld.com/d/open-source-software/github-needs-take-open-source-seriously-208046) for a discussion on this.
 
 ### Get an account
 
