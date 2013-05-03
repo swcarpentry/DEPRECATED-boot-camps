@@ -121,7 +121,7 @@ Many different text editors suitable for programming are available.  We recommen
 
 ### Windows
 
-For a bash shell and git, the simplest route is to install '[msysgit][]' following the instructions [here][gitbash].  We provide a script [swc_windows_installer.py][] to install nano for you; download it and double-click to run, assuming you're using the Enthought Python Distribution.
+For a bash shell and git, the simplest route is to install '[msysgit][]' following the instructions [here][gitbash].  We provide a script [swc-windows-installer.py][] to install nano for you; download it and double-click to run, assuming you're using the Enthought Python Distribution.
 
 Alternatively, you can use [Cygwin][] and install its git and nano packages.  This is probably a better route if you are likely to use the command-line much long term.
 
@@ -133,7 +133,7 @@ The Enthought Python Distribution includes the [SciTE] editor.  [Notepad++] is a
 [Cygwin]: http://www.cygwin.com/
 [SciTE]: http://www.scintilla.org/SciTE.html
 [Notepad++]: http://notepad-plus-plus.org/
-[swc_windows_installer.py]: https://github.com/jonc125/boot-camps/tree/2013-05-oxford-dtc/setup/swc_windows_installer.py
+[swc-windows-installer.py]: https://github.com/jonc125/boot-camps/blob/2013-05-oxford-dtc/setup/swc-windows-installer.py
 
 ## Contact
 
