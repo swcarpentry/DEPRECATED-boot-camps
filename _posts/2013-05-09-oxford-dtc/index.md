@@ -91,9 +91,10 @@ For other options check the Python4Astronomers page on [installing scientific Py
 
 #### Firefox
 
-You can download Firefox from the [Mozilla web site][mozilla] (if it's not available via your normal system installation process), and then the SQLite Manager add-on can be installed through the "Add-ons Manager" in Firefox.
+You can download Firefox from the [Mozilla web site][mozilla] (if it's not available via your normal system installation process), and then the SQLite Manager add-on can be installed through the "Add-ons Manager" in Firefox.  Make sure you get [version 0.8.0][] as earlier versions do not work properly with the latest Firefox.
 
 [mozilla]: http://www.mozilla.org/
+[version 0.8.0][https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/versions/]
 
 ### Linux
 
