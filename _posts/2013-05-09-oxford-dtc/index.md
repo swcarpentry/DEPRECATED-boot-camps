@@ -64,8 +64,14 @@ In this case you will need to ensure you have installed some software on your la
 Please do this well in advance of turning up (not the night before and certainly not on the first morning!).
 Jonathan will be available in the DTC from 9.30am-12.30pm on Wednesday to troubleshoot any issues.
 
-A pre-camp [questionnaire](http://goo.gl/FFr6R) is available at http://goo.gl/FFr6R.
+You can also save time on the day by creating a free account beforehand at [Bitbucket][].
+
+A pre-camp [questionnaire][q] is available at [http://goo.gl/FFr6R][q].
 If you could take a minute to fill this in it will help us get an idea as to what level we should pitch our material.
+
+[q]: http://goo.gl/FFr6R
+[GitHub]: https://github.com/
+[Bitbucket]: https://bitbucket.org/
 
 ## Installation
 
@@ -79,14 +85,11 @@ If bringing your own machine, please ensure the following software is installed 
  * Firefox with SQLite Manager Add-on (for relational databases)
 
 The subsections below explain how to install these tools on different operating systems.
-You can also save time on the day by creating a free account beforehand at [Bitbucket][].
 
 [iPython]: http://ipython.org/
 [iPython notebook]: http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html
 [matplotlib]: http://matplotlib.org/
 [Matlab]: http://people.maths.ox.ac.uk/gilesm/matlab.html
-[GitHub]: https://github.com/
-[Bitbucket]: https://bitbucket.org/
 [nano]: http://www.nano-editor.org/
 
 ### All platforms (Linux, Mac OS X, Windows)
