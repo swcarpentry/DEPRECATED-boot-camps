@@ -17,9 +17,9 @@ stats department, who wrote in a paper with Buckheit the following:
 	 scholarship. The actual scholarship is the full software environment,
 	 code and data, that produced the result.
 
-In particular, one of Donoho's former student's Victoria Stodden
-has written extensively about the idea of reproducibility in scientific
-software - you may want to look up [some of her papers][1] for reference.
+One of Donoho's former student's Victoria Stodden has written extensively about
+the idea of reproducibility in scientific software - you may want to look up
+[some of her papers][1] for reference.
 
 For our purposes, we can summarize the goal of reproducibility in two related 
 ways, one technical and one colloquial.
@@ -59,6 +59,11 @@ projects, we'll go through the following key steps:
 3.	Add the raw data to our project.
 4.	Write our code to perform the analysis, including tests.
 5.	Push the button and watch the magic.
+
+One other aspect of this is that someone else should be able to look at your
+analysis and understand what you did and to some degree also why (informative
+git commit messages can be helpful in that regard...). In the most common case,
+the 'someone else' is you 6 or 12 or 18 months down the line. 
 
 One final note - the workflow that we're following here is just a suggestion. 
 Organizing code and data is an art, and a room of 100 scientists will give you 
