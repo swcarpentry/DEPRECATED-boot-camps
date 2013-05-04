@@ -21,6 +21,8 @@ Let's bring up the Python interpreter. This is what it looks like on cygwin - li
    Type "help", "copyright", "credits" or "license" for more information.
    >>>
 ```
+See the three >? You type in your commands after that.
+
 The interpreter can be used as a calculator:
 
 ```python
@@ -32,7 +34,7 @@ We can also work with strings in python:
 
 ```python
    print "Hello world!"
-   print 'Thomas ' + 'Mann'
+   print 'Ada ' + 'Lovelace'
 ```
 Strings can actually be added together.
 
