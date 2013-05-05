@@ -27,12 +27,13 @@ ways, one technical and one colloquial.
 In a technical sense, your goal is to __have a complete chain of custody (ie, 
 provenance) from your raw data to your finished results and figures__. That is, 
 you should _always_ be able to figure out precisely what data and what code 
-were used to generate what result - there should be no "missing links". If you 
-have ever had the experience of coming across a great figure that you made 
-months ago and having no idea how in the world you made it, then you understand 
-why provenance is important. Or, worse, if you've ever been unable to recreate 
-the results that you once showed on a poster or (gasp) published in a 
-paper...
+were used to generate what result - there should be no "missing links".
+
+If you have ever had the experience of coming across a great figure that you
+made months ago and having no idea how in the world you made it, then you
+understand why provenance is important. Or, worse, if you've ever been unable
+to recreate the results that you once showed on a poster or (gasp) published in
+a paper...
 
 In a colloquial sense, I should be able to sneak into your lab late at night, 
 delete everything except for your raw data and your code, and __you should be 
@@ -88,7 +89,7 @@ Now, within the `grasshopper` directory, create four subdirectories:
 
         .
 	├── data
-	├── man
+	├── doc
 	├── results
 	├── src
 
@@ -172,7 +173,7 @@ At this point, your project directory should look like this:
 	│   ├── grasshopper_spike_times2.txt
 	│   ├── grasshopper_stimulus1.txt
 	│   ├── grasshopper_stimulus2.txt
-	├── man
+	├── doc
 	├── results
 	├── src
 
@@ -196,18 +197,251 @@ want to look into making yourself a local copy.
 4. Write code to perform analysis
 ---------------------------------
 
-Now for the real work - writing the code that will perform our analysis. We'd 
-like to generate two outputs. First, we want to figure out what the
-spike-triggered average stimulus (or STA) is and plot it. Then, we want to create a csv
-file that contains a table with the STA for each one of the two stimuli. 
+Now for the real work - writing the code that will perform our analysis. We'd
+like to generate two kinds of outputs. First, we want to compute the
+spike-triggered average stimulus (or STA) for each stimulus and plot it. For
+each STA, we would like to save a figure, with an informative file-name. 
 
 #### Modules and tests
 
-We've already done the work of writing much of this code earlier today, so at 
-this point, we can simply copy and paste the file `mean_sightings.py` from our 
-workshop's git repo into your `src` subdirectory.
+We have just finished writing code that will read the data from files and
+compute the STA.
 
-Note, of course, that this is not the normal workflow for this step. Normally, 
+We still need to test that code. Let's use the fact that we have one naive (but
+slow) way of computing the STA and another more sophisticated (but less
+obvious) way of computing the STA and compare them to each other. Though not
+completely PhD-proof, it stands to argue that if you get the same result in
+these two distinct ways, you might be getting it right.
+
+Let's start with the test file. We'll call it `test_analysis.py` and it will contain the
+following code, which we have copied from our data_analysis_and_exploration
+notebook:
+
+    #!/usr/bin/env python
+
+    import numpy as np
+    import numpy.testing as npt # We'll need this for testing
+    import matplotlib.mlab as mlab # We'll use this to read the stimulus file
+
+    from files import get_data
+    from analysis import sta1, sta2, volt2dB
+
+    def test_sta():
+       """
+       Test that the STA comes out to be the same when computed two different ways
+       """
+
+       spikes, header = get_data('../data/grasshopper_spike_times1.txt')
+
+       rec_arr = mlab.csv2rec('../data/grasshopper_stimulus1.txt', delimiter=' ',
+                              names = ['time', 'volt'])
+
+       est_sta1 = sta1(spikes, rec_arr['time'],
+                        volt2dB(rec_arr['volt'], header['intensity (dB)']))
+
+       est_sta2 = sta1(spikes, rec_arr['time'],
+                        volt2dB(rec_arr['volt'], header['intensity (dB)']))
+
+       # Note - we are using numpy's testing module here: 
+       npt.assert_array_equal(est_sta1, est_sta2)
+
+This will, of course fail immediately if we run it at this point, because none
+of the other code has been filled in yet. But in a sense, this provides us with
+a "contract" of what we expect to be there.
+
+Next, let's write the two files: `analysis.py` and `files.py`. In 'analysis.py'
+I put the following:
+
+    import numpy as np
+
+    def volt2dB(volt, max_dB):
+        """ 
+        Convert from voltage to dB SPL
+
+        Parameters 
+        ----------
+        volt : 1d array
+            The stimulus in volts 
+
+        max_dB : int or float 
+            The maximal dB value presented in the experiment
+
+        Notes
+        -----
+        `max_dB` can be gleaned from the header information, see `get_data`
+        """
+        stim = 20  * (np.log10(volt / 2.0e-5))
+        return max_dB - stim.max() + stim
+
+
+    def sta1(spike_times, time_arr, stim_arr, num_bins=200): 
+        """ 
+        Calculate the STA by looping over the spikes
+
+        Parameters
+        ----------
+        spike_times : 1d array
+            Times of occurence of action potentials (micro-seconds)
+
+        time_arr : 1d array 
+            The time-bins in the stimulus presentation
+
+        stim_arr : 1d array
+            The stimulus values (in dB) at each time bin
+
+        num_bins : int
+            The number of time-bins to calculate the STA for. 
+
+        Return 
+        ------
+        STA : 1d array
+            The spike-triggered average stimulus 
+
+        """
+
+    def sta1(spike_times, time_arr, stim_arr, num_bins=200): 
+        """ 
+        Calculate the STA by looping over the spikes
+
+        Parameters
+        ----------
+        spike_times : 1d array
+            Times of occurence of action potentials (micro-seconds)
+
+        time_arr : 1d array 
+            The time-bins in the stimulus presentation
+
+        stim_arr : 1d array
+            The stimulus values (in dB) at each time bin
+
+        num_bins : int
+            The number of time-bins to calculate the STA for. 
+
+        Return 
+        ------
+        STA : 1d array
+            The spike-triggered average stimulus 
+
+        """
+        result = []
+        # We enumerate the spike times:
+        for spike_idx, time in enumerate(spike_times):
+            idx = np.where(time_arr == time)[0]
+            # Only use spikes with sufficient 'history':
+            if (idx - num_bins) > 0:
+                result.append(stim_arr[idx-num_bins:idx])
+        return np.mean(result, 0)
+
+    def sta2(spike_times, time_arr, stim_arr, num_bins=200):
+        """ 
+        Calculate the STA by allocating a binary array
+
+        Parameters
+        ----------
+        spike_times : 1d array
+            Times of occurence of action potentials (micro-seconds)
+
+        time_arr : 1d array 
+            The time-bins in the stimulus presentation
+
+        stim_arr : 1d array
+            The stimulus values (in dB) at each time bin
+
+        num_bins : int
+            The number of time-bins to calculate the STA for. 
+
+        Return 
+        ------
+        STA : 1d array
+            The spike-triggered average stimulus 
+
+        """
+        raster = np.zeros(time_arr.shape)
+        spike_idx = spike_times/time_arr[1]
+        # Indice arrays need  to be integers:
+        spike_idx = spike_idx.astype(int)
+        raster[spike_idx] = 1
+        idx = np.where(raster==1)
+        idx_w_len = np.array([idx[0] - count for count in range(num_bins, 0, -1)])
+        return np.mean(stim_arr[idx_w_len], 1)
+
+And in `files.py` let's put the following:
+
+    import numpy as np
+
+    def get_data(fname): 
+        """ 
+        Read spike time data and header information from file
+
+        Parameters 
+        ----------
+        fname : str
+            Path to the file 
+
+        Returns
+        -------
+        spikes : 1-d array
+            Contains the spike times in the order they were 
+            recorded in the file
+
+        header : dict
+            Header information from the data file
+        """
+        f = open(fname, 'r')
+        header = {}
+        l = f.readline()
+        while l.startswith('#'):  # Same as l[0]=='#' 
+            line_parts = l.split(':')
+            # We split the key again, so that we don't get the '#'
+            try:
+                header[line_parts[0].split('# ')[-1]] = float(line_parts[1])
+            except:
+                header[line_parts[0].split('# ')[-1]] = line_parts[1]
+            l = f.readline()
+
+        spikes = np.loadtxt(fname)
+        f.close()
+        return spikes, header
+
+This should make the test now pass. Just to be sure we did everything right, go
+ahead and run `nosetests` from the Terminal and make sure that the functions
+pass. 
+
+Hmm. This doesn't work. Maybe we have a mistake? 
+
+It turns out that we have neglected to ignore the spikes that occur in bins
+before num_bins. Good things we have tests in place!
+
+When we add the line:
+
+     raster[spike_idx[np.where(spike_idx<num_bins)]] = 0
+
+The tests now pass. Convince yourself that you understand why this does what
+it's supposed to be doing
+
+Now that everything passes, we are happy and quite confident that we can read files
+and calculate STA without error.
+
+Our project should now look like this:
+
+	.
+	├── data
+	│   ├── README.txt
+	│   ├── grasshopper_spike_times1.txt
+	│   ├── grasshopper_spike_times2.txt
+	│   ├── grasshopper_stimulus1.txt
+	│   ├── grasshopper_stimulus2.txt
+	├── doc
+	├── results
+	├── src
+	│   ├── analysis.py 
+	│   ├── files.py 
+	│   ├── test_analysis.py 
+
+This would be a good time to add all these new source files to our version control and
+make a commit. 
+
+Note, of course, that this is not the normal workflow for these steps. Normally, 
 you'd spend days/weeks/months working in the `src` directory, writing code and 
 tests, generating results, looking at the results, writing new code and tests, 
 generating new results, etc. This iterative cycle isn't unlike writing a 
@@ -218,8 +452,8 @@ Different people have different favorite approaches and tools for this
 iterative cycle.
 
 One strategy is to simultaneously work on three files at once - a module like 
-`mean_sightings.py`, a file to test the functions in your module like 
-`test_mean_sightings.py`, and a third script that calls various functions from 
+`analysis.py`, a file to test the functions in your module like 
+`test_analysis.py`, and a third script that calls various functions from 
 your module and runs them so that you can see whether your code is doing what 
 you want it to do. I sometimes call this `scratch.py` or something like that, 
 and fill up my Terminal window with hundreds of lines of `python scratch.py` as 
@@ -240,177 +474,71 @@ them, aren't you?) rather than iteratively with your code as you go. All that
 said, though, this is a great strategy if you think you need to feel your way 
 around for a while.
 
-OK, back to our project. We now have the file `mean_sightings.py` in our `src` 
-directory. Now copy in the file `test_mean_sightings.py`, which contains our 
-unit tests of the functions in `mean_sightings.py`. You may recall that our 
-test functions made use of a small data set, `sightings_tab_sm.csv`, that we 
-created specifically for the purpose of testing our code. It can be a bit 
-awkward deciding where to place this csv file - you could potentially put it in 
-`data`, or here in the `src` directory, or perhaps in a subdirectory of `src` 
-called `tests` or something like that. This is somewhat a matter of personal 
-preference - for now, just copy and paste it here into the `src` directory 
-(even though it's not technically code). You may want to create a readme file 
-for this test data set as well so that you can remember how you created it.
-
-Just to be sure we did everything right, go ahead and run `nosetests` from the 
-Terminal and make sure that your functions still pass. If they don't for some 
-reason, you can try to debug your function or just cheat by copying the file 
-`mean_sightings-full.py` and `test_mean_sightings-full.py` from our workshop's 
-git repo into your `src` directory. Be sure to remove the `-full` portion of 
-the file names and to add a second `t` to the word `test` in the second file 
-name.
-
-At this point, your project directory should look like this:
-
-	.
-	├── data
-	│   ├── README.txt
-	│   ├── sightings_tab_lg.csv
-	├── man
-	├── results
-	├── src
-	│   ├── mean_sightings.py
-	│   ├── sightings_tab_sm.csv
-	│   ├── test_mean_sightings.py
-
-Add and commit these three new files (your module, test file, and test data 
-set) to your git repository. You can commit these together, or separately if 
-you think it would be useful to add a different commit message for the 
-different files.
 
 #### The runall script
 
 Now that we have our core functions and tests in place, it's time to create the 
 "button" for our push-button workflow - the `runall.py` script. The idea is 
 that you will be able to start with an empty results directory, execute the 
-line `python runall.py` in Terminal, and have our table and figure saved in the 
+line `python runall.py` in Terminal, and have our table and figures saved in the 
 `results` directory.
 
 Create a new text file called `runall.py` and copy and paste the following code 
 into it.
 
-	#!/usr/bin/env python
+    #!/usr/bin/env python
+    import os
 
-	'''
-	Script to create all results for camera_analysis project.
-	'''
+    import numpy as np
+    import matplotlib.mlab as mlab
+    import matplotlib.pyplot as plt
 
-	import numpy as np
-	import matplotlib.mlab as ml
-	import matplotlib.pyplot as plt
-	from mean_sightings import get_sightings
+    from files import get_data
+    from analysis import sta1, sta2, volt2dB
 
+    if __name__=="__main__":
+        data_path = '../data/'
+        results_path = '../results/'
+        data_list = os.listdir(data_path)
+        for file_num in range(1, len(data_list)/2+1):    
+            spikes, header = get_data(
+                '../data/grasshopper_spike_times%s.txt'%file_num)
 
-	# ------------------------------------------------------------------------
-	# Declare variables
-	# ------------------------------------------------------------------------
+            rec_arr = mlab.csv2rec('../data/grasshopper_stimulus%s.txt'%file_num,
+                                   delimiter=' ',
+                                   names = ['time', 'volt'])
 
-	# Set paths to data and results directories. Note that this method of
-	# relative paths only works on *nix - for Windows, see os.path module.
-	data_dir = '../data/'
-	results_dir = '../results/'
-
-	# Set name of data file, table, and figure
-	data_name = 'sightings_tab_lg.csv'
-	table_name = 'spp_table.csv'
-	fig_name = 'spp_fig.png'
-
-	# Set names of species to count
-	spp_names = ['Fox', 'Wolf', 'Grizzly', 'Wolverine']
+            sta = sta2(spikes, rec_arr['time'],
+                        volt2dB(rec_arr['volt'], header['intensity (dB)']))
 
 
-	# ------------------------------------------------------------------------
-	# Perform analysis 
-	# ------------------------------------------------------------------------
+            fig, ax = plt.subplots(1)
+            ax.plot(sta)
+            ax.set_xlabel('Time (before spike, msec)')
+            ax.set_ylabel('Amplitude (dB)')
+            xticks = np.array([0,50,100,150,200])
+            ax.set_xticks(xticks)
+            ax.set_xticklabels([str(s*50./1000.) for s in xticks[::-1]])
+            fig.savefig(os.path.join(results_path, 'figure%s.png'%file_num))
 
-	# Declare empty list to hold counts of records
-	spp_recs = []
 
-	# Get total number of records for each species
-	for spp in spp_names:
-		totalrecs, meancount = get_sightings(data_dir + data_name, spp)
-		spp_recs.append(totalrecs)
+We won't go over this code in too much detail. Note just that the entire code
+is inside the `if __name__ == "__main__"` conditional. This is useful in cases
+in which a file might be run directly by the python interpreter (as we did
+here), or imported from other modules. Only when the file is called directly
+from the python interpreter (`python runall.py`) is the `__name__` variable set
+to be `'__main__'`, so that block of code only gets executed in that case. 
 
-	print spp_names
-	print spp_recs
-
-We won't go over this code in too much detail, as you should now have the 
-background to understand what's happening on your own. Right up front, after 
-importing the necessary modules, we have set up variables that define the 
-locations of the `data` and `results` directories (relative to the `src` 
-directory where our `runall.py` file is located) as well as the names of our 
-input data file and the table and figure that we will create. We also declared 
-the list of species names here. The purpose of declaring these variables up 
-front, rather than just typing these names into the code later on where they 
-appear, is to make it easy to change these later on if, for example, we want to 
-analyze a different set of species or use a different data file.
-
-After those declarations, we simply set up a `for` loop that goes through each 
-of our species names and uses our previously-written function to get the number 
-of records for that species. At the very end, we print out the lists of species 
-names and records just to have a look at the output.
+In this script we have set up variables that define the locations of the `data`
+and `results` directories (relative to the `src` directory where our
+`runall.py` file is located) as well as the names of our input data file and
+the table and figure that we will create. Note that the code discovers how many
+data files are in the directory, so when you add more data files, they will
+automatically be incorporated into the analysis, without any need to edit this
+code. 
 
 Now, go back to your Terminal window, navigate to the `src` directory, and run 
-the command `python runall.py`. You should see the species names and records 
-printed in your Terminal window - this shows that our code is running without 
-errors to this point.
-
-Now let's add some code to save the table. Erase the print lines from the 
-bottom of `runall.py`, and add the text below.
-
-	# ------------------------------------------------------------------------
-	# Save results as table 
-	# ------------------------------------------------------------------------
-
-	# Put two lists into a recarray table
-	table = np.array(zip(spp_names, spp_recs),
-					 dtype=[('species', 'S12'), ('recs', int)])
-
-	# Save recarray as csv
-	ml.rec2csv(table, results_dir + table_name)
-
-This code simply takes our two lists, the list of species names and of records, 
-and creates a record array from them. The syntax to do this might seem 
-confusing, and at this point, it's probably just best to start by memorizing it 
-as the "recipe" that one uses to turn several lists into a record array. The 
-`dtype` variable is used to name each "column" in our recarray and to tell 
-Python the format of each column. The first column, called 'species', is given 
-the format 'S12', which means a string of up to 12 characters. The second 
-column, recs, is given the format int, which stands for an integer. We then use 
-a helper function from `mlab` to save our recarray as a csv file.
-
-Once again, go back to your Terminal window and execute this file. Check to see 
-that the csv file was correctly created and saved in the `results` directory.
-
-Last but not least, let's add some code to make and save a bar chart that 
-visually displays the data that's in our table. Add the code below to the 
-runall file.
-
-	# -----------------------------------------------------------------------
-	# Save results as figure 
-	# -----------------------------------------------------------------------
-
-	# Set up figure with one axis
-	fig, ax = plt.subplots(1, 1)
-
-	# Create bar chart: args are location of left edge, height, and width of bar
-	ax.bar([0,1,2,3], spp_recs, 0.8)
-
-	# Place tick marks in center of each bar
-	ax.set_xticks([0.4, 1.4, 2.4, 3.4])
-
-	# Set limits to give some white space on either side of first/last bar 
-	ax.set_xlim([-0.2, 4])
-
-	# Add species names to x axis
-	ax.set_xticklabels(spp_names)
-
-	# Save figure
-	fig.savefig(results_dir + fig_name)
-
-This code does just what the comments say that it does. The resulting figure 
-looks OK, and you would probably want to spend more time adding additional 
-lines here to adjust the formatting.
+the command `python runall.py`.  Figures should appear in the `results` directory.
 
 Don't forget to add `runall.py` to your git repo.
 
@@ -430,17 +558,21 @@ At this point, your directory should look like the below.
 	.
 	├── data
 	│   ├── README.txt
-	│   ├── sightings_tab_lg.csv
-	├── man
+	│   ├── grasshopper_spike_times1.txt
+	│   ├── grasshopper_spike_times2.txt
+	│   ├── grasshopper_stimulus1.txt
+	│   ├── grasshopper_stimulus2.txt
+	├── doc
 	├── results
-	│   ├── spp_table.csv
-	│   ├── spp_fig.png
+	│   ├── figure1.png
+	│   ├── figure2.png
 	├── src
-	│   ├── mean_sightings.py
-	│   ├── runall.py
-	│   ├── sightings_tab_sm.csv
-	│   ├── test_mean_sightings.py
+	│   ├── analysis.py 
+	│   ├── files.py 
+	│   ├── test_analysis.py
+	│   ├── runall.py 
 
+	
 At this point, a natural question to ask is whether you need to add the 
 contents of your `results` directory to your git repository. The answer should 
 be obvious - you do not need to do this, since the files in your `results` 
@@ -451,17 +583,15 @@ outputs are fairly small in size, in which case you may want to periodically
 commit (so that you can easily recover) the results associated with 
 "intermediate" versions of your code.
 
-While many of your projects will be nearly this simple, some will be more 
-complex, sometimes significantly so. You will eventually come across the need 
-to deal with modules that are shared across multiple projects, running the same 
-analysis on multiple sets of parameters simultaneously, running analyses on 
-multiple computers, etc. While we don't have time to go into these extra bits 
-in detail, feel free to ask the instructors about any specific issues that you 
-expect to encounter in the near future. Rest assuered that no matter how 
-complicated your situation is, Python will provide you with a (relatively) 
-efficient and robust way to accomplish your goals. 
+While some of your projects might be nearly this simple, most will probably be
+more complex, sometimes significantly so. You will eventually come across the
+need to deal with modules that are shared across multiple projects, running the
+same analysis on multiple sets of parameters simultaneously, running analyses
+on multiple computers, etc. While we don't have time to go into these extra
+bits in detail, feel free to ask the instructors about any specific issues that
+you expect to encounter in the near future.
 
-And that just about does it. Good luck!
+Good luck with your reproducible research!
 
 
 [1]:
