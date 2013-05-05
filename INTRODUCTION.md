@@ -1,8 +1,8 @@
 # Introduction
 
-## First of all: thanks!
+## First of all: thanks! 
 
-### For funding and organization support:
+### For funding and organization support: 
 - To the [CNI](http://cni.stanford.edu/). Bob Dougherty
 
 - To the [neuroscience grad program](http://biosciences.stanford.edu/neurosciences.html). Miriam Goodman, John Huguenard, Ross Colvin and Katie Johnson.
@@ -10,10 +10,10 @@
 ### For organizational and instructional support:
 - To [Software Carpentry](http://software-carpentry.org/)
 
-### The instructors and helpers:
+### The instructors and helpers: 
 
 **Instructors**
-- Konrad Bernhard
+- Bernhard Konrad
 - [Paul Ivanov](http://pirsquared.org/)
 - [Ariel Rokem](http://arokem.org)
 
@@ -22,7 +22,7 @@
 What are helpers for? Well, they're here to *help*!
 
 - [Jayanth Raman](https://www.linkedin.com/in/jayanthraman)
-- ??
+- Michael Waskom
 
 ## Why are we here?
 
@@ -41,7 +41,6 @@ In particular, please use [this etherpad](https://etherpad.mozilla.org/m4Um2MFlC
 to make comments and ask questions as we go along.
 
 We will have structured moments throughout the day to go over these questions
-
 - 1 lunch break/day
 
 ### Lunch on your own...
@@ -62,10 +61,9 @@ We will have structured moments throughout the day to go over these questions
 
 - Software validation and testing : before we go on to more advanced data exploration and visualization, we will take a moment to teach you how to verify that your software works. We will use automated testing using the nose library. Test-driven development will be introduced as a way of thinking about writing code.
 
-- Data visualization and exploration : with all the tools at our disposal, we will now attack a scientific question with some data from neuroscience experiments.
+- Data exploration and analysis: with all the tools at our disposal, we will now attack a scientific question with some data from neuroscience experiments. We will demonstrate how you would build a reproducible work-flow for your computational analysis. 
 
 ## Questions?
-
 
 ## Before we move on
 
