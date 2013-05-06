@@ -139,7 +139,7 @@ nosetests can output an "xUnit" test report,
 
 This is a standard format that that is supported by a number of xUnit frameworks which can then be converted to HTML and presented online. 
 
-`nose` defines additional functions which can be used to check for a rich range of conditions e.g..
+`nose` defines additional functions which can be used to check for a rich range of conditions, e.g.
 
     $ python
     >>> from nose.tools import *
