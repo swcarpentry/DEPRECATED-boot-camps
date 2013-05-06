@@ -14,7 +14,7 @@ If you experience any problems, please send an email to: admin [_at_] software-c
 
 ## To install under Windows 
 
-In order to practice working with shell, scripting, Make and Git on Windows, we will use [Cygwin](http://www.cygwin.com/]).
+In order to practice working with shell, scripting, Make and Git on Windows, we will use [Cygwin](http://www.cygwin.com/).
 Once you download and run the installation package, make sure that you install:
 * A text editor (during the tutorials we will be using "nano")
 * Make
