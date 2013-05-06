@@ -1,9 +1,7 @@
 % Software Carpentry - Overview
-  American University of Beirut
-% Aron Ahmadia
-  <aron@ahmadia.net>
-  <http://aron.ahmadia.net>
-% 20 March, 2013
+  Tufts University
+% Software Carpentry Team
+% June, 2013
 
 ## Copy This Lecture!
 <br></br>
@@ -12,7 +10,7 @@
 <br></br>
 <br></br>
 <br></br>
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Software Carpentry Overview</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://aron.ahmadia.net" property="cc:attributionName" rel="cc:attributionURL">Aron Ahmadia</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Software Carpentry Overview</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://software-carpentry.net" property="cc:attributionName" rel="cc:attributionURL">Software Carpentry</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
 
 ## Introduction
 
@@ -359,7 +357,6 @@ it
     + Convince others of its usefulness
 * The **reproducibility** of your publication will greatly benefit both of
 these goals
-* See <http://
 * See <http://figshare.com> for an easy way to store and share your data in
 an easily-cited way
 

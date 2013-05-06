@@ -112,9 +112,17 @@ collaboration.
 - Say I want to redo the previous commit...
 - `git log --oneline` -- grab the commit has for the point we want to go back to.
 - `git reset COMMIT`
+- `git reset HEAD~1`
 - `git log --oneline` -- highlight that the latest commit is gone
 - `git status` -- But the changes haven't gone anywhere.
+- `git commit --amend` -- Also allows you to go back
 - I can now edit the file to fix whatever was wrong and re-commit.
+
+### More Undoing
+
+- `git reset` - go backwards in history
+- `git revert` - undo changes from history and prepare to record them
+- `git checkout` - get a specific file from some point in history
 
 ## Sharing
 

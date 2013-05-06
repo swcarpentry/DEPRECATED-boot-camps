@@ -9,6 +9,22 @@ A command-line interface works through a Read-Evaluate-Print Loop.
 
 We call these tools REPLs
 
+The basic actions of the shell:
+
+* query the state
+* change the state
+* launch programs
+* chain programs together into pipelines
+
+# Key concepts
+
+* environment variables
+* programs
+* file system access
+* stdin, stdout, stderr
+* pipelines
+* a little about compiling/linking
+
 ## Commands to try/explain
 
 ```
@@ -103,7 +119,9 @@ find . -type f -exec grep Volume {} \;
 
 find . -type f -print | xargs grep Volume
 
-### extra stuff
 top
+
 permissions (chmod, chown, chgrp, ls -l)
+
+### extra stuff
 ```
