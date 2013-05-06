@@ -43,16 +43,16 @@ We can add a test to our code as follows,
                 weight += NUCLEOTIDES[ch]
             return weight
         except TypeError:
-            print 'The input is not a sequence e.g. a string or list'
+            print 'The input is not a sequence, e.g. a string or list'
 
-Now, the exception is *caught* by the `except` block. This is a *runtime test*. It alerts the user to exceptional behavior in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
+Now, the exception is *caught* by the `except` block. This is a *runtime test*. It alerts the user to exceptional behaviour in the code. Often, exceptions are related to functions that depend on input that is unknown at compile time. Such tests make our code robust and allows our code to behave gracefully - they anticipate problematic values and handle them.
 
 Often, we want to pass such errors to other points in our program rather than just print a message and continue. So, for example we could do,
 
     except TypeError:
-        raise ValueError('The input is not a sequence e.g. a string or list')
+        raise ValueError('The input is not a sequence, e.g. a string or list')
 
-which raises a new exception, with a more meaningful message. If writing a complex application, our user interface could then present this to the user e.g. as a dialog box.
+which raises a new exception, with a more meaningful message. If writing a complex application, our user interface could then present this to the user, e.g. as a dialog box.
 
 Runtime tests don't test our functions behaviour or whether it's implemented correctly. So, we can add some tests,
 
