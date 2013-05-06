@@ -16,4 +16,4 @@ Now, both edit the same file, add it, commit it and push it. Resolve any conflic
 
 Keep doing the cycle of pull, edit, add, commit, push, resolve any conflicts and have a play around!
 
-Previous: [Working from multiple locations with a remote repository](2_Remote.md) Next: [Conclusions and further information](4_Conclusion.md)
+Previous: [Working from multiple locations with a remote repository](2_Remote.md) Next: [A little on Branching](4_Branching.md)
