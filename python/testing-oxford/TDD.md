@@ -1,6 +1,6 @@
 ## Test-driven development
 
-Given a DNA sequence consisting of A, C, T and G, we can create its *complement*, cDNA, by applying a mapping to each nucleotide in turn,
+Given a DNA sequence consisting of A, C, T and G, we can create its *complement*, cDNA, which is DNA synthesized from a messenger RNA template by applying a mapping to each nucleotide in turn,
 
 * A => T
 * C => G

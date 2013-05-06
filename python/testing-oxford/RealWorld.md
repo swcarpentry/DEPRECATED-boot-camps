@@ -4,7 +4,7 @@ The example we've looked at is based on one function. Suppose we have a complex 
 
 * Run the code on a set of inputs.
 * Save the outputs.
-* Refactor the code e.g. to optimise it or parallelise it.
+* Refactor the code, e.g. to optimise it or parallelise it.
 * Run the code on the inputs.
 * Check that the outputs match the saved outputs. 
 
