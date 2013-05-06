@@ -48,13 +48,13 @@ Links to the materials for each session are also given, although these will not 
 [NumPy]: http://www.numpy.org/
 [SciPy]: http://www.scipy.org/
 
-[m vcs]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/version-control/
-[m python]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/intro/
-[m func]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/functions/
-[m test]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/testing/
-[m numpy]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/numpy/
-[m sql]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/sql/
-[m matlab]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/matlab/
+[m vcs]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/version-control/git-oxford
+[m python]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/intro
+[m func]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/functions
+[m test]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/testing-oxford
+[m numpy]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/numpy
+[m sql]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/sql/sql.md
+[m matlab]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/matlab
 
 ## Before you arrive
 
