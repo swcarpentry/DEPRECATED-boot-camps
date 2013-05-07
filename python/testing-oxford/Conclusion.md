@@ -6,7 +6,9 @@ Testing
 * Gives us confidence that our code does what we want and expect it to.
 * Promotes trust that our code, and so our research, is correct.
 
-If in doubt, remember [Geoffrey Chang](http://en.wikipedia.org/wiki/Geoffrey_Chang) and in the words of Bruce Eckel, in [Thinking in Java, 3rd Edition](http://www.mindview.net/Books/TIJ/),  "If it's not tested, it's broken".
+If in doubt, remember [Geoffrey Chang](http://en.wikipedia.org/wiki/Geoffrey_Chang) and in the words of Bruce Eckel, in [Thinking in Java, 3rd Edition](http://www.mindview.net/Books/TIJ/):  
+
+    If it's not tested, it's broken.
 
 ## Find out more...
 
