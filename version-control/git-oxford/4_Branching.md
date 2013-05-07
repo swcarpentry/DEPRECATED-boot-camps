@@ -47,7 +47,7 @@ to your index.html file in the header section:
 
     <head>
       <title>My Home Page</title>
-      <link rel="stylesheet" type="text/css" href="mystyle.css">
+      <link rel="stylesheet" type="text/css" href="mystyle.css"/>
     </head>
 
 If you now examine your index page on a browser you should see all the text appearing red and bold. Lets assume that you are happy with this state of affairs and you would like to add this effect to your web site. Add your index.html and commit both files.
