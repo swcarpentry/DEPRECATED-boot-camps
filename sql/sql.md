@@ -332,7 +332,7 @@ actual species names.
 
 Joins can be combined with sorting, filtering, and aggregation.
 So, if we wanted average mass of the individuals on each different
-type of treatment, we could do something like
+type of experimental manipulation, we could do something like
 
     SELECT plots.plot_type, AVG(surveys.wgt)
     FROM surveys
