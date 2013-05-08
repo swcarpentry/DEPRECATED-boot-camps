@@ -15,7 +15,38 @@ So far we've learned about various data types in python and how to rudimentarily
 
 ## For Loops
 
-Iteration is a very useful concept, and it appears all the time in python. Lets consider our current and voltage data again.
+Iteration is a very useful concept, and it appears all the time in python.
+
+You can use a for loop to print out all the contents of a list using python's compact syntax for iteration.
+
+```python
+In [1]: numberList=[1,2,4,5,6]
+
+In [2]: for item in numberList:
+   ...:     print item
+   ...:     
+1
+2
+4
+5
+6
+```
+
+Using the enumerate() function we can easily print the array index and the value at that index.
+
+```python
+In [3]: for item_index, item_value in enumerate(numberList):
+   ...:     print item_index, item_value
+   ...:     
+0 1
+1 2
+2 4
+3 5
+4 6
+```
+
+Lets now consider our current and voltage data again.
+
 
 ```python
 In [1]: voltageList = [-2.0, -1.0, 0.0, 1.0, 2.0]
