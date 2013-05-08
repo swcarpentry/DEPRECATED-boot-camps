@@ -26,8 +26,8 @@ Software testing is exercising and confirming expected behaviours and results fr
 
 In testing, you'll come across the terms *verification* and *validation*,
 
-* Verification is the process of asking, "Have we built the software correctly?" That is, is the code bug free, precise, accurate, and repeatable?
-* Validation is the process of asking, "Have we built the right software?" That is, is the code designed in such a way as to produce the answers we are interested in, data we want, etc.
+* **Verification** is the process of asking, "Have we built the software correctly?" That is, is the code bug free, precise, accurate, and repeatable?
+* **Validation** is the process of asking, "Have we built the right software?" That is, is the code designed in such a way as to produce the answers we are interested in, data we want, etc.
 
 Testing also gives us the confidence to...
 
