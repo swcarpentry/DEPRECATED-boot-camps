@@ -183,7 +183,6 @@ There's a lot more to know about lists, but lets press on. Check out Dive Into P
 (1, 2, 3)
 >>> print b
 (1, 2, 3, 10)
->>> 
 ```
 
 ## Reading From Files
