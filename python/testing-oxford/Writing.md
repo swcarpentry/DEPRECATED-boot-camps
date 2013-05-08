@@ -154,7 +154,7 @@ This is a standard format that that is supported by a number of xUnit frameworks
     >>> assert_true(expected in actual)
     >>> assert_false(expected in actual)
 
-We can add more information to the failure messages by providing additional string arguments e.g.
+We can add more information to the failure messages by providing additional string arguments, e.g.
 
     >>> assert_true("GTA" in actual, "Expected value was not in the output list")
 
