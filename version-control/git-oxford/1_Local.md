@@ -123,7 +123,7 @@ In order to tell Git to record our change, our new file, into the repository, we
 
 Our default editor will now pop up. Why? Well, Git can automatically figure out that directories and files are committed, and who by (thanks to the information we provided before) and even, what changes were made, but it cannot figure out why. So we need to provide this in a *commit message*. So let's type in a message.
 
-> **Initial structure and headings for the journal paper.**
+> **Initial structure and headings for the html files.**
 
 > Ideally, commit messages should have meaning to others who may read them - or you 6 months from now. Messages like "made a change" or "added changes" or "commit 5" aren't that helpful (in fact, they're redundant!).  A good commit message usually contains a one-line description followed by a longer explanation, if necessary.
 
