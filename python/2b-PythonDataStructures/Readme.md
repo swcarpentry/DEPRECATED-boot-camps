@@ -173,6 +173,19 @@ Out[22]: [1, 2, 10]
 
 There's a lot more to know about lists, but lets press on. Check out Dive Into Python or the help documentation for more info.
 
+**Note** for immutable types the assigment issue is not a problem (the example below is chosen for tuples which we will cover shortly; essentially they are like lists but immutable)
+
+```python
+>>> a=(1,2,3)
+>>> b=a
+>>> b=b+(10,)
+>>> print a
+(1, 2, 3)
+>>> print b
+(1, 2, 3, 10)
+>>> 
+```
+
 ## Reading From Files
 
 At this point it is useful to take a detour regarding files. Lets say you have a file with some current and voltage data and some metadata.

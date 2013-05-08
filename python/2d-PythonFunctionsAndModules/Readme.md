@@ -123,7 +123,7 @@ one argument - a single tuple. Wouldn't it be nice if we didn't have to
 have the extra parentheses? It turns out that this is easy in python:
 
 ```python
-def perimeter(\*args):
+def perimeter(*args):
    return sum(args)
 
 print perimeter(1,2,3,4,5)
@@ -135,8 +135,8 @@ args. This feature allows us to create functions that take a variable
 number of arguments. The function calls do not require the extra set of
 parentheses we saw earlier.
 
-**note**:  when mixing default value arguments and variable numbers of arguments
-in the same function the default value arguments need to come first.
+**Note**:  when mixing default value arguments and variable numbers of arguments
+in the same function the variable number of arguments need to come last.
 
 ```python
 def f(a, b=2, *args): # will work
