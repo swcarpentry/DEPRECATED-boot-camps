@@ -1,15 +1,15 @@
 # Flow Control
 
 [Back To Python Data
-Structures](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonDataStructures)
+Structures](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2b-PythonDataStructures)
 - [Forward To Python Functions and
-Modules](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2d-PythonFunctionsAndModules/)
+Modules](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2d-PythonFunctionsAndModules)
 
 * * * * *
 
-**Presented By : Joshua R. Smith**
+**Presented By : Shoaib Sufi**
 
-**Based on Lecture Materials By: Milad Fatenejad**
+**Based on Lecture Materials By: Milad Fatenejad (mostly)**
 
 So far we've learned about various data types in python and how to rudimentarily read data out of a file. Now we will learn how to do logical operations with conditional blocks (if statements) and how to iterate using for and while loops. We will also learn to write data to a file.
 
@@ -46,17 +46,17 @@ The range command gives us an incremental list of values. We are using it to gen
 
 ## Conditional (if) Statements
 
-There are many situations where you want to execute some code based on some condition, say you want a message to print if the value of current is higher than a preset value. In this case, you use a conditional statement. There are amny different conditions, here are some of them:
+There are many situations where you want to execute some code based on some condition, say you want a message to print if the value of current is higher than a preset value. In this case, you use a conditional statement. There are many different conditions, here are some of them:
 
 ```python
 i=1
 j=2
-i==j # i is equal to j : FALSE
-i<j  # i is less than j
-i<=j # i is less than or equal to j : TRUE
-i>j  # i is greater than j
-i>=j # i is greater than or equal to j : FALSE
-i!=j # i is not equal to j : TRUE
+i==j # i is equal to j : False
+i<j  # i is less than j : True
+i<=j # i is less than or equal to j : True
+i>j  # i is greater than j : False
+i>=j # i is greater than or equal to j : False
+i!=j # i is not equal to j : True
 ```
 
 Consider the following example.
@@ -80,7 +80,6 @@ high
 
 In this example, we are iterating over the list of values of current. We've nested the conditional statement within the for loop statement, and we are looking at each value of current to make a decision. The lowest value causes the code to display "low". The three middle values are "ok" and the last value is "high".
 
-Conditional blocks can be a source of bugs, so make sure you are paying attention to the logic when you write them.
 
 ## While Loops
 
@@ -123,22 +122,22 @@ true, a **poorly formed** while loop might repeat forever. For example :
 
 ```python
 i=1
-print "Well, there's egg and bacon, egg and spam, egg bacon and"
+print "Well, there's egg and chips, egg and fries, eggy chips and"
 while i is 1:
-  print "spam "
+  print "fries "
 print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..." 
 ```
 
 Since the variable **i** never changes within the while loop, we can
 expect that the conditional, **i=1** will remain true forever and the
 while loop will just go round and round, as if this restaurant offered
-nothing but spam. (If you try this at home, please note that one way to
+nothing but fries. (If you try this at home, please note that one way to
 interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
 
 ## Writing to a File
-We could have gone over this toic in the previous lesson, but iteration makes writing data to files a lot less ugly. 
+We could have gone over this topic in the previous lesson, but iteration makes writing data to files a lot less ugly. 
 
-Recall our file data.dat. There is no mention of the name of the user in that file, and I want to insert my own name since I generated the data. I want my name to appear on the second line, immediately below the experiment type. Here's how we do that.
+Recall our file data.dat. There is no mention of the name of the user in that file, and I want to insert my own name. I want my name to appear on the second line, immediately below the experiment type. Here's how we do that.
 
 ```python
 # Create an empty list to contain all of the file data.
@@ -153,7 +152,7 @@ for line in f:
 f.close()
 
 # Insert my name into the list.
-dataList.insert(1, "user: Joshua Ryan Smith\n")
+dataList.insert(1, "user: Shoaib Sufi\n")
 
 # Open a new file for writing and write all of the new lines to it.
 f = open("newdat.dat", "w")
@@ -212,3 +211,48 @@ for name, title in knights.iteritems() :
         string += title + ", but not quite so brave as Sir Lancelot." 
     print string
 ```
+
+##Exercise##
+
+###Context###
+We've seen a lot so far. Lets work through a slightly lengthier example
+together. I'll use some of the concepts we already saw and introduce a
+few new concepts. To run the example, you'll need to locate a short file
+containing phone numbers. The file can be found in your 
+repository within the python/2c-PythonFlowControl directory and is called phonenums.txt.
+Now we have to move ipython to that directory so it can find the
+phonenums.txt file. You navigate within ipython in the same way that you
+navigate in the shell, by entering "cd [path]" or you could restart ipython in that directory.
+
+This example opens a text file containing a list of phone numbers. The
+phone numbers are in the format \#\#\#-\#\#\#-\#\#\#\#, one to a line.
+The example code loops through each line in the file and counts the
+number of times each area code appears. The answer is stored in a
+dictionary, where the area code is the key and the number of times it
+occurs is the value.
+
+```python
+areacodes = {} # Create an empty dictionary
+f = open("phonenums.txt") # Open the text file
+for line in f: # iterate through the text file, one line at a time (think of the file as a list of lines)
+    ac = line.split('-')[0] # Split phone number, first element is the area code
+    if not ac in areacodes: # Check if it is already in the dictionary
+      areacodes[ac] = 1 # If not, add it to the dictionary
+    else:
+      areacodes[ac] += 1 # Add one to the dictionary entry
+
+print areacodes # Print the answer
+```
+
+##Iteritems##
+
+Use the iteritems dictionary method in combination with a for loop to
+print the keys/values of the areacodes dictionary one to a line. In
+other words, the goal is to write a loop that prints:
+
+    203 4
+    800 4
+    608 8
+    773 3
+
+This exercise is a little tricky to figure out, but give it a try.
