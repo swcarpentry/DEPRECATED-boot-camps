@@ -7,7 +7,7 @@ tuples](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/
 
 **Presented By: Shoaib Sufi**
 
-**Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy, Joshua, Smith  and Many More**
+**Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy, Joshua Smith and Many More**
 
 ## Introduction
 In this lecture, i'm going to talk about programming; specifically the python programming language. In order to do the examples, we are going to have to use an environment called iPython which I'll also talk about. I expect this lecture to be interactive, so stop me at any point if you have questions. Finally, I want everyone to understand that fundamentally computing is about people. The correct power dynamic is that people are the master and the machines are servants. The machines are there to make our lives easier. Programming is an act of written communication between people across time and space. Computers are just the medium.
@@ -316,7 +316,7 @@ In [38]: type(a), type(b), type(c)
 Out[38]: (<type 'int'>, <type 'int'>, <type 'int'>)
 ```
 
-So we got a vale of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
+So we got a value of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
 
 So what about the case where a is an integer and b is a float?
 
@@ -386,14 +386,14 @@ Out[57]: (<type 'float'>, <type 'float'>, <type 'float'>)
 There are operations that can be done with strings.
 
 ```python
-In [58]: firstName = "Joshua"
+In [58]: firstName = "Shoaib"
 
-In [59]: lastName = "Smith"
+In [59]: lastName = "Sufi"
 
 In [60]: fullName = firstName + lastName
 
 In [61]: print fullName
-JoshuaSmith
+ShoaibSufi
 ```
 
 When concatenating strings, you have to be explicit since computers don't understand context.
@@ -402,10 +402,10 @@ When concatenating strings, you have to be explicit since computers don't unders
 In [62]: fullName = firstName + " " + lastName
 
 In [63]: print fullName
-Joshua Smith
+Shoaib Sufi
 ```
 
-There are other operations deined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
+There are other operations defined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
 
 ```python
 In [64]: str.upper?
@@ -423,7 +423,7 @@ So we can use it to upper-caseify a string.
 
 ```python
 In [65]: fullName.upper()
-Out[65]: 'JOSHUA SMITH'
+Out[65]: 'SHOAIB SUFI'
 ```
 
 You have to use the parenthesis at the end because upper is a method of the string class.
@@ -431,8 +431,8 @@ You have to use the parenthesis at the end because upper is a method of the stri
 For what its worth, you don't need to have a variable to use the upper() method, you could use it on the string itself.
 
 ```python
-In [66]: "Joshua Smith".upper()
-Out[66]: 'JOSHUA SMITH'
+In [66]: "Shoaib Sufi".upper()
+Out[66]: 'SHOAIB SUFI'
 ```
 
-That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
+That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy, how programming is about people and the dangers of not being precise with machines.
