@@ -58,6 +58,8 @@ def topower(base,expt):
 
 Seriously though, don't ever use the above code.
 
+###Default argument value
+
 What if most of the time we were just squaring a number? We'd want a default value of 2 for the exponent.
 
 ```python
@@ -74,6 +76,98 @@ In this case, we are setting the default value to 2. We can change that value wh
 ```python
 topower(2) # works just fine and returns the square of 2
 ```
+
+### returning multiple values
+
+Python functions can return multiple values:
+
+```python
+def rgb(color_name):
+
+    if color_name is "red":
+       return 1,0,0
+    if color_name is "green":
+       return 1,0,0
+    if color_name is "blue":
+       return 1,0,0
+    if color_name is "yellow":
+       return 1,1,0
+
+    print "ERROR: Unknown color"
+
+ r,g,b = rgb("yellow")
+ print r,g,b
+```
+
+###Exercise: Perimeter ###
+
+Write a function, "\`perimeter\`" that takes one argument - a tuple
+containing the lengths of each side of a polygon. Have the function
+return the perimeter of the polygon. So, for example to find the area of
+a square with side length 3, the function call would be:
+perimeter((3,3,3,3)) and the function would return 12. Use the \`help\`
+and \`dir\` functions to figure out how to write this function in one
+line.
+
+###Variable Number of Arguments ###
+
+In the last example, you wrote a function, called \`perimeter\`, that
+you have to call like this:
+
+```python
+print perimeter((1,2,3,4,5))
+```
+
+You need the extra set of parentheses, because the function takes only
+one argument - a single tuple. Wouldn't it be nice if we didn't have to
+have the extra parentheses? It turns out that this is easy in python:
+
+```python
+def perimeter(\*args):
+   return sum(args)
+
+print perimeter(1,2,3,4,5)
+```
+
+Notice that little star on the first line. That star tells python to
+take all of the arguments and bundle them into a single tuple called
+args. This feature allows us to create functions that take a variable
+number of arguments. The function calls do not require the extra set of
+parentheses we saw earlier.
+
+**note: You cannot mix default value arguments and variable numbers of arguments
+in the same function. **
+
+###Exercise: sum floats ###
+
+Write a function that takes a variable number of floating point
+arguments and returns their average.
+
+### Keyword Arguments ###
+
+Consider the following function, whose arguments represent the model
+year, mileage, and number of accidents that a car has had. The function
+attempts to use this information to compute the value of the car.
+
+```python
+def carvalue(year, mileage, nacc):
+   return 30000 - mileage/10 - nacc*1000 - (2010-year)*1000
+
+print carvalue(2001, 100000, 2)
+```
+
+In order to use the \`carvalue\` function, we have to remember that
+\`year\` is the first argument, \`mileage\` is the second, and \`nacc\`
+is the third. If we accidentally put the wrong argument in the wrong
+place then we will compute the wrong answer. Luckily, we can be explicit
+when calling functions using the following syntax:
+
+```python
+print carvalue(year=2001, mileage = 100000, nacc=2)
+print carvalue(mileage= 100000, year = 2001, nacc=2) # Also produces the correct answer!
+print carvalue(2001, nacc= 2, mileage = 100000) # Sets the year to 2001, the mileage to 100000, and nacc to 2
+print carvalue(year= 2001, mileage = 100000, 2) # ERROR: Keyword arguments must precede non-keyword arguments
+
 
 ## Modules
 
@@ -152,10 +246,16 @@ Then run this from the command line using
 
 This program should print each input on its own line.
 
+Try changing the first argument of xrange to 0 and re-run to see what happens.
+
 # Fin
 
 So that wraps up the python lessons. Please take a look at the resources mentioned at the top of the first lesson for some really excellent information.
 
 ## Exercise
 
-Write a program that will pull the data from the data.dat file into a dictionary that looks like the dict we made in lesson 2. This task seems trivial, but its a little harder than it looks.
+### data.dat to dict ###
+
+Write a program in a file which consists of a function that takes a filename (e.g. data.dat) that will pull the data from the file into a dictionary that looks like the dict we made in lesson 2. This task seems trivial, but its a little harder than it looks. Supply the filename via the command line.
+
+    python data2dict.py data.dat
