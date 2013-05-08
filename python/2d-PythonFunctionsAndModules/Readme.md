@@ -125,11 +125,36 @@ One final way to import stuff is to use the asterisk notation. This approach is 
 from math import *
 ```
 
-It is a terrible idea because you dump all of the names of data and methods into your local namespace. If you already have data or methods of the same name, you can end up facing some nasty problems.
+It is a terrible idea because you dump all of the names of data and methods into your local namespace. If you already have data or methods of the same name, you can end up facing some nasty problems as they would have been redefined to those in the math module.
+
+# Using the sys module
+
+The sys module gives you access to the Python interpreter. Some
+important objects in this module are: 1) sys.argv is a list of command
+line arguments. The first argument is always the name of the file. 2)
+sys.path gives a list of all paths on your computer where Python will
+look for modules 2) sys.modules gives a dictionary of all currently
+loaded modules.
+
+Put the following text in a file output-args.py in your current working
+directory.
+
+```python
+from sys import argv
+
+for i in xrange(1,len(argv)):
+    print argv[i]
+```
+
+Then run this from the command line using
+
+    python output-args.py 1 2 3 4
+
+This program should print each input on its own line.
 
 # Fin
 
-So that wraps up the python lessons. Please take a look at the resources I mentioned at the top of the first lesson for some really excellent information.
+So that wraps up the python lessons. Please take a look at the resources mentioned at the top of the first lesson for some really excellent information.
 
 ## Exercise
 
