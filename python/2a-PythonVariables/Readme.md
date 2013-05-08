@@ -1,18 +1,16 @@
 # Python, iPython, and the basics
 
-[Back To The
-Shell](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/1-Shell/)
 - [Forward to Lists, dictionaries, sets, and
-tuples](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2b-PythonDataStructures/)
+tuples](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2b-PythonDataStructures)
 
 * * * * *
 
-**Presented By: Joshua R. Smith**
+**Presented By: Shoaib Sufi**
 
-**Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy and Many More**
+**Based on Lecture Materials By: Milad Fatenejad with contributions from Katy Huff, Tommy Guy, Joshua, Smith  and Many More**
 
 ## Introduction
-In this lecture, i'm going to talk about programming; specifically the python programming language. In order to do the examples, we are going to have to use an environment called iPython which I'll also talk about. I expect this lecture to be interactive, so stop me at any point if you have questions. Finally, I want everyone to understand that fundamentally computing is about people. The correct power dynamic is that people are the mastes and the machines are servants. The machines are there to make our lives easier. Programming is an act of written communication between people across time and space. Computers are just the medium.
+In this lecture, i'm going to talk about programming; specifically the python programming language. In order to do the examples, we are going to have to use an environment called iPython which I'll also talk about. I expect this lecture to be interactive, so stop me at any point if you have questions. Finally, I want everyone to understand that fundamentally computing is about people. The correct power dynamic is that people are the master and the machines are servants. The machines are there to make our lives easier. Programming is an act of written communication between people across time and space. Computers are just the medium.
 
 So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.python.org/dev/peps/pep-0020/)
 
@@ -36,7 +34,7 @@ So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.
 > If the implementation is easy to explain, it may be a good idea.
 > Namespaces are one honking great idea -- let's do more of those!
 
-This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
+This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, the instructors and helpers can take questions based on the specific programming needs of this class.
 
 Here is the reference material.
 
@@ -80,25 +78,25 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 ipython is the tool that we are going to use to execute python commands and code. iPython is an alternative to the built-in Python interpreter with some nice features. Lets give the built-in interpreter a spin just this once.
 
 ```
-jrsmith3@zoidberg:~$ python
-Python 2.7.2+ (default, Oct  4 2011, 20:03:08) 
-[GCC 4.6.1] on linux2
+shoaib@sapphire:~$ python
+Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print "hello world"
 hello world
->>> quit() 
+>>> quit()
 ```
 
-We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line
+We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file good-time.py. Execute the following command at the command line
 
 ```
-jrsmith3@zoidberg:~$ python hello.py
+shoaib@sapphire:~$ python good-time.py
 ```
 
 iPython has more useful features than the standard python interpreter, so we'll use it from here on out.
 
 ```python
-jrsmith3@zoidberg:~$ ipython
+shoaib@sapphire:~$ ipython
 In [1]: print "hello world"
 hello world
 
@@ -139,10 +137,10 @@ In [1] dir(str)
 
 ### Executing code in files
 
-If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so
+If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute good-time.py like so
 
 ```python
-In [1] %run hello.py
+In [1] %run good-time.py
 ```
 
 ### Clearing iPython
