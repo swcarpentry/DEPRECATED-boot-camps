@@ -1,15 +1,13 @@
 # Methods and Modules
 
 [Back To Flow
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/)
-- [Forward To Local Version
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/3a-VersionControlLocal/)
+Control](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2c-PythonFlowControl)
 
 * * * * *
 
-**Presented By : Joshua R. Smith**
+**Presented By : Shoaib Sufi**
 
-**Original material by Milad Fatenejad**
+**Original material by Milad Fatenejad (mostly)**
 
 At this point, we've been over the basics of the python language except for the parts that allow you to reuse code you and others have written. First we will talk about wirting methods (sometimes called functions), then we'll talk about modules. A very important topic that we unfortunately won't have time to cover is classes (aka, object orientation). Dive Into Python has an excellent chapter on this topic that you should read.
 
@@ -72,6 +70,10 @@ def topower(base,expt = 2):
 ```
 
 In this case, we are setting the default value to 2. We can change that value when we call the command, but we don't always need to set it to 2.
+
+```python
+topower(2) # works just fine and returns the square of 2
+```
 
 ## Modules
 
