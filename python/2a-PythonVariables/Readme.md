@@ -436,3 +436,19 @@ Out[66]: 'SHOAIB SUFI'
 ```
 
 That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy, how programming is about people and the dangers of not being precise with machines.
+
+##Exercises##
+
+###Manipulating Basic Data Types###
+
+Use the basic data types we've learned about along with the \`help\` and
+\`dir\` functions to figure out how to do the following using either one
+function or one method call:
+
+1.  Take the absolute value of the number -1.4
+2.  Begin with the string "a MaN and His CAKE" and create the string "A
+    man and his cake"
+3.  Return the position of the character 'e' in the string "my test
+    string" (The answer is 4, since \`m\` is is at position 0 not
+    position 1)
+

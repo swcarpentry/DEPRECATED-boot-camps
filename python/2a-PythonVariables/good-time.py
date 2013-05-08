@@ -1,6 +1,6 @@
 import time
 
-print "It's always a good time ..."
+print "It's (mostly) always a good time ..."
 
 time.sleep(1)
 
