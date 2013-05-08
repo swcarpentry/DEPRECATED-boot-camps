@@ -135,8 +135,13 @@ args. This feature allows us to create functions that take a variable
 number of arguments. The function calls do not require the extra set of
 parentheses we saw earlier.
 
-**note: You cannot mix default value arguments and variable numbers of arguments
-in the same function. **
+**note**:  when mixing default value arguments and variable numbers of arguments
+in the same function the default value arguments need to come first.
+
+```python
+def f(a, b=2, *args): # will work
+    print a
+```
 
 ###Exercise: sum floats ###
 
