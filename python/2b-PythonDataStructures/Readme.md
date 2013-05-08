@@ -1,15 +1,15 @@
 # Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
 [Back To Python
-Variables](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2a-PythonVariables/)
+Variables](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2a-PythonVariables/)
 - [Forward to Python Flow
-Control](http://github.com/thehackerwithin/UofCSCBC2012/tree/master/2c-PythonFlowControl/)
+Control](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2c-PythonFlowControl)
 
 * * * * *
 
-**Presented By : Joshua R. Smith**
+**Presented By : Shoaib Sufi**
 
-**Based on lecture materials by Milad Fatenejad**
+**Based on lecture materials by Milad Fatenejad, Joshua Smith and others**
 
 Python would be a farily useless language if it weren't for the compound data types. The main two are lists and dictionaries, but I'll mention sets and tuples as well. I'll also go over reading text data from files. 
 
@@ -171,7 +171,7 @@ In [22]: b
 Out[22]: [1, 2, 10]
 ```
 
-There's a ton more to know about lists, but lets press on. Check out Dive Into Python or the help documentation for more info.
+There's a lot more to know about lists, but lets press on. Check out Dive Into Python or the help documentation for more info.
 
 ## Reading From Files
 
@@ -231,7 +231,7 @@ In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a lis
 
 Since sets contain only unique items, there's only one banana in the set fruit.
 
-You can do things like intersections, unions, etc. on sets just like in math. Here's an example of an intersection of two sets (the common items in both sets).
+You can do things like intersections, unions, etc. on sets just like in maths. Here's an example of an intersection of two sets (the common items in both sets).
 
 ```python
 In [4]: firstBowl = set(["apple", "banana", "pear", "peach"])
@@ -286,7 +286,7 @@ In [12]: dataDict["temperature"] = 3275.39
 You can also add new keys to the dictionary.
 
 ```python
-In [13]: dataDict["user"] = "Joshua R. Smith"
+In [13]: dataDict["user"] = "Shoaib Sufi"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods. Lets say you wanted all the keys from a particular dictionary.
@@ -316,3 +316,43 @@ Its worth mentioning that the value part of a dictionary can be any kind of data
 Since tuples are immutable, they can be used as keys for dictionaries. Lists are mutable, and therefore cannot.
 
 When you architect software in python, most data will end up looking either like a list or a dictionary. These two data types are very important in python and you'll end up using them all the time.
+
+##Exercises
+
+###A: Creating and Sorting Lists###
+
+Accomplish the following tasks using Python. Each task should take only
+one line. You may need to use the help and dir functions to figure out
+parts you don't know:
+
+1.  Create a string and initialize it to "Joshua Katy Milad Anthony Shoaib"
+
+2. Split the string into a list whose elements are the names Joshua, Katy, Milad, Anthony and Shoaib.
+
+3. Sort and print the list
+
+4. Without deleting anyone, add your own name to the list **so that it comes
+first.**
+
+###B: Manipulating Compound Data
+
+Accomplish the following tasks using Python. Each task should take only
+one line. You may need to use the help and dir functions to figure out
+parts you don't know:
+
+1.  Create a dictionary containing the key, value pairs:
+    -   "Red", 5
+    -   "Green", 3
+    -   "Purple", 3
+    -   "Orange", 1
+    -   "Blue", 3
+    -   "Teal", 3
+
+2. Extract a list of values from the dictionary (i.e. get a list
+containing [3,3,3,3,1,5] from the dictionary, don't make the list on
+your own)
+
+3. Find and use a list method to count the number of times the
+value 3 appears (Use the list you produced on step 2, the correct answer
+is that the value 3 appears four times)
+
