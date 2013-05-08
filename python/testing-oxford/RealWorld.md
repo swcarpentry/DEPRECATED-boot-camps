@@ -14,7 +14,17 @@ The [Muon Ion Cooling Experiment](http://www.mice.iit.edu/) (MICE) have a large 
 
 ## When 1 + 1 = 2.0000001
 
-Computers don't do floating point arithmetic too well. This can make simple tests for the equality of two floating point values problematic due to imprecision in the values being compared. 
+Computers don't do floating point arithmetic too well.  For example:
+
+    $ python
+    >>> tot = 0.0
+    >>> for i in range(1,100):
+    >>>...  tot = tot + 0.01 # Expect answer to be 1.0
+    >>>...
+    >>> print tot
+    >>> 0.99
+
+This can make simple tests for the equality of two floating point values problematic due to imprecision in the values being compared. 
 
     $ python
     >>> expected = 1 + 1 
