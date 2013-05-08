@@ -25,13 +25,13 @@ attributes.
 
 
 Create a NumPy array with the recommendations
-=============================================
+---------------------------------------------
 
 Of all the millions of papers out there, most people have only read a
 few. Since almost everyone has no opinion on almost every paper, the
 data is very sparse. A good way to store sparse data is in a dictionary
 for each user, where each ratings is stored as a unique paper identifier
-and a rating.
+and a rating. The file `data.py` contains such a dictionary.
 
 We want to turn this data into an array. For this section, write a function
 that takes the dictionary data as input and generates:
@@ -44,11 +44,11 @@ that takes the dictionary data as input and generates:
 3.  A python list where element j is the name of paper j.
 
 Calculate Similarity
-====================
+--------------------
 
 We can think of each person's ratings as a real vector, so a measure of
 the similarity of two researchers is just the distance between their
-rating vectors. There are two ratings we will explore.
+rating vectors.
 
 1. Add a function to compute the 2-norm (Euclidean distance) between two people's
    ratings. However, your function should only consider papers for which *both*
@@ -64,7 +64,7 @@ rating vectors. There are two ratings we will explore.
    compute the Tanimoto distance.
 
 Generate a Recommendation
-=========================
+-------------------------
 
 There are a few ways to look at the recommendation data.
 
@@ -93,14 +93,14 @@ ideas.
 
 
 Write some tests
-================
+----------------
 
 Use Nose to write some tests for your code, extending the stub in
 test_recommend.py. Specifically, think about how you can test the
 input code and the distance measurements.
 
 General Advice
-==============
+--------------
 
 There are a few functions and concepts you will want to investigate in numpy.
 
@@ -109,7 +109,7 @@ There are a few functions and concepts you will want to investigate in numpy.
 3. Broadcasting
 
 Data
-====
+----
 
 Some sample rating data is provided in the file data.py.  You can import
 the data directly using:
