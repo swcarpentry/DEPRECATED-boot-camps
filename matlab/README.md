@@ -15,7 +15,7 @@ summarising new, similar data.
 The data analysis
 -----------------
 
-Start by firing by MATLAB, and navigate to the `matlab` folder within
+Start by firing up MATLAB, and navigate to the `matlab` folder within
 your copy of the materials for this workshop.  Six sample datasets
 have been saved in the `data` subfolder.  Let's start by loading the
 first of these and see what we can discover about it.  Note that the
@@ -31,7 +31,7 @@ this; I've chosen this sequence for didactic purposes!
 ```
 
 There's a reasonably high correlation between x and y, so performing a
-regression might not seem unreasonable.
+linear regression might not seem unreasonable.
 
 ```matlab
     p = polyfit(x, y, 1)
@@ -49,7 +49,7 @@ plot the data itself, along with the regression line.
 Now, we'll want to perform this analysis for multiple datasets, and
 it's tedious and error prone to type the commands repeatedly at the
 command line.  Instead, we want one program we can execute to run the
-full analysis pipeline and produce all the desired results figures &
+full analysis pipeline and produce all the desired results figures and
 statistics.  This is crucial for _reproducibility_.  Victoria Stodden
 has written extensively about the idea of reproducibility in
 scientific software - you may want to look up [some of her
@@ -58,30 +58,30 @@ papers][Stodden] for reference.
 For our purposes, we can summarize the goal of reproducibility in two
 related ways, one technical and one colloquial.
 
-In a technical sense, your goal is to __have a complete chain of custody (ie, 
-provenance) from your raw data to your finished results and figures__. That is, 
-you should _always_ be able to figure out precisely what data and what code 
-were used to generate what result - there should be no "missing links". If you 
-have ever had the experience of coming across a great figure that you made 
-months ago and having no idea how in the world you made it, then you understand 
-why provenance is important. Or, worse, if you've ever been unable to recreate 
-the results that you once showed on a poster or (gasp) published in a 
+In a technical sense, your goal is to __have a complete chain of custody (i.e.,
+provenance) from your raw data to your finished results and figures__. That is,
+you should _always_ be able to figure out precisely what data and what code
+were used to generate what result - there should be no "missing links". If you
+have ever had the experience of coming across a great figure that you made
+months ago and having no idea how in the world you made it, then you understand
+why provenance is important. Or, worse, if you've ever been unable to recreate
+the results that you once showed on a poster or (gasp) published in a
 paper...
 
-In a colloquial sense, I should be able to sneak into your lab late at night, 
-delete everything except for your raw data and your code, and __you should be 
-able to run a single command to regenerate EVERYTHING, including all of your 
-results, tables, and figures in their final, polished form__. Think of this as 
-the "push button" workflow. This is your ultimate organizational goal as a 
-computational scientist. Importantly, note that this rules out the idea of 
-manual intervention at any step along the way - no tinkering with figure axes 
-in a pop-up window, no deleting columns from tables, no copying data from one 
+In a colloquial sense, I should be able to sneak into your lab late at night,
+delete everything except for your raw data and your code, and __you should be
+able to run a single command to regenerate EVERYTHING, including all of your
+results, tables, and figures in their final, polished form__. Think of this as
+the "push button" workflow. This is your ultimate organizational goal as a
+computational scientist. Importantly, note that this rules out the idea of
+manual intervention at any step along the way - no tinkering with figure axes
+in a pop-up window, no deleting columns from tables, no copying data from one
 folder to another, etc. All of that needs to be fully automated.
 
-As an added bonus, if you couple this with a version control system that tracks 
-changes over time to your raw data and your code, you will be able to instantly 
-recreate your results from any stage in your research (the lab presentation 
-version, the dissertation version, the manuscript version, the Nobel Prize 
+As an added bonus, if you couple this with a version control system that tracks
+changes over time to your raw data and your code, you will be able to instantly
+recreate your results from any stage in your research (the lab presentation
+version, the dissertation version, the manuscript version, the Nobel Prize
 committee version, etc.). Wouldn't that be nice?
 
 
@@ -117,6 +117,7 @@ to process as inputs.
 Create a new .m file defining a function to perform the whole
 analysis, returning the results.
 
+### Structured data types
 
 One consideration that arises from this exercise is how to return the
 results.  MATLAB allows you to return multiple values from functions,
@@ -149,7 +150,7 @@ constraints to make sure that relationships between the data are
 maintained.  This kind of functionality is the topic of [Object
 Oriented Programming][OOP], and it's worth exploring MATLAB's (and
 Python's) capabilities here if you're going to be writing any
-moderately large programs.  We don't have time to do into it now
+moderately large programs.  We don't have time to go into it now
 though.
 
 
@@ -291,7 +292,7 @@ in working out the calculation.
 
 For this exercise, it's easiest to place test files alongside your
 source code, so that when running the tests they can find the
-functions they're testing!  In a larger project, it makes more sense
+functions they're testing.  In a larger project, it makes more sense
 to organise tests into their own subfolder (say 'tests') alongside
 'source' and 'data' folders, and ensure that your source code is on
 the MATLAB search path.  You can also use [packages][] to add further
