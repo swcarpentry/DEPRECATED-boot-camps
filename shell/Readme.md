@@ -1,6 +1,7 @@
 # The Shell
 
 **Material by Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+* modified by Tracy Teal *
 
 # What is the shell how do I access the shell?
 
@@ -10,7 +11,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+    https://github.com/swcarpentry/boot-camps/blob/2013-05-lbl/
 
 Click on the directory named `shell`.
 
@@ -50,14 +51,9 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+    git clone -b 2013-05-lbl https://github.com/swcarpentry/boot-camps.git
 
-Followed by:
-
-    cd boot-camps
-    git checkout YYYY-MM-PLACE
-
-These 2 commands will grab all of the data needed for this workshop from the
+This command will grab all of the data needed for this workshop from the
 internet.
 
 # Let's get started
@@ -88,16 +84,16 @@ can contain other files or directories.
 
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
-directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/swc`
-directory. This is the home directory for the `swc` user. That is our
-user name. You can always find out your user name by entering the
-command `whoami`. 
+directory where they have full access to do whatever they want. 
+
+Try typing 'pwd' and see where your bootcamp directory is. You should
+see your user name in that path.  That's your home directory.
+
 
 **File Types**
 
 When you enter the `ls` command lists the contents of the current
-directory. There are several items in the home directory, notice that
+directory. There are several items in the home directory, in some terminals
 they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
 
@@ -208,10 +204,11 @@ The `cd` command takes an argument which is the directory
 name. Directories can be specified using either a *relative* path a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
-hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+hierarchy. Navigate to the home directory. Type 'cd'.  Now, enter the `pwd`
+command and you should see something like:
 
     /home/swc
+    /Users/USERNAME
 
 which is the full name of your home directory. This tells you that you
 are in a directory called `swc`, which sits inside a directory called
@@ -222,9 +219,9 @@ directory in `home` which is a directory in `/`.
 
 Now enter the following command:
 
-    cd /home/swc/boot-camps/shell
+    cd /HOMEDIRECTORY/boot-camps/shell
 
-This jumps to `shell`. Now go back to the home directory. We saw
+This jumps to `shell`. Now go back to the home directory using 'cd'. We saw
 earlier that the command:
 
     cd boot-camps/shell
@@ -356,9 +353,13 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+1.  List all of the files in `/bin` that start with the letter 'c'
+2.  List all of the files in '/bin' that contain the letter 'a'
+3.  List all of the files in '/bin' that end in 'o'
+
+BONUS:
+List all of the files in `/bin` that contain the letter `a` or the letter `b`
+
 
 * * * *
 
@@ -369,21 +370,21 @@ lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
 directory name. For example, enter:
 
-    cd S<tab>
+    cd b<tab>
 
 The shell will fill in the rest of the directory name for
 `boot-camps`. Now enter:
 
-    ls 3<tab><tab>
+    ls s<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
 are multiple directories in the home directory which start with
-3. Thus, the shell does not know which one to fill in. When you hit
+s. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices. 
 
 Tab completion can also fill in the names of programs. For example,
 enter `e<tab><tab>`. You will see the name of every program that
-starts with an `e`. One of those is `echo`. If you enter `ec<tab>` you
+starts with an `e`. One of those is `echo`. If you enter `ech<tab>` you
 will see that tab completion works.
 
 **Command History**
@@ -512,11 +513,6 @@ beginning of the file and search.
 Remember, the `man` program uses the same commands, so you can search
 documentation using "/" as well!
 
-* * * *
-**Short Exercise**
-
-Use the commands we've learned so far to figure out how to search
-in reverse while using `less`.
 
 * * * * 
 
