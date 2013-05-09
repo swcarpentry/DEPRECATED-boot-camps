@@ -1,9 +1,9 @@
 # Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
 [Back To Python
-Variables](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2a-PythonVariables/)
+Variables](../2a-PythonVariables/)
 - [Forward to Python Flow
-Control](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2c-PythonFlowControl)
+Control](../2c-PythonFlowControl)
 
 * * * * *
 

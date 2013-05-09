@@ -1,7 +1,7 @@
 # Python, iPython, and the basics
 
 - [Forward to Lists, dictionaries, sets, and
-tuples](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2b-PythonDataStructures)
+tuples](../2b-PythonDataStructures)
 
 * * * * *
 
