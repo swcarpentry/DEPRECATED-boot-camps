@@ -1,7 +1,7 @@
 # Methods and Modules
 
 [Back To Flow
-Control](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2c-PythonFlowControl)
+Control](../2c-PythonFlowControl)
 
 * * * * *
 

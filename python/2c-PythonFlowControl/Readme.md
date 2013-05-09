@@ -1,9 +1,9 @@
 # Flow Control
 
 [Back To Python Data
-Structures](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2b-PythonDataStructures)
+Structures](../2b-PythonDataStructures)
 - [Forward To Python Functions and
-Modules](https://github.com/shoaibsufi/boot-camps/tree/2013-05-oxford-dtc/python/2d-PythonFunctionsAndModules)
+Modules](../2d-PythonFunctionsAndModules)
 
 * * * * *
 
