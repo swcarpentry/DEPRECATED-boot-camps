@@ -49,8 +49,8 @@ Links to the materials for each session are also given, although these will not 
 [SciPy]: http://www.scipy.org/
 
 [m vcs]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/version-control/git-oxford
-[m python]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/intro
-[m func]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/functions
+[m python]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/2a-PythonVariables
+[m func]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/2c-PythonFlowControl
 [m test]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/testing-oxford
 [m numpy]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/python/numpy
 [m sql]: https://github.com/swcarpentry/boot-camps/tree/2013-05-oxford-dtc/sql/sql.md
