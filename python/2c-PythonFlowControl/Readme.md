@@ -125,7 +125,7 @@ conditional that defines it is no longer true.
 ```python
 mult = 1
 sequence = [1, 5, 7, 9, 3, -1, 5, 3]
-while sequence[0] is not -1:
+while sequence[0] != -1:
     mult = mult * sequence[0]
     del sequence[0]
 
@@ -134,11 +134,9 @@ print mult
 
 Some new syntax has been introduced in this example.
 
--   On line 3 We begin the while loop. Notice that instead of using the
-    not-equals symbol, !=, we can simply enter "is not" which is easier
-    to read. This while loop will execute until sequence[0]= -1 . That
-    is, until deletes all of the entries of the sequence that come
-    before -1.
+-   On line 3 We begin the while loop. This while loop will execute
+    until sequence[0] == -1 . That is, until it deletes all of the
+    entries of the sequence that come before -1.
 
 -   On line 4, we compute the product of the elements just to make this
     more interesting.
@@ -154,7 +152,7 @@ true, a **poorly formed** while loop might repeat forever. For example :
 ```python
 i=1
 print "Well, there's egg and chips, egg and fries, eggy chips and"
-while i is 1:
+while i == 1:
   print "fries "
 print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..." 
 ```
@@ -203,7 +201,7 @@ nowhere.
 
 ```python
 reasonable = 10
-for n in range(1,2000):
+for n in range(1,15):
     if n == reasonable :
         break
     print n
@@ -214,7 +212,7 @@ next iteration of a loop, giving up on the current one..
 
 ```python
 reasonable = 10
-for n in range(1,2000):
+for n in range(1,15):
     if n == reasonable :
       continue
     print n

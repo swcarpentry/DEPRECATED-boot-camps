@@ -101,17 +101,17 @@ def rgb(color_name):
 
 ###Exercise: Perimeter ###
 
-Write a function, "\`perimeter\`" that takes one argument - a tuple
+Write a function, "`perimeter`" that takes one argument - a tuple
 containing the lengths of each side of a polygon. Have the function
 return the perimeter of the polygon. So, for example to find the area of
 a square with side length 3, the function call would be:
-perimeter((3,3,3,3)) and the function would return 12. Use the \`help\`
-and \`dir\` functions to figure out how to write this function in one
+perimeter((3,3,3,3)) and the function would return 12. Use the `help`
+and `dir` functions to figure out how to write this function in one
 line.
 
 ###Variable Number of Arguments ###
 
-In the last example, you wrote a function, called \`perimeter\`, that
+In the last example, you wrote a function, called `perimeter`, that
 you have to call like this:
 
 ```python
@@ -161,8 +161,8 @@ def carvalue(year, mileage, nacc):
 print carvalue(2001, 100000, 2)
 ```
 
-In order to use the \`carvalue\` function, we have to remember that
-\`year\` is the first argument, \`mileage\` is the second, and \`nacc\`
+In order to use the `carvalue` function, we have to remember that
+`year` is the first argument, `mileage` is the second, and `nacc`
 is the third. If we accidentally put the wrong argument in the wrong
 place then we will compute the wrong answer. Luckily, we can be explicit
 when calling functions using the following syntax:
@@ -239,10 +239,10 @@ Put the following text in a file output-args.py in your current working
 directory.
 
 ```python
-from sys import argv
+import sys
 
-for i in xrange(1,len(argv)):
-    print argv[i]
+for arg in sys.argv[1:]
+    print arg
 ```
 
 Then run this from the command line using
@@ -251,7 +251,7 @@ Then run this from the command line using
 
 This program should print each input on its own line.
 
-Try changing the first argument of xrange to 0 and re-run to see what happens.
+Try iterating over the whole of the `sys.argv` list, rather than just all but the first item, and see what happens.
 
 # Fin
 
