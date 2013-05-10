@@ -1,0 +1,263 @@
+    We are at: https://etherpad.mozilla.org/yDXLJhmLi6
+
+Link to github pages: https://github.com/swcarpentry/boot-camps
+go to the tab "Branches" and click 2013-05-lbl
+This morning, we were in the folder "shell"
+
+To get our material:
+git clone -b 2013-05-lbl https://github.com/swcarpentry/boot-camps.git
+
+Minute cards form:
+    https://docs.google.com/forms/d/1ozpxM2V_G_qf1xH8UOJUOWyOjF11srMu7DOoPSmQwm0/viewform
+
+We're on Twitter (Talk about us!)
+@swcarpentry
+@jiffyclub - Matt Davis
+@tracykteal - Tracy Teal
+
+Shell commands:
+pwd: print working directory (where you are)
+ls: list the contents of a directory (dir for windows, maybe)
+rm: permanently delete files
+    -r: delete recursively, can delete directories
+    -i: interactive - ask me if I want to delete a file
+cd: change directory
+man: see the manual for a command (help for windows, maybe)
+cd ../    move back a directory
+echo: print to screen
+.     here
+*    wildcard
+up-arrow: access previous commands, most recent first
+control+c: get a new prompt
+control+r: search previous commands, right arrow to select
+control+a: go to the beginning of a line
+control+e: got to the end of a line
+control+k: cut 
+control+y: paste
+which: path to a command, program, application. Only looks in your $PATH
+type: like which but better, understands aliases
+./program_name : execute (run) a program
+cat filename: look at file
+less filename: look at a file (if less doesn't work, try more)
+        /    search in less
+        n   find next instance forward
+        N  find next instance backwards
+>   redirect, overwrite
+>> redirect, append
+cp: copy files
+mv: rename/move files
+mkdir: make a new directory
+rmdir: delete an empty directory
+wc : number of lines, words, characters
+    -l : only number of lines
+    -w: only number of words
+    -c: only number of characters
+head: list the first 10 lines of a file
+    -#  change default from 10 lines to # of lines
+tail: list the last 10 lines of a file
+    -#  change default from 10 lines to # of lines
+sort: sorts lines in a file
+    -k #  sort on the # column, must be tab delimited
+chmod: change permissions for owner, group, everyone
+find:
+    find . -name filename - find file with name filename starting here (denoted by the .) and looking in interior directories
+    -name takes arguments like the ls command, so you can use wildcards
+     find . -mtime +1h   display any file which has been modified more than 1 hours ago
+     find . -type f     find only files 
+     find . -type d     find only directory
+        -maxdepth  how far into your directory tree do you want to look
+    
+grep vs find:
+ * find filters out the files you are interested in and grep to look inside of them
+ * -exec starts a new grep process for every file --> can be slow. Use xargs to avoid this
+ * grep takes real regular expressions (4 different kinds!). Google  syntax
+    
+vi/vim Primer:
+    Open a file (existing or new)
+        vi filename
+    to type text:
+        i move to insert mode
+    esc  escape from insert mode to navigation mode
+    To save a file:
+        in navigation mode  :wq
+    Exit without saving:
+        in navigation mode  :q!
+
+When should you use python and when should you use a shell script:
+Consider:
+   * readability
+   * how many times are you going to run a command
+   * what are you most comfortable with? time to learn something new vs. time saved with that new command
+   * Running the shell commands in a given order
+
+
+
+Version Control:
+Repository: your code base, thesis, paper. The collection of files that you want to be version controled
+merge: combine 2 versions of a file
+track: follow changes to a file
+conflict: when the same piece of code is modified in 2 different ways
+commit: take a snapshot of my project and add it to the photo album
+
+bitbucket: LBL has a relationship with them. Ask your IT deparment about getting an account
+git: 
+ * many more options than SVN and mercurial
+ * branching is built in
+ * public repositories are free
+
+CVS, SVN, git, mercurial, bazaar:
+ * distributed version control:git, mercurual, bazaar
+   * Everyone has a complete copy, you can track changes to a file without an internet connection
+   * All repositories are equal
+ * centralized version: CVS, SVN
+   * only one copy of the repository. You need an internet connection
+   * 
+Only run these once:
+git config --global user.name "Your Name"
+git config --global user.email "email@email.com"
+git config --global color.ui auto
+
+Don't do this if you are using git-bash on windows:
+    git config --global core.editor nano
+On the VM:
+    git config --global  core.editor gedit
+Default editor: vi
+
+github:
+ * issue tracker - what you are planning on working on - bugs and features
+ * wiki - write documentation related to your project
+ * 2 types of cloning urls:
+   * https: you have to enter the authentication
+   * ssh: you don't have to enter authentication, git hub recongizes your computer
+
+To get your personal (local) copy of Matt's repository:
+
+
+To paste into git-bash on a window's machine: control+insert
+
+
+Work in your working directory
+Staging area = photo studio
+History = photo album
+
+*You have to add someone as a collaborator to allow them to push to your repository
+
+
+git commands:
+ * git status
+   * what branch you are on
+   * untracked files - git is not keeping track of you changes you are making
+   * changes to be committed - remember what this file looked like at this moment
+   * modified - a tracked file has been changed and is not staged for the next commit
+   * "nothing to commit, working directory clean" - your working directory matches your latest snapshot
+ * git add filename - tell git to start tracking changes to a file
+ * git commit -m "commit message" - take a snapshot of my project - you can return to this snap shot at any time
+   * commit messages are the narrative history of your project. Why did you make the changes you made? Gives your changes context
+   * This is what people will see first
+   * What you did and why
+   * If you need to write out paragraphs, then don't use the -m and write your message in a text editor
+   * If you are going to make a long message, then you should put a summary, then a blank line, then the details
+   * git commit -a: adds all tracked files and commits them
+ * git log: shows the history of the project
+   * Use the commit hash to reference a given snapshot
+   * --oneline : show first line of the commit message
+ * git diff: Show the differences between your stages file and your working directory
+   * git diff --cached: show difference between staging area and history area
+ * git rm: remove a file both from your working directory
+ * git reset HEAD filename: remove file from staging area
+ * git reset commit_hash- you can use the first 7 numbers of the commit hash to uniquely identify a commit
+   * --hard: delete any changes you've made since the commit associated with the hash number you use
+ * git remote -v: what is the url I cloned from?
+   * git gives it a name. The default name is origin
+   * The default branch is master
+ * git push origin master
+   * origin - remote repository url
+   * master - remote repository branch and local repository branch are both names master
+   * If you change the history of a project, you have to git push -f origin master to tell git you really want to push and change the history
+ * git help <command>
+ * git pull origin master 
+   * origin - remote repository url
+   * master - merge changes on remote branch master and merge which local branch, even if the local branch is not master
+   * fetch + merge:
+     * git fetch origin - get changes, but don't combine with your local changes
+       * see if there have been any changes
+     * git merge origin/master - combine remote and local changes
+     * conflicts:
+     * git will modify file to display conflicting text from the local and remote repository
+                    <<<<<HEAD - 
+                    changes from the repository
+                    ================
+                    local changes
+                    >>>>>>>>>>>
+     * Edit file, change and edit
+     * git add when finished
+     * git commit
+     * 
+
+   * Merges almost always happen locally (so a human can resolve the conflicts)
+ * git rebase origin/master: 
+   * do this after git fetch
+   * if changes do not conflict:
+     * combine a changes linearly (put your change after your partner's change as if you pulled after his/her change and then made your change)
+   * if there is a conflict:
+     * git will modify file to display conflicting text from the local and remote repository
+                    <<<<<HEAD - 
+                    changes from the repository
+                    ================
+                    local changes
+                    >>>>>>>>>>>
+     * Edit file, change and edit
+     * git add when finished
+     * git rebase --continue
+ * Branches:
+   * keep master branch to be where everything works all of the time
+   * create a branch to test new functionality
+   * merge branch back into master when it works
+   * http://pcottle.github.io/learnGitBranching/
+   * git branch branch_name - create a new branch
+   * * = branch you are currently on
+   * git checkout branch_name - move to new branch
+   * git branch will change what you see in your GUI file system
+   * merging branches:
+     * 2 options:
+       * from branch2: 
+         * git rebase master
+         * git checkout master
+         * git merge branch2
+       * from master:
+         * git merge branch2 - this merges branch_to_merge into the current branch
+   * Merging branches remotely on github
+     * pull request: request that your changes are merged into the main repository 
+       * Discussion can happen about a pull request before the merge is made
+       * Once you are satisfied you can push the merge pull request button
+       * Always makes a merge commit, never a fast-forward commit
+       * Discussion is on github, not part of the repository
+     * fork: make a remote copy of someone's remote repository that you can commit to. When you are done, you issue a pull request so your copy of the repository can be merged into the main copy
+   * git fetch gives you access to all remote branches
+   * git branch -r : shows you remote branches
+git vs git-bash vs gui:
+    git : a version control application, run from the command line
+    git-bash: created by the git people to allow windows users to use command line git
+    GUIs: a number of other companies have created their own GUIs
+    
+Exercise:    
+1. Pick a team name, make a new branch with your team name
+2. Edit the things to learn file
+3. Checkout new branch, Add and commit changes
+3. Push changes to new branch
+
+
+
+About the pipe command
+| is a command that takes the output of one thing and then uses it as the input for another command
+More good information on the pipe command in the Software Carpentry tutorials
+http://software-carpentry.org/4_0/shell/pipefilter.html
+
+
+Good Practices:
+ * Never hardcode a password - someday that code will be version controlled
+
+
+
+
+
