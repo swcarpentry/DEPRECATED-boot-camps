@@ -1,6 +1,10 @@
 A place to record issues that came up during the workshop
 =========================================================
 
+General
+-------
+ * Is there somewhere to put generally useful suggestions for instructors?
+
 Setup
 -----
  * Enthought updated the EPD release between writing the instructions and running the boot camp!  So the setup script doesn't work any more.
@@ -26,3 +30,20 @@ Materials
  * Introduce ipython's var.<tab> help system in the notes.
  * Don't use backslash to continue lines!
  * Be more precise about `is` and `is not`.
+
+### Testing
+
+ * Lots of people had issues with setting the executable bit and shebang line correctly.  Probably better to run with `python dna.py`.
+ * We also found many more people getting left behind.  Not sure where improvement is needed yet.
+
+### NumPy
+
+ * Did list comprehensions baffle people?
+ * Much more time needed for the long exercise!  But still think a larger exercise, that includes dealing with basic Python datatypes & functions, is valuable.
+
+### SQL
+
+ * Importing is quite hard to follow along with. Having a pre-canned database for anyone who gets too lost is really useful.
+ * (This is a general issue with following parts that involve button clicks and dialogs.)
+
+### Matlab
