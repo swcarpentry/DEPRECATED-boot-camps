@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/yDXLJhmLi6</title>
+</head>
+<body>&nbsp;&nbsp;&nbsp; We are at: <a href="https://etherpad.mozilla.org/yDXLJhmLi6">https://etherpad.mozilla.org/yDXLJhmLi6</a><br
+/><br
+/>Link to github pages: <a href="https://github.com/swcarpentry/boot-camps">https://github.com/swcarpentry/boot-camps</a><br
+/>go to the tab "Branches" and click 2013-05-lbl<br
+/>Thursday morning, we were in the folder "shell"<br
+/><br
+/><b><u>To get our material:</u></b><br
+/>git clone -b 2013-05-lbl <a href="https://github.com/swcarpentry/boot-camps.git">https://github.com/swcarpentry/boot-camps.git</a><br
+/><br
+/><b><u>Minute cards form:</u></b><br
+/><br
+/><a href="https://docs.google.com/forms/d/18LDYW9stU-Vj_FAu5r-LGJAehFHb8EAI-_GVeamzCTU/">https://docs.google.com/forms/d/18LDYW9stU-Vj_FAu5r-LGJAehFHb8EAI-_GVeamzCTU/</a><br
+/><br
+/><b><u>We're on Twitter (Talk about us!)</u></b><br
+/>@swcarpentry<br
+/>@jiffyclub - Matt Davis<br
+/>@tracykteal - Tracy Teal<br
+/><br
+/><b><u>Day 1 Etherpad content is now part of the 2013-05-lbl repo</u></b>:<br
+/><a href="https://github.com/swcarpentry/boot-camps/tree/2013-05-lbl/etherpad">https://github.com/swcarpentry/boot-camps/tree/2013-05-lbl/etherpad</a><br
+/><br
+/>Python Tutorial from the official docs:<br
+/><a href="http://docs.python.org/2/tutorial/index.html">http://docs.python.org/2/tutorial/index.html</a><br
+/><br
+/><br
+/><br
+/>Find iPython notebooks on github for tutorials<br
+/><br
+/><br
+/>At the shell:<br
+/>Go to boot-camps/python/intro<br
+/><br
+/>Copy the iPythonNotebook to your own version, so Azalee's changes and your changes don't conflict<br
+/>&nbsp;&nbsp;&nbsp; cp StudentNotes_lbnl.ipynb mynotes.ipynb<br
+/><br
+/>Then open your iPythonNotebook<br
+/>&nbsp;&nbsp;&nbsp; ipython notebook mynotes.ipynb&nbsp;<br
+/><br
+/>Shift+enter will execute the commands<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;<br
+/>Shell commands work in iPython which is awesome!<br
+/><br
+/>iPython seems to have problems executing shell commands after a comment<br
+/># talk with Fernando?<br
+/><br
+/>Python has integers and float values<br
+/>If you enter just integers, with no decimal points, like 42/9 Python assumes you want integers back and won't give you decimals.&nbsp; If you explicitily want this behavior, it's good practice to show that you want this and use 42//9<br
+/>If you want to use decimals put a decimal in your equation, like<br
+/>&nbsp; 42./9<br
+/>If you want it rounded, you can use&nbsp;<br
+/>round(42./9)<br
+/><br
+/>To add a cell to do a calculation or code, use the arrow keys at the top of the iPythonNotebook<br
+/>If you hover over the icons, they say what they do.<br
+/><br
+/>When you get an error in Python, typically you can read through it.&nbsp; It provides helpful advice on what the error is.<br
+/><br
+/>If you have multiple lines with calculations and then hit Shift+Enter, it will just evaluate the last line.<br
+/>Example<br
+/>3+2<br
+/>4+9<br
+/>4*4<br
+/>will return 16<br
+/><br
+/>Assigning variables gets around this<br
+/>a = 10<br
+/>a<br
+/>will return 10<br
+/><br
+/>In Python each command is generally one line<br
+/><br
+/><b><u>Containers</u></b><br
+/><br
+/><b><u>Lists</u></b><br
+/>A list always has square brackets<br
+/><br
+/>Python is zero-indexed.&nbsp; That means that counting starts with zero.&nbsp; So the third item in your list is referred to as list[2]<br
+/>When you're taking a range of items in Python, called slicing, the range will include the first and exclude the last.<br
+/>Including the idea that counting starts with zero<br
+/><br
+/>list[2:4] will include the third and fourth item in the list<br
+/><br
+/>If you want just every two items for example, you can use the syntax<br
+/>start:end:by<br
+/>list[0:10:2] will return every other item, starting with the first, so the 1st, 3rd, 5th, 7th, 9th items<br
+/><br
+/>If you want just the 3rd and 7th for instance, you would need to do that separately<br
+/>list[2], list[6]<br
+/><br
+/><b><u>Tuples</u></b><br
+/>Tuples are different from lists, because they are immutable.&nbsp; Items in the list cannot be changed.<br
+/><br
+/>If you're assigning items from a tuple to variables, or unpacking them, you need to have the same number of variables as number of items in the tuple<br
+/><br
+/>my_tup = (1,2,3,4)<br
+/>my_tup has 4 items in it, so&nbsp;<br
+/>a,b,c,d = my_tup&nbsp;&nbsp; works<br
+/>a,b,c = my_tup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doesn't work<br
+/><br
+/><b><u>Dictionaries</u></b><br
+/>You can't reference things by value.&nbsp; The items in a dictionary are not stored in any particular order.&nbsp; The only way you can reference things is by using the key value, the value before the colon.<br
+/><br
+/>The only container that can be used as a key is a tuple, because it's immutable<br
+/>Also, variables can be used as keys<br
+/><br
+/><br
+/>Someone asked:<br
+/>"Can you clarify the difference between these:<br
+/><br
+/>python<br
+/>ipython<br
+/>IP[y] Notebook<br
+/><br
+/>And when do you use what?"<br
+/><br
+/>Python is the programming languange<br
+/>iPython is an interactive shell for Python.&nbsp; So you can type something and run it immediately to see if it works.&nbsp; Otherwise you write some Python code in a text editor, save it and then run the set of Python code.<br
+/>iPython notebook is web-based interactive environment.&nbsp; In it you can combine comments, code and even figure output.&nbsp; You'll see more of that as we go on.<br
+/><br
+/>You can decide when to use what.&nbsp; If you're writing a bit Python program, you'd likely just use a text editor and run all the code at once.<br
+/>If you want to try things out to see if they'll work or do what you expect, you might use iPython or iPythonNotebook<br
+/>iPythonNotebook is especially good for combining input and output and sharing information with others.&nbsp; It's nice that you can save both the code and the output of your analysis together.<br
+/><br
+/><b><u>Looping over a list:</u></b><br
+/><br
+/>for thing in list_of_things:<br
+/>&nbsp;&nbsp;&nbsp; do stuff with thing<br
+/><br
+/>for i in range(len(list_of_things)):<br
+/>&nbsp;&nbsp;&nbsp; thing = list_of_things[i]<br
+/><br
+/>Good coding practices transend Python.&nbsp; You can and should use them in whatever language you're working in.&nbsp; Additionally things like if statements and for loops are available in most languages, along with writing functions.<br
+/><br
+/>Using docstrings is another good and important good coding practice.&nbsp; It helps others know how to use the code and you to remember how things work when you come back to it.<br
+/><br
+/><b><u>Testing:</u></b><br
+/>Easy to make mistakes<br
+/>How do youi know your code is right?<br
+/><ul><li>visual inspection<ul><li>can be tedious</li
+><li>hard with complicated code</li></ul
+></li
+><li>create automatic tests<ul><li>nose testing:<ul><li>automatically runs any function which begins with the word test and reports the number of errors<br/><br
+/></li></ul
+></li></ul
+></li></ul
+><b><u>Good coding practices:</u></b><br
+/><ul><li>Write code in one place and reuse it rather than copying and pasting it over and over</li
+><li>Can write general purpose units of code which can be combined different ways to create different outcomes</li
+><li>print an error when something breaks (silence is good)</li
+><li>functions contain logically grouped code</li
+><li>test functions should contain tests of a single functionality of the code<ul><li>you will only see the first error encountered</li></ul
+></li
+><li>Test drive development:<ul><li>write code interface</li
+><li>write doc string</li
+><li>write tests</li
+><li>write function to pass tests</li></ul
+></li
+><li>Write code that works first, then make is fast, fancy, etc</li
+><li>try not to build assuptions about the final goal of your specific project into your functions<br/><br
+/><br/><br
+/></li></ul
+>Testing<br
+/><br
+/>Go to <a href="http://198.128.201.89:8888">http://198.128.201.89:8888</a> in a web browser to see the notebook that Matt is using<br
+/>You'll need to reload it to see new things that he's adding<br
+/><br
+/><u>Function from Notebook:</u><br
+/><br
+/>def calc_mean(ilist):<br
+/>&nbsp;&nbsp;&nbsp; '''<br
+/>&nbsp;&nbsp;&nbsp; returns the mean of input list<br
+/>&nbsp;&nbsp;&nbsp; '''<br
+/>&nbsp;&nbsp;&nbsp; total = 0.0<br
+/>&nbsp;&nbsp;&nbsp; for num in ilist:<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total = total + num<br
+/>&nbsp;&nbsp;&nbsp; return total/float(len(ilist))<br
+/><br
+/><br
+/>For testing with nose, to get nose to recognize something as a test, the function should start with 'test', like<br
+/><br
+/>test_mean_calc<br
+/><br
+/>Then within the test function, use assert statements to make the function fail if the test doesn't work, then the nose test will fail<br
+/><br
+/>nose can be used for testing, and there are also nose tools that you can use.&nbsp; To get these use<br
+/><br
+/>import nose.tools as nt<br
+/><br
+/>You can write tests before you even write the code, because you should be able to define what your code is supposed to do<br
+/><br
+/>PYTHONPATH - where python looks for files and modules<br
+/><br
+/><br
+/><br
+/>Resources:<br
+/><ul><li>In class materials: git pull origin 2013-05-lbl on Monday to get the instructor class notes and final etherpads</li
+><li>SWC information <a href="http://software-carpentry.org/index.html">http://software-carpentry.org/index.html</a>:<ul><li>lessons</li
+><li>office hours: <a href="http://software-carpentry.org/bootcamps/office-hours.html">http://software-carpentry.org/bootcamps/office-hours.html</a></li
+><li>interested in becoming an instructor? info@software-carpentry.org</li></ul
+></li
+><li>Contact:<ul><li>instructors:<ul><li>Azalee Bostroem: abostroem@gmail.com</li
+><li>Tracy Teal: tkteal@gmail.com</li
+><li>Matt Davis: jiffyclub@gmail.com</li></ul
+></li
+><li>info@software-carpentry.org&nbsp; (this will not go to the instructors)</li></ul
+></li
+><li>Cait will contact you with a post-assessment. Please fill it out - help make future SWC better</li
+><li>Create a local group and/or local mailing list<br/><br
+/></li></ul
+>Email addresss form<br
+/><a href="https://docs.google.com/forms/d/1H55xXlD3mVmPDp5NCLtbOq2OK37M27Gd5IRw06tkdLk/viewform">https://docs.google.com/forms/d/1H55xXlD3mVmPDp5NCLtbOq2OK37M27Gd5IRw06tkdLk/viewform</a><br
+/><br
+/><br
+/><ul><li>Python Boot Camp here at Berkeley in the Fall</li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://sites.google.com/site/pythonbootcamp/home">https://sites.google.com/site/pythonbootcamp/home</a><br
+/><br
+/>Some books on Scientific Computing in Python<br
+/><br
+/>Learning IPython for Interactive Computing and Data Visualization<br
+/>by Cyrille Rossant<br
+/><a href="http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book">http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book</a><br
+/><br
+/>Python for Data Analysis<br
+/>by Wes McKinney<br
+/><a href="http://shop.oreilly.com/product/0636920023784.do">http://shop.oreilly.com/product/0636920023784.do</a><br
+/><br
+/>SciPy and NumPy<br
+/>Eli Bressert<br
+/><a href="http://shop.oreilly.com/product/0636920020219.do">http://shop.oreilly.com/product/0636920020219.do</a><br
+/><br
+/></body>
+</html>
