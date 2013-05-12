@@ -1,6 +1,6 @@
 #Automation and Make
 
-**Based on materials by Greg Wilson and Steve Crouch
+**Based on materials by Greg Wilson and Steve Crouch**
 
 ##Some questions for you,
 
