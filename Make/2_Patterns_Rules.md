@@ -1,7 +1,23 @@
 ##2. Make - patterns and rules.
 **Based on materials by Steve Crouch and Greg Wilson**
 
-Let’s look at our dependency graph again. Two big questions: 
+Let’s look at our dependency graph again. 
+    PDBAnalysis.tar.gz
+        |
+        | tar -czf PDBAnalysis.tar.gz
+        |   cubane.pdb.data ... methane.pdb.data
+        |----------------------------------
+        |               |                 |
+    cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
+        |       \_______|_______\_________|_______________ program.awk
+        |               |                 |
+        |awk -f         |awk -f           |awk -f  
+        |  program.awk  |  program.awk    |  program.awk
+        |  cubane.pdb   |  ethane.pdb     |  ethane.pdb
+        |               |                 |
+     cubane.pdb       ethane.pdb        methane.pdb
+
+Two big questions: 
 * How are we going to handle multiple dependencies efficiently? How do we generalize?
 * Can we get rid of the repeated filenames in the dependencies?
 
