@@ -2,6 +2,7 @@
 **Based on materials by Steve Crouch and Greg Wilson**
 
 Let’s look at our dependency graph again. 
+
     PDBAnalysis.tar.gz
         |
         | tar -czf PDBAnalysis.tar.gz
