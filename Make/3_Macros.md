@@ -5,6 +5,7 @@ Let’s assume someone else wants to run our code on our data. First, we could i
 
     PDBAnalysis.tar.gz : *.pdb.data program.awk
 When we do:
+
     $ touch program.awk
     $ make -f pdbprocess.mk
 program.awk is now included in the archive, and can be run. But let us assume we have a number of these awk programs:
