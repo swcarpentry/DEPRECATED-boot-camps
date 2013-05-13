@@ -107,6 +107,8 @@ In [2]:
 
 You can paste things into the ipython console by copying text from your machine with **ctrl+c** and typing **%paste** at the iPython prompt.
 
+**Note** sometimes **%cpaste** can work when %paste is giving problems.
+
 ### History
 
 iPython has a history. If you press the up and down keys, you can access the history.
@@ -134,6 +136,33 @@ If you wanted to see all the commands available for something, use the dir comma
 ```python
 In [1] dir(str)
 ```
+
+Also tab completion can be used in ipython to view 'public' function names
+
+```python
+In [1]: str.<tab>
+str.capitalize  str.encode      str.format      str.isdigit     str.isupper     str.lstrip      str.rfind       str.rsplit      str.startswith  str.translate
+str.center      str.endswith    str.index       str.islower     str.join        str.mro         str.rindex      str.rstrip      str.strip       str.upper
+str.count       str.expandtabs  str.isalnum     str.isspace     str.ljust       str.partition   str.rjust       str.split       str.swapcase    str.zfill
+str.decode      str.find        str.isalpha     str.istitle     str.lower       str.replace     str.rpartition  str.splitlines  str.title 
+```
+
+For functions which are named to intend that they are more 'private' you can use an _ after the . of the type or instance
+
+```python
+In [1]: str._<tab>
+str.__abstractmethods__          str.__dictoffset__               str.__gt__                       str.__mro__                      str.__setattr__
+str.__add__                      str.__doc__                      str.__hash__                     str.__mul__                      str.__sizeof__
+str.__base__                     str.__eq__                       str.__init__                     str.__name__                     str.__str__
+str.__bases__                    str.__flags__                    str.__instancecheck__            str.__ne__                       str.__subclasscheck__
+str.__basicsize__                str.__format__                   str.__itemsize__                 str.__new__                      str.__subclasses__
+str.__call__                     str.__ge__                       str.__le__                       str.__reduce__                   str.__subclasshook__
+str.__class__                    str.__getattribute__             str.__len__                      str.__reduce_ex__                str.__weakrefoffset__
+str.__contains__                 str.__getitem__                  str.__lt__                       str.__repr__                     str._formatter_field_name_split
+str.__delattr__                  str.__getnewargs__               str.__mod__                      str.__rmod__                     str._formatter_parser
+str.__dict__                     str.__getslice__                 str.__module__                   str.__rmul__             
+```
+
 
 ### Executing code in files
 

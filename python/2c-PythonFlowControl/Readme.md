@@ -125,7 +125,7 @@ conditional that defines it is no longer true.
 ```python
 mult = 1
 sequence = [1, 5, 7, 9, 3, -1, 5, 3]
-while sequence[0] is not -1:
+while sequence[0] != -1:
     mult = mult * sequence[0]
     del sequence[0]
 
@@ -134,11 +134,7 @@ print mult
 
 Some new syntax has been introduced in this example.
 
--   On line 3 We begin the while loop. Notice that instead of using the
-    not-equals symbol, !=, we can simply enter "is not" which is easier
-    to read. This while loop will execute until sequence[0]= -1 . That
-    is, until deletes all of the entries of the sequence that come
-    before -1.
+-   On line 3 We begin the while loop. This while loop will execute until sequence[0] == -1 . That is, until deletes all of the entries of the sequence that come before -1.
 
 -   On line 4, we compute the product of the elements just to make this
     more interesting.
