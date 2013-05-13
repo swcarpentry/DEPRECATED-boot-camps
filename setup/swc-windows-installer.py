@@ -11,7 +11,7 @@ The script:
 
 To use:
 
-<<<<<<< HEAD
+
 1. Install Enthought Python distribution
    http://www.enthought.com/products/epd.php
 2. Install msysgit
@@ -69,16 +69,10 @@ def create_nosetests_entry_point(python_scripts_directory):
 
 
 def main():
-<<<<<<< HEAD
-    python_scripts_directory = "C:\\Python27\\Scripts\\"
-    create_ipython_entry_point(python_scripts_directory)
-    #create_nosetests_entry_point(python_scripts_directory)
-=======
     python_scripts_directory = "C:\\Anaconda\\Scripts\\"
     #python_scripts_directory = "./scripts/"
     create_ipython_entry_point(python_scripts_directory)
     create_nosetests_entry_point(python_scripts_directory)
->>>>>>> 9f94a8a6e107c367b80c09916c9a7ad8891066a0
     install_nano(python_scripts_directory)
 
 
