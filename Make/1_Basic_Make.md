@@ -1,4 +1,4 @@
-#1. Make - managing files and dependencies
+##1. Make - managing files and dependencies
 
 
 For this tutorial we'll be using a set of data files (*.pdb - proteine data base) and a small program called program.awk which is written in an interpreted programming language called "awk". program.awk extracts informations about: the author of the *.pdb file, the data about the atoms and counts the total number of the atoms in the file.
@@ -63,7 +63,7 @@ Make decides that  the ‘all’ target is out of date. It depends on the other 
     $ make -f pdbprocess.mk all
 It rebuilds them, running both commands! Note, that order in which these commands are executed is arbitary, since there’s no dependency between the two.
 
-##Exercise 1
+###Exercise 1
 Add in the last rule for methane.pdb.data, based on the rules for cubane.pdb.data and ethane.pdb.data. 
 * Touch all the pdb files - touch *.pdb
 * Rerun the Makefile
