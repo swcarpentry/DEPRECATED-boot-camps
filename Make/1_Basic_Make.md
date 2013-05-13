@@ -18,9 +18,9 @@ Let's create our first Makefile:
 
 The first line is a comment, which should in practice be more descriptive that the name of the file.
 The second and third lines are a rule that tells Make what we want to do.
-*The filename on the left of the colon in the first line is the _target_ of the rule i.e. what we want to generate.
-*The target’s pre-requisites - what it depends on - are listed on the right of the colon. In our case, this is just our cubane.pdb file.
-*The second line of the rule is the action. This tells Make what shell command or commands to run to bring the target up to date if it is older than any of its pre-requisites (could be any number of commands).
+* The filename on the left of the colon in the first line is the _target_ of the rule i.e. what we want to generate.
+* The target’s pre-requisites - what it depends on - are listed on the right of the colon. In our case, this is just our cubane.pdb file.
+* The second line of the rule is the action. This tells Make what shell command or commands to run to bring the target up to date if it is older than any of its pre-requisites (could be any number of commands).
 It's important to remember that the actions in rules __must__ be indexed with a single tab character, not spaces, or mixes of tabs and spaces.
 Make was actually written by a summer intern in the mid-70s, and its idiosyncrasies sometimes show!
 
