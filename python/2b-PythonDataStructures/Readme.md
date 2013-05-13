@@ -146,15 +146,15 @@ Out[16]: 7
 Lists can contain hetergeneous data.
 
 ```python
-In [17]: dataList = ["experiment: current vs. voltage", \
-   ....:             "run", 47, \
-   ....:             "temperature", 372.756, \
-   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
+In [17]: dataList = ["experiment: current vs. voltage", 
+   ....:             "run", 47, 
+   ....:             "temperature", 372.756, 
+   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], 
    ....:             "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
 
 ```
 
-We've got strings, ints, floats, and even other lists in there. The slashes are there so we can continue on the next line. They aren't necessary but they can sometimes make things look better.
+We've got strings, ints, floats, and even other lists in there. Note we can place the initialising array over multiple lines.
 
 ## Assigning Variables to Other Variables
 
