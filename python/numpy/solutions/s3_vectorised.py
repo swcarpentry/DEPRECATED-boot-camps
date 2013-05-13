@@ -68,8 +68,9 @@ class Rec(object):
         # hasn't rated a paper but the other person has
         mask = np.logical_and(self.ratings[idx, :] == 0, self.ratings > 0)
         # Compute the quantities upon which our recommendations are based
-        totals = (self.ratings * mask * scores.reshape(7,1)).sum(axis=0)
-        similarities = (mask * scores.reshape(7,1)).sum(axis=0)
+        num_people = len(self.people)
+        totals = (self.ratings * mask * scores.reshape(num_people,1)).sum(axis=0)
+        similarities = (mask * scores.reshape(num_people,1)).sum(axis=0)
         # Calculate a sorted list of recommendations
         recommendations = []
         for i, paper in enumerate(self.papers):

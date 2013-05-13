@@ -146,15 +146,15 @@ Out[16]: 7
 Lists can contain hetergeneous data.
 
 ```python
-In [17]: dataList = ["experiment: current vs. voltage", \
-   ....:             "run", 47, \
-   ....:             "temperature", 372.756, \
-   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
+In [17]: dataList = ["experiment: current vs. voltage",
+   ....:             "run", 47,
+   ....:             "temperature", 372.756,
+   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0],
    ....:             "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
 
 ```
 
-We've got strings, ints, floats, and even other lists in there. The slashes are there so we can continue on the next line. They aren't necessary but they can sometimes make things look better.
+We've got strings, ints, floats, and even other lists in there.
 
 ## Assigning Variables to Other Variables
 
@@ -261,10 +261,10 @@ You can check out more info using the help docs. We won't be returning to sets, 
 Recall our file data.dat which contained our current-voltage data and also some metadata. We were able to import the data as a list, but clearly the list type is not the optial choice for a data model. The dictionary is a much better choice. A python dictionary is a collection of key, value pairs. The key is a way to name the data, and the value is the data itself. Here's a way to create a dictionary that contains all the data in our data.dat file in a more sensible way than a list.
 
 ```python
-In [7] dataDict = {"experiment": "current vs. voltage", \
-                   "run": 47, \
-                   "temperature": 372.756, \
-                   "current": [-1.0, -0.5, 0.0, 0.5, 1.0], \
+In [7] dataDict = {"experiment": "current vs. voltage",
+                   "run": 47,
+                   "temperature": 372.756,
+                   "current": [-1.0, -0.5, 0.0, 0.5, 1.0],
                    "voltage": [-2.0, -1.0, 0.0, 1.0, 2.0]}
 ```
 
