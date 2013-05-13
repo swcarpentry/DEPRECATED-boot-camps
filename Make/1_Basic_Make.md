@@ -24,7 +24,7 @@ The second and third lines are a rule that tells Make what we want to do.
 It's important to remember that the actions in rules __must__ be indexed with a __single tab__ character, not spaces, or mixes of tabs and spaces. Make was actually written by a summer intern in the mid-70s, and its idiosyncrasies sometimes show!
 
 Let’s run our makefile:
-    $ make -f pdbprocess.mk
+    $make -f pdbprocess.mk
     
 The output shows us it has run the command we wanted.  This happened because at least one prerequisite was newer than our cubane.pdb.data target. Make uses __last modification time__ as its age. Editing and re-saving a file, for example, will change it. 
 
