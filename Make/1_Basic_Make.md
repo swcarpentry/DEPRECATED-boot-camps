@@ -68,3 +68,16 @@ Add in the last rule for methane.pdb.data, based on the rules for cubane.pdb.dat
 * Touch all the pdb files - touch *.pdb
 * Rerun the Makefile
 All *.pdb.data files should rebuild. Be sure to use a single tab when indenting the action and not spaces!
+
+####Solution:
+    # pdbprocess.mk
+    all : cubane.pdb.data ethane.pdb.data methane.pdb.data
+    cubane.pdb.data : cubane.pdb
+        awk -f program.awk cubane.pdb > cubane.pdb.data
+    ethane.pdb.data : ethane.pdb
+        awk -f program.awk ethane.pdb > ethane.pdb.data
+    methane.pdb.data : methane.pdb
+        awk -f program.awk methane.pdb > methane.pdb.data
+
+
+
