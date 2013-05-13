@@ -49,7 +49,7 @@ Why do this?
 Add in a new macro to our configuration so we can change the name of our PDBAnalysis.tar.gz file if desired.
 
 
-###Soluntion
+###Solution
 pdbprocess.mk:
 
     # pdbprocess.mk
