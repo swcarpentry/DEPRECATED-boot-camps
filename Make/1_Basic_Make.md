@@ -67,6 +67,7 @@ It rebuilds them, running both commands! Note, that order in which these command
 Add in the last rule for methane.pdb.data, based on the rules for cubane.pdb.data and ethane.pdb.data. 
 * Touch all the pdb files - touch *.pdb
 * Rerun the Makefile
+
 All *.pdb.data files should rebuild. Be sure to use a single tab when indenting the action and not spaces!
 
 ####Solution:
