@@ -12,7 +12,7 @@ Let's create our first Makefile:
     $ nano pdbprocess.mk
     # pdbprocess.mk
     cubane.pdb.data : cubane.pdb
-      awk -f program.awk cubane.pdb > cubane.pdb.data
+        awk -f program.awk cubane.pdb > cubane.pdb.data
       
 
 The first line is a comment, which should in practice be more descriptive that the name of the file.
