@@ -21,7 +21,15 @@ The second and third lines are a rule that tells Make what we want to do.
 * The filename on the left of the colon in the first line is the _target_ of the rule i.e. what we want to generate.
 * The target’s pre-requisites - what it depends on - are listed on the right of the colon. In our case, this is just our cubane.pdb file.
 * The second line of the rule is the action. This tells Make what shell command or commands to run to bring the target up to date if it is older than any of its pre-requisites (could be any number of commands).
-It's important to remember that the actions in rules __must__ be indexed with a single tab character, not spaces, or mixes of tabs and spaces.
-Make was actually written by a summer intern in the mid-70s, and its idiosyncrasies sometimes show!
+* 
+It's important to remember that the actions in rules __must__ be indexed with a __single tab__ character, not spaces, or mixes of tabs and spaces. Make was actually written by a summer intern in the mid-70s, and its idiosyncrasies sometimes show!
+
+Let’s run our makefile:
+    $ make -f pdbprocess.mk
+The output shows us it has run the command we wanted.  This happened because at least one prerequisite was newer than our cubane.pdb.data target. Make uses __last modification time__ as its age. Editing and re-saving a file, for example, will change it. 
+
+Now, if we run the command again
+    $ make -f pdbprocess.mk
+This time, it doesn’t execute any commands, and tells us so. This happened since the target is newer than its prerequisites.
 
 
