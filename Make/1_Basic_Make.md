@@ -46,12 +46,25 @@ And to get make to realize ethane.pdb needs to be reprocessed, we can do:
 Which updates the time stamp on the file, to the current time. Then rerun our makefile:
 
     $ make -f pdbprocess.mk
-Wait! Why hasn’t ethane.pdb.data been updated? Because make uses first rule in makefile as its default rule.
+Why hasn’t ethane.pdb.data been updated? Because make uses first rule in makefile as its default rule.
 By default, it only executes this rule. If we want make to rebuild ethane.pdb.data, we need to tell it explicitly:
 
     $ make -f pdbprocess.mk ethane.pdb.data
 
 
-Now both Owner and partner clone the owner's repository e.g.
+But this is only marginally better than typing individual commands. To build everything at once, we introduce a phony target. It doesn’t depend on files, so it’s never up to date. But it can depend on other things. We can edit our makefile and add this in at the top, after the comment. 
 
-    $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git 
+    all : cubane.pdb.data ethane.pdb.data
+If we type:
+    $ make -f pdbprocess.mk all
+Make decides that  the ‘all’ target is out of date. It depends on the other two files, so examines them. If we now touch those two files to nudge make to rebuild, and run make again
+
+    $ touch cubane.pdb ethane.pdb
+    $ make -f pdbprocess.mk all
+It rebuilds them, running both commands! Note, that order in which these commands are executed is arbitary, since there’s no dependency between the two.
+
+##Exercise 1
+Add in the last rule for methane.pdb.data, based on the rules for cubane.pdb.data and ethane.pdb.data. 
+* Touch all the pdb files - touch *.pdb
+* Rerun the Makefile
+All *.pdb.data files should rebuild. Be sure to use a single tab when indenting the action and not spaces!
