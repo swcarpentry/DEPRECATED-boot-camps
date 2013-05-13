@@ -3,7 +3,9 @@
 **Material by Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 * modified by Tracy Teal *
 
-# What is the shell how do I access the shell?
+# The Shell
+
+# What is the shell and how do I access the shell?
 
 The *shell* is a program that presents a command line interface
 which allows you to control your computer using commands entered
@@ -11,176 +13,105 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/swcarpentry/boot-camps/blob/2013-05-lbl/
+    https://github.com/swcarpentry/boot-camps/blob/2013-05-ucdavis/
 
 Click on the directory named `shell`.
 
 A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
-	 
-There are many reasons to learn about the shell. In my opinion, the
-most important reasons are that: 
 
-1.  It is very common to encounter the shell and
-    command-line-interfaces in scientific computing, so you will
-    probably have to learn it eventually 
+To get started, you will need the data and notes for the bootcamp.  Just 
+enter the command:
 
-2.  The shell is a really powerful way of interacting with your
-    computer. GUIs and the shell are complementary - by knowing both
-    you will greatly expand the range of tasks you can accomplish with
-    your computer. You will also be able to perform many tasks more
-    efficiently.
-
-The shell is just a program and there are many different shell
-programs that have been developed. The most common shell (and the one
-we will use) is called the Bourne-Again SHell (bash). Even if bash is
-not the default shell, it is usually installed on most systems and can be
-started by typing `bash` in the terminal. Many commands, especially a
-lot of the basic ones, work across the various shells but many things
-are different. I recommend sticking with bash and learning it well.
-([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
-
-To open a terminal, just single click on the "Terminal" icon on the
-Desktop.
-
-# The Example: Manipulating Experimental Data Files
-
-We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data from a hearing test. To get
-the data for this test, you will need internet access. Just enter the
-command:
-
-    git clone -b 2013-05-lbl https://github.com/swcarpentry/boot-camps.git
-
-This command will grab all of the data needed for this workshop from the
-internet.
-
-# Let's get started
-
-One very basic command is `echo`. This command just prints text to
-the terminal. Try the command:
-
-    echo Hello, World
-
-Then press enter. You should see the text "Hello, World" printed back
-to you. The echo command is useful for printing from a shell script,
-for displaying variables, and for generating known values to pass
-to other programs.
-
-## Moving around the file system
-
-Let's learn how to move around the file system using command line
-programs. This is really easy to do using a GUI (just click on
-things). Once you learn the basic commands, you'll see that it is
-really easy to do in the shell too. 
-
-First we have to know where we are. The program `pwd` (print working
-directory) tells you where you are sitting in the directory tree. The
-command `ls` will list the files in files in the current
-directory. Directories are often called "folders" because of how they
-are represented in GUIs. Directories are just listings of files. They
-can contain other files or directories.
-
-Whenever you start up a terminal, you will start in a special
-directory called the *home* directory. Every user has their own home
-directory where they have full access to do whatever they want. 
-
-Try typing 'pwd' and see where your bootcamp directory is. You should
-see your user name in that path.  That's your home directory.
+      git clone -b 2013-05-ucdavis https://github.com/swcarpentry/boot-camps.git
 
 
-**File Types**
+Topics in the shell:
 
-When you enter the `ls` command lists the contents of the current
-directory. There are several items in the home directory, in some terminals
-they are all colored blue. This tells us that all of these items are
-directories as opposed to files.
+1.  The hierarchical file structure
+    'Getting around at the command line'
 
-Lets create an empty file using the `touch` command. Enter the
-command:
+2.  Redirection
+    'Input and output'
 
-    touch testfile
 
-Then list the contents of the directory again. You should see that a
-new entry, called `testfile`, exists. It is colored white meaning that
-it is a file, as opposed to a directory. The `touch` command just
-creates an empty file. 
+# The heirarchical file structure
 
-Some terminals will not color the directory entries in this very
-convenient way. In those terminals, use `ls -F` instead of `ls`. The
-`-F` argument modifies the results so that a slash is placed at the
+Unix has a hierarchical file structure.
+
+## Knowing where you are
+
+Show where you are in the file system.  
+print working directory
+
+   pwd
+
+If you just started up the terminal you're in the 'home' directory.
+Type 'pwd' and see what your home directory is.
+
+## Knowing what is in your directory
+
+To see what is in your current directory, you list the files
+
+   ls
+
+This will show all the files and directories where you are.
+
+Type 'ls' and you should see a bunch of things, including the 'boot-camps' folder.
+
+However, when we look at all these things, we don't know if they're files or
+folders or programs.  We can give arguments to 'ls' to tell it to give us more 
+information.  
+
+   ls -F
+
+modifies the results so that a slash is placed at the
 end of directories. If the file is *executable* meaning that it can be
 run like a program, then a star will be placed at the end of of the
 file name.
 
-You can also use the command `ls -l` to see whether items in a
-directory are files or directories. `ls -l` gives a lot more
+   ls -l 
+
+gives a lot more
 information too, such as the size of the file and information about
 the owner. If the entry is a directory, then the first letter will be
 a "d". The fifth column shows you the size of the entries in
-bytes. Notice that `testfile` has a size of zero.
+bytes.
 
-Now, let's get rid of `testfile`. To remove a file, just enter the
-command:
+You can combine them, to see everything at once.
 
-    rm testfile
+   ls -lF
 
-The `rm` command can be used to remove files. If you enter `ls` again,
-you will see that `testfile` is gone.
+If you ever wonder what types of options there are for a command you can
+use Unix's built-in help and type:
 
-
-**Changing Directories**
-
-Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `boot-camps`
-directory. Enter the following command:
-
-    cd boot-camps
-
-Now use the `ls` command to see what is inside this directory. You
-will see that there is an entry which is green. This means that this
-is an executable. If you use `ls -F` you will see that this file ends
-with a star.
-
-This directory contains all of the material for this boot camp. Now
-move to the directory containing the data for the shell tutorial:
-
-    cd shell
-
-If you enter the `cd` command by itself, you will return to the home
-directory. Try this, and then navigate back to the `shell`
-directory.
-
-## Arguments
-
-Most programs take additional arguments that control their exact
-behavior. For example, `-F` and `-l` are arguments to `ls`.  The `ls`
-program, like many programs, take a lot of arguments. But how do we
-know what the options are to particular commands?
-
-Most commonly used shell programs have a manual. You can access the
-manual using the `man` program. Try entering:
-
-    man ls
+   man ls
 
 This will open the manual page for `ls`. Use the space key to go
 forward and b to go backwards. When you are done reading, just hit `q`
-to exit.
+to exit.  This will work for any command.
 
-Programs that are run from the shell can get extremely complicated. To
-see an example, open up the manual page for the `find` program,
-which we will use later this session. No one can possibly learn all of
-these arguments, of course. So you will probably find yourself
-referring back to the manual page frequently.
 
-**Examining the contents of other directories**
+Exercise:  What does ls -alF give you?  Are there files you didn't see
+with ls -lF?
 
-By default, the `ls` commands lists the contents of the working
-directory (i.e. the directory you are in). You can always find the
-directory you are in using the `pwd` command. However, you can also
-give `ls` the names of other directories to view. Navigate to the
-home directory if you are not already there. Then enter the
+
+** Getting around the file system  **
+
+** Changing directories **
+
+Go in to the boot camps directory by changing directories
+
+   cd boot-camps
+
+See what's in this directory using 'ls'.  Now go in to the 'shell' directory 
+and see what's in there.
+
+
+you can also
+give `ls` the names of other directories to view. Go to your home directory
+by typing 'cd'.  Then enter the
 command:
 
     ls boot-camps
@@ -198,49 +129,23 @@ similar way. Try entering:
 and you will jump directly to `shell` without having to go through
 the intermediate directory.
 
+
 ## Full vs. Relative Paths
 
-The `cd` command takes an argument which is the directory
-name. Directories can be specified using either a *relative* path a
-full *path*. The directories on the computer are arranged into a
-hierarchy. The full path tells you where a directory is in that
-hierarchy. Navigate to the home directory. Type 'cd'.  Now, enter the `pwd`
-command and you should see something like:
+So far we've just been using relative paths.  This means that we've been using the information about where we are to get somewhere else.  You can also 
+use absolute paths.
 
-    /home/swc
-    /Users/USERNAME
+Go back to your home directory by typing 'cd'
 
-which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
-`home` which sits inside the very top directory in the hierarchy. The
-very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
-directory in `home` which is a directory in `/`.
+Type
 
-Now enter the following command:
+  cd boot-camps/shell
 
-    cd /HOMEDIRECTORY/boot-camps/shell
+Then type
 
-This jumps to `shell`. Now go back to the home directory using 'cd'. We saw
-earlier that the command:
+  cd /HOMEDIRECTORY/boot-camps/shell
 
-    cd boot-camps/shell
-
-had the same effect - it took us to the `shell` directory. But,
-instead of specifying the full path
-(`/home/swc/boot-camps/shell`), we specified a *relative path*. In
-other words, we specified the path relative to our current
-directory. A full path always starts with a `/`. A relative path does
-not. You can usually use either a full path or a relative path
-depending on what is most convenient. If we are in the home directory,
-it is more convenient to just enter the relative path since it
-involves less typing.
-
-Now, list the contents of the /bin directory. Do you see anything
-familiar in there?
-
-
-## Saving time with shortcuts, wild cards, and tab completion
+Are you in the same place?  Do you see why?
 
 **Shortcuts**
 
@@ -253,7 +158,7 @@ directory, then enter the command:
 
 This prints the contents of your home directory, without you having to
 type the full path. The shortcut `..` always refers to the directory
-above your current directory. Thus: 
+above your current directory. Thus:
 
     ls ..
 
@@ -264,14 +169,15 @@ these together, so:
 
 prints the contents of `/home/swc` which is your home
 directory. Finally, the special directory `.` always refers to your
-current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
-same thing, they print the contents of the current directory. This may
-seem like a useless shortcut right now, but we'll see when it is
-needed in a little while.
+current directory, so:
 
-To summarize, the commands `ls ~`, `ls ~/.`, `ls ../../`, and `ls
-/home/swc` all do exactly the same thing. These shortcuts are not
-necessary, they are provided for your convenience.
+    ls .
+
+print what is in your current directory.
+
+
+# The Example: Manipulating Experimental Data Files
+
 
 **Our data set: Cochlear Implants**
 
@@ -358,7 +264,7 @@ navigating to a different directory.
 3.  List all of the files in '/bin' that end in 'o'
 
 BONUS:
-List all of the files in `/bin` that contain the letter `a` or the letter `b`
+List all of the files in `/bin` that contain the letter `a` or the letter `t`
 
 
 * * * *
@@ -634,11 +540,6 @@ size of the file in bytes should also be 10445. Let's confirm this:
 Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
-* * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
 
 * * * *
 
@@ -728,11 +629,18 @@ files. There are many such programs, the easiest one which is
 installed on almost all systems is called `nano`. Navigate to `/tmp`
 and enter the following command:
 
-    nano toBeSorted
+    vi toBeSorted
 
-Now enter the four names as shown above. When you are done, press
-CONTROL+O to write out the file. Press enter to use the file name
-`toBeSorted`. Then press CONTROL+x to exit `nano`.
+Vi is a very useful text editor to know for the shell.  
+
+    vi        opens the editor
+    i         allows you to edit in the file
+    Esc :wq   quits and saves the file
+    Esc :q!   quits without saving
+
+Now enter the four names as shown above. When you are done, 
+write out the file with wq. 
+
 
 When you are back to the command line, enter the command:
 
@@ -748,28 +656,6 @@ name to the file, then sort it and make a new file called Sorted.
 
 * * * *
 
-Let's navigate back to `~/boot-camps/shell/data`. Enter the following command:
-
-    wc Bert/* | sort -k 3 -n
-
-We are already familiar with what the first of these two commands
-does: it creates a list containing the number of characters, words,
-and lines in each file in the `Bert` directory. This list is then
-piped into the `sort` command, so that it can be sorted. Notice there
-are two options given to sort:
-
-1.  `-k 3`: Sort based on the third column
-2.  `-n`: Sort in numerical order as opposed to alphabetical order
-
-Notice that the files are sorted by the number of characters.
-
-* * * *
-**Short Exercise**
-
-Use the `man` command to find out how to sort the output from `wc` in
-reverse order.
-
-* * * *
 
 * * * * 
 **Short Exercise**
@@ -916,24 +802,19 @@ search for files which do not match a certain name.
 
 
 
-## Bonus:
 
-**backtick, xargs**: Example find all files with certain text
 
-**alias** -> rm -i
 
-**variables** -> use a path example
 
-**.bashrc**
 
-**du**
 
-**ln**
 
-**ssh and scp**
 
-**Regular Expressions**
 
-**Permissions**
 
-**Chaining commands together**
+
+
+
+
+
+
