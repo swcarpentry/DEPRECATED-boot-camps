@@ -43,3 +43,7 @@ Wait! Why hasn’t ethane.pdb.data been updated? Because make uses first rule in
 By default, it only executes this rule. If we want make to rebuild ethane.pdb.data, we need to tell it explicitly:
     $ make -f pdbprocess.mk ethane.pdb.data
 
+
+Now both Owner and partner clone the owner's repository e.g.
+
+    $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git 
