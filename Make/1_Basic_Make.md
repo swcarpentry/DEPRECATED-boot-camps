@@ -45,5 +45,4 @@ By default, it only executes this rule. If we want make to rebuild ethane.pdb.da
 
 
 Now both Owner and partner clone the owner's repository e.g.
-
     $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git 
