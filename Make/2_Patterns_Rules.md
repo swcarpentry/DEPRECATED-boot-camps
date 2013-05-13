@@ -73,7 +73,7 @@ The awk command included program.awk in the processing! Why? Because $^ matches 
 We specify here we only want the first dependency in the list (only our .pdb.data file). 
 
 
-Next: [Macros.](3_Macros.md)
+Previous: [Managing files and dependencies](1_Basic_Make.md) Next: [Macros.](3_Macros.md)
 
 
 
