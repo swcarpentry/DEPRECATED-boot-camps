@@ -36,12 +36,11 @@ and a rating. The file `data.py` contains such a dictionary.
 We want to turn this data into an array. For this section, write a function
 that takes the dictionary data as input and generates:
 
-1.  A numpy array where element i,j is the rating of person i for paper
-    j.
+1.  A python list where element i is the name of person i.
 
-2.  A python list where element i is the name of person i.
+2.  A python list where element j is the name of paper j.
 
-3.  A python list where element j is the name of paper j.
+3.  A numpy array where element i,j is the rating of person i for paper j.
 
 Calculate Similarity
 --------------------
