@@ -14,6 +14,6 @@ Make is a good solution to support work automation and helps with data analysis 
 ###We will focus on:
 1. [Basic Make: managing files and dependencies.](1_Basic_Make.md)
 2. [Patterns and rules.](2_Patterns_Rules.md)
-3. [Macros.](3_Marcos.md)
+3. [Macros.](3_Macros.md)
 
 Next: [Basic Make: managing files and dependencies.](1_Basic_Make.md)
