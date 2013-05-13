@@ -25,10 +25,12 @@ It's important to remember that the actions in rules __must__ be indexed with a 
 
 Let’s run our makefile:
     $ make -f pdbprocess.mk
+    
 The output shows us it has run the command we wanted.  This happened because at least one prerequisite was newer than our cubane.pdb.data target. Make uses __last modification time__ as its age. Editing and re-saving a file, for example, will change it. 
 
 Now, if we run the command again:
     $ make -f pdbprocess.mk
+    
 This time, it doesn’t execute any commands, and tells us so. This happened since the target is newer than its prerequisites.
 
 
