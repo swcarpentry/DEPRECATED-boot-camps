@@ -1,5 +1,5 @@
 ##2. Make - patterns and rules.
-
+**Based on materials by Steve Crouch and Greg Wilson**
 
 Let’s look at our dependency graph again. Two big questions: 
 * How are we going to handle multiple dependencies efficiently? How do we generalize?
@@ -73,7 +73,7 @@ The awk command included program.awk in the processing! Why? Because $^ matches 
 We specify here we only want the first dependency in the list (only our .pdb.data file). 
 
 
-
+Next: [Macros.](3_Macros.md)
 
 
 
