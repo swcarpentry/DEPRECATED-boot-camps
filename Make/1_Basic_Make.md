@@ -38,7 +38,7 @@ This time, it doesn’t execute any commands, and tells us so. This happened sin
 
 Now, we could extend our very simple makefile to deal with another .pdb.data target, adding the following:
 
-    $ ethane.pdb.data : ethane.pdb
+     ethane.pdb.data : ethane.pdb
         awk -f program.awk ethane.pdb > ethane.pdb.data
 And to get make to realize ethane.pdb needs to be reprocessed, we can do:
 
