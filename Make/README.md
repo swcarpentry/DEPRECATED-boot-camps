@@ -1,8 +1,8 @@
-#Automation and Make
+##Automation and Make
 
-**Based on materials by Greg Wilson and Steve Crouch**
+**Based on materials by Steve Crouch and Greg Wilson**
 
-##Some questions for you,
+###Some questions for you,
 
 * How often do you repeat the same series of procedures when working with your data files or code?
 * Do you have to re-run the same procedure after every, even very small, change in your data or your code?
