@@ -9,7 +9,6 @@ Let's try running program.awk and redirect the output into a *.pdb.data file.
 If we change the author in the cubane.pdb file, the cubane.pdb.data will be out of date. In other words, cubane.pdb.data depends on cubane.pdb. Every time we change cubane.pdb, we need to update cubane.pdb.data. If we have only one file, then it'd be a short process. But what if we have many files which change as we do our research? Updating any files which depend on them will be very time consuming. And here is where Make (and other automation tools) can help a lot.
 
 Let's create our first Makefile:
-
     $ nano pdbprocess.mk
     # pdbprocess.mk
     cubane.pdb.data : cubane.pdb
@@ -28,7 +27,7 @@ Let’s run our makefile:
     $ make -f pdbprocess.mk
 The output shows us it has run the command we wanted.  This happened because at least one prerequisite was newer than our cubane.pdb.data target. Make uses __last modification time__ as its age. Editing and re-saving a file, for example, will change it. 
 
-Now, if we run the command again
+Now, if we run the command again:
     $ make -f pdbprocess.mk
 This time, it doesn’t execute any commands, and tells us so. This happened since the target is newer than its prerequisites.
 
