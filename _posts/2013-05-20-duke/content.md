@@ -1,8 +1,9 @@
 <a id="location"></a> Location
 ==============================
 
-Clinical Research Training Program, 2nd floor, 2424 Erwin Rd, Durham, NC
+CRTP Classroom, 2nd floor, Hock Plaza
 
+2424 Erwin Rd, Durham, NC
 
 <a id="schedule"></a> Schedule
 ==============================
