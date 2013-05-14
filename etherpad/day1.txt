@@ -1,0 +1,306 @@
+Welcome to MoPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+
+Please be cognizant of whether you are using a public pad or private/team pad, and take appropriate precautions with data you post here!
+ 
+To get class material:
+git clone -b 2013-05-ucdavis --single-branch git://github.com/swcarpentry/boot-camps.git
+
+Minute cards
+https://docs.google.com/forms/d/1po9Mjjtf9iWRHbsip6OEYxyNGFz3KEzTaj8kOviUKSs/
+
+Boot camp materials on GitHub:
+https://github.com/swcarpentry/boot-camps/tree/2013-05-ucdavis
+
+We're on Twitter (Talk about us!)
+@swcarpentry
+@jiffyclub - Matt Davis
+@tracykteal - Tracy Teal
+@caitpickens - Cait Pickens
+
+Hash tag: #UCDsoftwarecarpentry
+
+Guest Internet Login
+hannahmyung@gmail.com
+guest123
+
+Summary of shell lecture:
+two concepts: 
+     the hierarchical file system (Unix and Unix-like systems) 
+     there is a root folder; all other folders are in a parent folder nearer the root; all files are in folders. `directory' and `folder' are synonyms. 
+     
+     Where are you? type pwd 
+     
+     What's in this directory? type ls
+     
+     too much? ls *<pattern>* for only files containing <pattern> (More on PATTERNS below)
+     ls -l for more information
+     ls -lF 
+     
+     get somewhere else:
+     move up one folder:
+     cd ..
+     move to a particular directory:
+     cd <name-of-directory>
+     
+     The <name-of-directory> starts at the directory you're in. So, if in the boot-camps directory, 
+     cd shell
+     will move you to the shell directory in the boot-camps directory.
+     
+     cd 
+     by itself will always move you to your home directory.
+     
+     To get anywhere on your filesystem, type pwd again: that specifies your full path from the root. This is useful when:
+         wriitng scripts that might run anywhere on the system, and need to find some files relative to the whole filesystem and some files relative to the working directory
+         working remotely in systems that are easiest to navigate with the terminal
+         
+         Shortcuts: 
+             (1) the tilde ~ always means your home directory. Try ls ~ 
+             (2) ..
+                 means `up one directory from the current directory'; it works with cd, ls, anything that needs a directory. Try cd ..
+             (3) .
+                 means `current directory'. This is more often useful in scripting than while navigating by hand. 
+             (4) The tab key autocompletes -- if you've typed enough of a name to identify it, it will fill it in. If there are several possibilities, typing tab twice will show you the list of candidates.
+             
+             (5) While you're at the command line:On a Mac,  (?and some *nix systems?) you can open an application, even a GUI app, with open <appname>. If your Mac has a default app for a file, open <filename> will open the default app and open the file in it. 
+             
+             (6) The up-arrow will bring up the last command you ran. You can edit the command and run the altered command. For instance, if you've used ls <longpath> to find the directory you want, type:
+                 <up-arrow>
+                 and replace the ls with cd to move into that directory.
+                 On *nixy systems, Ctrl-a gets you to the beginning of a line, Ctrl-e to the end. (?Maybe not on Windows commandline?) 
+                 
+         PATTERNS: 
+         The example directory is 
+         ls /bin
+         (there's usually a lot in it). 
+         ls /bin/e*
+         shows only bin files that start with e;
+         ls /bin/*e
+         shows only bin files that end with e;
+         ls /bin/*at* 
+         show only bin files that have the pattern <at> anywhere in the filename.
+         
+         
+         CONTROL COMMANDS:
+         Ctrl+C stops whatever is running at the commandline. (If that doesn't work, try Ctrl+D).
+         
+         Ctrl+R will search backwords through your command history. 
+         
+         EXECUTABLES:
+         Programs that do stuff are also called executables. Run them at the commandline by typing their name. The pwd directory you type the program-name in is the directory the program will look for data in. This is really handy: you can organize your data into sensible directories (by date, experiment, etc etc) and easily run your programs on separate data sets. (Generally the program output will also go into the pwd directory.)
+         
+         UTILITIES:
+         are little handy programs that one uses all over the command line. 
+         cat  <argument>
+         prints the contents of the argument(s) at the command line. (This works great for .csv and .txt files, and you can try it on anything. Ctrl+C will get you out of it if you seem to be writing a really enormous wierd file.) 
+
+       Is cat giving you too much? Try less, or head, or tail: less lets you navigate page by page, or search with F, B, the same commands as in man pages; head and tail show you the beginning and end. 
+
+      If your executable/program/utility has text output, you can put that output into a file using >:
+      cat file1 > file2
+      
+      copies file1 into file2. To append another file,
+      cat file3 >> file2
+      The >> appends; using > would overwrite file2 instead.
+      
+      More often you use this with a program, e.g. 
+      myscript > myresults.txt
+
+      WARNING FROM THE FLOOR: FASTA format uses `>' in the files, and you can accidentally use `>' and overwrtie something if you think you're searching for `>' in the file. There are FASTA-specific programs, and also if careful you can quote the `>' as an argument.
+      
+      You can move or rename files with mv; copy with cp; and delete (careful! irreversible!) with rm. Perhaps, after the above experiment, you want to tidy up with
+      mv file2 files.txt
+      rm file1 file3 
+      cp myresults.txt ~/Dropbox/myresults.txt
+ 
+     Nb: you need rm -r to remove a file with directories in it. (-r is `recursive' in a lot of *nixy programs).
+     Need a new directory? mkdir tmp
+     
+      wc counts words, but since the commandline turns everythng into text, counting can be used for a lot of things.
+      wc gives three numbers per file: lines, words, characters. Character count will be pretty close to the file size.  If you ask about a lot of fles, e.g. wc *.csv , the last line will be the total of all the files counted.
+      
+      (Digression into FASTA format (spelling?) for gene sequences; each sequence takes two lines, so knowing the # of lines tells you the # of sequences.)
+
+       The pipe -- that's a vertical line on your keyboard, possibly above the backslash symbol, possibly broken in the middle -- connects the output of the program on the left to the input of the program on the right. Much easier than saving the output as a text file and then opening it with the second program.
+       
+       VI
+       A modal editor; you can be in editing mode or navigating mode, but not both. vi <filename> opens the file to edit. Within vi, i gets you into editing (insert) mode, esc gets you out of insert to navigating, and :wq <filename> saves the file and exits. Beyond that, try a tutorial, e.g. http://www.unix-manuals.com/tutorials/vi/vi-in-10-1.html
+       
+       :q just gets you out. (Very useful if a man page has flung you in.) 
+       
+       The advantages of vi are two: every unixy machine you could possibly telnet into will have it; and if you're good it requires very few keystrokes. 
+       
+       GREP
+       grep finds patterns in files. 
+       grep '<pattern>' *
+       will search for the pattern in all files in the current directory. Each line of grep's results starts with the filename of a hit, then the line with the hit. 
+       There are a whole lot of arguments for grep -- look for a tutorial -- and it's very powerful when piped together with other programs. 
+       
+       FIND
+       finds files rather than lines in files. 
+       
+       If either grep or find are showing you too much, pipe the output into less and navigate around in the results. 
+       
+       
+
+
+
+Responses to the minute cards:
+ * ../<my_directory> - this is used to go back one directory and into a directory called my_directory
+
+ * $ preceeds an environment variable. This is a shorthand or nickname for something commongly used. You can view these using echo. try: echo $PATH, echo $HOME
+   * echo $PATH prints your path environment variable. This is a list of all of the paths that your shell searches when you give it a command to try to understand what you want it to do. For instance, when you type cd, it has to look somewhere to figure out what cd means and searching every possible path will take too long, so there are default paths which is searches.
+
+ * cat prints the contents of a file to the terminal
+
+ * To change directories type cd directory_path
+   * ../ takes you back a directory
+   * cd without anything after it takes you to your home directory
+ * If you get stuck, please ask for help so we can get you caught up as qucikly as possible
+================================
+
+
+For folks intereted in seeing some bioawk in action (maybe after lunch), try installing it first so it's ready to go. To do this, use (note that this requires XCode if you're on a Mac or gcc generally):    `!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!QQ    ``Q!1q
+
+git clone git://github.com/lh3/bioawk.git && cd bioawk && make && mv awk bioawk && sudo cp bioawk /usr/local/bin/
+
+Which installs it to your /usr/local/bin/. bioawk is a fast tool for working with FASTA/FASTQ (and other bioinfo formats). It uses a very safe parser for these, and can be faster and better than using pure Unix command line programs.
+
+
+Git Notes
+Git homepage: http://git-scm.com
+GitHub: https://github.com
+
+Git area:
+Working area: where you edit/add/delete files
+Staging area: where you compose your next commit
+History: All the snapshorts of your project.
+
+Git setup:
+git config --global user.name "Your Name"
+git config --global user.email "your@email"
+git config --global color.ui auto
+
+Pull updates to the repo:
+git pull origin 2013-05-ucdavis
+    (make sure you do that from the boot-camps directory)
+    
+    
+cd
+cd boot-camps
+git pull origin 2013-05-ucdavis
+
+
+We're making a local repository
+cd
+mkdir local_repo
+cd local_repo
+
+Initiate the directory as a git repository
+git init
+
+Tells you what is going on in your repository
+    git status
+
+copy or create a file in your newly created repository
+
+To add a new file to the git repository use 
+
+    git add filename
+
+To get help 
+
+    git help status
+    
+To commit everything in your staging area 
+ in this case the files that you just added
+ 
+    git commit -m 'adding two new files'
+ 
+ The text after the -m is the comments you want to add to the commit
+ 
+ If you don't use the -m you'll get in to vi where you can type your commit message
+ Remember 
+    'i'  to start typing and write the message
+    
+    Esc  :wq to save the file and commit the change
+    
+If you decide that you added something but you're not done yet, and basically you want to 
+take it out of the staging area, you can reset
+
+   git reset HEAD filename
+   
+If you want to get rid of the changes you just made, you can check out the old version
+
+   git checkout -- audtioresult-00215
+   
+The -- specifies that you're done issuing git commands and starting to list file names
+
+To figure out the differences between the git version and the file you have in your repositories
+
+   git diff
+
+To view your history
+
+    git log (all history)
+    git log -2 (last 2 entries)
+    
+The long number after the word commit in the log message is called the hash.
+It's the identifier for the specific commit
+You can use just the first 7 characters to specify the particular commit
+
+Branching:
+List all of your branches:
+git branch
+    (your current branch will have an asterisk next to it)
+
+Make a new branch based on the current branch:
+git branch new-branch-name
+    (note: this doesn't switch you to the new branch)
+
+Switching branches:
+git checkout branch-name
+
+Note: files don't belong to a particular branch until you commit them. then they belong to whichever branch you commit on, not necessarily the branch you were on when you made the files.
+
+Merging branches:
+Checkout the branch you want to merge into, then merge in the branch from which you want changes:
+git merge other-branch-name
+
+Link to visualization of branching
+http://pcottle.github.io/learnGitBranching/?NODEMO
+
+With the exercises:
+http://pcottle.github.io/learnGitBranching/
+
+If you want to see graphs of your own repositories, you can use
+
+    git log --graph --all
+also, gitk --all opens the old Git repository viewer.
+
+Note: there are a couple of Git cheat-sheets in the boot-camps/version-control/git/ directory.
+
+To give someone commit rights on your repo: click on Settings (on the right) and then Collaborators (on the left), then your friend's GitHub username.
+
+View your repo's remotes (with URLs):
+git remote -v
+
+When you're working with someone
+
+Make some changes to your respository
+
+add and commit those changes
+
+   git add filename
+   git commit -m 'edited filename to make it better'
+
+Then push your changes to your repository
+   git push origin master
+   
+Then the other person can pull down the changes
+   git pull origin master
+   
+
+
+
