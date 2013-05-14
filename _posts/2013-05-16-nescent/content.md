@@ -54,7 +54,7 @@ add-on packages.
 ## Gapminder stuff
 
 * We will work with some of the data from the [Gapminder project](http://www.gapminder.org). Here is an excerpt I have prepared for our use. Please save this file on your computer prior to the workshop and note the location!
-  - http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt
+  - <http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt>
 
 ## Add-on packages
 
