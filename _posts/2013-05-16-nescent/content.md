@@ -1,11 +1,11 @@
-Location
-========
+<a id="location"></a> Location
+==============================
 
 NESCent, Suite A200 2024 W. Main St
 
 
-Schedule
-========
+<a id="schedule"></a> Schedule
+==============================
 
 ## Day 1
 
@@ -32,8 +32,8 @@ optional content (will be covered by example as we go but might be tackled expli
 * 3:30-4:30 wrapup, knitr
 
 
-Setup
-=====
+<a id="install"></a> Installation
+=================================
 
 You need to install and test R, RStudio, Git, and a Bash shell before the workshop. Download some files 
 we will use, just in case we have any network problems. It is recommended to also install a few 
