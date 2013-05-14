@@ -7,7 +7,7 @@ NESCent, Suite A200 2024 W. Main St
 <a id="schedule"></a> Schedule
 ==============================
 
-## Day 1
+### Day 1
 
 * 9:00-10:30 R Basics, RStudio basics, workspace, working directory, projects in RStudio
 * 10:30-11:00 *coffee break*
@@ -21,7 +21,7 @@ NESCent, Suite A200 2024 W. Main St
 optional content (will be covered by example as we go but might be tackled explicitly briefly): 
 * lattice graphics
 
-## Day 2
+### Day 2
 
 * 9:00-10:30 using the shell, part 1
 * 10:30-11:00 *coffee break*
@@ -39,24 +39,24 @@ You need to install and test R, RStudio, Git, and a Bash shell before the worksh
 we will use, just in case we have any network problems. It is recommended to also install a few 
 add-on packages.
 
-## R and RStudio
+### R and RStudio
 
 * Download and install [R, a free software environment for statistical computing and graphics](http://www.r-project.org) from [CRAN](http://cran.rstudio.com), the Comprehensive R Archive Network. It is _highly recommended_ to install a precompiled binary distribution for your operating system -- use the links up at the top of the CRAN page linked to above!
 
 * Install RStudio, a powerful user interface for R: <http://www.rstudio.com/ide/download/>
 
-## Testing testing
+### Testing testing
 
 * Do whatever is appropriate for your OS to launch RStudio. You should get a window similar to the screenshot you see [here](http://www.rstudio.com/ide/), but yours will be more boring because you haven't written any code or made any figures yet!
 
 * Put your cursor in the pane labelled Console, which is where you interact with the live R process. Create a simple object with code like `x <- 2 * 4` (followed by enter or return). Then inspect the `x` object by typing `x` followed by enter or return. Obviously you should see the value 8 print to screen. If yes, you are good to go.
 
-## Gapminder stuff
+### Gapminder stuff
 
 * We will work with some of the data from the [Gapminder project](http://www.gapminder.org). Here is an excerpt I have prepared for our use. Please save this file on your computer prior to the workshop and note the location!
   - <http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt>
 
-## Add-on packages
+### Add-on packages
 
 * Installing add-on packages. R is an extensible system and many people share useful code they have developed as a _package_ via CRAN and github. To install a package, for example the [`plyr` package](http://plyr.had.co.nz) for data aggregation, here is one way to do it in the R console (there are others).
 
@@ -68,13 +68,13 @@ Another package you may wish to play around with soon is [`knitr`](http://yihui.
   install.packages("knitr", dependencies = TRUE)
 ```
 
-## Unix Bash Shell
+### Unix Bash Shell
 
 * Please follow the [Software Carpentry instructions](http://software-carpentry.org/bootcamps/setup.html) 
     in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.
 
 
-## Git
+### Git
 
 * Follow the [Software Carpentry instructions](http://software-carpentry.org/bootcamps/setup.html) 
 in the section titled "Git" to install Git.
@@ -92,7 +92,7 @@ click Next. For the remaining settings in the setup wizard, the default options 
 
 
 
-## Further resources
+### Further resources
 
 The above is enough preparation but here are some links if you are interested in reading a bit further.
 
