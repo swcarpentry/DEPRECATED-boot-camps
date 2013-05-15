@@ -81,7 +81,7 @@ All *.pdb.data files should rebuild. Be sure to use a single tab when indenting 
         awk -f program.awk methane.pdb > methane.pdb.data
 
 
-We can depict the above Makefile with a dependency tree:
+We can depict the above Makefile with a dependency graph:
 
                         all
          /----------->/ ^  \<----------\
