@@ -1,7 +1,11 @@
 ##2. Make - patterns and rules.
 **Based on materials by Steve Crouch and Greg Wilson**
 
-Let’s look at a different dependency graph again. 
+
+* How are we going to handle multiple dependencies efficiently? How do we generalize?
+* Can we get rid of the repeated filenames in the dependencies?
+
+Let’s look at a different dependency graph. 
 
     PDBAnalysis.tar.gz
         |
@@ -18,11 +22,6 @@ Let’s look at a different dependency graph again.
         |               |                 |
      cubane.pdb       ethane.pdb        methane.pdb
 
-Two big questions: 
-* How are we going to handle multiple dependencies efficiently? How do we generalize?
-* Can we get rid of the repeated filenames in the dependencies?
-
-Let’s look at this now.
 
 Now, for our tar task, we could add the following into our Makefile (replacing the all target):
 
