@@ -9,7 +9,7 @@
 * If you know how to build pipes using shell, would you like to be able to call them quickly using basically one short command?
 
 
-Make is a good solution to support work automation and helps with data analysis and management. 
+Make is a good solution to support work automation and helps with data analysis and management. Make can be used to automatically update any set of files that depend on another set of files.
 
 ###We will focus on:
 1. [Managing files and dependencies.](1_Basic_Make.md)
