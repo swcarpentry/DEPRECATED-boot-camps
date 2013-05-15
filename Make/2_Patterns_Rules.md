@@ -9,16 +9,10 @@ Let’s look at a different dependency graph.
 
     PDBAnalysis.tar.gz
         |
-        | tar -czf PDBAnalysis.tar.gz
-        |   cubane.pdb.data ... methane.pdb.data
+        |   
         |----------------------------------
         |               |                 |
     cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
-        |       \_______|_______\_________|_______________ program.awk
-        |               |                 |
-        |awk -f         |awk -f           |awk -f  
-        |  program.awk  |  program.awk    |  program.awk
-        |  cubane.pdb   |  ethane.pdb     |  ethane.pdb
         |               |                 |
      cubane.pdb       ethane.pdb        methane.pdb
 
@@ -54,6 +48,23 @@ And, pretending we’ve changed it:
     $ touch program.awk
     $ make -f pdbprocess.mk
 All should rebuild!
+
+If we impose the programs used at each stage on our dependency graph:
+
+    PDBAnalysis.tar.gz
+        |
+        | tar -czf PDBAnalysis.tar.gz
+        |   
+        |----------------------------------
+        |               |                 |
+    cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
+        |       \_______|_______\_________|_______________ program.awk
+        |               |                 |
+        |awk -f         |awk -f           |awk -f  
+        |  program.awk  |  program.awk    |  program.awk
+        |               |                 |  
+        |               |                 |
+     cubane.pdb       ethane.pdb        methane.pdb
 
 
 ###Using pattern rules for more generic rules
