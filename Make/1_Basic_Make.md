@@ -84,10 +84,10 @@ All *.pdb.data files should rebuild. Be sure to use a single tab when indenting 
 We can depict the above Makefile with a dependency tree:
 
                         all
-         /------------/ |  \-----------\
+         /----------->/ ^  \<----------\
         /               |               \  
     cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
-        |               |                 |
+        ^               ^                 ^
         |               |                 |
      cubane.pdb       ethane.pdb        methane.pdb
      
