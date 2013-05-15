@@ -1,7 +1,7 @@
 ##2. Make - patterns and rules.
 **Based on materials by Steve Crouch and Greg Wilson**
 
-Let’s look at our dependency graph again. 
+Let’s look at a different dependency graph again. 
 
     PDBAnalysis.tar.gz
         |
