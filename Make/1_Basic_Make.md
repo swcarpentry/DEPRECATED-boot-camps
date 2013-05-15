@@ -81,4 +81,20 @@ All *.pdb.data files should rebuild. Be sure to use a single tab when indenting 
         awk -f program.awk methane.pdb > methane.pdb.data
 
 
+We can depict the above Makefile with a dependency graph:
+
+                        all
+         /----------->/ ^  \<----------\
+        /               |               \  
+    cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
+        ^               ^                 ^
+        |               |                 |
+     cubane.pdb       ethane.pdb        methane.pdb
+     
+
+A single element (e.g. cubane.pdb.data) can be a target in one rule and a prerequisite in others. It is important to remember that the dependencies in Makefile must make up a directed acyclic graph. If there will be any cyclic dependencies, you'll get an error.
+
+
+
+
 Next: [Patterns and rules.](2_Patterns_Rules.md)
