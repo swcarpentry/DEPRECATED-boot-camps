@@ -1,28 +1,21 @@
 ##2. Make - patterns and rules.
 **Based on materials by Steve Crouch and Greg Wilson**
 
-Let’s look at our dependency graph again. 
 
-    PDBAnalysis.tar.gz
-        |
-        | tar -czf PDBAnalysis.tar.gz
-        |   cubane.pdb.data ... methane.pdb.data
-        |----------------------------------
-        |               |                 |
-    cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
-        |       \_______|_______\_________|_______________ program.awk
-        |               |                 |
-        |awk -f         |awk -f           |awk -f  
-        |  program.awk  |  program.awk    |  program.awk
-        |  cubane.pdb   |  ethane.pdb     |  ethane.pdb
-        |               |                 |
-     cubane.pdb       ethane.pdb        methane.pdb
-
-Two big questions: 
 * How are we going to handle multiple dependencies efficiently? How do we generalize?
 * Can we get rid of the repeated filenames in the dependencies?
 
-Let’s look at this now.
+Let’s look at a different dependency graph. 
+
+    PDBAnalysis.tar.gz
+        |
+        |   
+        |----------------------------------
+        |               |                 |
+    cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
+        |               |                 |
+     cubane.pdb       ethane.pdb        methane.pdb
+
 
 Now, for our tar task, we could add the following into our Makefile (replacing the all target):
 
@@ -55,6 +48,23 @@ And, pretending we’ve changed it:
     $ touch program.awk
     $ make -f pdbprocess.mk
 All should rebuild!
+
+If we impose the programs used at each stage on our dependency graph:
+
+    PDBAnalysis.tar.gz
+        |
+        | tar -czf PDBAnalysis.tar.gz
+        |   
+        |----------------------------------
+        |               |                 |
+    cubane.pdb.data  ethane.pdb.data   methane.pdb.data 
+        |       \_______|_______\_________|_______________ program.awk
+        |               |                 |
+        |awk -f         |awk -f           |awk -f  
+        |  program.awk  |  program.awk    |  program.awk
+        |               |                 |  
+        |               |                 |
+     cubane.pdb       ethane.pdb        methane.pdb
 
 
 ###Using pattern rules for more generic rules
