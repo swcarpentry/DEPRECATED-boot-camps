@@ -85,12 +85,12 @@ Another package you may wish to play around with soon is [`knitr`](http://yihui.
 * Follow the [Software Carpentry instructions](http://software-carpentry.org/bootcamps/setup.html) 
 in the section titled "Git" to install Git.
 
-* If you don't have a GitHub account, please go to https://github.com/ and register for a free account.
+* If you don't have a GitHub account, please go to <https://github.com/> and register for a free account.
 
 * You'll have the choice of working with Git through either the command line, a GUI, or both, whatever 
 you're comfortable with (we'll demonstrate both.) If you want to use the command line, no additional 
 setup is required. The GUI we'll be using is SourceTree, which is free and supports Windows and OS X. The 
-installer can be downloaded here: http://www.sourcetreeapp.com/. 
+installer can be downloaded here: <http://www.sourcetreeapp.com/>.
 
     When you first run SourceTree, enter the username and e-mail address you used for your GitHub account 
 and 
