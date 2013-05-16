@@ -4,6 +4,12 @@
 NESCent, Suite A200 2024 W. Main St
 
 
+<a id="logistics"></a> Logistics
+================================
+
+Google doc for sharing notes and links: <http://bit.ly/11HfaOP>
+
+
 <a id="schedule"></a> Schedule
 ==============================
 
