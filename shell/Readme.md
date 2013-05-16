@@ -20,12 +20,12 @@ A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
 	 
-There are many reasons to learn about the shell. In my opinion, the
+There are many reasons to learn about the shell. In our opinion, the
 most important reasons are that: 
 
 1.  It is very common to encounter the shell and
     command-line-interfaces in scientific computing, so you will
-    probably have to learn it eventually 
+    probably have to learn it eventually.
 
 2.  The shell is a really powerful way of interacting with your
     computer. GUIs and the shell are complementary - by knowing both
@@ -35,11 +35,13 @@ most important reasons are that:
 
 The shell is just a program and there are many different shell
 programs that have been developed. The most common shell (and the one
-we will use) is called the Bourne-Again SHell (bash). Even if bash is
+we will use) is called the Bourne-Again SHell (bash). Every time you open
+the terminal, a shell program is running in it. In most cases this shell program
+will be bash. Even if bash is
 not the default shell, it is usually installed on most systems and can be
 started by typing `bash` in the terminal. Many commands, especially a
 lot of the basic ones, work across the various shells but many things
-are different. I recommend sticking with bash and learning it well.
+are different. We recommend sticking with bash and learning it well.
 ([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
 To open a terminal, just single click on the "Terminal" icon on the
@@ -49,15 +51,15 @@ Desktop.
 
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data from a hearing test. To get
-the data for this test, you will need internet access. Just enter the
-command:
+the data for this test, you will need internet access and an open terminal. 
+Just enter the command:
 
     git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
 
 Followed by:
 
     cd boot-camps
-    git checkout YYYY-MM-PLACE
+    git checkout 2013-05-krakow
 
 These 2 commands will grab all of the data needed for this workshop from the
 internet.
@@ -83,7 +85,7 @@ really easy to do in the shell too.
 
 First we have to know where we are. The program `pwd` (print working
 directory) tells you where you are sitting in the directory tree. The
-command `ls` will list the files in files in the current
+command `ls` will list the files in the current
 directory. Directories are often called "folders" because of how they
 are represented in GUIs. Directories are just listings of files. They
 can contain other files or directories.
@@ -91,19 +93,17 @@ can contain other files or directories.
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
 directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/swc`
-directory. This is the home directory for the `swc` user. That is our
-user name. You can always find out your user name by entering the
-command `whoami`. 
+this case, the `pwd` command tells us that the name of our home directory is.
+The last word in that listing is also the name of your user. You can also find out your user name by entering the command `whoami`. 
 
 **File Types**
 
-When you enter the `ls` command lists the contents of the current
+When you enter the `ls` command, it lists the contents of the current
 directory. There are several items in the home directory, notice that
 they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
 
-Lets create an empty file using the `touch` command. Enter the
+Let's create an empty file using the `touch` command. Enter the
 command:
 
     touch testfile
@@ -178,13 +178,14 @@ Programs that are run from the shell can get extremely complicated. To
 see an example, open up the manual page for the `find` program,
 which we will use later this session. No one can possibly learn all of
 these arguments, of course. So you will probably find yourself
-referring back to the manual page frequently.
+referring back to the manual page frequently. Note: sometimes it can be
+pretty difficult to understand what it says in a man file. However, each time
+you read a man file you will understand more of it. 
 
 **Examining the contents of other directories**
 
 By default, the `ls` commands lists the contents of the working
-directory (i.e. the directory you are in). You can always find the
-directory you are in using the `pwd` command. However, you can also
+directory (i.e. the directory you are in). However, you can also
 give `ls` the names of other directories to view. Navigate to the
 home directory if you are not already there. Then enter the
 command:
@@ -207,24 +208,19 @@ the intermediate directory.
 ## Full vs. Relative Paths
 
 The `cd` command takes an argument which is the directory
-name. Directories can be specified using either a *relative* path a
+name. Directories can be specified using either a *relative* path or a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
-
-    /home/swc
-
-which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
-`home` which sits inside the very top directory in the hierarchy. The
+command and you should see the full name of your home directory. 
+This tells you that you are in a directory that is named the same as
+your user, which sits inside one or more other directories. The
 very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
-directory in `home` which is a directory in `/`.
+referred to as the *root directory*.
 
-Now enter the following command:
+First, figure out again what the full path to your home directory was. Now enter the following command (replace the stuff in <> with the results from `pwd`).
 
-    cd /home/swc/boot-camps/shell
+    cd <pwd-results>/boot-camps/shell
 
 This jumps to `shell`. Now go back to the home directory. We saw
 earlier that the command:
@@ -232,8 +228,8 @@ earlier that the command:
     cd boot-camps/shell
 
 had the same effect - it took us to the `shell` directory. But,
-instead of specifying the full path
-(`/home/swc/boot-camps/shell`), we specified a *relative path*. In
+instead of specifying the full path which started with a /, 
+we specified a *relative path*. In
 other words, we specified the path relative to our current
 directory. A full path always starts with a `/`. A relative path does
 not. You can usually use either a full path or a relative path
@@ -262,12 +258,12 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/swc/boot-camps`. You can chain
+prints the contents of the ~/boot-camps directory. You can chain
 these together, so:
 
     ls ../../
 
-prints the contents of `/home/swc` which is your home
+prints the contents of what should be your home
 directory. Finally, the special directory `.` always refers to your
 current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
 same thing, they print the contents of the current directory. This may
@@ -275,7 +271,7 @@ seem like a useless shortcut right now, but we'll see when it is
 needed in a little while.
 
 To summarize, the commands `ls ~`, `ls ~/.`, `ls ../../`, and `ls
-/home/swc` all do exactly the same thing. These shortcuts are not
+<full path to home directory>` all do exactly the same thing. These shortcuts are not
 necessary, they are provided for your convenience.
 
 **Our data set: Cochlear Implants**
@@ -283,17 +279,17 @@ necessary, they are provided for your convenience.
 A cochlear implant is a small electronic device that is surgically
 implanted in the inner ear to give deaf people a sense of
 hearing. More than a quarter of a million people have them, but there
-is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
-got teenagers with CIs to listen to audio files on their computer and
+are still no widely-accepted benchmark to measure their effectiveness.
+In order to establish a baseline for such a benchmark, teenagers with 
+CIs were asked to listen to audio files on their computer and
 report:
 
 1.  the quietest sound they could hear
 2.  the lowest and highest tones they could hear
 3.  the narrowest range of frequencies they could discriminate
 
-To participate, subjects attended our laboratory and one of our lab
-techs played an audio sample, and recorded their data - when they
+To participate, test subjects were played an audio sample by a lab
+tech who then recorded their data - when the subjects
 first heard the sound, or first heard a difference in the sound.  Each
 set of test results were written out to a text file, one set per file.
 Each participant has a unique subject ID, and a made-up subject name.
@@ -312,8 +308,6 @@ commands to get this data into shape. By the end we would like to:
 
 3.  Get rid of the extraneous "NOTES" files
 
-If we can get through this example in the available time, we will move
-onto more advanced shell topics...
 
 **Wild cards**
 
@@ -344,7 +338,7 @@ So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for files
 that match the given pattern. In this case, it identified four such
 files. Then, it replaced the `*4*1` with the list of files, separated
-by spaces. In other the two commands:
+by spaces. In other words, the two commands:
 
     ls *4*1
     ls 0241 0341 0431 0481
@@ -371,7 +365,7 @@ lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
 directory name. For example, enter:
 
-    cd S<tab>
+    cd b<tab>
 
 The shell will fill in the rest of the directory name for
 `boot-camps`. Now enter:
@@ -426,8 +420,8 @@ the command:
 
     echo $PATH
 
-This will print out the value of the `PATH` environment variable. More
-on environment variables later. Notice that a list of directories,
+This will print out the value of the `PATH` environment variable.
+Notice that a list of directories,
 separated by colon characters, is listed. These are the places the
 shell looks for programs to run. If your program is not in this list,
 then an error is printed. The shell ONLY checks in the places listed
@@ -450,7 +444,7 @@ directory. This tells the shell to run the `hello` program which is
 located right here. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
-    /home/swc/boot-camps/shell/hello
+    <path to home directory>/boot-camps/shell/hello
 
 Or by entering:
 
@@ -542,7 +536,7 @@ This tells the shell to take the output from the `cat au*` command and
 dump it into a new file called `../all_data`. To verify that this
 worked, examine the `all_data` file. If `all_data` had already
 existed, we would overwritten it. So the `>` character tells the shell
-to take the output from what ever is on the left and dump it into the
+to take the output from whatever is on the left and dump it into the
 file on the right. The `>>` characters do almost the same thing,
 except that they will append the output to the file if it already
 exists.
@@ -550,7 +544,7 @@ exists.
 * * * *
 **Short Exercise**
 
-Use `>>`, to append the contents of all of the files which contain the
+Use `>>`, to append the contents of all of the files whose name contains the
 number 4 in the directory:
 
     /home/swc/boot-camps/shell/data/gerdal
@@ -621,9 +615,9 @@ directory, then enter the following command:
     wc Bert/* gerdal/*4*
 
 For each of the files indicated, `wc` has printed a line with three
-numbers. The first is the number of lines in that file. The second is
-the number of words. Finally, the total number of characters is
-indicated. The final line contains this information summed over all of
+numbers and also the file name. The first is the number of lines in that file. The second is
+the number of words. Third, the total number of characters is
+indicated. The bottom line contains this information summed over all of
 the files. Thus, there were 10445 characters in total. 
 
 Remember that the `Bert/*` and `gerdal/*4*` files were merged
@@ -700,14 +694,14 @@ data to come in. Now type:
     are
     good
 
-then CONTROL+d. You should is the lines:
+then CONTROL+d. You should get the lines:
 
     are
     good
 
-printed back at you. The CONTROL+d keyboard shortcut inserts an
+printed back at you  due to you asking tail to return the last two by doing -n 2.The CONTROL+d keyboard shortcut inserts an
 *end-of-file* character. It is sort of the standard way of telling the
-program "I'm done entering data". The `|` character is replaces the
+program "I'm done entering data". The `|` character replaces the
 data from the keyboard with data from another command. You can string
 all sorts of commands together using the pipe. 
 
@@ -751,6 +745,8 @@ Notice that the names are now printed in alphabetical order.
 
 Use the `echo` command and the append operator, `>>`, to append your
 name to the file, then sort it and make a new file called Sorted.
+
+Once you have looked at the new file, remove both toBeSorted and Sorted.
 
 * * * *
 
@@ -863,8 +859,8 @@ from the current directory. Let's exclude all of the directories:
 This tells `find` to locate only files. Now try these commands:
 
     find . -type f -name "*1*"
-    find . -type f -name "*1*" -or -name "*2*" -print
-    find . -type f -name "*1*" -and -name "*2*" -print
+    find . -type f (-name "*1*" -or -name "*2*") -print
+    find . -type f (-name "*1*" -and -name "*2*") -print
 
 The `find` command can acquire a list of files and perform some
 operation on each file. Try this command out:
