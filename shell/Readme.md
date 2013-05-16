@@ -2,7 +2,9 @@
 
 **Material by Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
-# What is the shell how do I access the shell?
+*Modified by Karin Lagesen*
+
+# What is the shell and how do I access the shell?
 
 The *shell* is a program that presents a command line interface
 which allows you to control your computer using commands entered
