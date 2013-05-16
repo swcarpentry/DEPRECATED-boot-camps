@@ -1,0 +1,256 @@
+
+
+Welcome to MoPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+
+Please be cognizant of whether you are using a public pad or private/team pad, and take appropriate precautions with data you post here!
+ 
+To get class material:
+git clone -b 2013-05-ucdavis --single-branch git://github.com/swcarpentry/boot-camps.git
+
+Minute cards
+https://docs.google.com/forms/d/1tTWiPsqqYOVVmUaB4AN5npD6sOCSaIzqLI3AfcfWHzY/
+
+Boot camp materials on GitHub:
+https://github.com/swcarpentry/boot-camps/tree/2013-05-ucdavis
+
+Post Survey:
+https://docs.google.com/forms/d/16DYkXqbNEXmWQl1L_-lR19bd5NT-uvOz74HLV_5yIJg/viewform
+
+Subscribe to other lists at: https://lists.ucdavis.edu/sympa/lists
+
+Davis R users group
+https://groups.google.com/forum/#!forum/davis-rug
+
+Bits and Bytes meeting at Genome Center
+http://bitsandbites.posterous.com/pages/mailing-list
+
+Search for them on the UC Davis mailing lists
+
+SWC Office Hours:
+http://software-carpentry.org/bootcamps/office-hours.html
+
+We're on Twitter (Talk about us!)
+@swcarpentry
+@jiffyclub - Matt Davis
+@tracykteal - Tracy Teal
+@caitpickens - Cait Pickens
+
+Hash tag: #UCDsoftwarecarpentry
+
+Playing with Blocks Exercises:
+https://github.com/swcarpentry/boot-camps/blob/2013-05-ucdavis/python/ipythonblocks/playing_with_blocks_exercises.md
+
+Python notes.
+ * Open "A Math Trick" in the IP Notebook
+ * Shift+Enter to execute the code in the cells.
+ * Results of the previous calculation is stored in _
+ * Need to manually save in the Notebook.
+ * Ctrl-C  twice to shut down Notebook
+
+Navigate to Matt's Notebook by using his IP address in your web browser: 128.120.103.41:8888 (Not working yet).
+
+Working with colors : 3 values of Red Blue Green from 0 to 255
+Even if the text is sitting in the input fields when opening the file, you need to execute (shift+enter) it.
+<function_name>? will bring up a mini help description.
+<function_name>(  wait a moment and a description will display text to help with arguments.
+No "up arrow" functionality in IP Notebook. But you can copy and paste.
+Tab completion works too.
+
+Names in Dictionary structure are case sensitive.
+colors is an example of a dictionary.
+Use 1 value from a dictionary by using [ ] :  colors['SkyBlue']
+Ordering of color values is important.
+
+Playing with blocks
+self can be ignored for now. You do not need to pass it as an argument.
+List the arguments in the order they are specified OR by using the <variable name> =  <value>
+
+In iPythonNotebook you can use tab for tab-complete
+ or you can use it to get the options for a function
+within the function, hit tab after a comma and a space
+
+iPythonNotebook will allow tab completion of files in your directory.
+Structure attributes can be accessed by using a .  :<variable name>. and tab
+
+Grab individual blocks within the grid by using the coordinates.  You can also modify individual blocks wihtout affecting the rest of the grid.
+Indices start at 0 in computer science not 1.
+You can also hold your mouse over a block to see its index.
+
+Access things from the end of a sequence by using negative numbers.  block=grid[-1,-1] (last row, last column).
+
+For loop.
+for block in grid:
+Loop 1 at a time through all the elements of grid
+iPythonNotebook will automatically indent the code in loops.
+When the indentation goes back it indicates the end of the loop.
+
+adding .animate to grid in the for lor loop syntax will show what happens at every iteration.
+for block in grid.animate:
+
+if statement
+
+if block.row == 2:
+    execute things only when the if statement is true
+
+== is the symbol for comparison
+!= not equal
+< less than
+> greater than
+>= greater than or equal
+<= less than or equal
+% modulo operator
+
+if condition 1
+    do something 1
+elif condition 2
+    do something else
+else:
+    do something for the rest
+
+In the if/elif block, if 1 test is true, the rest of the tests are not executed, python goes to the end of the block after executing the code for the true condition
+elif stands for "else if"
+
+"or" links two conditions and executes the code from the if statement either of the conditions are true.   <condition 1> or <condition 2>
+"and" both conditions need to be true.  <condition 1> and <condition 2>
+
+range function.  Specify a range of number you want to loop over.
+range(2,5, 2) will start at 2 and go up to 5 in steps of 2
+range(5) will start at 0 and go up to 5 in steps of 1
+
+Arguments with [ ] means optional arguments
+
+Slicing:   
+grid[10: , :10]  select starting at row 10 till the end and from the begining up to column 10
+: is used to select a range of numbers. If nothing is specified before, start at the begining. If nothing is specified after, go to the end.
+
+in iPythonNotebook you can execute shell commands by using !
+!pwd
+
+Grid specification file
+Lines that start with # are comments. The computer does not read those.
+
+\n is the new line character
+lines[1].split() will split the line on white spaces. Also throws away the \n
+
+Cannot add strings 'str' with numbers 'int' (integer). 
+int( <your string here>) will change the type of the variable to int.
+tab character is \t
+
+random.random((#,#)) generates an matrix of random values.
+
+recarray means record array
+There are rules for every element in a recarray
+You can rename columns in a recarray and refer to those directly.
+
+How do you add a comment at the end of a line?
+Add a # and everything else past that character will be inored by the computer.
+
+Gallery of matplotlib: matplotlib.org/gallery
+
+Use button at the top of the page to insert new cells if needed.
+
+A function is something you want to do multiple times.
+def function_name(input)
+def read_file(ifile):
+
+open -> open a file for various mode 'r' or 'w' 
+.append is used to add values at the end of the list
+Return is what is given back to the main part of the code after the function finishes.
+
+2 Ways to test your code
+    1 - use print statement
+    2 - Nose. (ipython_nose)
+
+Write the test first - Test driven development.
+
+Vince Buffalo: Python functions also have built-in documentation for methods like split, i.e. help(str.split)
+
+assert is another way do tests.  
+asset animal == ref_animal, 'Animals do not match!'
+Test to see if animals match, if they don't, print the string
+Also shows you what line the error showed up on.  It also stops execution.
+
+nose looks for any of the funtion that has test_ and test wether that function fails or not (from the assert statements).
+Nose will stop after the first assert statement that fails PER function but will test all the test functions.
+
+Google for function and help on syntax.
+Good Python books. O'Reilly introduction to Python.
+
+Need to zero out the variables to have something to add to.
+total = 0
+
+By default if you don't assign the return value then python will print. It'll only show the last line in the cell. (Only does this in the Python interpreter, not with scripts).
+
+
+
+
+
+Some comments from the morning minute cards:
+
+What Python things support slicing?
+    Slicing is is really common in Python, pretty much anything that you can index with an
+    integer you can use slices. This includes lists, tuples, and numpy arrays. With something
+    like dictionaries, which doesn't support ordered, numeric indexing, slices won't work.
+
+What's the best way to share IPython notebooks?
+    I often use https://gist.github.com/, which is a convenient way to share one-off files that
+    you wouldn't put in a full-fledged repository. The .ipynb files are text files, you can open
+    them up in a text editor, copy everything, and paste it into the gist and save it. Then copy
+    the URL of the gist and paste it into http://nbviewer.ipython.org.
+
+When to use brackets vs. parantheses?
+    The brackets are used when you're working with a Python container, like lists, tuples,
+    dictionaries, or numpy arrays. Parantheses are used when you're calling a function.
+    That distinction will become a bit more meaningful this afternoon and as you work with
+    Python more.
+
+Why do you sometimes use empty parantheses?
+    If you're calling a function that doesn't take any arguments (that is, there's nothing to pass
+    in), then you call it with empty paranthesis. For example, grid.show() doesn't take any
+    arguments.
+
+Where are spaces important in Python?
+    For the most part Python doesn't care whether you put spaces places. Basically the
+    only place spaces are important is the beginning of a line.
+
+What's the difference between = and ==?
+    A single = is used to assign values to a variable, as in x = 5. Then you can use x in your
+    code anywhere you would use a number. The double == is used to compare two things as
+    in an if-statement: if x == 5:.
+
+What's the difference between elif and else?
+    else is a catch-all, if you have an "else" then if none of the preceding if/elif tests are True
+    then whatever code you have in the "else" will be run. elif is a way to have multiple,
+    exclusive tests.
+
+Do "r" and "c" always refer to rows and columns?
+    Matt chose to have those refer to rows and columns because that made sense, but he
+    could have used row and col, or even froyo and argyle. They are arbitrary names.
+
+How do you know what methods are available on different things, e.g. grid.?
+    This is where IPython is great. If you type out a variable name followed by a period, like
+    grid., and then press tab, IPython will list out all of your options. Not all Python objects
+    will have anything (like integers).
+
+Are there ways to vectorize Python code to make it more efficient?
+    With NumPy data operations are highly vectorized. Another library to check out is pandas.
+
+Libraries in Python...
+    Python comes with a huge "standard library" that's just always available. You can learn
+    more about that here: http://docs.python.org/2/py-modindex.html. Things like Anaconda
+    and Canopy come with a lot of extra scientific libraries, the most interesting of which are
+    probably NumPy, SciPy, matplotlib, IPython, and pandas.
+    
+    If your'e curious about ipythonblocks, that's all actually in a file called ipythonblocks.py in
+    the python/ipythonblocks directory.
+
+Working with strings (split, etc)...
+    Reading files means working with strings, something Python is awesome at. Often when
+    you read a file the data are split into columns separated by some delimiter, e.g. white
+    space or commas. .split() is used to separate a string into a list of individual strings so that
+    you can process each of the data points separately.
+    For example 'a s d f'.split() -> ['a', 's', 'd', 'f'], 'a,s,d,f'.split(',') -> ['a', 's', 'd', 'f'].
+    Read more about strings at http://docs.python.org/2/tutorial/introduction.html#strings.
+
