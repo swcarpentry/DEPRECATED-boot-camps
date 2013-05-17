@@ -29,13 +29,13 @@ optional content (will be covered by example as we go but might be tackled expli
 
 ### Day 2
 
-* 9:00-10:30 using the shell, part 1
+* 9:00-10:30 using the shell pt. 1, forking a github repo, git clone
 * 10:30-11:00 *coffee break*
-* 11:00-12:30 using the shell, part 2
+* 11:00-12:30 using the shell pt. 2, git add, commit, push, and pull
 * 12:30-1:30 *lunch*
-* 1:30-3:00 version control with Git
+* 1:30-3:00 TBD
 * 3:00-3:30 *coffee break*
-* 3:30-4:30 wrapup, knitr
+* 3:30-4:30 TBD
 
 
 <a id="install"></a> Installation
