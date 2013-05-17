@@ -1,7 +1,5 @@
-## use File --> Compile Notebook on me !
-## or click notebook button in top right of editor pane
-## will require knitr package to work
-## to install: install.packages("knitr")
+## basically a copy of 02_slopeComparisonAsiaVsAmericas.R
+## that does not anticipate/require the "Compile Notebook" treatment
 library(lattice)
 str(gCoef <- readRDS("results/gCoef.rds"))
 hDat <-
@@ -16,10 +14,3 @@ dev.off()
 sink("results/slopes_AsiaVsAmericas.txt")
 t.test(slope ~ continent, hDat)
 sink()
-
-## old school of doing something similar is this:
-## at start place a "sink", like so:
-## sink("slopeComparisonAsiaVsAmericas_fromSink.txt")
-## <insert all the comands above here>
-## sink()
-## the file left behind is a (very) poor's man dynamic report
