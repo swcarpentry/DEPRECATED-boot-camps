@@ -26,7 +26,7 @@ Setting up Bitbucket at first requires a user name and password. Let's now  [cre
 
 Now, we can create a repository on Bitbucket,
 
-* Log in to [Bitbucket](https://github.com)
+* Log in to [Bitbucket](https://bitbucket.org/)
 * Click on the Create  icon on the top left, next to the Bitbucket logo
 * Enter Repository name: "bootcamp"
 * Make sure that the private repository option is ticked
