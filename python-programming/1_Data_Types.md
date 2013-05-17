@@ -5,8 +5,9 @@
 **Based on lecture materials by Milad Fatenejad, Joshua R. Smith, and Will
 Trimble**
 
-One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. I'll also go over reading text data from files. 
+**Modified by Karin Lagesen**
+
+One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but we will mention sets and tuples as well. We will also go over reading text data from files. 
 
 ## Lists
 
@@ -41,22 +42,18 @@ We can check the voltageList type (obviously it is of type list):
 
 ```python
 type(voltageList)
-<type 'list'>
 ```
 
-Python lists have the charming (annoying?) feature that they are indexed
-from zero. Therefore, to find the value of the first item in voltageList:
+Python lists have the charming (annoying?) feature that they are indexed from zero. Therefore, to find the value of the first item in voltageList, we have to check index 0:
 
 ```python
 voltageList[0]
--2.0
 ```
 
-And to find the value of the third item
+And to find the value of the third item:
 
 ```python
 voltageList[2]
-0.0
 ```
 
 Lists can be indexed from the back using a negative index. The last item of
@@ -64,14 +61,12 @@ currentList
 
 ```python
 currentList[-1]
-1.0
 ```
 
 and the next-to-last
 
 ```python
 currentList[-2]
-0.5
 ```
 
 You can "slice" items from within a list. Lets say we wanted the second
@@ -79,14 +74,12 @@ through fourth items from voltageList
 
 ```python
 voltageList[1:4]
-[-1.0, 0.0, 1.0]
 ```
 
 Or from the third item to the end
 
 ```python
 voltageList[2:]
-[0.0, 1.0, 2.0]
 ```
 
 and so on.
@@ -115,25 +108,21 @@ current:
 If you want to append items to the end of a list, use the append method.
 
 ```python
-voltageList.append(3.)
-
-voltageList.append(4.)
-
-voltageList
-[-2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
+voltageList.append(3.0)
+voltageList.append(4.0)
+print voltageList
 ```
+You can now see these items at the end of the list.
 
 You can see how that approach might be tedious in certain cases. If you
 want to concatenate a list onto the end of another one, use extend.
 
 ```python
 currentList.extend([1.5, 2.0])
-
-currentList
-[-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
+print currentList
 ```
 
-Question: Is it possible to extend the currentList with the values from the voltageList without typing all the values from the voltageList?
+Question: Is it possible to extend the currentList with the values from the voltageList without typing all the values from the voltageList?!!!!
 
 ### Length of Lists
 
@@ -141,7 +130,6 @@ Sometimes you want to know how many items are in a list. Use the len command.
 
 ```python
 len(voltageList)
-7
 ```
 
 ### Heterogeneous Data
@@ -197,17 +185,19 @@ current: [-1.0, -0.5, 0.0, 0.5, 1.0]
 voltage: [-2.0, -1.0, 0.0, 1.0, 2.0]
 ```
 
-We can read this data into a list type variable pretty easily.
+We can read this data into a variable of type list pretty easily.
 
 ```python
-f = open("data.dat")
+fh = open("data.dat")
+ivdata = fh.readlines()
+fh.close()
 
-ivdata = f.readlines()
+print ivdata
+```
 
-f.close()
+Your results should look like this:
 
-ivdata
-
+```
 ['experiment: current vs. voltage\n',
  'run: 47\n',
  'temperature: 372.756\n',
@@ -223,32 +213,31 @@ out. We will eventually do that.
 ## Tuples
 
 Tuples are another of python's basic compound data types that are almost
-like lists. The difference is that a tuple is immutable; once you set the
+like lists. The difference is that a tuple is immutable; once you put the
 data in it, the tuple cannot be changed. You define a tuple as follows.
 
 ```python
 tup = ("red", "white", "blue")
-
 type(tup)
-<type 'tuple'>
 ```
 
 You can slice and index the tuple exactly like you would a list. Tuples are
 used in the inner workings of python, and a tuple can be used as a key in a
-dictionary, whereas a list cannot as we will see in a moment.
+dictionary (whoch you will see soon), whereas a list cannot as we will see in a moment.
 
 ## Sets
 
 Most introductary python courses do not go over sets this early (or at
-all), but I've found this data type to be useful. The python set type is
+all), but we've found this data type to be useful. The python set type is
 similar to the idea of a mathematical set: it is an unordered collection of
 unique things. Consider:
 
 ```python
 fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+print fruit
 ```
 
-Since sets contain only unique items, there's only one banana in the set
+Your input contained two bananas, but since sets contain only unique items, there's only one banana in the set
 fruit.
 
 You can do things like intersections, unions, etc. on sets just like in
@@ -261,18 +250,17 @@ firstBowl = set(["apple", "banana", "pear", "peach"])
 secondBowl = set(["peach", "watermelon", "orange", "apple"])
 
 set.intersection(firstBowl, secondBowl)
-set(['apple', 'peach'])
 ```
 
 You can check out more info using the help docs. We won't be returning to
-sets, but its good for you to know they exist.
+sets, but its good to know they exist.
 
 ## Dictionaries
 
 Recall our file data.dat which contained our current-voltage data and also
 some metadata. We were able to import the data as a list, but clearly the
 list type is not the optial choice for a data model. The dictionary is a
-much better choice. A python dictionary is a collection of key, value
+much better choice. A python dictionary is a collection of key-value
 pairs. The key is a way to name the data, and the value is the data itself.
 Here's a way to create a dictionary that contains all the data in our
 data.dat file in a more sensible way than a list.
@@ -291,21 +279,18 @@ directly to "run":
 
 ```python
 dataDict["run"]
-47
 ```
 
 If you wanted the voltage data list:
 
 ```python
 dataDict["voltage"]
-[-2.0, -1.0, 0.0, 1.0, 2.0]
 ```
 
 Or perhaps you wanted the last element of the current data list
 
 ```python
 dataDict["current"][-1]
-1.0
 ```
 
 Once a dictionary has been created, you can change the values of the data
@@ -326,20 +311,12 @@ Lets say you wanted all the keys from a particular dictionary.
 
 ```python
 dataDict.keys()
-['run', 'temperature', 'current', 'experiment', 'user', 'voltage']
 ```
 
 also, values
 
 ```python
 dataDict.values()
- 
-[47,
- 3275.39,
- [-1.0, -0.5, 0.0, 0.5, 1.0],
- 'current vs. voltage',
- 'Johann G. von Ulm',
- [-2.0, -1.0, 0.0, 1.0, 2.0]]
 ```
 
 The help documentation has more information about what dictionaries can do.
