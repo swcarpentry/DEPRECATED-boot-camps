@@ -37,6 +37,15 @@ Yesterday, we created a collection of scripts, datafiles and output files in RST
 - Compare the local listing to what you see on [GitHub][]. Same for now, but
   not for long!
 
+## Branching
+We have cloned the repo and everyone should be on the master branch. We want to be on the 2013-05-nescent branch
+- Explain branching on the whiteboard
+- Show how to see different branches on GitHub
+- create a local branch from the remote: `git checkout -b 2013-05-nescent origin/2013-05-nescent`
+- `git branch` to show we have switched to new branch
+- `ls` to show what has changed (we now have that R directory)
+
+
 ## Basics
 
 ### Local Basics
