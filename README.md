@@ -18,7 +18,7 @@ Saturday 18th
 * 12:00 Lunch
 * 13:30 Automation and Make - Aleksandra
 * 14:45 Break
-* 15:00 Introduction to Python 1- Karin
+* 15:00 [Introduction to Python 1](python-programming)- Karin
 * 16:30 Close 
 
 Sunday 19th
