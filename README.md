@@ -4,7 +4,6 @@ boot-camps
 
 Welcome!
 
-# National Evolutionary Synthesis Center
 Software Carpentry boot camp material
 for the May 16-17, 2013 boot camp at the NESCent
 
