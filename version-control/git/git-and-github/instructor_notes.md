@@ -3,7 +3,7 @@
 The goal of this lesson is to introduce the students to [git][] via
 collaboration on [GitHub][].
 
-Yesterday, we created a collection of scripts, datafiles and output files in RSTudio. These are in a GitHub repo, but we would like to clean them up, reformat the directory structure and add README and LICENSE files. The parts about using the shell to do the cleanup are not detailed here (only the git parts).  
+Yesterday, we created a collection of scripts, datafiles and output files in RStudio. These are in a GitHub repo, but we would like to clean them up, reformat the directory structure and add README and LICENSE files. The parts about using the shell to do the cleanup are not detailed here (only the git parts).  
 
 ## Introduction
 
