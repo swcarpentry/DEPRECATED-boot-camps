@@ -1,5 +1,5 @@
 library(plyr) # ddply()
-gDat <- read.delim("gapminderDataFiveYear.txt")
+gDat <- read.delim("data/gapminderDataFiveYear.txt")
 
 ## function that returns estimated intercept and slope from linear regression of
 ## lifeExp on year
@@ -22,9 +22,9 @@ gCoef$continent <-
 gCoef <- droplevels(subset(gCoef, continent != "Oceania"))
 
 ## store in plain text
-write.table(gCoef, "gCoef.txt", quote = FALSE,
+write.table(gCoef, "results/gCoef.txt", quote = FALSE,
             row.names = FALSE, sep = "\t")
 
 ## store in R-specific binary format
 ## will preserve factor level order
-saveRDS(gCoef, "gCoef.rds")
+saveRDS(gCoef, "results/gCoef.rds")
