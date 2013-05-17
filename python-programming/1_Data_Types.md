@@ -118,14 +118,14 @@ print voltageList
 You can now see these items at the end of the list.
 
 You can see how that approach might be tedious in certain cases. If you
-want to concatenate a list onto the end of another one, use extend.
+want to add a list onto the end of another one, use extend.
 
 ```python
 currentList.extend([1.5, 2.0])
 print currentList
 ```
 
-Question: Is it possible to extend the currentList with the values from the voltageList without typing all the values from the voltageList?!!!!
+Question: in the last exercise, we manually, with either append or extend, added value to our list by typing in the list with its values into the commad. How could you avoid doing this?  
 
 ### Length of Lists
 
