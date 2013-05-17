@@ -96,7 +96,7 @@ As we did with the tar rule, simplify the awk rule.
 
 The awk command included program.awk in the processing! Why? Because $^ matches on all dependencies! Which includes program.awk in rule at the end of the file! So by using another make crypticism:
 
-    awk -f program.awk $< > $@
+    awk -f program.awk $^ > $@
 We specify here we only want the first dependency in the list (only our .pdb.data file). 
 
 
