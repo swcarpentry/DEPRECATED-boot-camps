@@ -33,7 +33,7 @@ For clarity, we can even put these configuration options in another file. Extrac
 
     # config.mk
     PROCESSOR=program.awk
-    AWKPROG.awk
+    AWKPROG=awk
 And in our makefile, instead put:
 
     include config.mk
