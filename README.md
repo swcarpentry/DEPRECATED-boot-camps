@@ -31,7 +31,7 @@ Sunday 19th
 * 13:30 [Using version control to manage and share information](version-control) - Aleksandra
 * 14:45 Break
 * 15:00 Final exercise
-* 15:45 Pulling it all together - Aleksandra
+* 16:00 Pulling it all together - Aleksandra
 * 16:30 Close
 
 
