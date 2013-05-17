@@ -7,9 +7,7 @@ collaboration on [GitHub][].
 
 - Say some introductory stuff about version control in general, and git/GitHub
   in particular.
-
-*Note: The figures in the [Visual Git Reference][visual git] can be a good
-stand-in if you have nowhere to draw.*
+- Use the whiteboard to diagram the working directory + staging area + local repo + remote repo
 
 ## Setup and Signup
 
@@ -25,18 +23,14 @@ stand-in if you have nowhere to draw.*
 
 ### Make and Clone
 
-- Make a new demo repo on [GitHub][] explaining the process as you go
-  (probably on your personal account).
-    - Have [GitHub][] put in a README so it can be cloned.
-- Explain that much like a browser navigates to websites using a URL, git talks
-  to remote repositories using a URL.
+- Have everyone fork the 2013-05-nescent repo on [GitHub][]
+- via terminal / git-bash, 'git-clone' the repo to their own machines
+    - Have everyone do this via the `https` URL to avoid having to set up ssh keys.
 - Explain the different URL options:
     - Read/write `ssh` protocol requires [ssh keys][], which make it so you
-      don't have to enter username/password.
+      do not have to enter username/password.
     - `https` protocol takes username/password.
     - `git` protocol is read-only.
-- Now we want to get a copy of this down on all of our computers -- `git clone`!
-    - Have everyone do this via the `https` URL.
 - `ls` to show the new directory and `cd` into it.
 - Compare the local listing to what you see on [GitHub][]. Same for now, but
   not for long!
@@ -45,27 +39,18 @@ stand-in if you have nowhere to draw.*
 
 ### Local Basics
 
-**IMPORTANT:** Make sure you tell people *not* to make their own local changes,
-that will make things really complicated later when people pull. Alternatively,
-you can go ahead and let them do whatever they like and use it as a teaching
-moment on `git reset --hard` in a few minutes when it's time to start the
-collaboration.
-
-- On the white board draw a box representing the working area and explain that
-  this is where you work and make changes.
-- Make a new file called `top-things-to-learn.md` and put the title
-  "Top Things We Want to Learn" in it.
-- `git status` -- highlight the "Untracked files" section and that git tells
-  you how to add a file to the next commit.
+- Review the white board
+- Make some local changes: we will re-organize the mess of R files from yesterday and add a README and LICENSE
+- use `git status` to see changes
 
 ### Composing the Snapshot
 
 - On the white board draw a box representing the staging area (index) and
   explain that this is where we set up the next snapshot of our project.
-    - Like a photographer in a studio, we're putting together a shot before
-      we actually snap the picture.
     - Connect the working area box and the staging box with `git add`.
-- Run `git add top-things-to-learn.md`.
+- Want to see the changes you're about to add? `git diff`!
+- Run `git add` for new files
+- `git diff` -- now it doesn't show anything. `git diff` shows differences
 - `git status` -- highlight the "Changes to be committed" section
   and git telling you how to unstage the new file.
 
@@ -89,32 +74,6 @@ collaboration.
     - Unique identifier of that commit if we ever want to refer to it.
     - Comes from "hashing" stuff associated with the commit, like the changes
       we made.
-    - Can demo hashing with Python's `hashlib.sha1`.
-
-### Previewing Changes
-
-- The file we're making is going to be a list of the top things everyone wants
-  to learn in the boot camp. Add your item (e.g. everyone's names) and save.
-- `git status` -- point out that now we have a modified file instead of an
-  untracked file, but the procedure for adding it to the next snapshot is
-  the same.
-- Want to see the changes you're about to add? `git diff`!
-- `git add`
-- `git diff` -- now it doesn't show anything. `git diff` shows differences
-  between the working area and the staging area.
-    - To see differences between the staging area and the most recent commit
-      use `git diff --cached`.
-- `git commit -m` -- This time use the `-m` option and show that for short
-  commit messages you can just enter them at the command line.
-
-### Undoing Changes
-
-- Say I want to redo the previous commit...
-- `git log --oneline` -- grab the commit has for the point we want to go back to.
-- `git reset COMMIT`
-- `git log --oneline` -- highlight that the latest commit is gone
-- `git status` -- But the changes haven't gone anywhere.
-- I can now edit the file to fix whatever was wrong and re-commit.
 
 ## Sharing
 
@@ -149,51 +108,9 @@ collaboration.
   specify the remote name and branch name: `git push origin master`.
 - Refresh the [GitHub][] view.
 
-### Pulling
-
-**IMPORTANT:** If students have been making local commits, this is the time at
-which they will need to use `git reset --hard` to get back in sync with you.
-
-- `pull` is the reciprocal command, must specify remote and branch.
-- Have everyone `git pull origin master`.
-
 ### Collaborate
 
-- Pick a student to add their top thing to learn to the list:
-    - Add them to the collaborator list on the demo repo.
-    - edit, save, `add`, `commit`, `push`
-- Have everyone `pull`.
-
-### Rebase
-
-#### No Conflict
-
-- Have another student add their thing and push.
-- Make a change to the README file before pulling.
-- Try to push.
-- On the white board draw the situation: my repo and the remote repo have
-  different development histories and git doesn't know how to pull things
-  together.
-- It would be nice if I could move my local change after the remote change.
-  (Draw picture.) There's a command for that!
-- `git fetch origin` -- This gets information from the remote repository
-  but doesn't integrate it with your local repo like `pull` does.
-- `git rebase origin/master` -- `origin/master` is how we specify the fetched
-  data for the remote named "origin" and it's branch named "master".
-    - This replays my local changes on top of the state of the remote repo.
-- `git log --oneline` -- Now my change is after the remote change.
-- `git push origin master`
-- Have everyone pull.
-
-#### With Conflicts
-
-- Again, have a student add their thing and push.
-- Before pulling make a change in the same place in the same file.
-- Try to rebase as above.
-- Explain the conflict message git prints out.
-- Show the conflict messages in the file and how to clean it up.
-- Continue the rebase and push the result.
-- Have everyone pull.
+- Put the students into teams of two and have them initiate pull requests against each other's repos
 
 ## Developing in Branches
 
