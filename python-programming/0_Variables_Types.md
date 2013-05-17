@@ -68,6 +68,15 @@ number = 4
 print string * number 
 ```
 
+Here you see that the word is repeated four times, as many times as number
+
+However, what happens if we add string and number?
+
+```python
+print string + number
+```
+
+
 Python has what we call dynamic and strong typing - dynamic in that you do not have to declare variables, and strong in that it objects if you try to do something to a variable that the data type in that variable does not permit.
 
 ## Type conversion
