@@ -34,8 +34,9 @@ So you could put that data into lists like
 
 ```python
 voltageList = [-2.0, -1.0, 0.0, 1.0, 2.0]
-
+print voltageList
 currentList = [-1.0, -0.5, 0.0, 0.5, 1.0]
+print currentList
 ```
 
 We can check the voltageList type (obviously it is of type list):
@@ -82,7 +83,9 @@ Or from the third item to the end
 voltageList[2:]
 ```
 
-and so on.
+and so on. Note: if you do not have a number on both sides of the :, the side lacking a number will default to 
+the end/beginning of the list
+
 
 ### Append and Extend
 
@@ -138,11 +141,10 @@ Lists can contain hetergeneous data.
 
 ```python
 dataList = ["experiment: current vs. voltage", \
-   ....:             "run", 47, \
-   ....:             "temperature", 372.756, \
-   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
-   ....:             "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
-
+          "run", 47, \
+          "temperature", 372.756, \
+          "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
+          "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
 ```
 
 We've got strings, ints, floats, and even other lists in there. The slashes
@@ -158,13 +160,9 @@ ends up changing the second. Be careful about this fact.
 
 ```python
 a = [1,2]
-
 b = a
-
 a.append(10)
-
-b
-[1, 2, 10]
+print b
 ```
 
 There's a ton more to know about lists, but lets press on. Check out Dive
@@ -205,6 +203,7 @@ Your results should look like this:
  'voltage: [-2.0, -1.0, 0.0, 1.0, 2.0]\n',
  '\n']
 ```
+What happened here, is that each line in your file became one element in the ivdata list.
 
 Right now the data in ivdata isn't in a particularly useful format, but you
 can imagine that with some additional programming we could straighten it
@@ -246,9 +245,9 @@ both sets).
 
 ```python
 firstBowl = set(["apple", "banana", "pear", "peach"])
-
+print firstBowl
 secondBowl = set(["peach", "watermelon", "orange", "apple"])
-
+print secondBowl
 set.intersection(firstBowl, secondBowl)
 ```
 
@@ -278,19 +277,19 @@ the run number is in the second position of the list, you just refer
 directly to "run":
 
 ```python
-dataDict["run"]
+print dataDict["run"]
 ```
 
 If you wanted the voltage data list:
 
 ```python
-dataDict["voltage"]
+print dataDict["voltage"]
 ```
 
 Or perhaps you wanted the last element of the current data list
 
 ```python
-dataDict["current"][-1]
+print dataDict["current"][-1]
 ```
 
 Once a dictionary has been created, you can change the values of the data
@@ -298,12 +297,14 @@ if you like.
 
 ```python
 dataDict["temperature"] = 3275.39
+print dataDict["temperature"]
 ```
 
 You can also add new keys to the dictionary.
 
 ```python
 dataDict["user"] = "Johann G. von Ulm"
+print dataDictt["user"]
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
