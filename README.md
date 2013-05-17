@@ -12,11 +12,11 @@ Saturday 18th
 
 * 09:00 Arrival
 * 09:30 Welcome - Aleksandra
-* 10:00 Using the shell to do more in less time - Karin
+* 10:00 [Using the shell to do more in less time](shell) - Karin
 * 11:00 Break
-* 11:15 Using the shell to do more in less time - Karin (continued)
+* 11:15 [Using the shell to do more in less time](shell)  - Karin (continued)
 * 12:00 Lunch
-* 13:30 Automation and Make - Aleksandra
+* 13:30 [Automation and Make](Make) - Aleksandra
 * 14:45 Break
 * 15:00 [Introduction to Python 1](python-programming)- Karin
 * 16:30 Close 
@@ -24,11 +24,11 @@ Saturday 18th
 Sunday 19th
 
 * 09:00 Arrival
-* 09:30 Introduction to Python 2 - Karin
+* 09:30 [Introduction to Python 2](python-programming) - Karin
 * 10:30 Break
-* 10:45 Introduction to Python 2 - Karin (continued)
+* 10:45 [Introduction to Python 2](python-programming) - Karin (continued)
 * 12:00 Lunch
-* 13:30 Using version control to manage and share information - Aleksandra
+* 13:30 [Using version control to manage and share information](version-control) - Aleksandra
 * 14:45 Break
 * 15:00 Final exercise
 * 15:45 Pulling it all together - Aleksandra
