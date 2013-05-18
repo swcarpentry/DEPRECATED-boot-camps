@@ -1,6 +1,6 @@
 # Software Carpentry at the Jagiellonian University 2013
 
-![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry$
+![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry-banner.png "Software Carpentry logo")
 
 Saturday 18th - Sunday 19th May 2013.
 
