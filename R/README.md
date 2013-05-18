@@ -21,13 +21,13 @@ block04: Sort of a capstone "putting it all together" piece. Revisiting country 
     - output: none
   * [01\_countrySpecificInterceptSlope.R](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/code/01_countrySpecificInterceptSlope.R)
     - inputs: [gapminderDataFiveYear.txt](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/data/gapminderDataFiveYear.txt)
-    - [gCoef.txt](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/results/gCoef.txt), [gCoef.rds](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/results/gCoef.rds)
+    - output: [gCoef.txt](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/results/gCoef.txt), [gCoef.rds](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/results/gCoef.rds)
   * [02\_slopeComparisonAsiaVsAmericas.R](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/code/01_countrySpecificInterceptSlope.R) (we used this to demonstrate the super-lightweight dynamic report generation capability of RStudio: "File --> Compile notebook", also available as a button)
     - inputs: [gCoef.rds](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/results/gCoef.rds)
     - outputs (after compiling notebook): [02_slopeComparisonAsiaVsAmericas.html](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/prose/02_slopeComparisonAsiaVsAmericas.html)
   * [03\_slopeComparisonAsiaVsAmericas.R](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/code/03_slopeComparisonAsiaVsAmericas.R) (we used this to demonstrate how a stand-alone script could leave files behind for later use, such as a PDF and the results of a two-sample t-test; essentially equivalent to 02\_slopeComparionsAsiaVsAmericas.R but optimized for running in a hands-off way)
       - inputs: [gCoef.rds](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/results/gCoef.rds)
-      - outputs: [slopes_AsiaVsAmericas.pdf](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/figs/slopes_AsiaVsAmericans.pdf), [02_slopeComparisonAsiaVsAmericas_fromSink.txt](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/prose/02_slopeComparisonAsiaVsAmericas_fromSink.txt)
+      - outputs: [slopes_AsiaVsAmericas.pdf](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/figs/slopes_AsiaVsAmericas.pdf), [02_slopeComparisonAsiaVsAmericas_fromSink.txt](https://github.com/jennybc/boot-camps/blob/2013-05-nescent/R/prose/02_slopeComparisonAsiaVsAmericas_fromSink.txt)
       
 block05: JENNY mention the stuff you'd hoped to cover on Day 1 that did not quite fit.
 
