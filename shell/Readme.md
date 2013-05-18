@@ -71,7 +71,8 @@ Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
 directory where they have full access to do whatever they want. In
 this case, the `pwd` command tells us that the name of our home directory is.
-The last word in that listing is also the name of your user. You can also find out your user name by entering the command `whoami`. 
+The last word in that listing should also be the name of your user. 
+You can also find out your user name by entering the command `whoami`. 
 
 **File Types**
 
@@ -85,19 +86,7 @@ command:
 
 Then list the contents of the directory again. You should see that a
 new entry, called `testfile`, exists. The `touch` command just
-creates an empty file. 
-
-Some terminals will color files according to their type, directories may
-be blue, executable files may be green. 
-Some terminals will not color the directory entries in this very
-convenient way. In those terminals, use `ls -F` instead of `ls`. The
-`-F` argument modifies the results so that a slash is placed at the
-end of directories. If the file is *executable* meaning that it can be
-run like a program, then a star will be placed at the end of of the
-file name.
-
-You can also use the command `ls -l` to see whether items in a
-directory are files or directories. `ls -l` gives a lot more
+creates an empty file.  `ls -l` gives a lot more
 information too, such as the size of the file and information about
 the owner. If the entry is a directory, then the first letter will be
 a "d". The fifth column shows you the size of the entries in
@@ -183,7 +172,9 @@ The `cd` command takes an argument which is the directory
 name. Directories can be specified using either a *relative* path or a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
-hierarchy. Navigate to the home directory. Now, enter the `pwd`
+hierarchy, all the way from the root and downwards.
+
+ Navigate to the home directory. Now, enter the `pwd`
 command and you should see the full name of your home directory. 
 This tells you that you are in a directory that is named the same as
 your user, which sits inside one or more other directories. The
@@ -195,7 +186,7 @@ First, figure out again what the full path to your home directory was. Now enter
     cd <pwd-results>/boot-camps/shell
 
 This jumps to `shell`. Now go back to the home directory. We saw
-earlier that the command:
+earlier that the command
 
     cd boot-camps/shell
 
@@ -243,7 +234,7 @@ seem like a useless shortcut right now, but we'll see when it is
 needed in a little while.
 
 To summarize, the commands `ls ~`, `ls ~/.`, `ls ../../`, and `ls
-<full path to home directory>` all do exactly the same thing. These shortcuts are not
+<absolute path to home directory>` all do exactly the same thing. These shortcuts are not
 necessary, they are provided for your convenience.
 
 **Our data set: Cochlear Implants**
@@ -288,8 +279,8 @@ directory contains our hearing test data for THOMAS. If we type `ls`,
 we will see that there are a bunch of files which are just four digit
 numbers. By default, `ls` lists all of the files in a given
 directory. The `*` character is a shortcut for "everything". Thus, if
-you enter `ls *`, you will see all of the contents of a given
-directory. Now try this command:
+you enter `ls *`, you will again see all of the contents of a given
+directory. This * can be combined with other characters. Now try this command:
 
     ls *1
 
@@ -339,12 +330,13 @@ directory name. For example, enter:
     cd b<tab>
 
 The shell will fill in the rest of the directory name for
-`boot-camps`. Now enter:
+`boot-camps`. Press enter to enter the boot camp directory. Next, go
+into the shell directory and do:
 
     ls 3<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
-are multiple directories in the home directory which start with
+are multiple file in this directory which start with
 3. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices. 
 
@@ -405,7 +397,7 @@ this directory. Now, try to run the program by entering:
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory `/home/swc/boot-camps/shell` is not in the
+because the directory `<your home directory>/boot-camps/shell` is not in the
 `PATH`. You can run the `hello` program by entering:
 
     ./hello
@@ -435,7 +427,8 @@ contents using the program `cat`. Enter the following command:
 
     cat ex_data.txt
 
-This prints out the contents of the `ex_data.txt` file. If you enter:
+This prints out the contents of the `ex_data.txt` file. This file 
+contains an example of how our data looks like. If you enter:
 
     cat ex_data.txt ex_data.txt
 
@@ -451,7 +444,7 @@ is where the name comes from, `cat` is short for concatenate).
 
 2.  Without changing directories, (you should still be in `shell`),
     use one short command to print the contents of all of the files in
-    the `/home/swc/boot-camps/shell/data/THOMAS` directory.
+    the `<your home directory>/boot-camps/shell/data/THOMAS` directory.
 
 * * * *
 
@@ -464,10 +457,10 @@ case. Enter the following command:
 `less` opens the file, and lets you navigate through it. The commands
 are identical to the `man` program. Use "space" to go forward and hit
 the "b" key to go backwards. The "g" key goes to the beginning of the
-file and "G" goes to the end. Finally, hit "q" to quit.
+file and "G" goes to the end. When you are done, hit "q" to quit.
 
 `less` also gives you a way of searching through files. Just hit the
-"/" key to begin a search. Enter the name of the word you would like
+"/" key to begin a search. Enter the word you would like
 to search for and hit enter. It will jump to the next location where
 that word is found. Try searching the `dictionary.txt` file for the
 word "cat". If you hit "/" then "enter", `less` will just repeat
@@ -490,20 +483,21 @@ in reverse while using `less`.
 
 ## Redirection
 
-Let's turn to the experimental data from the hearing tests that we
-began with. This data is located in the `~/boot-camps/shell/data`
+Let's turn to the experimental data from the hearing tests. 
+This data is located in the `~/boot-camps/shell/data`
 directory. Each subdirectory corresponds to a particular participant
-in the study. Navigate to the `Bert` subdirectory in `data`.  There
+in the study. Navigate to the `Bert` subdirectory in `data`.  First,
+press `ls` to look at the files. There
 are a bunch of text files which contain experimental data
 results. Lets print them all:
 
-    cat au*
+    cat *
 
 Now enter the following command:
 
-    cat au* > ../all_data
+    cat * > ../all_data
 
-This tells the shell to take the output from the `cat au*` command and
+This tells the shell to take the output from the `cat *` command and
 dump it into a new file called `../all_data`. To verify that this
 worked, examine the `all_data` file. If `all_data` had already
 existed, we would overwritten it. So the `>` character tells the shell
@@ -518,7 +512,7 @@ exists.
 Use `>>`, to append the contents of all of the files whose name contains the
 number 4 in the directory:
 
-    /home/swc/boot-camps/shell/data/gerdal
+    <your home directory>/boot-camps/shell/data/gerdal
 
 to the existing `all_data` file. Thus, when you are done `all_data`
 should contain all of the experiment data from Bert and any
@@ -552,7 +546,7 @@ important, let's rename it:
 
     mv all_data all_data_IMPORTANT
 
-Now the file name has been changed to all_data_IMPORTANT. Let's delete
+Type in `ls`, and you will see that file name has been changed to all_data_IMPORTANT. Let's delete
 the backup file now:
 
     rm /tmp/all_data_backup
@@ -568,6 +562,7 @@ Do the following:
 1.  Rename the `all_data_IMPORTANT` file to `all_data`.
 2.  Create a directory in the `data` directory called `foo`
 3.  Then, copy the `all_data` file into `foo`
+4.  Do `ls foo` to have a look inside the new directory 
 
 * * * *
 
@@ -586,7 +581,7 @@ directory, then enter the following command:
     wc Bert/* gerdal/*4*
 
 For each of the files indicated, `wc` has printed a line with three
-numbers and also the file name. The first is the number of lines in that file. The second is
+numbers and also the relative file name. The first is the number of lines in that file. The second is
 the number of words. Third, the total number of characters is
 indicated. The bottom line contains this information summed over all of
 the files. Thus, there were 10445 characters in total. 
@@ -604,12 +599,6 @@ size of the file in bytes should also be 10445. Let's confirm this:
 
 Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
-
-* * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
 
 * * * *
 
@@ -711,11 +700,13 @@ When you are back to the command line, enter the command:
 
 Notice that the names are now printed in alphabetical order.
 
+Try looking at this file with `less` - note that the file itself has not changed.
+
 * * * *
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it and make a new file called Sorted.
+name to the file, then sort it and send the output to a new file called Sorted.
 
 Once you have looked at the new file, remove both toBeSorted and Sorted.
 
@@ -827,11 +818,9 @@ from the current directory. Let's exclude all of the directories:
 
     find . -type f -print
 
-This tells `find` to locate only files. Now try these commands:
+This tells `find` to locate only files. Now try this command:
 
     find . -type f -name "*1*"
-    find . -type f (-name "*1*" -or -name "*2*") -print
-    find . -type f (-name "*1*" -and -name "*2*") -print
 
 The `find` command can acquire a list of files and perform some
 operation on each file. Try this command out:
