@@ -347,7 +347,7 @@ into the shell directory and do:
     ls 3<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
-are multiple directories in this directory which start with
+are multiple file in this directory which start with
 3. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices. 
 
