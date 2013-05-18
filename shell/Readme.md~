@@ -86,7 +86,9 @@ command:
 
 Then list the contents of the directory again. You should see that a
 new entry, called `testfile`, exists. The `touch` command just
-creates an empty file.  `ls -l` gives a lot more
+creates an empty file. 
+
+directory are files or directories. `ls -l` gives a lot more
 information too, such as the size of the file and information about
 the owner. If the entry is a directory, then the first letter will be
 a "d". The fifth column shows you the size of the entries in
