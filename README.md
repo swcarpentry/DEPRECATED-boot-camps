@@ -9,7 +9,7 @@ Python is also used outside science and engineering as a general scripting langu
 
 
 
-<<<<<<< HEAD
+
 ## We will focus on:
 0. [Variable types](0_Variables_Types.md)
 1. [Data types](1_Data_Types.md)
@@ -25,9 +25,9 @@ Next: [Variable types](0_Variables_Types.md)
 * 11:15 [Using the shell to do more in less time](shell)  - Karin (continued)
 * 12:00 Lunch
 * 13:30 [Using the shell to do more in less time](shell)  - Karin (continued)
-* 14:00 [Automation and Make](Make) - Aleksandra
-* 14:45 Break
-* 15:00 [Introduction to Python 1](python-programming)- Karin
+* 14:30 [Automation and Make](Make) - Aleksandra
+* 15:15 Break
+* 15:30 [Introduction to Python 1](python-programming)- Karin
 * 16:30 Close 
 
 Sunday 19th
@@ -57,4 +57,4 @@ The instructors on this boot camp will be  Karin Lagesen and Aleksandra Pawlik.
 ## Contact
 
 For help or more information please contact [Aleksandra Pawlik](mailto:a.pawlik@software.ac.uk).
->>>>>>> 1dca587fb9018b98f39f35336a9652c9eaaae378
+
