@@ -20,30 +20,6 @@ A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
 	 
-There are many reasons to learn about the shell. In our opinion, the
-most important reasons are that: 
-
-1.  It is very common to encounter the shell and
-    command-line-interfaces in scientific computing, so you will
-    probably have to learn it eventually.
-
-2.  The shell is a really powerful way of interacting with your
-    computer. GUIs and the shell are complementary - by knowing both
-    you will greatly expand the range of tasks you can accomplish with
-    your computer. You will also be able to perform many tasks more
-    efficiently.
-
-The shell is just a program and there are many different shell
-programs that have been developed. The most common shell (and the one
-we will use) is called the Bourne-Again SHell (bash). Every time you open
-the terminal, a shell program is running in it. In most cases this shell program
-will be bash. Even if bash is
-not the default shell, it is usually installed on most systems and can be
-started by typing `bash` in the terminal. Many commands, especially a
-lot of the basic ones, work across the various shells but many things
-are different. We recommend sticking with bash and learning it well.
-([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
-
 To open a terminal, just single click on the "Terminal" icon on the
 Desktop.
 
