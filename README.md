@@ -16,7 +16,8 @@ Saturday 18th
 * 11:00 Break
 * 11:15 [Using the shell to do more in less time](shell)  - Karin (continued)
 * 12:00 Lunch
-* 13:30 [Automation and Make](Make) - Aleksandra
+* 13:30 [Using the shell to do more in less time](shell)  - Karin (continued)
+* 14:00 [Automation and Make](Make) - Aleksandra
 * 14:45 Break
 * 15:00 [Introduction to Python 1](python-programming)- Karin
 * 16:30 Close 
