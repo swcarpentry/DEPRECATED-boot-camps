@@ -54,15 +54,16 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access and an open terminal. 
 Just enter the command:
 
-    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+    git clone -b 2013-05-krakow https://github.com/swcarpentry/boot-camps.git
 
 Followed by:
 
     cd boot-camps
     git checkout 2013-05-krakow
+    cd
 
 These 2 commands will grab all of the data needed for this workshop from the
-internet.
+internet, and the last one will return you to where you were.
 
 # Let's get started
 
