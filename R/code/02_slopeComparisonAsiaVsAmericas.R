@@ -2,8 +2,11 @@
 ## or click notebook button in top right of editor pane
 ## will require knitr package to work
 ## to install: install.packages("knitr")
+
 library(lattice)
-str(gCoef <- readRDS("gCoef.rds"))
+## this path is affected by using the Compile Notebook button, which runs where a script lives
+## as opposed to the true home directory for this project
+str(gCoef <- readRDS("../results/gCoef.rds"))
 hDat <-
   droplevels(subset(gCoef,
                     continent %in% c("Asia", "Americas")))
