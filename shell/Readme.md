@@ -76,9 +76,7 @@ The last word in that listing is also the name of your user. You can also find o
 **File Types**
 
 When you enter the `ls` command, it lists the contents of the current
-directory. There are several items in the home directory, notice that
-they are all colored blue. This tells us that all of these items are
-directories as opposed to files.
+directory. There are several items in your home directory.
 
 Let's create an empty file using the `touch` command. Enter the
 command:
@@ -86,10 +84,11 @@ command:
     touch testfile
 
 Then list the contents of the directory again. You should see that a
-new entry, called `testfile`, exists. It is colored white meaning that
-it is a file, as opposed to a directory. The `touch` command just
+new entry, called `testfile`, exists. The `touch` command just
 creates an empty file. 
 
+Some terminals will color files according to their type, directories may
+be blue, executable files may be green. 
 Some terminals will not color the directory entries in this very
 convenient way. In those terminals, use `ls -F` instead of `ls`. The
 `-F` argument modifies the results so that a slash is placed at the
@@ -121,11 +120,7 @@ directory. Enter the following command:
 
     cd boot-camps
 
-Now use the `ls` command to see what is inside this directory. You
-will see that there is an entry which is green. This means that this
-is an executable. If you use `ls -F` you will see that this file ends
-with a star.
-
+Now use the `ls` command to see what is inside this directory. 
 This directory contains all of the material for this boot camp. Now
 move to the directory containing the data for the shell tutorial:
 
@@ -330,8 +325,7 @@ Do each of the following using a single `ls` command without
 navigating to a different directory.
 
 1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+2.  Can you figure out if there are any directories inside of /bin?
 
 * * * *
 
@@ -794,7 +788,7 @@ you enter:
 
     ls -l ../smallest
 
-You will see that the file name is green and the permissions have changed. 
+You will see that the file permissions have changed. 
 Congratulations, you just created your first shell script!
 
 # Searching files
@@ -892,27 +886,3 @@ in `.txt`. You will have to use the `man` command to figure out how to
 search for files which do not match a certain name. 
 
 * * * * 
-
-
-
-## Bonus:
-
-**backtick, xargs**: Example find all files with certain text
-
-**alias** -> rm -i
-
-**variables** -> use a path example
-
-**.bashrc**
-
-**du**
-
-**ln**
-
-**ssh and scp**
-
-**Regular Expressions**
-
-**Permissions**
-
-**Chaining commands together**
