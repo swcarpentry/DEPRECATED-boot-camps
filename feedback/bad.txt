@@ -1,0 +1,12 @@
+Skipped some basics I could have used
+Python intro was a bit slow +1
+Matplotlib was very fast +1
+Will take a while for me to use this on my own
+Pace on some topics was fast
+A lot of material for two days
+Don't assume everyone will have local wifi access (need guest access)
+Some parts were very slow
+Be nice to have a component where we play with our own data
+More on NumPy/SciPy/pandas
+Git was too complicated
+More time for Python would be nice
