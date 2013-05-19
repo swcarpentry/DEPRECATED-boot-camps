@@ -90,25 +90,4 @@ if __name__ == "__main__":
 So, the input file is to be found in sys.argv[1]. 
 
 
-##Exercise
-
-You probably noticed that there are two authors whose initials were not correctly extracted. It's Erich von Däniken and Gérard de Villiers. How can we modify our function to address this problem? Hint: check the methods available for string variables ( dir(str) ).
-
-
-####Solution:
-
-```python
-def get_initials(line):
-    names = line.split()
-    initial = ''
-    i = 0
-    while i < len(names):
-       if not names[i][0].islower():
-           initial=initial+(names[i][0])
-           i = i+1
-       else:
-           i = i+1
-    return initial
-```
-
-Previous: [Flow control](2_Flow_Control.md)
+Previous: [Flow control](2_Flow_Control.md) [Final exercise](4_Conflict.md)
