@@ -26,3 +26,34 @@ Note: in both cases you can assume that the values of the second coordinate pair
 than that of the first. 
 
 Name your python script area.py.
+
+
+## Solutions(s)
+
+The two different versions of this script look like this:
+
+```python
+def area(x1, y1, x2, y2):
+    xdiff = x2 - x1
+    ydiff = y2 - y1
+    area = xdiff * ydiff
+    return area
+
+if __name__ == "__main__":
+    print area(2,2,4,4)
+
+```
+
+```python
+def area(point1, point2):
+    xdiff = point2[0] - point1[0]
+    ydiff = point2[1] - point1[1]
+    area = xdiff * ydiff
+    return area
+
+if __name__ == "__main__":
+    firstpoint = [2,2]
+    secondpoint = [4,4]
+    print area(firstpoint, secondpoint)
+```
+
