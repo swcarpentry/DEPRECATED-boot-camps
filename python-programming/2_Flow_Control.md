@@ -297,7 +297,7 @@ for line in f: # iterate through the text file, one line at a time (think of the
 print areacodes # Print the answer
 ```
 
-** Short exercise **
+**Short exercise**
 
 - Modify the script so that it prints the results nicely, with first the area code, then a 
   tab, and then the number of times it occurs.
