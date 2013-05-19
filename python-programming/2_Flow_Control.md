@@ -142,7 +142,7 @@ spaces) should increase for each looping level. Let's put the following source c
 words =	["first", "second#", "third", "f#ourth", "fifth"]
 counter = 0
 while counter < len(words):
-    if "#" not in words:
+    if "#" not in words[counter]:
        print words[counter]
     counter += 1
 ```
