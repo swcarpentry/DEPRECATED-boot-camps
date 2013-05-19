@@ -249,7 +249,7 @@ for nation, cities in nations.iteritems() :
         print "  " + city 
 ```
 
-break, continue, and else
+break and continue
 =========================
 
 A break statement cuts off a loop from within an inner loop. It helps
