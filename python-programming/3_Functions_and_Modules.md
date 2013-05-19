@@ -90,4 +90,4 @@ if __name__ == "__main__":
 So, the input file is to be found in sys.argv[1]. 
 
 
-Previous: [Flow control](2_Flow_Control.md) [Final exercise](4_Conflict.md)
+Previous: [Flow control](2_Flow_Control.md) Next: [Final exercise](4_Conflict.md)
