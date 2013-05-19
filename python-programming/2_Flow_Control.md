@@ -135,26 +135,18 @@ while loop will just go round and round and continue forever.
 
 **Combining while and if**
 
-To create nested if loops, the indentation (preferably two or four
+To create nested while and if loops, the indentation (preferably two or four
 spaces) should increase for each looping level. Let's put the following source code in a file and save it as "script.py".
 
 ```python
-weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
-tries=0
-manuscript=""
-while tries < len(weapons) :
-    i=0
-    while i<tries :
-        manuscript += weapons[i]
-        manuscript += " and "
-        i+=1
-    manuscript += weapons[tries]
-    manuscript += ". "
-    if tries == len(weapons) - 1 :
-        manuscript += " and nice red uniforms."
-    tries +=1
-print manuscript
+words =	["first", "second#", "third", "f#ourth", "fifth"]
+counter = 0
+while counter < len(words):
+    if "#" not in words:
+       print words[counter]
+    counter += 1
 ```
+
 
 For Loops
 =========
@@ -304,5 +296,14 @@ for line in f: # iterate through the text file, one line at a time (think of the
 
 print areacodes # Print the answer
 ```
+
+** Short exercise **
+
+- Modify the script so that it prints the results nicely, with first the area code, then a 
+  tab, and then the number of times it occurs.
+
+- Modify this script so that it completely ignores phone numbers which contain the number 4.
+
+
 
 Previous: [Data types](1_Data_Types.md) Next: [Functions and modules](3_Functions_and_Modules.md)
