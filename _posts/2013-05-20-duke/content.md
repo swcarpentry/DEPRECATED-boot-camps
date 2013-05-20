@@ -61,18 +61,33 @@ add-on packages.
 
 * Installing add-on packages. R is an extensible system and many people share useful code they have developed as a _package_ via CRAN and github. To install a package, for example the [`plyr` package](http://plyr.had.co.nz) for data aggregation, here is one way to do it in the R console (there are others).
 
-```
-  install.packages("plyr", dependencies = TRUE)
-```
-Another package you may wish to play around with soon is [`knitr`](http://yihui.name/knitr/), which facilitates the creation of dynamic reports. You could install it in the same way.
-```
-  install.packages("knitr", dependencies = TRUE)
-```
+    ```
+    install.packages("plyr", dependencies = TRUE)
+    ```
+    Another package you may wish to play around with soon is [`knitr`](http://yihui.name/knitr/), which facilitates the creation of dynamic reports. You could install it in the same way.
+    ```
+    install.packages("knitr", dependencies = TRUE)
+    ```
 
 ### Unix Bash Shell
 
 * Please follow the [Software Carpentry instructions](http://software-carpentry.org/bootcamps/setup.html) 
     in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.
+
+* If you're using **Windows**, you'll want to install `nano`, an easy-to-use
+    command-line text editor.
+    [Download it here](http://www.nano-editor.org/dist/v2.2/NT/nano-2.2.6.zip),
+    extract to a directory (like C:/Program Files/nano), and add that directory
+    to your Windows path:
+    
+    * Right-click on **My Computer** and select **Properties**
+    
+    * Select the **Environment** page
+
+    * In the System Variables area, find the PATH variable
+
+    * Add the directory you extracted nano in to the end of the path, separating
+        it from the previous directory with a semicolon.
 
 
 ### Git

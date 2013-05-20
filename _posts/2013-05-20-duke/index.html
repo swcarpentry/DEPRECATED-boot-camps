@@ -123,22 +123,35 @@ add-on packages.</p>
 <h3>Add-on packages</h3>
 
 <ul>
-<li>Installing add-on packages. R is an extensible system and many people share useful code they have developed as a <em>package</em> via CRAN and github. To install a package, for example the <a href="http://plyr.had.co.nz"><code>plyr</code> package</a> for data aggregation, here is one way to do it in the R console (there are others).</li>
-</ul>
+<li><p>Installing add-on packages. R is an extensible system and many people share useful code they have developed as a <em>package</em> via CRAN and github. To install a package, for example the <a href="http://plyr.had.co.nz"><code>plyr</code> package</a> for data aggregation, here is one way to do it in the R console (there are others).</p>
 
 <p><code>
-  install.packages("plyr", dependencies = TRUE)
+install.packages("plyr", dependencies = TRUE)
 </code>
 Another package you may wish to play around with soon is <a href="http://yihui.name/knitr/"><code>knitr</code></a>, which facilitates the creation of dynamic reports. You could install it in the same way.
 <code>
-  install.packages("knitr", dependencies = TRUE)
-</code></p>
+install.packages("knitr", dependencies = TRUE)
+</code></p></li>
+</ul>
 
 <h3>Unix Bash Shell</h3>
 
 <ul>
-<li>Please follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instructions</a> 
-in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.</li>
+<li><p>Please follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instructions</a> 
+in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.</p></li>
+<li><p>If you're using <strong>Windows</strong>, you'll want to install <code>nano</code>, an easy-to-use
+command-line text editor.
+<a href="http://www.nano-editor.org/dist/v2.2/NT/nano-2.2.6.zip">Download it here</a>,
+extract to a directory (like C:/Program Files/nano), and add that directory
+to your Windows path:</p>
+
+<ul>
+<li><p>Right-click on <strong>My Computer</strong> and select <strong>Properties</strong></p></li>
+<li><p>Select the <strong>Environment</strong> page</p></li>
+<li><p>In the System Variables area, find the PATH variable</p></li>
+<li><p>Add the directory you extracted nano in to the end of the path, separating
+it from the previous directory with a semicolon.</p></li>
+</ul></li>
 </ul>
 
 <h3>Git</h3>
