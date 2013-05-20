@@ -1,31 +1,34 @@
-# Software Carpentry at the University of Manchester 2013
+# Software Carpentry at the ICSS, University of Southampton 2013
 
 ![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry-banner.png "Software Carpentry logo")
 
-Thursday 18-Friday 19th April 2013.
-
+Monday 3rd-Tuesday 4th June 2013
 ## Timetable
 
-Thursday 18th
+Monday 3rd
 
-* 09:00 Arrival
-* 09:30 [Welcome](Welcome.ppt) - Mike
-* 10:00 Using the shell to do more in less time - David
-* 12:00 Lunch
-* 13:30 Using version control to manage and share information - Aleksandra
-* 15:30 Python and good programming practice - Aleksandra
-* 17:30 Close 
+* 09:00 Arrival & Setup help ?[Welcome](Welcome.ppt) - Robin
+* 09:30 Using the shell to do more in less time - James
+* 10:30 Break
+* 11:00 Using the shell to do more in less time - James
+* 12:30 Lunch
+* 13:30 Using version control to manage and share information - Nelle
+* 15:00 Break
+* 15:30 Using version control to manage and share information - Nelle
+* 17:00 Close
+(We will probably be going to the pub afterwards)
 
 Friday 19th
 
-* 09:00 Arrival
-* 09:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Mike
-* 11:30 How to find out information from the web - David
-* 12:00 Lunch
-* 13:30 Automation and make - David
+* 09:00 Recap
+* 09:30 Reproducible Research - Nelle
+* 10:30 Break
+* 11:00 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - James
+* 12:30 Lunch
+* 13:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - James
 * 15:00 Break
-* 15:30 [Pulling it all together](Conclusion.ppt) - Mike
-* 16:30 Close
+* 15:30 Spare/Something else?
+* 17:00 Close
 
 ## Etherpad
 
@@ -43,8 +46,8 @@ You will also need to have created a free account on [BitBucket](https://bitbuck
 
 ## Instructors
 
-The instructors on this boot camp will be Alexandra Pawlik, David Jones and Mike Jackson.
+The instructors on this boot camp will be Nelle Varoquaux and James Morrison
 
 ## Contact
 
-For help or more information please contact [Mike Jackson](mailto:m.jackson@software.ac.uk).
+For help or more information please contact [Robin Wilson](mailto:r.t.wilson@soton.ac.uk).
