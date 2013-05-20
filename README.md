@@ -32,7 +32,7 @@ Friday 19th
 
 ## Etherpad
 
-We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/7) to provide additional information on the day.
+We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/11) to provide additional information on the day, and to get interactive feedback from you.
 
 ## Hints and tips
 
@@ -40,13 +40,13 @@ We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/7) to provide ad
 
 ## Before you arrive...
 
-You'll need to bring your laptop and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
+You'll need to bring your laptop (*and mains adaptor!*) and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
 
 You will also need to have created a free account on [BitBucket](https://bitbucket.org/account/signup/).
 
 ## Instructors
 
-The instructors on this boot camp will be Nelle Varoquaux and James Morrison
+The instructors on this boot camp will be Nelle Varoquaux and James Morrison.
 
 ## Contact
 
