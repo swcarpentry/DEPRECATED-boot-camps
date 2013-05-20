@@ -5,7 +5,6 @@ You should ensure you have the following software and tools available.
 * Web browser
 * Bash shell
 * A text editor e.g. nano, vi or emacs
-* Make
 * [Git](http://git-scm.com/)
 * Python 2.6 or 2.7
 * Python [pip](https://pypi.python.org/pypi/pip)
@@ -18,7 +17,7 @@ Below there are brief instructions for RedHat/Scientific Linux 6 and Ubuntu.
 
 For more detailed installation instructions and those for Windows and Mac OSX, check out the [general boot camp set-up instructions](http://software-carpentry.org/setup/) and the installation instructions specific to each product.
 
-If you have any problems then please e-mail the boot camp mailing list at [manchester@lists.software-carpentry.org](mailto:manchester@lists.software-carpentry.org).
+If you have any problems then please e-mail the boot camp mailing list at [soton@lists.software-carpentry.org](mailto:soton@lists.software-carpentry.org).
 
 ## To install under RedHat/Scientific Linux 6
 
