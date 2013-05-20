@@ -158,7 +158,7 @@ and Git will add, then commit, both the directory and the file.
 
 > Typically we use version control to save anything that we create manually e.g. source code, scripts, notes, plain-text documents, LaTeX documents. Anything that we create using a compiler or a tool e.g. object files (`.o`, `.a`, `.class`, `.pdf`, `.dvi` etc), binaries (`exe` files), libraries (`dll` or `jar` files) we don't save as we can recreate it from the source. Adopting this approach also means there's no risk of the auto-generated files becoming out of synch with the manual ones.
 
-In order to add all tracked files to the staging area (which may be very useful when you edited, let's say, 10 files and now you want to commit all of them):
+In order to add all tracked files to the staging area and then commit them using one command - which may be very useful when you edited, let's say, 10 files and now you want to commit all of them - you can use `commit` and the  `-a` flag,
 
     $ git commit -a
 
