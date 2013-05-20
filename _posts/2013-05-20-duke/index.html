@@ -84,11 +84,11 @@ reproducibility and share ability</li>
 <ul>
 <li>9:00-10:30 using the shell, part 1</li>
 <li>10:30-11:00 <em>coffee break</em></li>
-<li>11:00-12:30 using the shell, part 2</li>
+<li>11:00-12:30 version control with Git</li>
 <li>12:30-1:30 <em>lunch</em></li>
-<li>1:30-3:00 version control with Git</li>
+<li>1:30-3:00 Make and special topics</li>
 <li>3:00-3:30 <em>coffee break</em></li>
-<li>3:30-4:30 wrapup, knitr</li>
+<li>3:30-4:30 special topics</li>
 </ul>
 
 <h1><a id="install"></a> Installation</h1>
@@ -146,15 +146,39 @@ in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.
 <ul>
 <li><p>Follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instructions</a> 
 in the section titled "Git" to install Git.</p></li>
-<li><p>If you don't have a GitHub account, please go to https://github.com/ and register for a free account.</p></li>
+<li><p>If you don't have a GitHub account, please go to <a href="https://github.com/">https://github.com/</a> and register for a free account.</p></li>
 <li><p>You'll have the choice of working with Git through either the command line, a GUI, or both, whatever 
 you're comfortable with (we'll demonstrate both.) If you want to use the command line, no additional 
 setup is required. The GUI we'll be using is SourceTree, which is free and supports Windows and OS X. The 
-installer can be downloaded here: http://www.sourcetreeapp.com/. </p>
+installer can be downloaded here: <a href="http://www.sourcetreeapp.com/">http://www.sourcetreeapp.com/</a>. </p>
 
 <p>When you first run SourceTree, enter the username and e-mail address you used for your GitHub account 
 and 
 click Next. For the remaining settings in the setup wizard, the default options will work fine.</p></li>
+</ul>
+
+<h3>Make</h3>
+
+<ul>
+<li><p><strong>Linux</strong>: you should already have Make installed.</p></li>
+<li><p><strong>OS X</strong>: follow the instructions under GNU Make on the 
+<a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instruction page</a>
+to install the Apple developer tools.</p></li>
+<li><p><strong>Windows</strong>: you can download make from this link:
+<a href="https://github.com/msysgit/msysgit/blob/master/bin/make.exe?raw=true">https://github.com/msysgit/msysgit/blob/master/bin/make.exe?raw=true</a>.
+Download this file and place it in the "bin" directory where you installed
+Git bash.</p></li>
+<li><p>To test: open a terminal, type "make", and press Enter. You should see 
+the following message:</p>
+
+<pre><code>make: *** No targets specified and no makefile found.  Stop.
+</code></pre>
+
+<p>This means that Make was successfully installed. Otherwise, you'll see this
+error message:</p>
+
+<pre><code>bash: make: command not found
+</code></pre></li>
 </ul>
 
 <h3>Further resources</h3>

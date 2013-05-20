@@ -26,11 +26,11 @@ optional content (will be covered by example as we go but might be tackled expli
 
 * 9:00-10:30 using the shell, part 1
 * 10:30-11:00 *coffee break*
-* 11:00-12:30 using the shell, part 2
+* 11:00-12:30 version control with Git
 * 12:30-1:30 *lunch*
-* 1:30-3:00 version control with Git
+* 1:30-3:00 Make and special topics
 * 3:00-3:30 *coffee break*
-* 3:30-4:30 wrapup, knitr
+* 3:30-4:30 special topics
 
 
 <a id="install"></a> Installation
@@ -80,17 +80,40 @@ Another package you may wish to play around with soon is [`knitr`](http://yihui.
 * Follow the [Software Carpentry instructions](http://software-carpentry.org/bootcamps/setup.html) 
 in the section titled "Git" to install Git.
 
-* If you don't have a GitHub account, please go to https://github.com/ and register for a free account.
+* If you don't have a GitHub account, please go to <https://github.com/> and register for a free account.
 
 * You'll have the choice of working with Git through either the command line, a GUI, or both, whatever 
 you're comfortable with (we'll demonstrate both.) If you want to use the command line, no additional 
 setup is required. The GUI we'll be using is SourceTree, which is free and supports Windows and OS X. The 
-installer can be downloaded here: http://www.sourcetreeapp.com/. 
+installer can be downloaded here: <http://www.sourcetreeapp.com/>. 
 
     When you first run SourceTree, enter the username and e-mail address you used for your GitHub account 
 and 
 click Next. For the remaining settings in the setup wizard, the default options will work fine.
 
+
+### Make
+
+* **Linux**: you should already have Make installed.
+
+* **OS X**: follow the instructions under GNU Make on the 
+    [Software Carpentry instruction page](http://software-carpentry.org/bootcamps/setup.html)
+    to install the Apple developer tools.
+
+* **Windows**: you can download make from this link:
+    <https://github.com/msysgit/msysgit/blob/master/bin/make.exe?raw=true>.
+    Download this file and place it in the "bin" directory where you installed
+    Git bash.
+
+* To test: open a terminal, type "make", and press Enter. You should see 
+    the following message:
+
+        make: *** No targets specified and no makefile found.  Stop.
+
+    This means that Make was successfully installed. Otherwise, you'll see this
+    error message:
+
+        bash: make: command not found
 
 
 ### Further resources
