@@ -40,9 +40,9 @@ We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/11) to provide a
 
 ## Before you arrive...
 
-You'll need to bring your laptop (*and mains adaptor!*) and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
+You'll need to bring your laptop (and mains adaptor!) and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
 
-You will also need to have created a free account on [BitBucket](https://bitbucket.org/account/signup/).
+You will also need to have created a free account on [Github](https://github.com).
 
 ## Instructors
 
