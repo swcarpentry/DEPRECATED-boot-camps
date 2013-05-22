@@ -38,7 +38,7 @@ We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/NNNN) to provide
 
 ## Before you arrive...
 
-You'll need to bring your laptop and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
+If you choose to bring your laptop then before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
 
 You will also need to have created a free account on [BitBucket](https://bitbucket.org/account/signup/).
 
