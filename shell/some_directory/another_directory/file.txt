@@ -1,1 +1,0 @@
-This file has same filename as a file in the parent directory.
