@@ -108,7 +108,9 @@ Something like `somefilename  (Fundamental) ----` is at the bottom of your windo
 
 `XEmacs: somefilename  (Fundamental) ----` is at the bottom of your window? You're in `xemacs`.
 
-Your prompt is `>>>` ? You're in `python` or `ipython`.
+Your prompt is `>>>` ? You're in `python`.
+
+Your prompt is `In [123]:` ? You're in `ipython`.
 
 `--More--(...%)` is at the bottom-left of your window? You're in `more`.
 
