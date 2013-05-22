@@ -912,11 +912,11 @@ Redo exercise 4, except rename only the files which do not already end
 in `.txt`. You will have to use the `man` command to figure out how to
 search for files which do not match a certain name. 
 
-* * * * 
-
-
+* * * *
 
 ## Bonus:
+
+**ssh: See ssh/Readme.md in the same directory as this file
 
 **backtick, xargs**: Example find all files with certain text
 
@@ -930,7 +930,7 @@ search for files which do not match a certain name.
 
 **ln**
 
-**ssh and scp**
+**scp**
 
 **Regular Expressions**
 
