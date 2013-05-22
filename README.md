@@ -1,35 +1,36 @@
-# Software Carpentry at the University of Manchester 2013
+# Software Carpentry at Bath 2013
 
 ![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry-banner.png "Software Carpentry logo")
 
-Thursday 18-Friday 19th April 2013.
+Monday 15-Tuesday 16 July 2013.
 
 ## Timetable
 
-Thursday 18th
+Monday 15th
 
 * 09:00 Arrival
-* 09:30 [Welcome](Welcome.ppt) - Mike
-* 10:00 Using the shell to do more in less time - David
+* 09:30 [Welcome](Welcome.ppt) - Alex/Mike
+* 10:00 Using the shell to do more in less time (inc. break) - Mike
 * 12:00 Lunch
-* 13:30 [Using version control to manage and share information](version-control/README.md) ([slides](version-control/Version-control.ppt))- Aleksandra
-* 15:30 [Python and good programming practice](python-programming/README.md) ([slides](python-programming/Python.ppt))- Aleksandra
+* 13:00 Using version control to manage and share information - Mike
+* 15:00 Break
+* 15:30 Python and good programming practice - Chris
 * 17:30 Close 
 
-Friday 19th
+Tuesday 16th
 
-* 09:00 Arrival
-* 09:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Mike
-* 11:30 How to find out information from the web - David
-* 12:00 Lunch
-* 13:30 Automation and make - David
+* 09:00 Recap
+* 09:30 Documenting code - Chris
+* 10:30 Program design and object-orientation (inc. break) - Chris
+* 12:30 Lunch
+* 13:30 How (and how much) to test software - Mike
 * 15:00 Break
 * 15:30 [Pulling it all together](Conclusion.ppt) - Mike
 * 16:30 Close
 
 ## Etherpad
 
-We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/7) to provide additional information on the day.
+We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/NNNN) to provide additional information on the day. This will be made public on the day.
 
 ## Hints and tips
 
@@ -41,10 +42,10 @@ You'll need to bring your laptop and before you arrive, you'll need to ensure yo
 
 You will also need to have created a free account on [BitBucket](https://bitbucket.org/account/signup/).
 
-## Instructors
+## Organiser and instructors
 
-The instructors on this boot camp will be Alexandra Pawlik, David Jones and Mike Jackson.
+The organiser of this boot camp is Alex Chartier. The instructors will be Chris Woods and Mike Jackson.
 
 ## Contact
 
-For help or more information please contact [Mike Jackson](mailto:m.jackson@software.ac.uk).
+For help or more information please contact [Alex Chartier and Mike Jackson](mailto:host-bath@software-carpentry.org).
