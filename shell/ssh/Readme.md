@@ -2,24 +2,36 @@
 
 SSH is a protocol for securely sending data across an insecure network. An
 important feature of ssh is the ability to perform public key cryptography.
-We are about to take a little digression, but it is important because ssh is
+We are about to take a little digression, but it is important because SSH is
 built in to git at a very low level.
 
 Public key cryptography consists of a public key, a private key, and an
 algorithm called a cypher. Information can be combined with the public key
-using hte cypher in such a way that it appears like nonsense to anyone not
+using the cypher in such a way that it appears like nonsense to anyone not
 holding the private key. The only way to recover the originial information is
 to use the cypher and the private key; using the cypher and the public key only
 generates more nonsense-looking data. In this way, a person can use a public
 key, encrypt data using the cypher + public key, and send the encrypted data
 over the network without fear that someone will intercept the information.
+In pseudo-code this looks something like:
 
-In addition to secure communication, public key cryptography gives
-authentication: you can know that a message sent by someone hasn't been
-altered. A person uses their private key and the cypher on some data to create
-a hash, then sends the data and the resulting hash to someone holding the
-public key. The person on the other end can take the public key + hash and
-verify the data wasn't changed in transit.
+    EncrpytedMessage = encrypt(PublicKey, Cypher, PlainTextMessage)
+    PlainTextMessage = decrypt(PrivateKey, Cypher, EncryptedMessage)
+
+Trying decode a message encrypted with the PublicKey using the PublicKey will
+result in gibberish:
+
+    Gibberish = decrypt(PublicKey, Cypher, EncryptedMessage)
+
+This way, only a recipient holding the private key associated with that public
+key can read the original message.
+
+In addition to secure communication, public key cryptography can provide proof
+of identity and data integrity: you can know that a message sent by someone
+hasn't been altered. A person uses their private key and the cypher on some
+data to create a hash, then sends the data and the resulting hash to someone
+holding the public key. The person on the other end can take the public key +
+hash and verify the data wasn't changed in transit.
 
 ## SSHing to another machine
 
