@@ -12,7 +12,7 @@ Monday 15th
 * 09:30 [Welcome](Welcome.ppt) - Alex/Mike
 * 10:00 Using the shell to do more in less time (inc. break) - Mike
 * 12:00 Lunch
-* 13:00 Using version control to manage and share information - Mike
+* 13:00 [Using version control to manage and share information](version-control/README.md) ([slides](version-control/VersionControl.ppt)) - Mike
 * 15:00 Break
 * 15:30 Python and good programming practice - Chris
 * 17:30 Close 
@@ -23,7 +23,7 @@ Tuesday 16th
 * 09:30 Documenting code - Chris
 * 10:30 Program design and object-orientation (inc. break) - Chris
 * 12:30 Lunch
-* 13:30 How (and how much) to test software - Mike
+* 13:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Mike
 * 15:00 Break
 * 15:30 [Pulling it all together](Conclusion.ppt) - Mike
 * 16:30 Close
