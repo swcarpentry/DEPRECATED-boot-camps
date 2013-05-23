@@ -11,8 +11,10 @@ What we know about software development - code reviews should be about 60 minute
 ## Runtime tests
 
 [dna.py](python/dna/dna.py)
-* Dictionary stores molecular weights of 4 standard DNA nucleotides, A, T, C and G
-* Function takes DNA sequence as input and returns its molecular weight, which is the sum of the weights for each nucelotide in the sequence,
+
+Dictionary stores molecular weights of 4 standard DNA nucleotides, A, T, C and G
+
+Function takes DNA sequence as input and returns its molecular weight, which is the sum of the weights for each nucelotide in the sequence,
 
     $ nano dna.py
     weight = calculate_weight('GATGCTGTGGATAA')
@@ -137,8 +139,10 @@ Consider,
 
 * What haven't we tested for so far? 
 * Have we covered all the nucleotides? 
-* Have we covered all the types of string we can expect? 
+* Have we covered all the types of string we can expect?
 * In addition to test functions, other types of runtime test could we add to `calculate_weight`?
+
+Examples.
 
     calculate_weight('T')
     calculate_weight('C')
@@ -207,7 +211,9 @@ Python [decimal](http://docs.python.org/2/library/decimal.html), floating-point 
 
 `nose.testing` uses absolute tolerance: abs(x, y) <= delta
 
-[Numpy](http://www.numpy.org/)'s `numpy.testing` uses relative tolerance: abs(x, y) <= delta * (max(abs(x), abs(y)). `assert_allclose(actual_array, expected_array, relative_tolerance, absolute_tolerance)`
+[Numpy](http://www.numpy.org/)'s `numpy.testing` uses relative tolerance: abs(x, y) <= delta * (max(abs(x), abs(y)). 
+
+`assert_allclose(actual_array, expected_array, relative_tolerance, absolute_tolerance)`
 
 ## When should we test?
 
@@ -227,6 +233,7 @@ Review tests, like code, to avoid
 * Fail when they should pass, false negatives.
 * Don't test anything. 
 
+Example.
 
     def test_critical_correctness():
         # TODO - will complete this tomorrow!
