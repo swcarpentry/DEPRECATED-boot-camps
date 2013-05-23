@@ -107,7 +107,7 @@ Top tip: good commits are atomic. Code should be reviewable in an hour.
 
 What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. 
 
-What we know about software development - code reviews should be about 60 minutes long*. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial.
+What we know about software development - code reviews should be about 60 minutes long. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial.
 
     $ mkdir images
     $ cd images
@@ -150,7 +150,9 @@ Globally-unique commit identifier.
 
 Undo and redo for directories and files.
 
-Top tip: Commit often increases the granularity of "undo". DropBox and GoogleDrive also preserve every version, they delete old versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for old versions to be stored for longer but you have to pay for this. Using revision control the only bound is space available!
+Top tip: Commit often increases the granularity of "undo". 
+
+DropBox and GoogleDrive also preserve every version, they delete old versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for old versions to be stored for longer but you have to pay for this. Using revision control the only bound is space available!
 
 ### Tags
 
@@ -377,7 +379,7 @@ Keep local, or keep remote, or combine both. Remove all the mark-up.
 
 DropBox and GoogleDrive don't do this. No work is lost.
 
-## Collaborating with our colleagues
+## Collaborating with colleagues
 
 Form into pairs and swap GitHub / BitBucket user names.
 
