@@ -5,6 +5,9 @@
 Monday 3rd-Tuesday 4th June 2013
 ## Timetable
 
+Location: Building 85 (Life Sciences), Room 2207 (this is on the 'ground floor', accessed through the entrance
+by the EEE building - there will be signs from all of the entrances)
+
 Monday 3rd
 
 * 09:00 Arrival & Setup help ?[Welcome](Welcome.ppt) - Robin
