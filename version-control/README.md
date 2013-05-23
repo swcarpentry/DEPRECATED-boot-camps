@@ -19,6 +19,7 @@ Repository for directories and files.
     $ git init
 
 Working directory.
+
 Git configuration files in `.git` directory.
 
     $ ls -A
@@ -61,6 +62,7 @@ Global configuration.
     $ git status template.html
 
 Untracked - working directory but unknown to Git.
+
 Add to staging area / index / cache / "loading dock".
 
     $ git add template.html
@@ -71,7 +73,9 @@ Changes to be committed - in staging area.
     $ git commit
 
 Commit message - provide the "why" about a change.
+
 Top tip: Write useful commit messages, not "made a change".
+
 Commit shows number of files changed and the number of lines inserted or deleted.
 
     $ git status template.html
@@ -100,7 +104,9 @@ Modified - changed but not staged or commited.
     $ git commit -m "Added titles."
 
 Top tip: good commits are atomic. Code should be reviewable in an hour.
+
 What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. 
+
 What we know about software development - code reviews should be about 60 minutes long*. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial.
 
     $ mkdir images
@@ -143,6 +149,7 @@ Globally-unique commit identifier.
     $ ls
 
 Undo and redo for directories and files.
+
 Top tip: Commit often increases the granularity of "undo". DropBox and GoogleDrive also preserve every version, they delete old versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for old versions to be stored for longer but you have to pay for this. Using revision control the only bound is space available!
 
 ### Tags
@@ -166,8 +173,11 @@ Top tip: tag significant "events" e.g. submitted papers, released versions.
     nothing to commit (working directory clean)
 
 `master` is a branch name.
+
 Multiple sets of changes to files and directories - parallel instances.
+
 Useful for bug-fixing releases while working on product, saves user waiting ror next full release.
+
 Create branch for release.
 
     -o---o---o                               master
@@ -212,24 +222,33 @@ Popular model of release branch, master (up-to-date stable) branch, feature-spec
 ## Working from multiple locations with a remote repository
 
 Keep track of changes, a lab notebook for code and documents.
+
 Roll back changes.
+
 Delete repository means lose all files and all changes.
+
 How to access repository from multiple locations e.g. desktop, laptop?
 
 ### GitHub and BitBucket
 
-[GitHub](http://github.com) 
-[BitBucket](http://bitbucket.com)
-[Launchpad](https://launchpad.net)
-[GoogleCode](http://code.google.com)
-[SourceForge](http://sourceforge.net)
+* [GitHub](http://github.com) 
+* [BitBucket](http://bitbucket.com)
+* [Launchpad](https://launchpad.net)
+* [GoogleCode](http://code.google.com)
+* [SourceForge](http://sourceforge.net)
 
 Repositories and project infrastructure e.g. wiki, issue (ticket) and bug trackers, release management, commit-triggered e-mails etc.
+
 All rights are reserved on unlicensed repositories - you should licence it to let people know what they can and cannot do with it.
+
 BitBucket offers free, private repositories to researchers. 
+
 GitHub and others offer pricing plans to host private repositories.
+
 Git =/= GitHub
+
 [Sign-up for free GitHub account](https://github.com/signup/free)
+
 [Sign-up for free BitBucket account](https://bitbucket.org/account/signup/)
 
 ### Create new repository
@@ -264,6 +283,7 @@ Push `master` branch to BitBucket:
 `origin` is an alias for repository URL.
 
 GitHub, click Code tab and click Network tab.
+
 BitBucket, click Source tab and click Commits tab.
 
 ### Cloning a remote repository
@@ -282,7 +302,9 @@ BitBucket, click Source tab and click Commits tab.
     $ git push
 
 GitHub, click Code tab and click Network tab.
+
 BitBucket, click Source tab and click Commits tab.
+
 Always pull before push.
 
 ### Pull changes from a remote repository
@@ -342,7 +364,9 @@ Unmerged.
     $ cat index.html
 
 `<<<<<<< HEAD` lines from local version.
+
 `=======` delimiter
+
 `>>>>>>> 71d34decd32124ea809e50cfbb7da8e3e354ac26` lines from remote version.
 
 Keep local, or keep remote, or combine both. Remove all the mark-up.
@@ -356,8 +380,11 @@ DropBox and GoogleDrive don't do this. No work is lost.
 ## Collaborating with our colleagues
 
 Form into pairs and swap GitHub / BitBucket user names.
+
 One of you (Owner) share your repository with your partner.
+
 Owner, on GitHub, click on the Settings tab, click on Collaborators, add partner's GitHub name.
+
 Owner, on BitBucket, click Share link, add partner's BitBucket name.
 Both,
 
