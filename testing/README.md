@@ -13,14 +13,13 @@ What we know about software development - code reviews should be about 60 minute
 [dna.py](python/dna/dna.py)
 * Dictionary stores molecular weights of 4 standard DNA nucleotides, A, T, C and G
 * Function takes DNA sequence as input and returns its molecular weight, which is the sum of the weights for each nucelotide in the sequence,
- 
-    $ nano dna.py
 
+    $ nano dna.py
     weight = calculate_weight('GATGCTGTGGATAA')
     print weight
     print calculate_weight(123)
 
-`TypeError is an exception, raised, here, by `for...in`.
+`TypeError` is an exception, raised, here, by `for...in`.
 
 Runtime tests can make code robust and behave gracefully.
 
@@ -101,7 +100,7 @@ Verbose, but equivalent, version of `test_a`.
 
 ## `nose` - a Python test framework
 
-`nose` automatically finds, runs and reports on tests.
+[nose](https://pypi.python.org/pypi/nose/) automatically finds, runs and reports on tests.
 
 [xUnit test framework](http://en.wikipedia.org/wiki/XUnit).
 
@@ -141,10 +140,10 @@ Consider,
 * Have we covered all the types of string we can expect? 
 * In addition to test functions, other types of runtime test could we add to `calculate_weight`?
 
-* `calculate_weight('T')`
-* `calculate_weight('C')`
-* `calculate_weight('TC')`
-* `calculate_weight(123)` 
+    calculate_weight('T')
+    calculate_weight('C')
+    calculate_weight('TC')
+    calculate_weight(123)
 
 Test for the latter,
 
@@ -161,7 +160,7 @@ Alternatively,
     def test_123():
         assert_raises(ValueError, calculate_weight, 123)
 
-Another runetime test, for `GATCX`.
+Another run-time test, for `GATCX`,
 
         ...
     except KeyError:
@@ -197,7 +196,7 @@ Compare to within a threshold, or delta e.g. expected == actual  if expected - a
 
 Thresholds are application-specific. 
 
-Python `decimal` module, floating-point arithmetic functions.
+Python [decimal](http://docs.python.org/2/library/decimal.html), floating-point arithmetic functions.
 
     $ python
     >>> from nose.tools import assert_almost_equal
@@ -206,11 +205,9 @@ Python `decimal` module, floating-point arithmetic functions.
     >>> assert_almost_equal(expected, actual, 15)
     >>> assert_almost_equal(expected, actual, 16)
 
-`numpy.testing` `assert_allclose(actual_array, expected_array, relative_tolerance, absolute_tolerance)`
-
 `nose.testing` uses absolute tolerance: abs(x, y) <= delta
 
-`numpy.testing` uses relative tolerance: abs(x, y) <= delta * (max(abs(x), abs(y))
+[Numpy](http://www.numpy.org/)'s `numpy.testing` uses relative tolerance: abs(x, y) <= delta * (max(abs(x), abs(y)). `assert_allclose(actual_array, expected_array, relative_tolerance, absolute_tolerance)`
 
 ## When should we test?
 
@@ -229,6 +226,7 @@ Review tests, like code, to avoid
 * Pass when they should fail, false positives.
 * Fail when they should pass, false negatives.
 * Don't test anything. 
+
 
     def test_critical_correctness():
         # TODO - will complete this tomorrow!
