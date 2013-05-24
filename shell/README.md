@@ -381,6 +381,25 @@ Send exact copy of command and error message to support.
 
 Turn into blog or tutorial. 
 
+# Shell power
+
+(Bentley, Knuth, McIlroy 1986) [Programming pearls: a literate program](http://dl.acm.org/citation.cfm?id=5948.315654) Communications of the ACM, 29(6), pp471-483, June 1986. DOI: [10.1145/5948.315654].
+
+Dr. Drang, [More shell, less egg](http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/), December 4th, 2011.
+
+Common words problem: read a text file, identify the N most frequently-occurring words, print out a sorted list of the withs with their frequences.
+
+10 plus lines of Pascal ... or ... 1 line of shell 
+
+    $ nano words.sh < README.md 22
+    tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed ${1}q
+
+    $ chmod +x words.sh
+    $ nano words.sh < README.md
+    $ nano words.sh < README.md 10
+
+"A wise engineering solution would produce-or better, exploit-reusable parts." - Doug McIlroy
+
 ## Summary
 
 Shell and scripts
