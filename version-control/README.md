@@ -1,4 +1,4 @@
-# Version Control and Git - cheat sheet
+# Version Control and Git - crib sheet
 
 [Git](http://git-scm.com/)
 
@@ -105,9 +105,9 @@ Modified - changed but not staged or commited.
 
 Top tip: good commits are atomic. Code should be reviewable in an hour.
 
-What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. 
+What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. M.E., Fagan (1976). [Design and Code inspections to reduce errors in program development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15 (3): pp. 182-211.
 
-What we know about software development - code reviews should be about 60 minutes long. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial.
+What we know about software development - code reviews should be about 60 minutes long. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial. J. Cohen (2006). [Best Kept Secrets of Peer Code Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
 
     $ mkdir images
     $ cd images
@@ -436,7 +436,7 @@ Edit same file, add, commit, push, resolve conflicts. Repeat!
 * Identify and resolve conflicts when the same file is edited within two repositories without losing any work.
 * Collaboratively work on code or documents or any other files.
 
-### Further reading
+## Links
 
 * K. Ram  (2013) "git can facilitate greater reproducibility and increased transparency in science", Source Code for Biology and Medicine 2013, 8:7 doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey of the range of ways in which version control can help research.
 * [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html) - pictorial representations of what Git commands do.

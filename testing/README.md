@@ -1,12 +1,13 @@
-# Testing - cheat sheet
+# Testing - crib sheet
 
 Thanks to Gordon Webster, the [Digital Biologist](http://www.digitalbiologist.com), for allowing use of his [Python DNA function](http://www.digitalbiologist.com/2011/04/code-tutorial-getting-started-with-python.html).
 
 ## Detecting errors
 
-What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. 
 
-What we know about software development - code reviews should be about 60 minutes long. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial.
+What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. M.E., Fagan (1976). [Design and Code inspections to reduce errors in program development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15 (3): pp. 182-211.
+
+What we know about software development - code reviews should be about 60 minutes long. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial. J. Cohen (2006). [Best Kept Secrets of Peer Code Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
 
 ## Runtime tests
 
@@ -307,7 +308,7 @@ Remember [Geoffrey Chang](http://en.wikipedia.org/wiki/Geoffrey_Chang)
 
 Bruce Eckel, [Thinking in Java, 3rd Edition](http://www.mindview.net/Books/TIJ/),  "If it's not tested, it's broken".
 
-## Find out more...
+## Links
 
 * [Software Carpentry](http://software-carpentry.org/)'s online [testing](http://software-carpentry.org/4_0/test/index.html) lectures.
 * A discussion on [is it worthwhile to write unit tests for scientific research codes?](http://scicomp.stackexchange.com/questions/206/is-it-worthwhile-to-write-unit-tests-for-scientific-research-codes)
