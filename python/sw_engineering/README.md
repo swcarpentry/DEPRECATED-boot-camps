@@ -21,10 +21,21 @@ Exercises
 Exercise 1
 ----------
 
-Make a new text file called `animals.py`. Copy the file reading
-function from yesterday's IPython notebook into the file and modify it
-so that it returns the columns of the file as lists (instead of printing
-certain lines).
+Make a new text file called `animals.py`. Copy the file reading function from
+this morning's IPython notebook into the file and modify it so that it returns
+the columns of the file as lists (instead of printing certain lines).
+
+Hint: Before the loop create an empty lists like:
+
+    times = []
+    dates = []
+    # etc...
+
+In the loop use:
+
+    times.append(...)  # Replace the ... with the appropriate variable
+    dates.append(...)
+    # etc...
 
 Exercise 2
 ----------
