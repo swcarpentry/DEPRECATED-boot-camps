@@ -7,7 +7,7 @@
 * Automation.
 * Bash, "Bourne again shell"
 
-## `man` page
+## Help
 
     $ man COMMAND
 
@@ -17,11 +17,7 @@ Up and down arrows to scroll.
 
 `q` to exit.
 
-## `--help`
-
-Command syntax, usage and other information.
-
-    $ COMMAND --help
+    $ COMMAND --help # Command syntax, usage and other information.
 
 Top tip: if writing your own executables, be consistent, and provide `--help`.
 
