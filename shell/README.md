@@ -381,7 +381,7 @@ Send exact copy of command and error message to support.
 
 Turn into blog or tutorial. 
 
-# Shell power
+## Shell power
 
 (Bentley, Knuth, McIlroy 1986) [Programming pearls: a literate program](http://dl.acm.org/citation.cfm?id=5948.315654) Communications of the ACM, 29(6), pp471-483, June 1986. DOI: [10.1145/5948.315654].
 
