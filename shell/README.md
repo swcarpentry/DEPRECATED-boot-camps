@@ -389,7 +389,7 @@ Dr. Drang, [More shell, less egg](http://www.leancrew.com/all-this/2011/12/more-
 
 Common words problem: read a text file, identify the N most frequently-occurring words, print out a sorted list of the withs with their frequences.
 
-10 plus lines of Pascal ... or ... 1 line of shell 
+10 plus pages of Pascal ... or ... 1 line of shell 
 
     $ nano words.sh < README.md 22
     tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed ${1}q
