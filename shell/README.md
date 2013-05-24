@@ -29,7 +29,7 @@ Top tip: if writing your own executables, be consistent, and provide `--help`.
 
     # This is a comment. It is not executed.
 
-## `who` and `whoami`
+## Who
 
     $ who # who is logged on
     $ whoami # who am I logged on as
@@ -44,7 +44,7 @@ Top tip: if writing your own executables, be consistent, and provide `--help`.
     $ ls -F     # Append / to directories
     $ ls -l     # Permissions, date, size, owner, group...
     $ cd /      # Root directory
-    $ ~         # Home directory. There's no place like ~
+    $ cd ~      # Home directory. There's no place like ~
     $ ls -a     # Hidden files
     $ ls .      # Current directory
     $ ls ..     # Parent directory
@@ -77,12 +77,10 @@ Up arrow browses previous commands
 
 ## Word count
 
-A filter
-
-    $ wc file 
+    $ wc file     # Filter
     $ wc -l file  # Lines only
     $ wc -w file  # Words only
-    $ wc -l *.txt       # Total
+    $ wc -l *.txt # Total
 
 Use to find out number of records in a data file if one record per line.
 
@@ -256,7 +254,7 @@ You will need commands from previous exercises, back ticks, pipe.
     $ WORD="hello"
     $ if [ "$WORD" = "hello" ];  then echo "The same"; fi
 
-## Loops.
+## Loops
 
     $ for i in `cat file`; do echo $i; done | sort | uniq
 
@@ -264,7 +262,9 @@ You will need commands from previous exercises, back ticks, pipe.
         echo $PDB
      done
 
-## Shell scripts - automate
+## Shell scripts
+
+Save retyping.
 
     $ nano protein_filter.sh
     #!/bin/bash
@@ -299,9 +299,9 @@ You will need parts of your comm and from the previous exercise.
 
     $ ls -l # permissions, dates, sizes, owner, group, size in byte, creation/modification date/time, name.
 
-Users, groups, others
+Users, groups, others.
 
-Read, write, execute
+Read, write, execute.
 
     $ chmod a+r haiku.txt     # Add permission - all read
     $ chmod a-r haiku.txt     # Remove permission - all not read
@@ -333,7 +333,7 @@ Read, write, execute
     CTRL-D
     $ wc -l output.txt
 
-# Secure shell ***
+# Secure shell
 
     $ ssh username@boot-camp.software-carpentry.org
     $ ssh username@boot-camp.software-carpentry.org ls # Run remote command
@@ -368,9 +368,7 @@ Top tip: If preparing bundles of your software put the version number or a date 
 
 Top tip: when putting packages up for download also put up the file size and MD5 sum so people can check they've not been tampered with.
 
-## `wget`
-
-Download files via command-line
+## Download files via command-line
 
     $  wget --output-document=bbc.html http://news.bbc.co.uk
 
@@ -398,6 +396,7 @@ Shell and scripts
 
 ## Links
 
+* [Software Carpentry](http://software-carpentry.org/)'s online [shell](http://software-carpentry.org/4_0/shell/) lectures.
 * G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M. Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
 
 ## Exercises
@@ -410,11 +409,11 @@ Shell and scripts
 
     cat `find . -name '*.pdb'` > proteins.txt
 
-## Pipes
+### Pipes
 
     cat `find . -name '*.pdb'` | grep -w 'H' | wc -l > hydrogen_count.txt
 
-## Shell scripts
+### Shell scripts
 
     DATE=`date`
     ATOM=$1
