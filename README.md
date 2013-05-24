@@ -6,14 +6,15 @@ Monday 3rd-Tuesday 4th June 2013
 ## Timetable
 
 Location: Building 85 (Life Sciences), Room 2207 (this is on the 'ground floor', accessed through the entrance
-by the EEE building - there will be signs from all of the entrances)
+by the EEE building - there will be signs from all of the entrances).
+Maps showing the campus are available [from the university](http://www.southampton.ac.uk/about/whereissoton/highfield.html)
 
 Monday 3rd
 
-* 09:00 Arrival & Setup help ?[Welcome](Welcome.ppt) - Robin
-* 09:30 Using the shell to do more in less time - James
+* 09:00 Arrival & Setup help, followed by [Welcome](Welcome.ppt) - Robin
+* 09:30 [Using the shell to do more in less time](shell/README.md) - James
 * 10:30 Break
-* 11:00 Using the shell to do more in less time - James
+* 11:00 [Using the shell to do more in less time](shell/README.md) - James
 * 12:30 Lunch
 * 13:30 Using version control to manage and share information - Nelle
 * 15:00 Break
@@ -30,7 +31,7 @@ Friday 19th
 * 12:30 Lunch
 * 13:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - James
 * 15:00 Break
-* 15:30 Spare/Something else?
+* 15:30 Catch-up time, questions and Conclusion
 * 17:00 Close
 
 ## Etherpad
