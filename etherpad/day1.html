@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/s4zagcuQh1</title>
+</head>
+<body>UMass Amherst Software Carpentry Workshop<br
+/><br
+/><ul><li>Clone the git repository for the class<br/><br
+/></li></ul
+>git clone <a href="https://github.com/swcarpentry/boot-camps.git">https://github.com/swcarpentry/boot-camps.git</a> -b 2013-05-umass<br
+/><br
+/>URL for the course materials<br
+/><br
+/>Notes for the course<br
+/><a href="https://github.com/swcarpentry/boot-camps/tree/2013-05-umass">https://github.com/swcarpentry/boot-camps/tree/2013-05-umass</a><br
+/><br
+/>Minute cards<br
+/><a href="https://docs.google.com/forms/d/1iYWB3C4UmwUlv7XZXInT6hJ9JbixtCury7MUJMhxrr0/">https://docs.google.com/forms/d/1iYWB3C4UmwUlv7XZXInT6hJ9JbixtCury7MUJMhxrr0/</a><br
+/><br
+/>Reestablishing connection...<br
+/><br
+/>On Twitter<br
+/>Tracy @tracykteal<br
+/>SW Carpentry @swcarpentry<br
+/>Erik:&nbsp; @iguananaut&nbsp; (same on GitHub)&nbsp; [~/.ssh<br
+/><br
+/>Why write nice (R) code:<br
+/><a href="http://nicercode.github.io/blog/2013-04-05-why-nice-code/">http://nicercode.github.io/blog/2013-04-05-why-nice-code/</a><br
+/><br
+/><u>Day 1: Morning</u><br
+/><br
+/><ul><li>This is one of the simplest yet easiest to read cheat sheets for shell commands I've been able to find: <a href="http://people.sc.fsu.edu/~pbeerli/classes/isc3313_files/UnixCheatSheet.pdf">http://people.sc.fsu.edu/~pbeerli/classes/isc3313_files/UnixCheatSheet.pdf</a><ul><li>If you're not terribly comfortable working in the command line I strongly recommend keeping this up.&nbsp; While very simple, this represents probably 75% of the commands I use on a daily basis.</li></ul
+></li
+><li>This one is pretty good too: <a href="http://files.fosswire.com/2007/08/fwunixref.pdf">http://files.fosswire.com/2007/08/fwunixref.pdf</a><ul><li>It's denser, but more complete. I don't think there's anything I use on a regular basis that's not on</li
+><li>&nbsp;there (except of course for Python ;)<br/><br
+/></li></ul
+></li
+><li>Git Bash provides a UNIX-like shell for Windows users<ul><li>(I use this all the time when I'm doing development on Windows)</li></ul
+></li
+><li>We teach the command line for a number of reasons, at least one of which is that a lot of software scientists write work in plain text<br/><br
+/></li
+><li>Navigating the filesystem with the shell:<ul><li>pwd -- "present working directory"&nbsp;&nbsp; "Where am I?"</li
+><li>ls -- "list"&nbsp; "What is in here?"</li
+><li>cd &lt;directory_name&gt; -- "change directories"&nbsp; "I want to go to there"<ul><li>You can always type "cd" with no additional arguments to get back to your home directory</li
+><li>"cd ~" also takes you to your home directory</li></ul
+></li
+><li><b>If you're note sure how to use a command type "&lt;command name&gt; --help" (that's with two dashes before help).&nbsp; Most commands support a --help option.&nbsp; Try "ls --help"</b></li
+><li>You can use a wildcard character like * (shift-8 on most U.S. keyboards) to match multiple files.&nbsp; For example "ls *.txt"&nbsp; will list all files in your directory that end ".txt"<ul><li>You can use square brackets to match a specific set of characters like<ul><li>ls [ab]*&nbsp;&nbsp; will match anything starting with a or b</li></ul
+></li
+><li>You can use curly brackets { }&nbsp; to match a list of "sub-strings":<ul><li>ls *.{txt,doc}&nbsp;&nbsp; will match anything ending with .txt or .doc</li></ul
+></li></ul
+></li
+><li>This page has a good summary of the major directories in the Unix hierarchical directory structure: <a href="http://en.wikipedia.org/wiki/Unix_directory_structure">http://en.wikipedia.org/wiki/Unix_directory_structure</a></li
+><li>Use the find command to search for files across multiple directories.<ul><li>For example: find . -name '*.txt' to find all .txt files in your current directory and in the directories "below" it in the hierarchy<br/><br
+/></li></ul
+></li></ul
+></li
+><li>Useful shell commands<ul><li>You can use the "which" command to find out the path corresponding to a particular executable.&nbsp; For example, you can do "which python" to find out where python is running from.&nbsp; This could be very useful if you have several versions of Python on your computer.</li
+><li>The "echo" command echoes text back to you.&nbsp; So if you type in the terminal window</li></ul
+></li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "hello world"<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; it will print "hello world" in your terminal.&nbsp; This might seem rather silly, but it can be&nbsp;&nbsp;<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quite useful for printing environment variables, piping text to other commands, or in&nbsp;<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shell scripts (we'll talk about pipe more later).<br
+/><ul><li>A useful command is "echo $PATH".&nbsp; This shows you what your path is.&nbsp;<ul><li>$ PATH is the special list of directories that the shell searches in for a program when you run a program.&nbsp; For example, when you type "ls" the shell finds "/bin" in $PATH and finds a file called /bin/ls&nbsp; and executes that file<br/><br
+/></li></ul
+></li
+><li>Examining files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li>There are many commands to quickly examine files on the command line.</li
+><li>One such command is "cat" (short for concatenate).&nbsp; You can do "cat filename.txt" to see the contents of filename.txt.</li
+><li>However, cat displays the entire file on your screen, which may not be ideal if you have a large file.&nbsp; If you use the "less" command, you can scroll through the text.&nbsp; For example, you could do "less filename.txt".&nbsp; "less" uses the same commands as "man".&nbsp; So you can type "q", to quit the program.</li
+><li>Some other useful keyboard commands in the "less" program:<ul><li>g -- Go to the begging of the file</li
+><li>G -- G to the *end* of the file</li
+><li>q -- Quit</li
+><li>/&nbsp; -- Search (type / followed by the word you want to search for)<ul><li>In search mode type 'n' to go the the next match<br/><br
+/></li></ul
+></li></ul
+></li
+><li>Moving/Copying/Deleting files</li
+><li>mv&nbsp; -- move (or rename) a file or directory</li
+><li>cp&nbsp;&nbsp; -- copy a file&nbsp; ( use -r&nbsp; for "recursive" to copy a directory )</li
+><li>rm&nbsp;&nbsp; -- remove a file&nbsp; ( use -r again for "recursive" to remove a directory )</li
+><li>You can use "rm -i" command to use the interactive mode for removing.&nbsp; This might prevent you from accidentally deleting something important.</li
+><li>Be really careful with all of these commands, you can easily overwrite files!!!&nbsp; Even "cp" can overwrite files, if you copy a file to a fiename that corresponds to a pre-existing file.<br/><br
+/></li
+><li>Counting words</li
+><li>wc file1 file2 - counts the number of words in file1 and file2<br/><br
+/></li
+><li>Viewing parts of files</li
+><li>head - for viewing the beginning of a file</li
+><li>tail - for viewing the end of a file</li
+><li>if you want to use a full text editor, you can try nano, vi (vim), or Emacs.&nbsp; nano is a ligthweight simple editor.&nbsp; vi/vim and Emacs are more heavy duty and take some time to learn.&nbsp; vi/vim, in particular, is not very intuitive and has a steep learning curve, but it's useful to know a few basic commands because it is frequently a default editor in Unix environments.<br/><br
+/></li
+><li>Piping</li
+><li>You can use the pipe symbol | to string commands together</li
+><li>For example, "wc * | tail -n 1" would count the words for all the files in the current directory and then pass that output to tail which shows you the last line<br/><br
+/></li
+><li>Sort</li
+><li>sort - command that sorts lines of text</li
+><li>example, "sort -k 3 -n" sorts on the 3rd column in numerical order.&nbsp; The -k specifies the column number and -n specifies numerical&nbsp;<br/><br
+/></li
+><li>Shell scripts</li
+><li>If you use a particular command a lot, you can write a shell script and run it as an executable file.&nbsp; A bash script starts with "#!/bin/bash"</li
+><li>Don't forget to make your shell script executable by using the "chmod" command.<br/><br
+/></li
+><li>Searching files</li
+><li>grep - command for searching inside files (not file names, the content)</li
+><li>grep is most powerful when you use it in combination with other commands.&nbsp; For example, "tail filename | grep grape" would get the end of a file and return the lines containing "grape"<br/><br
+/></li></ul
+><u>Day 1: Afternoon</u><br
+/><br
+/><ul><li>SSH<ul><li>a secure protocol for sending data across a network</li
+><li>can be used to securely connect to another computer or prove your identity</li
+><li>based on private and public key pairs</li
+><li>we'll see that SSH keys are useful for Git (a version control system)<br/><br
+/></li></ul
+></li
+><li>Version control<ul><li>examples of version control systems: Git, Subversion (SVN), Mercurial</li
+><li>Dropbox, Google Drive, etc are not version control</li
+><li>You can do version control for yourself (one person), but version control is most useful for 2 or more people</li
+><li>example application: collaborating on a paper<ul><li>you can edit the same file simulataneously with another person.</li
+><li>The version control system keeps track of files and their different versions and who edited which files.&nbsp; This way of working is better than email.</li></ul
+></li
+><li>We'll focus on distributed version control systems (examples: Git, Mercurial, Bazaar).&nbsp; Everyone has a copy of the repository.&nbsp; This is the modern way of doing version control.&nbsp; Older version controls (like Subversion) use a central repository.</li
+><li>Git and GitHub are not the same thing.&nbsp; Git is a version control system whereas GitHub is a website that hosts Git repositories.<br/><br
+/></li></ul
+></li
+><li>Git - The basics<ul><li>Don't worry if Git seems hard.&nbsp; Because it is!&nbsp; It was made for developers by developers.&nbsp; It is pretty complex and not easy to learn, but the reward is that it is very powerful.&nbsp; Also, lots of people use it including people who write scientific software.&nbsp; Knowing Git makes it easy for you to get someone's code and modify it.</li
+><li>Setup your git configuration with the commands.&nbsp; Make sure the email is the same as what you used for your GitHub account.&nbsp; &lt;editor&gt; is whatever text editor you like, for example "vi", "emacs", "nano"</li></ul
+></li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git config --global user.name "John Doe"<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git config --global user.email johndoe@example.com<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git config --global core.editor &lt;editor&gt;<br
+/><ul><li>Generate SSH key pair on your computer</li
+><li>Put your ssh public key in your GitHub account</li
+><li>Erik, once he has your GitHub username, will give you write access to the demo Git repository on GitHub</li
+><li>Clone the umass-example repository onto your computer:&nbsp;</li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git clone git@github.com:iguananaut/umass-example.git<br
+/><ul><li>Notice we used an address that started with git@github.com...&nbsp;&nbsp; This allows us to both read AND write to the repository.&nbsp; If you use an address that starts with http... you might only have read access to the repository</li
+><li>The hidden directory .git stores the history of your entire repository.&nbsp; Generally, you don't want to mess around with this.</li
+><li>Add a new file called "top-things-to-learn.md"&nbsp; Edit this file however you want.</li
+><li>Run the command "git status".&nbsp; Notice that the output says that "top-things-to-learn.md" is untracked.</li
+><li>Use Git to add this file to the staging area: "git add top-things-to-learn.md"</li
+><li>Run "git status" again to see what has changed.&nbsp; Notice that "top-things-to-learn.md"&nbsp; is now listed as "changes to be committed".</li
+><li>Commit the file with a helpful descriptive message explaining what you did in this file:&nbsp;</li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git commit -m "my message"<br
+/><ul><li>Run "git status" again and pay close attention to the output.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li>Edit the "top-things-to-learn.md" file and add some text.</li
+><li>Run "git diff" to see the difference between your current version of "top-things-to-learn.md" and your previously commited version.&nbsp; New lines are prefaced by "+" and deleted lines are prefaced by "-"</li
+><li>Run "git status" and notice that it lists "top-things-to-learn.md" as a modified file, but that this file has not yet been added to the commit.&nbsp; ("no changes added to commit")</li
+><li>Run "git add top-things-to-learn.md" followed by "git commit -m "another message" where "another message" should be replaced by a description of what you did to the file.</li
+><li>Run "git log" to see the history of your repository.&nbsp; Notice the unique long hexadecimal numbers corresponding to each commit.&nbsp; These numbers can be useful for reverting to old versions.<ul><li>A handy variation on the above command is "git log --oneline" which produces an abbreviated log.</li></ul
+></li
+><li>Let's purposely make a mistake.&nbsp; Open up "README.md" and type in some random letters.</li
+><li>Let's commit this change with the command&nbsp;</li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git commit -a -m "something"<br
+/><ul><li>The flag -a is a shortcut which is equivalent to applying "git add" to all modified tracked files, followed by "git commit".&nbsp; Be careful using this command because you may add files that you don't want to be committed.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li>Whoops, we didn't want to commit this change.&nbsp; We can undo this by using the "git reset" command.&nbsp; "git reset" allows us to rewind history back to a particular "snapshot".&nbsp; Use "git log --oneline" to find the number corresponding to the commit you want to revert to.&nbsp; Then use "git reset commit_number" to go back to that version.&nbsp; For example:</li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git reset c8d6a28<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your particular number will probably be different<br
+/><ul><li>Open up "README.md" in your text editor and delete the garbage text you entered earlier.</li
+><li>If you go to the GitHub website for the repository and click on the "Commits" tab, you see GitHub's version of the git log</li
+><li>For an instructive lesson, thry "git pull".&nbsp; Depending on what files you changed, you might get a message about needing to merge.&nbsp; This is what happens when the GitHub repository and your local repository have conflicting histories.&nbsp; If you get a message about merging, then you need to go into your text editor and fix it by hand.</li
+><li>OK, let's rewind.&nbsp; So do 'git log --oneline' to see the commit numbers.&nbsp; Note the number that corresponds to Erik's last commit.&nbsp; Then do 'git reset --hard commit_number' using the number we just mentioned.</li
+><li>Someone in the class should push to the GitHub repository.&nbsp; Make some changes to files, add them to the staging area and commit them as we did before, then run "git push".&nbsp; Aha, a file was changed!</li
+><li>We can now pull those changes into our own local repository.&nbsp; Run "git pull"</li
+><li>Now we'll have a push-pull party.&nbsp; Everyone will be doing this at the same time, so you may or may not be able to push without a merge conflict.<ul><li>1) --&gt; Edit a file and save it.</li
+><li>2) git add &lt;filename&gt;</li
+><li>3) git commit -m "message"</li
+><li>4) git pull</li
+><li>5) --&gt; Edit and save the file again</li
+><li>6) --&gt; if you get a message about a merging conflict, resolve the conflict by opening up the file in the text editor and editing the file to the way you like it.</li
+><li>7) git commit -m "message"</li
+><li>8) git push</li
+><li>9) if your push fails, go back to (1)</li></ul
+></li></ul
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note this is not a very realistic situation.&nbsp; You wouldn't normally have ~40 people&nbsp;<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pushing to the same file in the same repository at approximately the same time.<br
+/><ul><li>You can have a GitHub repository just for yourself; this is not a bad idea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/><br
+/></li
+><li>Git - Branching</li
+><li>One of the killer features of Git is branches.&nbsp; A branch allows you to work on a modification in an environment separate from your "master" copy.</li
+><li>To understand how branches work, it's best to look at a diagram.&nbsp; For example, see <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging</a></li
+><li>Typically, you always have a branch called "master".&nbsp; By convention, this is supposed to be consistent with the GitHub repository.&nbsp; When you want to do an experiment or make modifications, it's a good idea to create a specific branch for that, which is not "master".</li
+><li>Make a branch for an experiment by running the command "git checkout -b experiment"</li
+><li>Run "git branch" to see what branches you have.&nbsp; The branch with * in front of it is the branch you're on.&nbsp; You should see two branches listed, master and experiment.&nbsp; The * should be in front of experiment.&nbsp; So now you are on the "experiment" branch.</li
+><li>Now that you are on the "experiment" branch, create a new file.&nbsp; Then add the file and commit these changes.</li
+><li>Now run "git checkout master"&nbsp; If you do "ls" to list the files in the directory, you'll notice that your new file disappeared!!&nbsp; Don't worry; it's still there.&nbsp; If you do "git checkout experiment", you'll see the file again.</li
+><li>Let's merge your branches together.&nbsp; Do "git checkout master" followed by "git merge experiment."&nbsp; The merge between "master" and "experiment" should happen automatically since there is no conflict when you add a new file in a branch.</li
+><li>If there happened to be a conflict when you did the merge between the "master" and "experiment" branches, that you would resolve that conflict in a text file, the same as we did when you were pushing to the GitHub repo.&nbsp; The only difference is that the conflicts are completely local, rather than between you and the remote GitHub repository.</li
+><li>Often, after you merge a branch with master, you don't need that branch anymore.&nbsp; You can delete it with the -d flag.&nbsp; For example, "git branch -d experiment"</li
+><li>Unfortunately, we didn't have time to cover rebasing in Git. :(<br/><br
+/></li
+><li>Why is version control important</li
+><li>Reproducible research - what if someone asks you about your result in a paper from a year ago and wants your code to reproduce it?&nbsp; If you've modified the code since then and haven't kept track of the changes, there is no way to reproduce that work.<br/><br
+/></li
+><li>Tomorrow</li
+><li>tomorrow we'll be doing Python</li
+><li>Try the command "ipython notebook" in your terminal window and make sure it works.<br/><br
+/></li></ul
+><b>DON'T BE SHY ABOUT ASKING QUESTIONS ON ETHERPAD!!!</b><br
+/><b>You can ask questions in the chat window to the right.</b><br
+/><br
+/>Bonus question on exercise on ls<br
+/>try<br
+/>ls /bin/*[at]*<br
+/><br
+/>to find files that have au and am in their names in the /bin directory<br
+/>try<br
+/>ls /bin/*{am,au}*<br
+/><br
+/><br
+/>if you run into error on shell for example<br
+/><br
+/>echo 'how are you today<br
+/><br
+/>without the end quote, press ctrl c to get out of that<br
+/><br
+/>there are more than one shell<br
+/>typical are c shell bash shell et<br
+/><br
+/>to go to c shell, type<br
+/>csh<br
+/>to exit out, type exit<br
+/><br
+/><br
+/>cat stands for concatenation. It list the contents of a file on the command line<br
+/><br
+/>for exmple<br
+/><br
+/>cat ex_data.txt<br
+/><br
+/>you can do cat twice on a file to print its contents twice<br
+/>like<br
+/><br
+/>cat ex_data.txt ex_data.txt<br
+/><br
+/>This will lis the contents of the file twice<br
+/><br
+/>how to redirect echo to a new file<br
+/><br
+/>echo 'hello world!" &gt; world.txt<br
+/><br
+/>Use Ctrl a or Ctrl e to go the beginning or end of a line respectively on a command prompt or in a file<br
+/><br
+/>whenver you are using shell, before doing any thing, you can type the following command to make sure file removal is interactive. This command will make sure that whenver you delete a file, it asks you first to delete it or not<br
+/><br
+/>alias rm='rm -i'<br
+/><br
+/>waiting for user input. Type along the following<br
+/>tail -n 1<br
+/>french<br
+/>fries<br
+/>are<br
+/>good<br
+/><br
+/>ctrl d<br
+/>only good gets printed<br
+/><br
+/>Vim tutorial game: <a href="http://vim-adventures.com/">http://vim-adventures.com/</a><br
+/>+1 Terri Yu (I love that game!!)<br
+/><br
+/>"Explain SSH keys like I'm five": <a href="http://www.reddit.com/r/learnprogramming/comments/1enupy/explain_ssh_keys_and_validation_like_im_five/">http://www.reddit.com/r/learnprogramming/comments/1enupy/explain_ssh_keys_and_validation_like_im_five/</a><br
+/><br
+/>ssh commands<br
+/><br
+/>&nbsp;cd ~/.ssh<br
+/>&nbsp;<br
+/>&nbsp;If you don't have it go to your home directory<br
+/>&nbsp;&nbsp;&nbsp; cd<br
+/>&nbsp;Then type<br
+/>&nbsp;&nbsp;&nbsp; mkdir .ssh<br
+/>&nbsp;&nbsp;&nbsp; cd .ssh<br
+/>&nbsp;&nbsp;<br
+/>Then type&nbsp;&nbsp;<br
+/>&nbsp;&nbsp; ssh-keygen -t rsa -C "your_email@youremail.com"<br
+/>&nbsp;<br
+/>You don't need a password, so just hit Enter at the password part<br
+/><br
+/>$ ssh-keygen -t rsa -C "your_email@youremail.com"<br
+/>Generating public/private rsa key pair.<br
+/>Enter file in which to save the key (/home/swc/.ssh/id_rsa):&nbsp; &lt;press enter&gt;<br
+/><br
+/>In your .ssh folder you should have a id_rsa.pub file<br
+/><br
+/>cd .ssh<br
+/>cat id_rsa.pub<br
+/>copy the whole thing that's the output of this<br
+/>e.g.<br
+/>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHWH2KBwpdlzUAuD3z/6usCz7tuyF4diqMlY1gK+7C1uzDD5GOnrqDSZmc9d6F+yAKMRB9cCmHVwgRCWWz6Yq19/SZMlz7bDUCQKKQubgs10r6BZsGU0qms0dVvkGG48wnfpNeAFZcoDVIWmKnjRLfJOpWxjM9Arhb0A39/aHgjKd6eTxnyHbc0IAE4Ayls8JZyU4php/5l8ZVoO669rngw7pZO4BgZJ0l7FrRTBoyUwYZ5eaDaK82crkAEbyDf9I8r3w78q5Fkt7Aw8gkaGfqt9smPQjMddXBGaiuwJ/KaDyBoh1P307HeyLgxytFKyoSIWtzyXhVspwRzqiRCqir tracyt@Tracys-MacBook-Pro.local<br
+/><br
+/>Go to the your github website<br
+/><a href="https://github.com/yourlogin">https://github.com/yourlogin</a><br
+/><br
+/>In the top right, there's a picture of a wrench.&nbsp; Click on that.<br
+/>In the menu on the left, it says SSH Keys.&nbsp; Click on that<br
+/>Then there's a button that says 'Add SSH key'&nbsp; Click on that<br
+/>&nbsp; Give it whatever title you want<br
+/>&nbsp; Paste what you just copied from id_rsa.pub in to the key area<br
+/>Click 'Add key'<br
+/><br
+/>Now<br
+/><br
+/><a href="https://github.com/iguananaut/umass-example">https://github.com/iguananaut/umass-example</a><br
+/><br
+/>Copy the link that is there for ssh<br
+/>git@github.com:iguananaut/umass-example.git<br
+/><br
+/>then type<br
+/><br
+/>git clone git@github.com:iguananaut/umass-example.git<br
+/><br
+/>This won't work until you're on the access list<br
+/>Go up to Erik's computer and add yourself to the access list<br
+/><br
+/>Git tutorials:<br
+/><a href="http://try.github.io/levels/1/challenges/1">http://try.github.io/levels/1/challenges/1</a> (only takes 15 minutes)<br
+/><a href="http://gitimmersion.com/index.html">http://gitimmersion.com/index.html</a> (recommended to me by a couple people)<br
+/><br
+/>$ git config --global user.name "John Doe"<br
+/>$ git config --global user.email johndoe@example.com<br
+/><br
+/><ul><li>Create and type something in to a file</li
+><li>&nbsp;&nbsp; top-things-to-learn.md</li
+><li><br/></li
+><li>e.g. nano top-things-to-learn.md</li
+><li><br/></li
+><li>Now add the file</li
+><li>&nbsp;&nbsp;&nbsp; git add top-things-to-learn.md</li
+><li>&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li>And commit the file with a commit message</li
+><li>&nbsp;&nbsp;&nbsp; git commit -m "Added bash vs csh as something I want to learn"</li
+><li>&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li>To see the status of the files</li
+><li>&nbsp;&nbsp;&nbsp; git status</li
+><li>&nbsp;&nbsp;&nbsp;&nbsp;</li
+><li>Now edit your file and type 'git status' again</li
+><li>You can see that it says your version is different than the committed one.&nbsp; To figure out what's different, you can type</li
+><li>&nbsp;&nbsp; git diff</li
+><li>&nbsp;&nbsp;&nbsp;</li
+><li>You decide you do want to commit those changes, so do&nbsp;</li
+><li><br/></li
+><li>&nbsp;&nbsp; git add top-things-to-learn.md</li
+><li>&nbsp;&nbsp; git commit -m "A helpful commit message"</li
+><li>&nbsp;&nbsp;&nbsp;</li
+><li>To see a log of the changes you've made to the repository, use</li
+><li>&nbsp;&nbsp; git log</li
+><li><br/></li
+><li>To get just the first line of the commit messages, so you don't have all that information</li
+><li>&nbsp;&nbsp; git log --oneline</li
+><li><br/></li
+><li>How to undo a change</li
+><li>&nbsp; git reset hash_tag_of_old_version</li
+><li><br/></li
+><li>Let's all get on the same page with our repositories before we start the next part</li
+><li><br/></li
+><li>&nbsp;&nbsp; git reset --hard 620bbc7</li
+><li>&nbsp;&nbsp; git pull</li
+><li><br/></li
+><li>If you want to see a commit use&nbsp;</li
+><li>&nbsp; git show</li
+><li><br/></li
+><li><br/></li
+><li><br/></li
+><li><br/></li
+><li><br/></li
+><li>Someone asked about libreoffice. There are instructions on using git with word documents and open office documents here: <a href="http://git-scm.com/book/ch7-2.html">http://git-scm.com/book/ch7-2.html</a>.<br/><br
+/><br/><br
+/><br/><br
+/></li></ul
+></body>
+</html>
