@@ -427,7 +427,7 @@ Edit same file, add, commit, push, resolve conflicts. Repeat!
     $ ls
     $ git merge css_test
 
-## Conclusions and further information
+## Summary
 
 * Keep track of changes, a lab notebook for code and documents.
 * Roll back changes to any point in the history of changes, "undo" and "redo" for files.
