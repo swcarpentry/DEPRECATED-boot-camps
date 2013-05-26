@@ -1,0 +1,237 @@
+---
+root: ..
+title: Duke, May 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .brand {
+        background-color: transparent;
+        background-image: url("{{page.root}}/logos/swc-logo.svg");
+        background-repeat: no-repeat;
+        background-size: auto 36px;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#location">Location</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Installation</a></li>
+              <li class="divider-vertical"></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div>
+
+<h1><a id="location"></a> Location</h1>
+
+<p>CRTP Classroom, 2nd floor, Hock Plaza</p>
+
+<p>2424 Erwin Rd, Durham, NC</p>
+
+<h1><a id="schedule"></a> Schedule</h1>
+
+<h3>Day 1</h3>
+
+<ul>
+<li>9:00-10:30 R Basics, RStudio basics, workspace, working directory, projects in RStudio</li>
+<li>10:30-11:00 <em>coffee break</em></li>
+<li>11:00-12:30 Basic care and feeding of data, special emphasis on data.frames</li>
+<li>12:30-1:30 <em>lunch</em></li>
+<li>1:30-3:00 Data aggregation, reshaping</li>
+<li>3:00-3:30 <em>coffee break</em></li>
+<li>3:30-4:30 putting it all together: a bit of file-fu with R, organizing your workflow, strategies for 
+reproducibility and share ability</li>
+</ul>
+
+<p>optional content (will be covered by example as we go but might be tackled explicitly briefly): 
+* lattice graphics</p>
+
+<h3>Day 2</h3>
+
+<ul>
+<li>9:00-10:30 using the shell, part 1</li>
+<li>10:30-11:00 <em>coffee break</em></li>
+<li>11:00-12:30 version control with Git</li>
+<li>12:30-1:30 <em>lunch</em></li>
+<li>1:30-3:00 Make and special topics</li>
+<li>3:00-3:30 <em>coffee break</em></li>
+<li>3:30-4:30 special topics</li>
+</ul>
+
+<h1><a id="install"></a> Installation</h1>
+
+<p>You need to install and test R, RStudio, Git, and a Bash shell before the workshop. Download some files 
+we will use, just in case we have any network problems. It is recommended to also install a few 
+add-on packages.</p>
+
+<h3>R and RStudio</h3>
+
+<ul>
+<li><p>Download and install <a href="http://www.r-project.org">R, a free software environment for statistical computing and graphics</a> from <a href="http://cran.rstudio.com">CRAN</a>, the Comprehensive R Archive Network. It is <em>highly recommended</em> to install a precompiled binary distribution for your operating system -- use the links up at the top of the CRAN page linked to above!</p></li>
+<li><p>Install RStudio, a powerful user interface for R: <a href="http://www.rstudio.com/ide/download/">http://www.rstudio.com/ide/download/</a></p></li>
+</ul>
+
+<h3>Testing testing</h3>
+
+<ul>
+<li><p>Do whatever is appropriate for your OS to launch RStudio. You should get a window similar to the screenshot you see <a href="http://www.rstudio.com/ide/">here</a>, but yours will be more boring because you haven't written any code or made any figures yet!</p></li>
+<li><p>Put your cursor in the pane labelled Console, which is where you interact with the live R process. Create a simple object with code like <code>x &lt;- 2 * 4</code> (followed by enter or return). Then inspect the <code>x</code> object by typing <code>x</code> followed by enter or return. Obviously you should see the value 8 print to screen. If yes, you are good to go.</p></li>
+</ul>
+
+<h3>Gapminder stuff</h3>
+
+<ul>
+<li>We will work with some of the data from the <a href="http://www.gapminder.org">Gapminder project</a>. Here is an excerpt I have prepared for our use. Please save this file on your computer prior to the workshop and note the location!
+<ul>
+<li><a href="http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt">http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt</a></li>
+</ul></li>
+</ul>
+
+<h3>Add-on packages</h3>
+
+<ul>
+<li><p>Installing add-on packages. R is an extensible system and many people share useful code they have developed as a <em>package</em> via CRAN and github. To install a package, for example the <a href="http://plyr.had.co.nz"><code>plyr</code> package</a> for data aggregation, here is one way to do it in the R console (there are others).</p>
+
+<p><code>
+install.packages("plyr", dependencies = TRUE)
+</code>
+Another package you may wish to play around with soon is <a href="http://yihui.name/knitr/"><code>knitr</code></a>, which facilitates the creation of dynamic reports. You could install it in the same way.
+<code>
+install.packages("knitr", dependencies = TRUE)
+</code></p></li>
+</ul>
+
+<h3>Unix Bash Shell</h3>
+
+<ul>
+<li><p>Please follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instructions</a> 
+in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.</p></li>
+<li><p>If you're using <strong>Windows</strong>, you'll want to install <code>nano</code>, an easy-to-use
+command-line text editor.
+<a href="http://www.nano-editor.org/dist/v2.2/NT/nano-2.2.6.zip">Download it here</a>,
+extract to a directory (like C:/Program Files/nano), and add that directory
+to your Windows path:</p>
+
+<ul>
+<li><p>Right-click on <strong>My Computer</strong> and select <strong>Properties</strong></p></li>
+<li><p>Select the <strong>Environment</strong> page</p></li>
+<li><p>In the System Variables area, find the PATH variable</p></li>
+<li><p>Add the directory you extracted nano in to the end of the path, separating
+it from the previous directory with a semicolon.</p></li>
+</ul></li>
+</ul>
+
+<h3>Git</h3>
+
+<ul>
+<li><p>Follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instructions</a> 
+in the section titled "Git" to install Git.</p></li>
+<li><p>If you don't have a GitHub account, please go to <a href="https://github.com/">https://github.com/</a> and register for a free account.</p></li>
+<li><p>You'll have the choice of working with Git through either the command line, a GUI, or both, whatever 
+you're comfortable with (we'll demonstrate both.) If you want to use the command line, no additional 
+setup is required. The GUI we'll be using is SourceTree, which is free and supports Windows and OS X. The 
+installer can be downloaded here: <a href="http://www.sourcetreeapp.com/">http://www.sourcetreeapp.com/</a>. </p>
+
+<p>When you first run SourceTree, enter the username and e-mail address you used for your GitHub account 
+and 
+click Next. For the remaining settings in the setup wizard, the default options will work fine.</p></li>
+</ul>
+
+<h3>Make</h3>
+
+<ul>
+<li><p><strong>Linux</strong>: you should already have Make installed.</p></li>
+<li><p><strong>OS X</strong>: follow the instructions under GNU Make on the 
+<a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instruction page</a>
+to install the Apple developer tools.</p></li>
+<li><p><strong>Windows</strong>: you can download make from this link:
+<a href="https://github.com/msysgit/msysgit/blob/master/bin/make.exe?raw=true">https://github.com/msysgit/msysgit/blob/master/bin/make.exe?raw=true</a>.
+Download this file and place it in the "bin" directory where you installed
+Git bash.</p></li>
+<li><p>To test: open a terminal, type "make", and press Enter. You should see 
+the following message:</p>
+
+<pre><code>make: *** No targets specified and no makefile found.  Stop.
+</code></pre>
+
+<p>This means that Make was successfully installed. Otherwise, you'll see this
+error message:</p>
+
+<pre><code>bash: make: command not found
+</code></pre></li>
+</ul>
+
+<h3>Further resources</h3>
+
+<p>The above is enough preparation but here are some links if you are interested in reading a bit further.</p>
+
+<ul>
+<li>How to Use RStudio:
+<ul>
+<li><a href="http://www.rstudio.com/ide/docs/">http://www.rstudio.com/ide/docs/</a></li>
+</ul></li>
+<li>RStudio Public Discussion &amp; Troubleshooting Guide:
+<ul>
+<li><a href="http://support.rstudio.org/help/">http://support.rstudio.org/help/</a></li>
+</ul></li>
+<li>How to Install R:
+<ul>
+<li><a href="http://cran.r-project.org/doc/manuals/R-admin.html">http://cran.r-project.org/doc/manuals/R-admin.html</a></li>
+<li><a href="http://cran.stat.sfu.ca/doc/FAQ/R-FAQ.html#How-can-R-be-installed_003f">http://cran.stat.sfu.ca/doc/FAQ/R-FAQ.html#How-can-R-be-installed_003f</a></li>
+</ul></li>
+<li>R FAQ:
+<ul>
+<li><a href="http://cran.r-project.org/doc/FAQ/R-FAQ.html">http://cran.r-project.org/doc/FAQ/R-FAQ.html</a></li>
+</ul></li>
+<li>More about add-on packages in the R Installation and Administration Manual
+<ul>
+<li><a href="http://cran.r-project.org/doc/manuals/R-admin.html#Add_002don-packages">http://cran.r-project.org/doc/manuals/R-admin.html#Add_002don-packages</a></li>
+</ul></li>
+</ul>
+
+<!-- Notes from an October 2012 workshop
+  ["R carpentry - Finding Help"](../modules/r-carpentry-finding-help.html)
+  (quite rough at this point) -->
+
+<!-- we don't need this if we remove Q4c, right? -->
+      </div>
+    </div> <!-- /container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+
