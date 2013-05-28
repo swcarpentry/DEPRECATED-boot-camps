@@ -182,7 +182,8 @@ dir(gbrecord)
    'name',
    'reverse_complement',
    'seq',
-   'upper'] ```
+   'upper'] 
+```
 
 Of these, the attribudes `id` `name` and `description` are top-level descriptions of each sequence (or contig).  These are accessed by `gbrecord.name` `gbrecord.id` and `gb.description`. `grecord.seq` contains the sequence as a `Seq` object. 
 `gbrecord.annotations` is a *dict* containing additional details (submitters, date, organism taxonomy) for the sequence as a whole.   
