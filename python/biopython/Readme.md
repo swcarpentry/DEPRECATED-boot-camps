@@ -69,7 +69,7 @@ This saves us from having to write code that directly talks to NCBI's EFETCH API
 We just need to find out how to use these subroutines.
 
 Here is a example using the ```Entrez.efetch```  biopython binding
-```
+```python
 #!/usr/bin/env python
 import os,sys
 from Bio import Entrez
@@ -130,7 +130,9 @@ Aside: The ```Seq``` sequences are by default *immutable*; you will need to use 
 First we describe the data formats, show examples of parsers for each format, and then give some exercises for operating on sequences given a loop over all the sequences in a data source.
 
 Finally, the manual page on SeqIO
-```help(SeqIO)```
+```
+help(SeqIO)
+```
 gives recipes for turning sequences into lists 
 
 ####Fasta sequence parsing####
@@ -161,7 +163,9 @@ from Bio import SeqIO
 generator = SeqIO.parse("NC_001422.gbk", "genbank")
 gbrecord = generator.next()  # This grabs the first record.
 ```
+
 Now let's look it over:
+
 ```
 type(gbrecord)
     Bio.SeqRecord.SeqRecord
@@ -224,7 +228,7 @@ for i in gbrecord.features:
         print i.qualifiers["locus_tag"][0], i.qualifiers["protein_id"][0] , i.qualifiers["gene"][0],  i.qualifiers["translation"][0] 
 
 ```
-Oops.  This doesn't work.  Not all the CDS records have ```qualifiers["gene"]``` defined.  We need a ```try... except``` conditional to trap the error and fill it in with a default value.
+Oops.  This doesn't work.  Not all the CDS records have ```qualifiers["gene"]``` defined, so I get a KeyError when I try to access qualifiers["gene"] for the feature that doesn't have the key "gene".  We need a ```try... except``` conditional to trap the error and fill it in with a default value.
 ```
 for i in gbrecord.features:
     if i.type == "CDS" :
