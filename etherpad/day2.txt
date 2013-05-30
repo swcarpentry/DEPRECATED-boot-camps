@@ -1,0 +1,386 @@
+oDay 2 UMass Amherst SWC Boot camp
+
+Minute cards for Day 2
+https://docs.google.com/forms/d/1SfK0KjkX6ZDTSdEUDIXp7njZ1EvTNbfZhkaZHRnZXvc/
+
+Opt in for local software carpentry email list:
+Email deangelis@microbio.umass.edu
+ 
+ * In case you didn't get it or you lost it, the command to check out the repository is:
+   * git clone https://github.com/swcarpentry/boot-camps.git -b 2013-05-umass
+ 
+ * Yezdi sent me a link to this nice, terse Git and GitHub guide that he found helpful--it should serve as a good review of what we did yesterday, and a few things we did not do: http://kbroman.github.io/github_tutorial/
+ * We also added our git tutorial notes to the repository, as well as a couple of git cheat sheets here: https://github.com/swcarpentry/boot-camps/tree/2013-05-umass/version-control/git  (most of you should have this in your checkout of the boot-camps repository)
+
+Day 2 - Morning: Introductory Python
+
+ * Go to the directory containing your boot-camps Git repository
+   * example: cd ~/boot-camps
+   * Pull changes from yesteday (including Day 1 Etherpad notes): "git pull origin 2013-05-umass"
+ * IPython notebooks
+   * Allows you to run Python code in cells and have an interactive page that you can share with people (like your graduate school advisor)
+   * similar functionality in RStudio ( http://www.rstudio.com/), IPython also has a plugin for R code
+       * (http://nbviewer.ipython.org/urls/raw.github.com/ipython/ipython/master/examples/notebooks/R%20Magics.ipynb)
+   * Mathematica notebooks are also similar (but Mathematica is not free)
+     * IPython Notebook is in fact inspired by Mathematica (but Fernando Perez has kind of an axe to grind against Wolfram)
+   * You can post your notebooks online for others to see at http://nbviewer.ipython.org/ (which also has a gallery of some nice notebooks people have done)  This is a nice website because people don't need to install Python and IPython to look at your notebook.
+ * Start up an iPython notebook
+   * ipython notebook StudentNotes_umass.ipynb
+   * Your browser should open a webpage containing your iPython notebook
+   * Troubleshooting iPython notebook (see some notes below)
+   * You can run this in the background (so that you can keep on entering commands in the terminal window you used to run iPython notebook in) by typing the ampersand:
+     * ipython notebook StudentNotes_umass.ipynb &
+ * Basic navigation/commands in iPython
+   * Shift-Enter to execute the commands in a cell
+   * Some basic commands in the menu bar
+     * Insert > Insert Cell Above: Insert a new cell for entering code above the current cell
+       *  (Also you can click on the icon of the arrow with a line above it in the menu bar)
+     * Insert > Insert Cell Below: Insert a new cell for entering code below the current cell
+       *  (Also you can click on the icon of the arrow with a line below it in the menu bar)
+     * Cell > All Output > Clear : Clear all the output generated, i.e. the cells in Out [ ]
+   * Keyboard shortcuts: see Help > Keyboard Shortcuts at the top of the iPython Notebook window
+ * Assigning variables
+   * Assignment: Note that in iPython, you need to execute an assignment command (with Shift-Enter) in order for variable assignment to be done. Just typing the assignment command is not sufficient.
+ * Viewing variables
+   * Interactive view: you can just type the variable (and Shift-Enter), e.g. a
+     * For lists, you get one element per row displayed if you just type the list variable name in iPython notebook
+   * Print to screen human-readable view: You need to use the print command, e.g. print a
+     * For lists, you get all the elements printed out wrapping across lines in iPython notebook
+ * Mutability: immutable objects and variable assignment
+   * b = a
+   * Variables are really labels or names
+   * a and b are different labels pointing to the same object
+     * In some other programming languages, this is not the case
+ * Containers (mutable objects)
+   * Lists
+     * Note that Python starts counting from 0 in indexing, so the first item in a list my_list is indexed with my_list[0], not my_list[1]. (This is called zero-indexing)
+     * my_list[-1] allows you to index the last item in the list (not my_list[-0], since -0 is indistinguishable from 0!) (Negative indexing)
+       * Conceptual understanding of -1 rather than 0: circular buffer
+       * Another way to think about the negative list indexing (counting from the end) is as subtracting from the length of the list.  That is:
+                                my_list[-2] = my_list[len(a) - 2]
+                      if it were zero, you'd get an out of range error:
+                                a[len(a) - 0]  --> IndexError List index out of Range
+     * Slicing: my_list[0:5:2]
+       * You can think of the three integers as from:up to (but not including):step, i.e. "Get me the list elements from 0 to 5, incrementing by 2, i.e. get me list elements 0, 0+2, 0+2+2 (note that element my_list[5] is not included in the slice)
+     * You can get the length of a list using the built-in "len()" function in python:  len(my_list)
+     * You can add items to lists using the append() function.  For example, you can add an item to "my_list", with the statement 
+                  my_list.append('four') 
+     * Where the notebook states that "list is a reserved word": Let me unpack that statement a little.  Python has many built in "words" and "list" is one of them--list is actually the list type.  But Python has a newbie trap in that it allows you redefine certain predefined words.  So if you type "list = 123" it will use "list" as a variable and *shadow* the list builtin.  This is something to be careful about.
+       * Can you redefine "+"?  That would really screw you up.  (That was my first exercise for intro programming class in college.  We used Scheme for our programming language.)
+       * Yes, but you have to do it by redefining the type of things you're adding.  That is, you'd have to redefine 'int' or 'float'
+     * Say you have a list of *only* strings like my_list = ['apple', 'orange', 'carrot'].  If you print that list it will print its contents, but with quotes around it (to distinguish the fact that they're strings.  For example:
+       * >>> print my_list
+       * ['apple', 'orange', 'carrots']
+   * But say you just want to print a bunch of strings without the quotes. There are many ways you can do this.  One of the simplest ways (given without explanation for now) is this:
+                  >>> print ' '.join(my_list)
+                  apple orange carrot
+   * Tuples
+     * tuples look a lot like lists
+     * Key point is that tuples are immutable, which is different than lists
+     * You define a tuple with parentheses '(' and ')' whereas lists are defined with square brackets '[' and ']'
+     * You can't change the size of a tuple once you've defined it
+     * Design considersations: use a tuple if it wouldn't make sense to change the size or contents of your data structure
+     * Once we explain more about dictionaries another important use case will become clear:  Because tuples are *immutable* we can actually use them as a dictionary key, which is occasionally useful.  A tuple like (1, 2) is equivalent to any other tuple of (1, 2).  If it were a list like my_list = [1, 2] we could change it like "my_list[1] = 3"  Now it's the pair [1, 3] which is different from (1, 2) and so it no longer points to the same value as (1, 2) (if any at all).
+ * Dictionaries
+   * Dictionaries are kind of like "lockers".  You have a key for each locker and each locker contains some data in it
+   * The syntax for a dictionary is to begin and end the dictionary with curly braces '{' and '}'
+   * Unlike lists and tuples, dictionaries don't really have an "order".  You can't use something like "my_dict[3]'
+   * A key can be a number, string, or even a tuple.  
+     * Why would a tuple be useful?  Imagine using (x,y,z) coordinates to reference a location in a dictionary.
+   * The keys and values of the dictionary can be accessed separately.  For example, "print my_dict.keys()" and "print my_dict.values()"
+     * For the key-value pairs, you can access the items.  An item is a tuple of a key and its corresponding value.  You can print items by running "print my_dict.items()"
+     * Why are there parenthese after keys, values, and items?  Because under the hood, the dictionary is an object with methods (functions for the objects).  In this case, "keys", "values", and "items" are actually functions and not ordinary variables.  If you don't know what an object is, don't worry.  It's related to a style of programming called "object oriented programming".
+   * Dictionaries are useful for storing metadata (data about data).
+   * One other important thing to understand about dictionaries, is that when you look up a value by its dictionary key, such as my_dict['orange'] you can think of the expression "my_dict['orange']" as a variable pointing to the value.  So say the value is a list like:
+               my_dict['orange'] = ['apple', 'banana', 'paer']
+         but you misspelled 'pear' and want to change that value.  If you had the list in a normal variable like my_list you can assign to it like my_list[2] = 'pear'.  But since the list is a value in a dictionary you use the dictionary lookup itself like a variable pointing to that value:
+               my_dict['orange'][2] = 'pear'
+   * If you need to change a key in a dictionary, you must recreate it.  For example:
+   * my_dict = {'one' : 1, 'tow':2}
+   * my_dict['two'] = my_dict['tow']
+   * del my_dict['tow']
+     * print my_dict
+       * {'two': 2, 'one': 1}   #note that it's not in the expected order, dicts are unordered
+ * If statements
+   * You are probably familiar with if statements from other programming languages.  For python, indentation is very important for if statements (and for the programming language in general).  After the "if <expression>" line, you need to indent the next line for it to be part of the if clause.  This is different than languages like C/C++/Java where you use braces to delineate if clauses.  You can also write if-else statements or if-elif-else statements.  elif is a shorthand for "else if"
+   * Another Python syntax note is that for many special statements, the statement ends in a colon.  For example, "if <expression>:"
+   * Python uses indentation to determine the meaning of each line of code.  Never use tabs for indentation.  Always use the space bar.
+   * You can write more complicated if statements than just if clauses.  You can also write if-else statements or if-elif-else statements.  elif is a shorthand for "else if"
+ * For loops
+   * Instead of using an index i for your for loop, Python encourages meaningful syntax.  You can do something like "for fruit in fruit_list" which is much more meaningful to humans.
+     * The fruit variable in "for fruit in fruit_list" actually hangs around after the loop is finished.  It contains the last item in fruit_list.
+     * You can also do this for two lists of the same size because Python understands how to loop over tuples.  You can create a tuple list from two lists using the zip function.  For example, "for fruit, price in zip(fruit_list, price_list):"
+       * To see what the zip function is doing, try "print zip(fruit_list, price_list)"
+   * If you need the index, you can use something like "for index in range(len(fruit_list)):"
+ * Functions
+   * examples of functions we've already seen: len(), range(), type()
+   * a useful group of functions - functions that cast a value into a certain type, e.g. int(), float(), str()
+   * Functions are a part of good code design.  
+     * Make sure your function only does one thing.  If it does multiple things, that will be confusing if you have to debug your code later on.  Also, if it only does one thing, it's easier to give your function a good descriptive name.
+     * If you find yourself re-writing similar code over and over again, make it into a function.  That will make your code much easier to maintain and avoid bugs.  If the code is only in one place, it is easy to diagnose and fix.
+   * When your code becomes complicated enough, you may consider putting related functions into a module.  A group of modules is a library.  For an example of a Python library, see Erik's AstroPy.
+ * Docstrings
+   * Documentation is very important!!  What if you have to look at this code 3 years from now?  If the code is sufficiently complex, it's unlikely you'll understand it without documentation.
+   * When you call the help function on a function, Python will print the docstring.  So "help(square)" will print the documentation on the square function. 
+   * A good way to write code is to write the docstring for a function before you actually write the code for the function.  You may catch errors in your thinking and save time from writing bad code.
+   * There are programs that can interpret docstrings and make them into webpages or do other useful things with docstrings.  So writing docstrings well can be very helpful and efficient!
+ * Files
+   * Processing files is a basic part of working with data.
+   * You can read and write files with built-in Python functions.
+     * Use the open function to create a file object.  For example, 
+                  open_file = open('animals.txt', 'r')
+     * Then you can call file-related methods.  To read all the lines from the file, you can use, for example, "all_lines = open_file.readlines()"
+   * There are also built-in functions for processing strings.  For example, if you have a line of test stored in a variable "text_line", you can split it by a specific character using text_line.split()  By default, split() splits on whitespace, but you can give it a charcter like ',' as a parameter and it will split on that (which you might do if you have a CSV file).
+ * Exercise: write a function count_moose() that processes a file containing data on animal sightings
+   * The specification for this function is the following: Read a text file and print each line on which more than 10 moose were sighted.
+   * Don't forget to write a docstring for your function!
+   * Put this function in its own file count_animals.py  count_animals is a module containing the function count_moose()
+   * Now you can import this function into your iPython notebook using the command "import".  For example, "import count_animals"
+   * After you've imported your module, you can call functions from it like this:  
+              count_animals.count_moose("file.txt")
+   * If you import a module in a Python session and then modify the module later, you need to run the reload command.  For instance, "reload(count_animals)"
+ * Modules
+   * You can write your own modules and import them.
+   * There are lots of Python modules other people have written and you can import them the same way.  
+     * A very useful built-in Python module is os  You can use it to run shell commands, like listing the files in your directory.
+   * In fact, the Python you've been using is itself a bunch of modules.  You can get information about the Python 2.x standard library here: http://docs.python.org/2/library/
+     * As a side note, the standard library is actually written in C and not Python (probably because C usually runs faster)
+
+If iPython notebook isn't working
+ * check that iPython is installed and find out what version it is
+ * Run "which ipython" to see if you have ipython and if you do have it, what the path for the executable
+ * If you don't have iPython, you need to install it.  You need version 0.13 or higher
+ * Assuming you have iPython already, check the version by running "ipython --version"  You want the version to be 0.13 or higher
+ * If  you used apt-get to install iPython, you may have an old version of  iPython.  Try installing Anaconda (if you have Mac OS X or Linux).  If  you have Windows, you can try installing Enthought.  Information here: http://swcarpentry.github.io/boot-camps/2013-05-23-amherst/
+ * If  you are running an old version of iPython, you may see an error about  "unreadable JSON notebook" when you try to open a notebook
+ * If  you have installed Anaconda recently (which means you probably have  iPython v0.13) and you try running the iPython notebook and this doesn't  work, you may have two versions of iPython on your computer.  Try  calling the anaconda version directly by running  "/home/username/anaconda/bin/ipython"
+
+For  the git pull command to work, you should be inside the directory. It  does not work if you are not inside the directory. That is you have to  be inside boot-camp directory
+
+Day 2 - Afternoon: Software Engineering with Python
+
+ * Motivation for writing good code in science: http://nicercode.github.io/blog/2013-04-05-why-nice-code/
+   * Writing good code will save you time!  See http://xkcd.com/1205/
+ * Erik demonstrates his process when he is writing Python code.  He will write a module count_animals for processing animal text files
+   * See his code at the bottom of this Etherpad
+ * First, write a function read_animals_file() which reads an animal text file and extracts the data from it.
+   * Note a function can return a tuple containing multiple values.  You are not limited to returning a single value from a function.
+   * The function takes a filename as input and returns a tuple containing dates, times, animals, and counts
+ * Write a function mean() to return the mean of some values
+   * This function takes a variable "values" as input and returns a float containing the mean of values
+   * We can use the read_animals_file() function to get the counts for each animal and then use the mean() function to calculate the mean of counts
+ * Testing
+   * how do you know that the count_animals module is working properly??  What if your animals text file is 10,000 lines long?  It would be hard to know that the module is working simply by running it on an arbitrary data file.
+   * You write tests to do sanity checks on your code.  Generally, you write a group of tests for each function.
+   * The basic Python keyword for doing testing is "assert"
+   * Some easy examples: "assert 1 == 1", "assert 4 > 2"
+   * You can provide an error message to go along with the assert case.  For example
+              assert 1 == 2, "1 is not equal to 2 silly"
+          If you evaluate the above statement, it will throw an AssertionError and print the 
+          message "1 is not equal to 2 silly"
+ * We can have read_animals_file() read in a sample animal datafile and check that the read_animals_file() returns the correct data.  Write assert statements to check that each list dates, times, animals, counts contains the correct values.
+ * We can write similar tests for the mean() function
+   * When you write a test, try to think of good "cases" to test -- edge cases, weird values, wrong types, etc.
+   * You can test what happens if you pass the mean() function an empty list.  The way we implemented mean() right now, the test produces a ZeroDivisionError because the mean is calculated by dividing by the length of the list.  Since an empty list has length 0, mean([]) will end up dividing by 0.
+ * There is a way of coding called "test-driven development."
+   * The idea is that you write the tests *before* you write code.  The workflow is something like this.  You write the tests you want your code to pass, then write some skeleton code and run the tests.  Then based on the results of the tests, you might write some more tests and then write more code and then run the tests again.  You iterative like this back and forth.
+   * For some people, test-driven development is a religion.
+   * In practice, Erik only does test-driven development sometimes.  The problem is that test-driven development assumes you know exactly what you want your code to do.  Frequently, you don't know that a priori and need to play with the code for some time to figure it out.
+   * An amusing exercise is where you are given a black box function and a bunch of tests for it.  You have to figure out how to write the function simply from looking at the tests.
+ * A short history of unit testing.  An old, obscure language called Smalltalk had one of the first examples of unit testing.  It was called "xUnit".  When Sun Microsystems was developing Java, they decided they wanted to write a testing library, so they looked around at all the programming languages and looked for patterns they could copy.  They found xUnit and used that as their model for JUnit.  Java is a popular language, so after JUnit was introduced, all the modern programming languages picked up on it and now have their own version of the "unit test."
+ * How do you know all your code has been tested?  There is a concept called "coverage testing."  There are libraries that check whether your tests have completely "covered" your code.  
+   * In practice, 80% coverage is pretty good.  However, having high coverage doesn't mean your code is good.  That depends on your tests.
+ * So far we've been simply evaluating assert statements for our tests.  This isn't really the way testing is done.  Usually, you use a testing library and write your tests in the format prescribed by the testing library.
+   * Typically you write a function for each group of tests for each function in your code.  For example:
+              def test_mean_empty_list():
+                  assert mean([]) == 0
+   * Python has its own "unittest" library.  A lot of people also use a library called "nose" wihch is based on unittest.
+   * Example of running tests on software: Erik runs some tests on Astropy using the command "python setup.py test"  (Astropy uses the Python library pytest)
+ * There's an extension that allows you to run nose in IPython notebooks
+   * Aside: if you prefix a line in an IPython notebook cell with an exclamation mark ! and then evaluate that cell, the command will be executed in the terminal.
+   * Notice that when we run nose in the IPython notebook and get a failing test, there is no message telling us what the actual value was and what the expected value was.  This is why Astropy uses a testing library different from nose.
+
+Day 2 - Afternoon: Scientific Python
+
+ * Why do scientific computing in Python?
+   * A lot of people use R for statistical analysis, but R is not as nice to program in as Python
+   * There are a ton of scientific Python libraries including Numpy (arrays), SciPy (number crunching), matplotlib (plotting), SymPy (symbolic math).  Plus, IPython which we've already been using.
+   * People really like develping in Python, so there are lots of libraries written that interace Python with other software/programming languages
+   * A lot of people will do all their data crunching in Python using Numpy ndarrays and then pass the finished results to another program like R
+   * There is also a Python library that is a competitor to R (name???)
+ * Why use Numpy?
+   * Python was invented to be a learning language.  It wasn't meant for heavy number crunching
+   * A Python list contains metadata associated with each element.  Moreover, Python allows heterogenous lists, so the computer can't make any assumptions about what type each element is.  Therefore, it's very inefficient for the computer to do computations on Python lists.
+   * A neat trick: you can use an alias for an imported module.  For example "import numpy as np"
+   * Numpy has a very nice data structure called ndarray which is much more efficient than the Python list data structure
+   * Erik showed an example of how Numpy is much faster than regular Python.  He multiplied three lists of integers elementwise using both Python lists and Numpy arrays.  Each list has one million elements.  He used the function time.time() to calculate the time it took to run each group of commands.  Python lists takes about 0.5 sec to do this whereas Numpy arrays take about 0.03 sec.  So that is over an order of magnitude improvement.
+ * Some common Numpy functions you can use on Numpy arrays: my_array.mean(), my_array.std()  
+ * You can do common mathematical operations on Numpy arrays, e.g. "numpy.sin(x)" or "numpy.exp(x)"
+ * A useful Numpy function is linspace().  If you give it a start value, an end value, and a spacing value, linspace() will produces an array of evenly spaced numbers between the start and stop value
+ * You can use the Python plotting library matplotlib to plot one Numpy array against another Numpy array, e.g. "plot(x,y)"
+ * The combination of Numpy, SciPy, and matplotlib is very similar to the commercial numerical software package Matlab
+
+Day 2 - Wrapup
+ * Wanted to convince you to write good scientific software and how to do it
+   * We believe scientific software should be open and reproducible
+ * Methods we wanted to introduce:
+   * version control
+   * documentation
+   * testing
+   * etc
+ * Connect with your colleagues to form a community of scholars interested in computational science
+ * Give us feedback!!  We know we aren't perfect and want to get better.
+   * Fill out minute cards
+   * If you'd like to give anonymous feedback, you can email info@software-carpentry.org
+
+Matplotlib gallery
+A gallery of figures in Matplotlib
+http://matplotlib.org/gallery.html
+if you click on the image, you can get the code that generated that image
+
+
+%%file count_animals.py # if you put this line in the same cell as the function and evaluate 
+                                      # the whole thing, the function will be saved as count_animals.py
+def read_animals_file(filename):
+    open_file = open(filename, 'r')
+    dates = []
+    times = []
+    animals = []
+    counts = []
+    all_lines = open_file.readlines()
+    for line in all_lines:
+        d, t, a, c = line.split()
+        dates.append(d)
+        times.append(t)
+        animals.append(a)
+        counts.append(c)
+    return dates, times, animals, counts
+
+# The mean function
+def mean(values):
+    total = sum(values)
+    m = total / float(len(values))
+    return m
+
+
+
+def count_moose(file):
+    newfile = open(file, 'r') 
+    filelines = newfile.readlines()
+
+    moose_list = []
+    
+    for line in filelines:
+        d, t, a, n = line.split()
+        if a == 'Moose':
+            num = int(n)
+            if num > 10:
+                moose_list.append(line)
+
+    return moose_list
+
+
+%%file new_count_animals.py
+# This will output the code below to a file
+
+def read_animals_file(filename):
+    open_file = open(filename, 'r')
+    dates = []
+    times = []
+    animals = []
+    counts = []
+    all_lines = open_file.readlines()
+    for line in all_lines:
+        d, t, a, c = line.split()
+        dates.append(d)
+        times.append(t)
+        animals.append(a)
+        counts.append(int(c))
+    return dates, times, animals, counts
+
+read_animals_file('animals.txt')
+
+# This will import the module that we just wrote
+import new_count_animals
+
+# If we changed the module and need to reload it
+reload(new_count_animals)
+import new_count_animals
+
+# Now we can do
+new_count_animals.read_animals_file('merida_animals.txt')
+
+# The mean function
+def mean(values):
+    total = sum(values)
+    m = total / float(len(values))
+    return m
+    
+dates, times, animals, counts = new_count_animals.read_animals_file('animals.txt')
+
+# Calculate the mean of the animals
+mean(counts)
+
+
+# Testing and learning about assert statements
+
+assert 1 == 1
+# Nothing will print out because this is correct
+
+assert 1 == 2, "1 is not equal to 2"
+# Prints out a message, because it's not true
+
+#---------------------------------------------------------------------------AssertionError                            #Traceback (most recent call last)<ipython-input-16-d3794ff2f551> in <module>()----> 1 
+#assert 1 == 2, "1 is not equal to 2"
+#AssertionError: 1 is not equal to 2
+
+dates, times, animals, counts = new_count_animals.read_animals_file('animals.txt')
+assert dates == ['2011-04-22', '2011-04-23', '2011-04-23', '2011-04-23', '2011-04-23']
+assert times == ['21:06', '14:12', '10:24', '20:08', '18:46']
+assert animals == ['Grizzly', 'Elk', 'Elk', 'Wolverine', 'Muskox']
+assert counts == [36, 25, 26, 31, 20]
+
+assert mean([]) == 0
+
+
+# The mean function
+def mean(values):
+    """Returns the mean of a list of numbers.
+    Returns 0 for empty lists.
+    """
+    
+    if len(values) == 0:
+        return 0
+    total = sum(values)
+    m = total / float(len(values))
+    return m
+
+# Writing tests.  In Python you can use 'nose' for testing.  When you write 
+# tests, they need to start with 'test_'
+
+# Some example testing functions
+
+def test_mean_empty_list():
+    assert mean([]) == 0
+    
+def test_mean_123():
+    assert mean([1,2,3]) == 2
+    
+ipython_nose: 
+%load https://raw.github.com/taavi/ipython_nose/master/ipython_nose.py
+
+! curl -0 https://raw.github.com/taavi/ipython_nose/master/ipython_nose.py
+
+    
+Nice Python resource: "Think Python" http://www.greenteapress.com/thinkpython/html/index.html
+
+Python learning through music composition (kid friendly)
+http://earsketch.gatech.edu/
+
+Python learning through games and stories (also kid friendly)
+http://scratch.mit.edu/
+
+Erik mentioned an exercise we didn't get to do (the 'black box' function) where are given a function that you don't know what it does, and some tests for it, and you have to figure out from the tests alone how to implement the function.  He will upload a notebook containing that exercise to the repository so that you can try it later yourself.
+
+
+
