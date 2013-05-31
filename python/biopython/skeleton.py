@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+'''This is a skeleton python program.  It doesn't do anything, but it parses arguments and 
+calls a subroutine.'''
+
+def do_something(arg):
+    sys.stderr.write("I'm doing something with argument %s!\n" % arg)
 
 import sys, os
 from optparse import OptionParser
@@ -16,7 +21,8 @@ if __name__ == '__main__':
 
     if opts.verbose: 
         sys.stdout.write("Argument: %s\n" % argument ) 
-#     Maybe do something here
+
+    do_something(argument)
 
     if opts.verbose: 
         sys.stdout.write("Done. \n")
