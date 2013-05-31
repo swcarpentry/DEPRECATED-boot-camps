@@ -1,9 +1,6 @@
-
 ##How to program if you must##
 
 If a bioinformatic task is relatively common, it is likely that **someone else has written software to do it already**.
-
-Who doesn't want to push the boring, easy tasks to machines?
 
 Format conversions, paired-read merging, quality trimming, recruitment to references, diploid snp calling, haploid
 re-sequencing--these are all problems that can be solved by finding out what software purports to do the job, 
@@ -14,15 +11,15 @@ Depending on the complexity of the task and the ease-of-use and scope of the exi
 easier to adapt an existing software library or it could be easier to write the code to do it yourself.
 
 This section describes programming using the Biopython libraries when you must.
-In general you will have your own data, you will need to perform operations on it,
+In general you will have your own data, you will need to change its format and do stuff to it, 
 you will get some reference data, perform some comparison operation, and then perform
 operations on the results of the comparison in view of your hypotheses.
 
-One note: solving a particular data manipulation problem takes a certain amount of time, time that should include the time to 
+Solving any particular data manipulation problem takes a certain amount of time, time that should include the time to 
 fix the mistakes and confirm that your code is really is doing what you think it is.   It is dramatically easier to write a program that
 you will use once and then throw away than to write a proram that is useful to you again and again.  Ask: do you really
-want to solve a particular (easy) format-conversion problem six times, one for each collaboration?  If you invest effort 
-in identifying what you need and what parts you will use again and again, you can forget the details of how you solved
+want to solve a particular (easy) format-conversion problem six times, once for each new collaboration and each new dataset?  
+If you invest effort in identifying what you need and what parts you will use again and again, you can forget the details of how you solved
 this (boring) problem in the first place and direct your time to more interesting things.
 
 ##An anecdote: using python to get and plot data from a web interface##
@@ -152,7 +149,7 @@ Modify the existing program ```fasta2reversecomplement.py``` to output fasta who
 Exercise:  
 Modify the existing program ```fasta2allsixframes.py``` to read in nucleic acid FASTA and output six sequences, representing the translation of each sequence in all six reading frames.  Hint:  Slicing works on ```Seq``` objects like it does on strings, so if ```seq``` is one of the ```seqrecord.seq``` objects, 
 ```seq[1:]``` and ```seq[2:]``` the sequence with the first character chopped off, and the sequence with the first two characters chopped off, respectively.  
-Hint: ```Seq``` objects also have  ```seq.reverse_complement()``` and ```seq.translate()``` methods that return ```Seq``` objects with the reverse complement and the code-11 translation.
+Hint: ```Seq``` objects also have  ```seq.reverse_complement()``` and ```seq.translate()``` methods that return ```Seq``` objects with the reverse complement and translation, defaulting to the standard prokaryotic code.
 
 If you want to manipulate (say, output) the ```Seq``` objects yourself, ```str(seqrecord.seq)``` will return a string representation of the sequence.  
 
@@ -161,16 +158,17 @@ FASTQ is the de-facto standard data format for the output of modern high-through
 In addition to sequence ID and header, this format includes a quality symbol for each base.
 
 Fastq can be parsed using exactly the same ```SeqIO.parse()``` method, just with ```fastq``` instead of ```fasta``` as the format parameter.
-The sequence is in the ```seq``` attribute and the quality scores (as a list of ints) is in the ```letter_annotations["phred_quality"]``` attribute.  
+The sequence is in the ```seq``` attribute and the quality scores (as a list of ints) is in the ```letter_annotations["phred_quality"]``` attribute.    This snippet just loops through a small example fastq file and prints the data fields:
 ```python
 from Bio import SeqIO
 generator = SeqIO.parse("data/tiny-fastq.fastq", "fastq")
 for sequence in generator:
      print sequence.id
+     print sequence.description
      print sequence.seq
      print sequence.letter_annotations["phred_quality"]
 ```
-This snippet will change the length of the records
+This snippet will shorten the sequences to include only the first 30 base pairs of each read:
 ```python
 from Bio import SeqIO
 generator = SeqIO.parse("data/tiny-fastq.fastq", "fastq")
@@ -180,7 +178,7 @@ for sequence in generator:
 ```
 
 Exercise:  
-Modify the above code to shorten program that iterates through the tiny-fastq.fastq file, determines how many bases at the end of the read have quality scores of 2 or below, and outputs shortened sequences with these low-quality ends of reads removed.
+```exercise-b-trim.py``` contains a fastq parser.  Write a subroutine that determines how many bases at the end of the read have quality scores of 2 or below, removes them, and outputs the result.
 
 ####Genbank sequence parsing####
 
@@ -243,12 +241,13 @@ for i in gbrecord.features:
     if i.type == "CDS" :
         print i.qualifiers
 ```
-```gbrecord.features[2]``` is the first protein-coding annotation "CDS".  Examining it, we see
+```gbrecord.features[2]``` is the first protein-coding annotation "CDS".  Examining it, we see that its ```qualifiers``` attribute has most of the good stuff:
 ```python
-print gbrecord.features[2].qualifiers
-print gbrecord.features[2].qualifiers.keys()
+firstcdsfeature = gbrecord.features[2]
+print firstcdsfeature
+print firstcdsfeature.qualifiers
+print firstcdsfeature.qualifiers.keys()
     ['function', 'locus_tag', 'codon_start', 'product', 'transl_table', 'note', 'db_xref', 'translation', 'gene', 'protein_id']
-
 ```
 We can output a table of all the CDS features, then, by looping over all the features, testing for CDS, and printing the fields we like:
 
@@ -283,13 +282,12 @@ The NCBI offers a guide to downloading data here http://www.ncbi.nlm.nih.gov/boo
 which includes links to downloading the *SRA toolkit*: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=std
 
 The sequence read archive maintains its own formats, and its own libary of programs to get data out of the SRA format.  The options for the utilities (and the formats themselves) change from time to time, so if something doesn't work, the first thing the help desk will ask you to do is update your copy of the sra toolkit.
-wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/litesra/SRR/SRR036/SRR036919/SRR036919.sra 
-
 
 PhiX control lane, described at:
 http://www.ncbi.nlm.nih.gov/sra/SRX017204
 SRR036919
 We can download from here 
 wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/litesra/SRR/SRR036/SRR036919/SRR036919.sra 
+This is only a 300 Mbyte download.  You can expect NGS datasets to be larger
 
 
