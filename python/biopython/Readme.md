@@ -1,7 +1,10 @@
 
 ##How to program if you must##
 
-If a bioinformatic task is relatively common, it is likely that someone else has written software to do it already.
+If a bioinformatic task is relatively common, it is likely that **someone else has written software to do it already**.
+
+Who doesn't want to push the boring, easy tasks to machines?
+
 Format conversions, paired-read merging, quality trimming, recruitment to references, diploid snp calling, haploid
 re-sequencing--these are all problems that can be solved by finding out what software purports to do the job, 
 figuring out how to install it, getting the data into the right input formats and getting the results out of 
@@ -19,12 +22,22 @@ One note: solving a particular data manipulation problem takes a certain amount 
 fix the mistakes and confirm that your code is really is doing what you think it is.   It is dramatically easier to write a program that
 you will use once and then throw away than to write a proram that is useful to you again and again.  Ask: do you really
 want to solve a particular (easy) format-conversion problem six times, one for each collaboration?  If you invest effort 
-in identifying what you need and what parts you will use against and again, you can forget the details of how you solved
+in identifying what you need and what parts you will use again and again, you can forget the details of how you solved
 this (boring) problem in the first place and direct your time to more interesting things.
+
+##I like python##
+One day, a colleage of mine showed me that the MG-RAST website had a RESTful interface that would deliver a bundle of data about a dataset in response to an HTTP request.  
+Specifically, the request 
+http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
+Has tables of numbers representing the GC content, the length distribution, and high-level summaries of the taxonomic annotations of an NGS dataset.
+
+
+##What to expect##
+We have to **get the data**, **get the data out of its container**, and **do something with the data**.  
 
 ##Biopython##
 Be sure to bookmark the Biopython Cookbook and Tutorial
-http://biopython.org/DIST/docs/tutorial/Tutorial.html and to cite Biopython in publications that use the tools: Biopython: freely available Python tools for computational molecular biology and bioinformatics. http://www.ncbi.nlm.nih.gov/pubmed/19304878?dopt=Abstract
+http://biopython.org/DIST/docs/tutorial/Tutorial.html and to cite Biopython in publications that use the tools: *Biopython: freely available Python tools for computational molecular biology and bioinformatics.* Bioinformatics. 2009 Jun 1;25(11):1422-3. doi: 10.1093/bioinformatics/btp163. http://www.ncbi.nlm.nih.gov/pubmed/19304878?dopt=Abstract
 
 ###Get the data--NCBI's EUTILS###
 One large data source is NCBI.  NCBI provides an interface to allow automated download of various data products using HTTP GET requests.
@@ -68,7 +81,7 @@ Biopython has subroutines that take EFETCH's options and parameters and return p
 This saves us from having to write code that directly talks to NCBI's EFETCH API, freeing us to spend our time elsewhere.  
 We just need to find out how to use these subroutines.
 
-Here is a example using the ```Entrez.efetch```  biopython binding
+Here is a example using the ```Entrez.efetch```  biopython methods
 ```python
 #!/usr/bin/env python
 import os,sys
@@ -87,11 +100,8 @@ def downloadstuff(accessionno):
     else:
         print "skipping, %s already exists!" % filename
 
-#  Always tell NCBI who you are.  Email address is a mandatory argument.
-Entrez.email = "trimble@example.com"
+Entrez.email = "trimble@example.com"        #  Always tell NCBI who you are.  
 Entrez.tool = "SoftwareCarpentryBootcamp"
-
-# accession = "NC_000913"   # E. coli K12 reference genome accession number
 
 accession = sys.argv[1]     # take the first program argument
 
@@ -117,39 +127,75 @@ complete genomes with gene coordinates, translations, and additional notes about
 The access procedures include getting the data from HTTP requests at NCBI, opening a file on disk and loading it all into memory at once, or 
 reading a data file one record at a time.  
 
-The SeqIO.parse method returns a *generator*, an python object that will let us see one record at a time.
-```
+The SeqIO.parse method returns a *generator*, an python object that will let us see one record at a time.  The records that it returns are ```SeqRecord``` classes, a data type that can accomodate fasta, fastq, and genbank formatted-data, though with different levels of detail.
+
+We can open ```data/tiny-fasta.fasta``` and report the ```type``` of the first record like this:
+
+```python
 from Bio import SeqIO
-generator = SeqIO.parse("NC_000913.gbk", "genbank")
+firstrecord = SeqIO.parse("data/tiny-fasta.fasta", "fasta").next()
+print type(firstrecord)
+```
+Note: In an interactive session, we can omit the ```from Bio import SeqIO```.
+
+And we can loop through all the records, one at a time, like this:
+```python
+generator = SeqIO.parse("data/tiny-fasta.fasta", "fasta")
 for seqrecord in generator:
     print repr(seqrecord)
-
 ```
-Aside: The ```Seq``` sequences are by default *immutable*; you will need to use the ```MutableSeq``` data type if you need to actually edit the sequences.
+
+Note: ```SeqIO``` takes the format as a mandatory second parameter.  ```fasta``` ```fastq```  ```genbank``` and ```embl``` are among the more important supported formats.
+
+Aside: The ```Seq``` sequences are by default *immutable*; you won't be able to change them unless you use the ```MutableSeq``` data type.
 
 First we describe the data formats, show examples of parsers for each format, and then give some exercises for operating on sequences given a loop over all the sequences in a data source.
 
-Finally, the manual page on SeqIO
-```
+Finally, you can get reminders of the recipes for accessing data and specificaitons for the parameters from the manual page on ```SeqIO```:
+```python
 help(SeqIO)
 ```
-gives recipes for turning sequences into lists 
 
 ####Fasta sequence parsing####
 The minimal data type for sequence data, this format includes only a text record description and a (possibly long) sequence.  Nucleic acid sequences, partially-ambiguous nucleic acid sequences, and amino acid sequences can all be encoded in this bare-bones format.  
 
-Exercise:  
-Modify the existing program ```fastadecorator.py``` to calculate the length and gc content of fasta sequences and to output fasta sequences with `length=XXX gc=XX.X%` appended to the end of the fasta ID.
+```SeqRecord``` data types have the attributes
++ ```.name```  which is the **fasta id** -- all the text before the first whitespace on the header line
++ ```.description``` the entire header line, including the fasta id and anything after the first whitespace
++ ```.seq```  the sequence, as a ```SeqIO.Seq object```
+
+```python
+from Bio import SeqIO
+for seqrecord in SeqIO.parse("tiny-fasta.fasta", "fasta"):
+     print seqrecord.name, seqrecord.seq
+```
 
 Exercise:  
 Modify the existing program ```fasta2reversecomplement.py``` to output fasta whose sequences have been reverse-complemented.
 
 Exercise:  
-Modify the existing program ```fasta2allsixframes.py``` to read in nucleic acid FASTA and output six sequences, representing the translation of each sequence in all six reading frames.
+Modify the existing program ```fasta2allsixframes.py``` to read in nucleic acid FASTA and output six sequences, representing the translation of each sequence in all six reading frames.  Hint:  Slicing works on ```Seq``` objects like it does on strings, so if ```seq``` is one of the ```seqrecord.seq``` objects, 
+```seq[1:]``` and ```seq[2:]``` the sequence with the first character chopped off, and the sequence with the first two characters chopped off, respectively.  
+Hint: ```Seq``` objects also have  ```seq.reverse_complement()``` and ```seq.translate()``` methods that return ```Seq``` objects with the reverse complement and the code-11 translation.
+
+If you want to manipulate (say, output) the ```Seq``` objects yourself, ```str(seqrecord.seq)``` will return a string representation of the sequence.  
 
 ####Fastq sequence parsing####
 FASTQ is the de-facto standard data format for the output of modern high-throughput sequencing machines.
 In addition to sequence ID and header, this format includes a quality symbol for each base.
+
+One way to parse fastq is using exactly the same ```SeqIO.parse()``` method, just with ```fastq``` instead of ```fasta``` as the format parameter.
+
+Another approach is to use ```FastqGeneralIterator```.  Unlike ```SeqIO.parse()``` it takes file handles (not file names) and has no format parameter (it only works for fastq).  It returns tuples with the sequence description, the sequence string, and the quality string without additional methods to interpret and format the results.   The following code snippet opens the file tiny-fastq.fastq and writes truncated versions of the data to standard out.  (Note that if any of the input sequences are less than 30 base pairs in length, this code breaks.) 
+
+```python
+from Bio.SeqIO.QualityIO import FastqGeneralIterator
+in_handle = open("tiny-fastq.fastq")
+iterator = FastqGeneralIterator(in_handle)
+for triplet in iterator:
+     (description, sequence, quality) = triplet 
+     print "@%s\n%s\n+\n%s" % ( description, sequence[0:30], quality[0:30] )
+```
 
 Exercise:  
 Write a program that removes bases with the lowest FASTQ quality score (encoded as "B") from the end of the read.  That is, for each input sequence, remove all of the base pair from the end that have "B" for the quality score.
@@ -158,7 +204,10 @@ Write a program that removes bases with the lowest FASTQ quality score (encoded 
 
 Unlike FASTA and FASTQ, the Genbank format has many optional fields, and the optional fields may be of variable lengths.  
 Consequently, Biopython's genbank parser creates ```SeqRecords``` which have variable-length data types inside them.
-```
+
+Using ```NC_001422.1.gbk``` as an example, let us examine the data structures that we get from parsing it.
+
+```python
 from Bio import SeqIO
 generator = SeqIO.parse("NC_001422.gbk", "genbank")
 gbrecord = generator.next()  # This grabs the first record.
@@ -166,7 +215,7 @@ gbrecord = generator.next()  # This grabs the first record.
 
 Now let's look it over:
 
-```
+```python
 type(gbrecord)
     Bio.SeqRecord.SeqRecord
 dir(gbrecord) 
@@ -185,13 +234,11 @@ dir(gbrecord)
    'upper'] 
 ```
 
-Of these, the attribudes `id` `name` and `description` are top-level descriptions of each sequence (or contig).  These are accessed by `gbrecord.name` `gbrecord.id` and `gb.description`. `grecord.seq` contains the sequence as a `Seq` object. 
+Of these, the attribudes `id` `name` and `description` are top-level attributes which describe each sequence (contig).  These are accessed by `gbrecord.name` `gbrecord.id` and `gbrecord.description`. `grecord.seq` contains the sequence as a `Seq` object. 
 `gbrecord.annotations` is a *dict* containing additional details (submitters, date, organism taxonomy) for the sequence as a whole.   
 `gbrecord.features` is a *list* of ```SeqFeature``` objects, if provided, that include the genes, protein coding and RNAs, that the creator of the genbank record have decided to include.
 
-Using ```NC_001422.1.gbk``` as an example, let us examine the data structures that we get from parsing it.
-
-```
+```python
 gbrecord.features
 ```
 The first item in this list is a ```SeqFeature``` object:
@@ -201,7 +248,7 @@ type(gbrecord.features[0])
 ```
 
 This is a list, so we can iterate through it:
-```
+```python
 for i in gbrecord.features:
     print i
 ```
@@ -209,13 +256,13 @@ This shows us that the information is there -- looping through all the features 
 
 The ```SeqFeature``` data type has attributes that include  ```id``` ```location``` and ```strand```.  The ```type``` attribute encodes whether the feature represents a gene, tRNA, RNA, or other types, and the available data will usually depend on the value of type.  (RNAs do not have translations; some details are included under "gene" and others under the corresponding "CDS".  A final attribute of ```gbrecord.features``` is ```qualifiers``` -- a *dict* of *list*s of additional annotation fields.
 
-```
+```python
 for i in gbrecord.features:
     if i.type == "CDS" :
         print i.qualifiers
 ```
 ```gbrecord.features[2]``` is the first protein-coding annotation "CDS".  Examining it, we see
-```
+```python
 print gbrecord.features[2].qualifiers
 print gbrecord.features[2].qualifiers.keys()
     ['function', 'locus_tag', 'codon_start', 'product', 'transl_table', 'note', 'db_xref', 'translation', 'gene', 'protein_id']
@@ -223,14 +270,14 @@ print gbrecord.features[2].qualifiers.keys()
 ```
 We can output a table of all the CDS features, then, by looping over all the features, testing for CDS, and printing the fields we like:
 
-```
+```python
 for i in gbrecord.features:
     if i.type == "CDS" :
         print i.qualifiers["locus_tag"][0], i.qualifiers["protein_id"][0] , i.qualifiers["gene"][0],  i.qualifiers["translation"][0] 
 
 ```
 Oops.  This doesn't work.  Not all the CDS records have ```qualifiers["gene"]``` defined, so I get a KeyError when I try to access qualifiers["gene"] for the feature that doesn't have the key "gene".  We need a ```try... except``` conditional to trap the error and fill it in with a default value.
-```
+```python
 for i in gbrecord.features:
     if i.type == "CDS" :
         try: 
@@ -241,7 +288,10 @@ for i in gbrecord.features:
 
 ```
 Exercise: 
-Parse ```NC_001422.1.gbk``` and output a table containing the gene name, the protein ID number, and the translated sequence.  
+Parse ```NC_001422.1.gbk``` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line? 
+
+Parse the ```NC_001422.1.faa``` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line? 
+ 
 
 ####XML parsing####
 XML is a general-purpose format for structured data; it is a datatype used by some of NCBI's EUTILS and as the most complete machine-readable output format of NCBI BLAST alignments.    
@@ -250,12 +300,13 @@ XML is a general-purpose format for structured data; it is a datatype used by so
 Similarity searching is perhaps the fundamental operation of computational biology; comparisons between known sequences and novel sequences are the bread-and-butter of sequence interpretation.  
 You can run BLAST on your laptop, on your department's server, or via the NCBI web interface.  
 BLAST against large databases is an expensive operation, so if your computational plan requires running BLAST a million times, you probably need to re-think your plan.  
-For small numbers of sequences and for high-value seuquences (contigs, genomes)  BLAST is extremely popular.
+For small numbers of sequences and for high-value sequences (contigs, genomes)  BLAST is extremely popular.
 
 
-```
+```python
     from Bio.Blast import NCBIWWW
-    blastresults = NCBIWWW.qblast("blastn", "nr", sequence="CTAAGCACTTGTCTCCTGTTTACTCCCCTGAGCTTGAGGGGTTAACATGAAGGTCATCGATAGCAGGATAATAATACAGTA" )
+    mysterysequence = "GCACTTGTCTCCTGTTTACTCCCCTGAGCTTGAGGGGTTAACATGAAGGTCATCGATAGCAGGATAATAATACAGTA"
+    blastresults = NCBIWWW.qblast("blastn", "nr", sequence=mysterysequence ) 
 
     result_handle = open("my_blast.xml")
 
@@ -273,7 +324,9 @@ Some institutions make raw sequence data available by FTP, but the sequence arch
 The NCBI offers a guide to downloading data here http://www.ncbi.nlm.nih.gov/books/NBK47540/
 which includes links to downloading the *SRA toolkit*: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=std
 
-The sequence read archive maintains its own formats, and its own libary of programs to get data out of the SRA format.  The options for the utilities (and the formats themselves) change from time to time, so if something doesn't work, the first thing the help desk will ask you to do is update your copy of 
+The sequence read archive maintains its own formats, and its own libary of programs to get data out of the SRA format.  The options for the utilities (and the formats themselves) change from time to time, so if something doesn't work, the first thing the help desk will ask you to do is update your copy of the sra toolkit.
+wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/litesra/SRR/SRR036/SRR036919/SRR036919.sra 
+
 
 PhiX control lane, described at:
 http://www.ncbi.nlm.nih.gov/sra/SRX017204
