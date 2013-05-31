@@ -25,12 +25,12 @@ want to solve a particular (easy) format-conversion problem six times, one for e
 in identifying what you need and what parts you will use again and again, you can forget the details of how you solved
 this (boring) problem in the first place and direct your time to more interesting things.
 
-##I like python##
-One day, a colleage of mine showed me that the MG-RAST website had a RESTful interface that would deliver a bundle of data about a dataset in response to an HTTP request.  
+##Python is useful##
+One day, a colleague of mine showed me that the MG-RAST website had an interface that would deliver a bundle of data about a dataset in response to an HTTP request.  
 Specifically, the request 
 http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
 Has tables of numbers representing the GC content, the length distribution, and high-level summaries of the taxonomic annotations of an NGS dataset.
-
+The script ```metagenome_statistics-example.py``` contains example code that retrieves the metagenome summary data structure from the website.  This data is in a JSON object.  There is a python module to parse the JSON into a python dict of dict, and and plots a sequence-length distribution cotained in the response.  
 
 ##What to expect##
 We have to **get the data**, **get the data out of its container**, and **do something with the data**.  

@@ -1,13 +1,17 @@
 #!/usr/bin/env python
-import os,sys
-from Bio import Entrez
-from Bio import SeqIO
+'''This script sends a efetch request to NCBI, requesting a genbank-formatted data file
+and creates a .gbk file if successful
+retrieve.py NC_000913  
+should create NC_000913.gbk containing the annotated E. coli K12 reference genome '''
 
-def downloadstuff(accessionno):
+import os, sys
+from Bio import Entrez
+
+def downloadgbk(accessionno):
     filename = "%s.gbk" % accessionno       
     print "Trying efectch on %s, writing to %s" % ( accessionno, filename )
     if not os.path.isfile(filename):  
-        net_handle = Entrez.efetch(db="nucleotide",id=accessionno,rettype="gb", retmode="text") 
+        net_handle = Entrez.efetch(db="nucleotide", id=accessionno, rettype="gb", retmode="text") 
         out_handle = open(filename, "w")
         out_handle.write(net_handle.read() ) 
         out_handle.close()
@@ -15,11 +19,11 @@ def downloadstuff(accessionno):
     else:
         print "skipping, %s already exists!" % filename
 
-Entrez.email = "trimble@example.com"
+Entrez.email = "swc@example.com    # Tell NCBI who you are!
 Entrez.tool = "SoftwareCarpentryBootcamp"
 
-# accession = "NC_000913"   # E. coli K12 reference genome accession number
-
+if len(sys.argv) != 2:
+    sys.exit("Usage: retrieve.py <accession number>")
 accession = sys.argv[1]     # take the first program argument
 
-downloadstuff(accession)    
+downloadgbk(accession)    
