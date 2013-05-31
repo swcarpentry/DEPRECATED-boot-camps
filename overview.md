@@ -82,28 +82,123 @@ personal advocacy.
 </table>
 </div>
 
-## My Goals for You
+## Who We Are
 
-You will understand the principles of:
+* Aron Ahmadia
+* Jessica McKellar
+* R. David Murray
+* Michael Selik
+* Will Trimble
 
-* Command Line Interface and the Bash Shell
-* Python as a Scientific Computing Platform
-* Collaborating with Git and GitHub
-* Continuously Verifying and Validating Your Code
+## Our Goals for You
 
-## Schedule
+We will take you on a tour of:
+
+* Exploring the Command Line with the Bash Shell
+* Principles of Practical Programming with Python
+* Managing and Collaborating with your Software, Data, and Manuscripts with Git
+* Scientific Computing with Python
+
+# Learning Objectivs
+
+# Learning Objectives (Shell)
+
+## Given an operating system with a bash command line interface installed on it:
+* Start the bash terminal on his/her operating system
+* Query the bash program's environment
+* Change the bash program's environment
+* Change directories to and determine the path of his/her home directory and specified files
+* Generate directory listings and distinguish between files and directories in listings
+
+## Given a directory tree containing files, directories, and sample data, and a working directory:
+*  Generate wildcard expressions to match to sets of files using filename prefixes, filename suffixes, and fixed-length internal wildcards
+*  Determine both absolute and relative paths for a specified file
+*  copy, rename, and delete specified files and directories.
+*  concatenate and browse files on the terminal
+*  determine location on filesystem of specified executables in the path
+
+## Given a directory tree containing files, directories, and sample data, and a working directory:
+*  display manual pages for system commands and executables and interpret manual pages contents to use new command options
+*  construct queries using the find command to list files and directories
+*  use pipes to filter output from commands such as ls and wc into filters such as grep, sort, head, and tail to answer questions like "identify the five largest files in the current directory tree" or "display a list of files in the current tree sorted by number of lines"
+*  create and invoke an executable script to automate a filtering and piping task
+
+# Learning Objectives (Python)
+
+## Given an IPython shell,
+- Command basic data structures to manipulate data
+* Do arithmetic with integer and floating-point data
+* Create, search, replace, and combine, and take subsets of string data
+* Create, add to, remove from, and iterate through lists of data
+* Create, add to, remove from, and select from dictionaries of data
+* Contrast the uses of tuples with lists
+- Control code using Boolean expressions, Conditionals, Loops, Functions, and Scripts
+* Use truthiness to control program flow
+* Define and use functions to reuse code
+* Run Python scripts from the command line
+
+## Given a formatted data file or pipeline
+* Read the data programmatically using Python
+
+## Given a set of Python computations
+* Programmatically save the data as text or Excel data
+
+# Learning Objectives (Version Control)
+
+## Given a project directory containing code and notes associated with their research,
+  * perform a one-time set up to associate the code with a hidden directory "repository" for saving prior states
+  * record the precise state of the directory as a "snapshot" so that it can be accessed in the future.
+
+## Given the name of a project file in the repository,
+  * retrieve a version of that file from any point in the project's history of snapshots.
+
+## For a particular snapshot of a project,
+ * retrieve the snapshot's author
+ * retrieve the date that the snapshot was created
+ * retrieve the difference between the snapshot and another snapshot
+
+## For a project directory that has been modified since its last snapshot
+ * retrieve the difference between the directory and the last snapshot
+ * selectively "undo" some or all of the changes from the last snapshot
+
+## Given access to their collaborator's snapshots of changes for the same project (paper, code, etc...)
+  * compare the difference between their collaborator's latest snapshot and their own
+  * create a unified history of snapshots that includes both their collaborator's changes and their own.
+  * resolve any conflicts to files that both collaborators have modified
+
+## Given a Git version control repository
+ * view the history of snapshots and their "parents"
+ * distinguish between the snapshot's identifier and the bookmarks "branches" that point to them
+  * connect the repository to another repository, a "remote", and send and retrieve snapshots.
+
+
+# Learning Objectives (Scientific Python)
+
+## Given an IPython Web Notebook
+* Combine code with discussion and presentation of visual results
+* Manipulate arrays of data with basic linear algebra methods using NumPy
+* Efficiently compute basic statistics with NumPy arras
+* Create histograms, line plots, and scatterplots using MatPlotLib
+
+## Given a set of independent and dependent data
+* Programmatically fit and display it using a linear regression model
+* Programmatically make and display predictions
+
+## Schedule Available From:
+
+http://ahmadia.github.io/boot-camps/2013-06-03-tufts/
 
 Today:
 
-* Understanding the Shell
-* Version Control with Git and Collaborating with GitHub
-* Scientific Computing with Python (Start)
+* **10:00-12:00** Exploring the Command Line with the Bash Shell
+* **1:00-4:30** Principles of Practical Programming with Python
+* **4:30-5:30** Office Hour
 
 Tomorrow:
-
-* Scientific Computing with Python (Finish)
-* Verifying, Validating, and Driving Your Development with Tests
-* Bring Your Code!
+* **9:00-12:00** Managing and Collaborating with your Software, Data,
+and Manuscripts with Git
+* **1:00-4:30** Scientific Computing with Python
+* **4:30-5:30** Office Hour
 
 # Understand the Languages of Computing
 
@@ -126,25 +221,10 @@ new things!
 
 ## Use domain specific languages and libraries to increase your expressivity
 
-* Aim for languages and tools that allow you to express your models simply,
-whether that is symbolically, numerically, or
+* Aim for languages and tools that allow you to express your models and
+manage your data simply, whether that is symbolically, numerically, or
 like [`chebfun`](http://www2.maths.ox.ac.uk/chebfun/),
 a strange union of the two.
-
-## Motivating Example: Chebfun
-
-Chebfun teaser from the [website](http://www2.maths.ox.ac.uk/chebfun/)
-
-```{.matlab}
-% What's the integral of sin(sin(x)) from 0 to 10?
->> x = chebfun('x',[0 10]); sum(sin(sin(x)))
-
-% What's the maximum of sin(x)+sin(x2) over the same interval?
->> x = chebfun('x',[0 10]); sum(sin(sin(x)))
-
-% What's the solution to u"-xu=1 with zero boundary conditions on [-20,20]?
->> L = chebop(@(x,u)diff(u,2)-x.*u,[-20,20],'dirichlet'); plot(L\1)
-```
 
 ## Motivating Example: FEniCS solving Poisson
 
@@ -181,7 +261,8 @@ solve(a == L, u, bc)
 ## Self-Promoting Example: PyClaw solving Acoustics
 
 [PyClaw example](http://numerics.kaust.edu.sa/pyclaw/tutorial.html)
-from [the paper submitted to the SIAM Journal of Scientific Computing](http://numerics.kaust.edu.sa/papers/pyclaw-sisc/pyclaw-sisc.html).
+from [the paper submitted to the SIAM Journal of Scientific Computing]
+(http://numerics.kaust.edu.sa/papers/pyclaw-sisc/pyclaw-sisc.html).
 
 ```{.python}
 
@@ -281,11 +362,6 @@ project is of high quality and suitably licensed
 lifespan than unreleased codes*
 * **Share your code with others, and use their code**
 
-## Design languages around commonly used paradigms
-
->
-* I am not Guido van Rossum or Cleve Moler, but you could be!
-
 # Reduce Complexity
 
 ## Basic strategies
@@ -294,7 +370,7 @@ lifespan than unreleased codes*
 * Endeavor to use languages and libraries that reduce the complexity of
 your work
 * It is worth installing a complicated or expensive software tool if your
-computations are naturally expressed with it
+computations or model are naturally expressed with it
 * Always look for opportunities to write **less** code
     + you will have to do less initial work (sometimes)
     + you will introduce less bugs
@@ -310,16 +386,15 @@ and avoid excessive nesting
 
 * organize your personal notes into a personal wiki (gollum, gitit, instiki)
 * organize your shared notes into a group wiki (gollum, gitit, instiki)
-* *improve the layperson's understanding of your field by editing Wikipedia*
 
-## Use version Control for checkpointing and collaboration
+## Use version control for checkpointing and collaboration
 
 * use local version control software to checkpoint personal code development
   + checkpointing your work encourages wild ideas and late-night coding sessions
   + you can easily restore back in the morning if it was a bad idea
 * use **distributed version control** to collaborate with others
-* I advocate *git*, but you may be stuck with whatever your group uses
-  + though check out git-svn for using git to collaborate with an svn repository,
+* We advocate *Git*, but you may be stuck with whatever your group uses
+  + though check out git-svn for using Git to collaborate with an svn repository,
   it's awesome!
 
 *We will learn more about working with git and GitHub today and tomorrow*
@@ -359,10 +434,6 @@ it
 these goals
 * See <http://figshare.com> for an easy way to store and share your data in
 an easily-cited way
-
-## Questions for the lecturer
-* Why do senior computational scientists recommend against using libraries?
-* How do I evaluate the usefulness of other people's code?
 
 # References and Further Reading
 
