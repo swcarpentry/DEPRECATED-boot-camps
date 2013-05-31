@@ -92,113 +92,12 @@ personal advocacy.
 
 ## Our Goals for You
 
-We will take you on a tour of:
-
+### We will take you on a tour of:
+>
 * Exploring the Command Line with the Bash Shell
 * Principles of Practical Programming with Python
 * Managing and Collaborating with your Software, Data, and Manuscripts with Git
 * Scientific Computing with Python
-
-# Learning Objectivs
-
-# Learning Objectives (Shell)
-
-## Given an operating system with a bash command line interface installed on it:
-* Start the bash terminal on his/her operating system
-* Query the bash program's environment
-* Change the bash program's environment
-* Change directories to and determine the path of his/her home directory and specified files
-* Generate directory listings and distinguish between files and directories in listings
-
-## Given a directory tree containing files, directories, and sample data, and a working directory:
-*  Generate wildcard expressions to match to sets of files using filename prefixes, filename suffixes, and fixed-length internal wildcards
-*  Determine both absolute and relative paths for a specified file
-*  copy, rename, and delete specified files and directories.
-*  concatenate and browse files on the terminal
-*  determine location on filesystem of specified executables in the path
-
-## Given a directory tree containing files, directories, and sample data, and a working directory:
-*  display manual pages for system commands and executables and interpret manual pages contents to use new command options
-*  construct queries using the find command to list files and directories
-*  use pipes to filter output from commands such as ls and wc into filters such as grep, sort, head, and tail to answer questions like "identify the five largest files in the current directory tree" or "display a list of files in the current tree sorted by number of lines"
-*  create and invoke an executable script to automate a filtering and piping task
-
-# Learning Objectives (Python)
-
-## Given an IPython shell,
-- Command basic data structures to manipulate data
-* Do arithmetic with integer and floating-point data
-* Create, search, replace, and combine, and take subsets of string data
-* Create, add to, remove from, and iterate through lists of data
-* Create, add to, remove from, and select from dictionaries of data
-* Contrast the uses of tuples with lists
-- Control code using Boolean expressions, Conditionals, Loops, Functions, and Scripts
-* Use truthiness to control program flow
-* Define and use functions to reuse code
-* Run Python scripts from the command line
-
-## Given a formatted data file or pipeline
-* Read the data programmatically using Python
-
-## Given a set of Python computations
-* Programmatically save the data as text or Excel data
-
-# Learning Objectives (Version Control)
-
-## Given a project directory containing code and notes associated with their research,
-  * perform a one-time set up to associate the code with a hidden directory "repository" for saving prior states
-  * record the precise state of the directory as a "snapshot" so that it can be accessed in the future.
-
-## Given the name of a project file in the repository,
-  * retrieve a version of that file from any point in the project's history of snapshots.
-
-## For a particular snapshot of a project,
- * retrieve the snapshot's author
- * retrieve the date that the snapshot was created
- * retrieve the difference between the snapshot and another snapshot
-
-## For a project directory that has been modified since its last snapshot
- * retrieve the difference between the directory and the last snapshot
- * selectively "undo" some or all of the changes from the last snapshot
-
-## Given access to their collaborator's snapshots of changes for the same project (paper, code, etc...)
-  * compare the difference between their collaborator's latest snapshot and their own
-  * create a unified history of snapshots that includes both their collaborator's changes and their own.
-  * resolve any conflicts to files that both collaborators have modified
-
-## Given a Git version control repository
- * view the history of snapshots and their "parents"
- * distinguish between the snapshot's identifier and the bookmarks "branches" that point to them
-  * connect the repository to another repository, a "remote", and send and retrieve snapshots.
-
-
-# Learning Objectives (Scientific Python)
-
-## Given an IPython Web Notebook
-* Combine code with discussion and presentation of visual results
-* Manipulate arrays of data with basic linear algebra methods using NumPy
-* Efficiently compute basic statistics with NumPy arras
-* Create histograms, line plots, and scatterplots using MatPlotLib
-
-## Given a set of independent and dependent data
-* Programmatically fit and display it using a linear regression model
-* Programmatically make and display predictions
-
-## Schedule Available From:
-
-http://ahmadia.github.io/boot-camps/2013-06-03-tufts/
-
-Today:
-
-* **10:00-12:00** Exploring the Command Line with the Bash Shell
-* **1:00-4:30** Principles of Practical Programming with Python
-* **4:30-5:30** Office Hour
-
-Tomorrow:
-* **9:00-12:00** Managing and Collaborating with your Software, Data,
-and Manuscripts with Git
-* **1:00-4:30** Scientific Computing with Python
-* **4:30-5:30** Office Hour
 
 # Understand the Languages of Computing
 
@@ -423,6 +322,134 @@ it in 6 months
   + as well as file-level, function-level, and inline documentation
 * If any piece of code is too complex to easily describe, consider refactoring
 it
+
+
+# Learning Objectives
+
+# Learning Objectives (Shell)
+
+## Given an operating system with a bash command line interface installed on it:
+>
+* Start the bash terminal on your operating system
+* Query the bash program's environment
+* Change the bash program's environment
+* Change directories to and determine the path of you home directory and specified files
+* Generate directory listings and distinguish between files and directories in listings
+
+## Given a directory tree containing files, directories, and sample data, and a working directory:
+>
+*  Generate wildcard expressions to match to sets of files using filename prefixes, filename suffixes, and fixed-length internal wildcards
+*  Determine both absolute and relative paths for a specified file
+*  copy, rename, and delete specified files and directories.
+*  concatenate and browse files on the terminal
+*  determine location on filesystem of specified executables in the path
+
+## Given a directory tree containing files, directories, and sample data, and a working directory:
+>
+*  display manual pages for system commands and executables and interpret manual pages contents to use new command options
+*  construct queries using the find command to list files and directories
+*  use pipes to filter output from commands such as ls and wc into filters such as grep, sort, head, and tail to answer questions like "identify the five largest files in the current directory tree" or "display a list of files in the current tree sorted by number of lines"
+*  create and invoke an executable script to automate a filtering and piping task
+
+# Learning Objectives (Python)
+
+## Given an IPython shell,
+
+### Command basic data structures to manipulate data
+>
+* Do arithmetic with integer and floating-point data
+* Create, search, replace, and combine, and take subsets of string data
+* Create, add to, remove from, and iterate through lists of data
+* Create, add to, remove from, and select from dictionaries of data
+* Contrast the uses of tuples with lists
+
+### Control code using Boolean expressions, Conditionals, Loops, Functions, and Scripts
+>
+* Use truthiness to control program flow
+* Define and use functions to reuse code
+* Run Python scripts from the command line
+
+## Given a formatted data file or pipeline
+>
+* Read the data programmatically using Python
+
+## Given a set of Python computations
+>
+* Programmatically save the data as text or Excel data
+
+# Learning Objectives (Version Control)
+
+## Given a project directory containing code and notes associated with your research,
+>
+* perform a one-time set up to associate the code with a hidden directory
+"repository" for saving prior states
+* record the precise state of the directory as a "snapshot" so that it can be
+accessed in the future.
+
+## Given the name of a project file in the repository,
+>
+* retrieve a version of that file from any point in the project's history of
+snapshots.
+
+## For a particular snapshot of a project,
+>
+* retrieve the snapshot's author
+* retrieve the date that the snapshot was created
+* retrieve the difference between the snapshot and another snapshot
+
+## For a project directory that has been modified since its last snapshot
+>
+* retrieve the difference between the directory and the last snapshot
+* selectively "undo" some or all of the changes from the last snapshot
+
+## Given access to your collaborator's snapshots of changes for the same project (paper, code, etc...)
+>
+* compare the difference between your collaborator's latest snapshot and your
+own
+* create a unified history of snapshots that includes both your collaborator's
+changes and your own.
+* resolve any conflicts to files that both you and your collaborators have
+modified
+
+## Given a Git version control repository
+>
+* view the history of snapshots and their "parents"
+* distinguish between the snapshot's identifier and the bookmarks "branches"
+that point to them
+* connect the repository to another repository, a "remote", and send and
+retrieve snapshots with your collaborators.
+
+# Learning Objectives (Scientific Python)
+
+## Given an IPython Web Notebook
+>
+* Combine code with discussion and presentation of visual results
+* Manipulate arrays of data with basic linear algebra methods using NumPy
+* Efficiently compute basic statistics with NumPy arras
+* Create histograms, line plots, and scatterplots using MatPlotLib
+
+## Given a set of independent and dependent data
+>
+* Programmatically fit and display it using a linear regression model
+* Programmatically make and display predictions
+
+## Schedule Available From:
+
+### [Course Website](http://ahmadia.github.io/boot-camps/2013-06-03-tufts/)
+
+### Today
+
+* **10:00-12:00** Exploring the Command Line with the Bash Shell
+* **1:00-4:30** Principles of Practical Programming with Python
+* **4:30-5:30** Office Hour
+
+### Tomorrow
+
+* **9:00-12:00** Managing and Collaborating with your Software, Data,
+and Manuscripts with Git
+* **1:00-4:30** Scientific Computing with Python
+* **4:30-5:30** Office Hour
+
 
 # Closing Thoughts
 
