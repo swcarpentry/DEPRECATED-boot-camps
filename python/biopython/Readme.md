@@ -15,6 +15,7 @@ In general you will have your own data, you will need to change its format and d
 you will get some reference data, perform some comparison operation, and then perform
 operations on the results of the comparison in view of your hypotheses.
 
+###Optimizing time###
 Solving any particular data manipulation problem takes a certain amount of time, time that should include the time to 
 fix the mistakes and confirm that your code is really is doing what you think it is.   It is dramatically easier to write a program that
 you will use once and then throw away than to write a program that is useful to you again and again.  Ask: do you really
@@ -22,7 +23,7 @@ want to solve a particular (easy) format-conversion problem six times, once for 
 If you invest effort in identifying what you need and what parts you will use again and again, you can forget the details of how you solved
 this (boring) problem in the first place and direct your time to more interesting things.
 
-##An anecdote: using python to get and plot data from a web interface##
+###An anecdote: using python to get and plot data from a web interface###
 One day, a colleague of mine showed me that the MG-RAST website had an interface that would deliver a bundle of data about a dataset in response to an HTTP request.  Specifically, the request 
 http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
 has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  There's lots of good data in there.  It's encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
@@ -35,8 +36,11 @@ Biopython is described in *Biopython: freely available Python tools for computat
 and has a detailed *Biopython Cookbook and Tutorial*
 http://biopython.org/DIST/docs/tutorial/Tutorial.html describing many of the things that it does.  
 
-First we will show an example of getting data from NCBI, show examples of how Biopython goes through data and what types of data objects it uses, and we will give some exercises for doing something to sequences one at a time.
-```Bio.SeqIO.parse()``` returns a generator.  Looping through this will produce ```SeqRecord``` objects.  These have ```Seq``` and ```SeqFeature``` objects inside of them.   
+We will show 
++ an example of how to get data from NCBI using EFETCH
++ examples of how Biopython goes through FASTA, FASTQ, and GENBANK data and where the data is inside of the resulting objects 
++ we will give some exercises for doing things to sequences one at a time.
+
 
 ###Get reference data--NCBI's EUTILS###
 Sequence comparison is at the heart of bioinformatics; to do useful comparisons, you need data (sequences) against which to compare your new, exciting sequences.  NCBI provides an interface to allow automated download of various (sequence) data products using HTTP GET requests.
@@ -53,8 +57,9 @@ We just need to find out how to use these subroutines.
 ```retrievegbk.py``` contains an example of using the ```Entrez.efetch```  biopython method to retrieve genbank records by specifying their accession number.  
 
 ```python
-'''This is an example of Entrez.efetch. http://www.ncbi.nlm.nih.gov/books/NBK25499/#_chapter4_EFetch_ '''
 #!/usr/bin/env python
+'''This is an example of Entrez.efetch. http://www.ncbi.nlm.nih.gov/books/NBK25499/#_chapter4_EFetch_ '''
+
 from Bio import Entrez
 
 accessionno = "NC_012920"   # This is the human mitochondrion reference sequence 
@@ -98,9 +103,8 @@ can get the data from, variety in the data types, and variety in the procedures 
 
 The ```Bio.SeqIO.parse``` method returns a *generator*, an python object with methods to let us access the data.  We can put this generator in a ```for``` loop and access each record one at a time, or we can call ```list(generator)``` to load all the records into memory at once (if we have enough memory to do so).   (If we don't have enough memory load all the data at once, we need to find ways to write our programs that don't require us to do so.)  Or we can use `record = generator.next()` until we get a `StopIteration`.
 
-
-```SeqIO.parse()``` returns ```SeqRecord``` objects, a general Biopython data type that can accommodate fasta, fastq, genbank, and other types of data, though with different levels of detail.
-Note: ```SeqIO.parse``` takes the format as a mandatory second parameter.  fasta, fastq, genbank, and embl are among the supported formats.
+```SeqIO.parse()``` returns ```SeqRecord``` objects, a general Biopython data type that can accommodate fasta, fastq, genbank, and other types of data, though with different levels of detail.  ```SeqIO.parse``` takes the format as a mandatory second parameter.  fasta, fastq, genbank, and embl are among the supported formats.
+```Bio.SeqIO.parse()``` returns a generator.  Looping through this will produce ```SeqRecord``` objects.  These have ```Seq``` and ```SeqFeature``` objects inside of them.   :w
 
 We can open ```data/tiny-fasta.fasta``` using ```SeqIO.parse()```, get the first record using the ```next()``` method, and find out what data type we got using ```type```:
 
@@ -283,14 +287,12 @@ for i in gbrecord.features:
             gene = i.qualifiers["gene"][0]
         except KeyError:
             gene = "-"  
-        print i.qualifiers["locus_tag"][0], i.qualifiers["protein_id"][0] , gene,  i.qualifiers["translation"][0]
+        print i.qualifiers["locus_tag"][0], i.qualifiers["protein_id"][0] , gene, i.qualifiers["translation"][0]
 
 ```
-Exercise: 
-Parse ```NC_001422.1.gbk``` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line? 
 
-Parse the ```NC_001422.1.faa``` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line? 
- 
+Exercise: 
+Parse ```NC_001422.1.gbk``` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line?   Put the results in ```NC_001422.1.faa``` 
 
 ###High-throughput data--getting it###
 High-throughput sequencing datasets range in size from a few megabytes to a few hundreds of gigabytes in size.  
