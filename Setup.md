@@ -60,7 +60,7 @@ Ubuntu 10.04 and above already comes with a `bash` shell (via Terminal), `vi`
 and `nano` text editors, and Python (version 2.6 if running Ubuntu 10.04,
 version 2.7 otherwise). To install the other packages run,
 
-    $ sudo apt-get install git python-nose python-pip
+    $ sudo apt-get install git python-nose python-pip ipython
     $ sudo pip install pytest-cov
 
 The second `pip install` command also installs `coverage` and `pytest` as
