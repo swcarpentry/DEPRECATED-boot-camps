@@ -12,6 +12,7 @@ You should ensure you have the following software and tools available.
 * Python [coverage](http://nedbatchelder.com/code/coverage/)
 * Python [pytest](http://pytest.org/)
 * Python [pytest-cov](https://pypi.python.org/pypi/pytest-cov)
+* Python [IPython](https://pypi.python.org/pypi/ipython)
 
 Below there are brief instructions for RedHat/Scientific Linux 6 and Ubuntu. 
 
@@ -27,6 +28,7 @@ Scientific Linux 6 already comes with shell and vi text editor. To install the o
     # yum install nano
     # yum install git
     # yum install python
+    # yum install ipython
     # yum install python-nose
     # nosetests
     ------------------------------------------------------------------
@@ -62,6 +64,7 @@ Ubuntu 11.04 and above already comes with shell, vi and nano text editors, Pytho
     # apt-get install nano
     # apt-get install git
     # apt-get install python
+    # apt-get install ipython
     # apt-get install python-nose
     # nosetests
     ------------------------------------------------------------------
