@@ -12,35 +12,6 @@
 <br></br>
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Software Carpentry Overview</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://software-carpentry.net" property="cc:attributionName" rel="cc:attributionURL">Software Carpentry</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
 
-## Introduction
-
-Our goal:
-
-<!-- There are a plethora of techniques, tools, languages, and
-platforms available to help you scientifically compute. It is likely
-that you will only be able to afford a limited amount of time learning
-a subset of them. The purpose of this bootcamp is to help orient you
-on the path to writing software as part of your research by:
--->
-
->
-* introducing the important tools and paradigms of software construction with:
-    + examples
-    + hands-on exercies
-* relating them to your role as a scientist, and
-* making specific recommendations for
-    + selecting tools that you should be using
-    + and practices that you should be following
-
->
-* three themes I will focus on are:
-    + **reducing complexity**
-    + **automating your workflow**
-    + **encouraging experimentation**
-
-Keywords in **bold** are important concepts, notes in *italics* are my own
-personal advocacy.
-
 # More About Software Carpentry
 
 ## History
@@ -99,7 +70,7 @@ personal advocacy.
 * Managing and Collaborating with your Software, Data, and Manuscripts with Git
 * Scientific Computing with Python
 
-# Understand the Languages of Computing
+# Some High-Level Advice
 
 ## Be fluent in multiple languages
 <comment>
@@ -425,7 +396,7 @@ retrieve snapshots with your collaborators.
 >
 * Combine code with discussion and presentation of visual results
 * Manipulate arrays of data with basic linear algebra methods using NumPy
-* Efficiently compute basic statistics with NumPy arras
+* Efficiently compute basic statistics with NumPy arrays
 * Create histograms, line plots, and scatterplots using MatPlotLib
 
 ## Given a set of independent and dependent data
@@ -433,9 +404,7 @@ retrieve snapshots with your collaborators.
 * Programmatically fit and display it using a linear regression model
 * Programmatically make and display predictions
 
-## Schedule Available From:
-
-### [Course Website](http://ahmadia.github.io/boot-camps/2013-06-03-tufts/)
+## Schedule Available From [Course Website](http://ahmadia.github.io/boot-camps/2013-06-03-tufts/)
 
 ### Today
 
