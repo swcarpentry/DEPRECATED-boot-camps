@@ -4,6 +4,7 @@ calls a subroutine.'''
 
 def do_something(arg):
     sys.stderr.write("I'm doing something with argument %s!\n" % arg)
+    return(42)
 
 import sys, os
 from optparse import OptionParser
@@ -15,14 +16,15 @@ if __name__ == '__main__':
     parser.add_option("-o", "--output", dest="outfile", default=None, help="Output filename")
     parser.add_option("-v", "--verbose", dest="verbose", action="store_true", default=True, help="Verbose")
     (opts, args) = parser.parse_args()
-    if len(args) == 0 :
-        sys.exit("No arguments supplied!")
-    argument = args[0]
+#    if len(args) == 0 :
+#        sys.exit("No arguments supplied!")
+#    argument = args[0]
+    inputfile = opts.infile
 
-    if opts.verbose: 
-        sys.stdout.write("Argument: %s\n" % argument ) 
+#    if opts.verbose: 
+#        sys.stdout.write("Argument: %s\n" % argument ) 
 
-    do_something(argument)
+    do_something(inputfile)
 
     if opts.verbose: 
         sys.stdout.write("Done. \n")
