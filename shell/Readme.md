@@ -1,6 +1,6 @@
 # The Shell
 
-**Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+**Original material by Paul Wilson, Malady Fatenejad, Sasha Wood, and Radhika Khetani**
 
 # What is the shell? How do I access the shell?
 
@@ -19,7 +19,7 @@ A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
 
-There are many reasons to learn about the shell. In my opinion, the
+There are many reasons to learn about the shell. In our opinion, the
 most important reasons are that:
 
 1.  It is very common to encounter the shell and
@@ -52,6 +52,10 @@ the data for this test, you will need internet access. Just enter the
 command:
 
     git clone -b YYYY-MM-PLACE --single-branch git://github.com/swcarpentry/boot-camps.git
+
+Followed by:
+
+    cd boot-camps/shell
 
 This command will grab all of the data needed for this workshop from
 the internet.  (We will talk about the `git` command later in the
@@ -91,9 +95,17 @@ directory. This is the home directory for the `swc` user. That is our
 user name. You can always find out your user name by entering the
 command `whoami`.
 
+Different operating systems have different conventions for the naming
+of the home directory; yours could look like 
+```
+/home/swc             # Software carpentry virtual box
+/Users/johann         # Mac OSX style
+/c/Users/johann       # gitbash on windows
+```
+
 ## File Types
 
-When you enter the `ls` command lists the contents of the current
+When you enter the `ls` command, it lists the contents of the current
 directory. There are several items in the home directory, notice that
 they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
@@ -376,8 +388,8 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
+1.  List all of the files in the data directory `gerdal` that contain the number `2`
+2.  List all of the files in that contain the number `2`, followed by the number (in any position) `9`
 3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
 
 * * * *
@@ -550,7 +562,7 @@ are identical to the `man` program.
 | key     | action |
 | ------- | ---------- |
 | "space" | to go forward |
-|  "b"    | to go backwarsd |
+|  "b"    | to go backwards |
 |  "g"    | to go to the beginning |
 |  "G"    | to go to the end |
 |  "q"    | to quit |
@@ -975,7 +987,7 @@ search for files which do not match a certain name.
 
 ## Bonus:
 
-**backtick, xargs**: Example find all files with certain text
+**backtick, sagas**: Example find all files with certain text
 
 **alias** -> rm -i
 

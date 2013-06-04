@@ -26,4 +26,4 @@ if len(sys.argv) != 2:
     sys.exit("Usage: retrieve.py <accession number>")
 accession = sys.argv[1]     # take the first program argument
 
-downloadgbk(accession)    
+downloadgbk(accession)
