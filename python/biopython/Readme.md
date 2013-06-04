@@ -318,6 +318,7 @@ Some institutions make raw sequence data available by FTP, but the sequence arch
 The NCBI offers a guide to downloading data here http://www.ncbi.nlm.nih.gov/books/NBK47540/
 which includes links to downloading the *SRA toolkit*. 
 Linux:  http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=std
+Mac and Windows precompiled binaries: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software
 
 The sequence read archive maintains its own formats, and its own library of programs to get data out of the SRA format.  The options for the utilities (and the formats themselves) change from time to time, so it is helpful to update update your copy of the SRA toolkit a few times a year.
 
@@ -326,7 +327,14 @@ To illustrate getting short-read sequencing data form SRA, let's get an Illumina
 We can download the SRA-formatted dataset from here 
 wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/litesra/SRR/SRR036/SRR036919/SRR036919.sra 
 This is only a 300 Mbyte download.  You can expect NGS datasets (particularly shotgun and metatranscriptomic datasets) to be larger.  
+`fastq-dump` is the program in the SRA tools that will extract the data form sra format to fastq:
+```
+fastq-dump SRR036919.sra
+```
+will extract the sequence data from SRR036919.sra and create SRR036919.fastq
 
+###What is it good for?###
+Scripts using the shell, python, and the standard unix can do things that *you can't do by hand* and they can do things you *could* do by hand faster and with fewer mistakes.
 
 ###Being smart### 
 
