@@ -1,0 +1,29 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{natbib}                 % Fancy bibliography.
+\usepackage{url}                    % Allow printing of URLs.
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}   %align
+\usepackage{dsfont}
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{mysep}{ \textbar  }
+\captionsetup{font=scriptsize,labelfont=bf,labelsep=mysep}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{problem}[theorem]{Problem}
+
+
+\title{\textbf{A really nice plot.}}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{figure}
+\includegraphics[scale=0.7]{images/my_plot.png}
+\end{figure}
+\end{document}
