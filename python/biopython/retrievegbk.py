@@ -7,6 +7,11 @@ should create NC_000913.gbk containing the annotated E. coli K12 reference genom
 import os, sys
 
 def downloadgbk(accessionno):
+    '''downloadgbk(accessionno)
+    Takes a str as an argument
+    Creates a file called argument.gbk if it doesn't exist
+    populates the file with genbank-formatted data from NCBI's efectch API'''
+
     from Bio import Entrez
     Entrez.email = "swc@example.com    # Tell NCBI who you are!
     Entrez.tool = "SoftwareCarpentryBootcamp"
