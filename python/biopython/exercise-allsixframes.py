@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-'''exercis-se_allsixframes.py   Write the code to translate sequences 
-in all six frames.  ''' 
+'''exercise_allsixframes.py   
+Write the code to translate sequences in all six frames.  ''' 
 
 from Bio import SeqIO
 import sys
