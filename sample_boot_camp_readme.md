@@ -4,9 +4,9 @@ boot-camps
 
 Welcome!
 
-# University of Chicago - January 12-13, 2013
+# Women in Science and Engineering - June 24-25, 2013
 Software Carpentry boot camp material
-for the January 12-13, 2013 boot camp at the University of Chicago.
+for the June 24-25, 2013 boot camp in Boston.
 
 For a schedule and installation instructions check out the bootcamp webpage at
-http://swcarpentry.github.com/boot-camps/2013-01-12-chicago.
+http://swcarpentry.github.com/boot-camps/2013-06-24-wise.
