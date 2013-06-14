@@ -1,4 +1,4 @@
-# Python, iPython, and the basics
+# Python, IPython, and the basics
 
 * * * * *
 
@@ -7,7 +7,7 @@
 R. Smith, Will Trimble, and many more**
 
 ## Introduction
-This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython notebook.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
+This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called IPython Notebook.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
 
 So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.python.org/dev/peps/pep-0020/)
 
@@ -31,7 +31,7 @@ So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.
 > If the implementation is easy to explain, it may be a good idea.
 > Namespaces are one honking great idea -- let's do more of those!
 
-This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
+This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the IPython interpreter (to a lesser extent). The IPython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
 
 Here is the reference material.
 
@@ -40,7 +40,7 @@ Here is the reference material.
 * [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
 * [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
 
-Once we briefly deal with ipython, I'll cover python in the following order:
+Once we briefly deal with IPython, I'll cover python in the following order:
 
 ## What I'll cover
 ### Lesson 1
@@ -50,7 +50,7 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 * floats
 * strings
 * types
-* type coersion
+* type coercion
 * basic operations: add numbers, concatenate strings, basic data type functionality
 
 ### Lesson 2
@@ -71,8 +71,8 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 * methods
 * modules
 
-## iPython
-You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run iPython, or you can run iPython notebook.  iPython is an alternative to the built-in Python interpreter with some nice features.  iPython notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
+## IPython
+You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run IPython, or you can run IPython Notebook.  IPython is an alternative to the built-in Python interpreter with some nice features.  IPython Notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
 Lets give the built-in interpreter a spin just this once.
 
 ```
@@ -91,10 +91,10 @@ We can also write python commands in a file and execute them from the command li
 swc@swc:~$ python hello.py
 ```
 
-iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out.
+IPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out.
 
 ```python
-swc@swc:~$ ipython notebook
+swc@swc:~$ IPython Notebook
 In [1]: print "hello world"
 hello world
 In [2]: 
@@ -113,19 +113,19 @@ In [3]:
 
 ### Pasting
 
-You can paste things into the ipython console by copying text from your machine with **ctrl+c** and typing **%paste** at the iPython prompt.
+You can paste things into the IPython console by copying text from your machine with **ctrl+c** and typing **%paste** at the IPython prompt.
 
 ### History
 
-iPython has a history. If you press the up and down keys, you can access the history.
+IPython has a history. If you press the up and down keys, you can access the history.
 
 ### Tab Completion
 
-iPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
+IPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
 
 ### Getting Help
 
-iPython has some nice help features. Lets say we want to know more about the integer data type. There are at least two ways to do this task:
+IPython has some nice help features. Lets say we want to know more about the integer data type. There are at least two ways to do this task:
 
 ```python
 In [1] help(int)
@@ -145,15 +145,15 @@ In [1] dir(str)
 
 ### Executing code in files
 
-If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so
+If your code is in a file, you can execute it from the IPython shell with the **%run** command. Execute hello.py like so
 
 ```python
 In [1] %run hello.py
 ```
 
-### Clearing iPython
+### Clearing IPython
 
-To clear everything from iPython, use the reset command.
+To clear everything from IPython, use the reset command.
 
 ```python
 In [1] reset
@@ -228,7 +228,7 @@ I'll let you ruminate on the pros and cons of this construction while I change t
 In [14]: voltage = 2
 ```
 
-## Coersion
+## coercion
 It is possible to coerce (a fancy and slightly menacing way to say "convert") certain types of data to other types. For example, its pretty straightforward to coerce numerical data to strings.
 
 ```python
@@ -373,7 +373,7 @@ Out[52]: 0
 
 **ZING!**
 
-Here's why type is important. Divding two integers returnes an integer: this operation calculates the quotient and floors the result to get the answer.
+Here's why type is important. Dividing two integers returns an integer: this operation calculates the quotient and floors the result to get the answer.
 
 If everything was a float, the division is what you would expect.
 
@@ -413,7 +413,7 @@ In [63]: print fullName
 Johann Gambolputty
 ```
 
-There are other operations deined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
+There are other operations defined on string data. Use the dir command to find them. One example I'll show is the upper method. Lets take a look at the documentation.
 
 ```python
 In [64]: str.upper?
@@ -445,5 +445,5 @@ Out[66]: 'JOHANN GAMBOLPUTTY'
 
 What do you think should happen when you take upper of an int?  What about a string representation of an int?
 
-That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
+That wraps up this lesson. We tried out the IPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
 
