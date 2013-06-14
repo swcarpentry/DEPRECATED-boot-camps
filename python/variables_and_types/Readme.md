@@ -1,7 +1,5 @@
 # Python, IPython, and the basics
 
-* * * * *
-
 
 **Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
 R. Smith, Will Trimble, and many more**
