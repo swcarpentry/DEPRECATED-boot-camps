@@ -146,7 +146,7 @@ the directory containing the data for the shell tutorial:
 
 Now use the `ls -F` command to see what is inside this directory. You
 will see that there is an entry which has an asterisk at the end. This means that this
-is an executable. If you type `ls -Gp`, the entry will be red.ma
+is an executable. If you type `ls -Gp`, the entry will be colored in. 
 
 If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
