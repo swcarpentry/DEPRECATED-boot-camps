@@ -41,5 +41,5 @@ def neighbors(cell):
     return [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1), (x + 1, y + 1),
             (x + 1, y - 1), (x - 1, y + 1), (x - 1, y - 1)]
 
-glider = [(0, 0), (1, 0), (2, 0), (0, 1), (1, 2)]
+glider = [(30, 30), (31, 30), (32, 30), (30, 31), (31, 32)]
 print conway(glider)
