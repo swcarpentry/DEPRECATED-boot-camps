@@ -1,11 +1,9 @@
-Python 9 : NumPy
+NumPy: Numerical Python
 ================
 
-**Presented By : Katy Huff**
+**Based on lecture materials by Matthew Terry and Katy Huff**
 
-**Based on Lecture Materials By Matthew Terry**
-
-This class will cover a broad overview of NumPy with brief illustrative
+This section will cover a broad overview of NumPy with brief illustrative
 examples geared towards getting people familiar with the basic use
 cases. Since NumPy has many advanced features that may be useful to
 experienced programmers, these notes will occasionally link to more
@@ -13,14 +11,14 @@ advanced examples that readers can peruse on their own time.
 
 **Aside: Code Examples**
 
-In all the examples below, we assume that import numpy has already been
+In all the examples below, we assume that `import numpy` has already been
 executed. If any other modules are needed, we will import them
 explicitly.
 
 NumPy basics
 ============
 
-What is NumPy ?
+What is NumPy?
 ---------------
 
 NumPy is a Python package implementing efficient collections of specific
@@ -43,7 +41,7 @@ automatically-chosen one would be unsuitable.
   >>> A = numpy.array([1, 2.3, 4])   
   >>> A.dtype 
   dtype('float64')   
-  >>> B= numpy.array([1, 2.3, 4], dtype int)   
+  >>> B= numpy.array([1, 2.3, 4], dtype=int)   
   >>> B.dtype   
   dtype('int32') 
 ```
@@ -138,11 +136,11 @@ element of the array).
   array([0, 1, 2, 3, 4])
   >>> B
   array([5, 6, 7, 8, 9])
-  >>> A+B
+  >>> A + B
   array([ 5,  7,  9, 11, 13])
-  >>> B-A
+  >>> B - A
   array([5, 5, 5, 5, 5])
-  >>> A*B
+  >>> A * B
   array([ 0,  6, 14, 24, 36])
 ```
 
@@ -152,11 +150,11 @@ applied to all the elements of the array.
 ```python
   
   >>> A = numpy.arange(5)
-  >>> 2*A
+  >>> 2 * A
   array([0, 2, 4, 6, 8])
-  >>> A**2
+  >>> A ** 2
   array([ 0,  1,  4,  9, 16])
-  >>> A+10
+  >>> A + 10
   array([10, 11, 12, 13, 14])
 ```
 
@@ -262,11 +260,10 @@ Indexing with an array of booleans:
 
 ```python
   
-  >>> import random
-  >>> A = numpy.array([random.randint(0, 10) for i in range(10)])
+  >>> A = numpy.random.randint(10, size=10)
   >>> A
   array([10,  5,  1,  2,  3,  9,  3,  4,  9,  8])
-  >>> A[A>5] = 5
+  >>> A[A > 5] = 5
   >>> A
   array([5, 5, 1, 2, 3, 5, 3, 4, 5, 5])
 ```
@@ -327,7 +324,7 @@ or tuples, which are always copies.
   >>> B[0] = 42
   >>> A
   array([42,  1,  2,  3,  4])
-  >>> >>> A = range(5)
+  >>> A = range(5)
   >>> B = A[0:1]
   >>> B[0] = 42
   >>> A
@@ -359,8 +356,7 @@ arrays.
 
 ```python
   
-  >>> import random
-  >>> A = numpy.array([random.randint(0, 10) for i in range(10)])
+  >>> numpy.random.randint(10, size=10)
   >>> A
   array([6, 9, 9, 4, 9, 8, 7, 9, 0, 3])
   >>> A.min()
@@ -374,6 +370,31 @@ arrays.
   >>> A.sum()
   64
 ```
+
+Performance comparison
+------
+
+To illustrate the speedup from using NumPy for numerical computing,
+let's compare the time it takes to sum up 1,000,000 values in a
+NumPy array vs. a Python list.
+
+```python
+
+	>>> import random
+	>>> A = numpy.random.randint(10, size=1000000)
+	>>> B = [random.randint(0, 10) for r in range(1000000)]
+	>>> %timeit A.sum()
+	1000 loops, best of 3: 892 us per loop
+	>>> %timeit sum(B)
+	10 loops, best of 3: 119 ms per loop
+	
+119 milliseconds (ms) = 119,000 microseconds (us). That is orders
+of magnitude difference in performance! Just imagine if you had to
+do anything more complicated than sum the elements.
+
+
+Operations for N-dimensional arrays
+------
 
 For 2-dimensional (or more) arrays, there are some other common
 operations:
@@ -406,21 +427,44 @@ So far, we've used two-dimensional arrays to represent matrix-like
 objects. However, NumPy provides a specialized class for this. The
 matrix class is almost identical to a two-dimensional NumPy array, but
 has a few changes to the interface to simplify common linear algebraic
-tasks. These are: \* The `*` operator is performs matrix multiplication
-\* The `**` operator performs matrix exponentiation \* The property `.I`
-(or the method `.getI()`) returns the matrix inverse \* The property
-`.H` (or the method `.getH()`) returns the conjugate transpose
+tasks. These are:
+
+* The `*` operator is performs matrix multiplication
+* The `**` operator performs matrix exponentiation
+* The property `.I` (or the method `.getI()`) returns the matrix inverse
+* The property `.H` (or the method `.getH()`) returns the conjugate transpose
 
 ### Example: Solving a System of Linear Equations
+
+Let's say we have the following system of equations:
+
+3 x_0 + 2 x_1 - x_2 = 1
+
+2 x_0 - 2 x_1 + 4 x_2 = -2
+
+-x_0 + 0.5 x_1 - x_2 = 0
+
+And we want to solve for $x_0$, $x_1$, and $x_2$.
+
+Of course, there's an operation for that:
 
 ```python
 
   >>> import numpy.linalg
+  >>> # coefficient matrix
   >>> A = numpy.matrix([[3, 2, -1], [2, -2, 4], [-1, .5, -1]])
+  >>> # dependent variable values
   >>> B = numpy.array([1, -2, 0])
-  >>> numpy.linalg.solve(A, B)
-  array([ 1., -2., -2.])
+  >>> solution = numpy.linalg.solve(A, B)
+  >>> print "x_0 =", solution[0]
+  x_0 = 1.0
+  >>> print "x_1 =", solution[1]
+  x_1 = -2.0
+  >>> print "x_2 =", solution[2]
+  x_2 = -2.0
 ```
+
+And there you have it! You'll never have to do linear algebra by hand again.
 
 Universal Functions
 ===================
@@ -448,7 +492,7 @@ ufuncs
 
 ### Exercise : Elementwise Operations
 
-Using ufuncs, calculate the reciprocals of each element in the following
+Using ufuncs, calculate the reciprocal of each element in the following
 array:
 
 ```python
