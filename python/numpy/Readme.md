@@ -512,3 +512,9 @@ selection of them:
  * [NumPy Reference](http://docs.scipy.org/doc/numpy/reference/)
  * [NumPy For Matlab Users](http://www.scipy.org/NumPy_for_Matlab_Users)
  * [NumPy CookBook](http://www.scipy.org/Cookbook) 
+
+If you're familiar with R and want a R-like DataFrame, we recommend
+the [pandas (Python for Data Analysis)](http://pandas.pydata.org/) library.
+pandas builds on NumPy's efficient array operations and simplifies the
+entire process of reading in data from files, analyzing the data, and
+plotting the data in graphs.
