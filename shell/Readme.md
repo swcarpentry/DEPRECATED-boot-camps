@@ -1,6 +1,7 @@
 # The Shell
 
 **Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+**Edited and presented by Emily Davenport**
 
 # What is the shell? How do I access the shell?
 
@@ -10,7 +11,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+    https://github.com/swcarpentry/boot-camps/tree/2013-06-chicago
 
 Click on the directory named `shell`.
 
@@ -30,6 +31,8 @@ most important reasons are that:
     you will greatly expand the range of tasks you can accomplish with
     your computer. You will also be able to perform many tasks more
     efficiently.
+    
+3.	My reasons: access remote servers, repeatability, documentation
 
 The shell is just a program and there are many different shell
 programs that have been developed. The most common shell (and the one
@@ -48,18 +51,18 @@ Desktop.
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
-command:
+commands:
 
-    git clone -b YYYY-MM-PLACE https://github.com/USERNAME/boot-camps.git
+    cd
+    git clone -b 2013-06-chicago https://github.com/swcarpentry/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
-the internet.  (We will talk about the `git` command later in the
+the internet and save it in your home directory.  (We will talk about the `git` command later in the
 workshop.)
 
 # Let's get started
 
-One very basic command is `echo`. This command just prints text to
-the terminal. Try the command:
+One very basic command is `echo`. This command just prints text to the terminal. Try the command:
 
     echo Hello, World
 
@@ -85,17 +88,15 @@ can contain other files or directories.
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
 directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/swc`
-directory. This is the home directory for the `swc` user. That is our
+this case, the `pwd` command tells us that we are in the `/Users/erdavenport/`
+directory (for me, this will be different on your computer!). This is the home directory for the `erdavenport` user. That is our
 user name. You can always find out your user name by entering the
 command `whoami`. 
 
 ## File Types
 
 When you enter the `ls` command lists the contents of the current
-directory. There are several items in the home directory, notice that
-they are all colored blue. This tells us that all of these items are
-directories as opposed to files.
+directory, including files, subdirectories, and programs. 
 
 Lets create an empty file using the `touch` command. Enter the
 command:
@@ -103,8 +104,7 @@ command:
     touch testfile
 
 Then list the contents of the directory again. You should see that a
-new entry, called `testfile`, exists. It is colored white meaning that
-it is a file, as opposed to a directory. The `touch` command just
+new entry, called `testfile`, exists. The `touch` command just
 creates an empty file. 
 
 Some terminals will not color the directory entries in this very
@@ -112,7 +112,7 @@ convenient way. In those terminals, use `ls -F` instead of `ls`. The
 `-F` argument modifies the results so that a slash is placed at the
 end of directories. If the file is *executable* meaning that it can be
 run like a program, then a star will be placed at the end of of the
-file name.
+file name. If you type `ls -Gp` you should see colors denoting different file types and slashes denoting directories.
 
 You can also use the command `ls -l` to see whether items in a
 directory are files or directories. `ls -l` gives a lot more
@@ -124,9 +124,9 @@ bytes. Notice that `testfile` has a size of zero.
 Now, let's get rid of `testfile`. To remove a file, just enter the
 command:
 
-    rm testfile
+    rm -i testfile
 
-The `rm` command can be used to remove files. If you enter `ls` again,
+Type `y` to remove the file listed. The `rm` command can be used to remove files. If you enter `ls` again,
 you will see that `testfile` is gone.
 
 
@@ -144,10 +144,9 @@ the directory containing the data for the shell tutorial:
 
     cd shell
 
-Now use the `ls` command to see what is inside this directory. You
-will see that there is an entry which is green. This means that this
-is an executable. If you use `ls -F` you will see that this file ends
-with a star.
+Now use the `ls -F` command to see what is inside this directory. You
+will see that there is an entry which has an asterisk at the end. This means that this
+is an executable. If you type `ls -Gp`, the entry will be colored in. 
 
 If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
@@ -219,20 +218,20 @@ name. Directories can be specified using either a *relative* path a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+command and you should see something like:
 
-    /home/swc
+    /Users/erdavenport
 
 which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
-`home` which sits inside the very top directory in the hierarchy. The
+are in a directory called `erdavenport`, which sits inside a directory called
+`Users` which sits inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
-directory in `home` which is a directory in `/`.
+referred to as the *root directory*. So, to summarize: `erdavenport` is a
+directory in `Users` which is a directory in `/`.
 
-Now enter the following command:
+Now enter the following command (but substitute your home directory for /Users/erdavenport):
 
-    cd /home/swc/boot-camps/shell
+    cd /Users/erdavenport/boot-camps/shell
 
 This jumps to `shell`. Now go back to the home directory. We saw
 earlier that the command:
@@ -241,7 +240,7 @@ earlier that the command:
 
 had the same effect - it took us to the `shell` directory. But,
 instead of specifying the full path
-(`/home/swc/boot-camps/shell`), we specified a *relative path*. In
+(`/Users/erdavenport/boot-camps/shell`), we specified a *relative path*. In
 other words, we specified the path relative to our current
 directory. A full path always starts with a `/`. A relative path does
 not. You can usually use either a full path or a relative path
@@ -278,12 +277,12 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/swc/boot-camps`. You can chain
+prints the contents of the `/Users/erdavenport/boot-camps`. You can chain
 these together, so:
 
     ls ../../
 
-prints the contents of `/home/swc` which is your home
+prints the contents of `/Users/erdavenport` which is your home
 directory. Finally, the special directory `.` always refers to your
 current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
 same thing, they print the contents of the current directory. This may
@@ -291,7 +290,7 @@ seem like a useless shortcut right now, but we'll see when it is
 needed in a little while.
 
 To summarize, while you are in the `shell` directory, the commands
-`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/swc` all do exactly the
+`ls ~`, `ls ~/.`, `ls ../../`, and `ls /Users/erdavenport` all do exactly the
 same thing. These shortcuts are not necessary, they are provided for
 your convenience.
 
@@ -369,15 +368,22 @@ by spaces. In other words, the two commands:
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
 
+Also, the `*` character matches any number of characters. Enter this command:
+
+    ls 0*2
+
+This will print `0302 0322 0432 0482`. Note that for most of these returned values the wildcard character matched multiple characters in between the "0" and the "2".
+    
+
 * * * *
 **Short Exercise**
 
-Do each of the following using a single `ls` command without
+Navigate to your home directory. Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+1.  List all of the files in `~/boot-camps/shell/data/THOMAS/` that contain the number `2`
+2.  List all of the files in `~/boot-camps/shell/data/THOMAS/` that contain the number `2` or the number `4`
+3.  List all of the files in `~/boot-camps/shell/data/THOMAS/` that contain the number `2` AND the number `4`
 
 * * * *
 
@@ -440,7 +446,7 @@ then you could repeat command #260 by simply entering:
 **Short Exercise**
 
 1. Find the line number in your history for the last exercise (listing
-files in /bin) and reissue that command.
+files in ~/boot-camps/shell/data/THOMAS/) and reissue that command.
 
 * * * * 
 
@@ -485,7 +491,7 @@ this directory. Now, try to run the program by entering:
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory `/home/swc/boot-camps/shell` is not in the
+because the directory `~/boot-camps/shell` is not in the
 `PATH`. You can run the `hello` program by entering:
 
     ./hello
@@ -495,7 +501,7 @@ directory. This tells the shell to run the `hello` program which is
 located right here. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
-    /home/swc/boot-camps/shell/hello
+    ~/boot-camps/shell/hello
 
 Or by entering:
 
@@ -531,7 +537,7 @@ is where the name comes from, `cat` is short for concatenate).
 
 2.  Without changing directories, (you should still be in `shell`),
     use one short command to print the contents of all of the files in
-    the `/home/swc/boot-camps/shell/data/THOMAS` directory.
+    the `~/boot-camps/shell/data/THOMAS` directory.
 
 * * * *
 
@@ -607,7 +613,7 @@ exists.
 Use `>>`, to append the contents of all of the files whose names
 contain the number 4 in the directory:
 
-    /home/swc/boot-camps/shell/data/gerdal
+    ~/boot-camps/shell/data/gerdal
 
 to the existing `all_data` file. Thus, when you are done `all_data`
 should contain all of the experiment data from Bert and any
@@ -627,7 +633,7 @@ command backs up the file. Navigate to the `data` directory and enter:
 
     cp all_data all_data_backup
 
-Now `all_data_backup` has been created as a copy of `all_data`. We can
+Now `all_data_backup` has been created as a copy of `all_data`. If we type `ls -l` we can see the sizes of the two files are the same. We can
 move files around using the command `mv`. Enter this command:
 
     mv all_data_backup /tmp/
@@ -695,13 +701,6 @@ size of the file in bytes should also be 10445. Let's confirm this:
 Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
-* * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
-
-* * * *
 
 ## The awesome power of the Pipe
 
@@ -755,7 +754,7 @@ data to come in. Now type:
     are
     good
 
-then CONTROL+d. You should is the lines:
+then CONTROL+d. You should see the lines:
 
     are
     good
@@ -837,7 +836,7 @@ Hint: To print the smallest file, use:
 
     wc Bert/* | sort -k 3 -n | head -n 1
 
-* * * * 
+# Writing a shell script
 
 Printing the smallest file seems pretty useful. We don't want to type
 out that long command often. Let's create a simple script, a simple
@@ -848,7 +847,7 @@ create this file. Navigate to the `data` directory, then:
 
     nano smallest
 
-Then enter the following text:
+Then enter the following text, save, and quit nano:
 
     #!/bin/bash
     wc * | sort -k 3 -n | head -n 1
