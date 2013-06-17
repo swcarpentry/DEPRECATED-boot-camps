@@ -31,14 +31,16 @@ So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.
 
 This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the IPython interpreter (to a lesser extent). The IPython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
 
-Here is the reference material.
+Here are some links to tutorials and reference material.
 
 * [Dive into Python] (http://www.diveintopython.net/toc/index.html)
 * [Software Carpentry's Python Lectures] (http://software-carpentry.org/4_0/python/)
 * [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
 * [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
+* [Google's python class](https://developers.google.com/edu/python/)
+* [The python documentation](http://docs.python.org/2.7/)
 
-Once we briefly deal with IPython, I'll cover python in the following order:
+Once we briefly deal with getting around in IPython, I'll cover python in the following order:
 
 ## What I'll cover
 ### Lesson 1
@@ -57,17 +59,6 @@ Once we briefly deal with IPython, I'll cover python in the following order:
 * set 
 * tuple
 * file reading
-
-### Lesson 3
-* for loop
-* conditional (if) statements
-* while loops
-* iteration
-* writing to files
-
-### Lesson 4
-* methods
-* modules
 
 ## IPython
 You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run IPython, or you can run IPython Notebook.  IPython is an alternative to the built-in Python interpreter with some nice features.  IPython Notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
@@ -89,10 +80,13 @@ We can also write python commands in a file and execute them from the command li
 swc@swc:~$ python hello.py
 ```
 
-IPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out.
+IPython has more useful features for interactive use than the standard python interpreter, like history and color, so we recommend it.  
+
+
+**ipython notebook**  is another way to interact with python, in which python gets commands and returns output in a browser window.  Start ipython by changing directories to the directory containing this tutorial and entering `ipython notebook` into the shell:
 
 ```python
-swc@swc:~$ IPython Notebook
+swc@swc:~$ ipython Notebook
 In [1]: print "hello world"
 hello world
 In [2]: 
@@ -178,7 +172,9 @@ In [5]: print voltage, current
 
 ## Types and Dynamic Typing
 
-Like most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
+Like most programming languages, things in Python are typed. The type refers to the type of data. The types are `string`, `integer`, and `float`. You can inspect the type of a variable by using the type command.
+
+Why should you care about data types?  In some cases, failing to pay attention to the data types will cause wrong answers.  
 
 ```python
 In [6]: type(experiment)
