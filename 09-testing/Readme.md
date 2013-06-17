@@ -2,8 +2,10 @@
 
 * * * * *
 
-**Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
-Scopatz**
+**Based on materials by Katy Huff, Rachel Slaybaugh, Anthony
+Scopatz, and John Blischak**
+
+**Presented by John Blischak**
 
 ![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
 # What is testing?
@@ -197,10 +199,8 @@ whole. As opposed to unit tests, system tests ask for the behavior as a
 whole. This sort of testing involves comparison with other validated
 codes, analytical solutions, etc.
 
-**Regression Tests:** A regression test ensures that new code does
-change anything. If you change the default answer, for example, or add a
-new question, you'll need to make sure that missing entries are still
-found and fixed.
+**Regression Tests:** A regression test ensures that new code does not
+change anything unexpected.
 
 **Integration Tests:** Integration tests query the ability of the code
 to integrate well with the system configuration and third party
@@ -276,17 +276,17 @@ teardown()
 
 # Nose: A Python Testing Framework
 
-The testing framework we'll discuss today is called nose. However, there
-are several other testing frameworks available in most language. Most
+The testing framework we'll discuss today is called
+[nose](https://nose.readthedocs.org/en/latest/). However, there are
+several other testing frameworks available in most languages. Most
 notably there is [JUnit](http://www.junit.org/) in Java which can
 arguably attributed to inventing the testing framework.
-
 ## Where do nose tests live?
 
 Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
 `test_`. Specifically, these satisfy the testMatch regular expression
 `[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
-in the unittest.TestCase subclasses chat you create in your code. You
+in the unittest.TestCase subclasses that you create in your code. You
 can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
 expression.)
@@ -328,8 +328,8 @@ assert_array_almost_equal(a, b)
 ## Exercise: Writing tests for mean()
 
 There are a few tests for the mean() function that we listed in this
-lesson. What are some tests that should fail? Add at least three test
-cases to this set. Edit the `test_mean.py` file which tests the mean()
+lesson. What are some tests that should fail? Add one more test
+case to this set. Edit the `test_mean.py` file which tests the mean()
 function in `mean.py`.
 
 *Hint:* Think about what form your input could take and what you should
@@ -337,9 +337,9 @@ do to handle it. Also, think about the type of the elements in the list.
 What should be done if you pass a list of integers? What if you pass a
 list of strings?
 
-**Example**:
+**To run the tests**:
 
-    nosetests test_mean.py
+    nosetests -v test_mean.py
 
 # Test Driven Development
 
@@ -359,192 +359,94 @@ style was put forth most strongly by [Kent Beck in
 
 ## A TDD Example
 
-Say you want to write a fib() function which generates values of the
-Fibonacci sequence of given indexes. You would - of course - start by
-writing the test, possibly testing a single value:
+To illustrate TDD, let's return to the function you wrote yesterday,
+`calculate_gc`. We'll start from scratch and develop the function
+by meeting test specifications. 
+
+The beginning of the function is contained in the file `calculate_gc.py`
+in this directory. It currently takes one argument as input, but does
+nothing.
 
 ```python
-from nose.tools import assert_equal
-
-from pisa import fib
-
-def test_fib1():
-    obs = fib(2)
-    exp = 1
-    assert_equal(obs, exp)
+def calculate_gc(x):
+    '''
+    Calculates the GC content of DNA sequence x.
+    '''
+    pass
 ```
 
-You would *then* go ahead and write the actual function:
+The tests that we must pass are contained in the file
+`test_calculate_gc.py`. We can run the tests using `nosetests`.
+
+    nosetests -v test_calculate_gc.py
+
+As expected, we fail all the tests! What is the bare minimum 
+functionality we must add to pass the first test below?
 
 ```python
-def fib(n):
-    # you snarky so-and-so
-    return 1
+def test_only_G_and_C():
+    '''
+    Sequence of only G's and C's has fraction 1.0
+    '''
+    fixture = 'GGCGCCGGC'
+    result = calculate_gc(fixture)
+    assert_equal(result, 1.0)
 ```
 
-And that is it right?! Well, not quite. This implementation fails for
-most other values. Adding tests we see that:
+And the second test?
 
 ```python
-def test_fib1():
-    obs = fib(2)
-    exp = 1
-    assert_equal(obs, exp)
-
-
-def test_fib2():
-    obs = fib(0)
-    exp = 0
-    assert_equal(obs, exp)
-
-    obs = fib(1)
-    exp = 1
-    assert_equal(obs, exp)
+def test_half():
+    '''
+    Sequence with half G and C has fraction 0.5
+    '''
+    fixture = 'ATGC'
+    result = calculate_gc(fixture)
+    assert_equal(result, 0.5)
 ```
 
-This extra test now requires that we bother to implement at least the
-initial values:
+Test number three?
 
 ```python
-def fib(n):
-    # a little better
-    if n == 0 or n == 1:
-        return n
-    return 1
+def test_lower_case():
+    '''
+    Sequence with lower case letters
+    '''
+    fixture = 'atgc'
+    result = calculate_gc(fixture)
+    assert_equal(result, 0.5)
 ```
 
-However, this function still falls over for `2 < n`. Time for more
-tests!
+Test number four?
 
 ```python
-def test_fib1():
-    obs = fib(2)
-    exp = 1
-    assert_equal(obs, exp)
-
-
-def test_fib2():
-    obs = fib(0)
-    exp = 0
-    assert_equal(obs, exp)
-
-    obs = fib(1)
-    exp = 1
-    assert_equal(obs, exp)
-
-
-def test_fib3():
-    obs = fib(3)
-    exp = 2
-    assert_equal(obs, exp)
-
-    obs = fib(6)
-    exp = 8
-    assert_equal(obs, exp)
+def test_not_DNA():
+    '''
+    Raise TypeError if not DNA
+    '''
+    fixture = 'qwerty'
+    assert_raises(TypeError, calculate_gc, fixture)
 ```
 
-At this point, we had better go ahead and try do the right thing...
+Through this cycle of writing tests and modifying the function to pass 
+the tests, we have developed a function that behaves exactly as we 
+expect and nothing more. And the tests not only serve as documentation 
+of what the function does, but can also be easily ran again if we made 
+further modifications (regression tests). What would be the next test 
+you would write for our function?
+
+## Exercise: Test function that transcribes DNA to RNA
+
+In the lesson yesterday on functions, `05-python-functions`, one exercise
+asked you to write a function to transcribe DNA to RNA. An example of
+that function is implemented in this directory in a file named
+`transcribe.py`. In that lesson, there were two tests to check your
+work:
 
 ```python
-def fib(n):
-    # finally, some math
-    if n == 0 or n == 1:
-        return n
-    else:
-        return fib(n - 1) + fib(n - 2)
+transcribe('ATGC') == 'UACG'
+transcribe('ATGCAGTCAGTGCAGTCAGT') == 'UACGUCAGUCACGUCAGUCA'
 ```
 
-Here it becomes very tempting to take an extended coffee break or
-possibly a power lunch. But then you remember those pesky negative
-numbers and floats. Perhaps the right thing to do here is to just be
-undefined.
-
-```python
-def test_fib1():
-    obs = fib(2)
-    exp = 1
-    assert_equal(obs, exp)
-
-
-def test_fib2():
-    obs = fib(0)
-    exp = 0
-    assert_equal(obs, exp)
-
-    obs = fib(1)
-    exp = 1
-    assert_equal(obs, exp)
-
-
-def test_fib3():
-    obs = fib(3)
-    exp = 2
-    assert_equal(obs, exp)
-
-    obs = fib(6)
-    exp = 8
-    assert_equal(obs, exp)
-
-
-def test_fib3():
-    obs = fib(13.37)
-    exp = NotImplemented
-    assert_equal(obs, exp)
-
-    obs = fib(-9000)
-    exp = NotImplemented
-    assert_equal(obs, exp)
-```
-
-This means that it is time to add the appropriate case to the function
-itself:
-
-```python
-def fib(n):
-    # sequence and you shall find
-    if n < 0 or int(n) != n:
-        return NotImplemented
-    elif n == 0 or n == 1:
-        return n
-    else:
-        return fib(n - 1) + fib(n - 2)
-```
-
-# Quality Assurance Exercise
-
-Can you think of other tests to make for the fibonacci function? I promise there 
-are at least two. 
-
-Implement one new test in test_fib.py, run nosetests, and if it fails, implement 
-a more robust function for that case.
-
-And thus - finally - we have a robust function together with working
-tests!
-
-# Exercise
-
-**The Problem:** In 2D or 3D, we have two points (p1 and p2) which
-define a line segment. Additionally there exists experimental data which
-can be anywhere in the domain. Find the data point which is closest to
-the line segment.
-
-In the `close_line.py` file there are four different implementations
-which all solve this problem. [You can read more about them
-here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
-there are no tests! Please write from scratch a `test_close_line.py`
-file which tests the closest\_data\_to\_line() functions.
-
-*Hint:* you can use one implementation function to test another. Below
-is some sample data to help you get started.
-
-![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/evo_sol1.png)
-> -
-
-```python
-import numpy as np
-
-p1 = np.array([0.0, 0.0])
-p2 = np.array([1.0, 1.0])
-data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
-```
-
+Convert these to a proper test and place it the file `test_transcribe.py`.
+Next, add a few tests of your own and run the test suite with nosetests.

@@ -320,12 +320,12 @@ or tuples, which are always copies.
 ```python
 
   >>> A = numpy.arange(5)
-  >>> B = A[0:1]
+  >>> B = A[0:2]
   >>> B[0] = 42
   >>> A
   array([42,  1,  2,  3,  4])
   >>> A = range(5)
-  >>> B = A[0:1]
+  >>> B = A[0:2]
   >>> B[0] = 42
   >>> A
   [0, 1, 2, 3, 4]
@@ -384,11 +384,11 @@ NumPy array vs. a Python list.
 	>>> A = numpy.random.randint(10, size=1000000)
 	>>> B = [random.randint(0, 10) for r in range(1000000)]
 	>>> %timeit A.sum()
-	1000 loops, best of 3: 892 us per loop
+	1000 loops, best of 3: 692 µs per loop
 	>>> %timeit sum(B)
 	10 loops, best of 3: 119 ms per loop
 	
-119 milliseconds (ms) = 119,000 microseconds (us). That is orders
+119 milliseconds (ms) = 119,000 microseconds (µs). That is orders
 of magnitude difference in performance! Just imagine if you had to
 do anything more complicated than sum the elements.
 
@@ -514,7 +514,7 @@ selection of them:
  * [NumPy CookBook](http://www.scipy.org/Cookbook) 
 
 If you're familiar with R and want a R-like DataFrame, we recommend
-the [pandas (Python for Data Analysis)](http://pandas.pydata.org/) library.
+the [pandas (Python for Data Analysis)](http://pandas.pydata.org/) package.
 pandas builds on NumPy's efficient array operations and simplifies the
 entire process of reading in data from files, analyzing the data, and
 plotting the data in graphs.
