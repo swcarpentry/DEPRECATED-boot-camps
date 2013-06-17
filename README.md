@@ -30,8 +30,14 @@ Use git to download files
 
 To easily download all the files in this repo to your local machine use the following command in the terminal:
 
-    git clone git://github.com/softwarecarpentry/boot-camps/2013-06-wise-beginners.git
-this will place the directory 2013-06-wise-beginners in your currently active directory.
+    git clone git://github.com/swcarpentry/boot-camps.git
+this will download the bootcamps repo to your computer
+
+    git branch -a
+this will list the branches that are available
+
+    git checkout -b 2013-06-wise-beginners
+this will grab the materials for this workshop and place the directory 2013-06-wise-beginners in your currently active directory.
 
 Getting started on GitHub
 --------------------------
@@ -49,4 +55,4 @@ Follow these instructions to set up your SSH key which is necessary to identify 
     https://help.github.com/articles/generating-ssh-keys
 After you have added your SSH key to your git hub account per the instructions above you will be ready to go. For example if you wish to download the git repo for the bootcamp execute this command:
 
-    git clone git@github.com:softwarecarpentry/boot-camps/2013-05-wise-beginners.git
+    git clone -b 2013-06-wise-beginners git@github.com:swcarpentry/boot-camps.git
