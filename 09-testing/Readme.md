@@ -2,8 +2,10 @@
 
 * * * * *
 
-**Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
-Scopatz**
+**Based on materials by Katy Huff, Rachel Slaybaugh, Anthony
+Scopatz, and John Blischak**
+
+**Presented by John Blischak**
 
 ![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
 # What is testing?
@@ -326,8 +328,8 @@ assert_array_almost_equal(a, b)
 ## Exercise: Writing tests for mean()
 
 There are a few tests for the mean() function that we listed in this
-lesson. What are some tests that should fail? Add at least three test
-cases to this set. Edit the `test_mean.py` file which tests the mean()
+lesson. What are some tests that should fail? Add one more test
+case to this set. Edit the `test_mean.py` file which tests the mean()
 function in `mean.py`.
 
 *Hint:* Think about what form your input could take and what you should
@@ -335,7 +337,7 @@ do to handle it. Also, think about the type of the elements in the list.
 What should be done if you pass a list of integers? What if you pass a
 list of strings?
 
-**Example**:
+**To run the tests**:
 
     nosetests -v test_mean.py
 
@@ -374,7 +376,7 @@ def calculate_gc(x):
 ```
 
 The tests that we must pass are contained in the file
-`test_calculate_gc.py`. We can run the tests using nosetests.
+`test_calculate_gc.py`. We can run the tests using `nosetests`.
 
     nosetests -v test_calculate_gc.py
 
@@ -433,3 +435,18 @@ of what the function does, but can also be easily ran again if we made
 further modifications (regression tests). What would be the next test 
 you would write for our function?
 
+## Exercise: Test function that transcribes DNA to RNA
+
+In the lesson yesterday on functions, `05-python-functions`, one exercise
+asked you to write a function to transcribe DNA to RNA. An example of
+that function is implemented in this directory in a file named
+`transcribe.py`. In that lesson, there were two tests to check your
+work:
+
+```python
+transcribe('ATGC') == 'UACG'
+transcribe('ATGCAGTCAGTGCAGTCAGT') == 'UACGUCAGUCACGUCAGUCA'
+```
+
+Convert these to a proper test and place it the file `test_transcribe.py`.
+Next, add a few tests of your own and run the test suite with nosetests.
