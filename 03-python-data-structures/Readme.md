@@ -5,9 +5,10 @@
 **Based on lecture materials by Milad Fatenejad, Joshua R. Smith, and Will
 Trimble**
 
-Python would be a farily useless language if it weren't for the compound
-data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. I'll also go over reading text data from files. 
+Python would be a fairly useless language if it weren't for the compound
+data types. The main two are **lists** and **dictionaries**, but I'll mention **sets**
+and **tuples** as well.  We'll talk about getting data into and out of these
+data types, and also go over reading text data from files. 
 
 ## Lists
 
