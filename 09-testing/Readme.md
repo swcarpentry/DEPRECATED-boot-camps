@@ -197,10 +197,8 @@ whole. As opposed to unit tests, system tests ask for the behavior as a
 whole. This sort of testing involves comparison with other validated
 codes, analytical solutions, etc.
 
-**Regression Tests:** A regression test ensures that new code does
-change anything. If you change the default answer, for example, or add a
-new question, you'll need to make sure that missing entries are still
-found and fixed.
+**Regression Tests:** A regression test ensures that new code does not
+change anything unexpected.
 
 **Integration Tests:** Integration tests query the ability of the code
 to integrate well with the system configuration and third party
@@ -276,17 +274,17 @@ teardown()
 
 # Nose: A Python Testing Framework
 
-The testing framework we'll discuss today is called nose. However, there
-are several other testing frameworks available in most language. Most
+The testing framework we'll discuss today is called
+[nose](https://nose.readthedocs.org/en/latest/). However, there are
+several other testing frameworks available in most languages. Most
 notably there is [JUnit](http://www.junit.org/) in Java which can
 arguably attributed to inventing the testing framework.
-
 ## Where do nose tests live?
 
 Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
 `test_`. Specifically, these satisfy the testMatch regular expression
 `[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
-in the unittest.TestCase subclasses chat you create in your code. You
+in the unittest.TestCase subclasses that you create in your code. You
 can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
 expression.)
