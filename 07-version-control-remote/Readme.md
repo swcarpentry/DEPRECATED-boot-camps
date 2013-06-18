@@ -103,11 +103,11 @@ Step 1 : Fetch the recent remote repository history
 
     $ git fetch upstream
 
-Step 2 : Make certain you are in the YYYY-MM-PLACE branch and merge the
-upstream YYYY-MM-PLACE branch into your YYYY-MM-PLACE branch
+Step 2 : Make certain you are in the master branch and merge the
+upstream master branch into your master branch
 
-    $ git checkout YYYY-MM-PLACE
-    $ git merge upstream\YYYY-MM-PLACE
+    $ git checkout master
+    $ git merge upstream\master
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -170,7 +170,7 @@ commit it.
 
 You'll want to start a new branch for development, make your changes there,
 and then merge these changes into your main branch. It's a good convention
-to think of your master branch (in this case your YYYY-MM-PLACE branch) as
+to think of your master branch as
 the "production branch," typically by keeping that branch clean of your
 local edits until they are ready for release. Developers typically use the
 master branch of their local fork to track other developers changes in the
@@ -190,13 +190,13 @@ greeting.
     <edit the readme file and exit kate>
     $ git commit -am "Changed the welcome message to ... "
 
-Step 2 : Mirror the remote upstream repository in your master branch (in
-this case your YYYY-MM-PLACE branch) by pulling down my changes
+Step 2 : Mirror the remote upstream repository in your master branch 
+by pulling down my changes
 
-    $ git checkout YYYY-MM-PLACE
-    Switched to branch 'YYYY-MM-PLACE'
+    $ git checkout master 
+    Switched to branch 'master'
     $ git fetch upstream
-    $ git merge upstream/YYYY-MM-PLACE
+    $ git merge upstream/master
     Updating 43844ea..3b36a87
     Fast-forward
      README.rst |   2 +-
@@ -217,7 +217,7 @@ Now what?
 Git has paused the merge. You can see this with the **git status**
 command.
 
-    # On branch YYYY-MM-PLACE
+    # On branch master 
     # Unmerged paths:
     #   (use "git add/rm <file>..." as appropriate to mark resolution)
     #
