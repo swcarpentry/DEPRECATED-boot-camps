@@ -16,7 +16,7 @@ camp branch and/or making a boot camp website.
 
 WiSE SWC Bootcamp, novice group
 ================================
-Files for Women in Science and Engineering Software Carpentry Bootcamp
+Files for Women in Science and Engineering Software Carpentry Bootcamp, in Boston, MA
 
 Render Markdown (.md files) on local machine
 --------------------------------------------
