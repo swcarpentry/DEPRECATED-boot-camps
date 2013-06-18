@@ -26,7 +26,7 @@ etc.) provides :
 -   commit triggered mailing lists
 -   other service hooks (twitter, etc.)
 
-## github password 
+## github login 
 
 Setting up github requires a github user name and password.  Please take a
 moment to [create a free github account](https://github.com/signup/free) (if you
@@ -45,36 +45,41 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the SWC-bootcamp repository,
-GitHub doesn't know about it yet. You'll need to tell github you want to
-have an official fork of this repository.
+In step 1, you will make a copy "fork" of our test repository testrepo-2013-06-chicago on github.
+
+In step 2, you will make a copy of **your** fork of the repository on your hard drive.
+
+In step 3, you will let git know that in addition to your local copy and your fork on github, there is another github repostitory (called "upstream") that you might want to get updates from.
 
 Step 1 : Go to our
-[repository](https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE)
+[repository](https://github.com/wltrimbl/testrepo-2013-06-chicago)
 from your browser, and click on the Fork button. Choose to fork it to your
 username rather than any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone https://github.com/YOU/boot-camps.git
-    $ cd boot-camps
+    $ git clone https://github.com/YOU/testrepo-2013-06-chicago.git 
+    $ cd testrepo-2013-06-chicago 
+Note: YOU is a placeholder for YOUR GITHUB USERNAME.  If git asks you for a password, it really means there isn't any repository at the url that you provided.
 
 Step 3 : 
 
-    $ git remote add upstream https://github.com/USERNAME/boot-camps.git
+    $ git remote add upstream https://github.com/USERNAME/testrepo-2013-06-chicago.git
     $ git remote -v
-    origin  https://github.com/YOU/boot-camps.git (fetch)
-    origin  https://github.com/YOU/boot-camps.git (push)
-    upstream        https://github.com/USERNAME/boot-camps.git (fetch)
-    upstream        https://github.com/USERNAME/boot-camps.git (push)
+    origin  https://github.com/YOU/testrepo-2013-06-chicago.git (fetch)
+    origin  https://github.com/YOU/testrepo-2013-06-chicago.git (push)
+    upstream        https://github.com/wltrimbl/testrepo-2013-06-chicago.git (fetch)
+    upstream        https://github.com/wltrimbl/testrepo-2013-06-chicago.git (push)
 
 All repositories that are clones begin with a remote called origin.
+### What's going on here?
+The **git remote add** merely defines a nickname and a location that git will be able to communicate with for making copies of your repository.  "origin" and "upstream" are nicknames for your fork of testrepo and the "original" testrepo, respectively.
 
 ## git fetch : Fetching the contents of a remote
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original SWC-bootcamp
+want your master branch to track updates in the original wltrimbl/testrepo-2013-06-chicago 
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -87,7 +92,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case USERNAME/boot-camps) into your local working copy, you
+this case USERNAME/testrepo-2013-06-chicago) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
@@ -135,14 +140,16 @@ We'll talk about conflicts later, but first, since we have no conflicts
 and are up to date, we can make a minor change and send our changes to
 your fork, the "origin."
 
-    $ git push origin YYYY-MM-PLACE
+    $ git push origin master
+
+This will update your github fork with any changes you've committed.
 
 If you have permission to push to the upstream repository, sending
 commits to that remote is exactly analagous.
 
-    $ git push upstream YYYY-MM-PLACE
+    $ git push upstream master 
 
-In the case of the YYYY-MM-PLACE code, new developer accounts will not allow
+In the case of the upstream push, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
 
 ## git merge : Conflicts
@@ -150,25 +157,19 @@ this push to succeed. You're welcome to try it though.
 This is the trickiest part of version control, so let's take it very
 carefully.
 
-In the YYYY-MM-PLACE code, you'll find a file called Readme.md. This is a
+Note, your fork contains a file called Readme.md.  This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/YOU/boot-camps/tree/YYYY-MM-PLACE/README.md).
+fork on github, (https://github.com/YOU/testrepo-2013-06-chicago/tree/master/README.md).
 
-For illustration, let's imagine that, suddenly, each of the developers
-on the YYYY-MM-PLACE code would like to welcome visitors in a language other
-than English. Since we're all from so many different places and speak
-so many languages, there will certainly be disagreements about what to
-say instead of "Welcome."
+In the testrepo-2013-06-chicago, you'll find a directory called githubids.  
+We'd like each of you to create a file whose filename is your github id and 
+whose content is a message you might want to send to the bootcamp instructors.
+Use ```git add``` to add your file to the index, and ```git commit``` to 
+commit it.
 
-I, for example, am from Tamil Nadu, India, so I'll push (to the upstream
-repository) my own version of Welcome on line 5 of Readme.md.
-
-You may speak another language, perhaps even English, however, and may want
-to replace the Tamil word 'vanakkam' with an equivalent word that you
-prefer (welcome, willkommen, bienvenido, benvenuti, etc.).
-
-You'll want to start a new branch for development. It's a good convention
+You'll want to start a new branch for development, make your changes there,
+and then merge these changes into your main branch. It's a good convention
 to think of your master branch (in this case your YYYY-MM-PLACE branch) as
 the "production branch," typically by keeping that branch clean of your
 local edits until they are ready for release. Developers typically use the
@@ -179,7 +180,8 @@ ready for production.
 ### Exercise : Experience a Conflict
 
 Step 1 : Make a new branch, edit the readme file in that branch, and
-commit your changes.
+commit your changes.  Let's change the greeting "Vanakkam" to some other
+greeting.
 
     $ git branch development
     $ git checkout development
@@ -258,13 +260,13 @@ alterations,
     # .git/MERGE_HEAD
     # and try again.
     #
-    $ git push origin YYYY-MM-PLACE
+    $ git push origin master 
     Counting objects: 10, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (6/6), done.
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/boot-camps.git
+    To git@github.com:username/testrepo-2013-06-chicago.git
 
 ## gitolite
 
