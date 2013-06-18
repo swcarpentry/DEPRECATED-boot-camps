@@ -23,7 +23,9 @@ Once you download and run the installation package, make sure that you install:
 * A text editor (nano - probably the easiest choice if you're new to *nix environments, emacs, vi etc.)
 * Git
 * python-nose  
-To install the above packages simply type in their names in the "Select packages" window during the installation process (note that Git will be listed in the "Devel" section).  
+
+To install the above packages simply type in their names in the "Select packages" window during the installation process (note that Git will be listed in the "Devel" section).   
+
 **Linux:**  
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing `bash`.
 

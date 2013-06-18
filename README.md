@@ -1,5 +1,4 @@
-# Software Carpentry bootcamp for   
-#Women in Science and Engineering    
+# Software Carpentry bootcamp for Women in Science and Engineering     
 ###Boston, MA 24-25 June 2013
 
 ![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry-banner.png "Software Carpentry logo")
@@ -10,25 +9,25 @@ For the details, please see the [Software Carpentry website](http://software-car
 
 **Monday 24th June 2013**  
 
-*8:30-9:00 Setup Help  
-*9:00-9:30 Introduction  
-*9:30-10:30 The Shell I (Jessica)  
-*10:30-10:40 Break  
-*10:40-11:20 The Shell II (Jessica)  
-*11:20-12:00 [Version Control I](version-control) (Aleksandra)  
+08:30-09:00 Setup Help  
+09:00-09:30 Introduction  
+09:30-10:30 The Shell I (Jessica)  
+10:30-10:40 Break  
+10:40-11:20 The Shell II (Jessica)  
+11:20-12:00 [Version Control I](version-control) (Aleksandra)  
 
-*12:00-1:00 Lunch  
+12:00-1:00 Lunch  
 
-*1:00-2:30 [Version Control II](version-control) (Aleksandra)  
-*2:30-2:40 Break  
-*2:40-4:20 SQL (Sheeri)  
-*4:20-4:45  Questions / Teach me X  
+1:00-2:30 [Version Control II](version-control) (Aleksandra)  
+2:30-2:40 Break  
+2:40-4:20 SQL (Sheeri)  
+4:20-4:45  Questions / Teach me X  
 
 
 **Tuesday 25th June 2013**  
 
-9:00-9:30 Review / Questions  
-9:30-10:30 Python I (Sheeri/Aleksandra)  
+09:00-09:30 Review / Questions  
+09:30-10:30 Python I (Sheeri/Aleksandra)  
 10:30-10:40 Break  
 10:40-12:00 Python II (Sheeri/Aleksandra)  
 
@@ -42,7 +41,7 @@ For the details, please see the [Software Carpentry website](http://software-car
 
 ## Instructors
 
-The instructors for this group will be Jessica McKellar, Sheeri K. Cabral and Aleksandra Pawlik.
+The instructors for this group will be [Jessica McKellar](http://jesstess.com/), [Sheeri K. Cabral](http://www.sheeri.com/) and Aleksandra Pawlik.
 
 
 ## Before you arrive...
