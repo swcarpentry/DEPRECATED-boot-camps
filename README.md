@@ -1,8 +1,9 @@
 # Software Carpentry bootcamp for   
-Women in Science and Engineering    
-Boston, MA 24-25 June 2013
+#Women in Science and Engineering    
+###Boston, MA 24-25 June 2013
 
 ![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry-banner.png "Software Carpentry logo")
+
 For the details, please see the [Software Carpentry website](http://software-carpentry.org/bootcamps/2013-06-wise.html).
 
 ## Timetable
@@ -51,7 +52,7 @@ You'll need to bring your laptop and before you arrive. You'll need to ensure yo
 
 Render Markdown (.md files) on local machine
 --------------------------------------------
-PC: http://markdownpad.com/
+PC: http://markdownpad.com/  
 Mac: http://mouapp.com/
 
 Use git to download files
@@ -68,7 +69,7 @@ this will list the branches that are available
     git checkout -b 2013-06-wise-advanced
 this will grab the materials for this workshop and place the directory 2013-06-wise-beginners in your currently active directory.
 
-(Note, if you only want to clone the 2013-06-wise-advanced branch, you should try: git clone git://github.com/swcarpentry/boot-camps.git --branch 2013-06-wise-advanced )
+(Note, if you only want to clone the 2013-06-wise-advanced branch, you should try: `git clone git://github.com/swcarpentry/boot-camps.git --branch 2013-06-wise-advanced`)
 
 Getting started on GitHub
 --------------------------
