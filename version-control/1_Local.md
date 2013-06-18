@@ -53,10 +53,10 @@ We can now preview (and edit, if necessary) Git's global configuration (such as 
 
     $ cat ~/.gitconfig
     [user]
-  name = Your Name
-	email = yourname@yourplace.org
+    name = Your Name
+    email = yourname@yourplace.org
     [core]
-	editor = nano
+    editor = nano
 
 This file holds global configuration that is applied to any Git repository in your file system.
 
@@ -67,12 +67,11 @@ Now, we'll create a file. Let's say we're going to write a simple Python program
     $ nano add_numb.py
 
 We add the code:
-   def add_two(a,b):
+
+    def add_two(a,b):
       return a+b
-
-   def main():
-       print ("2 + 3 = ",add_two(2,3))
-
+    def main():
+        print ("2 + 3 = ",add_two(2,3))
     if __name__ == "__main__":
        main()
 
@@ -340,64 +339,69 @@ We'll change our program creating a module containing two fuctions 'add_two' and
     Switched to a new branch 'feature1'
 
 Let's now create a module and write a function which adds three numbers. The module will be called 'adding.py' and the code is:
+
     def add_three(a,b,c):
         return a+b+c
 
 Now, let's modify our add_numb.py file:
+
     """ This short program just adds numbers. """
-
     from adding import add_three
-
     def add_two(a,b):
         return a+b
-
     def main():
         print ("2 + 3 = ",add_two(2,3))
         print ("2 + 3 + 4 = ",add_three(2,3,4))
-
     if __name__ == "__main__":
         main()
 
 
-Let's commit our changes. Before we do that, it's a good practice to check whether we're working in the correct branch.
+Let's commit our changes. Before we do that, it's a good practice to check whether we're working in the correct branch:
 
-   $ git branch
-   * feature1
-     master
+    $ git branch
+    * feature1
+      master
 
 The * indicates which branch we're currently in. Let's commit. If we want to work now in our master branch. We can switch by using:
+
     $ git checkout master
     Switched to branch 'master'
 
-The module which we added in our feature branch is not in our master
+The module which we added in our feature branch is not in our master:
+
     $ ls
     add_numb.py doc
 
 To list all (local) branches:
+
     $ git branch
     feature1
     * master
 
 Git is very powerful and comes with countless number of commands. For example, if you want to see all branches with their commits use:
+
     $ git show-branch
     * [feature1] Moved add_two to the module
     ! [master] Added files
-  --
+    --
     *  [feature1] Moved add_two to the module
     *  [feature1^] Adding module with functions
     *+ [master] Added files
 
 Let's change the add_two function by adding a printing statement and commit our changes (remember: we're working now in the master branch!).
 Now let's switch back to feature1 and move now our add_two function to the module and commit the changes. Looks like our feature is ready to be merged. To do that we need to switch to the master branch:
+
     $ git checkout master
 
 Now merging:
+
     $ git merge feature1
     Auto-merging add_numb.py
     CONFLICT (content): Merge conflict in add_numb.py
     Automatic merge failed; fix conflicts and then commit the result.
 
 Git cannot complete the merge because there is a conflict - if you recall our add_numb.py is different in our master branch and feature1 branch. We have to resolve the conflict and then complete the merge. Let's see a bit more details:
+
     $ git status
     # On branch master
     # You have unmerged paths.
@@ -414,6 +418,7 @@ Git cannot complete the merge because there is a conflict - if you recall our ad
     #
 
 To resolve the conflicts we need to edit the add_numb.py:
+
     """ This short program just adds numbers. """
     
     <<<<<<< HEAD
@@ -423,22 +428,24 @@ To resolve the conflicts we need to edit the add_numb.py:
     =======
      from adding import add_three, add_two
     >>>>>>> feature1
-
+    
     def main():
         print ("2 + 3 = ",add_two(2,3))
         print ("2 + 3 + 4 = ",add_three(2,3,4))
-
+        
     if __name__ == "__main__":
             main()
 
 The markers <<<<<<< and ======= show us where the conflict has occured (i.e. show different contents from each of the file versions). Since we want to use our feature we'll delete the part marked to be HEAD.
 Now we need to let Git know that we resolved out conflict by adding the file to the staging area and making a commit ('git commit -a' will also work but 'git commit' will return an error).
-    $ git commit -am 'Resolved conflicts'
-    [master 99aae93] Resolved conflicts
+
+     $ git commit -am 'Resolved conflicts'
+     [master 99aae93] Resolved conflicts
 
 Now we have our feature in our master branch.
 
 Our feature1 branch still exists and we could keep on working with it. But let's suppose we actually would prefer to delete it. 
+
     $ git branch -d feature1
     Deleted branch feature1 (was 2bce0f2).
 
