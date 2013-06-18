@@ -1,52 +1,96 @@
-# Software Carpentry at the Jagiellonian University 2013
+# Software Carpentry bootcamp for Women in Science and Engineering    
+Boston, MA 24-25 June 2013
 
 ![Software Carpentry logo](http://software-carpentry.org/img/software-carpentry-banner.png "Software Carpentry logo")
 
-Saturday 18th - Sunday 19th May 2013.
+Monday 24th June 2013 - Tuesday 25th June 2013
 
-For the registration details, please see the [Jagiellonian University website](http://www.doktoranci.uj.edu.pl/start/-/blogs/dobre-praktyki-informatyczne-warsztaty).
+For the details, please see the [Software Carpentry website](http://software-carpentry.org/bootcamps/2013-06-wise.html).
 
 ## Timetable
 
+Monday 24th June 2013 
 
-=======
-* 09:00 Arrival
-* 09:30 Welcome - Aleksandra
-* 10:00 [Using the shell to do more in less time](shell) - Karin
-* 11:00 Break
-* 11:15 [Using the shell to do more in less time](shell)  - Karin (continued)
-* 12:00 Lunch
-* 13:30 [Using the shell to do more in less time](shell)  - Karin (continued)
-* 14:30 [Automation and Make](Make) - Aleksandra
-* 15:15 Break
-* 15:30 [Introduction to Python 1](python-programming)- Karin
-* 16:30 Close 
+*8:30-9:00 Setup Help
+*9:00-9:30 Introduction
+*9:30-10:30 The Shell I (Jessica)
+*10:30-10:40 Break
+*10:40-11:20 The Shell II (Jessica)
+*11:20-12:00 Version Control I (Aleksandra)
 
-Sunday 19th
+*12:00-1:00 Lunch
 
-* 09:00 Arrival
-* 09:30 [Introduction to Python 2](python-programming) - Karin
-* 10:30 Break
-* 10:45 [Introduction to Python 2](python-programming) - Karin (continued)
-* 12:00 Lunch
-* 13:30 [Using version control to manage and share information](version-control) - Aleksandra
-* 14:45 Break
-* 15:00 Final exercise
-* 16:00 Pulling it all together - Aleksandra
-* 16:30 Close
+*1:00-2:30 Version Control II (Aleksandra)
+*2:30-2:40 Break
+*2:40-4:20 SQL (Sheeri)
+*4:20-4:45  Questions / Teach me X
+
+
+Tuesday 25th June 2013
+
+9:00-9:30 Review / Questions
+9:30-10:30 Python I (Sheeri/Aleksandra)
+10:30-10:40 Break
+10:40-12:00 Python II (Sheeri/Aleksandra)
+
+12:00-1:00 Lunch
+
+1:00 - 2:00 Scientific Python 1 (Jessica)
+2:00 - 2:10 Break
+2:10 - 3:10 Scientific Python II (Jessica)
+3:10 - 4:10 Testing (Aleksandra)
+
+
+## Instructors
+
+The instructors for this group will be Jessica McKellar, Sheeri K. Cabral and Aleksandra Pawlik.
 
 
 ## Before you arrive...
 
-You'll need to bring your laptop and before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
+You'll need to bring your laptop and before you arrive. You'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
 
-You will also need to have created a free account on [BitBucket](https://bitbucket.org/account/signup/).
 
-## Instructors
+Render Markdown (.md files) on local machine
+--------------------------------------------
 
-The instructors on this boot camp will be  Karin Lagesen and Aleksandra Pawlik.
+PC: http://markdownpad.com/
 
-## Contact
+Mac: http://mouapp.com/
 
-For help or more information please contact [Aleksandra Pawlik](mailto:a.pawlik@software.ac.uk).
+Use git to download files
+---------------------------
+
+To easily download all the files in this repo to your local machine use the following command in the terminal:
+
+    git clone git://github.com/swcarpentry/boot-camps.git
+this will download the bootcamps repo to your computer. 
+
+    git branch -a
+this will list the branches that are available
+
+    git checkout -b 2013-06-wise-advanced
+this will grab the materials for this workshop and place the directory 2013-06-wise-beginners in your currently active directory.
+
+(Note, if you only want to clone the 2013-06-wise-advanced branch, you should try: git clone git://github.com/swcarpentry/boot-camps.git --branch 2013-06-wise-advanced )
+
+Getting started on GitHub
+--------------------------
+
+If you want to begin harnessing the full power of git its best to be social. Here are some quick instructions to get you up and going using git on Github.
+
+Create an account at Github : http://github.com Note that with a .edu email address you can request a student or faculty account which will provide you with free private repos as well:
+
+    https://github.com/edu
+Follow instructions here for making sure your name and email are properly configured in git:
+
+    https://help.github.com/articles/set-up-git
+Follow these instructions to set up your SSH key which is necessary to identify both your machine and you as a user:
+
+    https://help.github.com/articles/generating-ssh-keys
+After you have added your SSH key to your git hub account per the instructions above you will be ready to go. For example if you wish to download the git repo for the bootcamp execute this command:
+
+    git clone -b 2013-06-wise-advanced git@github.com:swcarpentry/boot-camps.git
+
+
 

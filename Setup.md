@@ -5,38 +5,58 @@ You should ensure you have the following software and tools available:
 * Web browser (preferably Firefox or Google Chrome)
 * Bash shell
 * A text editor e.g. nano, vi or emacs
-* Make
 * [Git](http://git-scm.com/)
 * Python 2.7 or higher
+* [numpy](http://numpy.scipy.org/), [scipy](http://scipy.org) and [matplotlib](ttp://matplotlib.org/) for Scientific Python
+* [nosetests](https://nose.readthedocs.org/en/latest/) framework for Testing
 
-Below there are setup instructions for Windows, RedHat/Scientific Linux 6 and Ubuntu. The setup instructions for Mac OSX can be found on the [Software Carpentry website](http://software-carpentry.org/setup/osx.html).  
-If you experience any problems, please send an email to: admin [_at_] software-carpentry.org.
+If you experience any problems, please arrive at 8:30 on Day 1 and the instructors and helpers will help you deal with the issue. 
 
-## To install under Windows 
+## To install:
 
-In order to practice working with shell, scripting, Make and Git on Windows, we will use [Cygwin](http://www.cygwin.com/).
+### Bash:
+
+Mac:
+The default shell in Mac OS X is bash.
+
+Windows:
+In order to practice working with shell, scripting and Git on Windows, we will use [Cygwin](http://www.cygwin.com/.
 Once you download and run the installation package, make sure that you install:
-* A text editor (during the tutorials we will be using "nano")
-* Make
+* A text editor (nano - probably the easiest choice if you're new to *nix environments, emacs, vi etc.)
 * Git
-* Python 2.7 or higher
+* python-nose
+To install the above packages simply type in their names in the "Select packages" window during the installation process (note that Git will be listed in the "Devel" section).
 
-To install the above packages simply type in their names in the "Select packages" window during the installation process (note that Make and Git will be listed in the 'Devel' section).
+Linux:
+The default shell is usually bash but if not you can get to bash by opening a terminal and typing `bash`.
 
-## To install under RedHat/Scientific Linux 6
+### Git
+Mac
+Install Xcode and the command line tools (from the Download preferences pane) or install just Git.
 
-Scientific Linux 6 already comes with shell and vi text editor. To install the other packages run,
+Windows: 
+Install Git using cygwin packages (see above).
 
-    $ sudo su -
-    # yum install nano
-    # yum install git
-    # yum install python
-    
-## To install under Ubuntu
+Linux:
+If git is not already available on your machine you can try to install it via your distro's package manager (e.g. apt-get).
 
-Ubuntu 11.04 and above already comes with shell, vi and nano text editors. To install the other packages run,
 
-    $ sudo su -
-    # apt-get install git
-    # apt-get install python
+### Python and Scientific Python packages
+We recommend the all-in-one scientific Python installer [Anaconda CE](http://continuum.io/anacondace.html). Installation on Mac and Linux requires using the shell and if you aren't comfortable doing the installation yourself just download the installer and we'll help you at the boot camp.
+
+### Python Nose
+
+Mac and Linux:
+`easy_install nose` or pip `install nose`
+
+To check the installation run `nosetests` and the output should be similar to:
+    ..
+    ----------------------------------------------------------------------
+    Ran 2 tests in 0.015s
+
+    OK
+
+Windows:
+Python Nose can be installed via cygwin (please see above).
+
    
