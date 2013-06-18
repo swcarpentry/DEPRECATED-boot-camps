@@ -2,9 +2,9 @@
 
 We're going to set up a remote repository that we can use from multiple locations. The remote repository can also be shared with colleagues, if we want to.
 
-### Bitbucket
+### GitHub
 
-[Bitbucket](http://bitbucket.org) is a web service which allows users to set up  their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. Bitbucket, like other services such as [Launchpad](https://launchpad.net), [GitHub](https://github.com),
+[GitHub](http://GitHub.com) is a web service which allows users to set up  their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. Your organisation may also offer support for hosting Git repositories - ask your local system administrator. GitHub, like other services such as [Launchpad](https://launchpad.net), [Bitucket](https://bitbucket.org),
 [GoogleCode](http://code.google.com), and [SourceForge](http://sourceforge.net) provides a wealth of resources to support projects including:
 
 * Time histories changes to repositories
@@ -16,80 +16,78 @@ We're going to set up a remote repository that we can use from multiple location
 * Varying permissions for various groups of users
 * Other service hooks e.g. to Twitter.
 
-**Note** Bitbucket allows you to set up private repositories for free. However, GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of BitBucket), you will need to pay for the private GitHub repositories. 
+**Note**  GitHub's free repositories have public licences **by default**. If you don't want to share (in the most liberal sense) your stuff with the world and you want to use GitHub (instead of GitHub), you will need to pay for the private GitHub repositories (GitHub offers up to 5 free private repositories, if you are an academic - but do check this information as T&C may change).
 
 ### Get an account
 
-Setting up Bitbucket at first requires a user name and password. Let's now  [create a free one](https://bitbucket.org/account/signup/). 
+Setting up GitHub at first requires a user name and password. Let's now  [create a free one](https://GitHub.com). 
 
 ### Create a new repository
 
-Now, we can create a repository on Bitbucket,
+Now, we can create a repository on GitHub,
 
-* Log in to [Bitbucket](https://bitbucket.org/)
-* Click on the Create  icon on the top left, next to the Bitbucket logo
-* Enter Repository name: "bootcamp"
-* Make sure that the private repository option is ticked
-* Make sure that you select Git in the "repository type" section
+* Log in to [GitHub](https://GitHub.com/)
+* Click on the Create icon on the top right
+* Enter Repository name: "bootcamp-WiSE"
+* For the purpose of this exercise we'll create a public repository
 * Make sure the Initialize this repository with a README is *unselected*
 * Click Create Repository
 
-You'll get a page with new information about your repository. We already have our local repository and we will be copying it to Bitbucket. On the page which just opened ("Add some code") click "I have code I want to import". Copy the following line (from Bitbucket) and paste it into your command line
+You'll get a page with new information about your repository. We already have our local repository and we will be *pushing* it to GitHub. 
 
-    $ git remote add origin https://USERNAME@bitbucket.org/USERNAME/bootcamp.git
+    git remote add origin https://github.com/USERNAME/bootcamp-WiSE.git
+    git push -u origin master
 
-This sets up an alias, `origin`, to correspond to the URL of our new repository on Bitbucket.
+This sets up an alias, `origin`, to correspond to the URL of our new repository on GitHub.
 
 Now copy and paste the second line,
 
-    $ git push -u origin --all   # to push changes for the first time
-    Password for 'https://USERNAME@bitbucket.org': 
-    Counting objects: 3, done.
-    Writing objects: 100% (3/3), 220 bytes, done.
-    Total 3 (delta 0), reused 0 (delta 0)
-    remote: bb/acl: USERNAME is allowed. accepted payload.
-    To https://USERNAME@bitbucket.org/USERNAME/bootcamp.git
+    $ git push -u origin master
+    Counting objects: 38, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (30/30), done.
+    Writing objects: 100% (38/38), 3.59 KiB, done.
+    Total 38 (delta 9), reused 0 (delta 0)
+    To https://github.com/USERNAME/bootcamp-WiSE.git
     * [new branch]      master -> master
     Branch master set up to track remote branch master from origin.
 
 
 This *pushes* our `master` branch to the remote repository, named via the alias `origin` and creates a new `master` branch in the remote repository.
 
-Now, on Bitbucket, click the Source tab and we should see our code and click the Commits tab we should see our complete history of commits.  
+Now, on GitHub, we should see our code and click the Commits tab we should see our complete history of commits.  
 
-Our local repository is now available on Bitbucket. So, anywhere we can access Bitbucket, we can access our repository.
+Our local repository is now available on GitHub. So, anywhere we can access GitHub, we can access our repository.
 
 ### Cloning a remote repository
 
 Now, let's do something drastic!
 
     $ cd ..
-    $ rm -rf papers
+    $ rm -rf add_nums
 
-Gulp! We've just wiped our local repository! But, as we've a copy on Bitbucket we can just copy, or *clone* that,
+Gulp! We've just wiped our local repository! But, as we've a copy on GitHub we can just copy, or *clone* that,
 
-    $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git
-    Cloning into 'bootcamp'...
-    Password for 'https://USERNAME@bitbucket.org':
-    remote: Counting objects: 12, done.
-    remote: Compressing objects: 100% (4/4), done.
-    remote: Total 12 (delta 0), reused 0 (delta 0)
-    Unpacking objects: 100% (12/12), done.
+    $ git clone https://github.com/USERNAME/bootcamp-WiSE.git
+    Cloning into 'bootcamp-WiSE'...
+    Password for 'https://USERNAME@GitHub.com':
+    remote: Counting objects: 38, done.
+    remote: Compressing objects: 100% (21/21), done.
+    remote: Total 38 (delta 9), reused 38 (delta 9)
+    Unpacking objects: 100% (38/38), done.
 
+In GitHub, there is also an option for called *forking* which essentially allows to do the same thing but forking is done in the web service (that is not using the command line and creating a repository on your local file system).
 
-In Bitbucket, there is also an option for called *forking* which essentially allows to do the same thing but forking is done in the web service (that is not using the command line and creating a repository on your local file system).
+Now, if we change into `bootcamp-WiSE` we can see that we have our repository,
 
-Now, if we change into `bootcamp` we can see that we have our repository,
-
-    $ cd bootcamp
+    $ cd bootcamp-WiSE
     $ git log
 
 and we can see our Git configuration files too,
 
     $ ls -A
-    common  .git  journal.txt
 
-But where is the `papers` directory, you might ask? `papers` was the directory that held our local repository but was not a part of it.
+But where is the `add_nums` directory, you might ask? `add_nums` was the directory that held our local repository but was not a part of it.
 
 ### Push changes to a remote repository
 
@@ -99,23 +97,26 @@ Having done that, how do we send our changes back to the remote repository? We c
 
     $ git push
 
-If we now check our Bitbucket page we should be able to see our new changes under the Commit tab.
+If we now check our GitHub page we should be able to see our new changes under the Commit tab.
 
-Before you push to a remote repository you should always pull so you have the most up-to-date copy of the remote repository. So, on that note...
+If we created a new branch to develop a new feature and then we want to push it into GitHub:
+   $ git push origin feature2 
 
-### Pull changes from a remote repository
+This will work assumig that 'origin' is still an alias for our remote repository in GitHub. The feature2 branch should now be created in our GitHub repository.
 
-So, we can now access our repository from multiple locations and make changes to it. But how do we get the latest changes. One way is simply to clone the repository every time but this is inefficient, especially if our repository is very large. So, Git allows us to get the latest changes down from a repository. 
+### Collaboration: pulling changes from a remote repository
 
-So, first, let us leave our current local repository,
+Now when we have a remote repository, we can share it and collaborate with others (and we can also work from multiple locations: for example from a laptop and a desktorp in the lab). But how do we get the latest changes? One way is simply to clone the repository every time but this is inefficient, especially if our repository is very large. So, Git allows us to get the latest changes down from a repository. Let's assume that we work on our 
+
+First, let us leave our current local repository,
 
     $ cd ..
     $ ls
-    bootcamp
+    bootcamp-WiSE
 
 And let us clone our repository again, but this time specify the local directory name,
 
-    $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git bootcamp2
+    $ git clone https://github.com/USERNAME/bootcamp-WiSE.git bootcamp2
     Cloning into 'bootcamp2'...
 
 
@@ -124,12 +125,12 @@ So we now have two clones of our repository,
     $ ls
     $ bootcamp bootcamp2
 
-Let's pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we're still pretending!) and one on Bitbucket. So let's go into one of our clones, make some changes, commit these and push these to Bitbucket:
+Let's pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we're still pretending!) and one on GitHub. So let's go into one of our clones, make some changes, commit these and push these to GitHub:
 
-    $ cd bootcamp
-    $ nano journal.txt
-    $ git add journal.txt
-    $ git commit -m "Added some notes to the sections" journal.txt
+    $ cd bootcamp-WiSE
+    $ nano add_numb.py
+    $ git add add_numb.py
+    $ git commit -m "Added some more comments" add_numb.py
     $ git push
 
 Now let's change to our other repository and *fetch* the changes from our remote repository,
@@ -141,7 +142,7 @@ We can now see what the differences are by doing,
 
     $ git diff origin/master
 
-which compares our current, `master` branch, with an `origin/master` branch which is the name of the `master` branch in `origin` which is the alias for our cloned repository, the one on Bitbucket.
+which compares our current, `master` branch, with an `origin/master` branch which is the name of the `master` branch in `origin` which is the alias for our cloned repository, the one on GitHub.
 
 We can then *merge* these changes into our current repository, which merges the branches together,
 
@@ -149,37 +150,40 @@ We can then *merge* these changes into our current repository, which merges the 
 
 And then we can check that we have our changes,
 
-    $ cat journal.txt
+    $ cat add_numb.py
     $ git log
 
 As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
 
-    $ nano journal.txt
-    $ git add journal.txt
-    $ git commit -m "Added some references" journal.txt
+    $ nano add_numb.py
+    $ git add add_numb.py
+    $ git commit -m "Added credits" add_numb.py
     $ git push
-    $ cd ../bootcamp
+    $ cd ..
+    $ cd ../bootcamp-WiSE
     $ git pull
 
 And then check that we have our changes,
 
-    $ cat journal.txt
+    $ cat add_numb.py
     $ git log
 
-### Conflicts and how to resolve them
+### Collaboration: conflicts and how to resolve them
 
-Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to Bitbucket:
+Let's continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to GitHub:
 
-    $ nano journal.txt
-    $ git add journal.txt
-    $ git commit -m "Rewrote the title" journal.txt
+    $ nano add_numb.py
+    $ git add add_numb.py
+    $ git commit -m "Credits - added our names" add_numb.py
     $ git push
 
-Now let us suppose, at a later, date, we use our other repository (for example, we may have been working on a local repository on our laptop, and now are using the one on our workstation) and we come up with a better idea for a title,
+Now let us suppose, at a later, date, we use our other repository and we want to change the credits.
+
 
     $ cd ../bootcamp2
-    $ git add journal.txt
-    $ git commit -m "Changed the first author" journal.txt
+    $ nano add_numb.py
+    $ git add add_numb.py
+    $ git commit -m "Changed the first author" add_numb.py
     $ git push
 
 Our push fails, as we've not yet pulled down our changes from our remote repository. Before pushing we should always pull, so let's do that...
@@ -188,8 +192,8 @@ Our push fails, as we've not yet pulled down our changes from our remote reposit
 
 and we get
 
-    Auto-merging journal.txt
-    CONFLICT (content): Merge conflict in journal.txt
+    Auto-merging add_numb.py
+    CONFLICT (content): Merge conflict in add_numb.py
     Automatic merge failed; fix conflicts and then commit the result.
 
 As we saw earlier, with the fetch and merge, a pull pulls down changes from the repository and tries to merge these. It does this on a file-by-file basis, merging files line by line. We get a *conflict* when if a file has changes that affect the same lines and those changes can't be seamlessly merged. If we look at the status,
@@ -199,40 +203,47 @@ As we saw earlier, with the fetch and merge, a pull pulls down changes from the 
 we can see that our file is listed as `Unmerged` and if we look at `journal.txt`, we may see something like,
 
     <<<<<<< HEAD 
-    Title: A paper about proteines
+    """ This short program just adds numbers. Developed by John and Aleksandra."""
     =======
-    Title: A paper everything but proteines
+    """ This short program just adds numbers. Developed by Aleksandra and John."""
     >>>>>>> 71d34decd32124ea809e50cfbb7da8e3e354ac26 
 
-The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to *resolve* the conflict. This means removing the mark-up and doing one of
+The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to *resolve* the conflict. Just like we did when we had to deal with the conflict when we were merging the branches.
 
-* Keep the local version, which, here, is the one marked-up by `HEAD` i.e. "Title: A paper about proteines"
-* Keep the remote version, which, here, is the one marked-up by the commit identifier i.e. "Title: A paper everything but proteines"
-* Or keep a combination of the two e.g. "Title: A paper about proteines and eveything else"
-
-We edit the file. Then commit our changes e.g.
-
-    $ git add journal.txt
-    $ git commit -m "Resolved conflict in journal.txt by rewriting title to combine best of both originals"
-
-Now if we push,
+We edit the file. Then commit our changes e.g. Now if we push,
 
     $ git push
 
-All goes well. If we now go to Bitbucket and click on the Overview tab we can see where our repository diverged and came together again.
+All goes well. If we now go to GitHub and click on the Overview tab we can see where our repository diverged and came together again.
 
 This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.
+
+### Remote repository and branching
+
+    $ git checkout -b feature2
+
+To push that branch to the remote repository:
+   $ git push origin feature2
+
+To list all branches (local and remote):
+    $ git branch -a
+
+To delete the remote branch:
+    $ git push origin :feature2 
+
+
 
 ## The story so far...
 
 So far, we've now seen how we can,
 
-* Host our private repository on Bitbucket
+* Host our private repository on GitHub
 * Copy, or clone, our remote repository onto a local machine
 * Make changes in a local repository and push these to a remote repository
 * Fetch and merge, or pull, changes from a remote repository into our local repository
 * Identify and resolve conflicts when the same file is edited within two repositories
+* Create and delete remote branches
 
-We now have everything we need to collaborate with our colleagues!
+For the next exercise, please pair up (or work in groups of 3) and work on a shared repository in GitHub.
 
-Previous: [Tracking our changes with a local repository](1_Local.md) Next: [Collaborating with our colleagues](3_Collaboration.md)
+Previous: [Tracking our changes with a local repository](1_Local.md) Next: [Exercise - collaborating](3_Collaboration.md)
