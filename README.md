@@ -1,6 +1,9 @@
 Software Carpentry Boot Camps
 =============================
 
+O Hai Dere!!!1!
+================
+
 This repository contains material useful when preparing and running a
 boot camp. This can include lecture notes, lesson plans, IPython
 Notebooks, exercises, and some types of presentations. Please see the
