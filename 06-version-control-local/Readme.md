@@ -20,12 +20,21 @@ need to drop back to the slide deck you had five days ago?
 
 ## git : What is Version Control ?
 
-Very briefly, version control is a way to keep a backup of changing
-files, to store a history of those changes, and most importantly to
-allow many people in a collaboration to make changes to the same files
+Very briefly, version control is a way to *keep a backup of changing
+files*, *to store a history of those changes*, and most importantly to
+*allow many people* in a collaboration *to make changes* to the same files
 concurrently. There are a lot of version control systems. Wikipedia
 provides both a nice vocabulary list and a fairly complete table of some
 popular version control systems and their equivalent commands.
+
+What problems does version control solve?
+* undo mistakes by rolling back to earlier versions
+* run and test with older versions for debugging (when DID it break?)
+* shows you what changes you've made when 
+* allows you to keep and switch between multiple verisons of code
+* automatic merging of edits by different people 
+* can distrubute/publish analysis code and workflows
+* archive or back up your thesis so when your laptop goes away, your thesis doesn't
 
 Today, we'll be using git. Git is an example of a distributed version
 control system, distinct from centralized version control systems. I'll
@@ -42,6 +51,25 @@ Version Control System Tool Options
 - **Centralized**
   - concurrent versions system (cvs)
   - subversion (svn)
+
+## git clone : we've seen git already
+Yesterday morning, after installing git, we asked everyone to run 
+```
+git clone http://github.com/swcarpentry/boot-camps -b 2013-06-chicago
+```
+This created a copy of the software carpentry repository materials on
+each of your hard drives yesterday morning. 
+
+Last night, the instructors changed the content on github, so now 
+the repositories on all our hard drives are out of date.
+ 
+```
+cd ~/boot-camps
+git pull
+```
+will try to retrieve all of last night's changes and update your local
+copies.  Note: git commands work only when executed from within the directory
+that contains the repository.  
 
 ## git --help : Getting Help
 
@@ -98,6 +126,7 @@ as their descriptions.
     See 'git help <command>' for more information on a specific command.
 
 ## git config : Controls the behavior of git
+Since we're going to be making commits, we need to perform a one-time per computer configuation of git so git knows who to credit for our contributions to the version control system.
 
      $ git config --global user.name "YOUR NAME"
      $ git config --global user.email "YOUR EMAIL"
@@ -141,11 +170,12 @@ description. You can describe your repository by opening the description
 file and replacing the text with a name for the repository. Mine will be
 called "Reproducible Science". You may call yours anything you like.
 
-    $ kate description &
+    $ nano description &
 
 Step 4 : Applications sometimes create files that are not needed. For
 example, kate creates a temporary file called 'filename~' when you edit
-the file 'filename'. You can ask git to ignore such files by editing
+the file 'filename', and latex produces .aux and .dvi files that you 
+may not need to keep in verison control. You can ask git to ignore such files by editing
 the file '.git/info/exclude'. Edit the file to ignore files the end with '~'.
 
      git ls-files --others --exclude-from=.git/info/exclude
@@ -165,7 +195,7 @@ create one, then we'll learn the **git add** command.
 
 Step 1 : Create a file to add to your repository.
 
-    $ kate readme.rst &
+    $ nano readme.rst &
 
 Step 2 : Inform git that you would like to keep track of future changes
 in this file.
@@ -213,9 +243,9 @@ In the same way that it is wise to often save a document that you are
 working on, so too is it wise to save numerous revisions of your code.
 More frequent commits increase the granularity of your **undo** button.
 
-**ADVICE: Good commit messages**
+**ADVICE: Write good commit messages**
 
-There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
+There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.  Remember, you're writing commit messages for yourself as much as for anyone else.
 
 [Our repo](https://github.com/USERNAME/boot-camps/commits/YYYY-MM-PLACE) has some good commit messages.
 
@@ -301,7 +331,7 @@ There are some useful flags for this command, such as
 ## git reset : Unstaging a staged file
     git reset filename     (opposite of 'git add filename')
 
-## git checkout : Discardind unstaged modifications (git checkout has other purposes)
+## git checkout : Discarding unstaged modifications (git checkout has other purposes)
     git checkout -- filename     
     
 ## git rm : Removing a file
