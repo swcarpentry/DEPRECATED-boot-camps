@@ -30,7 +30,7 @@ One day, a colleague of mine showed me that the MG-RAST website had an interface
 http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
 has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  (The data bundle may not display conveniently in all browsers, but there's a lot of good data in there, encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
 Fortunately, there is a python module to painlessly parse JSON into a python dict of dict.
-The script ```metagenome_statistics-example.py``` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spend my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
+The script `metagenome_statistics-example.py` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spend my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
 
 ##Biopython##
 Biopython has a large collection of subroutines that do potentially useful things with biological data.
@@ -55,13 +55,13 @@ Sequence comparison is at the heart of bioinformatics; to do useful comparisons,
 The documentation for this interface, called EUTILS, is here:
 http://www.ncbi.nlm.nih.gov/books/NBK25499/
 
-Pretty much anything you can do at an NCBI web site or search engine can be done using EUTILS -- retrieving pubmed abstracts, searching SRA for NGS datasets, searching for and retrieving reference genomes.  Here we will describe retrieving sequence data (protein sequences, genome sequences, or genomes with annotations) using ```efetch```.  Other routines are described in Eutils.md.
+Pretty much anything you can do at an NCBI web site or search engine can be done using EUTILS -- retrieving pubmed abstracts, searching SRA for NGS datasets, searching for and retrieving reference genomes.  Here we will describe retrieving sequence data (protein sequences, genome sequences, or genomes with annotations) using `efetch`.  Other routines are described in Eutils.md.
 
 Biopython has subroutines that take EFETCH's options and parameters and return python objects.
 This saves us from having to write code that directly talks to NCBI's EFETCH API, freeing us to spend our time elsewhere.  
 We just need to find out how to use these subroutines.
 
-```retrievegbk.py``` contains an example of using the ```Entrez.efetch```  biopython method to retrieve genbank records by specifying their accession number.  
+`retrievegbk.py` contains an example of using the `Entrez.efetch`  biopython method to retrieve genbank records by specifying their accession number.  
 
 ```python
 #!/usr/bin/env python
@@ -87,14 +87,16 @@ filename = "%s.gbk" % accessionno
 open(filename, "w").write(genbankdata)
 ```
 
-Note that all we did was get the data and dump it to a file here; we will go through the data and look at what is inside later.
+Note that all we did was get the data and dump it to a file here; we will go through the data and look at what is inside later.  Note: this code snipped (and `retreivegbk.py`) contain a syntax error--fix the syntax error and give your local version of the script your email address.  You want to tell NCBI who you are as a matter of politeness (they are giving you data for free).  In case your script goes horribly wrong, and you mistakenly launch a denial-of-service attack against NCBI, NCBI might send you an email letting you know.  The guidelines for automated download of data from NCBI include the guidance
+>In order not to overload the E-utility servers, NCBI recommends that users post no more than three URL requests per second and limit large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern time during weekdays. 
 
 Easy Exercise:
-Use ```retreivegbk.py``` to get NC_001422, the genome of Phi-x174, in genbank format.  We will use this below. 
+Use `retreivegbk.py` to get NC_001422, the genome of Phi-x174, in genbank format.  We will use this below. 
 
 Exercise:
-```ladyslipperITSaccessionnumbers.txt``` contains 94 accession numbers for the ITS ribosomal marker sequences of certain lady slipper orchids.
-Modify the `retrievegbk.py` to request FASTA format instead of genbank format and then find a way to download all 94 sequences.  Once you have the sequences, you can concatenate them and run your favorite multiple-sequence-alignment program.   (Note: you can do this by looping in the shell or by looping in python.  Both approaches can be made to work!)
+`ladyslipperITSaccessionnumbers.txt` contains 94 accession numbers for the ITS ribosomal marker sequences of certain lady slipper orchids.
+Use the `retrievegbk()` subroutine in `retrievegbk.py` to request to download all 94 sequences.  
+Once you have the sequences, you can convert them to FASTA, concatenate the FASTA, and run a multiple-sequence-alignment program.  
 
 ### Iterating through data records ###
 
@@ -109,8 +111,8 @@ can get the data from, variety in the data types, and variety in the procedures 
 
 ####Parsing####
 
-We can open ```data/tiny.fasta``` using ```SeqIO.parse()``` 
-As a troubleshooting mechanism, python's ```dir``` method will list the methods and attributes that are defined for this object:
+We can open `data/tiny.fasta` using `SeqIO.parse()` 
+As a troubleshooting mechanism, python's `dir` method will list the methods and attributes that are defined for this object:
 
 ```python
 from Bio import SeqIO
@@ -118,23 +120,23 @@ generator = SeqIO.parse("data/tiny.fasta", "fasta")
 type(generator)
 dir(generator)
 ```
-We find that ```Bio.SeqIO.parse``` method returns a *generator*, an python object with methods to let us access the data.  We can put this generator in a ```for``` loop and access each record one at a time, or we can call ```list(generator)``` to load all the records into memory at once, or we can call `SeqIO.to_dict(generator)` to load all the records into a dict at once.     (If we don't have enough memory to load all the data at once--which will often be the case with shotgun data--we need to find ways to write programs that don't require all the data in memory.)  Or we can use `record = generator.next()` to step through the records until we get a `StopIteration`.
+We find that `Bio.SeqIO.parse` method returns a *generator*, an python object with methods to let us access the data.  We can put this generator in a `for` loop and access each record one at a time, or we can call `list(generator)` to load all the records into memory at once, or we can call `SeqIO.to_dict(generator)` to load all the records into a dict at once.     (If we don't have enough memory to load all the data at once--which will often be the case with shotgun data--we need to find ways to write programs that don't require all the data in memory.)  Or we can use `record = generator.next()` to step through the records until we get a `StopIteration`.
 
-```SeqIO.parse``` takes the format as a mandatory second parameter.  fasta, fastq, genbank, and embl are among the supported formats.  
+`SeqIO.parse` takes the format as a mandatory second parameter.  fasta, fastq, genbank, and embl are among the supported formats.  
 
 Using `next()` just once will give us the first `SeqRecord`, so let's look at it:
-```
+```python
 firstrecord = SeqIO.parse("data/tiny.fasta", "fasta").next()
 print type(firstrecord)
 print dir(firstrecord)
 ```
 We can print each of these, and find out whether each is a method or an attribute.
-The attributes, ```firstrecord.id``` and ```firstrecord.seq``` contain the data we are looking for.
-Other attributes such as ```firstrecord.annotations``` and ```firstrecord.features``` are only populated for input data types richer than fasta.
+The attributes, `firstrecord.id` and `firstrecord.seq` contain the data we are looking for.
+Other attributes such as `firstrecord.annotations` and `firstrecord.features` are only populated for input data types richer than fasta.
 
-To review, ```Bio.SeqIO.parse()``` returns a generator.  Looping through this will produce ```SeqRecord``` objects, one for each sequence or contig.  These have ```Seq``` and ```SeqFeature``` objects inside of them.  
+To review, `Bio.SeqIO.parse()` returns a generator.  Looping through this will produce `SeqRecord` objects, one for each sequence or contig.  These have `Seq` and `SeqFeature` objects inside of them.  
 
-We can loop through all the records, one at a time, using ```for```:
+We can loop through all the records, one at a time, using `for`:
 ```python
 generator = SeqIO.parse("data/tiny.fasta", "fasta")
 for seqrecord in generator:
@@ -143,10 +145,23 @@ for seqrecord in generator:
 
 This print statement gives us a human-readable summary of the contents of the seqrecord, but not necessarily the whole thing. 
 
-While we might expect ```seqrecord.seq``` to return a string, it returns an object of the type ```Bio.Seq.Seq```.  Strings have 
-methods like ```find()``` and ```upper()```.  ```Seq``` objects additionally have methods like ```reverse_complement()``` and ```translate()```.
+While we might expect `seqrecord.seq` to return a string, it returns an object of the type `Bio.Seq.Seq`.  Strings have 
+methods like `find()` and `upper()`.  `Seq` objects additionally have methods like `reverse_complement()` and `translate()`.
 In some cases, you can use `Seq` objects in place of strings, in other places an explicit format conversion using `str()` is necessary.
 
+```python
+print "This is a STRING".upper()
+print "This is a STRING".lower()
+```
+
+`Seq` objects have these methods and others that perform biological sequence-manipulation tasks:
+```python
+print firstrecord.seq.upper()
+print firstrecord.seq.lower()
+print firstrecord.seq.reverse_complement()
+print firstrecord.seq.translate()
+```
+So `Seq` objects know what their sequence is and they know how to translate themselves.  I can iterate over the sequences in the file and print the sequence and the reverse complement like this:
 ```python
 generator = SeqIO.parse("data/tiny.fasta", "fasta")
 for seqrecord in generator:
@@ -154,24 +169,21 @@ for seqrecord in generator:
     print str(seqrecord.seq)
     print str(seqrecord.seq.reverse_complement())
 ```
-
-Finally, you can get reminders of the recipes for accessing data and descriptions of how to use SeqIO from the manual page on ```SeqIO```:
+Finally, you can get reminders of the recipes for accessing data and descriptions of how to use SeqIO from the manual page on `SeqIO`:
 ```python
 help(SeqIO)
 ```
 
 Exercise:  
-Modify the existing program ```exercise-reversecomplement.py``` to output fasta whose sequences have been reverse-complemented.  
-
-
+Modify the existing program `exercise-reversecomplement.py` to output fasta whose sequences have been reverse-complemented.  
 
 ####Fasta sequence parsing####
 The minimal data type for sequence data, this format includes only a text record description and a (possibly long) sequence.  Nucleic acid sequences, partially-ambiguous nucleic acid sequences, and amino acid sequences can all be encoded in this bare-bones format.  
 
-```SeqRecord``` data types have the attributes
-+ ```.name```  which is the **fasta id** -- all the text before the first whitespace on the header line
-+ ```.description``` the entire header line, including the fasta id and anything after the first whitespace
-+ ```.seq```  the sequence, as a ```SeqIO.Seq``` object
+`SeqRecord` data types have the attributes
++ `.name`  which is the **fasta id** -- all the text before the first whitespace on the header line
++ `.description` the entire header line, including the fasta id and anything after the first whitespace
++ `.seq`  the sequence, as a `SeqIO.Seq` object
 
 ```python
 from Bio import SeqIO
@@ -180,20 +192,20 @@ for seqrecord in SeqIO.parse("tiny.fasta", "fasta"):
 ```
 
 Exercise:  
-Modify the existing program ```exercise-allsixframes.py``` to read in nucleic acid FASTA and output six sequences, representing the translation of each sequence in all six reading frames.  Hint:  Slicing works on ```Seq``` objects like it does on strings, so if ```seq``` is one of the ```seqrecord.seq``` objects, 
-```seq[1:]``` and ```seq[2:]``` the sequence with the first character chopped off, and the sequence with the first two characters chopped off, respectively.  
-Hint: `Seq` objects also have  `seq.reverse_complement()` and `seq.translate()` methods that return ```Seq``` objects with the reverse complement and translation, defaulting to the standard prokaryotic code.
+Modify the existing program `exercise-allsixframes.py` to read in nucleic acid FASTA and output six sequences, representing the translation of each sequence in all six reading frames.  Hint:  Slicing works on `Seq` objects like it does on strings, so if `seq` is one of the `seqrecord.seq` objects, 
+`seq[1:]` and `seq[2:]` the sequence with the first character chopped off, and the sequence with the first two characters chopped off, respectively.  
+Hint: `Seq` objects also have  `seq.reverse_complement()` and `seq.translate()` methods that return `Seq` objects with the reverse complement and translation, defaulting to the standard prokaryotic code.
 
 
-Exercise: 
-Modify the program ```skeleton.py``` to count the number of sequences and the number of bases of each type in a fasta file.  (Hint: Decide what type of data structure you want to use to store the base counts before you begin.  What subroutines do you want?)
+Hard exercise: 
+Modify the program `skeleton.py` to count the number of sequences and the number of bases of each type in a fasta file.  (Hint: Decide what type of data structure you want to use to store the base counts before you begin.  What subroutines do you want?)
 
 ####Fastq sequence parsing####
 FASTQ is the de-facto standard data format for the output of modern high-throughput sequencing machines.
 In addition to sequence ID and header, this format includes a quality symbol for each base.
 
-Fastq can be parsed using exactly the same ```SeqIO.parse()``` method, just with ```fastq``` instead of ```fasta``` as the format parameter.
-The sequence is in the ```seq``` attribute and the quality scores (as a list of ints) is in the ```letter_annotations["phred_quality"]``` attribute.    This snippet just loops through a small example fastq file and prints the data fields:
+Fastq can be parsed using exactly the same `SeqIO.parse()` method, just with `fastq` instead of `fasta` as the format parameter.
+The sequence is in the `seq` attribute and the quality scores (as a list of ints) is in the `letter_annotations["phred_quality"]` attribute.    This snippet just loops through a small example fastq file and prints the data fields:
 ```python
 from Bio import SeqIO
 generator = SeqIO.parse("data/tiny.fastq", "fastq")
@@ -251,13 +263,13 @@ dir(gbrecord)
 
 Of these, the attributes `id` `name` and `description` are top-level attributes which describe each sequence (contig).  These are accessed by `gbrecord.name` `gbrecord.id` and `gbrecord.description`. `grecord.seq` contains the sequence as a `Seq` object. 
 `gbrecord.annotations` is a *dict* containing additional details (submitters, date, organism taxonomy) for the sequence as a whole.   
-`gbrecord.features` is a *list* of ```SeqFeature``` objects, if provided, that include the genes, protein coding and RNAs, that the creator of the genbank record have decided to include.
+`gbrecord.features` is a *list* of `SeqFeature` objects, if provided, that include the genes, protein coding and RNAs, that the creator of the genbank record have decided to include.
 
 ```python
 gbrecord.features
 ```
-The first item in this list is a ```SeqFeature``` object:
-```
+The first item in this list is a `SeqFeature` object:
+```python
 type(gbrecord.features[0])
    Bio.SeqFeature.SeqFeature
 ```
@@ -267,16 +279,16 @@ This is a list, so we can iterate through it:
 for i in gbrecord.features:
     print i
 ```
-This shows us that the information is there -- looping through all the features of the gbrecord gives us access to everything except the top-level ```seq``` and top-level ```annotations```, for which there is only one per SeqRecord.  
+This shows us that the information is there -- looping through all the features of the gbrecord gives us access to everything except the top-level `seq` and top-level `annotations`, for which there is only one per SeqRecord.  
 
-The ```SeqFeature``` data type has attributes that include  ```id``` ```location``` and ```strand```.  The ```type``` attribute encodes whether the feature represents a gene, tRNA, RNA, or other types, and the available data will usually depend on the value of type.  (RNAs do not have translations; some details are included under "gene" and others under the corresponding "CDS".  A final attribute of ```gbrecord.features``` is ```qualifiers``` -- a *dict* of *list*s of additional annotation fields.
+The `SeqFeature` data type has attributes that include  `id` `location` and `strand`.  The `type` attribute encodes whether the feature represents a gene, tRNA, RNA, or other types, and the available data will usually depend on the value of type.  (RNAs do not have translations; some details are included under "gene" and others under the corresponding "CDS".  A final attribute of `gbrecord.features` is `qualifiers` -- a *dict* of *list*s of additional annotation fields.
 
 ```python
 for i in gbrecord.features:
     if i.type == "CDS" :
         print i.qualifiers
 ```
-```gbrecord.features[2]``` is the first protein-coding annotation "CDS".  Examining it, we see that its ```qualifiers``` attribute has most of the good stuff:
+`gbrecord.features[2]` is the first protein-coding annotation "CDS".  Examining it, we see that its `qualifiers` attribute has most of the good stuff:
 ```python
 firstcdsfeature = gbrecord.features[2]
 print firstcdsfeature
@@ -290,9 +302,20 @@ We can output a table of all the CDS features, then, by looping over all the fea
 for i in gbrecord.features:
     if i.type == "CDS" :
         print i.qualifiers["locus_tag"][0], i.qualifiers["protein_id"][0] , i.qualifiers["gene"][0],  i.qualifiers["translation"][0] 
-
 ```
-Oops.  This doesn't work. This is because not all the CDS records have ```qualifiers["gene"]``` defined, so python raises a KeyError when I try to access qualifiers["gene"] for the feature that doesn't have the key "gene".  We can correct this problem by putting the line that tries to access ```qualifiers["gene"]``` inside of a ```try... except``` conditional.  This lets us fill it in with a default value if "gene" isn't defined.
+
+Oops.  This doesn't work. This is because not all the CDS records have `qualifiers["gene"]` defined, so python raises a KeyError when I try to access qualifiers["gene"] for the feature that doesn't have the key "gene".  We can correct this problem by putting the line that tries to access `qualifiers["gene"]` inside of a `try... except` conditional.  This lets us fill it in with a default value if "gene" isn't defined.
+```python
+for i in gbrecord.features:
+    if i.type == "CDS" :
+        try: 
+            gene = i.qualifiers["gene"]
+        except KeyError:
+            gene = "-"  
+        print i.qualifiers["locus_tag"], i.qualifiers["protein_id"] , gene, i.qualifiers["translation"]
+```
+But the data fields have brackets around them.  Why is that?  The data is being returned as lists, so I can get to the data by asking for the first element of each list.  Remember python indexes from zero, so the first element of a list is accessed using the index `[0]`: 
+
 ```python
 for i in gbrecord.features:
     if i.type == "CDS" :
@@ -301,14 +324,13 @@ for i in gbrecord.features:
         except KeyError:
             gene = "-"  
         print i.qualifiers["locus_tag"][0], i.qualifiers["protein_id"][0] , gene, i.qualifiers["translation"][0]
-
 ```
 
 Exercise: 
-Parse ```NC_001422.1.gbk``` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line?   Put the results in ```NC_001422.1.faa``` 
+Parse `NC_001422.1.gbk` and generate an amino acid fasta file containing the translations of all the coding sequences.  Hint: What field do you want to use for the FASTA ID?  Do you want to put anything else in the fasta description line?   Put the results in `NC_001422.1.faa` 
 
-Exercise: 
-Modify the program ```skeleton.py``` to generate a table of sequence id, sequence length, and the value of `.annotations['taxonomy']` for all the sequences in a genbank-formatted file specified as an argument on the command line.   Run this to generate a summary table of your lady slipper orchid sequences.
+Hard exercise: 
+Modify the program `skeleton.py` to generate a table of sequence id, sequence length, and the value of `.annotations['taxonomy']` for all the sequences in a genbank-formatted file specified as an argument on the command line.   Run this to generate a summary table of your lady slipper orchid sequences.
 
 
 ###High-throughput data--getting it###
