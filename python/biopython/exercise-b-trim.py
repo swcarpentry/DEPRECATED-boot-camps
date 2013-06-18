@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''exercise-b-trim.py   Write the code to trim sequences of low-quality bases. 
-You can expect to turn the data in data/tiny-fastq.fastq into the filtered data 
-exactly like data/tiny-fastq-trimmed.fastq  '''
+You can expect to turn the data in data/tiny.fastq into the filtered data 
+exactly like data/tiny.trimmed.fastq  '''
 
 from Bio import SeqIO
 import sys
@@ -16,7 +16,7 @@ def btrimmer(seqrecord):
 
 #   This part opens a fastq file, goes through it record-by-record, calls btrimmer 
 #   and writes fastq-formatted reuslts to standard out.
-generator = SeqIO.parse("data/tiny-fastq.fastq", "fastq")
+generator = SeqIO.parse("data/tiny.fastq", "fastq")
 for fastqsequence in generator:
-     choppedfastqsequence = btrimmer(fastqsequence)
-     sys.stdout.write(choppedfastqsequence.format("fastq"))
+    choppedfastqsequence = btrimmer(fastqsequence)
+    sys.stdout.write(choppedfastqsequence.format("fastq"))
