@@ -247,8 +247,6 @@ More frequent commits increase the granularity of your **undo** button.
 
 There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.  Remember, you're writing commit messages for yourself as much as for anyone else.
 
-[Our repo](https://github.com/USERNAME/boot-camps/commits/YYYY-MM-PLACE) has some good commit messages.
-
 ### Exercise : Commit Your Changes
 
 Step 1 : Commit the file you've added to your repository.
@@ -440,7 +438,7 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Yesterday, you checked out a git type repository at
-https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+https://github.com/USERNAME/boot-camps/tree/2013-06-chicago
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
