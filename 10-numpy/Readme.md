@@ -387,6 +387,7 @@ NumPy array vs. a Python list.
 	1000 loops, best of 3: 692 µs per loop
 	>>> %timeit sum(B)
 	10 loops, best of 3: 119 ms per loop
+```
 	
 119 milliseconds (ms) = 119,000 microseconds (µs). That is orders
 of magnitude difference in performance! Just imagine if you had to
