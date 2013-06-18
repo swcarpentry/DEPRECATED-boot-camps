@@ -1,8 +1,7 @@
 Software Carpentry Boot Camps
 =============================
 
-O Hai Dere!!!1!
-================
+O Hai Dere!!!1! AND Bula!
 
 This repository contains material useful when preparing and running a
 boot camp. This can include lecture notes, lesson plans, IPython
