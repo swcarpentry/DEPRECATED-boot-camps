@@ -14,30 +14,28 @@ If you experience any problems, please arrive at 8:30 on Day 1 and the instructo
 
 ## To install:
 
-### Bash:
-
-Mac:
+### Bash:  
+**Mac:**  
 The default shell in Mac OS X is bash.
-
-Windows:
+**Windows:**  
 In order to practice working with shell, scripting and Git on Windows, we will use [Cygwin](http://www.cygwin.com/.
 Once you download and run the installation package, make sure that you install:
 * A text editor (nano - probably the easiest choice if you're new to *nix environments, emacs, vi etc.)
 * Git
-* python-nose
+* python-nose  
 To install the above packages simply type in their names in the "Select packages" window during the installation process (note that Git will be listed in the "Devel" section).
 
-Linux:
+**Linux:**  
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing `bash`.
 
 ### Git
-Mac
+**Mac:**   
 Install Xcode and the command line tools (from the Download preferences pane) or install just Git.
 
-Windows: 
+**Windows:**  
 Install Git using cygwin packages (see above).
 
-Linux:
+**Linux:**  
 If git is not already available on your machine you can try to install it via your distro's package manager (e.g. apt-get).
 
 
@@ -46,17 +44,18 @@ We recommend the all-in-one scientific Python installer [Anaconda CE](http://con
 
 ### Python Nose
 
-Mac and Linux:
+**Mac and Linux:**  
 `easy_install nose` or pip `install nose`
 
 To check the installation run `nosetests` and the output should be similar to:
+
     ..
     ----------------------------------------------------------------------
     Ran 2 tests in 0.015s
 
     OK
 
-Windows:
+**Windows:**  
 Python Nose can be installed via cygwin (please see above).
 
    

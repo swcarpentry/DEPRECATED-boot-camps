@@ -75,7 +75,7 @@ Getting started on GitHub
 --------------------------
 If you want to begin harnessing the full power of git its best to be social. Here are some quick instructions to get you up and going using git on Github.
 
-Create an account at Github : http://github.com Note that with a .edu email address you can request a student or faculty account which will provide you with free private repos as well:
+Create an account at [Github](http://github.com) Note that with a .edu email address you can request a student or faculty account which will provide you with free private repos as well:
 
     https://github.com/edu
 Follow instructions here for making sure your name and email are properly configured in git:
