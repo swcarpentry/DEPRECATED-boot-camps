@@ -1,6 +1,6 @@
 # Version Control and Git
 
-**Based on materials by Mike Jackson, Greg Wilson, Chris Cannam, Katy Huff, Anthony Scopatz, Joshua R. Smith, and Sri Hari Krishna Narayanan.**
+**Based on materials by Mike Jackson, Greg Wilson, Chris Cannam, Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri Hari Krishna Narayanan and Fernando Perez.**
 
 ## Some questions for you
 
@@ -20,7 +20,7 @@ Version control is typically used for software source code,  but it can also be 
 * Data files.
 * User documentation, manuals, conference papers, journal papers, book chapters, whether they be plain-text, LaTeX, XML, or whatever.
 
-For this session, we'll be using [Git](http://git-scm.com/), a popular version control system and [Bitbucket](http://bitbucket.org), a web-based service providing remote repositories.
+For this session, we'll be using [Git](http://git-scm.com/), a popular version control system and [GitHub](http://github.com), a web-based service providing remote repositories.
 
 ## We will focus on:
 

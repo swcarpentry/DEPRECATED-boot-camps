@@ -100,7 +100,8 @@ Having done that, how do we send our changes back to the remote repository? We c
 If we now check our GitHub page we should be able to see our new changes under the Commit tab.
 
 If we created a new branch to develop a new feature and then we want to push it into GitHub:
-   $ git push origin feature2 
+
+    $ git push origin feature2 
 
 This will work assumig that 'origin' is still an alias for our remote repository in GitHub. The feature2 branch should now be created in our GitHub repository.
 
@@ -179,7 +180,6 @@ Let's continue to pretend that our two local, cloned, repositories are hosted on
 
 Now let us suppose, at a later, date, we use our other repository and we want to change the credits.
 
-
     $ cd ../bootcamp2
     $ nano add_numb.py
     $ git add add_numb.py
@@ -223,12 +223,15 @@ This is where version control proves itself better than DropBox or GoogleDrive, 
     $ git checkout -b feature2
 
 To push that branch to the remote repository:
-   $ git push origin feature2
+
+    $ git push origin feature2
 
 To list all branches (local and remote):
+
     $ git branch -a
 
 To delete the remote branch:
+
     $ git push origin :feature2 
 
 

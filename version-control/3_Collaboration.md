@@ -1,16 +1,16 @@
 ## Collaborating with our colleagues
 
-Form into pairs and swap your Bitbucket user names.
+Form into pairs and swap your GitHub user names.
 
 One of you choose to be generous and share your repository with your partner - we'll call you the Owner.
 
-The Owner can go to Bitbucket and click on the Share link (on the top) for your repository.
+The Owner can go to GitHub and click on the Share link (on the top) for your repository.
 
-Now, add your partner's Bitbucket user name.
+Now, add your partner's GitHub user name.
 
 Now both Owner and partner clone the owner's repository e.g.
 
-    $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git 
+    $ git clone https://github.com/USERNAME/REPOSITORY.git 
 
 Now, both edit the same file, add it, commit it and push it. Resolve any conflicts you have.
 
