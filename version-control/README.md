@@ -1,6 +1,6 @@
 # Version Control and Git
 
-**Based on materials by Mike Jackson, Greg Wilson, Chris Cannam, Katy Huff, Anthony Scopatz, Joshua R. Smith, and Sri Hari Krishna Narayanan.**
+**Based on materials by Mike Jackson, Greg Wilson, Chris Cannam, Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri Hari Krishna Narayanan and Fernando Perez.**
 
 ## Some questions for you
 
