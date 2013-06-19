@@ -13,6 +13,9 @@ You should ensure you have the following software and tools available.
 * Python [pytest](http://pytest.org/)
 * Python [pytest-cov](https://pypi.python.org/pypi/pytest-cov)
 * Python [ipython](http://ipython.org)
+* Python [numpy](http://numpy.scipy.org/)
+* Python [scipy](http://www.scipy.org/)
+* Python [matplotlib](http://matplotlib.org/)
 
 Below there are brief instructions for RedHat/Scientific Linux 6 and Ubuntu 12.10. 
 
@@ -56,7 +59,6 @@ Scientific Linux 6 already comes with shell and vi text editor. To install the o
     =======================  in 0.05 seconds =======================
     $ easy_install ipython
     $ ipython
-    $ ipython
     Python 2.6.6 (r266:84292, Jun 18 2012, 09:57:52) 
     Type "copyright", "credits" or "license" for more information.
 
@@ -66,7 +68,38 @@ Scientific Linux 6 already comes with shell and vi text editor. To install the o
     help      -> Python's own help system.
     object?   -> Details about 'object'. ?object also works, ?? prints more.
 
-    In [1]: 
+    In [1]: CTRL-D
+    $ yum install numpy
+    $ python
+    >>> import numpy
+    >>> print numpy.__version__
+    >>> from numpy import *
+    >>> from numpy.linalg import *
+    >>> a = array([[1.0, 2.0], [3.0, 4.0]])
+    >>> eig(a)
+    >>> CTRL-D
+    $ yum install scipy
+    $ python
+    >>> import scipy
+    >>> print scipy.__version__
+    >>> from scipy import *
+    >>> a = zeros(1000)
+    >>> a[:100]=1
+    >>> b=fft(a)
+    >>> print b
+    >>> CTRL-D
+    $ yum install python-matplotlib
+    $ python
+    >>> import matplotlib
+    >>> print matplotlib.__version__
+    >>> CTRL-D
+    $ ipython -pylab
+    In []: plot([1,2,3])
+    In []: from scipy import *
+    In []: a = zeros(1000)
+    In []: a[:100]=1
+    In []: b=fft(a)
+    In []: plot(abs(b))
 
 ## To install under Ubuntu
 
@@ -113,4 +146,35 @@ Ubuntu 12.10 and above already comes with shell, vi and nano text editors, Pytho
     help      -> Python's own help system.
     object?   -> Details about 'object', use 'object??' for extra details.
 
-    In [1]: 
+    In [1]: CTRL-D
+    $ apt-get install python-numpy
+    $ python
+    >>> import numpy
+    >>> print numpy.__version__
+    >>> from numpy import *
+    >>> from numpy.linalg import *
+    >>> a = array([[1.0, 2.0], [3.0, 4.0]])
+    >>> eig(a)
+    >>> CTRL-D
+    $ apt-get install python-scipy
+    $ python
+    >>> import scipy
+    >>> print scipy.__version__
+    >>> from scipy import *
+    >>> a = zeros(1000)
+    >>> a[:100]=1
+    >>> b=fft(a)
+    >>> print b
+    >>> CTRL-D
+    $ apt-get install python-matplotlib
+    $ python
+    >>> import matplotlib
+    >>> print matplotlib.__version__
+    >>> CTRL-D
+    $ ipython -pylab
+    In []: plot([1,2,3])
+    In []: from scipy import *
+    In []: a = zeros(1000)
+    In []: a[:100]=1
+    In []: b=fft(a)
+    In []: plot(abs(b))
