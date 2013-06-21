@@ -353,6 +353,8 @@ Now look at the files and all from second and first should be in there.
 
 Yesterday, you checked out a git type repository at <https://github.com/swcarpentry/boot-camps/2013-06-wise-beginners>
 
+`git clone -b 2013-06-wise-beginners git@github.com:swcarpentry/boot-camps.git`
+
 When you clone the Original repository, the one that is created on your local machine is a copy, and will behave as a fully fledged local repository locally. However, with the right configuration, it will be able to pull changes from collaborators to your local machine and push your changes to the Original repository. We'll get to that soon, but for now, let's __fork__ the repository from GitHub.
 
 #####Exercise : Cloning a Repository from GitHub
