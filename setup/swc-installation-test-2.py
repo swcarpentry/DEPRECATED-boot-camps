@@ -70,9 +70,9 @@ CHECKS = [
     'virtual-browser',
 # Version control
     'git',
-    'hg',              # Command line tool
+    #'hg',              # Command line tool
     #'mercurial',       # Python package
-    'EasyMercurial',
+    #'EasyMercurial',
 # Build tools and packaging
     'make',
     'virtual-pypi-installer',
@@ -81,9 +81,10 @@ CHECKS = [
 # Testing
     'nosetests',       # Command line tool
     'nose',            # Python package
+    'py.test',
 # SQL
-    'sqlite3',         # Command line tool
-    'sqlite3-python',  # Python package
+    #'sqlite3',         # Command line tool
+    #'sqlite3-python',  # Python package
 # Python
     'python',
     'ipython',         # Command line tool
@@ -92,11 +93,11 @@ CHECKS = [
     'numpy',
     'scipy',
     'matplotlib',
-    'pandas',
-    'sympy',
-    'Cython',
-    'networkx',
-    'mayavi.mlab',
+    #'pandas',
+    #'sympy',
+    #'Cython',
+    #'networkx',
+    #'mayavi.mlab',
     ]
 
 CHECKER = {}
@@ -157,6 +158,7 @@ class DependencyError (Exception):
         ('*', '*', 'pip'): 'http://www.pip-installer.org/en/latest/installing.html',
         ('*', '*', 'python'): 'http://www.python.org/download/releases/2.7.3/#download',
         ('*', '*', 'pyzmq'): 'https://github.com/zeromq/pyzmq/wiki/Building-and-Installing-PyZMQ',
+        ('*', '*', 'py.test'): 'http://pytest.org/',
         ('Linux', '*', 'scipy'): 'http://www.scipy.org/Installing_SciPy/Linux',
         ('Darwin', '*', 'scipy'): 'http://www.scipy.org/Installing_SciPy/Mac_OS_X',
         ('Windows', '*', 'scipy'): 'http://www.scipy.org/Installing_SciPy/Windows',
@@ -508,6 +510,7 @@ for command,long_name,minimum_version,paths in [
         ('pip', None, None, None),
         ('sqlite3', 'SQLite 3', None, None),
         ('nosetests', 'Nose', (1, 0, 0), None),
+        ('py.test', 'py.test', None, None),
         ('ipython', 'IPython script', (0, 13), None),
         ('emacs', 'Emacs', None, None),
         ('xemacs', 'XEmacs', None, None),
@@ -675,6 +678,7 @@ class PythonPackageDependency (Dependency):
 for package,name,long_name,minimum_version,and_dependencies in [
         ('nose', None, 'Nose Python package',
          CHECKER['nosetests'].minimum_version, None),
+        ('py.test', None, 'py.test', None, None),
         ('jinja2', 'jinja', 'Jinja', (2, 6), None),
         ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
         ('IPython', None, 'IPython Python package',
