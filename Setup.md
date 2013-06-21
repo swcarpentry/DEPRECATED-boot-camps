@@ -17,6 +17,12 @@ You should ensure you have the following software and tools available.
 * Python [scipy](http://www.scipy.org/)
 * Python [matplotlib](http://matplotlib.org/)
 
+# Check your installation
+
+If you have the software already, or have followed the instructions below, then you can check your installation using our [setup test scripts](setup/README.md).
+
+# Brief instructions
+
 Below there are brief instructions for RedHat/Scientific Linux 6 and Ubuntu 12.10. 
 
 For more detailed installation instructions and those for Windows and Mac OSX, check out the [general boot camp set-up instructions](http://software-carpentry.org/setup/) and the installation instructions specific to each product.
