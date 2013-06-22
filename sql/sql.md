@@ -52,6 +52,8 @@ Import
 
 ***EXERCISE: Import the plots and species tables***
 
+***  Explore the different options for displaying the data in the SQL Manager**
+
 You can also use this same approach to append new data to an existing table.
 
 Basic queries
@@ -72,11 +74,24 @@ If we want more information, we can just add a new column to the list of fields,
 
     SELECT day, month, year FROM surveys;
 
+Rows and columns aren't stored in any particular order, they are just displayed that way. 
+We can rearrange columns by changing the order in our select statement:
+
+    SELECT year, month, day FROM surveys;
+    
+Or we can even ask it to repeat columns (although that may not be very useful):
+
+    SELECT year year FROM surveys;
+
 Or we can select all of the columns in a table using the wildcard *
 
     SELECT * FROM surveys;
+    
+***EXERCISE: write a query that will return the species column from the database***
 
 ### Unique values
+
+**How can we remove duplicate values from our query?**
 
 So, we've all written a query that pulls out the species column from the database,
 but what if we want only the unique values so that we can quickly see what
@@ -109,7 +124,7 @@ make them easier to read.
 
 Filtering
 ---------
-One of the most powerful features of a database is the ability to filter data –
+One of the most powerful features of a database is the abilinmmty to filter data –
 selecting only the data meeting certain criteria.
 For example, let’s say we only want data for the species Dipodomys merriami,
 which has a species code of DM.
