@@ -40,6 +40,8 @@ and work with it using exactly the same tools we'll learn about today.
 Import
 ------
 
+Data can be added that is already in a sqlite databae, or by entering CSV or TXT files manually.
+
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the file to import
@@ -309,10 +311,18 @@ Each field in a database should store a single value.
 Information should not be duplicated in a database.
 Each table should be about a single subject (avoids uneccesary replication).
 When naming fields, think about meaning, not presentation.
+
 When we divide our data between several tables, we need a way to bring it back together. 
 The key is to have an identifier in common between tables - shared columns. 
 This will allow us to JOIN tables.
+This is what we will discuss now
 
+For example, the species ID is included in the surveys table,
+but we don’t know what the species ID stands for.
+That information is stored in the Species table and can be
+linked to if we need it.
+This means that we don't have to record the full genus, species,
+and taxa information for the several thousand individuals of each species. 
 
 Joins
 -----
@@ -383,27 +393,9 @@ We can fix this too using AS:
     ON s.plot = p.plot_id
     GROUP BY p.plot_type
     
-***Exercise: Find your query from earlier where you the total weight, average weight, and the min and max weights?***
+***Exercise: Find your query from earlier where you the total weight, average weight, and the min and max weights
+and clean up your column names using concise descriptive names***
 
-
-Database Design
----------------
-Each field in a database should store a single value.
-Information should not be duplicated in a database.
-Each table should be about a single subject (avoids unnecessary replication).
-When naming fields, you should think about meaning, not presentation.
-
-When we divide our data between several tables,
-we need a way to bring it back together again.
-The key is to have an identifier in common between tables – shared columns.
-This will allow us to join tables, which we will discuss now.
-
-For example, the species ID is included in the surveys table,
-but we don’t know what the species ID stands for.
-That information is stored in the Species table and can be
-linked to if we need it.
-This means that we don't have to record the full genus, species,
-and taxa information for the several thousand individuals of each species. 
 
 Adding data to existing tables
 ------------------------------
