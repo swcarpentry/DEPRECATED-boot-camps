@@ -1,2 +1,11 @@
+# compiled Jekyll site
 _site
+
+# emacs
+*~
+
+# Python
+*.pyc
+
+# Mac:
 .DS_Store
