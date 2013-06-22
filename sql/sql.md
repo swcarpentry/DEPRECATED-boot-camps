@@ -102,6 +102,8 @@ species have been sampled.
 If we select more than one column, then the distinct pairs of values are returned
 
     SELECT DISTINCT year, species FROM surveys;
+    
+***EXERCISE: write a query that returns the months that were sampled in each year***
 
 ### Calculated values
 
@@ -184,7 +186,7 @@ Sorting
 -------
 
 We can also sort the results of our queries by using ORDER BY.
-For simplicity, let’s go back to our species table and alphabetize it by Genus.
+For simplicity, let’s go back to our species table and alphabetize it by species.
 
     SELECT * FROM species ORDER BY species ASC;
 
@@ -202,6 +204,8 @@ To truly be alphabetical, we might want to order by genus then species.
 
 ***Exercise: Write a query that returns
              The genus, species, and taxon, sorted alphabetically by taxon.***
+             
+***Exercise: Write a query that returns the genus, species of rodents, sorted alphabetically by scientific name***
 
 Order of execution
 ------------------
@@ -219,6 +223,17 @@ The computer is doing this:
 1. Filtering rows according to WHERE
 2. Sorting results according to ORDER BY
 3. Displaying requested columns or expressions.
+
+We can even sort based on the value of an expression. 
+For example, sometimes ecologists want to look at samples or sites in a random order to avoid bias 
+(i.e., sampling our favorite sites, or the ones that were most successful last time).
+We can use the RANDOM function to return a pseudorandom integer for each row in a table. Watch it change:
+
+    SELECT RANDOM() FROM plots
+    
+We can then generate a randomly ordered list of our plots for sampling.
+
+    SELECT plot_id FROM plots ORDER BY RANDOM()
 
 
 ***Exercise: Let's try to combine what we've learned so far in a single query. 
@@ -242,12 +257,12 @@ Using the wildcard simply counts the number of records (rows)
 
     SELECT COUNT(*) FROM individuals
 
-We can also find out how all of those individuals weigh.
+We can also find out how much all of those individuals weigh.
 
     SELECT SUM(wgt) FROM individuals
 
-***Do you think you could output this value in kilograms,
-rounded to 3 decimal places?***
+***Do you think you could output this value in kilograms or pounds,
+rounded to 3 decimal places? Choose your favorite units.***
 
     SELECT ROUND(SUM(wgt)/1000.0, 3) FROM surveys
 
@@ -262,6 +277,10 @@ Now, let's try to see how many individuals were counted in each species?
     FROM surveys
     GROUP BY species
 
+Why doesn't this work?
+
+    SELECT COUNT(species)
+    FROM surveys
 
 ***EXERCISE: Write queries that return:
 1. How many individuals were counted in each year
@@ -279,7 +298,20 @@ ordered by the count
 
 ***Exercise: Write a query that lets us look at which years contained the most individuals and which had the least?***
 
-***Exercise: Write a query that shows us which species had the largest individuals on average?***
+***Exercise: Write a query that shows us which species had the largest individuals on average?
+Which plots have the smallest individual on average?***
+
+***Short break***
+
+Database Design
+----------------
+Each field in a database should store a single value.
+Information should not be duplicated in a database.
+Each table should be about a single subject (avoids uneccesary replication).
+When naming fields, think about meaning, not presentation.
+When we divide our data between several tables, we need a way to bring it back together. 
+The key is to have an identifier in common between tables - shared columns. 
+This will allow us to JOIN tables.
 
 
 Joins
@@ -296,6 +328,7 @@ Simply adding the JOIN combines every row of
 one table with every row of the other -
 it creates a cross-product of the sets of rows.
 We need to tell SQL how the tables are related.
+Remember that you are smarter than your computer!
 
 To do this we indicated which columns provide the link between
 the two tables using the word ON.
@@ -327,11 +360,30 @@ Joins can be combined with sorting, filtering, and aggregation.
 So, if we wanted average mass of the individuals on each different
 type of treatment, we could do something like
 
-    SELECT plots.plot_type, AVG(surveys.wgt)
+    SELECT plots.plot_type, ROUND(AVG(surveys.wgt),2)
     FROM surveys
     JOIN plots
     ON surveys.plot = plots.plot_id
     GROUP BY plots.plot_type
+
+If you query starts to look messy, you can save yourself some typing by using aliases for the table names.
+
+    SELECT p.plot_type, ROUND(AVG(s.wgt),2)
+    FROM surveys s
+    JOIN plots p
+    ON s.plot = p.plot_id
+    GROUP BY p.plot_type
+
+Its also getting difficult to read some of our column names after running our queries. 
+We can fix this too using AS:
+
+    SELECT p.plot_type, ROUND(AVG(s.wgt),2) AS avg_wgt
+    FROM surveys s
+    JOIN plots p
+    ON s.plot = p.plot_id
+    GROUP BY p.plot_type
+    
+***Exercise: Find your query from earlier where you the total weight, average weight, and the min and max weights?***
 
 
 Database Design
