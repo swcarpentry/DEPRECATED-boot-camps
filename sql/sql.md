@@ -2,6 +2,7 @@ Databases using SQL
 ===================
 
 This material is provided with a [Creative Commons Attribution licence CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/us/).
+It was originally developed for a Software Carpentry Bootcamp by Ethan White and has been modified by Sarah Supp.
 
 **If you don't have Firefox installed already please install it now**
 
