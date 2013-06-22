@@ -488,7 +488,34 @@ Finally, we can delete rows in tables:
 ***Exercise. We captured a new species at our site and have to update our species list.
 It was a bird -- a canyon towhee (Melozone fusca). Give it a new species code and add it to the species table.
 Also, the non-census rodent, Ammospermophilus harrisi should be spelled "harrisii" (Wilson and Reeder 2005).
-Edit the table to correct it.
+Edit the table to correct it.***
+
+
+
+
+***bonus info***
+
+Programming with databases
+--------------------------
+
+    import sqlite3
+    connection = sqlite3.connect("portal_mammals.db")
+    cursor.execute("SELECT * from species;")
+    results = cursor.fetchall();
+    for row in results:
+        print r
+    cursor.close()
+    connection.close()
+    
+1. This program begins by importing sqlite3 library
+2. Establishes a connection with the database
+3. Creates a 'cursor'. The cursor keeps track of where we are in the database
+4. Use cursor to ask the database to execute a query. Pass it as a string - need quotes and semicolon
+5. Database returns query results in cursor.fetchall. Returns a list with one entry for each record.
+6. We need to loop over the list
+7. And print them to see our results. Each is a tuple. The 'u's tell us the string is in Unicode.
+8. Close cursor
+9. Close connection (normal ot open a connection that stays open for the entire program).
 
 
 
