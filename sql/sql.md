@@ -397,5 +397,64 @@ We can fix this too using AS:
 and clean up your column names using concise descriptive names***
 
 
+***Some's good, more's better***
+We can join as many tables as we want using more JOIN clauses. 
+Let's link to the species table so we can make sure that we are only including rodent species in our output.
+
+    SELECT plots.plot_type, ROUND(AVG(surveys.wgt),2)
+    FROM surveys
+    JOIN plots
+    JOIN species
+    ON (surveys.plot = plots.plot_id) AND (surveys.species = species.species_id)
+    WHERE taxa = Rodent
+    GROUP BY plots.plot_type
+    
+***Exercise: At our site Onychomys (grasshopper mouse) is considered to be functionally different from our other species.
+Can you make a query that joins the three tables and returns the data where the genus is not Onychomys?***
+    
+Primary Key
+------------
+The primary key is a value or combination of values that uniquely identifies each row in a table.
+What is the primary key in each of our tables?
+
+NULL
+-----
+Databases should use a special value for holes in the data.
+Depending on your field, you may have seen many different things used -- What have you seen?
+We recommend using a blank or NULL as best, because it can be read into many programs, and is unlikely to be mistaken as a 'real' value.
+(e.g., it is common to use -999 in some fields, but this can be problematic!)
+
+NULL is a special value. 
+It does not equal 0, FALSE, or an empty string.
+It means "no data here".
+How might you return NULL data? Try:
+
+    SELECT * FROM surveys WHERE wgt = NULL
+
+
+    SELECT * FROM surveys WHERE wgt != NULL
+    
+This won't work because NULL cannot be compared to anything else. It is special. 
+These statements will always be false and will never return any records.    
+To find, we need to use a special operator, IS NULL or IS NOT NULL. 
+
+    SELECT * FROM surveys WHERE wgt IS NULL
+
+
+    SELECT * FROM surveys WHERE wgt IS NOT NULL
+    
+If there are NULL fields, we can sometimes run into problems with data analysis.
+For example, there may be cases when we need to find missing data in our database, or remove rows with missing data.
+
+***Exercise, return all the rows where species was not recorded, ordered by date***
+
+Keep in mind that most aggregate functions skip NULL. 
+Be aware of it and decide how you would like to proceed.
+For example, if we are taking averages, the function will take the average of the non-null data and
+divide it by the number of rows that are not null, rather than the actual number of rows.
+
+    
+    
+    
 Adding data to existing tables
 ------------------------------
