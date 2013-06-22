@@ -453,8 +453,48 @@ Be aware of it and decide how you would like to proceed.
 For example, if we are taking averages, the function will take the average of the non-null data and
 divide it by the number of rows that are not null, rather than the actual number of rows.
 
-    
+***Break***
     
     
 Adding data to existing tables
 ------------------------------
+Sometimes we need to add information to an existing table, or add a new table.
+We can also do these things right in SQL.
+
+Let's say that for our study, we would like to start tracking weather conditions.
+When creating a new table we need to name it, name the columns, and state the variable type for each column.
+
+    CREATE TABLE weather (rowid integer primary key, day integer, month integer, year integer, 
+    precip float, temp float, description text)
+    
+We can then update this new table by adding new information each time we collect more data.
+Note: we don't need to update rowid because it is the primary key and it should autoincrement.
+
+    INSERT INTO weather (day, month, year, precip, temp, description 
+    VALUES 22, 06, 2013, 3.1, 25, 'sunny')
+
+
+    INSERT INTO weather (day, month, year, precip, temp, description
+    VALUES 23, 06, 2013, 0, 21, 'cloudy')
+    
+We can also change data in existing cells if we make a mistake, using UPDATE.
+
+    UPDATE weather SET description = 'sunny' WHERE (day = 23) AND (month = 06) AND (year = 2013)
+    
+Finally, we can delete rows in tables:
+
+    DELETE FROM weather WHERE (day = 23) AND (month = 06) AND (year = 2013)
+    
+***Exercise. We captured a new species at our site and have to update our species list.
+It was a bird -- a canyon towhee (Melozone fusca). Give it a new species code and add it to the species table.
+Also, the non-census rodent, Ammospermophilus harrisi should be spelled "harrisii" (Wilson and Reeder 2005).
+Edit the table to correct it.
+
+
+
+
+
+    
+
+
+
