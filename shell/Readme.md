@@ -1,6 +1,7 @@
 # The Shell
 
 **Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+* Modified by Tracy Teal *
 
 # What is the shell? How do I access the shell?
 
@@ -11,7 +12,7 @@ with a keyboard instead of controlling graphical user interfaces
 
 Use a browser to open the tutorial on github, located at:
 
-    https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+    https://github.com/swcarpentry/boot-camps/blob/2013-06-wise-beginners
 
 Click on the directory named `shell`.
 
@@ -19,7 +20,7 @@ A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
 
-There are many reasons to learn about the shell. In my opinion, the
+There are many reasons to learn about the shell. In our opinion, the
 most important reasons are that:
 
 1.  It is very common to encounter the shell and
@@ -38,7 +39,7 @@ we will use) is called the Bourne-Again SHell (bash). Even if bash is
 not the default shell, it is usually installed on most systems and can be
 started by typing `bash` in the terminal. Many commands, especially a
 lot of the basic ones, work across the various shells but many things
-are different. I recommend sticking with bash and learning it well.
+are different. We recommend sticking with bash and learning it well.
 ([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
 To open a terminal, just single click on the "Terminal" icon on the
@@ -51,7 +52,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b YYYY-MM-PLACE --single-branch git://github.com/swcarpentry/boot-camps.git
+    git clone -b 2013-06-wise-beginners git://github.com/swcarpentry/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
 the internet.  (We will talk about the `git` command later in the
@@ -86,9 +87,8 @@ can contain other files or directories.
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
 directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/swc`
-directory. This is the home directory for the `swc` user. That is our
-user name. You can always find out your user name by entering the
+this case, the `pwd` command tells us that we are in the `/home/username`
+directory.  You can always find out your user name by entering the
 command `whoami`.
 
 ## File Types
@@ -171,8 +171,8 @@ forward and b to go backwards. When you are done reading, just hit `q`
 to quit.
 
 Programs that are run from the shell can get extremely complicated. To
-see an example, open up the manual page for the `find` program,
-which we will use later this session. No one can possibly learn all of
+see an example, open up the manual page for the `find` program. 
+No one can possibly learn all of
 these arguments, of course. So you will probably find yourself
 referring back to the manual page frequently.
 
@@ -195,8 +195,13 @@ By default, the `ls` commands lists the contents of the working
 directory (i.e. the directory you are in). You can always find the
 directory you are in using the `pwd` command. However, you can also
 give `ls` the names of other directories to view. Navigate to the
-home directory if you are not already there. Then enter the
-command:
+home directory if you are not already there. 
+
+Type:
+
+    cd
+
+Then enter the command:
 
     ls boot-camps
 
@@ -222,20 +227,20 @@ hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
 command and you should see:
 
-    /home/swc
+    /home/username
 
 which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
+are in a directory called `username`, which sits inside a directory called
 `home` which sits inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
+referred to as the *root directory*. So, to summarize: `username` is a
 directory in `home` which is a directory in `/`.
 
 Now enter the following command:
 
-    cd /home/swc/boot-camps/shell
+    cd /home/username/boot-camps/shell
 
-This jumps to `shell`. Now go back to the home directory. We saw
+This jumps to `shell`. Now go back to the home directory (cd). We saw
 earlier that the command:
 
     cd boot-camps/shell
@@ -251,7 +256,7 @@ it is more convenient to just enter the relative path since it
 involves less typing.
 
 Over time, it will become easier for you to keep a mental note of the
-structure of the directories that you are using hand how to quickly
+structure of the directories that you are using and how to quickly
 navigate amongst them.
 
 * * * *
@@ -269,7 +274,12 @@ familiar in there?
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
 `~`, is a shortcut for your home directory. Navigate to the `shell`
-directory, then enter the command:
+directory:
+
+    cd 
+    cd boot-camps/shell
+
+Then enter the command:
 
     ls ~
 
@@ -292,7 +302,7 @@ seem like a useless shortcut right now, but we'll see when it is
 needed in a little while.
 
 To summarize, while you are in the `shell` directory, the commands
-`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/swc` all do exactly the
+`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/username` all do exactly the
 same thing. These shortcuts are not necessary, they are provided for
 your convenience.
 
@@ -302,7 +312,7 @@ A cochlear implant is a small electronic device that is surgically
 implanted in the inner ear to give deaf people a sense of
 hearing. More than a quarter of a million people have them, but there
 is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
+In order to establish a baseline for such a benchmark, a researcher
 got teenagers with CIs to listen to audio files on their computer and
 report:
 
@@ -310,7 +320,7 @@ report:
 2.  the lowest and highest tones they could hear
 3.  the narrowest range of frequencies they could discriminate
 
-To participate, subjects attended our laboratory and one of our lab
+To participate, subjects attended a laboratory and one of the lab
 techs played an audio sample, and recorded their data - when they
 first heard the sound, or first heard a difference in the sound.  Each
 set of test results were written out to a text file, one set per file.
@@ -325,10 +335,11 @@ commands to get this data into shape. By the end we would like to:
 
 1.  Put all of the data into one directory called "alldata"
 
-2.  Have all of the data files in there, and ensure that every file
-    has a ".txt" extension
+2.  Get rid of the extraneous "NOTES" files
 
-3.  Get rid of the extraneous "NOTES" files
+3.  Put all the data in to one file
+
+4.  Figure out how many measurements we took
 
 If we can get through this example in the available time, we will move
 onto more advanced shell topics...
@@ -376,9 +387,11 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+1.  List all of the files in `/bin` that start with the letter 'c
+2.  List all of the files in `/bin` that contain the letter 'a'
+3.  List all of the files in `/bin` that end with the letter 'o'
+
+BONUS: List all of the files in '/bin' that contain the letter 'a' and 'c'
 
 * * * *
 
@@ -427,7 +440,7 @@ referring to the number of that command.
 
 If your history looked like this:
 
-    259  ls *!
+    259  ls *
     260  ls /usr/bin/*.sh
     261  ls *4*1
 
@@ -570,10 +583,9 @@ therefore uses the same commands, so you can search documentation
 using "/" as well!
 
 * * * *
-**Short Exercise**
+**Pro Tip**
 
-Use the commands we've learned so far to figure out how to search
-in reverse while using `less`.
+You can search in reverse while using 'less'
 
 * * * *
 
@@ -697,12 +709,6 @@ Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
 * * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
-
-* * * *
 
 ## The awesome power of the Pipe
 
@@ -792,6 +798,7 @@ and enter the following command:
 
     nano toBeSorted
 
+(If you don't have nano, you can use another text editor or vi)
 Now enter the four names as shown above. When you are done, press
 CONTROL+O to write out the file. Press enter to use the file name
 `toBeSorted`. Then press CONTROL+x to exit `nano`.
@@ -828,10 +835,7 @@ Notice that the files are sorted by the number of characters.
 * * * *
 **Short Exercise**
 
-1. Use the `man` command to find out how to sort the output from `wc` in
-reverse order.
-
-2. Combine the `wc`, `sort`, `head` and `tail` commands so that only the
+1. Combine the `wc`, `sort`, `head` and `tail` commands so that only the
 `wc` information for the largest file is listed
 
 Hint: To print the smallest file, use:
@@ -897,6 +901,20 @@ file containing the file with the smallest Range. Use the commands
 
 * * * *
 
+* * * *
+** Meeting our objectives **
+1.  Put all of the data into one directory called "alldata"
+
+2.  Get rid of the extraneous "NOTES" files
+
+3.  Put	all the data in to one file
+
+4.  Figure out how many measurements we took
+
+
+
+
+# For Future Reference
 
 # Finding files
 
