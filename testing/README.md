@@ -60,7 +60,7 @@ Testing allows us, and others, to trust our code and trust it enough to answer i
 * Does it continue to work after changes are made, for example optimisations or bug fixes?
 * Does it continue to work after system configurations or libraries are upgraded?
 * Does it respond properly for a full range of input parameters?
-* Does it handle about edge or corner cases?
+* Does it handle edge and corner cases?
 
 As a cautionary tale, consider Ariane 5 which used Ariane 4 software. Ariane 5 had new and improved engines which caused the code to produce a buffer overflow...and Ariane 5 blew up! So, some forgotten tests led to millions of pounds down the drain and some very red faces.
 

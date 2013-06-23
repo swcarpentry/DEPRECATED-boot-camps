@@ -25,7 +25,7 @@ We'll do some simple TDD using an example with different animals and their behav
         assert Animal('cat').speak() == 'meow'
         assert Animal('fish').speak() == ''
 
-If we run `nosetests animals0.py` we'll get an error - we need to add an 'Animal' class that meets our requirements. Just in order to be able to keep track of how our TDD develops, let's save the code in a different file [animals_1.py](python-code/animals/animals_1.py).
+If we run `nosetests animals_0.py` we'll get an error - we need to add an 'Animal' class that meets our requirements. Just in order to be able to keep track of how our TDD develops, let's save the code in a different file [animals_1.py](python-code/animals/animals_1.py).
 
     class Animal:
         animal_defs = {'owl':{'move':'fly','speak':'hoot'},

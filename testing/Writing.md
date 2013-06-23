@@ -208,7 +208,7 @@ This is like catching a runtime error. If an exception is raised then our test p
     from nose.tools import assert_raises
 
     def test_divide_it_ab():
-        assert_raises(TypeError, calculate_weight, 'a','b')
+        assert_raises(TypeError, divide_it, 'a','b')
 
 The assert fails if the named exception is *not* raised. If the function raises the right error, then the test passes. We're  we're checking (testing) the behaviour of the function. We're trying to 'force' the function to raise the 'correct' error and see if it really does that.
 
