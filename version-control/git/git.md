@@ -253,6 +253,9 @@ use `git reset --hard versioncode`
 To roll back to a specific file, use 
 `git checkout version name --filename`
 
+To roll back one version (usually I know that I messed up pretty quickly)
+`git checkout master~1 path_to_file`
+
 __NOTE:__ A hard reset is permanant. 
 
 #####Exercise
