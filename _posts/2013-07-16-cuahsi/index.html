@@ -1,0 +1,123 @@
+---
+root: ..
+title: CUAHSI Water Data Center, July 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .brand {
+        background-color: transparent;
+        background-image: url("{{page.root}}/logos/swc-logo.svg");
+        background-repeat: no-repeat;
+        background-size: auto 36px;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#location">Location</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Prerequisites</a></li>
+              <li class="divider-vertical"></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div>
+
+<h2><a id="location"></a> Location</h2>
+
+<p>Utah State University Engineering Building (ENGR) Room 302.
+(<a href="http://www.usu.edu/map/index.cfm?id=32">Map</a>)</p>
+
+<h2><a id="logistics"></a> Logistics</h2>
+
+<p>Here we can post a link to a Google doc for taking notes, etc.</p>
+
+<h2><a id="schedule"></a> Schedule</h2>
+
+<h3>Day 1: Tuesday, July 16th</h3>
+
+<ul>
+<li>9:00-10:30 introduction</li>
+<li>10:30-11:00 <em>coffee break</em></li>
+<li>11:00-12:30 classes and objects (Python)</li>
+<li>12:30-1:30 <em>lunch</em></li>
+<li>1:30-3:00 program design</li>
+<li>3:00-3:30 <em>coffee break</em></li>
+<li>3:30-4:30 testing in Python</li>
+</ul>
+
+<h3>Day 2: Wednesday, July 17th</h3>
+
+<ul>
+<li>9:00-10:30 using the shell</li>
+<li>10:30-11:00 <em>coffee break</em></li>
+<li>11:00-12:30 version control with Git</li>
+<li>12:30-1:30 <em>lunch</em></li>
+<li>1:30-3:00 SQL databases</li>
+<li>3:00-3:30 <em>coffee break</em></li>
+<li>3:30-4:30 conclusion</li>
+</ul>
+
+<h2><a id="install"></a> Prerequisites</h2>
+
+<p>Participants for this workshop will be expected to know <strong>basic Python</strong>.  If you 
+are not familiar with Python please work through the material at 
+<a href="http://software-carpentry.org/4_0/python/index.html">http://software-carpentry.org/4_0/python/index.html</a> before the workshop.</p>
+
+<h3>Unix Bash Shell</h3>
+
+<ul>
+<li><p>If you use Linux or Mac, you're all set. </p></li>
+<li><p>If you use Windows, please follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry instructions</a>
+in the section titled "The Unix Bash Shell" to get a Bash shell on your machine.</p></li>
+</ul>
+
+<h3>Git</h3>
+
+<ul>
+<li><p>Follow the <a href="http://software-carpentry.org/bootcamps/setup.html">Software Carpentry 
+instructions</a> in the section 
+titled "Git" to install Git.</p></li>
+<li><p>If you don't have a GitHub account, please go to <a href="https://github.com/">https://github.com/</a> and 
+register for a free account.</p></li>
+</ul>
+      </div>
+    </div> <!-- /container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+

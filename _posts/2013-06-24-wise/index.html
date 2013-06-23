@@ -1,0 +1,382 @@
+---
+root: ..
+title: Women in Science and Engineering 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{page.root}}/css/2013-06-24-wise.css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Installation</a></li>
+              <li><a href="#testing">Testing</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="divider-vertical"></li>
+<!--              <li><a href="https://github.com/swcarpentry/boot-camps/tree/2013-06-chicago">GitHub Repo</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="home" class="hero-unit">
+        <div>
+          <a href="http://software-carpentry.org">
+            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;"
+              alt="Software Carpentry logo" />
+          </a>
+          <h2>Women in Science and Engineering (WiSE)</h2>
+        </div>
+        <br>
+        <div class="row-fluid">
+          <div class="span6">
+            <p>Location:<br>
+               One Campbridge Center<br>
+               Cambridge, MA 02142</p>
+          </div>
+          <div class="span6" style="text-align: right;">
+            <p>June 24 - 25, 2013<br>
+               9:00 AM - 4:45 PM</p>
+          </div>
+        </div>
+      </div> <!-- hero-unit -->
+
+     <p class="welcome">Welcome to the WiSE Bootcamp<br />
+       There are over 120 women participating in this workshop!</p>
+
+      <div id="schedule">
+
+        <h3>Schedule</h3>
+
+        <p>After looking at the results of the survey you all filled
+          out, we decided that to make the bootcamp most effective for
+          everyone we would divide you into three rooms, roughly based
+          on level of experience. Rooms will cover the same general
+          material, just at slightly different paces or level of
+          detail. You will receive an email letting you know which
+          room you will be in. You can go to the schedule for that
+          room below. (Keep in mind that the schedule is still being
+          updated.)</p>
+
+        <ul>
+          <li><a href="room1.html">Room 1: Novice</a></li>
+          <li><a href="room2.html">Room 2: Intermediate</a></li>
+          <li><a href="room3.html">Room 3: Advanced</a></li>
+        </ul>
+
+        <h3>Coffee and Food</h3>
+
+        <p>Coffee and snacks will be provided during the workshop.
+          Lunch will not be provided, but there are several local
+          areas where you can get food during the lunch break.</p>
+
+        <h3>Reception</h3>
+
+        <p>There will be a reception and dinner sponsored by JP Morgan
+          at One Cambridge Center (the bootcamp location) after the
+          first day of class (Monday June 24).  The reception lasts
+          from 5:00&ndash;7:00pm and is open to all participants. The
+          reception will also include a panel on resources, careers
+          and opportunities in technology as well as time to
+          talk/network with instructors, helpers and other
+          participants.</p>
+
+      </div> <!-- schedule -->
+
+      <hr />
+
+      <div id="install" class="row-fluid">
+
+        <h2>Installation</h2>
+
+        <h3>Required Software</h3>
+
+        <p>To complete the entire workshop you need several things: a
+          Bash shell, git, a code editor (though any plain text editor
+          will work in a pinch), SQL, and a scientific Python
+          installation that includes the
+          <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
+            IPython Notebook</a>,
+          <a href="http://numpy.scipy.org/">NumPy</a>,
+          and <a href="https://nose.readthedocs.org/en/latest/">nose</a>.
+          With these tools, your computer will be ready for a wide
+          variety of scientific computing tasks. One of our goals in
+          this workshop is to help you get these cutting-edge programs
+          installed so you can focus on science in the future, not
+          installation.</p>
+
+        <p>Please do your best to install all the required software
+          and potentially the virtual machine (explained below) prior
+          to the start of the boot camp. If you have any issues, we
+          will be available at the bootcamp location starting at
+          8:30am Monday to help set up your machine.  You can also
+          email Katie (katieirenec {at} gmail {dot} com) for help.</p>
+
+        <div class="row-fluid">
+
+          <div class="span6">
+
+            <h4>Bash</h4>
+
+            <p>Bash is a commonly-used shell. Using a shell gives you
+              more power to do more tasks more quickly with your
+              computer.</p>
+
+            <h5>Mac</h5>
+
+            <p>The default shell in all versions of Mac OS X is bash,
+              so no need to install anything.  You access bash from
+              the Terminal (found
+              in <code>/Applications/Utilities</code>).  You may want
+              to keep Terminal in your dock for this workshop.</p>
+
+            <h5>Windows</h5>
+
+            <p>Install <a href="http://msysgit.github.com/">Git
+              Bash</a> following the instructions
+              <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>.
+              Git bash gives you the bash shell plus git. Two birds
+              with one stone!</p>
+
+            <h5>Linux</h5>
+
+            <p>The default shell is usually bash but if not you can
+              get to bash by opening a terminal and
+              typing <code>bash</code>.  No need to install
+              anything.</p>
+
+          </div>
+
+          <div class="span6">
+
+            <h4>Git</h4>
+
+            <p>Git is a state-of-the-art version control system. It
+            lets you track who made changes to what when and has
+            options for easily updating a shared or public version of
+            your code
+            on <a href="https://github.com/">github.com</a>.</p>
+
+            <h5>Mac</h5>
+
+            <p>For git, for the Anacoda version of Python (see below),
+              and for a lot of other scientific computing software,
+              Mac users need a C compiler on their computer. The way
+              to get that is to install
+              <a href="https://developer.apple.com/xcode/">Xcode</a>.</p>
+
+            <h6>For Mac OS X 10.7 and 10.8:</h6>
+
+            <p>Go to the
+              <a href="https://developer.apple.com/xcode/">Xcode
+                website</a>.  Get XCode from the App Store making
+              certain to install the command line tools (from the
+              Download preferences pane). Git is included in the
+              command line tools.</p>
+
+            <h6>For Mac OS X 10.6</h6>
+
+
+            <p>If you have Mac OS X 10.6, first get XCode by going to
+              <a href="https://developer.apple.com/downloads/">the
+                Apple developer site</a>.  You have to sign in with an
+              Apple ID linked to a Developer account.  If you don't
+              have one, you can register and create one.  (It's lame,
+              I know, that's why it's done through the App Store
+              now.)  Then, once you log in, go to page 8 and find
+              "XCode 3.2.6 and iOS SDK 4.3 for Snow Leopard" near the
+              top. Click to open that section, and then download the
+              .dmg file. It's 4.14 Gb, so leave some time to download
+              this one. But it's worth it! Then,
+              <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">install just git</a>.</p>
+
+            <h5>Windows</h5>
+
+            <p>Install <a href="http://msysgit.github.com/">Git Bash</a>
+              following the instructions
+              <a href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>
+              if you haven't already.</p>
+
+            <h5>Linux</h5>
+
+            <p>If git is not already available on your machine you can try
+              to install it via your distro's package manager
+              (e.g. <code>apt-get</code>).</p>
+
+          </div>
+
+        </div> <!-- row1 -->
+
+        <div class="row-fluid">
+
+          <div class="span6">
+
+            <h4>Code Editor</h4>
+
+            <p>When you're writing code, it's nice to have a text
+              editor that is optimized for writing code, with features
+              like automatic color-coding of key words.</p>
+
+            <h5>Mac</h5>
+
+            <p>We recommend
+              <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+              <a href="http://www.sublimetext.com/">Sublime Text</a>.</p>
+
+            <h5>Windows</h5>
+
+            <p><a href="http://notepad-plus-plus.org/">Notepad++</a> is a
+              popular free code editor for Windows.</p>
+
+            <h5>Linux</h5>
+
+            <p><a href="http://kate-editor.org/">Kate</a> is one option for
+              Linux users.</p>
+
+          </div>
+
+          <div class="span6">
+
+            <h4>Python</h4>
+
+            <p>Python is becoming more and more popular in scientific
+              computing, and it's a great language for teaching
+              general programming concepts due to its easy-to-read
+              syntax. We will be using Python version 2.7.  Installing
+              all the scientific packages for Python individually can
+              be a bit difficult, so we recommend using an all-in-one
+              installer.</p>
+
+            <h5>Mac & Linux</h5>
+
+            <p>We recommend the all-in-one scientific Python installer
+              <a href="http://continuum.io/downloads.html">Anaconda</a>.
+              Installation requires using the shell and if you aren't
+              comfortable doing the installation yourself just
+              download the installer and we'll help you at the boot
+              camp.  If you want to give it a try, do the
+              following:</p>
+
+            <ol>
+              <li>Download the installer that matches your operating
+                system and save it in your home folder.</li>
+              <li>Open a terminal window. On the Mac, the Terminal is
+                in <code>/Applications/Utilities</code>.</li>
+              <li>Type <pre>bash Anaconda-</pre> and then press
+                tab. The name of the file you just downloaded should
+                appear.</li>
+              <li>Press enter. You will follow the text-only
+                prompts. When there is a colon at the bottom of the
+                screen press the down arrow to move down through the
+                text. Type <code>yes</code> and press enter to approve
+                the license. Press enter to approve the default
+                location for the files. Type <code>yes</code> and
+                press enter to prepend Anaconda to
+                your <code>PATH</code> (this makes the Anaconda
+                distribution the default Python).</li>
+              <li>Done!</li>
+            </ol>
+
+            <h5>Windows</h5>
+
+            <p>For Windows we recommend the Enthought
+              <a href="https://www.enthought.com/downloads/">Canopy</a>
+              distribution since it seems to work well with Git
+              Bash.</p>
+
+            <p>For other options check the Python4Astronomers page on
+              <a href="http://python4astronomers.github.com/installation/python_install.html">
+              installing scientific Python</a>.</p>
+
+          </div>
+
+        </div> <!-- row2 -->
+
+        <div class="row-fluid">
+
+          <div class="span6">
+
+            <h4>SQL</h4>
+
+            <p>SQL (pronounced Es-Cue-El most of the time) is a
+              language for accessing data that meets certain
+              characterists from databases.</p>
+
+            <p>Install <a href="https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/">
+              SQLite Manager</a>&mdash;requires Firefox</p>
+
+          </div>
+
+          <div class="span6">  <!-- keep table-style layout -->
+          </div>
+
+        </div> <!-- row3 -->
+
+        <h3>Virtual Machine</h3>
+
+        <p>Installation issues can and do happen. To ensure that you
+          can continue to participate in a lesson even if one of your
+          software programs fails, we provide a Linux virtual machine
+          that contains all the necessary software
+          pre-installed. Please install
+          <a href="https://www.virtualbox.org/">VirtualBox</a> and download
+          <a href="http://files.software-carpentry.org/swc_lubuntu.ova">
+            this virtual machine image</a>. Load the VM into VirtualBox by
+          doing Import Appliance and loading the <code>.ova</code> file.</p>
+
+      </div> <!-- installation -->
+
+      <div id="testing" class="row-fluid">
+
+        <h3>Testing your Installation</h3>
+
+        <p>Once you've gone through the installation above, you can
+          test your installation
+          using <a href="test_install.html">these
+          instructions</a>.</p>
+
+      </div> <!-- testing -->
+
+      <div id="contact" class="row-fluid">
+
+        <h3>Contact</h3>
+
+        <p>For more information contact
+          <a href="mailto:info@software-carpentry.org">
+            info@software-carpentry.org</a>.</p>
+
+      </div> <!-- contact -->
+
+    </div> <!-- container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+
