@@ -2,7 +2,7 @@
 
 ###Remote Repo
 
-Advantages to using and participating on remote repositories:
+GitHub allows us to set up personal and public repositories. Repos are public by default. Academics can get 5 (?) private repos, but otherwise you must have a paid account.
 
 ####github password
 
@@ -200,6 +200,10 @@ This results in a status To alert git that you have made appropriate alterations
 `git push origin 2013-06-wise-beginners`
 
 
+#####BREAK
+#####Reveiw new and old git commands
+#####Resolve standing questions
+
 =========================================
 
 ###Repos with multiple authors
@@ -304,7 +308,7 @@ Have everyone `git pull origin master`
 Pick a student to add their top thing to learn to the list:
 
 * Add them to the collaborator list on the demo repo.
-  * Settings --> Collaborators
+  * Settings --> Collaborators  OR "Share" link
 edit, save, `add`, `commit`, `push`
 Have everyone `pull` changes from the origin.
 
@@ -373,9 +377,37 @@ Have each group/table pick a unique branch name, switch to that branch, and add 
 * Push the final result to GitHub.
   * `git push origin master`
 
+####Collaboration!
+
+#####Exercise and break time
+
+* Form into pairs and share your GitHub usernames.
+* Choose who will be "owner" and share your repository.
+* Got to GitHub and click on Share link (top) in your repository.
+* Both should clone the repo to their local computers
+
+	`git clone https://github.com/USERNAME/REPONAME.git`
+* Both edit the same file, add, commit, and push. Resolve conflicts.
+* Do the cycle a few times and play around.
+
+__BREAK__
+
+#Recap
+So far, we've covered: 
+
+* How to share your repository on GitHub
+* How to "fork" someone else's repository to play with
+* How to copy (clone) a repository onto your local machine
+* HOw to make changes in a local repository and `push` them into a remote repository
+* How to `fetch`, `merge`, or `pull` changes from a remote repository into your local repository
+* Identify and resolve conflicts when the same file is edited
+* Create and delete remote branches 
+
 ####Show some scientific repositories for work flow
 
 ####Review workflow on whiteboard again
 
 #### Add to concept map of skills learned
+
+
 
