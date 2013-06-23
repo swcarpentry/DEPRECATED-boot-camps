@@ -1,0 +1,19 @@
+body {
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+.welcome {
+  font-size: 120%;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+.brand {
+  background-color: transparent;
+  background-image: url("{{page.root}}/logos/swc-logo.svg");
+  background-repeat: no-repeat;
+  background-size: auto 36px;
+  background-position: center;
+}
