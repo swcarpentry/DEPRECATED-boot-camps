@@ -89,6 +89,7 @@ GitHub is a site where many people store their open (and closed) source code rep
 * commit triggered mailing lists
 * other service hooks (twitter, etc.)
 
+-------------------------------
 
 ###Local Repo
 Git will keep track of the _changes_ to your files, rather than keep multiple copies of the files. It saves the first version, then keeps track of subsequent changes to that version. This makes it efficient and speedy. It can recreate any version (go back in time) by adding up all the changes to get to where you want to be.
@@ -100,10 +101,14 @@ Open the terminal window
 
 Configure git
 
-	$ git config --global user.name "User Name"
-	$ git config --global user.email "user@email.com"
-	$ git config --global core.editor "nano"
-	$ git config --global color.ui "auto"
+	git config --global user.name "User Name"
+	git config --global user.email "user@email.com"
+	git config --global core.editor "nano"
+	git config --global color.ui "auto"
+
+let's make a new repository:
+
+`mkdir practice_git`
 
 Navigate to the top-level directory where your code lives
 
@@ -117,11 +122,14 @@ We can see that git is watching this directory now by looking at the hidden file
 
 `ls -a`
 
-look for .git
+look for `.git`
 
-We can look inside this new directory using `cd .git` and `ls -a`
+We don't really need to worry about what's in the `.git` directory.
+But we can look inside this new directory using `cd .git` and `ls -a`, just to see what's there.
 
-Use what you've learned. You may have noticed the file called description. You can describe your repository by opening the description file and replacing the text with a name for the repository. Mine will be called "Reproducible Science". You may call yours anything you like.
+Use what you've learned. You may have noticed the file called description. 
+You can describe your repository by opening the description file and replacing the text with a name for the repository. 
+Mine will be called "Reproducible Science". You may call yours anything you like.
 Let's not worry about the other files here. As a novice user, there's no reason to mess with them.
 
 Navigate back up to your controlled directory ``cd ..``
@@ -129,6 +137,8 @@ Navigate back up to your controlled directory ``cd ..``
 On the white board draw a box representing the working area and explain that this is where you work and make changes.
 
 #####Adding files to staging area
+
+Create a new file `science.txt`
 
 Now, lets add files that are inside:
 
@@ -141,47 +151,57 @@ Connect the working area box and the staging box with 'git add'.
 
 But sometimes we only want to add a single file at a time.
 
-Create a new file `science.txt`
-
-Add it using `git add science.txt`
+Add your new file using `git add science.txt`
 
 ----------------------------------------
  
 #####check the status of your repository
 
-The files you've created on your machine are your local "working" copy. The changes your make in this local copy aren't backed up online automatically. Until you commit them, the changes you make are local changes. When you change anything, your set of files becomes different from the files in the official repository copy. To find out what's different about them in the terminal, try:
+The files you've created on your machine are your local "working" copy. 
+The changes your make in this local copy aren't backed up online automatically. 
+Until you commit them, the changes you make are local changes. 
+When you change anything, your set of files becomes different from the files in the official repository copy. 
+To find out what's different about them in the terminal, try:
 
 `git status`
 
-This will tell you what files are currently being stages (draw diagram of local-->stage-->committed)
+This will tell you what files are currently being staged 
 
 -- highlight the "Untracked files" section and that git tells you how to add a file to the next commit.
 
+
 #####Commit changes to repository
 
+But there's one more step! We need to commit the changes. 
+Tell git _"Hey, we want you to remember the way that the files look right now"_.
 
-But there's one more step! We need to commit the changes. Tell git _"Hey, we want you to remember the way that the files look right now"_.
-
-On the white board draw a box representing the project history. Once we take a snapshot of the project that snapshot becomes a permanent reference point in the project's history that we can always go back to.
+On the white board draw a box representing the project history. 
+Once we take a snapshot of the project that snapshot becomes a permanent reference point in the project's history that we can always go back to.
 The history is like a photo album of changes, and each snapshot has a time stamp, the name of the photographer, and a description.
 
-Connect the staging area to the history with `git commit`.
+Connect the staging area to the history with `git commit -m "message"`.
 
-In order to save a snapshot of the current state (revision) of the repository, we use the commit command. This command is always associated with a message describing the changes since the last commit and indicating their purpose. 
+In order to save a snapshot of the current state (revision) of the repository, we use the commit command. 
+This command is always associated with a message describing the changes since the last commit and indicating their purpose. 
 
-Git will ask you to add a commit message. This is just to remind you what changes you made. 
+Git will ask you to add a commit message. 
+This is just to remind you what changes you made. 
 
 Informative commit messages will serve you well someday, so make a habit of never committing changes without at least a full sentence description.
 
 __ADVICE: Commit often__
 
-In the same way that it is wise to often save a document that you are working on, so too is it wise to save numerous revisions of your code. More frequent commits increase the granularity of your undo button.
+In the same way that it is wise to often save a document that you are working on, so too is it wise to save numerous revisions of your code. 
+More frequent commits increase the granularity of your undo button.
 
 __ADVICE: Good commit messages__
 
 [because it's important!](http://www.commitlogsfromlastnight.com/)
 
-There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
+There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. 
+A good commit message usually contains a one-line description followed by a longer explanation if necessary.
+For code, it's useful to commit changes that can be reviewed by someone in under an hour. 
+Or it can be useful to commit changes that "go together" - for example, one paragraph of a manuscript, or each new function added to your script.
 
 For example, if you work on your code all day long (add 200 lines of code, including 5 new functions and write 7 pages of your new manuscript including deleting an old paragraph), and at 3:00 you make a fatal error or deletion, but you didn't commit once, then you will have a hard time recreating the version you are looking for - because it doesn't exist!
 
@@ -189,11 +209,12 @@ For example, if you work on your code all day long (add 200 lines of code, inclu
 
 Step 1: Commit the file that you added to your repository
 
-`git commit -m "message"
+`git commit -m "message"`
 
 __ADVICE:__ You must have a commit message. It's good practice and git won't let you commit without one. 
 
 If you only want to add one file, use `git commit filename.txt -m "message"
+`git commit -am "message` will add ALL tracked files.
 
 --------------------
 You can see all of the changes you have ever made to your repository by typing `git log`
@@ -228,11 +249,13 @@ Make a small change to one of your text files (add a line or capitalize a word)
 
 `git diff --stat` gives us a summary of the filename and number of insertions/deletions
 
+`git diff -- filename` will roll back changes that are staged for the specified file, to how it looked in the most recent commit
+
 Look at the differences. What do the messages tell you?
 
 Stage and commit your new changes.
 
-Look at the new changes in your log. Where are the most recent changes? (top) The oldest? (bottom)
+Look at the new changes in your log. Where are the most recent changes? The oldest?
 
 -------------------------------------
 
@@ -277,6 +300,9 @@ __NOTE:__ A hard reset is permanant.
 * Delete a file
 * Checkout that file from your last commit to get it back
     
+__ADVICE__: Similar to the rationale behind frequently saving a document that you are working on, it is wise to commit revisions
+to your files often. More frequent commits increase the granularity of your "undo" button.
+
 -----------------------------
 #####Branches
 Branches are parallel instances of a repository that can be edited and version controlled in parallel. They are useful for pursuing various implementations experimentally or maintaining a stable core while developing separate sections of a code base.
