@@ -20,5 +20,5 @@ def example2():
     print "...still running..."
 
 
-#example1()
+example1()
 example2()

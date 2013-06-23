@@ -1,10 +1,10 @@
 ## Let's start writing some tests
 
-**Based on materials by Mike Jackson, Katy Huff, Paul Ivanov, Rachel Slaybaugh, and Anthony Scopatz. **
+**Based on materials by Mike Jackson, Katy Huff, Paul Ivanov, Rachel Slaybaugh, and Anthony Scopatz.**
 
 ### Exceptions
 
-In the file [tryexcept0.py](python-test/tryexcept0.py) we have a simple function:
+In the file [tryexcept0.py](python-code/tryexcept0.py) we have a simple function:
 
     def divide_it(x, y):
        try:
@@ -96,7 +96,7 @@ And, rather than have our tests and code in the same file, let's separate them o
 
     $ nano test_divide_it.py
 
-Now, our function and the division results data are in `division_func.py` (let's create a copy of `tryexcept0.py`) and we want to refer to them in `test_division_func.py` file, we need to *import* them. We can do this as,
+Now, our function and the division results data are in `division_func.py` (let's create a copy of `tryexcept0.py`) and we want to refer to them in `test_divide_it.py` file, we need to *import* them. We can do this as,
 
     from division_func import divide_it
     from division_func import DIVISION_RESULTS
@@ -193,7 +193,7 @@ Let's spend a few minutes coming up with some more tests for `divide_it`. Consid
 
 For example, we could add a test to deal with:
 
-    * divide_it('a','b) 
+    divide_it('a','b) 
 
 It requires us to check whether an exception was raised which we can do as follows:
 
@@ -212,7 +212,7 @@ This is like catching a runtime error. If an exception is raised then our test p
 
 The assert fails if the named exception is *not* raised. If the function raises the right error, then the test passes. We're  we're checking (testing) the behaviour of the function. We're trying to 'force' the function to raise the 'correct' error and see if it really does that.
 
-Let's look at another example of using `nose` - this time with a Python class:
+Let's look at another example of using `nose` - this time with a Python class (see file [nose_example1.py](python-code/example1/nose_example1.py)):
 
     class Transmogrifier:
         def transmogrify(self, person):

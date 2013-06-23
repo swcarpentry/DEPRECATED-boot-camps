@@ -9,7 +9,7 @@ class Transmogrifier:
         """
         transmog = {'calvin':'tiger',
                      'hobbes':'chicken'}
-        new_person = transmog[person.lower()]
+        new_person = transmog[person]
         return new_person
 
 

@@ -13,7 +13,7 @@ By writing tests first, we're forced to think about what our code should do. In 
 
 TDD operates on the YAGNI principle (You Ain't Gonna Need It) to avoid developing code for which there is no need.
 
-We'll do some simple TDD using an example with different animals and their behaviours. Let's start with some tests (saving them in `animals0.py`):
+We'll do some simple TDD using an example with different animals and their behaviours. Let's start with some tests (saving them in [animals_0.py](python-code/animals/animals_0.py)):
 
     def test_moves():
         assert Animal('owl').move() == 'fly'
@@ -25,7 +25,7 @@ We'll do some simple TDD using an example with different animals and their behav
         assert Animal('cat').speak() == 'meow'
         assert Animal('fish').speak() == ''
 
-If we run `nosetests animals0.py` we'll get an error - we need to add an 'Animal' class that meets our requirements. Just in order to be able to keep track of how our TDD develops, let's save the code in a different file `animals0.py`.
+If we run `nosetests animals0.py` we'll get an error - we need to add an 'Animal' class that meets our requirements. Just in order to be able to keep track of how our TDD develops, let's save the code in a different file [animals_1.py](python-code/animals/animals_1.py).
 
     class Animal:
         animal_defs = {'owl':{'move':'fly','speak':'hoot'},
@@ -53,7 +53,7 @@ If we run `nosetests animals0.py` we'll get an error - we need to add an 'Animal
         assert Animal('fish').speak() == ''
 
 
-Our tests helped us in writing our class - we knew what we wanted in an animal definition. But now we want our animals to become more active:
+Our tests helped us in writing our class - we knew what we wanted in an animal definition. But now we want our animals to become more active ([animals_2.py](python-code/animals/animals_2.py)):
 
     from random import random
 
@@ -102,7 +102,7 @@ Our tests helped us in writing our class - we knew what we wanted in an animal d
         for behave in noct_behaves:
             assert behave != 'sleep'
 
-Now we have to write the function (`dothings`) for which we just implemented the tests.
+Now we have to write the function (`dothings`) for which we just implemented the tests ([animals_3.py](python-code/animals/animals_3.py)).
 
     from random import random
 

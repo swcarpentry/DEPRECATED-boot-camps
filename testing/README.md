@@ -1,7 +1,7 @@
 # Testing
 
 
-**Based on materials by Mike Jackson, Katy Huff, Paul Ivanov, Rachel Slaybaugh, and Anthony Scopatz. **
+**Based on materials by Mike Jackson, Katy Huff, Paul Ivanov, Rachel Slaybaugh, and Anthony Scopatz.**
 
 ## Some questions for you
 
