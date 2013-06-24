@@ -219,6 +219,7 @@ All goes well. If we now go to GitHub and click on the Overview tab we can see w
 This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.
 
 ### Remote repository and branching
+If we created a new local branch:
 
     $ git checkout -b feature2
 
