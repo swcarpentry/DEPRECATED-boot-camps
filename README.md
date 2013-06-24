@@ -36,7 +36,7 @@ For the details, please see the [Software Carpentry website](http://software-car
 1:00 - 2:00 Scientific Python 1 (Jessica)  
 2:00 - 2:10 Break  
 2:10 - 3:10 Scientific Python II (Jessica)  
-3:10 - 4:10 Testing (Aleksandra)  
+3:10 - 4:10 [Testing](testing)(Aleksandra)  
 
 
 ## Instructors
