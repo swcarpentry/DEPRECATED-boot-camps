@@ -6,18 +6,7 @@ title: Women in Science and Engineering 2013
 <html lang="en">
   <head>
     {% include bootstrap-header.html %}
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-      .brand {
-        background-color: transparent;
-        background-image: url("{{page.root}}/logos/swc-logo.svg");
-        background-repeat: no-repeat;
-        background-size: auto 36px;
-        background-position: center;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{page.root}}/css/2013-06-24-wise.css" />
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -58,7 +47,8 @@ title: Women in Science and Engineering 2013
       <div id="home" class="hero-unit">
         <div>
           <a href="http://software-carpentry.org">
-            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;">
+            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;"
+              alt="Software Carpentry logo" />
           </a>
           <h2>Women in Science and Engineering (WiSE)</h2>
         </div>
@@ -66,7 +56,7 @@ title: Women in Science and Engineering 2013
         <div class="row-fluid">
           <div class="span6">
             <p>Location:<br>
-	      One Campbridge Center<br>
+        One Campbridge Center<br>
                Cambridge, MA 02142</p>
           </div>
           <div class="span6" style="text-align: right;">
@@ -76,33 +66,46 @@ title: Women in Science and Engineering 2013
         </div>
       </div> <!-- hero-unit -->
 
-     <p><font size=+1>Welcome to the WiSE Bootcamp</br>
- 
-	 <div>
-        <h3>Testing your Installation</h3>
-        Once you've gone through the installation above, you can test your 
-installation to see if most things have been installed correctly.
+     <p class="welcome">Welcome to the WiSE Bootcamp</p>
 
-<h4>On the Mac</h4>
-<p>To run the test script, you will need a program called Terminal. To open your Mac's Terminal app, you can search for Terminal in Spotlight, or you can find it in the /Applications/Utilities folder. Once it's open (and if you have Canopy installed and configured so it is available by default), you should see something like: 
-<p>
+     <h3>Testing your Installation</h3>
+
+      <p>Once you've gone through the installation above, you can test
+        your installation to see if most things have been installed
+        correctly.</p>
+
+      <h4>On the Mac</h4>
+
+      <p>To run the test script, you will need a program called
+        Terminal. To open your Mac's Terminal app, you can search for
+        Terminal in Spotlight, or you can find it in the
+        <code>/Applications/Utilities</code> folder. Once it's open,
+        you should see something like:</p>
+
 <pre>
 Last login: Thu Jun 20 13:31:37 on ttys000
-(Canopy 64bit) ComputerName:~ yourname$
+ComputerName:~ yourname$
 </pre>
-<p>
-Now, download the file <i>workshop_checklist.py</i> by right clicking and choosing "Save link as". Save the file to your home folder, and make sure it is called workshop_checklist.py . 
-<p>
-Now, type <i>python workshop_checklist.py</i> after the $ in the Terminal, and press enter.
-<p>
-You should get an output like this:
+
+      <p>Now, download
+        <a href="http://fperez.org/py4science/workshop_checklist.py">this
+          file</a> by right clicking the link and choosing "Save link
+        as". Save the file to your home folder, and make sure it is
+        called <code>workshop_checklist.py</code>.</p>
+
+      <p>Now, type <code>python workshop_checklist.py</code> after
+        the <code>$</code> in the Terminal, and press enter.</p>
+
+      <p>You should get an output something like this (but perhaps
+        with newer versions):</p>
+
 <pre>
-(Canopy 64bit) ComputerName:~ yourname$ python workshop_checklist.py
+ComputerName:~ yourname$ python workshop_checklist.py
 Running tests:
 nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
-__main__.test_imports('IPython',) ... MOD: IPython, version: 1.0.dev
+__main__.test_imports('IPython',) ... MOD: IPython, version: 0.13.1
 ok
-__main__.test_imports('numpy',) ... MOD: numpy, version: 1.6.1
+__main__.test_imports('numpy',) ... MOD: numpy, version: 1.7.0
 ok
 __main__.test_imports('scipy',) ... MOD: scipy, version: 0.11.0
 ok
@@ -120,7 +123,7 @@ Simple plot generation. ... ok
 Plots with math ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 17.055s
+Ran 12 tests in 12.448s
 
 OK
 
@@ -139,33 +142,36 @@ os.name      : posix
 os.uname     : ('Darwin', 'ComputerName.local', '10.8.0', 'Darwin Kernel Version 10.8.0: Tue Jun  7 16:33:36 PDT 2011; root:xnu-1504.15.3~1/RELEASE_I386', 'i386')
 platform     : darwin
 platform+    : Darwin-10.8.0-i386-64bit
-prefix       : /Users/yourname/Library/Enthought/Canopy_64bit/User
-exec_prefix  : /Users/yourname/Library/Enthought/Canopy_64bit/User
-executable   : /Users/yourname/Library/Enthought/Canopy_64bit/User/bin/python
+prefix       : /Users/yourname/Applications/anaconda
+exec_prefix  : /Users/yourname/Applications/anaconda
+executable   : /Users/yourname/Applications/anaconda/bin/python
 version_info : sys.version_info(major=2, minor=7, micro=3, releaselevel='final', serial=0)
-version      : 2.7.3 | 64-bit | (default, Mar 25 2013, 15:52:02) 
-[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
+version      : 2.7.3 |Anaconda 1.4.0 (x86_64)| (default, Feb 25 2013, 18:45:56)
+[GCC 4.0.1 (Apple Inc. build 5493)]
 ==================
-(Canopy 64bit) ComputerName:~ yourname$
+ComputerName:~ yourname$
 </pre>
 
-<p>
-If you didn't, follow the instructions and send all out the output to one of the instructors. If you did, congratulations, the hard part is over!
+      <p>If you didn't, follow the instructions and send all out the
+        output to one of the instructors. If you did, congratulations,
+        the hard part is over!</p>
 
-<p>
-<b>How to install the latest XCode for Mac OS X 10.6</b>
-If you don't have a newer version of MacOS, it's less intuitive about how to install XCode. Unfortunately, you can't use the app store. Instead, go to <a href=https://developer.apple.com/downloads/>the Apple developer site</a>. You have to sign in with an Apple ID linked to a Developer account. If you don't have one, you can register and create one. (It's lame, I know, that's why it's done through the App Store now.) Then, once you log in, go to page 8 and find "XCode 3.2.6 and iOS SDK 4.3 for Snow Leopard" near the top. Click to open that section, and then download the .dmg file. It's 4.14 Gb, so leave some time to download this one. But it's worth it!
-<p>&nbsp;
-<p>
-<h4>On Windows</h4>
-Download  <a href=http://fperez.org/py4science/workshop_checklist.py>this file</a> by right clicking on it.  
- Save the file to your home folder, and make sure it is called <i>workshop_checklist.py</i>
-<p>
-Open your terminal by going to the Start menu. Select 'Run' and type 'cmd' (without the quotes) to run the cmd.exe Windows Command Prompt
-<p>
-On the Command prompt type:
-<br><i>python workshop_checklist.py</i> and press Enter<p>
-<p>You should get an output like this:
+      <h4>On Windows</h4>
+
+      <p>Download
+        <a href="http://fperez.org/py4science/workshop_checklist.py">this
+          file</a> by right clicking on it.  Save the file to your
+        home folder, and make sure it is called
+        <code>workshop_checklist.py</code>.</p>
+
+      <p>Open your terminal by going to the Start menu. Select 'Run'
+        and type <code>cmd</code> to run the <code>cmd.exe</code>
+        Windows Command Prompt.  On the Command prompt type:</p>
+
+<pre><code>python workshop_checklist.py</code></pre>
+
+      <p>and press Enter.  You should get an output like this:</p>
+
 <pre>
 Running tests:
 nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
@@ -201,27 +207,38 @@ If the printout above did not finish in 'OK' but instead says 'FAILED', copy
 and send the *entire* output (all info above and summary below) to the
 instructor for help.
 </pre>
-<p>
-If you didn't, follow the instructions and send all out the output to one of the instructors. If you did, congratulations, the hard part is over!
 
-<h4>On Linux</h4>
-Download the file <a href=http://fperez.org/py4science/workshop_checklist.py>this file</a>  
-<br>Save the file to your home folder, and make sure it is called <i>workshop_checklist.py</i>
+      <p>If you didn't, follow the instructions and send all out the
+        output to one of the instructors. If you did, congratulations,
+        the hard part is over!</p>
 
-<p>At the command line run <i>python workshop_checklist.py</i>.  
-<p>If the printout says 'OK' things are good.  If it instead says 'FAILED', copy
-and send the *entire* output (all info above and summary below) to the
-instructor for help.
+      <h4>On Linux</h4>
 
-<p>&nbsp;
-<div id="contact">
-<h4>Contact</h4>
-        <p> 
-           For more information contact
-           <a href="mailto:info@software-carpentry.org">
-            info@software-carpentry.org</a>.
+      <p>Download
+        <a href="http://fperez.org/py4science/workshop_checklist.py">this
+          file</a>.  Save the file to your home folder, and make sure
+        it is called <code>workshop_checklist.py</code>.</p>
+
+      <p>Open a terminal (making sure you're in the home folder) and
+        at the command line run <code>python
+        workshop_checklist.py</code>.</p>
+
+      <p>If the printout says <code>OK</code> things are good.  If it
+        instead says <code>FAILED</code>, copy and send
+        the <em>entire</em> output (all info above and summary below)
+        to the instructor for help.</p>
+
+      <div id="contact" class="row-fluid">
+
+        <h3>Contact</h3>
+
+        <p>For more information contact
+          <a href="mailto:info@software-carpentry.org">
+            info@software-carpentry.org</a>.</p>
+
       </div> <!-- contact -->
-    </div> <!-- /container -->
+
+    </div> <!-- container -->
 
     {% include footer-javascript.html %}
 
