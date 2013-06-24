@@ -1,0 +1,9 @@
+2000	Algeria	3	1	1
+2000	Argentina	3	17	0
+2000	Armenia	1	0	0
+2000	Australia	54	69	60
+2000	Austria	0	1	3
+2000	Azerbaijan	1	0	2
+2000	Bahamas	5	0	6
+2000	Barbados	1	0	0
+2000	Belarus	11	8	3
