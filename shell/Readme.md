@@ -1,6 +1,7 @@
 # The Shell
 
 **Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+**Modified by Adina Howe**
 
 # What is the shell? How do I access the shell?
 
@@ -11,7 +12,7 @@ with a keyboard instead of controlling graphical user interfaces
 
 Use a browser to open the tutorial on github, located at:
 
-    https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+    https://github.com/swcarpentry/boot-camps/tree/2013-06-wise-intermediate
 
 Click on the directory named `shell`.
 
@@ -41,35 +42,11 @@ lot of the basic ones, work across the various shells but many things
 are different. I recommend sticking with bash and learning it well.
 ([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
+
 To open a terminal, just single click on the "Terminal" icon on the
 Desktop.
 
-# The Example: Manipulating Experimental Data Files
-
-We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data from a hearing test. To get
-the data for this test, you will need internet access. Just enter the
-command:
-
-    git clone -b YYYY-MM-PLACE --single-branch git://github.com/swcarpentry/boot-camps.git
-
-This command will grab all of the data needed for this workshop from
-the internet.  (We will talk about the `git` command later in the
-workshop.)
-
-# Let's get started
-
-One very basic command is `echo`. This command just prints text to
-the terminal. Try the command:
-
-    echo Hello, World
-
-Then press enter. You should see the text "Hello, World" printed back
-to you. The echo command is useful for printing from a shell script,
-for displaying variables, and for generating known values to pass
-to other programs.
-
-## Moving around the file system
+# Moving around in the shell
 
 Let's learn how to move around the file system using command line
 programs. This is really easy to do using a GUI (just click on
@@ -84,17 +61,36 @@ are represented in GUIs. Directories are just listings of files. They
 can contain other files or directories.
 
 Whenever you start up a terminal, you will start in a special
-directory called the *home* directory. Every user has their own home
-directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/swc`
-directory. This is the home directory for the `swc` user. That is our
-user name. You can always find out your user name by entering the
-command `whoami`.
+directory called the *home* directory. 
 
+To find out where your home directory is, open a new terminal and type 
+`pwd`. The `pwd` command will tell you the directory that you are presently located.
+
+# Getting on the same page - let's download some shared files
+
+We will spend most of our time learning about the basics of the shell
+by manipulating some experimental data from a hearing test. To get
+the data for this test, you will need internet access. Just enter the
+command:
+
+    git clone -b 2013-06-wise-intermediate --single-branch git://github.com/swcarpentry/boot-camps.git
+
+This command will grab all of the data needed for this workshop from
+the internet.  (We will talk about the `git` command later in the
+workshop.)
+
+# Let's get started
+
+## Get to the same place
+
+Let's navigate into the data directory we just downloaded.  To do this, enter the following command: 
+
+    cd boot-camps
+   
 ## File Types
 
 When you enter the `ls` command lists the contents of the current
-directory. There are several items in the home directory, notice that
+directory. There are several items in the hdirectory, notice that
 they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
 
@@ -122,10 +118,14 @@ the owner. If the entry is a directory, then the first letter will be
 a "d". The fifth column shows you the size of the entries in
 bytes. Notice that `testfile` has a size of zero.
 
-Now, let's get rid of `testfile`. To remove a file, just enter the
+Now, let's rename the testfile.
+
+    mv testfile testfile2
+
+Now, let's get rid of `testfile2`. To remove a file, just enter the
 command:
 
-    rm testfile
+    rm testfile2
 
 The `rm` command can be used to remove files. If you enter `ls` again,
 you will see that `testfile` is gone.
@@ -134,14 +134,8 @@ you will see that `testfile` is gone.
 ## Changing Directories
 
 Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `boot-camps`
+directory) is used to move around. Let's move into the `shell`
 directory. Enter the following command:
-
-    cd boot-camps
-
-Use the `ls` command to see what is inside this directory.  This
-directory contains all of the material for this boot camp. Now move to
-the directory containing the data for the shell tutorial:
 
     cd shell
 
@@ -153,6 +147,7 @@ with a star.
 If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
 directory.
+
 
 ## Arguments
 
@@ -175,19 +170,6 @@ see an example, open up the manual page for the `find` program,
 which we will use later this session. No one can possibly learn all of
 these arguments, of course. So you will probably find yourself
 referring back to the manual page frequently.
-
-* * * *
-**Short Exercise**
-
-1. Use the manual page for `ls` to guess what you would expect from
-using the arguments `-l`, '-t', '-r' at the same time.
-2. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
-   * `ls -lS` (equivalent to `ls -l -S`)
-   * `ls -lt` (equivalent to `ls -l -t`)
-   * `ls -1`  (that's the number one, not a letter 'ell')
-
-* * * *
-
 
 ## Examining the contents of other directories
 
@@ -220,18 +202,18 @@ name. Directories can be specified using either a *relative* path a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+command and you should see your home directory.  Say for example, my home directory is:
 
     /home/swc
 
-which is the full name of your home directory. This tells you that you
+which is the case if you are running a SWC virtual machine. This tells you that you
 are in a directory called `swc`, which sits inside a directory called
 `home` which sits inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
 referred to as the *root directory*. So, to summarize: `swc` is a
 directory in `home` which is a directory in `/`.
 
-Now enter the following command:
+Now enter the following command or replace the `/home/swc` with your unique home directory:
 
     cd /home/swc/boot-camps/shell
 
@@ -285,16 +267,7 @@ these together, so:
     ls ../../
 
 prints the contents of `/home/swc` which is your home
-directory. Finally, the special directory `.` always refers to your
-current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
-same thing, they print the contents of the current directory. This may
-seem like a useless shortcut right now, but we'll see when it is
-needed in a little while.
-
-To summarize, while you are in the `shell` directory, the commands
-`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/swc` all do exactly the
-same thing. These shortcuts are not necessary, they are provided for
-your convenience.
+directory. 
 
 ### Our data set: Cochlear Implants
 
@@ -330,8 +303,6 @@ commands to get this data into shape. By the end we would like to:
 
 3.  Get rid of the extraneous "NOTES" files
 
-If we can get through this example in the available time, we will move
-onto more advanced shell topics...
 
 ### Wild cards
 
@@ -343,11 +314,7 @@ directory. The `*` character is a shortcut for "everything". Thus, if
 you enter `ls *`, you will see all of the contents of a given
 directory. Now try this command:
 
-    ls *1
-
-This lists every file that ends with a `1`. This command:
-
-    ls /usr/bin/*.sh
+    ls *
 
 Lists every file in `/usr/bin` that ends in the characters `.sh`. And
 this command:
@@ -569,11 +536,6 @@ Remember, the `man` program actually uses `less` internally and
 therefore uses the same commands, so you can search documentation
 using "/" as well!
 
-* * * *
-**Short Exercise**
-
-Use the commands we've learned so far to figure out how to search
-in reverse while using `less`.
 
 * * * *
 
@@ -623,6 +585,7 @@ number 4.
 We've created a file called `all_data` using the redirection operator
 `>`. This file is critical - it's our analysis results - so we want to
 make copies so that the data is backed up.
+
 Lets copy the file using the `cp` command. The `cp`
 command backs up the file. Navigate to the `data` directory and enter:
 
@@ -697,12 +660,6 @@ Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
 * * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
-
-* * * *
 
 ## The awesome power of the Pipe
 
@@ -740,32 +697,7 @@ command:
     wc Bert/* gerdal/Data0559 | tail -n 1
 
 This will print only the total number of lines, characters, and words
-across all of these files. What is happening here? Well, `tail`, like
-many command line programs will read from the *standard input* when it
-is not given any files to operate on. In this case, it will just sit
-there waiting for input. That input can come from the user's keyboard
-*or from another program*. Try this:
-
-    tail -n 2
-
-Notice that your cursor just sits there blinking. Tail is waiting for
-data to come in. Now type:
-
-    French
-    fries
-    are
-    good
-
-then CONTROL+d. You should is the lines:
-
-    are
-    good
-
-printed back at you. The CONTROL+d keyboard shortcut inserts an
-*end-of-file* character. It is sort of the standard way of telling the
-program "I'm done entering data". The `|` character is replaces the
-data from the keyboard with data from another command. You can string
-all sorts of commands together using the pipe.
+across all of these files. 
 
 The philosophy behind these command line programs is that none of them
 really do anything all that impressive. BUT when you start chaining
