@@ -592,24 +592,8 @@ CHECKER['easy_install'] = EasyInstallDependency(
     minimum_version=None)
 
 
-class PyTestDependency (CommandDependency):
-
-    def _get_version(self):
-        try:
-            return super(PyTestDependency, self)._get_version()
-        except DependencyError as e:
-            version_stream = self.version_stream
-            try:
-                self.version_stream = 'stderr'
-                stream = self._get_version_stream()
-                version_stream = self._get_version()
-                return version_stream
-            finally:
-                self.version_stream = version_stream
-
-
-CHECKER['py.test'] = PyTestDependency(
-    command='py.test', long_name='py.test',
+CHECKER['py.test'] = CommandDependency(
+    command='py.test', version_stream='stderr',
     minimum_version=None)
 
 
