@@ -74,7 +74,8 @@ Import
 
 Data can be added that is already in a sqlite databae, or by entering CSV or TXT files manually.
 
-1. Start a New Database **Database -> New Database**
+1. __If__ a .sqlite file already exists: Open your database: **Database -> Connect Database** Skip the other steps.
+2. __If__ you are putting together a database from .csv files: Start a New Database **Database -> New Database** 
 2. Start the import **Database -> Import**
 3. Select the file to import
 4. Give the table a name (or use the default)
@@ -482,6 +483,8 @@ We can fix this too using AS:
 ***Exercise: Find your query from earlier where you the total weight, average weight, and the min and max weights
 and clean up your column names using concise descriptive names***
 
+-----------------------------------------
+
 
 ***Some's good, more's better***
 We can join as many tables as we want using more JOIN clauses. 
@@ -497,7 +500,16 @@ Let's link to the species table so we can make sure that we are only including r
     
 ***Exercise: At our site Onychomys (grasshopper mouse) is considered to be functionally different from our other species.
 Can you make a query that joins the three tables and returns the data where the genus is not Onychomys?***
-    
+
+------------------------
+#####complex joins
+There are ways to join the data in more complex ways. 
+
+* `INNER JOIN` returns all rows from both tables where there is a match. If there are rows in first table that do not have matches in second table, those rows will not be listed.
+* `LEFT JOIN` returns all the rows from the first table, even if there are no matches in the second table. If there are rows in first table that do not have matches in second table, those rows also will be listed.
+* `RIGHT JOIN` returns all the rows from the second table, even if there are no matches in the first table. If there had been any rows in second table that did not have matches in first table, those rows also would have been listed.
+
+
 Primary Key
 ------------
 The primary key is a value or combination of values that uniquely identifies each row in a table.
