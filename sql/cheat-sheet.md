@@ -66,6 +66,6 @@ SQL commands can be combined in the following order:
 
 Online Cheat Sheets for Reference
 ---------------------------------
-http://www.zentut.com/wp-content/uploads/2012/10/sqlcheatsheet.jpg
-http://www.sql.su
-http://en.wikibooks.org/wiki/MySQL/CheatSheet
+<http://www.zentut.com/wp-content/uploads/2012/10/sqlcheatsheet.jpg>
+<http://www.sql.su>
+<http://en.wikibooks.org/wiki/MySQL/CheatSheet>
