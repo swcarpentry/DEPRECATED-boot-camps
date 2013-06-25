@@ -11,8 +11,40 @@ Relational databases
 
 * Relational databases store data in tables and with fields (columns) and records (rows)
 * Data in tables has types, just like in Python, and all values in a field have the same type
+
+__A flood of data!__ 
+
+  * Writing programs helps us wade through all the data
+  * Sometimes, relational databases are necessary to efficiently get through the data
+* databases can help you
+  * ask more complex questions
+  * write faster code
+  * run faster analyses
+
 * Queries let us look up data or make calculations based on columns
 * The queries are distinct from the data, so if we change the data we can just rerun the query
+
+__Database managers__
+
+* A database manager is a program that manipulates a database
+* Commands or queries in a database manager are usually written in SQL
+* rows and columns of a database table are not stored in any particular order
+* Database design takes practice (but revist example of geek vs. non-geek problem solving)
+  * Lots of literature on designing database schema - need good knowledge of data!
+* Yes, you can eventually ask the same questions using your programming ninja skills, but it can get really complicated, take a long time to do, and be difficult to debug.
+  * Step 1: Read a really really big file
+  * Step 2: Select, find and filter the data we need from the file
+  * Then do analyses
+  *Databases: Step 1: data is already indexed, so move right to selecting and filtering data!!
+  
+__SQL__
+* MySQL most popular database system for bioinformatics
+* FREE!
+* Many Genome browsers, Entrez, Ensembl, Gene Ontology use MySQL to run Web Portals
+* Can update, modify tables, save queries (repetitive tasks)
+* Combine database skillz with programming environments
+  * Now you are omnipotent!
+
 
 Getting setup
 -------------
@@ -55,6 +87,8 @@ Data can be added that is already in a sqlite databae, or by entering CSV or TXT
 ***EXERCISE: Import the plots and species tables***
 
 ***  Explore the different options for displaying the data in the SQL Manager**
+* Structure
+* Browse and Search
 
 You can also use this same approach to append new data to an existing table.
 
@@ -91,6 +125,10 @@ Or we can select all of the columns in a table using the wildcard *
     
 ***EXERCISE: write a query that will return the species column from the database***
 
+	SELECT species FROM surveys;
+	
+---------------------------------------
+
 ### Unique values
 
 **How can we remove duplicate values from our query?**
@@ -107,6 +145,10 @@ If we select more than one column, then the distinct pairs of values are returne
     
 ***EXERCISE: write a query that returns the months that were sampled in each year***
 
+	SELECT DISTINCT month, year FROM surveys;
+	
+-------------------------------
+
 ### Calculated values
 
 We can also do calculations with the values in a query.
@@ -115,7 +157,7 @@ on different dates, but we needed it in kg instead of g we would use
 
     SELECT month, day, year, wgt/1000.0 from surveys
 
-When we run the query, the expression ``wgt / 1000.0`` is evaluated for each row
+When we run the query, the expression `wgt / 1000.0` is evaluated for each row
 and appended to that row, in a new column. 
 Expressions can use any fields, any arithmetic operators (+ - * /)
 and a variety of built-in functions (). For example, we could round the values to
@@ -126,9 +168,13 @@ make them easier to read.
 ***EXERCISE: Write a query that returns
              The day, month, year, speciesID and weight in mg***
 
+	SELECT day, month, year, species, wgt*1000 FROM surveys
+	
+-----------------------------------------------------
+
 Filtering
 ---------
-One of the most powerful features of a database is the abilinmmty to filter data –
+One of the most powerful features of a database is the ability to filter data –
 selecting only the data meeting certain criteria.
 For example, let’s say we only want data for the species Dipodomys merriami,
 which has a species code of DM.
@@ -147,21 +193,41 @@ For example, suppose we want to data on Dipodomys merriami starting in the year 
     SELECT * FROM surveys WHERE (year >= 2000) AND (species = "DM");
 
 Note that the parentheses aren’t needed, but again, they help with readability.
-They also ensure that the computer combines AND and OR in the way that we intend.
+They also ensure that the computer combines `AND` and `OR` in the way that we intend.
 
 If we wanted to get data for any of the Dipodomys species,
 which have species codes DM, DO, and DS we could combine the tests using OR:
 
-    SELECT * FROM surveys WHERE (species = "DM") OR (species = "DO") OR (species = "DS");
+    SELECT * FROM surveys WHERE (species = "DM") OR (species = "DO") OR (species = "DS") OR (species = "DX");
+
+* How many rows of data do you have now?
 
 ***EXERCISE: Write a query that returns
    The day, month, year, species ID, and weight (in kg) for
    individuals caught on plot 1 that weigh more than 0.075 kg***
+   
+	SELECT day, month, year, species, wgt/1000.0
+	FROM surveys 
+	WHERE (plot = 1) AND (wgt/1000.0 > 0.075)
+
+* How many rows of data?
+* Any weird answers?
+* Need to know
+  * integer vs. float
+  * select, modify, and filter
+ 
+-------------------------
 
 Exporting results of queries
 ----------------------------
 Getting the result of your query out to work with elsewhere is as easy
 as clicking the **Actions** button and choosing **Save Result to File**.
+
+
+##Saving a query
+----------------------
+Create view. Input SQL. Name. Save.
+
 
 Building more complex queries
 -----------------------------
@@ -206,8 +272,20 @@ To truly be alphabetical, we might want to order by genus then species.
 
 ***Exercise: Write a query that returns
              The genus, species, and taxon, sorted alphabetically by taxon.***
+	
+	SELECT taxa, genus, species FROM species ORDER BY taxa ASC, genus ASC, species ASC
              
 ***Exercise: Write a query that returns the genus, species of rodents, sorted alphabetically by scientific name***
+
+	SELECT genus, species 
+	FROM species 
+	WHERE taxa = 'Rodent' 
+	ORDER BY genus ASC, species ASC
+
+* Need to know
+  * Characters must be in quotes - just like in python!!
+  
+----------------------------------------------
 
 Order of execution
 ------------------
@@ -244,10 +322,17 @@ the three date fields, species ID, and weight in kilograms (rounded to two
 decimal places),  for rodents captured in 1999, ordered alphabetically by 
 the species ID.***
 
+	SELECT day, month, year, species, ROUND(wgt/1000.0,2)
+	FROM surveys
+	WHERE year = 1999
+	ORDER BY species DESC
+
 The order of the clauses is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
 and we often write each of them on their own line for readability.
 
 **BREAK**
+
+-----------------------------
 
 Aggregation
 -----------
@@ -285,6 +370,7 @@ Why doesn't this work?
     FROM surveys
 
 ***EXERCISE: Write queries that return:
+
 1. How many individuals were counted in each year
 2. Average weight of each species in each year***
 

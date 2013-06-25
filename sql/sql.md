@@ -14,6 +14,41 @@ Relational databases
 * Queries let us look up data or make calculations based on columns
 * The queries are distinct from the data, so if we change the data we can just rerun the query
 
+__A flood of data!__ 
+
+  * Writing programs helps us wade through all the data
+  * Sometimes, relational databases are necessary to efficiently get through the data
+* databases can help you
+  * ask more complex questions
+  * write faster code
+  * run faster analyses
+
+* Queries let us look up data or make calculations based on columns
+* The queries are distinct from the data, so if we change the data we can just rerun the query
+
+__Database managers__
+
+* A database manager is a program that manipulates a database
+* Commands or queries in a database manager are usually written in SQL
+* rows and columns of a database table are not stored in any particular order
+* Database design takes practice (but revist example of geek vs. non-geek problem solving)
+  * Lots of literature on designing database schema - need good knowledge of data!
+* Yes, you can eventually ask the same questions using your programming ninja skills, but it can get really complicated, take a long time to do, and be difficult to debug.
+  * Step 1: Read a really really big file
+  * Step 2: Select, find and filter the data we need from the file
+  * Then do analyses
+  *Databases: Step 1: data is already indexed, so move right to selecting and filtering data!!
+  
+__SQL__
+* MySQL most popular database system for bioinformatics
+* FREE!
+* Many Genome browsers, Entrez, Ensembl, Gene Ontology use MySQL to run Web Portals
+* Can update, modify tables, save queries (repetitive tasks)
+* Combine database skillz with programming environments
+  * Now you are omnipotent!
+
+
+
 Getting setup
 -------------
 
