@@ -20,14 +20,14 @@ Preliminary schedule:
 
 **Wednesday**:
 
-9-9.30:	Welcome and Introduction
-9.30-12:Working with the shell
-12-13:	Lunch
-13-16:	Python introduction
+-9-9.30:	Welcome and Introduction
+-9.30-12:	Working with the shell
+-12-13:		Lunch
+-13-16:		Python introduction
 
 
 **Thursday**:
 
-9-12:	Version control with git
-12-13:	Lunch
-13-16:	IPython notebook and unit testing	
+-9-12:	Version control with git
+-12-13:	Lunch
+-13-16:	IPython notebook and unit testing	
