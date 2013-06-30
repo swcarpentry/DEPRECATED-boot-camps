@@ -167,17 +167,32 @@ You now see you got the name of the third protein in the list (again, python lis
 Something that might cause you headaches in the future is how python deals
 with assignment of one variable to another. When you set a variable equal
 to another, both variables point to the same thing. Changing the first one
-ends up changing the second. Be careful about this fact. Note: this only goes for 
+ends up changing the second. Be careful about this fact. Note however, this 
+only goes for "compound" datatypes, not basic datatypes as numbers and strings. 
+Let´s see how this works.
+
+First with basic datatypes:
+
+```python
+a = 1
+b = a
+print a
+print b
+a = 2
+print a
+print b
+```
+Now with a list:
 
 ```python
 a = [1,2]
 b = a
+print a
+print b
 a.append(10)
+print a
 print b
 ```
-
-There's a ton more to know about lists, but lets press on. Check out Dive
-Into Python or the help documentation for more info.
 
 
 ## Reading From Files
