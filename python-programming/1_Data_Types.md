@@ -1,4 +1,4 @@
-# Python 1: Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+# Python 1: Data Types: Lists, Dictionaries, Tuples, and Reading Files
 
 * * * * *
 
