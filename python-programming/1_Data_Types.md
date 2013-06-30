@@ -2,7 +2,7 @@
 
 * * * * *
 
-One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but we will mention sets and tuples as well. We will also go over reading text data from files. 
+One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but we will mention tuples as well. We will also go over reading text data from files. 
 
 ## Lists
 
