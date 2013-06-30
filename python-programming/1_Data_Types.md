@@ -84,13 +84,15 @@ and so on. Note: if you do not have a number on both sides of the :, the side la
 the end/beginning of the list
 
 
-### Append and Extend
+### List methods
 
 Just like strings have methods, lists do too.
 
 ```python
 dir(list)
 ```
+
+#### Append and Extend
 
 One useful method is append. Lets say we want to stick the following data
 on the end of both our lists.
@@ -115,19 +117,41 @@ print names
 You can now see these items at the end of the list. Note: append only allows
 you to stick one thing onto a list. You can see how that approach might be tedious in certain cases. If you
 want to add a list onto the end of another one, we can create a new list and 
-stick that list onto our list.
+stick that list onto our list. Note, for this use extend instead of append.
 
 ```python
 AT_content.extend([46.1, 42.9])
 print AT_content
 ```
 
-**Task:** create a copy of AT\_content (either assign AT\_content to a new 
-variable, or just create a new list with the same content). Then, create a new list
-with the AT contents of the two new proteins. Try using both append and extend to add the new values.
-Can you see what the difference between append and extend is?
+**Task:** Open help for lists - help(list), find extend and append, and figure out the difference between them.
 
-### Length of Lists
+
+#### Sorting a list
+
+We can also sort lists. 
+
+```python
+atvalues = AT_content
+atvalues.sort()
+print atvalues
+```
+
+Note: we can also reverse the sort by setting reverse as True:
+
+```python
+atvalues.sort(reverse=True)
+print atvalues
+```
+
+We can also specify how to compare things, for instance, we can say that numbers should be compared lexicographically instead of numerically:
+
+!!!!
+
+
+
+
+#### Length of Lists
 
 Sometimes we want to know how many items are in a list. Use the len command.
 
