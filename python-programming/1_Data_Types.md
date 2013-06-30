@@ -234,35 +234,7 @@ You can slice and index the tuple exactly like you would a list. Tuples are
 used in the inner workings of python, and a tuple can be used as a key in a
 dictionary (which you will see soon), whereas a list cannot as we will see in a moment.
 
-## Sets
 
-Most introductary python courses do not go over sets this early (or at
-all), but we've found this data type to be useful. The python set type is
-similar to the idea of a mathematical set: it is an unordered collection of
-unique things. Consider:
-
-```python
-fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
-print fruit
-```
-
-Your input contained two bananas, but since sets contain only unique items, there's only one banana in the set
-fruit.
-
-You can do things like intersections, unions, etc. on sets just like in
-math. Here's an example of an intersection of two sets (the common items in
-both sets).
-
-```python
-firstBowl = set(["apple", "banana", "pear", "peach"])
-print firstBowl
-secondBowl = set(["peach", "watermelon", "orange", "apple"])
-print secondBowl
-set.intersection(firstBowl, secondBowl)
-```
-
-You can check out more info using the help docs. We won't be returning to
-sets, but its good to know they exist.
 
 ## Dictionaries
 
