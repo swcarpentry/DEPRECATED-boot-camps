@@ -162,6 +162,23 @@ You now see you got the name of the third protein in the list (again, python lis
 
 **Task:** can you figure out what the AT content of this protein is?
 
+## Assigning Variables to Other Variables
+
+Something that might cause you headaches in the future is how python deals
+with assignment of one variable to another. When you set a variable equal
+to another, both variables point to the same thing. Changing the first one
+ends up changing the second. Be careful about this fact. Note: this only goes for 
+
+```python
+a = [1,2]
+b = a
+a.append(10)
+print b
+```
+
+There's a ton more to know about lists, but lets press on. Check out Dive
+Into Python or the help documentation for more info.
+
 
 ## Reading From Files
 
