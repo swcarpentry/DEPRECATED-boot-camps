@@ -85,7 +85,7 @@ Sometimes a number can be interpreted as a text string when you need it to work 
 
 ```python
 print int('2') + 3
-print '2' + str('3')
+print '2' + str(3)
 print string + str(number)
 ```
 
