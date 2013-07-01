@@ -1,8 +1,8 @@
-# Python 1: Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+# Python 1: Data Types: Lists, Dictionaries, Tuples, and Reading Files
 
 * * * * *
 
-One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but we will mention sets and tuples as well. We will also go over reading text data from files. 
+One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but we will mention tuples as well. We will also go over reading text data from files. 
 
 ## Lists
 
@@ -84,13 +84,15 @@ and so on. Note: if you do not have a number on both sides of the :, the side la
 the end/beginning of the list
 
 
-### Append and Extend
+### List methods
 
 Just like strings have methods, lists do too.
 
 ```python
 dir(list)
 ```
+
+#### Append and Extend
 
 One useful method is append. Lets say we want to stick the following data
 on the end of both our lists.
@@ -115,19 +117,41 @@ print names
 You can now see these items at the end of the list. Note: append only allows
 you to stick one thing onto a list. You can see how that approach might be tedious in certain cases. If you
 want to add a list onto the end of another one, we can create a new list and 
-stick that list onto our list.
+stick that list onto our list. Note, for this use extend instead of append.
 
 ```python
 AT_content.extend([46.1, 42.9])
 print AT_content
 ```
 
-**Task:** create a copy of AT\_content (either assign AT\_content to a new 
-variable, or just create a new list with the same content). Then, create a new list
-with the AT contents of the two new proteins. Try using both append and extend to add the new values.
-Can you see what the difference between append and extend is?
+**Task:** Open help for lists - help(list), find extend and append, and figure out the difference between them.
 
-### Length of Lists
+
+#### Sorting a list
+
+We can also sort lists. 
+
+```python
+atvalues = AT_content
+atvalues.sort()
+print atvalues
+```
+
+Note: we can also reverse the sort by setting reverse as True:
+
+```python
+atvalues.sort(reverse=True)
+print atvalues
+```
+
+We can also specify how to compare things, for instance, we can say that numbers should be compared lexicographically instead of numerically:
+
+!!!!
+
+
+
+
+#### Length of Lists
 
 Sometimes we want to know how many items are in a list. Use the len command.
 
@@ -162,24 +186,38 @@ You now see you got the name of the third protein in the list (again, python lis
 
 **Task:** can you figure out what the AT content of this protein is?
 
-
-
 ## Assigning Variables to Other Variables
 
 Something that might cause you headaches in the future is how python deals
 with assignment of one variable to another. When you set a variable equal
 to another, both variables point to the same thing. Changing the first one
-ends up changing the second. Be careful about this fact.
+ends up changing the second. Be careful about this fact. Note however, this 
+only goes for "compound" datatypes, not basic datatypes as numbers and strings. 
+Let´s see how this works.
+
+First with basic datatypes:
+
+```python
+a = 1
+b = a
+print a
+print b
+a = 2
+print a
+print b
+```
+Now with a list:
 
 ```python
 a = [1,2]
 b = a
+print a
+print b
 a.append(10)
+print a
 print b
 ```
 
-There's a ton more to know about lists, but lets press on. Check out Dive
-Into Python or the help documentation for more info.
 
 ## Reading From Files
 
@@ -234,35 +272,7 @@ You can slice and index the tuple exactly like you would a list. Tuples are
 used in the inner workings of python, and a tuple can be used as a key in a
 dictionary (which you will see soon), whereas a list cannot as we will see in a moment.
 
-## Sets
 
-Most introductary python courses do not go over sets this early (or at
-all), but we've found this data type to be useful. The python set type is
-similar to the idea of a mathematical set: it is an unordered collection of
-unique things. Consider:
-
-```python
-fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
-print fruit
-```
-
-Your input contained two bananas, but since sets contain only unique items, there's only one banana in the set
-fruit.
-
-You can do things like intersections, unions, etc. on sets just like in
-math. Here's an example of an intersection of two sets (the common items in
-both sets).
-
-```python
-firstBowl = set(["apple", "banana", "pear", "peach"])
-print firstBowl
-secondBowl = set(["peach", "watermelon", "orange", "apple"])
-print secondBowl
-set.intersection(firstBowl, secondBowl)
-```
-
-You can check out more info using the help docs. We won't be returning to
-sets, but its good to know they exist.
 
 ## Dictionaries
 
