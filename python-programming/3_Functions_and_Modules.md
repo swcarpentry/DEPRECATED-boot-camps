@@ -64,7 +64,7 @@ lines = fh.readlines()
 fh.close()
 
 lifeExps = []
-for line in lines:
+for line in lines[1:]:
 	fields = line.split()
 	lifeExp = float(fields[4])
 	lifeExps.append(lifeExp)
@@ -82,18 +82,24 @@ What if we want to process different files and provide the name of the input fil
 import sys
 from calculate import average
 
-def process(lines, column_no):
-	aggregate = []
-	for line in lines:
-		fields = line.split()
-		column = float(fields[column_no])
-		aggregate.append(column)
+def process(lines, column_no):    
+    aggregate = []
+    for line in lines[1:]:
+        fields = line.split()
+        column = float(fields[column_no])
+        aggregate.append(column)
 
-	print "Average is", average(aggregate) 
+    print "Average is", average(aggregate) 
 
 if __name__ == "__main__":
-	file = sys.argv[1]
-	column_no = int(sys.argv[2]) 
+    file = sys.argv[1]
+    column_no = int(sys.argv[2]) 
+
+    fh = open(file)
+    lines = fh.readlines()
+    fh.close()
+
+    process(lines, column_no)
 ``` 
 
-Previous: [Flow control](2_Flow_Control.md) Next: [Final exercise](4_Conflict.md)
+Previous: [Flow control](2_Flow_Control.md)
