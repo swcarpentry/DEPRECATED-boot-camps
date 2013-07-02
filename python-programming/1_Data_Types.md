@@ -86,7 +86,7 @@ the end/beginning of the list
 List can contain any kind of data, including other lists. Lets create a new list containing the two lists above and also some other information:
 
 ```python
-combinedList = ["Information about countries", "1952", countries, lifeExp]
+combinedList = ["Information about countries", 1952, countries, lifeExp]
 print combinedList
 ```
 
@@ -239,7 +239,9 @@ print data
 Your results should look like this:
 
 ```
-['country\tyear\tpop\tcontinent\tlifeExp\tgdpPercap\n', 'Norway\t1952\t3327728\tEurope\t72.67\t10095.42172\n', 'Sweden\t1952\t7124673\tEurope\t71.86\t8527.844662\n', 'Denmark\t1952\t4334000\tEurope\t70.78\t9692.385245\n', 'Finland\t1952\t4090500\tEurope\t66.55\t6424.519071\n', 'Iceland\t1952\t147962\tEurope\t72.49\t7267.688428\n']
+['country\tyear\tpop\tcontinent\tlifeExp\tgdpPercap\n', 'Norway\t1952\t3327728\tEurope\t72.67\t10095.42172\n',
+ 'Sweden\t1952\t7124673\tEurope\t71.86\t8527.844662\n', 'Denmark\t1952\t4334000\tEurope\t70.78\t9692.385245\n',
+  'Finland\t1952\t4090500\tEurope\t66.55\t6424.519071\n', 'Iceland\t1952\t147962\tEurope\t72.49\t7267.688428\n']
 ```
 What happened here, is that each line in your file became one element in the data list. Note, the newlines are also included.
 
@@ -249,14 +251,13 @@ out. We will eventually do that.
 
 ## Dictionaries
 
-Remember the two lists we worked on earlier? These contained some of the data in the file above. In that case, we worked on each list individually. There was no connection between each country and its life expectancy value. For these kinds of connections a dictionary is a much better choice. 
-much better choice. A python dictionary is a collection of key-value
+Remember the two lists we worked on earlier? These contained some of the data in the file above. In that case, we worked on each list individually. There was no connection between each country and its life expectancy value. For these kinds of connections a dictionary is a much better choice. A python dictionary is a collection of key-value
 pairs. The key is a way to name the data, and the value is the data itself.
 Here's a way to create a dictionary that contains all the data in our
 data.dat file in a more sensible way than a list.
 
 ```python
-dataDict = {"Norway":72.67, "Sweden": 71.86, "Denmark", 70.78, "Finland": 66.55, "Iceland": 72.49}
+dataDict = {"Norway":72.67, "Sweden": 71.86, "Denmark": 70.78, "Finland": 66.55, "Iceland": 72.49}
 ```
 
 This model is clearly better because you no longer have to remember the position in the list of each country.
@@ -284,13 +285,13 @@ Dictionaries, like strings, lists, and all the rest, have built-in methods.
 Lets say you wanted all the keys from a particular dictionary.
 
 ```python
-dataDict.keys()
+print dataDict.keys()
 ```
 
 also, values
 
 ```python
-dataDict.values()
+print dataDict.values()
 ```
 
 The help documentation has more information about what dictionaries can do.
@@ -300,7 +301,7 @@ data, even another dictionary, or some complex nested structure. The same
 is true about a list: they can contain complex data types.
 
 However, the key has to be something that cannot change. This means numbers, strings
-and tuples. Lists are mutable, and therefore cannot.
+and a datatype called tuples, which are basically unchangable lists. Lists are mutable, and therefore cannot.
 
 When you architect software in python, most data will end up looking either
 like a list or a dictionary. These two data types are very important in

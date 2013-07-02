@@ -147,15 +147,13 @@ In order to list all Python built-in methods for string:
 dir(str)
 ```
 
-To get help on methods for a type, to
+To get help on methods for a type, do
 
-In order to list all Python built-in methods for string:
 ```python
-dir(str)
+help(str)
 ```
 
-**Task:** Can you figure out a python method that will let you remove all whitespace to the right in the string? Hint: search for whitespace.
-
+**Task:** Can you figure out a python method that will let you remove all whitespace to the right in the string? Hint: search for whitespace. Use this method to remove the trailing whitespace in this string: `"This string has lots of end spaces      "`.
 
 
 Next: [Data Types](1_Data_Types.md)
