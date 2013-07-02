@@ -1,0 +1,5 @@
+Experiment: AT content effects
+run: 47
+temperature: 55
+names: ['rapA', 'polB', 'araD', 'araA', 'araB', 'araC', 'yabI', 'thiQ']
+AT content: [45.1, 44.7, 44.7, 44.5, 41.9, 47.4, 46.1, 42.9]
