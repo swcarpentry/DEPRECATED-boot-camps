@@ -39,15 +39,16 @@ a look at the following example:
 i = 4
 sign = "zero"
 if i < 0:
-  sign = "negative"
+	sign = "negative"
+	print sign
 elif i > 0:
-  sign = "positive"
+	sign = "positive"
+	print sign
 else:
-  print "Sign must be zero"
-  print "Have a nice day"
+	print sign 
 ```
 
-What do you expect the value of sign to be after it has run?
+What do you expect the value of sign to be after it has run? Note: you have to print it out to see what its value is. 
 
 Please note: the if statement consists of everything from the first if until the end of the else.
 
@@ -65,248 +66,157 @@ the if statement - after the first time, python is offering you to type
 in more things that would be executed in the else, so you press enter to 
 tell python that you are done, and that it should evaluate the if.
 
-**Task:** Type it in, and run it, and see if the value of sign is what
-you expected it to be. Note, you have to press enter twice after 
-"Have a nice day", then you can show the value of sign by printing it.
+**Task:** Type the script into a script file and run it, and see if the value 
+of sign is what you expected it to be. 
 
-**Task:** Repeat the if statement above, and test out what the value of i has to
-be in order to be able to trigger the else clause.
-
-
-While Loops
-===========
-
-Lets start by looking at while loops since they function like while
-loops in many other languages. The example below takes a list of
-integers and computes the product of each number in the list.
-
-A while loop will repeat the instructions within itself until the
-conditional that defines it is no longer true.
-
-```python
-counter = 0
-sequence = [1, 2, 3, 4, 5, 6, 7, 8]
-while counter < len(sequence):
-  print sequence[counter] * sequence[counter]
-  counter += 1
-```
-
-So, what happens in this example?
-
--   On line 1 we define a counter. While loops often have something that is is being incremented, i.e. added to every time the loop runs
-	
--   On line 3 we begin the while loop. The conditional of the while loop
-    is in this case whether the counter is less than the length of the
-    sequence object we are operating on. The length of a list is always one
-    more than the last index of the list, so when we do less than the length
-    of it we go to the last, but no longer
-
--   On line 4, we compute the product of the elements just to make this
-    more interesting.
-
--   On the last line we increment the counter, using the += syntax, this
-    means that whatever is after the += sign will be added to the value
-    that the variable already has.
-
-
-**Watch Out**
-
-Since a while loop will continue until its conditional is no longer
-true, a **poorly formed** while loop might repeat forever. For example:
-
-```python
-i=0
-mystring="This is a long string, can I print the last word maybe?"
-while i < len(mystring):
-  fields = mystring.split()
-  print fields[i]
-```
-
-Tip: if you run this, you can interrupt it with Ctrl-C!
-
-Since the variable **i** never changes within the while loop, we can
-expect that the conditional, **i<len(mystring)** will remain true forever and the
-while loop will just go round and round and continue forever.
-
-**Combining while and if**
-
-To create nested while and if loops, the indentation (preferably two or four
-spaces) should increase for each looping level.
-
-```python
-words =	["first", "second#", "third", "f#ourth", "fifth"]
-counter = 0
-while counter < len(words):
-    if "#" not in words[counter]:
-       print words[counter]
-    counter += 1
-```
-
-**Task:** Put the preceeding source code in a file and save it as "script.py". Run it in the terminal using python. Can you see what happens here?
-
+**Task:** Change the value of i so that you trigger all of the parts of the if statement.
 
 For Loops
 =========
 
-For loops in python operate a little differently from other languages.
-Lets start with a simple example which prints all of the numbers from 0
-to 9:
+For loops are something we use a lot in python. Let's try a simple loop:
+
 
 ```python
-for i in range(10):
+for i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
     print i
 ```
 
-You may be wondering how this works. Start by using help(range) to see
-what the range function does.
+For loops basically iterate over anyting that is iteratable. The things you have seen so far that are iterable are strings, lists and dictionaries. 
 
-    Help on built-in function range in module __builtin__:
+##Using for loops to process files
 
-    range(...)
-        range([start,] stop[, step]) -> list of integers
-
-        Return a list containing an arithmetic progression of integers.
-        range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
-        When step is given, it specifies the increment (or decrement).
-        For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
-        These are exactly the valid indices for a list of 4 elements.
-
-Range is a function that returns a list containing a sequence of
-integers. So, range(10) returns the list [0,1,2,3,4,5,6,7,8,9]. The for
-loop then simply iterates over that list, setting i to each value.
-
-For Loops with Lists and Dictionaries
-=====================================
-
-With range, we learned that **for** loops in python are really used to
-iterate over sequences of things (they can be used for much more, but
-for now this definition will do). Try entering the following to see what
-happens:
+Commonly, when you read in files, it is often done with the readlines method. This method gives us a list of strings. Let´s try to read in a file and print each line:
 
 ```python
-for c in ["one", 2, "three", 4, "five"]:
-    print c
+fh = open("popdata.txt", "r")
+lines = fh.readlines()
+fh.close()
+
+for line in lines:
+	print line
 ```
 
-this is equivalent to:
+Note, we get one extra newline here since each line that we read contains a newline. We can remove a newline by removing the last character in the line:
 
 ```python
-c = ["one", 2, "three", 4, "five"]
-for i in range(len(c)):
-    print c[i]
+for line in lines:
+	print line[:-1]
 ```
 
-On lists, we can use the **in** keyword to iterate over elements in a list. We can also 
-create **nested** for loops, where one for loop is inside the other.
-
-Let's create some lists containing names of cities and a list containing some countries to demonstrate this:
+Now, let us combine this with some text splitting. This will let us get to each line of the text. The goal in this case is to print out the country and the population: 
 
 ```python
-# cities
-italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
-india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-us = ["Chicago", "Austin", "New York", "San Fran"]
-nations = [italy, argentina, india, us]
-# a list containing names of countries
-nationnames = ["italy","argentina", "india", "us"]
+for line in lines:
+	fields = line.split()
+	print fields[0], fields[2]
 ```
 
-So, now we have four lists with cities, and one with names of nations. We can
-now use two for loops, one inside the other to display these nicely:
+**Task:** Can you figure out how to print the life expectancy instead?
+
+**Task:** Can you figure out how to skip the first line, i.e. leave out the header line?
+
+## Combining for and if
+
+Fairly often, we end up reading in a file and doing something with it. For this we often end up using if statements to figure out what to do with each file. In this case, let´s work with a bigger file, one that contains population data for the year 1952. 
+
+```python
+fh = open("1952.txt", "r")
+popdat = fh.readlines()
+fh.close()
+```
+
+So - now we have read in the years and have them as a list of strings in the wholeyear variable. 
+
+Now, let's select only those countries that are in Europe. In this case, that information would be found in field no 3:
+
+```python
+for line in popdat:
+	fields = line.split()
+	if fields[3] == "Europe":
+		print line[:-1]
+```
+
+**Task:** Take the code that you have above, and put into a script. Run it using python.
+
+**Task:** Figure out how you only print out the Country, the Continent and the life expectancy.
+
+## Aggregating data
+
+We will now go a bit further. We can now access each line, process it, and print it out. We will now instead aggregate the life expactancies and calculate the average.
+
+Note: this all takes place in your script file.
+
+```python
+fh = open("1952.txt", "r")
+popdat = fh.readlines()
+fh.close()
+
+#create a list that can keep the life expectancies
+aggregate = []
+for line in popdat:
+	fields = line.split()
+	if fields[3] == "Europe":
+		lifeexp = float(fields[4])
+		aggregate.append(lifeexp)
+		
+#Now we calculate the average
+
+no_countries = len(aggregate)
+sum = sum(aggregate)
+avg = sum/no_countries
+print "Average lifespan in Europe:", avg
+
+```
+
+Using dictionaries
+----------------------------------
+In the previous example we got the ones that corresponded to Europe and put them into a list. We then used this list to calculate the average life expectancy for all of the different continents. We could do that by creating one list for each continent and manually adding each life expectancy to that, but that would be a bit heavy to do by hand. Instead, we can write python code that does this for us. For this, we use dictionaries. We will do this incrementally, so that we can show how this would work.
+
+First, let's get all of the countries and their life expectancies into a dictionary:
 
 
 ```python
-for nation in nations :
-    print nationnames[nations.index(nation)] + ": "
-    for city in nation :
-        print "  " + city 
+fh = open("1952.txt", "r")
+popdat = fh.readlines()
+fh.close()
+
+country_lifeexp = {}
+for line in popdat:
+	fields = line.split()
+	country = fields[0]
+	lifeexp = int(fields[4])
+	country_lifeexp[country] = lifeexp
+	
+# we can now print it like this:
+for key in country_lifeexp:
+	print key, country_lifeexp[key] 
 ```
 
-Of course, this information is better stored in a dictionary, isn't it?
-The data makes more sense if the keys were the nation names and the
-values were lists of cities. Importantly, python has given us a tool
-specifically for dictionary looping.
-
-The syntax for looping through the keys and values of a dictionary is:
-
-    for key, value in dictionary.iteritems():
-
-Importantly, you don't have to use the words key and value. That's just
-what will fill those variables. Here, we rewrite the previous loop using
-this clever syntax.
+So, this is how dictionaries work in this case. Now, we change this a bit. We use the continent as the key instead of the country. The value is still the life expectancy, but we now have several per key, and that always spells using a list. How do we do this? The way to do this is to use this pattern:
 
 ```python
-# first, we create the dictionary
-nations = {"italy":italy, "argentina":argentina, "india":india, "us":us}
-for nation, cities in nations.iteritems() :
-    print nation + " : "
-    for city in cities :
-        print "  " + city 
-```
+#create dictionary
+my_dict = {}
 
-break and continue
-=========================
-
-A break statement cuts off a loop from within an inner loop. It helps
-avoid infinite loops by cutting off loops when they're clearly going
-nowhere.
-
+for line in set_of_lines:
+	fields = line.split()
+	key_field = fields[your_key_column]
+	aggregate_value = fields[your_aggregate_value_column]
+	# Now, test if you already have it in the dictionary:
+	if key_field not in my_dict:
+		# have to create a new list to keep the values in
+		my_dict[key_value] = []
+	# So, now we know we have a key value pair in our dictionary, where
+	# the key_value is the key, and we have a list as a value. We can
+	# now add to this list
+	my_dict[key_value].append[aggregate_value]
+	
 ```python
-reasonable = 10
-for n in range(1,2000):
-    if n == reasonable:
-        break
-    print n
-```
 
-Something you might want to do instead of breaking is to continue to the
-next iteration of a loop, giving up on the current one.
+**Task:** use the above pattern to print each continent, plus a list of the life expectancies
 
-```python
-reasonable = 10
-for n in range(1,2000):
-    if n == reasonable:
-      continue
-    print n
-```
-
-What is the difference between the output of these two?
-
-Final Example
-=============
-
-We've seen a lot so far. Lets work through a slightly lengthier example
-together. We'll use some of the concepts we already saw and introduce a
-few new concepts. To run the example, you'll need to locate a short file
-containing phone numbers. The file is in your repository is called phonenums.txt.
-
-This example opens a text file containing a list of phone numbers. The
-phone numbers are in the format \#\#\#\#-\#\#\#-\#\#\#, one to a line.
-The example code loops through each line in the file and counts the
-number of times each area code appears. The answer is stored in a
-dictionary, where the area code is the key and the number of times it
-occurs is the value.
-
-```python
-areacodes = {} # Create an empty dictionary
-f = open("phonenums.txt") # Open the text file
-for line in f: # iterate through the text file, one line at a time (think of the file as a list of lines)
-    ac = line.split('-')[0] # Split phone number, first element is the area code
-    if not ac in areacodes: # Check if it is already in the dictionary
-      areacodes[ac] = 1 # If not, add it to the dictionary
-    else:
-      areacodes[ac] += 1 # Add one to the dictionary entry
-
-print areacodes # Print the answer
-```
-
-**Task**
-
-- Modify the script so that it prints the results nicely, with first the area code, then a 
-  tab, and then the number of times it occurs.
-
-- Modify this script so that it completely ignores phone numbers which contain the number 4.
+**Task:** figure out how to calculate the average for each continent. In this case, you need to have that in the second for loop, where you use the data that you have put into your dictionary.
 
 
 

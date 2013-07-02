@@ -1,0 +1,6 @@
+country	year	pop	continent	lifeExp	gdpPercap
+Norway	1952	3327728	Europe	72.67	10095.42172
+Sweden	1952	7124673	Europe	71.86	8527.844662
+Denmark	1952	4334000	Europe	70.78	9692.385245
+Finland	1952	4090500	Europe	66.55	6424.519071
+Iceland	1952	147962	Europe	72.49	7267.688428
