@@ -69,7 +69,7 @@ number = 4
 print string * number 
 ```
 
-Here you see that the word is repeated four times, as many times as number
+Here you see that the word is repeated four times, as many times as number specifies.
 
 However, what happens if we add string and number?
 
@@ -142,11 +142,19 @@ print ses
 
 **Task**: did the number of s-es reported correspond to how many you counted?
 
+In order to list all Python built-in methods for string:
+```python
+dir(str)
+```
+
+To get help on methods for a type, to
 
 In order to list all Python built-in methods for string:
 ```python
 dir(str)
 ```
+
+**Task:** Can you figure out a python method that will let you remove all whitespace to the right in the string? Hint: search for whitespace.
 
 
 

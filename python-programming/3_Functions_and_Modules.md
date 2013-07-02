@@ -15,20 +15,17 @@ So far we have used the python interactive Python shell and also written Python 
 Let's say we want to extract people's initials from their full name. The code below should do it.
 
 ```python
-def get_initials(full_name):
-   names = full_name.split() 
-   initial = ''
-   i = 0
-   while i < len(names):
-      initial=initial+(names[i][0]) #From each part of the name we get the first letter
-      i = i+1
-   return initial
+def average(numberlist):
+	total = sum(numberlist)
+	elements = len(numberlist)
+	avg = total/elements
+	return avg
    
-a = 'Thomas Mann'
-b = 'James Bond'
-print get_initials(a)
-print get_initials(b)
-print get_initials('Anna Karenina')
+a = [1,2,3,4,5,6,7,8,9]
+b = [10,2,6,19,17]
+print average(a)
+print average(b)
+print average([33,4,55,2])
 ```
 
 The keyword for defining a function is def. After that we have the function name followed 
@@ -39,19 +36,19 @@ NOTE: any variables defined in the function is invisible outside of it. Any resu
 created in it must be returned to the outside using the return statement.
 
 Now instead of rerunning the code for each person, we just had to call our function. Note 
-that our function takes one argument (full_name). 
+that our function takes one argument (numberlist). 
 
 ##Creating modules
 
-First, let's save our function in a file named "namehandler.py". In the same file, after the function, add the following:
+First, let's save our function in a file named "calculate.py". In the same file, after the function, add the following:
 
 ```python
 
 if __name__ == "__main__":
-    print get_initials("George Adams")
+    print average([2,3,1,6,4,8])
 ```
 
-Now run this script on the command line, just like it is. You should get the letters GA printed on your screen. Now you know that your function works.
+Now run this script on the command line, just like it is. You should get the average printed on your screen. Now you know that your function works.
 
 But, how come this code is run?  What happens is that when you run a script directly
 from the command line, a variable that is called __name__ is set to have the value __main__. We then ask python
@@ -60,15 +57,22 @@ to test on this variable with an if statement, and if it is true, whatever is in
 We are now going to import this function into a different script:
 
 ```python
-from namehandler import get_initials
+from calculate import average
 
-f = open('famousauthors.txt')
-for l in f:
-   print get_initials(l)
-f.close()
+fh = open("1952.txt")
+lines = fh.readlines()
+fh.close()
+
+lifeExps = []
+for line in lines:
+	fields = line.split()
+	lifeExp = float(fields[4])
+	lifeExps.append(lifeExp)
+
+print "Average is", average(lifeExps) 
 ```
 
-What happens here is that Python goes into the namehandler file and gets the function that we specified, and uses that inside of this script. We get at the function by using the import statement. 
+What happens here is that Python goes into the calculate file and gets the function that we specified, and uses that inside of this script. We get at the function by using the import statement. 
 
 **Getting input from the command line**
 
@@ -76,19 +80,20 @@ What if we want to process different files and provide the name of the input fil
 
 ```python
 import sys
-from namehandler import get_initials
+from calculate import average
 
-def main():
-  f = open(sys.argv[1])
-  for l in f:
-     print get_initials(l)
-  f.close()
+def process(lines, column_no):
+	aggregate = []
+	for line in lines:
+		fields = line.split()
+		column = float(fields[column_no])
+		aggregate.append(column)
+
+	print "Average is", average(aggregate) 
 
 if __name__ == "__main__":
-   main()
-```
-
-So, the input file is to be found in sys.argv[1]. 
-
+	file = sys.argv[1]
+	column_no = int(sys.argv[2]) 
+``` 
 
 Previous: [Flow control](2_Flow_Control.md) Next: [Final exercise](4_Conflict.md)
