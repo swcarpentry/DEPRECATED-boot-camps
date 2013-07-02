@@ -6,9 +6,9 @@ Conditionals
 
 A conditional (if statement) is some statement that in general says: 
 "When some boolean is true, do the following. Otherwise, do this other
-thing."
+thing." In a statement we thus need to be able to compare things.
 
-Many equivalence test statements exist in Python that are similar in
+Many equivalence statements exist in Python that are similar to those of
 other languages:
 
 ```python
@@ -48,7 +48,7 @@ else:
 	print sign 
 ```
 
-What do you expect the value of sign to be after it has run? Note: you have to print it out to see what its value is. 
+What do you expect the value of sign to be after it has run? 
 
 Please note: the if statement consists of everything from the first if until the end of the else.
 
@@ -66,8 +66,14 @@ the if statement - after the first time, python is offering you to type
 in more things that would be executed in the else, so you press enter to 
 tell python that you are done, and that it should evaluate the if.
 
-**Task:** Type the script into a script file and run it, and see if the value 
-of sign is what you expected it to be. 
+**Task:** Open an editor (nano for instance), type the script into a text file and save
+it as if.py. Run the script like this: 
+
+```
+python if.py
+```
+
+and see if the value of the sign is what you expected it to be. 
 
 **Task:** Change the value of i so that you trigger all of the parts of the if statement.
 
@@ -97,11 +103,11 @@ for line in lines:
 	print line
 ```
 
-Note, we get one extra newline here since each line that we read contains a newline. We can remove a newline by removing the last character in the line:
+Note, we get one extra newline here since each line that we read contains a newline. We can remove the newline by using rstrip():
 
 ```python
 for line in lines:
-	print line[:-1]
+	print line.rstrip()
 ```
 
 Now, let us combine this with some text splitting. This will let us get to each line of the text. The goal in this case is to print out the country and the population: 
@@ -118,7 +124,7 @@ for line in lines:
 
 ## Combining for and if
 
-Fairly often, we end up reading in a file and doing something with it. For this we often end up using if statements to figure out what to do with each file. In this case, let´s work with a bigger file, one that contains population data for the year 1952. 
+Fairly often, we end up reading in a file and doing something with it. For this we often end up using if statements to figure out what to do with each line. In this case, let´s work with a bigger file, one that contains population data for the year 1952. 
 
 ```python
 fh = open("1952.txt", "r")
@@ -134,12 +140,12 @@ Now, let's select only those countries that are in Europe. In this case, that in
 for line in popdat:
 	fields = line.split()
 	if fields[3] == "Europe":
-		print line[:-1]
+		print line.rstrip()
 ```
 
-**Task:** Take the code that you have above, and put into a script. Run it using python.
+**Task:** Take the code that you have above, and put into a script named europe.py. Run it using python.
 
-**Task:** Figure out how you only print out the Country, the Continent and the life expectancy.
+**Task:** Figure out how you print out the Country, the Continent and the life expectancy.
 
 ## Aggregating data
 
@@ -163,8 +169,8 @@ for line in popdat:
 #Now we calculate the average
 
 no_countries = len(aggregate)
-sum = sum(aggregate)
-avg = sum/no_countries
+total = sum(aggregate)
+avg = total/no_countries
 print "Average lifespan in Europe:", avg
 
 ```
@@ -182,10 +188,10 @@ popdat = fh.readlines()
 fh.close()
 
 country_lifeexp = {}
-for line in popdat:
+for line in popdat[1:]:
 	fields = line.split()
 	country = fields[0]
-	lifeexp = int(fields[4])
+	lifeexp = float(fields[4])
 	country_lifeexp[country] = lifeexp
 	
 # we can now print it like this:
@@ -193,26 +199,25 @@ for key in country_lifeexp:
 	print key, country_lifeexp[key] 
 ```
 
-So, this is how dictionaries work in this case. Now, we change this a bit. We use the continent as the key instead of the country. The value is still the life expectancy, but we now have several per key, and that always spells using a list. How do we do this? The way to do this is to use this pattern:
+So, this is how dictionaries work in this case. Now, we change this a bit. We use the continent as the key instead of the country. The value is still the life expectancy, but we now have several values per key, and that always spells using a list. How do we do this? The way to do this is to use this pattern:
 
 ```python
 #create dictionary
 my_dict = {}
-
-for line in set_of_lines:
-	fields = line.split()
-	key_field = fields[your_key_column]
-	aggregate_value = fields[your_aggregate_value_column]
-	# Now, test if you already have it in the dictionary:
-	if key_field not in my_dict:
-		# have to create a new list to keep the values in
-		my_dict[key_value] = []
-	# So, now we know we have a key value pair in our dictionary, where
-	# the key_value is the key, and we have a list as a value. We can
-	# now add to this list
-	my_dict[key_value].append[aggregate_value]
+for line in popdat[1:]:
+    fields = line.split()
+    key_field = fields[key_column_number]
+    aggregate_value = float(fields[value_column_number])
+    # Now, test if you already have it in the dictionary:
+    if key_field not in my_dict:
+        # have to create a new list to keep the values in
+        my_dict[key_field] = []
+    # So, now we know we have a key value pair in our dictionary, where
+    # the key_value is the key, and we have a list as a value. We can
+    # now add to this list
+    my_dict[key_field].append(aggregate_value)
 	
-```python
+```
 
 **Task:** use the above pattern to print each continent, plus a list of the life expectancies
 
