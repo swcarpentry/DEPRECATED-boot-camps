@@ -1,7 +1,5 @@
 # Testing - crib sheet
 
-Thanks to Gordon Webster, the [Digital Biologist](http://www.digitalbiologist.com), for allowing use of his [Python DNA function](http://www.digitalbiologist.com/2011/04/code-tutorial-getting-started-with-python.html).
-
 ## Detecting errors
 
 What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. M.E., Fagan (1976). [Design and Code inspections to reduce errors in program development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15 (3): pp. 182-211.
@@ -10,82 +8,102 @@ What we know about software development - code reviews should be about 60 minute
 
 ## Runtime tests
 
-[dna.py](python/dna/dna.py)
+[morse04.py](python/morse/morse04.py)
 
-Dictionary stores molecular weights of 4 standard DNA nucleotides, A, T, C and G
+    $ python morse.py
+    encode
+    1 + 2 = 3
 
-Function takes DNA sequence as input and returns its molecular weight, which is the sum of the weights for each nucelotide in the sequence,
+`KeyError` is an exception.
 
-    $ nano dna.py
-    weight = calculate_weight('GATGCTGTGGATAA')
-    print weight
-    print calculate_weight(123)
-
-`TypeError` is an exception, raised, here, by `for...in`.
+Traceback shows us Python's exception stack trace.
 
 Runtime tests can make code robust and behave gracefully.
 
-        try:
-            for ch in sequence:
-                weight += NUCLEOTIDES[ch]
-            return weight
-        except TypeError:
-            print 'The input is not a sequence e.g. a string or list'
+    try:
+        print "Encoded is '%s'" % translator.encode(message)
+    except KeyError:
+        print 'The input should be a string of a-z, A-Z, 0-9 or space'
 
 Exception is caught by the `except` block.
 
-Pass error to another part of program e.g. UI
+Exception can be converted and passed e.g. if this was deep within a function we would not want to print but to keep UI separate so, can `raise` an exception e.g.
 
-    except TypeError:
-        raise ValueError('The input is not a sequence e.g. a string or list')
+    except KeyError:
+        raise ValueError('The input should be a string of a-z, A-Z, 0-9 or space')
+
+## Exercise
+
+Add a runtime test for decoding.
 
 ## Correctness tests
 
-Test implementation is correct.
+Testing manually works but is time-consuming and error prone - might forget to run a test.
+Write down set of test steps so won't forget. 
+Still time-consuming.
 
-    print "A is ", calculate_weight('A')
-    print "G is ", calculate_weight('G')
-    print "GA is ", calculate_weight('GA')
+    def test(self):
+        print "SOS is ", self.encode('SOS')
+        print "...---... is ", self.decode('... --- ...')
+
+Extend UI to invoke:
+
+    while True:
+
+        elif line == "test":
+            print "Testing..."
+            translator.test()
+            break
 
 Automate checking.
 
-    assert calculate_weight('A') == 131.2
-    assert calculate_weight('G') == 329.2
-    assert calculate_weight('GA') == 460.4
+    def test(self):
+        assert '... --- ...' == self.encode('SOS')
+        assert 'sos' == self.decode('... --- ...')
+        print "OK"
 
 `assert` checks whether condition is true and, if not, raises an exception.
 
-Define constants in one place only.
-
-    assert calculate_weight('A') == NUCLEOTIDES['A']
-    assert calculate_weight('G') == NUCLEOTIDES['G']
-    assert calculate_weight('GA') == NUCLEOTIDES['G'] + NUCLEOTIDES['A']
-
-Define test functions for modularity.
-
-    def test_a():
-        assert calculate_weight('A') == NUCLEOTIDES['A']
-    def test_g():
-        assert calculate_weight('G') == NUCLEOTIDES['G']
-    def test_ga():
-        assert calculate_weight('GA') == NUCLEOTIDES['G'] + NUCLEOTIDES['A']
-
-    test_a()
-    test_g()
-    test_ga()
-
 Put test functions in separate file for modularity.
 
-    $ nano test_dna.py
+    $ cp morse.py test_morse.py
+    $ nano test_morse.py
 
-Import dictionary and function.
+    from morse import MorseTranslator
 
-    from dna import calculate_weight
-    from dna import NUCLEOTIDES
+    class TestMorseTranslator:
+
+        def test(self):
+            translator = MorseTranslator()
+            assert '... --- ...' == translator.encode('SOS')
+            assert 'sos' == translator.decode('... --- ...')
+
+    if __name__ == "__main__":    
+
+        test_translator = TestMorseTranslator()
+        test_translator.test()
+        print "OK"
+
+Remove test code from `MorseTranslator`.
 
 Run tests.
 
-    $ python test_dna.py
+    $ python test_morse.py
+
+Modularise functions.
+
+    def test_encode_sos(self):
+        ...
+    def test_decode_sos(self):
+        ...
+
+    test_translator.test_encode_sos()
+    test_translator.test_decode_sos()
+
+Remove duplicated code:
+
+    def __init__(self):
+        self.translator = MorseTranslator()
 
 Test function,
 
@@ -93,11 +111,11 @@ Test function,
 * Runs function / component on inputs to get actual outputs.
 * Checks actual outputs match expected outputs. 
 
-Verbose, but equivalent, version of `test_a`.
+Verbose, but equivalent, version of `test_encode_sos`.
 
-    def test_a():
-        expected = NUCLEOTIDES['A']
-        actual = calculate_weight('A')                     
+    def test_encode_sos(self):
+        expected = '... --- ...'
+        actual = self.translator.encode('SOS')                     
         assert expected == actual
 
 ## `nose` - a Python test framework
@@ -108,67 +126,57 @@ Verbose, but equivalent, version of `test_a`.
 
 `test_` file and function prefix.
 
-    $ nosetests test_dna.py
+    $ nosetests test_morse.py
 
 `.` denotes successful tests.
 
-    # Remove `test_` function calls.
-    $ nosetests test_dna.py
+Remove `__main__ code.
+
+    $ nosetests test_morse.py
 
 xUnit test report, standard format, convert to HTML, present online.
 
     $ nosetests --with-xunit test_dna.py
     $ cat nosetests.xml
 
-    $ python
-    >>> from nose.tools import *
-    >>> expected = 123
-    >>> actual = 123
-    >>> assert_equal(expected, actual)
-    >>> actual = 456
-    >>> assert_equal(expected, actual)
-    >>> expected = "GATTACCA"
-    >>> actual = ["GATC", "GATTACCA"]
-    >>> assert_true(expected in actual)
-    >>> assert_false(expected in actual)
-    >>> assert_true("GTA" in actual, "Expected value was not in the output list")
-
 ## Propose some more tests. 
 
 Consider,
 
 * What haven't we tested for so far? 
-* Have we covered all the nucleotides? 
-* Have we covered all the types of string we can expect?
-* In addition to test functions, other types of runtime test could we add to `calculate_weight`?
+* Have we covered all possible strings?
+* Have we covered all possible arguments?
 
-Examples.
+Propose examples and add to Etherpad.
 
-    calculate_weight('T')
-    calculate_weight('C')
-    calculate_weight('TC')
-    calculate_weight(123)
+    encode('sos')
+    encode('')
+    decode('')
+    encode('1 + 2 = 3')
+    decode('...---...')
 
-Test for the latter,
+Implement examples.
 
-    try:
-        calculate_weight(123) 
-        assert False
-    except ValueError:
-        assert True
+Tests for illegal arguments:
 
-Alternatively,
+    def test_encode_illegal(self):
+        try:
+            self.translator.encode('1 + 2 = 3')
+            assert False
+        except KeyError:
+            assert True
+
+Alternatively:
 
     from nose.tools import assert_raises
 
-    def test_123():
-        assert_raises(ValueError, calculate_weight, 123)
+    def test_encode_illegal(self):
+        assert_raises(KeyError, self.translator.encode, '1 + 2 = 3')
 
-Another run-time test, for `GATCX`,
+Testing components together:
 
-        ...
-    except KeyError:
-        raise ValueError('The input is not a sequence of G,T,C,A')
+    assert 'sos' == decode(encode('sos'))
+    assert '... --- ...' == encode(decode('... --- ...'))
 
 ## Testing in practice
 
@@ -238,62 +246,6 @@ Example.
     def test_critical_correctness():
         # TODO - will complete this tomorrow!
         pass
-
-## Test-driven development
-
-Complement, cDNA, mapping,
-
-* A => T
-* C => G
-* T => A
-* G => C
-
-DNA strand GTCA, cDNA strand CAGT. 
-
-Antiparallel DNA - calculate inverse of cDNA by reversing it.
-
-[Test driven development](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530) (TDD)
-
- * Red - write tests based on requirements. They fail as there is no code.
- * Green - write/modify code to get tests to pass.
- * Refactor code - clean it up.
-
-Think about what code should do and test what it should do rather than what it actually does.
-
-YAGNI principle (You Ain't Gonna Need It) avoid developing code for which there is no need.
-
-    $ nano test_dnautils.py
-    from dnautils import antiparallel
-
-    $ nosetests test_dnautils.py
-    $ nano dnautils.py
-
-    def antiparallel(sequence):
-        """
-        Calculate the antiparallel of a DNA sequence.
- 
-        @param sequence: a DNA sequence expressed as an upper-case string.
-        @return antiparallel as an upper-case string. 
-        """
-        pass
-
-    $ nosetests test_dnautils.py
-
-Propose a test and add it.
-
-    $ nosetests test_dnautils.py
-
-Change function to make test pass.
-
-Propose some tests and implement these, but don't update the function.
-
-Discuss!
-
-Update the function.
-
-TDD delivers tests and a function - no risk of us leaving the tests "till later" (never!).
-
-Refactor code with security of tests to flag any changes made introduce a bug.
 
 ## Summary
 
