@@ -8,7 +8,7 @@ What we know about software development - code reviews should be about 60 minute
 
 ## Runtime tests
 
-[morse04.py](python/morse/morse04.py)
+[morse.py](python/morse/morse.py)
 
     $ python morse.py
     encode
