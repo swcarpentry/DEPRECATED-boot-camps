@@ -16,7 +16,7 @@ What we know about software development - code reviews should be about 60 minute
 
 `KeyError` is an exception.
 
-Traceback shows us Python's exception stack trace.
+Traceback shows Python's exception stack trace.
 
 Runtime tests can make code robust and behave gracefully.
 
@@ -27,26 +27,28 @@ Runtime tests can make code robust and behave gracefully.
 
 Exception is caught by the `except` block.
 
-Exception can be converted and passed e.g. if this was deep within a function we would not want to print but to keep UI separate so, can `raise` an exception e.g.
+Exception can be converted and passed e.g. if this was deep within a function we would not want to print but to keep UI separate.
+
+Can `raise` an exception e.g.
 
     except KeyError:
         raise ValueError('The input should be a string of a-z, A-Z, 0-9 or space')
 
-## Exercise
-
-Add a runtime test for decoding.
+## Exercise: add runtime test for decode
 
 ## Correctness tests
 
 Testing manually works but is time-consuming and error prone - might forget to run a test.
+
 Write down set of test steps so won't forget. 
+
 Still time-consuming.
 
     def test(self):
         print "SOS is ", self.encode('SOS')
         print "...---... is ", self.decode('... --- ...')
 
-Extend UI to invoke:
+Extend UI.
 
     while True:
 
@@ -105,7 +107,7 @@ Remove duplicated code:
     def __init__(self):
         self.translator = MorseTranslator()
 
-Test function,
+Test function:
 
 * Set up inputs and expected outputs.
 * Runs function / component on inputs to get actual outputs.
@@ -124,30 +126,30 @@ Verbose, but equivalent, version of `test_encode_sos`.
 
 [xUnit test framework](http://en.wikipedia.org/wiki/XUnit).
 
-`test_` file and function prefix.
+`test_` file and function prefix, `Test` class prefix.
 
     $ nosetests test_morse.py
 
 `.` denotes successful tests.
 
-Remove `__main__ code.
+Remove `__main__`.
 
     $ nosetests test_morse.py
 
 xUnit test report, standard format, convert to HTML, present online.
 
-    $ nosetests --with-xunit test_dna.py
+    $ nosetests --with-xunit test_morse.py
     $ cat nosetests.xml
 
-## Propose some more tests. 
+## Exercise: propose some more tests
 
-Consider,
+Consider:
 
 * What haven't we tested for so far? 
 * Have we covered all possible strings?
 * Have we covered all possible arguments?
 
-Propose examples and add to Etherpad.
+Examples.
 
     encode('sos')
     encode('')
@@ -155,9 +157,9 @@ Propose examples and add to Etherpad.
     encode('1 + 2 = 3')
     decode('...---...')
 
-Implement examples.
+## Exercise: implement examples
 
-Tests for illegal arguments:
+Tests for illegal arguments.
 
     def test_encode_illegal(self):
         try:
@@ -166,7 +168,7 @@ Tests for illegal arguments:
         except KeyError:
             assert True
 
-Alternatively:
+Alternative.
 
     from nose.tools import assert_raises
 
