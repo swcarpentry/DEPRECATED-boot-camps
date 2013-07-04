@@ -202,7 +202,7 @@ Power of well-defined modular components with well-defined interfaces,
 
  * Bolt together to create powerful computational and data processing workflows.
  * Good design principle applicable to programming - Python modules, C libraries, Java classes - modularity and reuse.
- * "little pieces loosely joined".
+ * "little pieces loosely joined" - `history` + `grep` = function to search for a command.
 
 ## Exercise - pipes
 
@@ -266,7 +266,7 @@ Save retyping.
     #!/bin/bash
     DATE=`date`
     echo "Processing date: $DATE"
-    for PDB in `find . -name '*.pdb'`; do
+    for PDB in `find . -name "*.pdb"`; do
         echo $PDB
     done
     echo "Processing completed!"
@@ -279,15 +279,17 @@ Save retyping.
 
 Edit `protein_filter.sh` so that it
 
-* Has variables `ATOM` with value `"H"` and `PDB_EXT` with value `"pdb"`.
+* Has variables `ATOM` with value `'H'` and `PDB_EXT` with value `'pdb'`.
 * For each `.pdb` file it prints the file name and a count of the number of hydrogen atoms in that file.
+* Double-quotes are used in the `find` expression as this means shell variables are expanded.
 
-You will need parts of your comm and from the previous exercise.
+You will need parts of your command from the previous exercise.
 
 * Edit protein_filter.sh so that it takes the atom value from the command-line e.g.
 
-    $ ./protein_filter.sh “H”
-    $ ./protein_filter.sh “C”
+
+    $ ./protein_filter.sh H
+    $ ./protein_filter.sh C
 
 `$1` provides access to the first command-line argument.
 
@@ -357,16 +359,18 @@ Top tip: If preparing bundles of your software put the version number or a date 
 
     $ ls -l
     $ gzip pdb.tar
+    $ gunzip pdb.tar.gz
 
-    $ gunzip pdb.tar.fx
-
+    $ ls -l pdb.zip
     $ md5sum pdb.zip
 
 Top tip: when putting packages up for download also put up the file size and MD5 sum so people can check they've not been tampered with.
 
 ## Download files via command-line
 
-    $  wget --output-document=bbc.html http://news.bbc.co.uk
+[Primary Care Trust Prescribing Data - April 2011 onwards](http://data.gov.uk/dataset/primary-care-trust-prescribing-data-april-to-june-2011)
+
+    $  wget http://www.ic.nhs.uk/catalogue/PUB02342/prim-care-trus-pres-data-apr-jun-2011-dat.csv
 
 ## script
 
@@ -387,26 +391,27 @@ Turn into blog or tutorial.
 
 Dr. Drang, [More shell, less egg](http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/), December 4th, 2011.
 
-Common words problem: read a text file, identify the N most frequently-occurring words, print out a sorted list of the withs with their frequences.
+Common words problem: read a text file, identify the N most frequently-occurring words, print out a sorted list of the words with their frequences.
 
 10 plus pages of Pascal ... or ... 1 line of shell 
 
-    $ nano words.sh < README.md 22
+    $ nano words.sh
     tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed ${1}q
-
     $ chmod +x words.sh
     $ nano words.sh < README.md
     $ nano words.sh < README.md 10
 
-"A wise engineering solution would produce-or better, exploit-reusable parts." - Doug McIlroy
+"A wise engineering solution would produce, or better, exploit-reusable parts." - Doug McIlroy
 
 ## Summary
 
 Shell and scripts
 
+* Modular components with specific responsibilities and well-defined APIs.
+* Glue together into powerful computational and data processing pipelines.
 * Reduce errors by reusing tried-and-tested components.
-* String together components into powerful computational and data processing pipelines.
-* Avoid reinventing the wheel.
+* Reduce errors by automation - history, shell scripts.
+* Don't reinvent the wheel.
 * Free up time to do research.
 
 ## Links
@@ -420,9 +425,18 @@ Shell and scripts
 
     grep -w 'H' *pdb > hydrogen.txt
 
+Check attendees all have same result.
+
+    wc hydrogen.txt
+
 ### find
 
     cat `find . -name '*.pdb'` > proteins.txt
+
+Check via comparing expected to actual result - lookahead to testing.
+
+    wc pdb/*.pdb
+    wc proteins.txt
 
 ### Pipes
 
