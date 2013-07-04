@@ -102,7 +102,7 @@ Commit identifier (AKA revision number) uniquely identifies the changes made in 
 
 Provide commit message via command-line.
 
-    $ git commit -m "Create data RFC from template."
+    $ git commit -m "Create data RFC from rfc-template.md."
 
 Edit.
 
@@ -129,7 +129,7 @@ Edit.
 Modified - changed but not staged or commited.
 
     $ git add data-rfc.md
-    $ git commit -m "Added skeleton content."
+    $ git commit -m "Added title, authors, overview, points, references" data-rfc.md 
 
 Top tip: good commits are atomic. Code should be reviewable in an hour.
 
@@ -142,14 +142,17 @@ What we know about software development - code reviews should be about 60 minute
 
 Use wget to pull your photo from the web or find a suitable alternative (call it me.jpg or use whatever extension).
 
+    $ wget http://software-carpentry.org/img/bootcamps/2012-12-uta.png
+    $ mv 2012-12-uta.png > authors.png
     $ cd ..
 
 Add hyper-link.   
 
-    ![Me](images/me.jpg "This is me!")
+    ![Group photo](images/authors.png "This is us!")
 
     $ git add images
-    $ git commit -m "Added an images directory and image of me."
+    $ git commit -m "Added an images directory and image of authors." images
+    $ git commit -m "Added link to image of authors." data-rfc.md
 
 Top tip: Commit anything that cannot be automatically recreated e.g. `.tex`, `.java`, `.py`, `.c`, not `.pdf`, `.dvi`, `.dll`, `.jar`, `.exe`. Reduce risk of source-binary divergence.
 
@@ -185,7 +188,13 @@ Undo and redo for directories and files.
 
 Top tip: Commit often increases the granularity of "undo". 
 
-DropBox and GoogleDrive also preserve every version, they delete old versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for old versions to be stored for longer but you have to pay for this. Using revision control the only bound is space available!
+DropBox and GoogleDrive also preserve every version, they delete old versions after 30 days, or, for GoogleDrive, 100 revisions. 
+
+DropBox allows for old versions to be stored for longer but you have to pay for this. 
+
+Using revision control the only bound is space available!
+
+Commit changes to sets of files and rollback to exact state.
 
 ### Tags
 
@@ -315,7 +324,7 @@ Push `master` branch to BitBucket:
     $ git remote add origin https://USERNAME@bitbucket.org/USERNAME/bootcamp.git
     $ git push -u origin --all
 
-`origin` is an alias for repository URL.
+`origin` is an alias for repository URL. `-u` sets local repository to track remote repository.
 
 GitHub, click Code tab and click Network tab.
 
@@ -393,9 +402,11 @@ Make changes to same lines, add, commit.
 
     $ git push
 
-Push fails. Pull down changes made to remote repository.
+Push fails. Fetch changes made to remote repository.
 
-    $ git pull
+    $ git fetch
+    $ git diff origin/master
+    $ git merge origin/master
 
 Merge done file-by-file, line-by-line. Conflict - file has two changes affecting the same line.
 
@@ -414,8 +425,12 @@ Unmerged.
 Keep local, or keep remote, or combine both. Remove all the mark-up.
 
     $ git add data-rfc.md
-    $ git commit -m "Resolved conflict in data-rfc.md by removing location."
+    $ git commit -m "Resolved conflict in data-rfc.md by ...."
     $ git push
+
+GitHub, click Code tab and click Network tab.
+
+BitBucket, click Source tab and click Commits tab.
 
 DropBox and GoogleDrive don't do this. No work is lost.
 
@@ -433,7 +448,16 @@ Both,
     $ git clone https://github.com/OWNERUSERNAME/bootcamp.git
     $ git clone https://USERNAME@bitbucket.org/USERNAME/bootcamp.git 
 
-Edit same file, add, commit, push, resolve conflicts. Repeat!
+Now:
+
+* Both edit same file, add and commit.
+* Owner push.
+* Partner push, fetch, merge, resolve conflicts (if any), add, commit, push.
+* Owner pull.
+* Both edit same file, add and commit.
+* Owner push, fetch, merge, resolve conflicts (if any), add, commit, push.
+* Partner pull.
+* Repeat! Try adding and editing new files too.
 
 ## More on branching
 
@@ -456,6 +480,7 @@ Change, add, commit.
     $ git checkout master
     $ ls
     $ git merge new_template
+    $ git branch -D new_template
 
 ## Summary
 
@@ -475,6 +500,7 @@ Change, add, commit.
 * [Git commit policies](http://osteele.com/posts/2008/05/commit-policies) - images on what Git commands to with reference to the working directory, staging area, local and remote repositories.
 * [Gitolite](https://github.com/sitaramc/gitolite) - a way for you to host
 your own multi-user Git repositories. Your collaborators send you their public SSH keys then they can pull and push from/to the repositories.
+* [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 * G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M. Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
 
 ## Git hints and tips
