@@ -285,8 +285,7 @@ Edit `protein_filter.sh` so that it
 
 You will need parts of your command from the previous exercise.
 
-* Edit protein_filter.sh so that it takes the atom value from the command-line e.g.
-
+Edit protein_filter.sh so that it takes the atom value from the command-line e.g.
 
     $ ./protein_filter.sh H
     $ ./protein_filter.sh C
