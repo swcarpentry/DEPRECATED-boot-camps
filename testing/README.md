@@ -23,7 +23,7 @@ Runtime tests can make code robust and behave gracefully.
     try:
         print "Encoded is '%s'" % translator.encode(message)
     except KeyError:
-        print 'The input should be a string of a-z, A-Z, 0-9 or space'
+        print "The input should be a string of a-z, A-Z, 0-9 or space"
 
 Exception is caught by the `except` block.
 
@@ -32,7 +32,7 @@ Exception can be converted and passed e.g. if this was deep within a function we
 Can `raise` an exception e.g.
 
     except KeyError:
-        raise ValueError('The input should be a string of a-z, A-Z, 0-9 or space')
+        raise ValueError("The input should be a string of a-z, A-Z, 0-9 or space")
 
 ## Exercise: add runtime test for decode
 
@@ -45,8 +45,9 @@ Write down set of test steps so won't forget.
 Still time-consuming.
 
     def test(self):
-        print "SOS is ", self.encode('SOS')
-        print "...---... is ", self.decode('... --- ...')
+        print "sos is ", self.encode("sos")
+        print "... --- ... is ", self.decode("... --- ...")
+        print "OK"
 
 Extend UI.
 
@@ -60,8 +61,8 @@ Extend UI.
 Automate checking.
 
     def test(self):
-        assert '... --- ...' == self.encode('SOS')
-        assert 'sos' == self.decode('... --- ...')
+        assert "... --- ..." == self.encode("sos")
+        assert "sos" == self.decode("... --- ...")
         print "OK"
 
 `assert` checks whether condition is true and, if not, raises an exception.
@@ -77,14 +78,14 @@ Put test functions in separate file for modularity.
 
         def test(self):
             translator = MorseTranslator()
-            assert '... --- ...' == translator.encode('SOS')
-            assert 'sos' == translator.decode('... --- ...')
+            assert "... --- ..." == translator.encode("SOS")
+            assert "sos" == translator.decode("... --- ...")
+            print "OK"
 
     if __name__ == "__main__":    
 
         test_translator = TestMorseTranslator()
         test_translator.test()
-        print "OK"
 
 Remove test code from `MorseTranslator`.
 
@@ -116,8 +117,8 @@ Test function:
 Verbose, but equivalent, version of `test_encode_sos`.
 
     def test_encode_sos(self):
-        expected = '... --- ...'
-        actual = self.translator.encode('SOS')                     
+        expected = "... --- ..."
+        actual = self.translator.encode("SOS")                     
         assert expected == actual
 
 ## `nose` - a Python test framework
@@ -151,11 +152,11 @@ Consider:
 
 Examples.
 
-    encode('sos')
-    encode('')
-    decode('')
-    encode('1 + 2 = 3')
-    decode('...---...')
+    encode("sos")
+    encode("")
+    decode("")
+    encode("1 + 2 = 3")
+    decode("...---...")
 
 ## Exercise: implement examples
 
@@ -163,7 +164,7 @@ Tests for illegal arguments.
 
     def test_encode_illegal(self):
         try:
-            self.translator.encode('1 + 2 = 3')
+            self.translator.encode("1 + 2 = 3")
             assert False
         except KeyError:
             assert True
@@ -173,12 +174,12 @@ Alternative.
     from nose.tools import assert_raises
 
     def test_encode_illegal(self):
-        assert_raises(KeyError, self.translator.encode, '1 + 2 = 3')
+        assert_raises(KeyError, self.translator.encode, "1 + 2 = 3")
 
 Testing components together:
 
-    assert 'sos' == decode(encode('sos'))
-    assert '... --- ...' == encode(decode('... --- ...'))
+    assert "sos" == decode(encode("sos"))
+    assert "... --- ..." == encode(decode("... --- ..."))
 
 ## Testing in practice
 
@@ -195,6 +196,8 @@ EPCC and the Colon Cancer Genetics Group (CCGG) of MRC Human Genetics Unit at th
 Continuous integration server e.g. [Jenkins](http://jenkins-ci.org/) - detect commit to version control, build, run tests, publish.
 
 [Muon Ion Cooling Experiment](http://www.mice.iit.edu/) (MICE) - Bazaar version control, Python tests, Jenkins, [published online](https://micewww.pp.rl.ac.uk/tab/show/maus).
+
+[Apache Hadoop Common Jenkins dashboard](https://builds.apache.org/job/Hadoop-Common-trunk/)
 
 ## When 1 + 1 = 2.0000001
 
