@@ -1,9 +1,9 @@
 
 # Good Programming Practice - Documenting Code
 
-In the last session you learned how to package code into functions and to package functions into modules (also called libraries). Functions and modules let you easily design, write and package your code so that it is easy to understand and easily reusable. However, to share the code, and really understand what it works, you need to add documentation.
+In the [last session](2_functions_and_modules.md) you learned how to package code into functions and to package functions into modules (also called libraries). Functions and modules let you easily design, write and package your code so that it is easy to understand and easily reusable. However, to share the code, and really understand what it works, you need to add documentation.
 
-You have already seen documentation using using python "help()". For example, lets look at the documentation for the "string" module that we used in the first session.
+You have already seen documentation using python "help()". For example, lets look at the documentation for the "string" module that we used in the [first session](1_lists_and_dictionaries.md).
 
     $ ipython
     $ import string
@@ -53,7 +53,7 @@ Not great... It is very important when programming in any language that we provi
     documentedFunction(a)
         Here is the documentation string for this function
 
-We can do the same thing for the checkmain.py script;
+We can do the same thing for the [checkmain.py](checkmain.py) script;
 
     """checkmain is a simple python script to demonstrate
        hiding the code if the script is imported as a module"""
@@ -104,6 +104,8 @@ We now get better documentation when using help()
 
 ### Exercise 3
 
-Edit your "morse.py" script and add documentation strings for the module and also for all of the functions.
+Edit your [morse.py](2b/example/morse.py) script and add documentation strings for the module and also for all of the functions.
 
-If you are really stuck then there is a completed example script in "3/example/morse.py"
+If you are really stuck then there is a completed example script in [3/example/morse.py](3/example/morse.py)
+
+# [Previous](2_functions_and_modules.md) [Up](python_and_good_programming_practice.md) [Next](4_object_orientation.md) 

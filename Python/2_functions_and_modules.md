@@ -3,7 +3,7 @@
 
 ## Functions
 
-In the last session, you wrote a couple of scripts that could encode and decode messages from Morse code. The scripts are good, but are not very easy to use or reusable. For someone to make use of the scripts, they will have to edit them and copy and paste your code every time they want to encode or decode a message.
+In the [last session](1_lists_and_dictionaries.md), you wrote a couple of scripts that could encode and decode messages from Morse code. The scripts are good, but are not very easy to use or reusable. For someone to make use of the scripts, they will have to edit them and copy and paste your code every time they want to encode or decode a message.
 
 Functions provide a way of packaging code into reusable and easy-to-use components. Lets imagine I have some code to add together two arrays
 
