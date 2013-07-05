@@ -14,7 +14,7 @@ Monday 15th
 * 12:00 Lunch
 * 13:00 Using version control to manage and share information - Mike
 * 15:00 Break
-* 15:30 Python and good programming practice - Chris
+* 15:30 [Python and Good programming practice](Python/python_and_good_programming_practice.md) - Chris
 * 17:30 Close 
 
 Tuesday 16th
