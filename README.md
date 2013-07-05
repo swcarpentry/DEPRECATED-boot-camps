@@ -20,8 +20,8 @@ Monday 15th
 Tuesday 16th
 
 * 09:00 Recap
-* 09:30 Documenting code - Chris
-* 10:30 Program design and object-orientation (inc. break) - Chris
+* 09:30 [Documenting code](3_documenting_code.md) - Chris
+* 10:30 [Object-orientation](4_object_orientation.md) and [Program Design](5_matplotlib.md) (inc. break) - Chris
 * 12:30 Lunch
 * 13:30 How (and how much) to test software - Mike
 * 15:00 Break
