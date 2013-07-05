@@ -179,4 +179,8 @@ When you have finished, test that your Encryptor can decrypt its own encrypted m
 
 If you get really stuck, then you can take a look at the completed example in [4/example/encryptor.py](4/example/encryptor.py)
 
+Make sure that you commit your edited script to your Git repository.
+
+    $ git commit -a
+
 # [Previous](3_documenting_code.md) [Up](python_and_good_programming_practice.md) [Next](5_matplotlib.md) 

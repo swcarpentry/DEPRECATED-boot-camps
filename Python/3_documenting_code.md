@@ -108,4 +108,8 @@ Edit your [morse.py](2b/example/morse.py) script and add documentation strings f
 
 If you are really stuck then there is a completed example script in [3/example/morse.py](3/example/morse.py)
 
+Make sure that you commit your edited script to your Git repository.
+
+    $ git commit -a
+
 # [Previous](2_functions_and_modules.md) [Up](python_and_good_programming_practice.md) [Next](4_object_orientation.md) 
