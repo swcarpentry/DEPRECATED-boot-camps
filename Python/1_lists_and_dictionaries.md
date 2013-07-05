@@ -372,7 +372,7 @@ You have just received the Morse code message in the script [1b/decode.py](1b/de
 
 You should find a copy of this script in your directory (in [1b/decode.py](1b/decode.py)).
 
-Use what you have learned about lists and dictionaries to loop through Morse letters in the Morse code message, and convert them back to English. Note that "letter_to_morse" is a dictionary that goes from letters to Morse code. You will need to first invert this dictionary to let you look up the letter from the Morse code (if you need help, look at "1b/example/invert.py"). Morse code letters are separated by spaces. Use ipython TAB and help() to find a function that will split the message into letters.
+Use what you have learned about lists and dictionaries to loop through Morse letters in the Morse code message, and convert them back to English. Note that "letter_to_morse" is a dictionary that goes from letters to Morse code. You will need to first invert this dictionary to let you look up the letter from the Morse code (if you need help, look at [1b/example/invert.py](1b/example/invert.py)). Morse code letters are separated by spaces. Use ipython TAB and help() to find a function that will split the message into letters.
 
 If you are really stuck, then there is an example completed script available to read in [1b/example/decode.py](1b/example/decode.py).
 
@@ -384,9 +384,6 @@ If you have time, combine your completed "encode.py" and "decode.py" scripts int
 
 When you have finished, commit all of your changes to your Git repository.
 
-NEED TO GIVE INSTRUCTIONS ON HOW TO COMMIT THE CODE
-
-    $ IS THIS RIGHT?
-    $ git commit 1a/encode.py 1b/decode.py
+    $ git commit -a
 
 # [Up](python_and_good_programming_practice.md) [Next](2_functions_and_modules.md)
