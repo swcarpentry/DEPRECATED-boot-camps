@@ -96,7 +96,7 @@ Lets take a look at the help for GuessGame
      |  guess(self, value)
      |      See if the passed value is equal to the secret
 
-"GuessGame", defined in this module is a example of a Class. Classes are used to package up functions with associated data. As you can see in the help(), we can only see the functions defined in the class. There are two functions, "__init__", whic is used to construct a new Object of type GuessGame, and "guess" which is used to guess the secret. As you can see, the first argument to each of these functions is "self". "self" is a specialy variable that is used by the Class to gain access to the data hidden within.
+"GuessGame", defined in this module is a example of a Class. Classes are used to package up functions with associated data. As you can see in the help(), we can only see the functions defined in the class. There are two functions, "__init__", which is used to construct a new Object of type GuessGame, and "guess" which is used to guess the secret. As you can see, the first argument to each of these functions is "self". "self" is a specialy variable that is used by the Class to gain access to the data hidden within.
 
 Lets look again at the source for GuessGame (in [guessgame.py](guessgame.py))
 
@@ -162,7 +162,7 @@ When you have finished, test that the Morse code produced by your class is corre
     $ translator.decode( translator.encode(message) ) == message
     True
 
-If you get really stuck, you can take a look at the completed example in [04/example/morse.py](04/example/morse.py).
+If you get really stuck, you can take a look at the completed example in [4/example/morse.py](4/example/morse.py).
 
 ### Extension
 
@@ -177,6 +177,6 @@ When you have finished, test that your Encryptor can decrypt its own encrypted m
     $ encryptor.decrypt( encryptor.encrypt(message) ) == message
     True
 
-If you get really stuck, then you can take a look at the completed example in [04/example/encryptor.py](04/example/encryptor.py)
+If you get really stuck, then you can take a look at the completed example in [4/example/encryptor.py](4/example/encryptor.py)
 
 # [Previous](3_documenting_code.md) [Up](python_and_good_programming_practice.md) [Next](5_matplotlib.md) 
