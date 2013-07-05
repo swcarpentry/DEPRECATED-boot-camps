@@ -70,7 +70,7 @@ Note also that you can define your function to take as many arguments, and retur
 
 ### Exercise 2a
 
-The file "morse.py" contains the a loop that takes strings from a user, and depending on input, will encode or decode the message from Morse. However, this script is missing the functions "encodeToMorse" and "decodeFromMorse" that are needed to make it work. 
+The file [morse.py](morse.py) in your directory contains the a loop that takes strings from a user, and depending on input, will encode or decode the message from Morse. However, this script is missing the functions "encodeToMorse" and "decodeFromMorse" that are needed to make it work. 
 
     import string
     import sys
@@ -121,11 +121,13 @@ The file "morse.py" contains the a loop that takes strings from a user, and depe
             print( "Cannot understand '%s'. Instruction should be 'encode', 'decode' or 'quit'." % line )
 
 
-In the last session you wrote two python scripts, encode.py and decode.py that encoded and decoded from python. Using the code you wrote, edit "morse.py" and add in the missing "encodeToMorse" and "decodeFromMorse" functions.
+In the last session you wrote two python scripts, [encode.py](1a/example/encode.py) and [decode.py](1b/example/decode.py) that encoded and decoded from python. Using the code you wrote, edit [morse.py](morse.py) and add in the missing "encodeToMorse" and "decodeFromMorse" functions.
 
-If you are really stuck, there is an example completed script in "2a/example/morse.py"
+If you are really stuck, there is an example completed script in [2a/example/morse.py](2a/example/morse.py)
 
-Once you have finished, commit your changed "morse.py" script to your Git repository.
+Once you have finished, commit your changed [morse.py](morse.py) script to your Git repository.
+
+    # git commit -a
 
 ## Modules
 
@@ -136,7 +138,7 @@ Functions are great for organising your software into self-contained, reusable b
 
 The "import" command has loaded the script, importing all functions, and then running all of the code. If we type "quit" we can exit back to the prompt.
 
-Now at the prompt, I have access to all of the functions and variables contained in "morse.py". These functions are prefixed with the name "morse.", e.g.
+Now at the prompt, I have access to all of the functions and variables contained in [morse.py](2a/example/morse.py). These functions are prefixed with the name "morse.", e.g.
 
     $ morse.[TAB]
     morse2a.decodeFromMorse  morse2a.letter_to_morse  morse2a.morse_to_letter  morse2a.string
@@ -150,7 +152,7 @@ I can call the encode and decode functions from the prompt
     $ morse.decodeFromMorse(".... . .-.. .-.. --- / .-- --- .-. .-.. -..")
     'hello world'
 
-While this is great, it was quite annoying that the actual code in "morse.py" was run when we imported the function. We can stop this from happening by using a python hidden variable. Hidden
+While this is great, it was quite annoying that the actual code in [morse.py](2a/example/morse.py) was run when we imported the function. We can stop this from happening by using a python hidden variable. Hidden
 variables begin with one or two underscores, and we can list them all using ipython TAB
 
     $ _[TAB]
@@ -165,7 +167,7 @@ We want the one called "__name__"
     $ __name__
     '__main__'
 
-This gives the name of the current function or module. The top level function is called "__main__". To stop the code in our morse.py script from running, we just need to make sure that it is only run if the value of "__name__" is "__main__". For example, the checkmain.py script does exactly that;
+This gives the name of the current function or module. The top level function is called "__main__". To stop the code in our morse.py script from running, we just need to make sure that it is only run if the value of "__name__" is "__main__". For example, the [checkmain.py](checkmain.py) script does exactly that;
 
     def addArrays(x, y):
         z = []
@@ -203,8 +205,12 @@ It is extremely good programming practice to write all of your scripts as if the
 
 ### Exercise 2b
 
-Edit your "morse.py" script so that it can be re-used as a module. Do this by adding in an 'if __name__ == "__main__":' check.
+Edit your [morse.py](morse.py) script so that it can be re-used as a module. Do this by adding in an 'if __name__ == "__main__":' check.
 
-If you are really stuck, there is an example completed script in "2b/example/morse.py".
+If you are really stuck, there is an example completed script in [2b/example/morse.py](2b/example/morse.py).
 
-Make sure that you commit your edited "morse.py" script to your Git repository.
+Make sure that you commit your edited script to your Git repository.
+
+    $ git commit -a
+
+# [Previous](1_lists_and_dictionaries.md) [Up](python_and_good_programming_practice.md) [Next](3_documenting_code.md) 
