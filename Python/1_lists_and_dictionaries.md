@@ -10,12 +10,14 @@ Writing a program involves creating and manipulating data, which are held in var
     $ a = 42
     $ b = 65
     $ a + b
+    107
 
 prints out 107. Equally
 
     $ a = "hello "
     $ b = "world"
     $ a + b
+    'hello world'
 
 prints out "hello world" (note we had to add an extra space after "hello").
 
@@ -30,22 +32,27 @@ Lists, which are also called arrays or vectors, provide a simple list of variabl
 This has created a list containing four strings, "cat", "dog", "horse" and "fish". To access each item we also use square brackets
 
     $ a[0]
+    'cat'
 
 prints "cat", as it accesses the first item in the list.
 
     $ a[1]
+    'dog'
 
 prints "dog", as it accesses the second item in the list. As you can probably guess, a[3] will print "fish" as it accesses the fourth item
 
     $ a[3]
+    'fish'
 
 In python, you can also work from the back of the list, e.g.
 
     $ a[-1]
+    'fish'
 
 prints the last item,
 
     $ a[-2]
+    'horse'
 
 prints the second to last item etc. If you access an item that doesn't exist, then you get an error.
 
@@ -56,6 +63,7 @@ gives an "index out of range" error.
 To get the number of items in the list, we have to use "len"
 
     $ len(a)
+    4
 
 This prints "4", as we have four things in the list.
 
@@ -326,9 +334,11 @@ You can get the starting point for the exercises by cloning them from the Git re
 
 NEED TO GIVE INSTRUCTIONS ON HOW TO DO THIS
 
+    $ git checkout ????
+
 ### Exercise 1a
 
-Here is a script, "1a/encode.py" which contains a dictionary for converting the alphabet to Morse code, and a string that must be converted (quite quickly!).
+Here is a script, [1a/encode.py](1a/encode.py) which contains a dictionary for converting the alphabet to Morse code, and a string that must be converted (quite quickly!).
 
     letter_to_morse = {'a':'.-', 'b':'-...', 'c':'-.-.', 'd':'-..', 'e':'.', 'f':'..-.',
                        'g':'--.', 'h':'....', 'i':'..', 'j':'.---', 'k':'-.-', 'l':'.-..', 'm':'--',
@@ -340,15 +350,15 @@ Here is a script, "1a/encode.py" which contains a dictionary for converting the 
 
     message = "SOS We have hit an iceberg and need help quickly"
 
-You should find a copy of this script in your directory (in "1a/encode.py").
+You should find a copy of this script in your directory (in [1a/encode.py](1a/encode.py)).
 
 Use what you have learned about lists and dictionaries to loop through each letter in the message, look-up the corresponding Morse code for that letter, and join the result together to create a string that contains the Morse code that will be transmitted to save the ship. Note that the dictionary contains only lowercase letters, so you will need to use "TAB" and help() to find a function to convert uppercase letters to lowercase.
 
-If you are really stuck, then there is an example completed script available to read in "1a/example/encode.py".
+If you are really stuck, then there is an example completed script available to read in [1a/example/encode.py](1a/example/encode.py).
 
 ### Exercise 1b
 
-You have just received the Morse code message in the script "1b/decode.py". You need to decode this message back to English.
+You have just received the Morse code message in the script [1b/decode.py](1b/decode.py). You need to decode this message back to English.
 
     letter_to_morse = {'a':'.-', 'b':'-...', 'c':'-.-.', 'd':'-..', 'e':'.', 'f':'..-.', 
                        'g':'--.', 'h':'....', 'i':'..', 'j':'.---', 'k':'-.-', 'l':'.-..', 'm':'--', 
@@ -360,11 +370,11 @@ You have just received the Morse code message in the script "1b/decode.py". You 
 
     message = "... --- ... / .-- . / .... .- ...- . / .... .. - / .- -. / .. -.-. . -... . .-. --. / .- -. -.. / -. . . -.. / .... . .-.. .--. / --.- ..- .. -.-. -.- .-.. -.--"
 
-You should find a copy of this script in your directory (in "1b/decode.py").
+You should find a copy of this script in your directory (in [1b/decode.py](1b/decode.py)).
 
 Use what you have learned about lists and dictionaries to loop through Morse letters in the Morse code message, and convert them back to English. Note that "letter_to_morse" is a dictionary that goes from letters to Morse code. You will need to first invert this dictionary to let you look up the letter from the Morse code (if you need help, look at "1b/example/invert.py"). Morse code letters are separated by spaces. Use ipython TAB and help() to find a function that will split the message into letters.
 
-If you are really stuck, then there is an example completed script available to read in "1b/example/decode.py".
+If you are really stuck, then there is an example completed script available to read in [1b/example/decode.py](1b/example/decode.py).
 
 ### Extension
 
@@ -376,4 +386,7 @@ When you have finished, commit all of your changes to your Git repository.
 
 NEED TO GIVE INSTRUCTIONS ON HOW TO COMMIT THE CODE
 
+    $ IS THIS RIGHT?
+    $ git commit 1a/encode.py 1b/decode.py
 
+# [Up](python_and_good_programming_practice.md) [Next](2_functions_and_modules.md)
