@@ -1,0 +1,9 @@
+{
+    "path" : "~/tmp/swc",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

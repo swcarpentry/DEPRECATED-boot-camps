@@ -1,0 +1,16 @@
+{
+    "contents" : "## this is an ugly script -- not meant to be \"source'd\"\ngDat <- read.delim(\"gapminderDataFiveYear.txt\")\nstr(gDat)\n\n## function that returns estimated intercept and slope from linear regression of\n## lifeExp on year\n## anticipated input: Gapminder data for one country\n## see block03 script for development of this\njFun <- function(z) {\n  yearMin <- min(z$year)\n  jCoef <- coef(lm(lifeExp ~ I(year - yearMin), z))\n  names(jCoef) <- c(\"intercept\", \"slope\")\n  return(jCoef)\n}\n\n## get intercept and slope for each country\nlibrary(plyr)\ngCoef <- ddply(gDat, .(country, continent), jFun)\nstr(gCoef)\ntail(gCoef)\n\n## reordering the continent factor rationally (vs. alphabetically)\nlibrary(lattice)\nbwplot(slope ~ continent, gCoef)\n## alphabetical order is rarely justified\n\ngCoef$continent <-\n  reorder(gCoef$continent, gCoef$slope)\nstr(gCoef)\nbwplot(slope ~ continent, gCoef)\n## much more logical\n## tables and plots sorted this way will give more insight!\n\n## drop Oceania ... too few countries\ngCoef <- subset(gCoef, continent != \"Oceania\")\nlevels(gCoef$continent)\n## Oceania is still there as factor level?!?\nsubset(gCoef, continent == \"Oceania\")\n## but no observation have continent Oceania!\ngCoef <- droplevels(gCoef)\n## gets rid of unused factor levels\nlevels(gCoef$continent)\n\n## how to store data.frames for posterity\n\n## plain text is always good!\n## we slowly built up the arguments below\nwrite.table(gCoef, \"gCoef.txt\", quote = FALSE,\n            row.names = FALSE, sep = \"\\t\")\n\n## bad news about plain text storage:\n## upon re-import via read.table, factors levels revert to alphabetical order\nlevels(gCoef$continent) # rational level order\nrm(gCoef)\ngCoef <- read.delim(\"gCoef.txt\")\nlevels(gCoef$continent) # back to alphabetical!!\n\n## let's re-reorder the continent factor levels\ngCoef$continent <-\n  reorder(gCoef$continent, gCoef$slope)\nbwplot(slope ~ continent, gCoef)\nlevels(gCoef$continent)\n\n## how to store a data.frame in a plain text file WITH factor level order being\n## preserved?\ndput(gCoef, \"gCoef_DPUT.txt\")\ngCoef <- dget(\"gCoef_DPUT.txt\")\nrm(gCoef)\nlevels(gCoef$continent)\n## success!\n## but the file written by DPUT is not, e.g., easy to browse or open in Excel\n\n## if we abandon plain text, there is an R-specific binary format\nsaveRDS(gCoef, \"gCoef.rds\")\nrm(gCoef)\ngCoef <- readRDS(\"gCoef.rds\")\nlevels(gCoef$continent)\n## success!\n\n## bottom line:\n## I usually save as plain text AND via (dput|saveRDS|save)\n## plain text is for long-term, language-agnostic storage\n## *.rds is for my short-/medium-term reuse with R\n\n",
+    "created" : 1368732714851.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2500780431",
+    "id" : "91648DA9",
+    "lastKnownWriteTime" : 1368755188,
+    "path" : "~/tmp/swc/block04_puttingAllTogether.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

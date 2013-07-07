@@ -1,0 +1,18 @@
+{
+    "contents" : "## use File --> Compile Notebook on me !\n## or click notebook button in top right of editor pane\n## will require knitr package to work\n## to install: install.packages(\"knitr\")\nlibrary(lattice)\nstr(gCoef <- readRDS(\"gCoef.rds\"))\nhDat <-\n  droplevels(subset(gCoef,\n                    continent %in% c(\"Asia\", \"Americas\")))\nstr(hDat)\ndotplot(slope ~ continent, hDat)\nt.test(slope ~ continent, hDat)\n\n## old school of doing something similar is this:\n## at start place a \"sink\", like so:\n## sink(\"02_slopeComparisonAsiaVsAmericas_fromSink.txt\")\n## <insert all the comands above here>\n## sink()\n## the file left behind is a (very) poor's man dynamic report",
+    "created" : 1368755476250.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3028755947",
+    "id" : "DD155CD6",
+    "lastKnownWriteTime" : 1368755645,
+    "path" : "~/tmp/swc/02_slopeComparisonAsiaVsAmericas.R",
+    "properties" : {
+        "notebook_author" : "jenny",
+        "notebook_title" : "02_slopeComparisonAsiaVsAmericas",
+        "notebook_type" : "default"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
