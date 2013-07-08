@@ -482,6 +482,14 @@ Change, add, commit.
     $ git merge new_template
     $ git branch -D new_template
 
+## Push the Software Carpentry repository to BitBucket
+
+Create "swc" repository.
+
+    cd ~
+    cd boot-camps
+    git push -u http://bitbucket.org/USERNAME/swc.git 2013-07-bath
+
 ## Summary
 
 * Keep track of changes, a lab notebook for code and documents.
