@@ -484,6 +484,8 @@ Change, add, commit.
 
 ## Push the Software Carpentry repository to BitBucket
 
+Create "swc" repository.
+
     cd ~
     cd boot-camps
     git push -u http://bitbucket.org/USERNAME/swc.git 2013-07-bath
