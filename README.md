@@ -14,14 +14,14 @@ Monday 15th
 * 12:00 Lunch
 * 13:00 [Using version control to manage and share information](version-control/README.md) ([slides](version-control/VersionControl.ppt)) - Mike
 * 15:00 Break
-* 15:30 Python and good programming practice - Chris
+* 15:30 [Python and Good programming practice](Python/python_and_good_programming_practice.md) - Chris
 * 17:30 Close 
 
 Tuesday 16th
 
 * 09:00 Recap
-* 09:30 Documenting code - Chris
-* 10:30 Program design and object-orientation (inc. break) - Chris
+* 09:30 [Documenting code](Python/3_documenting_code.md) - Chris
+* 10:30 [Object-orientation](Python/4_object_orientation.md) and [Program Design](Python/5_matplotlib.md) (inc. break) - Chris
 * 12:30 Lunch
 * 13:30 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Mike
 * 15:00 Break
