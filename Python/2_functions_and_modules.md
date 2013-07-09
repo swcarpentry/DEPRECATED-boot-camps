@@ -211,6 +211,8 @@ If you are really stuck, there is an example completed script in [2b/example/mor
 
 Make sure that you commit your edited script to your Git repository.
 
+    $ git pull
     $ git commit -a
+    $ git push
 
 # [Previous](1_lists_and_dictionaries.md) [Up](python_and_good_programming_practice.md) [Next](3_documenting_code.md) 

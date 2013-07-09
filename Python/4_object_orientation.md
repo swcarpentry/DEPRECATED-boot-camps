@@ -181,6 +181,8 @@ If you get really stuck, then you can take a look at the completed example in [4
 
 Make sure that you commit your edited script to your Git repository.
 
+    $ git pull
     $ git commit -a
+    $ git push
 
 # [Previous](3_documenting_code.md) [Up](python_and_good_programming_practice.md) [Next](5_matplotlib.md) 
