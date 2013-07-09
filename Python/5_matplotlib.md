@@ -228,6 +228,6 @@ There it is...
 
 ## Exercise 5.2
 
-Look through the functions of Axes. Try to draw the cosine and sine graphs using different axis styles and labels. For example look at axes.set_xticks and axes.grid. Try to guess what the function will do before you look at the help. Then, look at the help (e.g. help(axes.grid), and try to use the function. Does it do what you expected? Do you think that this is a good name for the function? What functions would you like to see on Axes, and what would you call them? Is the documentation clear? How would you improve it?
+Look through the functions of Axes. Try to draw the cosine and sine graphs using different axis styles and labels. For example look at axes.set_xticks and axes.grid. Try to guess what the function will do before you look at the help. Then, look at the help, e.g. help(axes.grid), and try to use the function. Does it do what you expected? Do you think that these are good names for the functions? What functions would you like to see on Axes, and what would you call them? Is the documentation clear? How would you improve it?
 
 # [Previous](4_object_orientation.md) [Up](python_and_good_programming_practice.md)
