@@ -92,7 +92,9 @@ Now add "pyplot.show()"
 
 That should display the graph.
 
-## Exercise 5a
+## Exercise
+
+### Exercise 5a
 
 Read through the [pyplot tutorial](http://matplotlib.org/users/pyplot_tutorial.html), typing in each of the examples. Use "help()" in ipython to understand each object and function that you are using.
 
@@ -226,7 +228,9 @@ There it is...
 
     # figure.show()
 
-## Exercise 5.2
+## Exercise
+
+### Exercise 5b
 
 Look through the functions of Axes. Try to draw the cosine and sine graphs using different axis styles and labels. For example look at axes.set_xticks and axes.grid. Try to guess what the function will do before you look at the help. Then, look at the help, e.g. help(axes.grid), and try to use the function. Does it do what you expected? Do you think that these are good names for the functions? What functions would you like to see on Axes, and what would you call them? Is the documentation clear? How would you improve it?
 
