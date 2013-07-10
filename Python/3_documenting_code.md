@@ -110,8 +110,7 @@ If you are really stuck then there is a completed example script in [3/example/m
 
 Make sure that you commit your edited script to your Git repository.
 
-    $ git pull
-    $ git commit -a
+    $ git commit -am "...commit message..."
     $ git push
 
 # [Previous](2_functions_and_modules.md) [Up](python_and_good_programming_practice.md) [Next](4_object_orientation.md) 
