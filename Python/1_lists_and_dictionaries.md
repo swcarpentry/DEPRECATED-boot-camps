@@ -330,11 +330,7 @@ Note that string.join has added a space between each letter. Using help() we can
 
 ## Exercise
 
-You can get the starting point for the exercises by cloning them from the Git repository.
-
-NEED TO GIVE INSTRUCTIONS ON HOW TO DO THIS
-
-    $ git checkout ????
+You should have the files for the exercises as they were downloaded when you cloned the repository. They are located in the "Python" directory.
 
 ### Exercise 1a
 
@@ -384,6 +380,7 @@ If you have time, combine your completed "encode.py" and "decode.py" scripts int
 
 When you have finished, commit all of your changes to your Git repository.
 
-    $ git commit -a
+    $ git commit -am "...commit message..."
+    $ git push
 
 # [Up](python_and_good_programming_practice.md) [Next](2_functions_and_modules.md)

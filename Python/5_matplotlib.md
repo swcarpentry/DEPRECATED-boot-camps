@@ -110,15 +110,15 @@ MatPlotLib is designed as a collection of interacting objects. Important objects
 
 In a good object-orientated design, the functions and capabilities of the objects match their name, and would do what a user would expect would be reasonable. Lets use these objects to draw a graph...
 
-    # ipython
-    # from matplotlib import pyplot
-    # 
-    # figure = pyplot.figure()
-    # axes = figure.add_subplot(111)
+    $ ipython
+    $ from matplotlib import pyplot
+    $ 
+    $ figure = pyplot.figure()
+    $ axes = figure.add_subplot(111)
 
 This has returned the axes of the graph we will plot. We want to set the range and labels of the x- and y-axes. In most object orientated designs, functions that set variables are called "setSomething" or "set_something". Lets use ipython TAB to find all of the things we can set...
 
-    # axes.set[TAB]
+    $ axes.set[TAB]
     axes.set                       axes.set_clip_path             axes.set_transform
     axes.set_adjustable            axes.set_color_cycle           axes.set_url
     axes.set_agg_filter            axes.set_contains              axes.set_visible
@@ -140,7 +140,7 @@ This has returned the axes of the graph we will plot. We want to set the range a
 
 Can you see what needs to be called? How about axes.set_xlim and axes.set_xlabel...
 
-    # help(axes.set_xlim)
+    $ help(axes.set_xlim)
     Help on method set_xlim in module matplotlib.axes:
     
     set_xlim(self, left=None, right=None, emit=True, auto=False, **kw) method of matplotlib.axes.AxesSubplot instance
@@ -150,7 +150,7 @@ Can you see what needs to be called? How about axes.set_xlim and axes.set_xlabel
     
         Set the data limits for the xaxis
     
-    # help(axes.set_xlabel)
+    $ help(axes.set_xlabel)
     Help on method set_xlabel in module matplotlib.axes:
     
     set_xlabel(self, xlabel, fontdict=None, labelpad=None, **kwargs) method of matplotlib.axes.AxesSubplot instance
@@ -162,30 +162,30 @@ Can you see what needs to be called? How about axes.set_xlim and axes.set_xlabel
     
 Ok - We will plot trigonometric functions, so lets set the axes...
 
-    # axes.set_xlim(0,360)
-    # axes.set_ylim(-1,1)
-    # axes.set_xlabel("Angle / degrees")
-    # axes.set_ylabel("Y")
+    $ axes.set_xlim(0,360)
+    $ axes.set_ylim(-1,1)
+    $ axes.set_xlabel("Angle / degrees")
+    $ axes.set_ylabel("Y")
 
 Now lets generate some data for the graph. We will plot sine and cosine graphs. These functions are provided in the "math" module.
 
-    # import math
-    # x = []
-    # sin = []
-    # cos = []
-    # for i in range(0,360):
-    #     x.append(i)
-    #     angle_in_rads = 2 * math.pi * i / 360
-    #     cos.append( math.cos(angle_in_rads) )
-    #     sin.append( math.sin(angle_in_rads) )
+    $ import math
+    $ x = []
+    $ sin = []
+    $ cos = []
+    $ for i in range(0,360):
+    $     x.append(i)
+    $     angle_in_rads = 2 * math.pi * i / 360
+    $     cos.append( math.cos(angle_in_rads) )
+    $     sin.append( math.sin(angle_in_rads) )
 
 We need to plot the data on the axes. Again, lets look for a plot function using ipython TAB...
 
-    # axes.p[TAB]
+    $ axes.p[TAB]
     axes.patch       axes.pcolor      axes.pick        axes.plot        axes.psd         
     axes.patches     axes.pcolorfast  axes.pickable    axes.plot_date   
     axes.pchanged    axes.pcolormesh  axes.pie         axes.properties  
-    # help(axes.plot)
+    $ help(axes.plot)
     Help on method plot in module matplotlib.axes:
     
     plot(self, *args, **kwargs) method of matplotlib.axes.AxesSubplot instance
@@ -226,7 +226,7 @@ Nothing there... Perhaps MatPlotLib uses "show" instead of "display" or "draw"..
 
 There it is...
 
-    # figure.show()
+    $ figure.show()
 
 ## Exercise
 
