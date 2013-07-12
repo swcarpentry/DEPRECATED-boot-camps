@@ -145,6 +145,17 @@ Write a single command that
 
 You will need wild card, exact matches output redirection
 
+Problems with the solution?
+
+ * Chains could be labelled with identifiers `H` and `L` (for heavy and light).
+ * `AUTHOR` contains an initial e.g. `HARRY H CORBETT`.
+
+Important:
+
+ * Understand data.
+ * Review script.
+ * Validate that actual results equal expected results.
+
 ## Searching for files
 
     $ find .                # Find all
