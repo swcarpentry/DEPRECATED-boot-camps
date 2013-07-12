@@ -16,13 +16,13 @@ Here we can post a link to a Google doc for taking notes, etc.
 
 ### Day 1: Tuesday, July 16th
 
-* 9:00-10:30 introduction
-* 10:30-11:00 *coffee break*
-* 11:00-12:30 classes and objects (Python)
-* 12:30-1:30 *lunch*
-* 1:30-3:00 program design
-* 3:00-3:30 *coffee break*
-* 3:30-4:30 testing in Python
+* 9:00-10:00 introduction
+* 10:00-10:30 *coffee break*
+* 10:30-12:00 classes and objects (Python)
+* 12:00-1:00 *lunch*
+* 1:00-2:30 program design
+* 2:30-3:00 *coffee break*
+* 3:00-4:30 testing in Python
 
 
 ### Day 2: Wednesday, July 17th
