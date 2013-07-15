@@ -8,7 +8,8 @@ Utah State University Engineering Building (ENGR) Room 302.
 <a id="logistics"></a> Logistics
 --------------------------------
 
-Here we can post a link to a Google doc for taking notes, etc.
+We'll be taking notes, sharing links, etc. using an Etherpad. You can connect
+to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswcbc>
 
 
 <a id="schedule"></a> Schedule
@@ -44,6 +45,13 @@ are not familiar with Python please work through the material at
 <http://software-carpentry.org/4_0/python/index.html> before the workshop.
 
 
+### Python and iPython Notebook
+
+If you don't have Python and iPython Notebook installed, install the Anaconda 
+Python distribution, which also comes with iPython. Instructions are available 
+here: <http://www.continuum.io/downloads>
+
+
 ### Unix Bash Shell
 
 * If you use Linux or Mac, you're all set. 
@@ -60,3 +68,11 @@ titled "Git" to install Git.
 
 * If you don't have a GitHub account, please go to <https://github.com/> and 
 register for a free account.
+
+
+### SQLite Manager
+
+* SQLite Manager is a Firefox extension that we'll use to interact with SQL 
+databases. Follow the [Software Carpentry 
+instructions](http://software-carpentry.org/bootcamps/setup.html) in the section 
+titled "SQLite Manager"
