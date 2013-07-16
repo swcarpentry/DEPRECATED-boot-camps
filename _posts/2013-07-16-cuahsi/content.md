@@ -9,7 +9,7 @@ Utah State University Engineering Building (ENGR) Room 302.
 --------------------------------
 
 We'll be taking notes, sharing links, etc. using an Etherpad. You can connect
-to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswcbc>
+to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswc>
 
 
 <a id="schedule"></a> Schedule
