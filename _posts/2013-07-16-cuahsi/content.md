@@ -22,9 +22,10 @@ to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswc>
 * 10:00-10:30 *coffee break*
 * 10:30-2:30 program design
     * [IPython notebook](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Invasion%20Percolation%20Program%20Design%20Example.ipynb)
-    * [PowerPoint](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Program%20Design.pptx)
+    * [slides (PowerPoint)](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Program%20Design.pptx)
 * 12:00-1:00 *lunch*
 * 1:00-2:30 classes and objects (Python)
+    * [slides](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/oop/oop.pdf)
     * [time series data file](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/oop/time_series_data.txt)
 * 2:30-3:00 *coffee break*
 * 3:00-4:30 testing in Python
