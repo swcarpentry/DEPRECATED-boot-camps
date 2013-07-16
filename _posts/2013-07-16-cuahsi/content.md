@@ -20,6 +20,8 @@ to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswcbc>
 * 9:00-10:00 introduction
 * 10:00-10:30 *coffee break*
 * 10:30-2:30 program design
+    * [IPython notebook](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Invasion%20Percolation%20Program%20Design%20Example.ipynb)
+    * [PowerPoint](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Program%20Design.pptx)
 * 12:00-1:00 *lunch*
 * 1:00-2:30 classes and objects (Python)
 * 2:30-3:00 *coffee break*
@@ -45,10 +47,10 @@ are not familiar with Python please work through the material at
 <http://software-carpentry.org/4_0/python/index.html> before the workshop.
 
 
-### Python and iPython Notebook
+### Python and IPython Notebook
 
-If you don't have Python and iPython Notebook installed, install the Anaconda 
-Python distribution, which also comes with iPython. Instructions are available 
+If you don't have Python and IPython Notebook installed, install the Anaconda 
+Python distribution, which also comes with IPython. Instructions are available 
 here: <http://www.continuum.io/downloads>
 
 
