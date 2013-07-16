@@ -18,12 +18,14 @@ to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswc>
 ### Day 1: Tuesday, July 16th
 
 * 9:00-10:00 introduction
+    * [slides (PDF)](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/intro/intro.pdf)
 * 10:00-10:30 *coffee break*
 * 10:30-2:30 program design
     * [IPython notebook](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Invasion%20Percolation%20Program%20Design%20Example.ipynb)
     * [PowerPoint](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/invperc/Program%20Design.pptx)
 * 12:00-1:00 *lunch*
 * 1:00-2:30 classes and objects (Python)
+    * [time series data file](https://github.com/bendmorris/swc-materials/raw/master/cuahsi/oop/time_series_data.txt)
 * 2:30-3:00 *coffee break*
 * 3:00-4:30 testing in Python
 
