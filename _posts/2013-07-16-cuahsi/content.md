@@ -45,6 +45,7 @@ to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswc>
 * 12:30-1:30 *lunch*
 * 1:30-3:00 SQL databases
     * [SQL cheat sheet](https://github.com/swcarpentry/boot-camps/blob/master/sql/cheat-sheet.md)
+    * [SQLite database](https://github.com/ethanwhite/swc-bootcamp-material/blob/master/Data/portal_mammals.sqlite)
 * 3:00-3:30 *coffee break*
 * 3:30-4:30 conclusion
 
