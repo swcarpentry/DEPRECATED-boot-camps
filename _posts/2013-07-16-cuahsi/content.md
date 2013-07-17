@@ -36,6 +36,10 @@ to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswc>
 
 * 9:00-10:30 using the shell
     * [shell cheat sheet](https://github.com/swcarpentry/boot-camps/blob/master/shell/shell_cheatsheet.md)
+    * [avg_discharge_rate.py](https://raw.github.com/ethanwhite/swc-bootcamp-material/water/Code/avg_discharge_rate.py)
+    * [data.txt](https://raw.github.com/ethanwhite/swc-bootcamp-material/water/Data/data.txt)
+    * [data_drycreek_2013.txt](https://raw.github.com/ethanwhite/swc-bootcamp-material/water/Data/data_drycreek_2013.txt)
+    * [data_littlebearriver_2013.txt](https://raw.github.com/ethanwhite/swc-bootcamp-material/water/Data/data_littlebearriver_2013.txt)
 * 10:30-11:00 *coffee break*
 * 11:00-12:30 version control with Git
 * 12:30-1:30 *lunch*
