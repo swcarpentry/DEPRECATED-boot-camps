@@ -35,10 +35,12 @@ to the Etherpad here: <https://etherpad.mozilla.org/cuahsiswc>
 ### Day 2: Wednesday, July 17th
 
 * 9:00-10:30 using the shell
+    * [shell cheat sheet](https://github.com/swcarpentry/boot-camps/blob/master/shell/shell_cheatsheet.md)
 * 10:30-11:00 *coffee break*
 * 11:00-12:30 version control with Git
 * 12:30-1:30 *lunch*
 * 1:30-3:00 SQL databases
+    * [SQL cheat sheet](https://github.com/swcarpentry/boot-camps/blob/master/sql/cheat-sheet.md)
 * 3:00-3:30 *coffee break*
 * 3:30-4:30 conclusion
 
