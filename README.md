@@ -1,11 +1,11 @@
 ![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 # Software Carpentry boot camp
-## University of Chicago
-**When:** June 17-18, 2013
+## University of Notre Dame
+**When:** July 18-19, 2013
 
-**Where:** Stuart Hall, Rm 105, 5835 South Greenwood Avenue, Chicago, IL 60637
+**Where:** DeBartolo Hall, Room 140, Moose Krause Circle, South Bend, IN 46556
 
-Please see the boot camp [website](http://swcarpentry.github.io/boot-camps/2013-06-17-chicago/) for the schedule and installation instructions.
+Please see the boot camp [website](http://swcarpentry.github.io/boot-camps/2013-07-18-notredame/) for the schedule and installation instructions.
 
-Please contact [John Blischak](mailto:jdblischak@gmail.com) with any questions.
+Please contact [Randy Olson](mailto:rso@randalolson.com) with any questions.
 
