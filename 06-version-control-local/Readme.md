@@ -55,7 +55,7 @@ Version Control System Tool Options
 ## git clone : we've seen git already
 Yesterday morning, after installing git, we asked everyone to run 
 ```
-git clone http://github.com/swcarpentry/boot-camps -b 2013-06-chicago
+git clone http://github.com/swcarpentry/boot-camps -b 2013-07-18-notredame
 ```
 This created a copy of the software carpentry repository materials on
 each of your hard drives yesterday morning. 
@@ -438,7 +438,7 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Yesterday, you checked out a git type repository at
-https://github.com/USERNAME/boot-camps/tree/2013-06-chicago
+https://github.com/USERNAME/boot-camps/tree/2013-07-18-notredame
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
@@ -446,45 +446,6 @@ repository locally. However, with the right configuration, it will be
 able to pull changes from collaborators to your local machine and push
 your changes to the Original repository. We'll get to that soon, but for
 now, let's **fork** the repository from GitHub.
-
-### Exercise : Cloning a Repository from GitHub
-
-Step 1 : Pick any repository you like. There are many cool projects
-hosted on github. Take a few minutes here, and pick a piece of code.
-
-Step 2 : Clone it. If you didn't find anything cool, you can chose the
-"instructional" Spoon-Knife repository:
-
-    $ git clone git@github.com/octocat/Spoon-Knife.git
-    Cloning into Spoon-Knife...
-    remote: Counting objects: 24, done.
-    remote: Compressing objects: 100% (21/21), done.
-    remote: Total 24 (delta 7), reused 17 (delta 1)
-    Receiving objects: 100% (24/24), 74.36 KiB, done.
-    Resolving deltas: 100% (7/7), done.
-
-Step 3 : You should see many files download themselves onto your
-machine. Let's make sure it worked. Change directories to the source
-code and list the contents.
-
-    $ cd Spoon-Knife
-    $ ls 
-
-## git pull : Pulling updates from the Original Repository
-
-Updating your repository is like voting. You should update early and
-often especially if you intend to contribute back to the upstream
-repository and particularly before you make or commit any changes. This
-will ensure you're working with the most up-to-date version of the
-repository. Updating won't overwrite any changes you've made locally
-without asking, so don't get nervous. When in doubt, update.
-
-    $ git pull 
-    Already up-to-date.
-
-Since we just pulled the repository down, we will be up to date unless
-there has been a commit by someone else to the Original repository in
-the meantime.
 
 ## Resources
 
