@@ -1,7 +1,7 @@
 % Software Carpentry - Overview
-  University of <font color="maroon">Chicago</font>
+  University of Notre Dame
 % Software Carpentry Team
-% June, 2013
+% July, 2013
 
 ## Copy This Lecture!
 <br></br>
@@ -55,10 +55,8 @@
 
 ## Who We Are
 
-* John Blischak  (Uchicago)
 * Randy Olson (MSU)
 * Will Trimble (Argonne)
-* Emily Davenport  (Uchicago)
 
 ## Our Goals for You
 
@@ -78,7 +76,7 @@ Choosing to use a new tool, library, or language can be similar to
 learning a new language:
 </comment>
 
->
+
 + There is a high initial startup cost as you learn vocabulary, grammar, and
 idioms
 <font color=blue>`sum(x*y for x,y in itertools.izip(x_vector, y_vector))`
@@ -123,7 +121,7 @@ SAGE, SymPy and Mathematica as well when they make sense
 
 ## Automate common actions by saving simple blocks of code into **scripts**
 
->
+
 * A script is a set of commands organized into a single file
 * Sometimes it takes a few arguments, but more often there are just
 some parameters at the top of the file to modify
@@ -134,7 +132,7 @@ repeat your actions
 * **Don't repeat commands into your REPL, save them to a script**
 
 ## Refactor commonly used blocks of code into **functions**
->
+
 * Eventually, you will find that your scripts have a lot of repeated code,
 or that you are spending a lot of time adjusting parameters at the top of
 the file
@@ -145,7 +143,7 @@ environment, whether it is bash or Python
 * **Don't repeat code in scripts, refactor them to functions**
 
 ## Group commonly used functions into **libraries**
->
+
 * If you are unlucky enough to have to write a lot of software functions for
 your work, you might want to consider designing and releasing a library so that
 others do not have to share your misfortune
@@ -161,7 +159,6 @@ lifespan than unreleased codes*
 
 ## Basic strategies
 
->
 * Endeavor to use languages and libraries that reduce the complexity of
 your work
 * It is worth installing a complicated or expensive software tool if your
@@ -223,7 +220,7 @@ it
 # Learning Objectives (Shell)
 
 ## Given an operating system with a bash command line interface installed on it:
->
+
 * Start the bash terminal on your operating system
 * Query the bash program's environment
 * Change the bash program's environment
@@ -231,7 +228,7 @@ it
 * Generate directory listings and distinguish between files and directories in listings
 
 ## Given a directory tree containing files, directories, and sample data, and a working directory:
->
+
 *  Generate wildcard expressions to match to sets of files using filename prefixes, filename suffixes, and fixed-length internal wildcards
 *  Determine both absolute and relative paths for a specified file
 *  copy, rename, and delete specified files and directories.
@@ -239,7 +236,7 @@ it
 *  determine location on filesystem of specified executables in the path
 
 ## Given a directory tree containing files, directories, and sample data, and a working directory:
->
+
 *  display manual pages for system commands and executables and interpret manual pages contents to use new command options
 *  construct queries using the find command to list files and directories
 *  use pipes to filter output from commands such as ls and wc into filters such as grep, sort, head, and tail to answer questions like "identify the five largest files in the current directory tree" or "display a list of files in the current tree sorted by number of lines"
@@ -250,7 +247,7 @@ it
 ## Given an IPython shell,
 
 ### Command basic data structures to manipulate data
->
+
 * Do arithmetic with integer and floating-point data
 * Create, search, replace, and combine, and take subsets of string data
 * Create, add to, remove from, and iterate through lists of data
@@ -258,46 +255,42 @@ it
 * Contrast the uses of tuples with lists
 
 ### Control code using Boolean expressions, Conditionals, Loops, Functions, and Scripts
->
+
 * Use truthiness to control program flow
 * Define and use functions to reuse code
 * Run Python scripts from the command line
 
 ## Given a formatted data file or pipeline
->
-* Read the data programmatically using Python
 
-## Given a set of Python computations
->
-* Programmatically save the data as text or Excel data
+* Read the data programmatically using Python
 
 # Learning Objectives (Version Control)
 
 ## Given a project directory containing code and notes associated with your research,
->
+
 * perform a one-time set up to associate the code with a hidden directory
 "repository" for saving prior states
 * record the precise state of the directory as a "snapshot" so that it can be
 accessed in the future.
 
 ## Given the name of a project file in the repository,
->
+
 * retrieve a version of that file from any point in the project's history of
 snapshots.
 
 ## For a particular snapshot of a project,
->
+
 * retrieve the snapshot's author
 * retrieve the date that the snapshot was created
 * retrieve the difference between the snapshot and another snapshot
 
 ## For a project directory that has been modified since its last snapshot
->
+
 * retrieve the difference between the directory and the last snapshot
 * selectively "undo" some or all of the changes from the last snapshot
 
 ## Given access to your collaborator's snapshots of changes for the same project (paper, code, etc...)
->
+
 * compare the difference between your collaborator's latest snapshot and your
 own
 * create a unified history of snapshots that includes both your collaborator's
@@ -306,20 +299,26 @@ changes and your own.
 modified
 
 ## Given a Git version control repository
->
+
 * view the history of snapshots and their "parents"
 * distinguish between the snapshot's identifier and the bookmarks "branches"
 that point to them
 * connect the repository to another repository, a "remote", and send and
 retrieve snapshots with your collaborators.
 
-## Schedule 
+## Schedule Available From [Course Website](http://swcarpentry.github.io/boot-camps/2013-07-18-notredame/)
 
 ### Today
 
+* **9:00-12:00** Exploring the Command Line with the Bash Shell
+* **1:00-4:30**  Practical Programming with Python
+* **4:30-5:30** Office Hour
+
+### Tomorrow
+
 * **9:00-12:00** Managing and Collaborating with your Software, Data,
 and Manuscripts with Git
-* **1:00-4:30** Debugging, testing, and numpy/pandas
+* **1:00-4:30** Debugging and testing tools, documentation 
 
 
 # Closing Thoughts

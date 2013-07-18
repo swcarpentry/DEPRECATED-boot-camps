@@ -11,9 +11,9 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/swcarpentry/boot-camps/tree/2013-06-chicago
+    https://github.com/wltrimbl/boot-camps/tree/2013-07-notredame
 
-Click on the directory named `shell`.
+Click on the directory named `01-shell`.
 
 A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
@@ -54,7 +54,7 @@ the data for this test, you will need internet access. Just enter the
 commands:
 
     cd
-    git clone -b 2013-06-chicago https://github.com/swcarpentry/boot-camps.git
+    git clone -b 2013-07-notredame https://github.com/swcarpentry/boot-camps 
 
 This command will grab all of the data needed for this workshop from
 the internet and save it in your home directory.  (We will talk about the `git` command later in the

@@ -45,31 +45,31 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-In step 1, you will make a copy "fork" of our test repository testrepo-2013-06-chicago on github.
+In step 1, you will make a copy "fork" of our test repository testrepo-2013-07-notredame on github.
 
 In step 2, you will make a copy of **your** fork of the repository on your hard drive.
 
 In step 3, you will let git know that in addition to your local copy and your fork on github, there is another github repostitory (called "upstream") that you might want to get updates from.
 
 Step 1 : Go to our
-[repository](https://github.com/wltrimbl/testrepo-2013-06-chicago)
+[repository](https://github.com/wltrimbl/testrepo-2013-07-notredame)
 from your browser, and click on the Fork button. Choose to fork it to your
 username rather than any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone https://github.com/YOU/testrepo-2013-06-chicago.git 
-    $ cd testrepo-2013-06-chicago 
+    $ git clone https://github.com/YOU/testrepo-2013-07-notredame.git 
+    $ cd testrepo-2013-07-notredame 
 Note: YOU is a placeholder for YOUR GITHUB USERNAME.  If git asks you for a password, it really means there isn't any repository at the url that you provided.
 
 Step 3 : 
 
-    $ git remote add upstream https://github.com/USERNAME/testrepo-2013-06-chicago.git
+    $ git remote add upstream https://github.com/USERNAME/testrepo-2013-07-notredame.git
     $ git remote -v
-    origin  https://github.com/YOU/testrepo-2013-06-chicago.git (fetch)
-    origin  https://github.com/YOU/testrepo-2013-06-chicago.git (push)
-    upstream        https://github.com/wltrimbl/testrepo-2013-06-chicago.git (fetch)
-    upstream        https://github.com/wltrimbl/testrepo-2013-06-chicago.git (push)
+    origin  https://github.com/YOU/testrepo-2013-07-notredame.git (fetch)
+    origin  https://github.com/YOU/testrepo-2013-07-notredame.git (push)
+    upstream        https://github.com/wltrimbl/testrepo-2013-07-notredame.git (fetch)
+    upstream        https://github.com/wltrimbl/testrepo-2013-07-notredame.git (push)
 
 All repositories that are clones begin with a remote called origin.
 ### What's going on here?
@@ -79,7 +79,7 @@ The **git remote add** merely defines a nickname and a location that git will be
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original wltrimbl/testrepo-2013-06-chicago 
+want your master branch to track updates in the original wltrimbl/testrepo-2013-07-notredame 
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -92,7 +92,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case USERNAME/testrepo-2013-06-chicago) into your local working copy, you
+this case USERNAME/testrepo-2013-07-notredame) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
@@ -160,9 +160,9 @@ carefully.
 Note, your fork contains a file called Readme.md.  This is a
 standard documentation file that appears rendered on the landing page
 for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/YOU/testrepo-2013-06-chicago/tree/master/README.md).
+fork on github, (https://github.com/YOU/testrepo-2013-07-notredame/tree/master/README.md).
 
-In the testrepo-2013-06-chicago, you'll find a directory called githubids.  
+In the testrepo-2013-07-notredame, you'll find a directory called githubids.  
 We'd like each of you to create a file whose filename is your github id and 
 whose content is a message you might want to send to the bootcamp instructors.
 Use ```git add``` to add your file to the index, and ```git commit``` to 
@@ -266,7 +266,7 @@ alterations,
     Compressing objects: 100% (6/6), done.
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/testrepo-2013-06-chicago.git
+    To git@github.com:username/testrepo-2013-07-notredame.git
 
 ## gitolite
 
