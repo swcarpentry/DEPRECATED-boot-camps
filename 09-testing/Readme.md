@@ -5,9 +5,8 @@
 **Based on materials by Katy Huff, Rachel Slaybaugh, Anthony
 Scopatz, and John Blischak**
 
-**Presented by John Blischak**
-
 ![image](https://github.com/thehackerwithin/UofCSCBC2012/raw/scopz/5-Testing/test_prod.jpg)
+
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
