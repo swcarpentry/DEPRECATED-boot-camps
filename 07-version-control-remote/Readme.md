@@ -45,7 +45,7 @@ fork, others that may be **parallel** to your fork, and so on.
 
 ### Exercise : Fork Our GitHub Repository
 
-In step 1, you will make a copy "fork" of our test repository testrepo-2013-07-notredame on github.
+In step 1, you will make a copy "fork" of our test repository http://github.com/wltrimbl/testrepo-2013-07-notredame on github.
 
 In step 2, you will make a copy of **your** fork of the repository on your hard drive.
 
@@ -64,12 +64,13 @@ Note: YOU is a placeholder for YOUR GITHUB USERNAME.  If git asks you for a pass
 
 Step 3 : 
 
-    $ git remote add upstream https://github.com/USERNAME/testrepo-2013-07-notredame.git
+    $ git remote add upstream https://github.com/wltrimbl/testrepo-2013-07-notredame.git
     $ git remote -v
     origin  https://github.com/YOU/testrepo-2013-07-notredame.git (fetch)
     origin  https://github.com/YOU/testrepo-2013-07-notredame.git (push)
     upstream        https://github.com/wltrimbl/testrepo-2013-07-notredame.git (fetch)
     upstream        https://github.com/wltrimbl/testrepo-2013-07-notredame.git (push)
+    $
 
 All repositories that are clones begin with a remote called origin.
 ### What's going on here?
@@ -92,7 +93,7 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case USERNAME/testrepo-2013-07-notredame) into your local working copy, you
+this case wltrimbl/testrepo-2013-07-notredame) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
@@ -136,13 +137,23 @@ that there is an opportunity to resolve conflicts before pushing to the
 remote.
 
 ### Exercise : Push a change to github
-We'll talk about conflicts later, but first, since we have no conflicts
-and are up to date, we can make a minor change and send our changes to
+We'll talk about conflicts later, but first, let's make a small change
+that won't have any conflicts and send our changes to
 your fork, the "origin."
 
+1. Create a file in the `messages` directory whose filename is your github
+id.  (This is to ensure no conflicts!)  Add a line of text, perhaps a 
+description of how you use / how you expect to use programming in your
+work.
+2.  commit your change with `git add <USERNAME>` and `git commit`
+
+3.  Update your fork ("origin") with your new changes:
     $ git push origin master
 
 This will update your github fork with any changes you've committed.
+Once you do this, you can see your changes on the github web interface
+to your repository, along with the time you made the change and 
+your commit message.
 
 If you have permission to push to the upstream repository, sending
 commits to that remote is exactly analagous.
@@ -151,6 +162,22 @@ commits to that remote is exactly analagous.
 
 In the case of the upstream push, new developer accounts will not allow
 this push to succeed. You're welcome to try it though.
+
+There is now a hierarchy of git repositories.  There was the upstream
+repository that you can't write to, there is your fork of that repository
+that you have updated, and there is the local copy on your hard drive.
+
+## github pull requests 
+
+One protocol for updating repositories that we use at software carpentry
+is the "pull request."   This is a bundle of updates to the repository 
+that can be accepted and merged into the upstream repository or rejected
+and not merged.  If you would like to share your changes with the
+upstream repository, click the green "compare and review" button, and
+github will show you a summary of your commits.  If you then 
+click on "Click to create a pull request for this comparison," your
+request will be sent to the upstream repository for acceptance or 
+rejection.
 
 ## git merge : Conflicts
 
@@ -267,6 +294,20 @@ alterations,
     Writing objects: 100% (6/6), 762 bytes, done.
     Total 6 (delta 2), reused 0 (delta 0)
     To git@github.com:username/testrepo-2013-07-notredame.git
+
+## github pull 
+Now that lots of us created files and put in pull requests, 
+we begin to suspect that the upstream repository might have
+new content and we are out of date. Try 
+    $ git pull upstream master
+to fetch, merge, and commit the changes from upstream repository--
+including all the pull requests that we added earlier. 
+In this way each of our hard drives can be updated by things 
+that all the rest of us are working on.  
+But now our forks -- on github -- are out of date.  We can push 
+to update those
+    $ git push origin master
+And all is synchronized. 
 
 ## gitolite
 

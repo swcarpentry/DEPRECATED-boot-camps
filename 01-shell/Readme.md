@@ -1,7 +1,6 @@
 # The Shell
 
 **Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
-**Edited and presented by Emily Davenport**
 
 # What is the shell? How do I access the shell?
 
