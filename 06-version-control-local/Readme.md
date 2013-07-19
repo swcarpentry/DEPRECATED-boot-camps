@@ -55,16 +55,18 @@ Version Control System Tool Options
 ## git clone : we've seen git already
 Yesterday morning, after installing git, we asked everyone to run 
 ```
-git clone http://github.com/swcarpentry/boot-camps -b 2013-07-18-notredame
+git clone http://github.com/swcarpentry/boot-camps -b 2013-07-notredame --single-branch 
 ```
 This created a copy of the software carpentry repository materials on
-each of your hard drives yesterday morning. 
+each of your hard drives yesterday morning.   If you did this yesterday, 
+you don't need to to it again.
 
-Last night, the instructors changed the content on github, so now 
+*But*, last night, the instructors changed the content on github, so now 
 the repositories on all our hard drives are out of date.
  
 ```
-cd ~/boot-camps
+cd 
+cd boot-camps
 git pull
 ```
 will try to retrieve all of last night's changes and update your local
@@ -344,7 +346,7 @@ There are some useful flags for this command, such as
     
 ## git branch : Listing, Creating, and Deleting Branches
 
-Branches are parallel instances of a repository that can be edited and
+Branches are pointers to a version of repository that can be edited and
 version controlled in parallel. They are useful for pursuing various
 implementations experimentally or maintaining a stable core while
 developing separate sections of a code base.
@@ -438,14 +440,19 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Yesterday, you checked out a git type repository at
-https://github.com/USERNAME/boot-camps/tree/2013-07-18-notredame
+https://github.com/swcarpentry/boot-camps.git
 
 When you clone the Original repository, the one that is created on your
-local machine is a copy, and will behave as a fully fledged local
-repository locally. However, with the right configuration, it will be
-able to pull changes from collaborators to your local machine and push
-your changes to the Original repository. We'll get to that soon, but for
-now, let's **fork** the repository from GitHub.
+local machine is a copy, and contains both the contents and the history.
+With the right configuration, you can share your changes with your 
+collaborators and import changes that others made in their versions.  You
+can also update the Original repository with your changes.
+
+We'll get to that soon, but for now, let's move on to a fairly
+easy-to-use system for managing repositories -- **github** -- where
+we will **fork** a test repository, make individual changes to it, 
+update the master repository with our changes, and update our local
+copies with everybody's changes.
 
 ## Resources
 
