@@ -1,0 +1,372 @@
+---
+root: ..
+title: Carnegie Mellon University, July 2013
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include bootstrap-header.html %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .brand {
+        background-color: transparent;
+        background-image: url("{{page.root}}/logos/swc-logo.svg");
+        background-repeat: no-repeat;
+        background-size: auto 36px;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" href="{{page.root}}/logos/software-carpentry-avatar-71x71.jpg">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+                <a class="brand" href="#" style="padding: 0px 40px 40px 0px;"></a>
+              </li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#install">Installation</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="https://github.com/swcarpentry/boot-camps/tree/2013-07-cmu">GitHub Repository</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="home" class="hero-unit">
+        <div>
+          <a href="http://software-carpentry.org">
+            <img src="{{page.root}}/logos/software-carpentry-with-hammer.svg" style="float: right; height: 60px;">
+          </a>
+          <h1>Carnegie Mellon<br/>University</h1>
+        </div>
+        <br>
+        <div class="row-fluid">
+          <div class="span6">
+            <p>Location: TBD</p><br />
+            <p>URL for this page: <a href="http://swcarpentry.github.io/boot-camps/2013-07-26-cmu/">http://swcarpentry.github.io/boot-camps/2013-07-26-cmu/</a></p><br />
+            <p>Etherpad Day 1: <a href="https://swcarpentry.etherpad.mozilla.org/1">https://swcarpentry.etherpad.mozilla.org/1</a></p>
+            <p>Etherpad Day 2: <a href="https://swcarpentry.etherpad.mozilla.org/2">https://swcarpentry.etherpad.mozilla.org/2</a></p>
+          </div>
+          <div class="span6" style="text-align: right;">
+            <p>July 26&mdash;27, 2013<br>
+               9:00 AM &mdash; 5:00 PM</p>
+          </div>
+        </div>
+      </div> <!-- hero-unit -->
+
+      <div id="schedule" class="row-fluid">
+        <h1>Schedule</h1>
+        <p class="muted" style="font-style: italic;">Subject to Change</p>
+        <div class="span4">
+          <strong>Day 1</strong>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>8:30 &mdash; 9:00</td>
+                <td style="text-align: right;">Setup Help</td>
+              </tr>
+              <tr>
+                <td>9:00 &mdash; 10:30</td>
+                <td style="text-align: right;">Introduction and Shell Basics</td>
+              </tr>
+              <tr>
+                <td>10:30 &mdash; 12:00</td>
+                <td style="text-align: right;">Version Control and Intro to Git</td>
+              </tr>
+              <tr>
+                <td>12:00 &mdash; 1:00</td>
+                <td style="text-align: right;">Lunch</td>
+              </tr>
+              <tr>
+                <td>1:00 &mdash; 3:30</td>
+                <td style="text-align: right;">Advanced Git</td>
+              </tr>
+              <tr>
+                <td>3:30 &mdash; 5:00</td>
+                <td style="text-align: right;">Intro to Python and IPython Notebook</td>
+              </tr>
+            </tbody>
+          </table>
+          <strong>Day 2</strong>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>9:00 - 12:00</td>
+                <td style="text-align: right;">Python</td>
+              </tr>
+              <tr>
+                <td>12:00 - 1:00</td>
+                <td style="text-align: right;">Lunch</td>
+              </tr>
+              <tr>
+                <td>1:00 - 3:30</td>
+                <td style="text-align: right;">Software Engineering with Python</td>
+              </tr>
+              <tr>
+                <td>3:30 - 4:30</td>
+                <td style="text-align: right;">Scientific Python Basics</td>
+              </tr>
+              <tr>
+                <td>4:30 - 5:00</td>
+                <td style="text-align: right;">Wrap Up</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Coffee and food</h3>
+          <p>
+Coffee and some snacks will be provided.  Please bring your own mug if you want
+coffee.  It's good for the environment (and we don't really have cups).
+          </p>
+
+        </div>
+      </div> <!-- schedule -->
+      <hr>
+      <div>
+        <h1 id="install">Installation</h1>
+
+        <h2>Create a GitHub account</h2>
+        <p>
+        Start by signing up for a (free) account on <a
+          href=https://github.com>GitHub</a>. We will be using GitHub to teach
+        version control with the Git version control system.
+        </p>
+        <p class="alert alert-info">
+        <strong>Note:</strong> A common confusion among students new to Git is
+        that Git and GitHub are <em>not</em> the same thing.  Git is a version
+        control system that we will be teaching, and is software that you run
+        on your computer.  GitHub is a website for hosting Git repositories
+        publicly.
+        </p>
+
+
+        <h2>Installation help</h2>
+        <p>
+        If you need help with installation, please email the instructors at <a
+          href=mailto:info@software-carpentry.org>info@software-carpentry.org</a>.
+        </p>
+
+        <h2>What to install</h2>
+
+        <p>
+        To complete the entire workshop you need several things: a Bash shell,
+        git, a code editor (though any plain text editor will work in a pinch),
+        and a scientific Python installation that includes the <a
+          href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">
+          IPython Notebook</a>, <a href="http://numpy.scipy.org/">NumPy</a>,
+        and <a href="http://matplotlib.org/">matplotlib</a>.
+        </p>
+        <p>
+        In the long run it is better for the student to install all of the
+        software on their own computer.  But even if you plan to install things
+        yourself please download VirtualBox and the virtual machine as a backup
+        (see below). It can sometimes be very difficult to get everything set
+        up correctly&mdash;software installation remains, sadly, one of the
+        most difficult aspects of scientific computing, and the virtual machine
+        works well as a last resort for the sake of following the class. After
+        the class or during breaks the instructors and helpers can help you
+        troubleshoot installation issues on your machine.
+        </p>
+
+        <div class="row-fluid">
+          <div class="span6">
+            <h4 class="well well-small">Bash</h4>
+            <h5>Mac</h5>
+            <p>The default shell in Mac OSX is bash.</p>
+            <h5>Windows</h5>
+            <p>
+            Install <a href="http://msysgit.github.com/">Git Bash</a> following
+            the instructions <a
+              href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>
+            (Git Bash gives you both the Git version control system and the
+            Bash shell in a single package).
+            </p>
+            <h5>Linux</h5>
+            <p>
+            The default shell is usually bash but if not you can get to bash by
+            opening a terminal and typing <code>bash</code>.
+            </p>
+          </div>
+          <div class="span6">
+            <h4 class="well well-small">Git</h4>
+            <h5>Mac</h5>
+            <p>
+            Install <a href="https://developer.apple.com/xcode/">Xcode</a> and
+            the command line tools (from the Download preferences pane) or <a
+              href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">install
+              just git</a>.
+            </p>
+            <h5>Windows</h5>
+            <p>
+            Install <a href="http://msysgit.github.com/">Git Bash</a> following
+            the instructions <a
+              href="https://openhatch.org/missions/windows-setup/install-git-bash">here</a>.
+            </p>
+            <h5>Linux</h5>
+            <p>
+            If git is not already available on your machine you can try to
+            install it via your distro's package manager (e.g. on Debian/Ubuntu
+            run <code>sudo apt-get install git</code>).
+            </p>
+          </div>
+        </div> <!-- row1 -->
+
+        <div class="row-fluid">
+          <div class="span6">
+            <h4 class="well well-small">Code Editor</h4>
+            <p>
+            If you already have a favorite text/code editor please use whatever
+            you are comfortable with.<br /><br />
+            <a href="http://www.sublimetext.com/">Sublime Text</a> is an
+            excellent editor that works on Mac, Windows, and most Linux
+            distributions. It's paid software, but it has an unlimited trial
+            period. There are also some other, platform specific options:
+            </p>
+            <h5>Mac</h5>
+            <p>
+            We recommend <a
+              href="http://www.barebones.com/products/textwrangler/">Text
+              Wrangler</a>, or <a
+              href="https://github.com/textmate/textmate">Text Mate 2</a>.
+            </p>
+            <h5>Windows</h5>
+            <p>
+            <a href="http://notepad-plus-plus.org/">Notepad++</a> is a popular
+            free code editor for Windows.
+            </p>
+            <h5>Linux</h5>
+            <p>
+            <a href="http://kate-editor.org/">Kate</a> and <a
+              href="http://projects.gnome.org/gedit/">gedit</a> are options for
+            Linux users.
+            </p>
+          </div>
+          <div class="span6">
+            <h4 class="well well-small">Python</h4>
+            <h5>Mac & Linux</h5>
+            <p>
+            We recommend the all-in-one scientific Python installer <a
+              href="http://continuum.io/downloads.html">Anaconda</a>.
+            Installation requires using the shell and if you aren't comfortable
+            doing the installation yourself just download the installer and
+            we'll help you at the boot camp.
+            </p>
+            <p>
+            For other options check the Python4Astronomers page on <a
+              href="http://python4astronomers.github.com/installation/python_install.html">
+              installing scientific Python</a>.
+            </p>
+            <h5>Windows</h5>
+            <p>For Windows we recommend the Enthought
+                <a href="https://www.enthought.com/downloads/">Canopy</a>
+                distribution since it seems to work well with Git Bash.</p>
+          </div>
+        </div> <!-- row2 -->
+        <h3>Virtual Machine</h3>
+        <p>
+        To give everyone a consistent, pre-configured environment we provide a
+        Linux virtual machine. However, as it is better for long-term continued
+        use of the software you will learn at this bootcamp it is better to
+        have everything working natively on your machine.  However, the virtual
+        machine is a good last resort to get you up and running at the
+        bootcamp.
+        
+        Install <a href="https://www.virtualbox.org/">VirtualBox</a> and
+        download <a
+          href="http://files.software-carpentry.org/swc_lubuntu.ova">this
+          virtual machine image</a> (<a href="http://is.gd/MosNIh">alternate
+          download</a>).  Load the VM into VirtualBox by doing Import Appliance
+        and loading the .ova file.
+
+        The default username/password to log into the VM is swc/swc.
+        </p>
+
+        <h3>Testing your Installation</h3>
+        <p>
+        Once you've gone through the installation above, please download (save
+        to your disk) <a
+          href="https://raw.github.com/swcarpentry/boot-camps/2013-07-cmu/setup/swc-installation-test-1.py">this
+          Python script</a> and execute it as per the instructions contained in
+        it (at the top). It runs a check on your Python version.  Next,
+        download <a
+          href="https://raw.github.com/swcarpentry/boot-camps/2013-07-cmu/setup/swc-installation-test-2.py">this
+          script</a> and run it in the same way as the previous one.  It
+        performs a set of sanity checks on your system to ensure that things
+        are reasonably well installed, and will provide diagnostics information
+        along with instructions on what to do if anything is missing.
+        </p>
+        <div class="alert alert-info">
+        <p>
+        How to get a command line and run the scripts:
+        </p>
+        <ul>
+          <li>On OSX run the Terminal application.</li>
+
+          <li>
+          On Windows, once you have installed Git Bash start the bash terminal
+          from the desktop shortcut.
+          </li>
+          
+          <li>
+          Before running the scripts, change directories to the path you downloaded
+          them to (for example on OSX this might default to
+          <code>/Users/&lt;your_username&gt;/Downloads</code>).  Either way pay close
+          attention to where you downloaded the files.  To change directories, at the
+          prompt enter: <code>cd /Full/Path/To/Downloads</code>, but using the
+          actual directory path beginning with <code>/</code>.  If you're not sure
+          about this please ask on the mailing list.
+          </li>
+
+          <li>
+          Follow the instructions the script prints at the end (if any).
+          </li>
+        </ul>
+      </div>
+      </div> <!-- installation -->
+      <hr />
+      <div id="contact">
+        <h1>Contact</h1>
+        <p>
+        This workshop will be presented by <a
+          href="mailto:erik.m.bray@gmail.com">Erik Bray</a>, <a
+          href="mailto:joshua.r.smith@gmail.com">Joshua Smith</a>, and <a
+          href="mailto:jon.speicher@icloud.com">Jon Speicher</a> and is
+        organized by <a href="mail:patrick.egan.foley@gmail.com">Patrick
+          Foley</a>.
+
+        Please feel free to contact any of the instructors for setup help--for
+        general questions contact Patrick or <a
+          href="mailto:info@software-carpentry.org">info@software-carpentry.org</a>.
+        </p>
+      </div> <!-- contact -->
+    </div> <!-- /container -->
+
+    {% include footer-javascript.html %}
+
+  </body>
+</html>
+
