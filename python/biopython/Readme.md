@@ -30,7 +30,7 @@ It is dramatically easier to write a program that you will use once and then thr
 ###An anecdote: using python to get and plot data from a web interface###
 One day, a colleague of mine showed me that the MG-RAST website had an interface that would deliver a bundle of data about a dataset in response to an HTTP request.  Specifically, the request 
 http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
-has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  (The data bundle may not display conveniently in all browsers, but there's a lot of good data in there, encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
+has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  The data bundle may not display conveniently in all browsers, but there's a lot of good data in there, encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
 Fortunately, there is a python module to painlessly parse JSON into a python dict of dict.
 The script `metagenome_statistics-example.py` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spend my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
 
@@ -105,7 +105,6 @@ Once you have the sequences, you can convert them to FASTA, concatenate the FAST
 ### Iterating through data records ###
 
 Biopython provides a variety of methods for stepping through data sources one record at a time.  There is variety in the places we
-can get the data from, variety in the data types, and variety in the procedures used to access the data.  
 
 * Data sources can be web interfaces, filenames, or file handles.  
 
@@ -346,7 +345,7 @@ Some institutions make raw sequence data available by FTP, but the sequence arch
 The NCBI offers a guide to downloading data here http://www.ncbi.nlm.nih.gov/books/NBK47540/
 which includes links to downloading the *SRA toolkit*. 
 Linux:  http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=std
-Mac and Windows precompiled binaries: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software
+You can download precompiled binaries for Mac and Windows here: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software
 
 The sequence read archive maintains its own formats, and its own library of programs to get data out of the SRA format.  The options for the utilities (and the formats themselves) change from time to time, so it is helpful to update update your copy of the SRA toolkit a few times a year.
 
