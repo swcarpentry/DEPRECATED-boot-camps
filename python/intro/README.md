@@ -23,9 +23,9 @@ Useful Python Links
  - Global Module Index
    - Built in modules like os, sys, datetime, math, random...
    - [http://docs.python.org/modindex.html](http://docs.python.org/modindex.html)
+
  - Built-in Functions
-   - Built-in, always available functions like open, range, enumerate,
->     zip...
+   - Built-in, always available functions like open, range, enumerate, zip...
    - [http://docs.python.org/library/functions.html](http://docs.python.org/library/functions.html)
 
  - String Formatting
@@ -33,21 +33,29 @@ Useful Python Links
 
 ### Python in Science
 
- - [NumPy](http://numpy.scipy.org/)
+ - [NumPy](http://numpy.scipy.org)
    - Fast arrays, used by almost every scientific Python package
 
- - [SciPy](http://www.scipy.org/)
+ - [SciPy](http://www.scipy.org)
    - Minimization, fitting, solvers, statistics, and more
 
- - [matplotlib](http://matplotlib.sourceforge.net/)
+ - [matplotlib](http://matplotlib.sourceforge.net)
    - 2D and 3D plotting, maps
 
- - [AstroPy](http://astropy.org) for astronomy
- - [Biopython](http://biopython.org/wiki/Biopython) for bioinformatics
- - [Sage](http://www.sagemath.org/) for mathematic analysis
- - [SymPy](http://sympy.org/en/index.html) for symbolic mathematics
- - [pandas](http://pandas.pydata.org/) data analysis and stats for
-    categorical and time series data
+ - [AstroPy](http://astropy.org)
+   - for astronomy
+
+ - [Biopython](http://biopython.org/wiki/Biopython)
+   - for bioinformatics
+
+ - [Sage](http://www.sagemath.org)
+   - for mathematic analysis
+
+ - [SymPy](http://sympy.org/en/index.html)
+   - for symbolic mathematics
+
+ - [pandas](http://pandas.pydata.org)
+   - data analysis and stats for categorical and time series data
 
 IPython Notebook
 ================
@@ -58,12 +66,12 @@ The Introduction to Python tutorial will be taught using the
 Launching the IPython Notebook
 ------------------------------
 
-1.  At the command line, `cd` to the `2-PythonIntro` directory.
+1.  At the command line, `cd` to the `intro` directory.
 2.  Type `ipython notebook`.
    - This should open a new tab in a web browser. (We suggest Firefox.)
-   - You should see a list of existing notebooks in the `2-PythonIntro`
+   - You should see a list of existing notebooks in the `intro`
      directory. Clicking on one will open it in a new tab.
-3.  Click the `Exercises` notebook to open it in a new tab. This
+3.  Click the `StudentNotes` notebook to open it in a new tab. This
     contains the exercises you will work on today.
 4.  Go back to the first tab opened by ipython and click the 'New
     Notebook' button. You can use this notebook as your scratch pad
@@ -79,4 +87,3 @@ IPython Notebook Commands
  - `control-m d`: delete cell
  - `control-m a`: insert a new cell above the current cell
  - `control-m b`: insert a new cell below the current cell
-
