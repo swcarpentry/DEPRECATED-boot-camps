@@ -1,48 +1,112 @@
 # The Shell
 
-**Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
-
 # What is the shell? How do I access the shell?
 
-The *shell* is a program that presents a command line interface
-which allows you to control your computer using commands entered
-with a keyboard instead of controlling graphical user interfaces
-(GUIs) with a mouse/keyboard combination.
+A *shell* is a program that allows a user to interact with a computer by
+running programs, sending input to those programs (via the keyboard, mouse,
+etc.) and display output from those programs. This typically features programs
+for browsing the filesystem and viewing files and directory contents (programs
+themselves are files with the special feature that they contain code understood
+by the operating system as executable instructions).
 
-Use a browser to open the tutorial on github, located at:
+There are many different shell programs.  On Windows and OSX the GUI-based
+desktop/file browser inteface typically presented users *is* a kind of
+shell--it allows you to double-click on icons representing programs in order to
+execute those programs, and view the files on your computer.
 
-    https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+More traditionally-speaking, however, a shell is a text-based program
+implementing what you've probably heard called a "command line".  The "command
+line" really just refers to a single line on the screen (typically at the
+bottom), in which the user types the name of a program they want to run,
+usually with some options (such as the name of a file they want to open with
+that program).  The program may or may not output some text (or open a window
+if it's a GUI program), then present the user with a new command line.  On most
+modern UNIX shells the command line is represented by a dollar sign:
 
-Click on the directory named `shell`.
+    $
 
-A *terminal* is a program you run that gives you access to the
-shell. There are many different terminal programs that vary across
-operating systems.
+In most tutorials or help on shells, this dollar sign typically signifies that
+one should type everything *after* the dollar sign into the command line.
 
-There are many reasons to learn about the shell. In my opinion, the
-most important reasons are that:
+A shell is just a program among many programs on a computer.  In fact, on older
+machines the first program that runs when connecting a terminal is *not* the
+shell, but rather the login prompt--the screen that asks you for your username
+and password is just another program too.  Upon successful login the login
+prompt then runs that user's preferred shell program.
 
-1.  It is very common to encounter the shell and
-    command-line-interfaces in scientific computing, so you will
-    probably have to learn it eventually
+Bash (which stands for the Bourne Again SHell) is one of many text-based shell
+programs, and is the most popular in use today.  It is the default shell on Mac
+OSX and on most modern Linux systems.  It is also the shell bundled with Git on
+Windows, since it is more effective for working with programs like Git that
+were designed for UNIX-like systems than Windows' own text shell which is based
+on DOS.  Since Bash is just another program, even if it is not your default
+shell you can always run it by entering
 
-2.  The shell is a really powerful way of interacting with your
-    computer. GUIs and the shell are complementary - by knowing both
-    you will greatly expand the range of tasks you can accomplish with
-    your computer. You will also be able to perform many tasks more
-    efficiently.
+    $ bash
 
-The shell is just a program and there are many different shell
-programs that have been developed. The most common shell (and the one
-we will use) is called the Bourne-Again SHell (bash). Even if bash is
-not the default shell, it is usually installed on most systems and can be
-started by typing `bash` in the terminal. Many commands, especially a
-lot of the basic ones, work across the various shells but many things
-are different. I recommend sticking with bash and learning it well.
-([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
+at your command line.  This will replace your previous shell with a bash shell.
+If you type 'exit' that will quit bash and return you to your previous shell.
+You can even run a bash shell inside a bash shell (this can be useful for many
+reasons).
 
-To open a terminal, just single click on the "Terminal" icon on the
-Desktop.
+
+# Shell vs. Terminal
+
+Sometimes you'll hear the words "shell" and "terminal" used interchangeably.
+Indeed, on Mac OSX and most Linux systems the program you run to get a command
+line shell is called "Terminal".  But in the olden days a terminal was
+literally a machine you sat at:
+
+<img alt="A man sitting at a DECwriter teletype terminal" src="https://raw.github.com/swcarpentry/boot-camps/2013-07-cmu/shell/images/decwriter-la36.jpg" />
+
+While the earliest computers were interacted with through primitive devices
+such as switches and lights and oscilloscope.  But very soon it became common
+to interact with mainframe with teletype machines, at which one typed commands
+on a typewriter that converted the keypresses to signals to the computer.  The
+output from the computer then controlled the typewriter to display.  By the
+late 70s these started to be replaced with actual CRT screens, but those too
+were still just dumb terminals that sent input to, and displayed output from
+much bigger multi-user computers over a serial port.
+
+Today use of multi-user computers is less common, and most computers meant for
+humans to do their work on boot into GUI interfaces.  (This is opposed to
+servers and supercomputers that spend most of their time working without human
+interaction and may still just have a text-based shell.)  Since the text-based
+shells we still use today were developed for users of terminals they still
+carry some of that history with them.  So to get to a shell from our GUI
+interfaces we run a Terminal application that *emulates* the old text-based
+terminals of yore and runs the shell program inside them.
+
+
+# Why use a shell?
+
+So why are we teaching you a computing technology that was fashionable when
+bell bottoms were still in?
+
+There are many reasons to learn about the shell. In my opinion, the most
+important reasons are that:
+
+1.  It is very common to encounter the shell and command-line-interfaces in
+    scientific computing.  This is because writing GUI applications is hard,
+    and takes a lot of effort that usually is not germane to producing
+    scientific results.  Much of the software written by and for scientists
+    is text-only and run at a command line.  So it's good to get comfortable
+    with it.
+
+2.  The shell is a really powerful way of interacting with your computer. GUIs
+    and the shell are complementary - by knowing both you will greatly expand
+    the range of tasks you can accomplish with your computer. You will also be
+    able to perform many tasks more efficiently.  The shell is especially good
+    for performing repetitive tasks that are hard to program a GUI to do.
+
+3.  Because of the first two reasons most software written by and for
+    developers (especially in the open source community) are command
+    line-based.  Some of this is driven by the preference of programmers, who
+    are already efficient users of the shell.  And part of it is out of
+    practicality--not much is gained by writing a complicated GUI wrapper to
+    your C compiler itself (though there *are* advantages to GUI-based code
+    editors with built-in interfaces to the compiler).
+
 
 # The Example: Manipulating Experimental Data Files
 
