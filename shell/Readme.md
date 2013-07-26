@@ -59,7 +59,7 @@ literally a machine you sat at:
 
 <img alt="A man sitting at a DECwriter teletype terminal" src="https://raw.github.com/swcarpentry/boot-camps/2013-07-cmu/shell/images/decwriter-la36.jpg" />
 
-While the earliest computers were interacted with through primitive devices
+The earliest computers were interacted with through primitive devices
 such as switches and lights and oscilloscope.  But very soon it became common
 to interact with mainframe with teletype machines, at which one typed commands
 on a typewriter that converted the keypresses to signals to the computer.  The
