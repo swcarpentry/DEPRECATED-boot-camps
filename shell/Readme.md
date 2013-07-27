@@ -508,7 +508,7 @@ If your history looked like this:
 
     259  ls *!
     260  ls /usr/bin/*.sh
-    261  ls *4*1
+    261  ls p*.pdb
 
 then you could repeat command #260 by simply entering:
 
@@ -558,14 +558,14 @@ shell looks for programs to run. If your program is not in this list,
 then an error is printed. The shell ONLY checks in the places listed
 in the `PATH` environment variable.
 
-Navigate to the `shell` directory and list the contents. You will
+Navigate to the `shell-data` directory and list the contents. You will
 notice that there is a program (executable file) called `hello` in
 this directory. Now, try to run the program by entering:
 
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory `/home/swc/boot-camps/shell` is not in the
+because the directory `~/shell-data` is not in the
 `PATH`. You can run the `hello` program by entering:
 
     ./hello
@@ -575,11 +575,11 @@ directory. This tells the shell to run the `hello` program which is
 located right here. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
-    /home/swc/boot-camps/shell/hello
+    ~/shell-data/hello
 
 Or by entering:
 
-    ../shell/hello
+    ../shell-data/hello
 
 When there are no `/` characters, the shell assumes you want to look
 in one of the default places for the program.
@@ -591,27 +591,26 @@ We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
 The easiest way to examine a file is to just print out all of the
-contents using the program `cat`. Enter the following command:
+contents using the program `cat`. Change directories to `~/shell-data/molecules`
+and run:
 
-    cat ex_data.txt
+    cat propane.pdb
 
-This prints out the contents of the `ex_data.txt` file. If you enter:
+This prints out the contents of the `propane.pdb` file. If you enter:
 
-    cat ex_data.txt ex_data.txt
+    cat propane.pdb ethane.pdb
 
-It will print out the contents of `ex_data.txt` twice. `cat` just
-takes a list of file names and writes them out one after another (this
-is where the name comes from, `cat` is short for concatenate).
+It will print out the contents of `propane.pdb` followed by the
+contents of `ethane.pdb` (you can check this by running just
+`cat ethane.pdb`). `cat` just takes a list of file names and writes them
+to the screen out one after another (this is where the name comes from,
+`cat` is short for concatenate).
 
 * * * *
 **Short Exercises**
 
-1.  Print out the contents of the `~/boot-camps/shell/dictionary.txt`
-    file. What does this file contain?
-
-2.  Without changing directories, (you should still be in `shell`),
-    use one short command to print the contents of all of the files in
-    the `/home/swc/boot-camps/shell/data/THOMAS` directory.
+Use the `cat` command with a wildcard to print the contents of all the
+files in `~/shell-data/modules` with a single command.
 
 * * * *
 
