@@ -256,6 +256,14 @@ behavior. For example, `-F` and `-l` are arguments to `ls`.  The `ls`
 program, like many programs, take a lot of arguments. But how do we
 know what the options are to particular commands?
 
+The first way to get a quick overview is to use the `--help` argument
+to a command. Not all commands support this, but it's standard
+practice for well-written command-line programs (something to keep in
+mind if/when you write your own command-line programs).  Usually
+`--help` will give a brief overview of what the commonly used arguments
+do.  But to get a more detailed explanation of how to use a command
+one typically finds more in the "manpage" (short for "manual page").
+
 Most commonly used shell programs have a manual. You can access the
 manual using the `man` program. Try entering:
 
@@ -265,17 +273,23 @@ This will open the manual page for `ls`. Use the space key to go
 forward and b to go backwards. When you are done reading, just hit `q`
 to quit.
 
+Note to Window users: Git Bash does *not* come with man pages by default,
+so the `man` command won't work. But you can always google the man 
+pages for common commands (for example, just google "man ls").
+
 Programs that are run from the shell can get extremely complicated. To
 see an example, open up the manual page for the `find` program,
-which we will use later this session. No one can possibly learn all of
-these arguments, of course. So you will probably find yourself
-referring back to the manual page frequently.
+which we will (time-permitting) use later this session. No one can
+possibly learn all of these arguments, of course. So you will 
+probably find yourself referring back to the manual page frequently.
 
 * * * *
 **Short Exercise**
 
 1. Use the manual page for `ls` to guess what you would expect from
-using the arguments `-l`, '-t', '-r' at the same time.
+using the arguments `-l`, `-t`, `-r` at the same time (remember: Windows
+users just google it or look on your neighbor's screen).
+
 2. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
    * `ls -lS` (equivalent to `ls -l -S`)
    * `ls -lt` (equivalent to `ls -l -t`)
