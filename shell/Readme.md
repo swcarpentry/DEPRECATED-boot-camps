@@ -112,7 +112,7 @@ important reasons are that:
 One very basic command is `echo`. This command just prints text to
 the terminal. Try the command:
 
-    echo Hello, World
+    $ echo Hello, World
 
 Then press enter. You should see the text "Hello, World" printed back
 to you. The echo command is useful for printing from a shell script,
@@ -163,7 +163,7 @@ directories as opposed to files.
 Lets create an empty file using the `touch` command. Enter the
 command:
 
-    touch testfile
+    $ touch testfile
 
 Then list the contents of the directory again. You should see that a
 new entry, called `testfile`, exists. It is colored white meaning that
@@ -187,7 +187,7 @@ bytes. Notice that `testfile` has a size of zero.
 Now, let's get rid of `testfile`. To remove a file, just enter the
 command:
 
-    rm testfile
+    $ rm testfile
 
 The `rm` command can be used to remove files. If you enter `ls` again,
 you will see that `testfile` is gone.
@@ -213,11 +213,11 @@ First run `cd` to get back to your home directory.
 
 * On Mac OSX run:
       
-    curl -O https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/shell-data.zip
+    $ curl -O https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/shell-data.zip
 
 * On Linux and on Windows (in Git Bash) run:
 
-    wget https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/shell-data.zip
+    $ wget https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/shell-data.zip
       
 OSX systems should have `curl`.  Linux will usually have `wget` but might also have `curl`.
 If neither of those work, try downloading the file by entering the URL in your web browser.
@@ -225,7 +225,7 @@ But for doing the exercises make sure to save the file in your home directory!
 
 Now unzip the shell-data.zip file by running:
 
-    unzip shell-data.zip
+    $ unzip shell-data.zip
     
 (Note: Most versions of the `unzip` command are smart enough that if you have a file called
 `shell-data.zip` you can just write `unzip shell-data` and it will fill in the `.zip` extension
@@ -242,7 +242,7 @@ Now, let's move to a different directory. The command `cd` (change
 directory) is used to move around. Let's move into the `shell-data`
 directory. Enter the following command:
 
-    cd shell-data
+    $ cd shell-data
 
 Use the `ls` command to see what is inside this directory. Before we learn
 version control you will want to get comfortable using the `cd` and `ls`
@@ -267,7 +267,7 @@ one typically finds more in the "manpage" (short for "manual page").
 Most commonly used shell programs have a manual. You can access the
 manual using the `man` program. Try entering:
 
-    man ls
+    $ man ls
 
 This will open the manual page for `ls`. Use the space key to go
 forward and b to go backwards. When you are done reading, just hit `q`
@@ -307,17 +307,17 @@ give `ls` the names of other directories to view. Navigate to the
 home directory if you are not already there. Then enter the
 command:
 
-    ls shell-data
+    $ ls shell-data
 
 This will list the contents of the `molecules` directory without
 you having to navigate there. Now enter:
 
-    ls shell-data/molecules
+    $ ls shell-data/molecules
 
 This prints the contents of `molecules/`. The `cd` command works in a
 similar way. Try entering:
 
-    cd shell-data/molecules
+    $ cd shell-data/molecules
 
 and you will jump directly to `molecules/` without having to go through
 the intermediate directory.
@@ -344,7 +344,7 @@ is a directory in `home` which is a directory in `/`.
 
 Now enter a command like:
 
-    cd /home/<your_username>/shell-data/molecules
+    $ cd /home/<your_username>/shell-data/molecules
     
 The `/home/<your_username>/` part will differ for your computer--replace
 it with whatever was returned by the `pwd` command.
@@ -352,7 +352,7 @@ it with whatever was returned by the `pwd` command.
 This jumps to `molecules`. Now go back to the home directory. We saw
 earlier that the command:
 
-    cd shell-data/molecules
+    $ cd shell-data/molecules
 
 had the same effect - it took us to the `shell` directory. But,
 instead of specifying the full path
@@ -385,18 +385,18 @@ home directory is very common. So, in the shell the tilde character,
 `~`, is a shortcut for your home directory. Navigate to the
 `shell-data/molecules` directory, then enter the command:
 
-    ls ~
+    $ ls ~
 
 This prints the contents of your home directory, without you having to
 type the full path. The shortcut `..` always refers to the directory
 above your current directory. Thus:
 
-    ls ..
+    $ ls ..
 
 prints the contents of the `/home/<your_username>/shell-data`. You can chain
 these together, so:
 
-    ls ../../
+    $ ls ../../
 
 prints the contents of your home
 directory. Finally, the special directory `.` always refers to your
@@ -411,7 +411,7 @@ same thing. These shortcuts are not necessary, they are provided for
 your convenience.
 
 
-### Wild cards
+### Wildcards
 
 Navigate to the `~/shell-data/molecules/` directory. If we type `ls`,
 we will see that there are a bunch of files with `.pdb` extensions.
@@ -420,17 +420,17 @@ directory. The `*` character is a shortcut for "everything". Thus, if
 you enter `ls *`, you will see all of the contents of a given
 directory. Now try this command:
 
-    ls *.pdb
+    $ ls *.pdb
 
 This lists every file that ends with the string `.pdb`. This command:
 
-    ls /usr/bin/*.sh
+    $ ls /usr/bin/*.sh
 
 Lists every file in `/usr/bin` that ends in the characters `.sh` 
 (depending on your system there might not be any). And
 this command:
 
-    ls meth*
+    $ ls meth*
 
 lists every file in the current directory whose name begins with `meth`.
 The star can go anywhere.  For example `ls p*.pdb` would list all
@@ -443,8 +443,8 @@ that match the given pattern. In this case, it identified two such
 files. Then, it replaced the `p*.pdb` with the list of files, separated
 by spaces. In other words, the two commands:
 
-    ls p*.pdb
-    ls pentane.pdb propane.pdb
+    $ ls p*.pdb
+    $ ls pentane.pdb propane.pdb
 
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
@@ -468,12 +468,12 @@ lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
 directory name. For example, enter:
 
-    cd s<tab>
+    $ cd s<tab>
 
 The shell will fill in the rest of the directory name for
 `shell-data`. Now enter:
 
-    ls shell-data/molecules/p<tab><tab>
+    $ ls shell-data/molecules/p<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
 are multiple molecules which start with
@@ -498,7 +498,7 @@ is very useful.
 
 You can also review your recent commands with the `history` command.  Just enter:
 
-    history
+    $ history
 
 to see a numbered list of recent commands, including this just issues
 `history` command.  You can reuse one of these commands directly by
@@ -531,12 +531,12 @@ on the computer. A program is just a file that you can *execute*. The
 program `which` tells you the location of a particular program. For
 example:
 
-    which ls
+    $ which ls
 
 Will return "/bin/ls". Thus, we can see that `ls` is a program that
 sits inside of the `/bin` directory. Now enter:
 
-    which find
+    $ which find
 
 You will see that `find` is a program that sits inside of the
 `/usr/bin` directory.
@@ -549,7 +549,7 @@ shell automatically looks. If it can't find the program in any of
 those places, it will print an error saying "command not found". Enter
 the command:
 
-    echo $PATH
+    $ echo $PATH
 
 This will print out the value of the `PATH` environment variable. More
 on environment variables later. Notice that a list of directories,
@@ -562,24 +562,24 @@ Navigate to the `shell-data` directory and list the contents. You will
 notice that there is a program (executable file) called `hello` in
 this directory. Now, try to run the program by entering:
 
-    hello
+    $ hello
 
 You should get an error saying that hello cannot be found. That is
 because the directory `~/shell-data` is not in the
 `PATH`. You can run the `hello` program by entering:
 
-    ./hello
+    $ ./hello
 
 Remember that `.` is a shortcut for the current working
 directory. This tells the shell to run the `hello` program which is
 located right here. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
-    ~/shell-data/hello
+    $ ~/shell-data/hello
 
 Or by entering:
 
-    ../shell-data/hello
+    $ ../shell-data/hello
 
 When there are no `/` characters, the shell assumes you want to look
 in one of the default places for the program.
@@ -594,11 +594,11 @@ The easiest way to examine a file is to just print out all of the
 contents using the program `cat`. Change directories to `~/shell-data/molecules`
 and run:
 
-    cat propane.pdb
+    $ cat propane.pdb
 
 This prints out the contents of the `propane.pdb` file. If you enter:
 
-    cat propane.pdb ethane.pdb
+    $ cat propane.pdb ethane.pdb
 
 It will print out the contents of `propane.pdb` followed by the
 contents of `ethane.pdb` (you can check this by running just
@@ -621,7 +621,7 @@ can probably scroll your terminal window up, but only so far for a very
 large file.  The program, `less`, is useful for this
 case. Enter the following command:
 
-    less ~/shell-data/dictionary.txt
+    $ less ~/shell-data/dictionary.txt
 
 `less` opens the file, and lets you navigate through it. The commands
 are identical to the `man` program (in fact `man` is using `less` as
@@ -665,7 +665,7 @@ in reverse while using `less`.
 Let's say we want to dump all molecules into a single file. We can do
 this with a single command (from within the `molecules/` directory):
 
-    cat *.pdb > ../all_data
+    $ cat *.pdb > ../all_data
 
 This tells the shell to take the output from the `cat *.pdb` command and
 dump it into a new file called `../all_data`. To verify that this
@@ -706,18 +706,18 @@ Pipes are one of the most important concepts in the shell. It's really
 what brings command-line programs together.  As a quick motivating example,
 try concatenating all the molecule files to the screen like we did before:
 
-    cat ~/shell-data/molecules/*.pdb
+    $ cat ~/shell-data/molecules/*.pdb
     
 That was a fair amount of output and probably scrolled off screen. But we
 have a good program for quickly viewing longer files: `less`.  In a previous
 exercise we already wrote all the molecule files to a single file.  In case
 you didn't get it, here it is again:
 
-    cat ~/shell-data/molecules/*.pdb > ~/shell-data/all_data
+    $ cat ~/shell-data/molecules/*.pdb > ~/shell-data/all_data
     
 Now we can view the output with `less`:
 
-    less ~/shell-data/all_data
+    $ less ~/shell-data/all_data
     
 But what if we just wanted to view the output of a command in `less` without
 making all these intermediate files that we may not care to keep (it is
@@ -725,7 +725,7 @@ duplicating data after all)?  That's where power of the pipe comes in.  We
 can "pipe" the output of `cat` *directly* to `less` without making an
 intermediate file:
 
-    cat ~/shell-data/molecules/*.pdb | less
+    $ cat ~/shell-data/molecules/*.pdb | less
     
 Note the use of the "pipe" symbol `|`.  It's similar to the `>` we saw
 before, but rather than outputting to file it passes the data directly
@@ -755,9 +755,69 @@ and which is the longest. But what if we have 6000 of these files and we
 want a quick look?  The `sort` command can do this for us.  Sort the output
 of the `wc -l *.pdb` command we saved in the `lengths` file:
 
-    sort lengths
+    $ sort lengths
     
-Now saw we wanted the 
+But as we learned earlier, we didn't need the `lengths` file--we could just
+pipe `wc` directly to `sort`.  Try piping `wc -l` like we ran before to the
+`sort` command rather than outputting to a file.  Check that the results
+look the same as running `sort` on the `lengths` file.
+
+
+### Chaining Pipes
+
+As mentioned earlier, piping one command to another is like composing two
+functions. And as with mathematical functions, effectively any number of
+commands can be piped together.  In this case output from the command on
+the left always goes to the command on its right.
+
+As an example, `head` and `tail` are two other occastionally useful commands
+for viewing a file, but they just show the first few lines or the last few
+lines of a file respectively.
+
+In particular, we can use `tail -1` (that's the number 1 as an argument) to
+view *only* the last line of a file:
+
+    $ tail lengths
+     107 total
+
+
+
+## Writing a Shell Script
+
+Printing the smallest file seems pretty useful. We don't want to type
+out that long command often. Let's create a simple script, a simple
+program, to run this command. The program will look at all of the
+files in the current directory and print the information about the
+smallest one. Let's call the script `smallest`. We'll use `nano` to
+create this file. Navigate to the `data` directory, then:
+
+    nano smallest
+
+Then enter the following text:
+
+    #!/bin/bash
+    wc * | sort -k 3 -n | head -n 1
+
+Now, `cd` into the `Bert` directory and enter the command
+`../smallest`. Notice that it says permission denied. This happens
+because we haven't told the shell that this is an executable
+file. If you do `ls -l ../smallest`, it will show you the permissions on
+the left of the listing.
+
+Enter the following commands:
+
+    chmod a+x ../smallest
+    ../smallest
+
+The `chmod` command is used to modify the permissions of a file. This
+particular command modifies the file `../smallest` by giving all users
+(notice the `a`) permission to execute (notice the `x`) the file. If
+you enter:
+
+    ls -l ../smallest
+
+You will see that the file name is green and the permissions have changed.
+Congratulations, you just created your first shell script!
 
 
 ## Creating, moving, copying, and removing
@@ -809,45 +869,6 @@ delete a directory using the `-r` option. Enter the following command:
 
     rm -r foo
 
-
-
-
-## Writing a Shell Script
-
-Printing the smallest file seems pretty useful. We don't want to type
-out that long command often. Let's create a simple script, a simple
-program, to run this command. The program will look at all of the
-files in the current directory and print the information about the
-smallest one. Let's call the script `smallest`. We'll use `nano` to
-create this file. Navigate to the `data` directory, then:
-
-    nano smallest
-
-Then enter the following text:
-
-    #!/bin/bash
-    wc * | sort -k 3 -n | head -n 1
-
-Now, `cd` into the `Bert` directory and enter the command
-`../smallest`. Notice that it says permission denied. This happens
-because we haven't told the shell that this is an executable
-file. If you do `ls -l ../smallest`, it will show you the permissions on
-the left of the listing.
-
-Enter the following commands:
-
-    chmod a+x ../smallest
-    ../smallest
-
-The `chmod` command is used to modify the permissions of a file. This
-particular command modifies the file `../smallest` by giving all users
-(notice the `a`) permission to execute (notice the `x`) the file. If
-you enter:
-
-    ls -l ../smallest
-
-You will see that the file name is green and the permissions have changed.
-Congratulations, you just created your first shell script!
 
 # Searching files
 
