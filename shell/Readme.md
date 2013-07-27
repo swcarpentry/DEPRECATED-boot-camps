@@ -413,37 +413,38 @@ your convenience.
 
 ### Wild cards
 
-Navigate to the `~/boot-camps/shell/data/THOMAS` directory. This
-directory contains our hearing test data for THOMAS. If we type `ls`,
-we will see that there are a bunch of files which are just four digit
-numbers. By default, `ls` lists all of the files in a given
+Navigate to the `~/shell-data/molecules/` directory. If we type `ls`,
+we will see that there are a bunch of files with `.pdb` extensions.
+By default, `ls` lists all of the files in a given
 directory. The `*` character is a shortcut for "everything". Thus, if
 you enter `ls *`, you will see all of the contents of a given
 directory. Now try this command:
 
-    ls *1
+    ls *.pdb
 
-This lists every file that ends with a `1`. This command:
+This lists every file that ends with the string `.pdb`. This command:
 
     ls /usr/bin/*.sh
 
-Lists every file in `/usr/bin` that ends in the characters `.sh`. And
+Lists every file in `/usr/bin` that ends in the characters `.sh` 
+(depending on your system there might not be any). And
 this command:
 
-    ls *4*1
+    ls meth*
 
-lists every file in the current directory whose name contains the
-number `4`, and ends with the number `1`. There are four such files:
-`0241`, `0341`, `0431`, and `0481`.
+lists every file in the current directory whose name begins with `meth`.
+The star can go anywhere.  For example `ls p*.pdb` would list all
+`.pdb` files whose name begins with "p" (as it turns out we only have
+one, but there could be many).
 
 So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for filenames
-that match the given pattern. In this case, it identified four such
-files. Then, it replaced the `*4*1` with the list of files, separated
+that match the given pattern. In this case, it identified two such
+files. Then, it replaced the `p*.pdb` with the list of files, separated
 by spaces. In other words, the two commands:
 
-    ls *4*1
-    ls 0241 0341 0431 0481
+    ls p*.pdb
+    ls pentane.pdb propane.pdb
 
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
