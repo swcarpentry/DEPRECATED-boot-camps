@@ -193,30 +193,6 @@ The `rm` command can be used to remove files. If you enter `ls` again,
 you will see that `testfile` is gone.
 
 
-## Changing Directories
-
-Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `boot-camps`
-directory. Enter the following command:
-
-    cd boot-camps
-
-Use the `ls` command to see what is inside this directory.  This
-directory contains all of the material for this boot camp. Now move to
-the directory containing the data for the shell tutorial:
-
-    cd shell
-
-Now use the `ls` command to see what is inside this directory. You
-will see that there is an entry which is green. This means that this
-is an executable. If you use `ls -F` you will see that this file ends
-with a star.
-
-If you enter the `cd` command by itself, you will return to the home
-directory. Try this, and then navigate back to the `shell`
-directory.
-
-
 ## Experimental Data Files
 
 Let's download a small set of sample data files to use in some of our
@@ -254,6 +230,23 @@ Now unzip the molecules.zip file by running:
 (Note: Most versions of the `unzip` command are smart enough that if you have a file called
 `molecules.zip` you can just write `unzip molecules` and it will fill in the `.zip` extension
 automatically.)
+
+
+## Changing Directories
+
+Unzipping the `molecules.zip` file should have created a new directory under
+our home directory called `molecules/`.  Use the `ls -F` command from earlier
+to check this.
+
+Now, let's move to a different directory. The command `cd` (change
+directory) is used to move around. Let's move into the `molecules`
+directory. Enter the following command:
+
+    cd molecules
+
+Use the `ls` command to see what is inside this directory. Before we learn
+version control you will want to get comfortable using the `cd` and `ls`
+commands almost without thinking to move around and explore the file system.
 
 
 ## Arguments
