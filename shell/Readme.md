@@ -107,20 +107,6 @@ important reasons are that:
     your C compiler itself (though there *are* advantages to GUI-based code
     editors with built-in interfaces to the compiler).
 
-
-# The Example: Manipulating Experimental Data Files
-
-We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data from a hearing test. To get
-the data for this test, you will need internet access. Just enter the
-command:
-
-    git clone -b YYYY-MM-PLACE --single-branch git://github.com/swcarpentry/boot-camps.git
-
-This command will grab all of the data needed for this workshop from
-the internet.  (We will talk about the `git` command later in the
-workshop.)
-
 # Let's get started
 
 One very basic command is `echo`. This command just prints text to
@@ -147,12 +133,24 @@ directory. Directories are often called "folders" because of how they
 are represented in GUIs. Directories are just listings of files. They
 can contain other files or directories.
 
-Whenever you start up a terminal, you will start in a special
+Whenever you start up a terminal, it will start your shell in a special
 directory called the *home* directory. Every user has their own home
-directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the `/home/swc`
-directory. This is the home directory for the `swc` user. That is our
-user name. You can always find out your user name by entering the
+directory where they have full access to do whatever they want. This
+is more relevant on multi-user machines used for research ("back in
+the day" all UNIX-like computers were multi-users).  Users can normally
+only read and write files in their home directory--this gives them
+privacy from other users.
+
+* On Linux your home directory is usually `/home/<your_username>`
+* On Mac OSX the home directory is usually `/Users/<your_username>`
+* On Windows the situation is a little more complicated: The closest
+  thing Windows has natively to a home directory is
+  `/C/Documents and Settings/<your_username>`, but if you run a bash
+  shell with Git Bash it also sets up a UNIX-like home directory for
+  you. The exact location of this varies, but it is typically
+  something like `/C/Program Files/Git/home/<your_username>`
+
+You can always find out your user name by entering the
 command `whoami`.
 
 ## File Types
