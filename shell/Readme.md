@@ -780,6 +780,13 @@ view *only* the last line of a file:
     $ tail lengths
      107 total
 
+**Short Excercise**
+
+Now combine the answer to the last exercise with another pipe `|` and `tail -1`
+to get the *shortest* molecule file.  If you're not sure, the answer to the
+last exercise, which sorted the lengths of the files was:
+
+    $ wc -l ~/shell-data/molecules/*.pdb | sort
 
 
 ## Writing a Shell Script
@@ -796,28 +803,50 @@ create this file. Navigate to the `data` directory, then:
 Then enter the following text:
 
     #!/bin/bash
-    wc * | sort -k 3 -n | head -n 1
+    wc -l $1/*.pdb | sort | tail -1
+    
+We'll break this down just a little bit:
 
-Now, `cd` into the `Bert` directory and enter the command
-`../smallest`. Notice that it says permission denied. This happens
+The `#!/bin/bash` doesn't do anything by itself, but it's a special marker
+sometimes called a "hash-bang" (though it goes by other names) that indicates
+to the shell that this file contains a bash shell script.
+
+The `$1` is how we do command-line arguments.  When we run the script like
+(don't actually try it just yet):
+
+    $ ./smallest ~/shell-data/molecules
+    
+It will replace the `$1` with that first argument, and effectivly run the same
+command we've been running all along:
+
+    wc -l ~/shell-data/molecules/*.pdb | sort | tail -1
+    
+But now we can run it for any directory without having to rewrite the whole
+string of commands.
+
+Now go ahead and try to actually run:
+
+    $ ./smallest ~/shell-data/molecules
+
+Notice that it says permission denied. This happens
 because we haven't told the shell that this is an executable
-file. If you do `ls -l ../smallest`, it will show you the permissions on
+file. If you do `ls -l smallest`, it will show you the permissions on
 the left of the listing.
 
-Enter the following commands:
+Enter the following command:
 
-    chmod a+x ../smallest
-    ../smallest
+    $ chmod a+x smallest
 
 The `chmod` command is used to modify the permissions of a file. This
-particular command modifies the file `../smallest` by giving all users
+particular command modifies the file `smallest` by giving all users
 (notice the `a`) permission to execute (notice the `x`) the file. If
 you enter:
 
-    ls -l ../smallest
+    ls -l smallest
 
 You will see that the file name is green and the permissions have changed.
-Congratulations, you just created your first shell script!
+Congratulations, you just created your first shell script!  Go ahead and
+try running it again.
 
 
 ## Creating, moving, copying, and removing
@@ -870,27 +899,33 @@ delete a directory using the `-r` option. Enter the following command:
     rm -r foo
 
 
-# Searching files
+# Searching within files
 
 You can search the contents of a file using the command `grep`. The
 `grep` program is very powerful and useful especially when combined
-with other commands by using the pipe. Navigate to the `Bert`
-directory. Every data file in this directory has a line which says
-"Range". The range represents the smallest frequency range that can be
-discriminated. Lets list all of the ranges from the tests that Bert
-conducted:
+with other commands by using the pipe.  grep is such a popular program
+in the UNIX world that you will sometimes even hear old UNIX geeks
+use it as a verb "I'm grepping for my keys."
 
-    grep Range *
+If you examine one our molecule files you'll notice that it has several
+types of lines in them.  Some of them look like metadata, such as the
+file's author.  But there are many lines beginning with the string
+"ATOM"--these lines contain data about the actual atoms that make up
+the molecules.  Say we *only* want to see the ATOM lines of a file.
+We can use `grep` for this:
 
-* * * *
-**Short Exercise**
+    $ grep "ATOM" ~/shell-data/molecules/ethane.pdb
 
-Create an executable script called `smallestrange` in the `data`
-directory, that is similar to the `smallest` script, but prints the
-file containing the file with the smallest Range. Use the commands
-`grep`, `sort`, and `tail` to do this.
+Of course, that will match the string "ATOM" anywhere on each line of
+the file.  It is also possible to just match lines that *begin* with
+"ATOM", but that's beyond the scope of today's class (it requires
+regular expressions).  For the curious, it looks like this:
 
-* * * *
+    $ grep "^ATOM" ~/shell-data/molecules/ethane.pdb
+
+`grep` is often useful in conjunction with other programs using pipes.
+It's commonplace to pass the output of a command to `grep` to filter
+out only those lines containing a string of interest to us.
 
 
 # Finding files
@@ -908,14 +943,13 @@ from the current directory. Let's exclude all of the directories:
 
 This tells `find` to locate only files. Now try these commands:
 
-    find . -type f -name "*1*"
-    find . -type f -name "*1*" -or -name "*2*" -print
-    find . -type f -name "*1*" -and -name "*2*" -print
+    find . -type f -name "*.pdb"
+    find . -type f -name "*.txt" -or -name "*.pdb" -print
 
 The `find` command can acquire a list of files and perform some
 operation on each file. Try this command out:
 
-    find . -type f -exec grep Volume {} \;
+    find . -type f -exec grep ATOM {} \;
 
 This command finds every file starting from `.`. Then it searches each
 file for a line which contains the word "Volume". The `{}` refers to
@@ -925,48 +959,12 @@ of `grep` for each item the `find` returns.
 
 A faster way to do this is to use the `xargs` command:
 
-    find . -type f -print | xargs grep Volume
+    find . -type f -print | xargs grep ATOM
 
 `find` generates a list of all the files we are interested in,
 then we pipe them to `xargs`.  `xargs` takes the items given to it
 and passes them as arguments to `grep`.  `xargs` generally only creates
 a single instance of `grep` (or whatever program it is running).
-
-* * * *
-**Short Exercise**
-
-Navigate to the `data` directory. Use one `find` command to perform each
-of the operations listed below (except number 2, which does not
-require a `find` command):
-
-1.  Find any file whose name is "NOTES" within `data` and delete it
-
-2.  Create a new directory called `cleaneddata`
-
-3.  Move all of the files within `data` to the `cleaneddata` directory
-
-4.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is ok for the file name to end in `.txt.txt`
-
-Hint: If you make a mistake and need to start over just do the
-following:
-
-1.  Navigate to the `shell` directory
-
-2.  Delete the `data` directory
-
-3.  Enter the command: `git checkout -- data` You should see that the
-    data directory has reappeared in its original state
-
-**BONUS**
-
-Redo exercise 4, except rename only the files which do not already end
-in `.txt`. You will have to use the `man` command to figure out how to
-search for files which do not match a certain name.
-
-* * * *
-
-
 
 ## Bonus:
 
@@ -987,5 +985,3 @@ search for files which do not match a certain name.
 **Regular Expressions**
 
 **Permissions**
-
-**Chaining commands together**
