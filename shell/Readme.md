@@ -213,36 +213,36 @@ First run `cd` to get back to your home directory.
 
 * On Mac OSX run:
       
-      curl -O https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/data/molecules.zip
+    curl -O https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/shell-data.zip
 
 * On Linux and on Windows (in Git Bash) run:
 
-      wget https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/data/molecules.zip
+    wget https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/shell-data.zip
       
 OSX systems should have `curl`.  Linux will usually have `wget` but might also have `curl`.
 If neither of those work, try downloading the file by entering the URL in your web browser.
 But for doing the exercises make sure to save the file in your home directory!
 
-Now unzip the molecules.zip file by running:
+Now unzip the shell-data.zip file by running:
 
-    unzip molecules.zip
+    unzip shell-data.zip
     
 (Note: Most versions of the `unzip` command are smart enough that if you have a file called
-`molecules.zip` you can just write `unzip molecules` and it will fill in the `.zip` extension
+`shell-data.zip` you can just write `unzip shell-data` and it will fill in the `.zip` extension
 automatically.)
 
 
 ## Changing Directories
 
-Unzipping the `molecules.zip` file should have created a new directory under
-our home directory called `molecules/`.  Use the `ls -F` command from earlier
+Unzipping the `shell-data.zip` file should have created a new directory under
+our home directory called `shell-data/`.  Use the `ls -F` command from earlier
 to check this.
 
 Now, let's move to a different directory. The command `cd` (change
-directory) is used to move around. Let's move into the `molecules`
+directory) is used to move around. Let's move into the `shell-data`
 directory. Enter the following command:
 
-    cd molecules
+    cd shell-data
 
 Use the `ls` command to see what is inside this directory. Before we learn
 version control you will want to get comfortable using the `cd` and `ls`
@@ -307,19 +307,19 @@ give `ls` the names of other directories to view. Navigate to the
 home directory if you are not already there. Then enter the
 command:
 
-    ls boot-camps
+    ls shell-data
 
-This will list the contents of the `boot-camps` directory without
+This will list the contents of the `molecules` directory without
 you having to navigate there. Now enter:
 
-    ls boot-camps/shell
+    ls shell-data/molecules
 
-This prints the contents of `shell`. The `cd` command works in a
+This prints the contents of `molecules/`. The `cd` command works in a
 similar way. Try entering:
 
-    cd boot-camps/shell
+    cd shell-data/molecules
 
-and you will jump directly to `shell` without having to go through
+and you will jump directly to `molecules/` without having to go through
 the intermediate directory.
 
 ## Full vs. Relative Paths
@@ -329,29 +329,34 @@ name. Directories can be specified using either a *relative* path a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+command and you should see something like
 
-    /home/swc
+    /home/<your_username>
 
-which is the full name of your home directory. This tells you that you
-are in a directory called `swc`, which sits inside a directory called
-`home` which sits inside the very top directory in the hierarchy. The
+which is the full name of your home directory, as we saw before.
+This tells you that you are in a directory called `<your_username>`,
+which sits
+inside a directory called `home` (or `Users` on OSX, etc.) which sits
+inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `swc` is a
-directory in `home` which is a directory in `/`.
+referred to as the *root directory*. So, to summarize: `<your_username>`
+is a directory in `home` which is a directory in `/`.
 
-Now enter the following command:
+Now enter a command like:
 
-    cd /home/swc/boot-camps/shell
+    cd /home/<your_username>/shell-data/molecules
+    
+The `/home/<your_username>/` part will differ for your computer--replace
+it with whatever was returned by the `pwd` command.
 
-This jumps to `shell`. Now go back to the home directory. We saw
+This jumps to `molecules`. Now go back to the home directory. We saw
 earlier that the command:
 
-    cd boot-camps/shell
+    cd shell-data/molecules
 
 had the same effect - it took us to the `shell` directory. But,
 instead of specifying the full path
-(`/home/swc/boot-camps/shell`), we specified a *relative path*. In
+(`/home/<your_username>/boot-camps/shell`), we specified a *relative path*. In
 other words, we specified the path relative to our current
 directory. A full path always starts with a `/`. A relative path does
 not. You can usually use either a full path or a relative path
@@ -377,8 +382,8 @@ familiar in there?
 
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
-`~`, is a shortcut for your home directory. Navigate to the `shell`
-directory, then enter the command:
+`~`, is a shortcut for your home directory. Navigate to the
+`shell-data/molecules` directory, then enter the command:
 
     ls ~
 
@@ -388,59 +393,23 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/swc/boot-camps`. You can chain
+prints the contents of the `/home/<your_username>/shell-data`. You can chain
 these together, so:
 
     ls ../../
 
-prints the contents of `/home/swc` which is your home
+prints the contents of your home
 directory. Finally, the special directory `.` always refers to your
 current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
 same thing, they print the contents of the current directory. This may
 seem like a useless shortcut right now, but we'll see when it is
 needed in a little while.
 
-To summarize, while you are in the `shell` directory, the commands
-`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/swc` all do exactly the
+To summarize, while you are in the `molecules/` directory, the commands
+`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/<your_username>` all do exactly the
 same thing. These shortcuts are not necessary, they are provided for
 your convenience.
 
-### Our data set: Cochlear Implants
-
-A cochlear implant is a small electronic device that is surgically
-implanted in the inner ear to give deaf people a sense of
-hearing. More than a quarter of a million people have them, but there
-is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
-got teenagers with CIs to listen to audio files on their computer and
-report:
-
-1.  the quietest sound they could hear
-2.  the lowest and highest tones they could hear
-3.  the narrowest range of frequencies they could discriminate
-
-To participate, subjects attended our laboratory and one of our lab
-techs played an audio sample, and recorded their data - when they
-first heard the sound, or first heard a difference in the sound.  Each
-set of test results were written out to a text file, one set per file.
-Each participant has a unique subject ID, and a made-up subject name.
-Each experiment has a unique experiment ID. The experiment has
-collected 351 files so far.
-
-The data is a bit of a mess! There are inconsistent file names, there
-are extraneous "NOTES" files that we'd like to get rid of, and the
-data is spread across many directories. We are going to use shell
-commands to get this data into shape. By the end we would like to:
-
-1.  Put all of the data into one directory called "alldata"
-
-2.  Have all of the data files in there, and ensure that every file
-    has a ".txt" extension
-
-3.  Get rid of the extraneous "NOTES" files
-
-If we can get through this example in the available time, we will move
-onto more advanced shell topics...
 
 ### Wild cards
 
