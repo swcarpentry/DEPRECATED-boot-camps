@@ -662,42 +662,86 @@ in reverse while using `less`.
 
 ## Redirection
 
-Let's turn to the experimental data from the hearing tests that we
-began with. This data is located in the `~/boot-camps/shell/data`
-directory. Each subdirectory corresponds to a particular participant
-in the study. Navigate to the `Bert` subdirectory in `data`.  There
-are a bunch of text files which contain experimental data
-results. Lets print them all:
+Let's say we want to dump all molecules into a single file. We can do
+this with a single command (from within the `molecules/` directory):
 
-    cat au*
+    cat *.pdb > ../all_data
 
-Now enter the following command:
-
-    cat au* > ../all_data
-
-This tells the shell to take the output from the `cat au*` command and
+This tells the shell to take the output from the `cat *.pdb` command and
 dump it into a new file called `../all_data`. To verify that this
 worked, examine the `all_data` file. If `all_data` had already
 existed, we would overwritten it. So the `>` character tells the shell
 to take the output from what ever is on the left and dump it into the
 file on the right. The `>>` characters do almost the same thing,
-except that they will append the output to the file if it already
-exists.
+except that they will append the output to the end of the file if
+it already exists.
 
 * * * *
-**Short Exercise**
+**Exercise**
 
-Use `>>`, to append the contents of all of the files whose names
-contain the number 4 in the directory:
+The `wc` command returns the number of lines, words, and characters
+in a text file (it stands for "word count"). For example:
 
-    /home/swc/boot-camps/shell/data/gerdal
+    $ wc ~/shell-data/molecules/propane.pdb
+    15 111 825 shell-data/molecules/propane.pdb
+    
+Say you just want the number of lines in the file. The `-l` option
+(that's the lower-case letter "l") does this:
 
-to the existing `all_data` file. Thus, when you are done `all_data`
-should contain all of the experiment data from Bert and any
-experimental data file from gerdal with filenames that contain the
-number 4.
+    $ wc -l ~/shell-data/molecules/propane.pdb
+    15 shell-data/molecules/propane.pdb
+
+Use a wildcard with the `wc -l` command to see the lengths of all
+the `.pdb` files in the `molecules/` directory.
+
+Now run the command again and use the `>` redirection to write
+the output to a file called `lengths`
 
 * * * *
+
+
+## Pipes
+
+Pipes are one of the most important concepts in the shell. It's really
+what brings command-line programs together.  As a quick motivating example,
+try concatenating all the molecule files to the screen like we did before:
+
+    cat ~/shell-data/molecules/*.pdb
+    
+That was a fair amount of output and probably scrolled off screen. But we
+have a good program for quickly viewing longer files: `less`.  In a previous
+exercise we already wrote all the molecule files to a single file.  In case
+you didn't get it, here it is again:
+
+    cat ~/shell-data/molecules/*.pdb > ~/shell-data/all_data
+    
+Now we can view the output with `less`:
+
+    less ~/shell-data/all_data
+    
+But what if we just wanted to view the output of a command in `less` without
+making all these intermediate files that we may not care to keep (it is
+duplicating data after all)?  That's where power of the pipe comes in.  We
+can "pipe" the output of `cat` *directly* to `less` without making an
+intermediate file:
+
+    `cat ~/shell-data/molecules/*.pdb | less`
+    
+Note the use of the "pipe" symbol `|`.  It's similar to the `>` we saw
+before, but rather than outputting to file it passes the data directly
+to the `less` command, which is designed to be able to read data from
+the pipe.
+
+### A bit of UNIX philosophy
+
+It was easy to see with just a few molecule files which is the shortest
+and which is the longest. But what if we have 6000 of these files and we
+want a quick look?  The `sort` command can do this for us.  Sort the output
+of the `wc -l *.pdb` command we saved in the `lengths` file:
+
+    sort lengths
+    
+Now saw we wanted the 
 
 
 ## Creating, moving, copying, and removing
@@ -750,177 +794,9 @@ delete a directory using the `-r` option. Enter the following command:
     rm -r foo
 
 
-## Count the words
-
-The `wc` program (word count) counts the number of lines, words, and
-characters in one or more files. Make sure you are in the `data`
-directory, then enter the following command:
-
-    wc Bert/* gerdal/*4*
-
-For each of the files indicated, `wc` has printed a line with three
-numbers. The first is the number of lines in that file. The second is
-the number of words. Finally, the total number of characters is
-indicated. The final line contains this information summed over all of
-the files. Thus, there were 10445 characters in total.
-
-Remember that the `Bert/*` and `gerdal/*4*` files were merged
-into the `all_data` file. So, we should see that `all_data` contains
-the same number of characters:
-
-    wc all_data
-
-Every character in the file takes up one byte of disk space. Thus, the
-size of the file in bytes should also be 10445. Let's confirm this:
-
-    ls -l all_data
-
-Remember that `ls -l` prints out detailed information about a file and
-that the fifth column is the size of the file in bytes.
-
-* * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
-
-* * * *
-
-## The awesome power of the Pipe
-
-Suppose I wanted to only see the total number of character, words, and
-lines across the files `Bert/*` and `gerdal/*4*`. I don't want to
-see the individual counts, just the total. Of course, I could just do:
-
-    wc all_data
-
-Since this file is a concatenation of the smaller files. Sure, this
-works, but I had to create the `all_data` file to do this. Thus, I
-have wasted a precious 10445 bytes of hard disk space. We can do this
-*without* creating a temporary file, but first I have to show you two
-more commands: `head` and `tail`. These commands print the first few,
-or last few, lines of a file, respectively. Try them out on
-`all_data`:
-
-    head all_data
-    tail all_data
-
-The `-n` option to either of these commands can be used to print the
-first or last `n` lines of a file. To print the first/last line of the
-file use:
-
-    head -n 1 all_data
-    tail -n 1 all_data
-
-Let's turn back to the problem of printing only the total number of
-lines in a set of files without creating any temporary files. To do
-this, we want to tell the shell to take the output of the `wc Bert/*
-gerdal/*4*` and send it into the `tail -n 1` command. The `|`
-character (called pipe) is used for this purpose. Enter the following
-command:
-
-    wc Bert/* gerdal/Data0559 | tail -n 1
-
-This will print only the total number of lines, characters, and words
-across all of these files. What is happening here? Well, `tail`, like
-many command line programs will read from the *standard input* when it
-is not given any files to operate on. In this case, it will just sit
-there waiting for input. That input can come from the user's keyboard
-*or from another program*. Try this:
-
-    tail -n 2
-
-Notice that your cursor just sits there blinking. Tail is waiting for
-data to come in. Now type:
-
-    French
-    fries
-    are
-    good
-
-then CONTROL+d. You should is the lines:
-
-    are
-    good
-
-printed back at you. The CONTROL+d keyboard shortcut inserts an
-*end-of-file* character. It is sort of the standard way of telling the
-program "I'm done entering data". The `|` character is replaces the
-data from the keyboard with data from another command. You can string
-all sorts of commands together using the pipe.
-
-The philosophy behind these command line programs is that none of them
-really do anything all that impressive. BUT when you start chaining
-them together, you can do some really powerful things really
-efficiently. If you want to be proficient at using the shell, you must
-learn to become proficient with the pipe and redirection operators:
-`|`, `>`, `>>`.
 
 
-### A sorting example
-
-Let's create a file with some words to sort for the next example. We
-want to create a file which contains the following names:
-
-    Bob
-    Alice
-    Diane
-    Charles
-
-To do this, we need a program which allows us to create text
-files. There are many such programs, the easiest one which is
-installed on almost all systems is called `nano`. Navigate to `/tmp`
-and enter the following command:
-
-    nano toBeSorted
-
-Now enter the four names as shown above. When you are done, press
-CONTROL+O to write out the file. Press enter to use the file name
-`toBeSorted`. Then press CONTROL+x to exit `nano`.
-
-When you are back to the command line, enter the command:
-
-    sort toBeSorted
-
-Notice that the names are now printed in alphabetical order.
-
-* * * *
-**Short Exercise**
-
-Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it and make a new file called Sorted.
-
-* * * *
-
-Let's navigate back to `~/boot-camps/shell/data`. Enter the following command:
-
-    wc Bert/* | sort -k 3 -n
-
-We are already familiar with what the first of these two commands
-does: it creates a list containing the number of characters, words,
-and lines in each file in the `Bert` directory. This list is then
-piped into the `sort` command, so that it can be sorted. Notice there
-are two options given to sort:
-
-1.  `-k 3`: Sort based on the third column
-2.  `-n`: Sort in numerical order as opposed to alphabetical order
-
-Notice that the files are sorted by the number of characters.
-
-* * * *
-**Short Exercise**
-
-1. Use the `man` command to find out how to sort the output from `wc` in
-reverse order.
-
-2. Combine the `wc`, `sort`, `head` and `tail` commands so that only the
-`wc` information for the largest file is listed
-
-Hint: To print the smallest file, use:
-
-    wc Bert/* | sort -k 3 -n | head -n 1
-
-* * * *
+## Writing a Shell Script
 
 Printing the smallest file seems pretty useful. We don't want to type
 out that long command often. Let's create a simple script, a simple
