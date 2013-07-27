@@ -468,16 +468,16 @@ lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
 directory name. For example, enter:
 
-    cd b<tab>
+    cd s<tab>
 
 The shell will fill in the rest of the directory name for
-`boot-camps`. Now enter:
+`shell-data`. Now enter:
 
-    ls s<tab><tab>
+    ls shell-data/molecules/p<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
-are multiple directories in the home directory which start with
-`s`. Thus, the shell does not know which one to fill in. When you hit
+are multiple molecules which start with
+`p`. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices.
 
 Tab completion can also fill in the names of programs. For example,
