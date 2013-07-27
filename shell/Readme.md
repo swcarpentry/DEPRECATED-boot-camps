@@ -216,6 +216,46 @@ If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
 directory.
 
+
+## Experimental Data Files
+
+Let's download a small set of sample data files to use in some of our
+excersizes.  Are sample files are text descriptions of molecules in
+the Protein Data Bank (PDB) format--it's a simple format and one we
+can read easily-enough. But it's also an example of the kind of thing
+scientists have to deal with regularly--specially made-up data formats
+specialized to one domain.  We need to read files like these all the
+time, but when making up your own formats please try not to do this--
+if possible find a way to model your data with a standard data format
+like XML or JSON.
+
+Enough preaching: To get the sample files we can try using a command
+line tool like `curl` or `wget` to download files from the web to your
+current working directory.
+
+First run `cd` to get back to your home directory.
+
+* On Mac OSX run:
+      
+      curl -O https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/data/molecules.zip
+
+* On Linux and on Windows (in Git Bash) run:
+
+      wget https://github.com/swcarpentry/boot-camps/raw/2013-07-cmu/shell/data/molecules.zip
+      
+OSX systems should have `curl`.  Linux will usually have `wget` but might also have `curl`.
+If neither of those work, try downloading the file by entering the URL in your web browser.
+But for doing the exercises make sure to save the file in your home directory!
+
+Now unzip the molecules.zip file by running:
+
+    unzip molecules.zip
+    
+(Note: Most versions of the `unzip` command are smart enough that if you have a file called
+`molecules.zip` you can just write `unzip molecules` and it will fill in the `.zip` extension
+automatically.)
+
+
 ## Arguments
 
 Most programs take additional arguments that control their exact
