@@ -808,8 +808,8 @@ Then enter the following text:
 We'll break this down just a little bit:
 
 The `#!/bin/bash` doesn't do anything by itself, but it's a special marker
-sometimes called a "hash-bang" (though it goes by other names) that indicates
-to the shell that this file contains a bash shell script.
+sometimes called a "hash-bang" (though it goes by other names, such as "shebang")
+that indicates to the shell that this file contains a bash shell script.
 
 The `$1` is how we do command-line arguments.  When we run the script like
 (don't actually try it just yet):
