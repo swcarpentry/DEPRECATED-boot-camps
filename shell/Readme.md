@@ -615,13 +615,17 @@ files in `~/shell-data/modules` with a single command.
 * * * *
 
 `cat` is a terrific program, but when the file is really big, it can
-be annoying to use. The program, `less`, is useful for this
+be annoying to use. Try `cat ~/shell-data/dictionary.txt`--you'll just
+see the end of the file.  Most of it will go shooting off screen.  You
+can probably scroll your terminal window up, but only so far for a very
+large file.  The program, `less`, is useful for this
 case. Enter the following command:
 
-    less ~/boot-camps/shell/dictionary.txt
+    less ~/shell-data/dictionary.txt
 
 `less` opens the file, and lets you navigate through it. The commands
-are identical to the `man` program.
+are identical to the `man` program (in fact `man` is using `less` as
+its "pager" on most systems).
 
 **Some commands in `less`**
 
