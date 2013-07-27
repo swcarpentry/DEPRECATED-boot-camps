@@ -725,7 +725,7 @@ duplicating data after all)?  That's where power of the pipe comes in.  We
 can "pipe" the output of `cat` *directly* to `less` without making an
 intermediate file:
 
-    `cat ~/shell-data/molecules/*.pdb | less`
+    cat ~/shell-data/molecules/*.pdb | less
     
 Note the use of the "pipe" symbol `|`.  It's similar to the `>` we saw
 before, but rather than outputting to file it passes the data directly
@@ -733,6 +733,22 @@ to the `less` command, which is designed to be able to read data from
 the pipe.
 
 ### A bit of UNIX philosophy
+
+We've already seen a handful of simple command-line programs (and we'll
+see a few more time-permitting).  Most of these traditional UNIX commands
+are designed to do one thing and one thing only. Many of them don't even
+produce output (like `cp`, which we'll see later) if everything worked as
+expected.  Rather than a few very complicated programs that do everything,
+UNIX-like programs are *designed* to be chained together with pipes into a
+sort of pipeline to accomplish more complex functionality.  To make an
+analogy to mathematics, think of this sort of as composing functions, but
+here we're composing programs.
+
+<img alt="A wizard performing tricks with the shell" src="https://raw.github.com/swcarpentry/boot-camps/2013-07-cmu/shell/images/unix-magic-overacre-poster.jpg" />
+
+* * * *
+
+**Exercise**
 
 It was easy to see with just a few molecule files which is the shortest
 and which is the longest. But what if we have 6000 of these files and we
