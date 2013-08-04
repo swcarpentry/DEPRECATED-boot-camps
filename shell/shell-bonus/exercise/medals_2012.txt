@@ -1,0 +1,85 @@
+2012	Afghanistan	1	0	0
+2012	Algeria	0	0	1
+2012	Argentina	3	17	1
+2012	Armenia	2	1	0
+2012	Australia	59	37	18
+2012	Azerbaijan	6	2	2
+2012	Bahamas	0	0	4
+2012	Bahrain	1	0	0
+2012	Belarus	8	12	3
+2012	Belgium	2	1	0
+2012	Botswana	0	1	0
+2012	Brazil	11	34	14
+2012	Bulgaria	1	1	0
+2012	Canada	33	21	1
+2012	China	29	40	56
+2012	Chinese Taipei	1	1	0
+2012	Colombia	4	3	1
+2012	Croatia	16	4	15
+2012	Cuba	6	3	5
+2012	Cyprus	0	1	0
+2012	Czech Republic	6	4	4
+2012	Denmark	8	5	3
+2012	Dominican Republic	0	1	1
+2012	Egypt	0	2	0
+2012	Estonia	1	1	0
+2012	Ethiopia	3	1	3
+2012	Finland	4	1	0
+2012	France	18	30	30
+2012	Gabon	0	1	0
+2012	Georgia	3	3	1
+2012	Germany	22	27	45
+2012	Great Britain	48	30	48
+2012	Greece	3	0	0
+2012	Grenada	0	0	1
+2012	Guatemala	0	1	0
+2012	Hong Kong	1	0	0
+2012	Hungary	5	8	12
+2012	India	4	2	0
+2012	Indonesia	1	1	0
+2012	Iran	3	5	4
+2012	Ireland	3	1	1
+2012	Italy	30	22	16
+2012	Jamaica	8	9	8
+2012	Japan	33	44	7
+2012	Kazakhstan	5	1	7
+2012	Kenya	5	4	2
+2012	Kuwait	1	0	0
+2012	Latvia	2	0	1
+2012	Lithuania	2	1	2
+2012	Malaysia	1	1	0
+2012	Mexico	3	5	16
+2012	Moldova	2	0	0
+2012	Mongolia	3	2	0
+2012	Montenegro	0	14	0
+2012	Morocco	1	0	0
+2012	Netherlands	19	29	21
+2012	New Zealand	15	3	9
+2012	North Korea	2	0	4
+2012	Norway	1	1	15
+2012	Poland	8	2	2
+2012	Portugal	0	2	0
+2012	Puerto Rico	1	1	0
+2012	Qatar	2	0	0
+2012	Romania	6	8	2
+2012	Russia	51	39	50
+2012	Saudi Arabia	4	0	0
+2012	Serbia	14	1	1
+2012	Singapore	4	0	0
+2012	Slovakia	4	1	0
+2012	Slovenia	3	1	1
+2012	South Africa	1	2	6
+2012	South Korea	30	13	18
+2012	Spain	26	33	5
+2012	Sweden	3	17	2
+2012	Switzerland	0	2	2
+2012	Tajikistan	1	0	0
+2012	Thailand	1	2	0
+2012	Trinidad and Tobago	9	0	1
+2012	Tunisia	1	1	1
+2012	Turkey	1	2	2
+2012	Uganda	0	0	1
+2012	Ukraine	12	5	9
+2012	United States	46	63	145
+2012	Uzbekistan	3	0	1
+2012	Venezuela	0	0	1

@@ -1,0 +1,24 @@
+2002	Australia	0	0	2
+2002	Austria	13	4	3
+2002	Belarus	1	0	0
+2002	Bulgaria	2	1	0
+2002	Canada	15	7	52
+2002	China	9	5	2
+2002	Croatia	0	1	3
+2002	Czech Republic	0	2	1
+2002	Estonia	1	1	1
+2002	Finland	1	5	7
+2002	France	5	5	5
+2002	Germany	12	23	26
+2002	Great Britain	1	0	5
+2002	Italy	6	11	4
+2002	Japan	1	1	0
+2002	Netherlands	0	5	3
+2002	Norway	7	11	23
+2002	Poland	1	1	0
+2002	Russia	27	5	6
+2002	Slovenia	4	0	0
+2002	South Korea	0	2	5
+2002	Sweden	24	2	0
+2002	Switzerland	14	7	3
+2002	United States	15	58	11

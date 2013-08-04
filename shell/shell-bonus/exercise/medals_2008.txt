@@ -1,0 +1,86 @@
+2008	Afghanistan	1	0	0
+2008	Algeria	1	1	0
+2008	Argentina	31	0	20
+2008	Armenia	6	0	0
+2008	Australia	76	42	31
+2008	Austria	2	1	0
+2008	Azerbaijan	4	2	1
+2008	Bahamas	1	6	0
+2008	Belarus	17	5	8
+2008	Belgium	0	4	1
+2008	Brazil	26	34	14
+2008	Bulgaria	3	1	1
+2008	Cameroon	0	0	1
+2008	Canada	10	13	11
+2008	Chile	0	1	0
+2008	China	57	53	74
+2008	Chinese Taipei	4	0	0
+2008	Colombia	1	1	0
+2008	Croatia	3	2	0
+2008	Cuba	11	34	2
+2008	Czech Republic	0	4	3
+2008	Denmark	6	7	6
+2008	Dominican Republic	0	1	1
+2008	Ecuador	0	1	0
+2008	Egypt	1	0	0
+2008	Estonia	0	2	1
+2008	Ethiopia	2	1	4
+2008	Finland	2	2	1
+2008	France	28	24	25
+2008	Georgia	3	0	3
+2008	Germany	41	16	42
+2008	Great Britain	21	25	31
+2008	Greece	4	3	0
+2008	Hungary	3	8	16
+2008	Iceland	0	14	0
+2008	India	2	0	1
+2008	Indonesia	3	2	2
+2008	Iran	1	0	1
+2008	Ireland	2	1	0
+2008	Israel	1	0	0
+2008	Italy	21	14	8
+2008	Jamaica	6	3	10
+2008	Japan	17	11	23
+2008	Kazakhstan	7	4	2
+2008	Kenya	4	4	6
+2008	Kyrgyzstan	1	1	0
+2008	Latvia	1	1	1
+2008	Lithuania	3	2	0
+2008	Malaysia	0	1	0
+2008	Mauritius	1	0	0
+2008	Mexico	2	0	2
+2008	Moldova	1	0	0
+2008	Mongolia	0	2	2
+2008	Morocco	1	1	0
+2008	Netherlands	4	18	39
+2008	New Zealand	9	2	4
+2008	Nigeria	7	16	0
+2008	North Korea	3	1	2
+2008	Norway	1	5	16
+2008	Panama	0	0	1
+2008	Poland	1	13	6
+2008	Portugal	0	1	1
+2008	Romania	16	1	5
+2008	Russia	57	46	43
+2008	Serbia	14	1	0
+2008	Singapore	0	3	0
+2008	Slovakia	1	5	4
+2008	Slovenia	2	2	1
+2008	South Africa	0	1	0
+2008	South Korea	26	11	41
+2008	Spain	16	47	7
+2008	Sudan	0	1	0
+2008	Sweden	2	5	0
+2008	Switzerland	7	1	3
+2008	Tajikistan	1	1	0
+2008	Thailand	0	2	2
+2008	Togo	1	0	0
+2008	Trinidad and Tobago	0	6	0
+2008	Tunisia	0	0	1
+2008	Turkey	3	4	1
+2008	Ukraine	16	5	10
+2008	United States	81	109	127
+2008	Uzbekistan	3	2	1
+2008	Venezuela	1	0	0
+2008	Vietnam	0	1	0
+2008	Zimbabwe	0	3	1

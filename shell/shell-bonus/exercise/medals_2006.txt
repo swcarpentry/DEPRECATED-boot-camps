@@ -1,0 +1,26 @@
+2006	Australia	1	0	1
+2006	Austria	7	7	16
+2006	Belarus	0	1	0
+2006	Bulgaria	0	1	0
+2006	Canada	11	28	30
+2006	China	6	5	2
+2006	Croatia	0	2	1
+2006	Czech Republic	24	2	1
+2006	Estonia	0	0	3
+2006	Finland	7	34	0
+2006	France	10	2	3
+2006	Germany	6	25	23
+2006	Great Britain	0	1	0
+2006	Italy	14	0	11
+2006	Japan	0	0	1
+2006	Latvia	1	0	0
+2006	Netherlands	8	2	3
+2006	Norway	12	9	2
+2006	Poland	1	1	0
+2006	Russia	13	12	16
+2006	Slovakia	0	1	0
+2006	South Korea	2	3	14
+2006	Sweden	8	21	35
+2006	Switzerland	9	7	5
+2006	Ukraine	3	0	0
+2006	United States	32	11	9

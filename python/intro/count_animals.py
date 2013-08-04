@@ -6,9 +6,8 @@ def count_moose(file):
     filelines = newfile.readlines()
 
     moose_list = []
-    
     for line in filelines:
-        d, t, a, n = line.split()
+        d, t, a, n = line.split(' ')
         if a == 'Moose':
             num = int(n)
             if num > 10:

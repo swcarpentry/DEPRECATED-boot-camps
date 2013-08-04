@@ -1,0 +1,26 @@
+2010	Australia	0	1	2
+2010	Austria	6	9	11
+2010	Belarus	1	1	1
+2010	Canada	8	15	67
+2010	China	7	3	9
+2010	Croatia	1	2	0
+2010	Czech Republic	7	0	2
+2010	Estonia	0	1	0
+2010	Finland	46	1	0
+2010	France	6	6	2
+2010	Germany	15	24	15
+2010	Great Britain	0	0	1
+2010	Italy	3	1	1
+2010	Japan	2	5	0
+2010	Kazakhstan	0	1	0
+2010	Latvia	0	3	0
+2010	Netherlands	6	1	4
+2010	Norway	9	14	16
+2010	Poland	4	3	1
+2010	Russia	14	5	6
+2010	Slovakia	1	1	1
+2010	Slovenia	1	2	0
+2010	South Korea	2	10	6
+2010	Sweden	4	3	11
+2010	Switzerland	6	0	6
+2010	United States	22	63	12
