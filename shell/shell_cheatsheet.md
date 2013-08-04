@@ -63,7 +63,7 @@ text strings as arguments.
 See the cheatsheet on regular expressions for more "wildcard" shortcuts.
 
 ### b) How to redirect to a file and get input from a file ...
-Redirection operators can be used to redirect the ouput from a program from the display screen to a file where it is saved (or many other places too, like your printer or to another program where it can be used as input).
+Redirection operators can be used to redirect the output from a program from the display screen to a file where it is saved (or many other places too, like your printer or to another program where it can be used as input).
 
 
 | Command | Description                                                                                                                     |  
@@ -105,14 +105,15 @@ For loops loop through variables in a list
 
     for varname in list
     do
-        command 1
-        command 2
+        command1 $varname
+        command2 $varname
     done
 
 where,
 
 *  `for`, `in`, `do`, and `done` are keywords
 *  `list` contains a list of values separated by spaces. e.g. `list` can be replaced by `1 2 3 4 5 6` or by `Bob Mary Sue Greg`. `list` can also be a variable:
+*  `varname` is assigned a value without using a `$` and the value is retrieved using `$varname`
 
 --
 
@@ -129,8 +130,8 @@ which is referenced in the loop by:
 
     for varname in ${list[@]}
     do
-        command 1
-        command 2
+        command1 $varname
+        command2 $varname
     done
 
 

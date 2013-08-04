@@ -105,7 +105,7 @@ as their descriptions.
 ## git init : Creating a Local Repository
 
 To keep track of numerous versions of your work without saving numerous
-copies, you can make a local repoitory for it on your computer. What git
+copies, you can make a local repository for it on your computer. What git
 does is to save the first version, then for each subsequent version it
 saves only the changes. That is, git only records the difference between
 the new version and the one before it. With this compact information,
@@ -125,7 +125,7 @@ Step 1 : Initialize your repository.
     $ mkdir good_science
     $ cd good_science
     $ git init
-    Initialized empty Git repository in /Users/swc/good_science/.git/
+    Initialized empty Git repository in /home/swc/good_science/.git/
 
 Step 2 : Browse the directory's hidden files to see what happened here.
 Open directories, browse file contents. Learn what you can in a minute.
@@ -213,11 +213,11 @@ In the same way that it is wise to often save a document that you are
 working on, so too is it wise to save numerous revisions of your code.
 More frequent commits increase the granularity of your **undo** button.
 
-**ADVICE: Good commit messages**
+**ADVICE: Write good commit messages**
 
 There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
 
-[Our repo](https://github.com/USERNAME/boot-camps/commits/YYYY-MM-PLACE) has some good commit messages.
+[Our repo](https://github.com/swcarpentry/boot-camps/commits/YYYY-MM-PLACE) has some good commit messages.
 
 ### Exercise : Commit Your Changes
 
@@ -301,10 +301,10 @@ There are some useful flags for this command, such as
 ## git reset : Unstaging a staged file
     git reset filename     (opposite of 'git add filename')
 
-## git checkout : Discardind unstaged modifications (git checkout has other purposes)
+## git checkout : Discarding unstaged modifications (git checkout has other purposes)
     git checkout -- filename     
     
-## git rm : Removing s file
+## git rm : Removing a file
    git rm filename   (Removes a file from the repository)
    
 ### Exercise : 
@@ -331,7 +331,7 @@ The master branch is created when the repository is initialized. With an
 argument, the **branch** command creates a new branch with the given
 name.
 
-    $ git branch experimentals
+    $ git branch experimental
     $ git branch
     * master
       experimental
@@ -410,7 +410,7 @@ Step 3 : Merge the two branches into the core
 ## git clone : Copying a Repository
 
 Yesterday, you checked out a git type repository at
-https://github.com/USERNAME/boot-camps/tree/YYYY-MM-PLACE
+https://github.com/swcarpentry/boot-camps/tree/YYYY-MM-PLACE
 
 When you clone the Original repository, the one that is created on your
 local machine is a copy, and will behave as a fully fledged local
