@@ -298,9 +298,9 @@ Now look at the files and all from second and first should be in there.
 
 #####git clone : Copying a Repository
 
-Yesterday, you checked out a git type repository at <https://github.com/swcarpentry/boot-camps/2013-06-wise-beginners>
+Yesterday, you checked out a git type repository at <https://github.com/swcarpentry/boot-camps/YYYY-MM-PLACE>
 
-`git clone -b 2013-06-wise-beginners git@github.com:swcarpentry/boot-camps.git`
+`git clone -b YYYY-MM-PLACE git@github.com:swcarpentry/boot-camps.git`
 
 When you clone the Original repository, the one that is created on your local machine is a copy, and will behave as a fully fledged local repository locally. However, with the right configuration, it will be able to pull changes from collaborators to your local machine and push your changes to the Original repository. We'll get to that soon, but for now, let's __fork__ the repository from GitHub.
 
@@ -383,11 +383,11 @@ Step 1 : Fetch the recent remote repository history
 
 Step 2 : Make certain you are in the YYYY-MM-PLACE branch and merge the upstream YYYY-MM-PLACE branch into your YYYY-MM-PLACE branch
 
-`git checkout 2013-06-wise-beginners`
+`git checkout YYYY-MM-PLACE`
 
 `git branch` will show you what branch you are on, to confirm
 
-`git merge upstream\2013-06-wise-beginners`
+`git merge upstream\YYYY-MM-PLACE`
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -409,11 +409,11 @@ The `git push` command pushes commits in a local working copy to a remote reposi
 
 We'll talk about conflicts later, but first, since we have no conflicts and are up to date, we can make a minor change and send our changes to your fork, the "origin."
 
-`git push origin 2013-06-wise-beginners`
+`git push origin YYYY-MM-PLACE`
 
 If you have permission to push to the upstream repository, sending commits to that remote is exactly analagous.
 
-`git push upstream 2013-06-wise-beginners`
+`git push upstream YYYY-MM-PLACE`
 
 In the case of the YYYY-MM-PLACE code, new developer accounts will not allow this push to succeed. You're welcome to try it though.
 
@@ -447,13 +447,13 @@ Switched to branch 'development'
 
 __Step 2 :__ Mirror the remote upstream repository in your master branch (in this case your YYYY-MM-PLACE branch) by pulling down my changes
 
-`git checkout 2013-06-wise-beginners`
+`git checkout YYYY-MM-PLACE`
 
-Switched to branch '2013-06-wise-beginners'
+Switched to branch 'YYYY-MM-PLACE'
 
 `git fetch upstream`
 
-`git merge upstream/2013-06-wise-beginners`
+`git merge upstream/YYYY-MM-PLACE`
 
 	Updating 43844ea..3b36a87
 	Fast-forward
@@ -494,7 +494,7 @@ This results in a status To alert git that you have made appropriate alterations
 
 `git commit -am "message"`
 
-`git push origin 2013-06-wise-beginners`
+`git push origin YYYY-MM-PLACE`
 
 
 =========================================
