@@ -1,5 +1,5 @@
 # Automation
-
+Exercises originally by Adina Howe
 ## Goals
 
 * (review) turning bash commands in to shell scripts

@@ -27,7 +27,7 @@ Version control is typically used for software source code,  but it can also be 
 
 For this session, we'll be using [Git](http://git-scm.com/), a popular version control system and [Bitbucket](http://bitbucket.org), a web-based service providing remote repositories.
 
-## We will focus on:
+# ADVANCED:  (Akeksandra Pawlik)
 
 1. [Tracking our changes with a local repository](1_Local.md)
 2. [Working from multiple locations with a remote repository](2_Remote.md)
@@ -40,7 +40,7 @@ Next: [Tracking our changes with a local repository](1_Local.md)
 # INTERMEDIATE: 
 For the version control, please clone: https://github.com/NelleV/SCCourses.git 
 
-# BEGINNERS:
+# BEGINNERS: (Sarah Supp)
 
 1.	Azelee's slides Part 1 [PPT](Git_part1.pptx) [PDF](git_part1.pdf)
 2.	Azelee's motivating Part 2 [PPT](Git_part2.pptx) [PDF](git_part2.pdf)
