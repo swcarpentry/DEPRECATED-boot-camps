@@ -8,14 +8,14 @@ Thursday 12-Friday 13 September 2013.
 
 Monday 15th
 
-* 09:00 Arrival and [Welcome](Welcome.ppt) - Andrew/Chris
-* 09:30 [Using the shell to do more in less time](shell/README.md) (inc. break) - Karthik
+* 09:00 Arrival and [Welcome](Welcome.ppt) - Andrew / Chris
+* 09:30 [Using the shell to do more in less time (part 1)](shell/README.md) - Karthik
 * 10:30 Break
-* 10:45 [Python and Good programming practice](Python/python_and_good_programming_practice.md) - Chris
+* 10:45 [Python and Good programming practice (part 1)](Python/python_and_good_programming_practice.md) - Chris
 * 12:00 Lunch
 * 13:00 [Using version control to manage and share information](version-control/README.md) ([slides](version-control/VersionControl.ppt)) - Karthik
 * 15:00 Break
-* 15:30 Advanced python - Chris
+* 15:30 [Python and Good programming practice (part 2)](Python/python_and_good_programming_practice.md) - Chris
 * 16:30 [Documenting code](Python/3_documenting_code.md) - Chris
 * 17:30 Close 
 
@@ -26,9 +26,9 @@ Tuesday 16th
 * 10:30 Break
 * 10:45 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Karthik
 * 12:00 Lunch
-* 13:00 [Program Design](Python/5_matplotlib.md) (inc. break) - Chris
+* 13:00 [Program Design](Python/5_matplotlib.md) - Chris
 * 14:45 Break
-* 15:15 Further [Using the shell to do more in less time](shell/README.md) (inc. break) - Karthik
+* 15:15 [Using the shell to do more in less time (part 2)](shell/README.md) - Karthik
 * 16:15 [Pulling it all together](Conclusion.ppt) - Andrew / Karthik / Chris
 * 16:30 Close
 
