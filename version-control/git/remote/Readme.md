@@ -306,5 +306,5 @@ often it commits, nor can you give messages to your commits). Here's an
 
 Take the time to do a little [background
 reading](http://www.siam.org/news/news.php?id=2064&goback=.gde_112393_member_232769759).
-There are arguments for and agaisnt sharing your code. Why would you,
+There are arguments for and against sharing your code. Why would you,
 personally, choose to do so or not?
