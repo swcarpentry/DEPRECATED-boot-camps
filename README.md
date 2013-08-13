@@ -42,11 +42,22 @@ We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/12) to provide a
 
 ## Before you arrive...
 
-If you choose to bring your laptop then before you arrive, you'll need to ensure you have installed some software on your laptop. Please see our [set-up page](Setup.md) for a list of the software required.
+We recommend that you bring your own laptop to work on (so 
+that you can easily continue to use the same tools after the 
+bootcamp) but we hope to have a handful of backup laptops 
+available. If you choose to bring your own laptop then, before 
+you arrive, you will need to ensure you have installed and tested
+some software. Please see our [set-up page](Setup.md) for a list of the software required and installation and testing instructions.
 
-You also need to create a free account on [BitBucket](https://bitbucket.org/account/signup/).
+You also need to create a free individual account on 
+[BitBucket](https://bitbucket.org/account/signup/). Make sure 
+you know your username and password when you arrive
 
-You may also find it useful to work through this short tutorial on [Beginning Python](http://chryswoods.com/beginning_python).
+We recommend that you to work through this short tutorial on 
+[Beginning Python](http://chryswoods.com/beginning_python) before the
+bootcamp. This is designed for people completely new to Python (the main
+language used for the programming parts of the bootcamp) and some 
+familiarity with the basic syntax will be helpful.  
 
 ## Organiser and instructors
 

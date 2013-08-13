@@ -1,5 +1,5 @@
-Students
-========
+Testing your setup
+==================
 
 This directory contains scripts for testing your machine to make sure
 you have the software you'll need for your boot camp installed.  See
