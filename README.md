@@ -47,7 +47,17 @@ that you can easily continue to use the same tools after the
 bootcamp) but we hope to have a handful of backup laptops 
 available. If you choose to bring your own laptop then, before 
 you arrive, you will need to ensure you have installed and tested
-some software. Please see our [set-up page](Setup.md) for a list of the software required and installation and testing instructions.
+some software. Please see our [set-up page](Setup.md) for a list of the 
+software required and instructions.
+
+You should test your installation using our testing scripts described 
+[here](setup/README.md). To access these start a shell and run the 
+commands:
+
+    git clone --branch 2013-09-bristol --single-branch  git://github.com/swcarpentry/boot-camps
+    cd boot-camps/setup
+
+before following [these instructions](setup/README.md).
 
 You also need to create a free individual account on 
 [BitBucket](https://bitbucket.org/account/signup/). Make sure 
