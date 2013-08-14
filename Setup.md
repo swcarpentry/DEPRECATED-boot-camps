@@ -1,6 +1,16 @@
-# Manual set-up
+# Software Installation
+Please make sure you try to install everything before coming to the 
+bootcamp so that teaching can begin right away.
+(Wireless networks usually can't cope with 35 people trying to download these packages at the same time...)
+If you run into any problems,
+please let your boot camp organizer know as soon as possible.
 
-You should ensure you have the following software and tools available. 
+**You do *not* need to install everything listed below, since some packages are alternatives to one another.**
+
+## Already set-up? Do some testing. 
+You may already have all the tools you need for the bootcamp installed! 
+You should check that you have the following software and tools available.
+If this is the case, or have followed the instructions below, then you can check your installation using our [setup test scripts](setup/README.md). 
 
 * Web browser
 * Bash shell - other shells are OK (e.g Cygwin) but please ensure they support the commands `grep`, `find`, `awk`, `cat`, `history`.
@@ -17,19 +27,123 @@ You should ensure you have the following software and tools available.
 * Python [scipy](http://www.scipy.org/)
 * Python [matplotlib](http://matplotlib.org/)
 
-# Check your installation
+Otherwise, follow the instructions below for your operating system.
 
-If you have the software already, or have followed the instructions below, then you can check your installation using our [setup test scripts](setup/README.md).
+##Using a Virtual Machine
+The easiest way for us to provide you with a consistent, pre-configured environment
+is to give you a Linux virtual machine.  You can use this virtual machine
+from Windows, OS X, or even another Linux install.
+Install [VirtualBox](https://www.virtualbox.org/)
+and download [this virtual machine image](http://files.software-carpentry.org/swc_lubuntu.ova)
+([alternate download](http://is.gd/MosNIh)).
+Load the VM into VirtualBox by doing `Import Appliance`
+and loading the `.ova` file.
 
-# Brief instructions
+##Native Installation
+Many people prefer to install software directly on their machine
+so that it is integrated with their usual desktop environment.
+Even if you plan to do this,
+please download VirtualBox and the virtual machine as a backup - it
+can be difficult to get everything set up correctly on older machines.
 
-Below there are brief instructions for RedHat/Scientific Linux 6 and Ubuntu 12.10. 
+###Windows
+The [Software Carpentry Installer](setup/swc-windows-installer.py)
+installs several of the packages described below.
+After first installing Python and a shell save the file to your hard drive,
+then double-click on the file to run it.
 
-For more detailed installation instructions and those for Windows and Mac OSX, check out the [general boot camp set-up instructions](http://software-carpentry.org/setup/) and the installation instructions specific to each product.
+####The Unix Bash Shell
+Follow [these instructions](https://openhatch.org/missions/windows-setup/install-git-bash)
+to install [Git Bash](http://msysgit.github.com/).
 
-If you have any problems then please e-mail the boot camp mailing list at [bath@lists.software-carpentry.org](mailto:bath@lists.software-carpentry.org).
+####Git
+See "The Unix Bash Shell" above.
 
-## To install under RedHat/Scientific Linux 6
+####Editor
+[Sublime Text](http://www.sublimetext.com/) is an excellent editor that works on Mac, Windows, and most Linux distributions.
+It's not free, but it has an unlimited trial period. Alternatively
+[Notepad++](http://notepad-plus-plus.org/)
+is a popular free code editor for Windows.
+
+####Python
+We recommend the all-in-one scientific Python distributions
+[Anaconda](http://continuum.io/downloads.html) and
+[Canopy](https://www.enthought.com/products/canopy/).
+Anaconda and Canopy Express are free to everyone, Canopy is free to academics.
+Setting these packages up may require using the shell;
+if you aren't comfortable doing this,
+please download the installer corresponding to your operating system
+*before* arriving and your instructor will help you set it up.
+
+
+
+###Mac OS X
+Bash is the default shell in Mac OS X and this should be installed.
+
+####Git
+Use the [Git installer](http://code.google.com/p/git-osx-installer/downloads/list?can=3)
+(the faster and simpler option) or install XCode and the command line tools (from the Download preferences pane).
+Note that the XCode download is over a gigabyte (see below)...
+
+####Editor
+[Sublime Text](http://www.sublimetext.com/) is an excellent editor that works on Mac, Windows, and most Linux distributions.
+It's not free, but it has an unlimited trial period. Alternatively we recommend [Text Wrangler](http://www.barebones.com/products/textwrangler/),
+or [Text Mate 2](https://github.com/textmate/textmate).
+
+####Python
+We recommend the all-in-one scientific Python distributions
+[Anaconda](http://continuum.io/downloads.html) and
+[Canopy](https://www.enthought.com/products/canopy/).
+Anaconda and Canopy Express are free to everyone, Canopy is free to academics.
+Setting these packages up may require using the shell;
+if you aren't comfortable doing this,
+please download the installer corresponding to your operating system
+*before* arriving and your instructor will help you set it up.
+
+####Supporting Tools
+[XCode](https://developer.apple.com/xcode/)
+is a set of free developer tools for Mac OS X.
+To install it:
+* Go to the Apple app store.
+* Search for XCode.
+* Click *Free*.
+* Click *Install App*.
+
+Note that the XCode download is over a gigabyte,
+so please do this **before** arriving at the boot camp.
+
+
+###Linux
+Below there are brief instructions. More details for RedHat/Scientific Linux 6 and Ubuntu 12.10 are found at the bottom of the page. 
+
+####The Unix Bash Shell
+Bash is usually the default shell,
+but if your Linux installation gives you something else
+you can run Bash by opening a terminal and typing `bash`.
+
+####Git
+Git should already be installed on your machine.
+To check, type `which git` at the command line.
+If it is not found, install it via your distribution's package manager
+(e.g., `apt-get`).
+
+####Editor
+[Sublime Text](http://www.sublimetext.com/) is an excellent editor that works on Mac, Windows, and most Linux distributions.
+It's not free, but it has an unlimited trial period. Alternatively [Kate](http://kate-editor.org/) and [gedit](http://projects.gnome.org/gedit)
+are often pre-installed on Linux.
+
+####Python
+We recommend the all-in-one scientific Python distributions
+[Anaconda](http://continuum.io/downloads.html) and
+[Canopy](https://www.enthought.com/products/canopy/).
+Anaconda and Canopy Express are free to everyone, Canopy is free to academics.
+Setting these packages up may require using the shell;
+if you aren't comfortable doing this,
+please download the installer corresponding to your operating system
+*before* arriving and your instructor will help you set it up.
+
+
+#### To install under RedHat/Scientific Linux 6
 
 Scientific Linux 6 already comes with shell and vi text editor. To install the other packages run,
 
@@ -107,7 +221,7 @@ Scientific Linux 6 already comes with shell and vi text editor. To install the o
     In []: b=fft(a)
     In []: plot(abs(b))
 
-## To install under Ubuntu
+#### To install under Ubuntu
 
 Ubuntu 12.10 and above already comes with shell, vi and nano text editors, Python 2.7. To install the other packages run,
 
