@@ -30,14 +30,16 @@ If this is the case, or have followed the instructions below, then you can check
 Otherwise, follow the instructions below for your operating system.
 
 ##Using a Virtual Machine
-The easiest way for us to provide you with a consistent, pre-configured environment
-is to give you a Linux virtual machine.  You can use this virtual machine
-from Windows, OS X, or even another Linux install.
-Install [VirtualBox](https://www.virtualbox.org/)
-and download [this virtual machine image](http://files.software-carpentry.org/swc_lubuntu.ova)
+Installation issues can and do happen. To ensure that you
+can continue to participate in a lesson even if one of your
+software programs fails, we provide a Linux virtual machine
+that contains all the necessary software
+pre-installed. Please install
+[VirtualBox](https://www.virtualbox.org/)
+and download
+[this virtual machine image](http://files.software-carpentry.org/swc_lubuntu.ova)
 ([alternate download](http://is.gd/MosNIh)).
-Load the VM into VirtualBox by doing `Import Appliance`
-and loading the `.ova` file.
+Load the VM into VirtualBox by doing `Import Appliance` and loading the `.ova` file.
 
 ##Native Installation
 Many people prefer to install software directly on their machine
