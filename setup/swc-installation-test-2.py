@@ -689,7 +689,7 @@ for package,name,long_name,minimum_version,and_dependencies in [
         ('jinja2', 'jinja', 'Jinja', (2, 6), None),
         ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
         ('IPython', None, 'IPython Python package',
-         CHECKER['ipython'].minimum_version, ['jinja', 'tornado', 'pyzmq']),
+         CHECKER['ipython'].minimum_version, ['tornado', 'pyzmq']),
         ('argparse', None, 'Argparse', None, None),
         ('numpy', None, 'NumPy', None, None),
         ('scipy', None, 'SciPy', None, None),
