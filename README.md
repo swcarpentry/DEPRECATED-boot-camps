@@ -54,7 +54,7 @@ You should test your installation using our testing scripts described
 [here](setup/README.md). To access these start a shell and run the 
 commands:
 
-    git clone --branch 2013-09-bristol --single-branch  git://github.com/swcarpentry/boot-camps
+    git clone --branch 2013-09-bristol --single-branch  https://github.com/swcarpentry/boot-camps
     cd boot-camps/setup
 
 before following [these instructions](setup/README.md).

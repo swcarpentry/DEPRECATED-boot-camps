@@ -676,6 +676,9 @@ class PythonPackageDependency (Dependency):
     def _get_version_from_package(self, package):
         try:
             version = package.__version__
+            # Substitute '.dev' with .0 (needed for IPython in current 
+            # Canopy) - maybe other problems can be fixed here too?
+            version = _re.sub(r'\.dev', '.0', version)
         except AttributeError:
             version = None
         return version
@@ -689,7 +692,7 @@ for package,name,long_name,minimum_version,and_dependencies in [
         ('jinja2', 'jinja', 'Jinja', (2, 6), None),
         ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
         ('IPython', None, 'IPython Python package',
-         CHECKER['ipython'].minimum_version, ['jinja', 'tornado', 'pyzmq']),
+         CHECKER['ipython'].minimum_version, ['tornado', 'pyzmq']),
         ('argparse', None, 'Argparse', None, None),
         ('numpy', None, 'NumPy', None, None),
         ('scipy', None, 'SciPy', None, None),
