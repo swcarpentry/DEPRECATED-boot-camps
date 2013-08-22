@@ -1,0 +1,7 @@
+* Liked the build up of the skill set in a reasonable order
+* Liked lesson on version control
+* Liked the food and hosting
+* IPython Notebook was helpful
+* Liked focus in Numpy on the memory model and internal details
+* Liked what discussion of SW engineering practices there was
+* Liked review of shell commands and bash

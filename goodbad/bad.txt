@@ -1,0 +1,9 @@
+* More actual discussion of software engineering best practices
+* Starting a little later in the day
+* Less focus on basic Python and more on design philosopy
+* Numpy details were too much!
+* Would have liked more plotting and sooner
+* Was hoping to address how to scale up from smaller projects to larger
+  projects with more files
+* Not sure who the target audience is for shell
+* Shell, then version control, then some Python, then run Python in the shell--etc. Simulate a real development workflow.
