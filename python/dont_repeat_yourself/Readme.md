@@ -1,96 +1,10 @@
 [Up To Schedule](../../README.md) - Back To [Write Code for People I](../variables_and_types/Readme.md) - Forward to [Don't Repeat Yourself](../functions_and_modules/Readme.md)
 
 # Don't repeat yourself
-## Python: Flow Control, Functions & Modules
+## Python: Loops, Functions & Modules
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
-Conditionals
-============
-
-A conditional (if statement) is some statement that in general says :
-"When some boolean is true, do the following. Elsewise, do this other
-thing."
-
-Many equivalence test statements exist in Python that are similar in
-other languages:
-
-```python
-i=1
-j=2
-i==j # i is equal to j : FALSE
-i<j  # i is less than j
-i<=j # i is less than or equal to j : TRUE
-i>j  # i is greater than j
-i>=j # i is greater than or equal to j : FALSE
-i!=j # i is not equal to j : TRUE
-```
-
-However, python has other equivalence test statements that are fairly
-unique to python. To check whether an object is contained in a list :
-
-```python
-beatle="John"
-beatles=["George", "Ringo","John", "Paul"]
-print beatle in beatles # is John one of the beatles? : TRUE
-print "Katy" not in beatles # this is also TRUE. 
-```
-
-There is also a comparison to determine if two variables reference the same object. Two different objects can have the same value, so return true for an equality comparison:
-
-```python
-a = 1234
-b = 1234
-a == b # True, they have the same value
-a is b # False, are different objects
-```
-
-However, `is` should generally not be used for comparisons between integers. Python does treat some small valued integers differently, for example:
-
-```python
-a = 1
-b = 1
-a is b # True - special case for 1
-```
-
-A better use of `is` would be to compare objects like lists, for example the same list could be inserted into two different dictionaries. A comparison with `is` would reveal this:
-
-```python
-number_list = [1,2,4,8]
-dict1 = {"thing_widths":number_list}
-dict2 = {"item_costs":number_list}
-dict1["thing_widths"] is dict2["item_costs"]  # True - this is the same list
-```
-
-Conditionals (`if` statements) are also really easy to use in python. Take
-a look at the following example:
-
-```python
-i = 4
-sign = "zero"
-if i < 0:
-  sign = "negative"
-elif i > 0:
-  sign = "positive"
-else:
-  print "Sign must be zero"
-  print "Have a nice day"
-print sign
-```
-
-The behavior of this code snippet should be pretty clear, but there is
-something peculiar. How does Python know where the if-statement ends?
-Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code. For example, in MatLab you begin an if
-statement with the word `if` and you end it with `end if`. In C/C++ you
-delimit blocks with curly braces. Python uses **indentation** to delimit
-code blocks. The **indentation** above is NOT just to make things look
-pretty - it tells Python what the body of the `if`-statement is. This is
-true when ever we create any code blocks, such as the bodies of loops,
-functions or classes.
-
-***Excercise***
-Write an if statement prints whether x is even or odd.
 
 While Loops
 ===========
