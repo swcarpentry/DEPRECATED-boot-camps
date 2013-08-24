@@ -1,7 +1,7 @@
 [Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People Ib](../data_structures/Readme.md)
 
 
-# Write Code for People: Variables and Data Structures
+# Write Code for People: Variables, Data Structures and Conditionals
   
 
 * * * * *
@@ -9,6 +9,12 @@
 
 **Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
 R. Smith, Will Trimble, and many more**
+
+This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people.
+As we introduce variables we will discuss how to name them, when to comment and which comments are useful. 
+As we introduce types we will discuss how type choice choice can be influenced by code readability considerations.
+The above readability considerations are to a certain degree universal to all programming, regardless of language.
+Finally, a we introduce conditionals, such as if statements we will see what an important role white space plays in python and how it can improve readability. 
 
 
 Here are some reference materials.
@@ -20,7 +26,7 @@ Here are some reference materials.
 
 In this lesson we will cover:
 
-### Lesson 1 (Write Code for People Ia)
+### Lesson 1 (Write Code for People)
 * print statements
 * variables
 * integers
@@ -32,6 +38,7 @@ In this lesson we will cover:
 * list
 * dictionary 
 * tuple
+* conditionals
 
 
 ## Variables
@@ -113,7 +120,9 @@ I'll let you ruminate on the pros and cons of this construction while I change t
 In [14]: voltage = 2
 ```
 
-## Comments
+Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
+
+## Writing comments for people
 
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
@@ -139,7 +148,10 @@ Variable names should be:
 * meaningful (to those who are going to read the code)
 * short enough so you don't misstype them
 
+Variable name choice is extremely important a well named variable might be self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments.
+
 In most communities there will be a common practice. [For my community it is camel case starting with a lower case letter].
+
 
 ## On Being Precise with floats and ints
 
@@ -191,7 +203,7 @@ In [31]: a = 1
 
 In [32]: b = 2
 
-In [33]: c = a+b
+In [33]: c = a + b
 
 In [34]: c
 Out[34]: 3
@@ -249,7 +261,7 @@ Out[52]: 0
 
 **ZING!**
 
-Here's why type is important. Divding two integers returnes an integer: this operation calculates the quotient and floors the result to get the answer.
+Here's why type is important. Dividing two integers returns an integer: this operation calculates the quotient and floors the result to get the answer.
 
 If everything was a float, the division is what you would expect.
 
@@ -269,7 +281,7 @@ Out[57]: (float, float, float)
 
 ## Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
 
-Python would be a farily useless language if it weren't for the compound
+Python would be a fairly useless language if it weren't for the compound
 data types. The main two are lists and dictionaries, but I'll mention sets
 and tuples as well. I'll also go over reading text data from files. 
 
@@ -461,8 +473,12 @@ In [2]: type(tup)
 Out[2]: tuple
 ```
 
-You can slice and index the tuple exactly like you would a list. Tuples are
-used in the inner workings of python, and a tuple can be used as a key in a
+You can slice and index the tuple exactly like you would a list. 
+
+### Why use Tuples
+
+Tuples can emphasize intent, although you could make a list and not change it, setting the type to be a tuple makes that intent clear to a reader. 
+Tuples are used in the inner workings of python, and a tuple can be used as a key in a
 dictionary, whereas a list cannot as we will see in a moment.
 
 ***Excercise***
@@ -555,3 +571,97 @@ Lists are mutable, and therefore cannot.
 When you architect software in python, most data will end up looking either
 like a list or a dictionary. These two data types are very important in
 python and you'll end up using them all the time.
+
+Conditionals
+============
+
+A conditional (if statement) is some statement that in general says :
+"When some boolean is true, do the following. Elsewise, do this other
+thing."
+
+Many equivalence test statements exist in Python that are similar in
+other languages:
+
+```python
+i=1
+j=2
+i==j # i is equal to j : FALSE
+i<j  # i is less than j
+i<=j # i is less than or equal to j : TRUE
+i>j  # i is greater than j
+i>=j # i is greater than or equal to j : FALSE
+i!=j # i is not equal to j : TRUE
+```
+
+However, python has other equivalence test statements that are fairly
+unique to python. To check whether an object is contained in a list :
+
+```pythona 
+beatle="John"
+beatles=["George", "Ringo","John", "Paul"]
+print beatle in beatles # is John one of the beatles? : TRUE
+print "Katy" not in beatles # this is also TRUE. 
+```
+
+There is also a comparison to determine if two variables reference the same object. Two different objects can have the same value, so return true for an equality comparison:
+
+```python
+a = 1234
+b = 1234
+a == b # True, they have the same value
+a is b # False, are different objects
+```
+
+However, `is` should generally not be used for comparisons between integers. Python does treat some small valued integers differently, for example:
+
+```python
+a = 1
+b = 1
+a is b # True - special case for 1
+```
+
+A better use of `is` would be to compare objects like lists, for example the same list could be inserted into two different dictionaries. A comparison with `is` would reveal this:
+
+```python
+number_list = [1,2,4,8]
+dict1 = {"thing_widths": number_list}
+dict2 = {"item_costs":number_list}
+dict1["thing_widths"] is dict2["item_costs"]  # True - this is the same list
+```
+
+Conditionals (`if` statements) are also really easy to use in python. Take
+a look at the following example:
+
+```python
+i = 4
+sign = "zero"
+if i < 0:
+  sign = "negative"
+elif i > 0:
+  sign = "positive"
+else:
+  print "Sign must be zero"
+  print "Have a nice day"
+print sign
+```
+
+The behavior of this code snippet should be pretty clear, but there is
+something peculiar. How does Python know where the if-statement ends?
+Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
+delimiting blocks of code. For example, in MatLab you begin an if
+statement with the word `if` and you end it with `end if`. In C/C++ you
+delimit blocks with curly braces. Python uses **indentation** to delimit
+code blocks. The **indentation** above is NOT just to make things look
+pretty - it tells Python what the body of the `if`-statement is. This is
+true when ever we create any code blocks, such as the bodies of loops,
+functions or classes.
+
+***Excercise***
+Write an if statement prints whether x is even or odd.
+Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
+
+
+##Writing Code for People summary
+
+We learned some basics of python and saw that variable type, name and comments affect more than just code functionality, they affect the readability for others and your future self.
+Variable names can make a huge difference in code readability and types are important in conveying intent. 
