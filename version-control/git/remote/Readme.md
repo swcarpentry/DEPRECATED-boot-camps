@@ -3,8 +3,8 @@
 # Collaborate: Remote Version Control
 ----
 
-**Based on material by Katy Huff, Anthony Scopatz, and Sri Hari Krishna
-Narayanan**
+**Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
+Narayanan, and Matt Gidden**
 
 ## github.com?
 
@@ -48,21 +48,20 @@ The **git remote** command allows you to add, name, rename, list, and
 delete repositories such as the original one **upstream** from your
 fork, others that may be **parallel** to your fork, and so on.
 
+We'll be continuing our testing exercises using GitHub as the online repository,
+so you'll need to start off by getting a copy of that repository to work on!
+
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the SWC-bootcamp repository,
-GitHub doesn't know about it yet. You'll need to tell github you want to
-have an official fork of this repository.
-
 Step 1 : Go to our
-[repository](https://github.com/UW-Madison-ACI/boot-camps/tree/YYYY-MM-PLACE)
+[repository](https://github.com/UW-Madison-ACI/REPO_NAME)
 from your browser, and click on the Fork button. Choose to fork it to your
 username rather than any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone https://github.com/YOU/boot-camps.git
-    $ cd boot-camps
+    $ git clone https://github.com/YOU/REPO_NAME.git
+    $ cd REPO_NAME
 
 Step 3 : 
 
@@ -79,7 +78,7 @@ All repositories that are clones begin with a remote called origin.
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original SWC-bootcamp
+want your master branch to track updates in the original REPO_NAME
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -92,22 +91,28 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case UW-Madison-ACI/boot-camps) into your local working copy, you
+this case UW-Madison-ACI/REPO_NAME) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
 
 ### Exercise : Fetch and Merge the Contents of Our GitHub Repository
 
+This exercise is meant to represent the general work flow you should use to
+update your fork. Let's say that you come in and sit down in the morning, you've
+gotten your coffee (or tea) and you're ready to get started. However, someone
+from your research group has added something to the project you're working on,
+and you need to add it into your work to keep up to date. I'll add a comment,
+then let's get started!
+
 Step 1 : Fetch the recent remote repository history
 
     $ git fetch upstream
 
-Step 2 : Make certain you are in the 2013-04-uwmadison branch and merge the
-upstream 2013-04-uwmadison branch into your 2013-04-uwmadison branch
+Step 2 : Merge the master branch
 
-    $ git checkout 2013-04-uwmadison
-    $ git merge upstream/2013-04-uwmadison
+    $ git checkout master
+    $ git merge upstream/master
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -135,142 +140,55 @@ Before pushing, a developer should always pull (or fetch + merge), so
 that there is an opportunity to resolve conflicts before pushing to the
 remote. 
 
-Note: Depending on your connection set-up with git, you may need to add an ssh
-key, following [these](https://help.github.com/articles/generating-ssh-keys)
-steps. We will walk through them if needed.
+# Collaboration : An exercise in GitHub and Testing
 
-### Exercise : Push a change to github
-We'll talk about conflicts later, but first, since we have no conflicts
-and are up to date, we can make a minor change and send our changes to
-your fork, the "origin."
+The remainder of this section will outline an exercise to get your feet wet in
+using some of GitHub's features. We'll be continuing our work on testing as an
+example.
 
-    $ git push origin 2013-04-uwmadison
+For the rest of this section, I'll assume that there are two collaborators,
+Kendra and Darren. I'll assume that they have super-easy github names, and that
+their repositories are at github.com/kendra and github.com/darren. We'll be
+working on an "exercise" branch, because we always want our master branch to
+mirror its upstream counterpart! Never pollute your master branch if you're
+working on a fork!
 
-If you have permission to push to the upstream repository, sending
-commits to that remote is exactly analogous.
+### Exercise : Get set up
 
-    $ git push upstream 2013-04-uwmadison
+Step 1 : Group up in pairs
 
-In the case of the 2013-04-uwmadison code, new developer accounts will not allow
-this push to succeed. You're welcome to try it though.
+Step 2 : Create an exercise branch
 
-## git merge : Conflicts
+    $ git checkout -b exercise
 
-This is the trickiest part of version control, so let's take it very
-carefully.
+Step 3 : Add your collaborator as a remote and check to make sure you're
+connected, e.g., Darren would type the following
 
-In the 2013-04-uwmadison code, you'll find a file called Readme.md. This is a
-standard documentation file that appears rendered on the landing page
-for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/YOU/boot-camps/tree/2013-04-uwmadison/README.md).
+    $ git remote add kendra https://github.com/kendra/REPO_NAME.git
+    $ git remote -v
+    $ git fetch kendra
 
-For illustration, let's imagine that, suddenly, each of the developers
-on the 2013-04-uwmadison code would like to welcome visitors in a language other
-than English. Since we're all from so many different places and speak
-so many languages, there will certainly be disagreements about what to
-say instead of "Welcome."
+Let's say that Darren is interested in adding a feature to the code he and
+Kendra are working on. Previously, we worked on a mean function, so let's add a
+median function.
 
-You may speak another language, perhaps even English, however, and may the word
-'welcome' with an equivalent word that you prefer (willkommen, bienvenido,
-benvenuti, etc.).
+```python
+def median(numlist):
+    numlist.sort()
+    length = len(numlist)
+    index = length/2
+    if length % 2 == 0:
+       return mean([numlist[index], numlist[index - 1]])
+    else:
+       return numlist[index]
+```
 
-You'll want to start a new branch for development. It's a good convention
-to think of your master branch (in this case your 2013-04-uwmadison branch) as
-the "production branch," typically by keeping that branch clean of your
-local edits until they are ready for release. Developers typically use the
-master branch of their local fork to track other developers changes in the
-remote repository until their own local development branch changes are
-ready for production.
+## Pull Requests : Sending Your Collaborators an Update
 
-### Exercise : Experience a Conflict
+A pull request is a notification that you've added a feature to a code base and
+that you'd like it to be pulled into that code base. 
 
-Step 1 : Make a new branch, edit the readme file in that branch, and
-commit your changes.
 
-    $ git branch development
-    $ git checkout development
-    Switched to branch 'development'
-    $ nano Readme.md
-    <edit the readme file and exit nano>
-    $ git commit -am "Changed the welcome message to ... "
-
-Step 2 : Mirror the remote upstream repository in your master branch (in
-this case your 2013-04-uwmadison branch) by pulling down my changes
-
-    $ git checkout 2013-04-uwmadison
-    Switched to branch '2013-04-uwmadison'
-    $ git fetch upstream
-    $ git merge upstream/2013-04-uwmadison
-    Updating 43844ea..3b36a87
-    Fast-forward
-     README.rst |   2 +-
-     1 files changed, 1 insertions(+), 1 deletions(-)
-
-Step 3 : You want to push it to the internet eventually, so you pull
-updates from the upstream repository, but will experience a conflict.
-
-    $ git merge development
-    Auto-merging Ream.md
-    CONFLICT (content): Merge conflict in Readme.md
-    Automatic merge failed; fix conflicts and then commit the result.
-
-## git resolve : Resolving Conflicts
-
-Now what?
-
-Git has paused the merge. You can see this with the **git status**
-command.
-
-    # On branch 2013-04-uwmadison
-    # Unmerged paths:
-    #   (use "git add/rm <file>..." as appropriate to mark resolution)
-    #
-    #       unmerged:      Readme.md
-    #
-    no changes added to commit (use "git add" and/or "git commit -a")
-
-The only thing that has changed is the Readme.md file. Opening it,
-you'll see something like this at the beginning of the file.
-
-    =====================
-    <<<<<<< HEAD
-    Vanakkam
-    =======
-    Willkommen
-    >>>>>>> development
-    =====================
-
-The intent is for you to edit the file, knowing now that I wanted the
-Welcome to say Vanakkam. If you want it to say Willkommen, you should
-delete the other lines. However, if you want to be inclusive, you may
-want to change it to read Vanakkam and Willkommen. Decisions such as this
-one must be made by a human, and why conflict resolution is not handled
-more automatically by the version control system.
-
-    Vanakkam and Willkommen
-
-This results in a status To alert git that you have made appropriate
-alterations,
-
-    $ git add Readme.md
-    $ git commit
-    Merge branch 'development'
-
-    Conflicts:
-      Readme.md
-    #
-    # It looks like you may be committing a MERGE.
-    # If this is not correct, please remove the file
-    # .git/MERGE_HEAD
-    # and try again.
-    #
-    $ git push origin 2013-04-uwmadison
-    Counting objects: 10, done.
-    Delta compression using up to 2 threads.
-    Compressing objects: 100% (6/6), done.
-    Writing objects: 100% (6/6), 762 bytes, done.
-    Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/boot-camps.git
 
 ## gitolite
 
