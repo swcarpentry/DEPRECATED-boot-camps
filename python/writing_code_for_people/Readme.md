@@ -123,7 +123,7 @@ In [14]: voltage = 2
 Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
 
 ## Writing comments for people
-
+g
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
 ```
@@ -663,5 +663,5 @@ Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
 
 ##Writing Code for People summary
 
-We learned some basics of python and saw that variable type, name and comments affect more than just code functionality, they affect the readability for others and your future self.
+We learned some basics of python and saw that variable type, name, comments and white space affect more than just code functionality, they affect the readability for others and your future self.
 Variable names can make a huge difference in code readability and types are important in conveying intent. 
