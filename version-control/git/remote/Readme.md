@@ -399,8 +399,8 @@ one way.
 
 ```
 In [6]: max_counts = max(number_frequencies, key = number_frequencies.get)
-In [5]: print max_counts
-Out[5]: 42
+In [7]: print max_counts
+Out[7]: 42
 ```
 
 ## gitolite
