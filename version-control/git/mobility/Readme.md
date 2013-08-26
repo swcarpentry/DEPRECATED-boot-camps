@@ -8,7 +8,7 @@
 
 One of the powerful ways to use version control is to maintain your workflow
 between the office, home, and wherever else you find yourself being
-productive. I use this type of workflow extensively with both my research work
+productive. This type of workflow can be extensively with both research work
 (i.e., coding project collaboration) and thesis writing (i.e., "personal"
 activities).
 
@@ -17,14 +17,14 @@ work computer, and a home (laptop) computer. The server will host the "base"
 repository, and the server can live anywhere you have a connection to. For
 example, you could use your GitHub repository (described in the
 [Collaborate](../remote/Readme.md) section as the server. If you have access to
-a server on campus (e.g., I have user space on CAE's server
-@best-tux.cae.wisc.edu), you can host your repository there.
+a server on campus (e.g., have user space on CAE's server,
+best-tux.cae.wisc.edu), you can host your repository there.
 
-For the purposes of this exercise, we will have all of the repositories
-represented by different folders on your ACI user space in order to provide you
-with the "flavor" of how such a workflow would work. For example, we'll use
-~/work to represent your work station. You should assume that ~/work is
-effectively your work station's home directory.
+For the purposes of this exercise, all of the repositories will be represented
+by different folders on your ACI user space in order to provide you with the
+"flavor" of how such a workflow would work. For example, we'll use ~/work to
+represent your work station. You should assume that ~/work is effectively your
+work station's home directory.
 
 Let's start by making each "home directory".
 
@@ -90,8 +90,8 @@ it's empty (except for the .git folder)! Also, take a gander at that remote.
     origin	 ~/../server/myrepo.git (fetch)
     origin	 ~/../server/myrepo.git (push)
 
-Sweet, it automatically added our bare repository as the origin remote and we're
-set up to get some work done! Let's go ahead an add a file and commit it.
+Sweet, it automatically added the bare repository as the origin remote. We're
+set up to get some work done! Go ahead an add a file and commit it.
 
     $ touch report.tex
     $ git add report.tex
@@ -115,7 +115,7 @@ Let's investigate what's inside.
     $ ls -a 
     . .. .git report.tex
 
-Ok, awesome! So now our work and home machines are synced against the repository
+Ok, awesome! So now the work and home machines are synced against the repository
 that's on the server. Any time you're doing work, as long as you **commit and
 push** the work you're doing, it will be available to you anywhere you have
 access to the internet. In fact, you don't even **need** access to the
@@ -124,10 +124,11 @@ committing without being online. Once you have a connection again, you can push
 your changes.
 
 At this point, you're fully set up to work in a best-practice, version-control
-work flow. I always work in branches to make sure I don't mess anything up on my
-master branch, which is another best practice. This stuff isn't intuitive when
-you're first starting out, though, so just play around and get used to the
-general work flow for now. You'll get better at it over time.
+work flow. Experience shows that its best to work in branches to make sure the
+master branch stays up-to-date with your server's (upstream's) master
+branch. This stuff may not be intuitive when you're first starting out, though,
+so just play around and get used to the general work flow for now. You'll get
+better at it over time.
 
 #### Aside: Latex and the Limits of the Version Control Workflow
 
@@ -139,24 +140,23 @@ that explains the difference.
 
 ![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
 
-I'll add that, from my experience, the types of documents needed for the left
-side of the curve (where Word is easier than Latex) are simple enough to just
-use Google Docs (which is version controlled as well!). 
+With the advent of Google Drive, it's often as easy to use that tool if a
+document is simple enough, i.e., on the left side of the curver (where Word is
+easier than Latex). Note that Google Docs is version controlled as well!
 
-Furthermore, I simply **can't imagine** having to write something as complicated
-as a prelim or thesis using Word. You'd spend as much time formatting the thing
-as you do actually writing the content. In other words, it's worth the
-(smallish) headache of getting used to Latex in order to use it for bigger
+Furthermore, simply **imagine** having to write something as complicated as a
+prelim or thesis using Word. You'd spend as much time formatting the thing as
+you do actually writing the content. In other words, it's worth the (smallish)
+headache of getting used to Latex in order to use it for bigger
 documents. There's even a [Wisconsin Thesis
 Template](https://github.com/willb/wi-thesis-template)! That's right, you'd have
 to do **0** work to correctly format your thesis. How ridiculous is that!
 
-Finally, and this is pure aesthetics, Latex looks **good**. I mean, **real
-good**. Have you ever read a paper and thought "wow, those equations look
-great"? I'd be willing to give 10-to-1 odds it was written in Latex. Plus, once
-you write your first paper, you have all the infrastructure to write the next
-one. I literally copy the files into a different directory and rewrite
-content. Super simple!
+Finally, and this is pure aesthetics, Latex looks **good**. Have you ever read a
+paper and thought "wow, those equations look great"? It's likely written in
+Latex. Plus, once you write your first paper, you have all the infrastructure to
+write the next one. You can literally copy the files into a different directory
+and rewrite content. Super simple!
 
 Latex works great with the workflow described here because it's text-based. You
 are literally altering text files, so there's **nothing else** going on behind
