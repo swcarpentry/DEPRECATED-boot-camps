@@ -5,6 +5,45 @@
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
+We will  continue with one of the most important principles of programming: "Don't repeat yourself". 
+We will see how instead of copying and pasting statements with slight modifications we can use loops.
+Then we will learn how functions allow us to pack sections of code into reusable parts.
+Finally we will use 
+We will finish with a lot of interesting and sometime challenging examples and exercises.
+
+Pasting into iPython
+====================
+
+This part of the lesson includes a lot of text, but it will be useful to
+run it yourself in iPython.
+
+To paste text from another application (i.e. these lecture notes) into
+iPython :
+
+1.  select text from the wiki
+2.  copy with **ctrl+c**
+3.  unfortunately pasting depends on your operating system and ssh program:
+
+#### Windows
+
+##### Putty
+Click with the right mouse button over the window.
+
+##### Bitvise SSH
+Click with the right mouse button over the window and then "Paste".
+
+#### Mac OSX
+Press cmd+C.
+
+#### Linux
+Click with the right mouse button over the window and then "Paste".
+
+
+The code should paste and execute in iPython.
+
+If you also type %autocall to turn autocall OFF, you may be able to
+paste with **ctrl+v** though this won't work with all ipython builds.
+
 
 While Loops
 ===========
@@ -22,7 +61,7 @@ mult = 1
 sequence = [1, 5, 7, 9, 3, -1, 5, 3]
 while sequence[0] != -1:
   mult = mult * sequence[0]
-  del sequence[0]
+  sequence.pop(0)
 
 print mult
 ```
@@ -32,8 +71,9 @@ Some new syntax has been introduced in this example.
 -   On line 4, we compute the product of the elements just to make this
     more interesting.
 
--   On line 5, we use the `del` keyword to remove the first element of
+-   On line 5, we use list.pop() to remove the first element of
     the list, shifting every element down one.
+    Let's verify this with sequence.pop?
 
 **Watch Out**
 
@@ -45,6 +85,7 @@ i=1
 print "Well, there's egg and bacon, egg and spam, egg bacon and"
 while i == 1:
   print "spam "
+print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..."
 ```
 
 Since the variable `i` never changes within the while loop, we can
@@ -53,7 +94,6 @@ while loop will just go round and round, as if this restaurant offered
 nothing but spam. (If you try this at home, please note that one way to
 interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
 
-```
 
 For Loops
 =========
@@ -89,7 +129,8 @@ Range is a function that returns a list containing a sequence of
 integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The for
 loop then simply iterates over that list, setting i to each value.
 
-***Excercise**
+***Excercise***
+
 Using a loop, calculate the factorial of 42 (the product of all integers up to and including 42).
 
 For Loops with Lists and Dictionaries
@@ -119,14 +160,17 @@ lists?
 
 ```python
 italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
+india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
 us = ["Chicago", "Austin", "New York", "San Fran"]
 nations = [italy, argentina, india, us]
-nationnames = ["italy", "us"]
+nationnames = ["italy","argentina", "india", "us"]
 for nation in nations :
     print nationnames[nations.index(nation)] + ": "
     for city in nation :
         print "  " + city 
 ```
+
 
 Of course, this information is better stored in a dictionary, isn't it?
 The data makes more sense if the keys were the nation names and the
@@ -143,6 +187,8 @@ this clever syntax.
 
 ```python
 italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
+india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
 us = ["Chicago", "Austin", "New York", "San Fran"]
 nations = {"italy":italy, "argentina":argentina, "india":india, "us":us}
 for nation, cities in nations.iteritems() :
@@ -184,10 +230,10 @@ Importantly, Python allows you to use an `else` statement in a for loop.
 That is :
 
 ```python
-knights={"Sir Belvedere":"the Wise", "Sir Lancelot":"the Brave", \
+knights = {"Sir Belvedere":"the Wise", "Sir Lancelot":"the Brave", \
          "Sir Galahad":"the Pure", "Sir Robin":"the Brave", "The Black Knight":"John Clease"} 
 
-favorites=knights.keys()
+favorites = knights.keys()
 favorites.remove("Sir Robin")
 for name, title in knights.iteritems() : 
     string = name + ", "
@@ -200,6 +246,20 @@ for name, title in knights.iteritems() :
     print string
 ```
 
+###enumerate###
+
+Python lists and dictionaries can easily be iterated through in a for loop by using `in`. As we saw above, this is clearer than writing a for loop over the integers up to the length of the list (or dictionary, or other iterable). However, sometimes you may need the index value at the same time, for example for some calculation. The `enumerate` function generates the integer index for you, which can be used instead of the `range` function. The following two loops are equivalent:
+
+```python
+data_list = [23,45,67]
+
+for i in range(len(data_list)):
+    print data_list[i], ' is item number ', i, ' in the list'
+
+for i,d in enumerate(data_list):
+    print d, ' is item number ', i, ' in the list'
+```
+
 ## Reading from files
 
 We've seen a lot so far. Lets work through a slightly lengthier example
@@ -210,6 +270,17 @@ repository within the phonenums directory and is called phonenums.txt.
 Now we have to move ipython to that directory so it can find the
 phonenums.txt file. You navigate within ipython in the same way that you
 navigate in the shell, by entering "cd [path]" .
+
+Let's look at the phonenums.txt file.
+We can type shell commands into ipython by prefacing them with '!'
+'!nano phonenums.txt'
+
+Let's use a simple loop on the file:
+```
+
+```
+
+We see a list of phonenumbers. We want to count how many are in each areacode.
 
 This example opens a text file containing a list of phone numbers. The
 phone numbers are in the format \#\#\#-\#\#\#-\#\#\#\#, one to a line.
@@ -247,7 +318,7 @@ other words, the goal is to write a loop that prints:
 This example is a little tricky to figure out, but give it a shot.
 
 
-## Python Functions and Modules
+# Python Functions and Modules
 
 A function is a block of code that performs a specific task. In this section we
 will learn how to utilize available Python functions as well as write our own. The topics in this section are:
@@ -273,6 +344,9 @@ lotto_numbers.strip().split(',')
 
 question = '%H%ow%z%d%@d%z%th%ez$%@p%ste%rzb%ur%nz%$%@szt%on%gue%?%'
 print question.replace('%', '').replace('@', 'i').replace('$', 'h').replace('z', ' ')
+
+answer = '=H=&!dr=a=nk!c=~ff&&!be=f~r&=!i=t!w=as!c=~~l.='
+print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', ' ')
 
 ###Short Exercise: Calculate GC content of DNA###
 
@@ -369,6 +443,101 @@ print m.sin(3)        # This is really handy if you have module names that are l
 ```
 
 If you intend to use python in your workflow, it is a good idea to skim the standard library documentation at the main Python documentation site, [docs.python.org](http://docs.python.org) to get a general idea of the capabilities of python "out of the box".
+
+Let's take a look at some nice docstrings:
+
+```python
+import numpy
+numpy.sum??
+
+Type:       function
+String Form:<function sum at 0x0000000002D1C5F8>
+File:       c:\anaconda\lib\site-packages\numpy\core\fromnumeric.py
+Definition: numpy.sum(a, axis=None, dtype=None, out=None, keepdims=False)
+Source:
+def sum(a, axis=None, dtype=None, out=None, keepdims=False):
+    """
+    Sum of array elements over a given axis.
+
+    Parameters
+    ----------
+    a : array_like
+        Elements to sum.
+    axis : None or int or tuple of ints, optional
+        Axis or axes along which a sum is performed.
+        The default (`axis` = `None`) is perform a sum over all
+        the dimensions of the input array. `axis` may be negative, in
+        which case it counts from the last to the first axis.
+
+        .. versionadded:: 1.7.0
+
+        If this is a tuple of ints, a sum is performed on multiple
+        axes, instead of a single axis or all the axes as before.
+    dtype : dtype, optional
+        The type of the returned array and of the accumulator in which
+        the elements are summed.  By default, the dtype of `a` is used.
+        An exception is when `a` has an integer type with less precision
+        than the default platform integer.  In that case, the default
+        platform integer is used instead.
+    out : ndarray, optional
+        Array into which the output is placed.  By default, a new array is
+        created.  If `out` is given, it must be of the appropriate shape
+        (the shape of `a` with `axis` removed, i.e.,
+        ``numpy.delete(a.shape, axis)``).  Its type is preserved. See
+        `doc.ufuncs` (Section "Output arguments") for more details.
+    keepdims : bool, optional
+        If this is set to True, the axes which are reduced are left
+        in the result as dimensions with size one. With this option,
+        the result will broadcast correctly against the original `arr`.
+
+    Returns
+    -------
+    sum_along_axis : ndarray
+        An array with the same shape as `a`, with the specified
+        axis removed.   If `a` is a 0-d array, or if `axis` is None, a scalar
+        is returned.  If an output array is specified, a reference to
+        `out` is returned.
+
+    See Also
+    --------
+    ndarray.sum : Equivalent method.
+
+    cumsum : Cumulative sum of array elements.
+
+    trapz : Integration of array values using the composite trapezoidal rule.
+
+    mean, average
+
+    Notes
+    -----
+    Arithmetic is modular when using integer types, and no error is
+    raised on overflow.
+
+    Examples
+    --------
+    >>> np.sum([0.5, 1.5])
+    2.0
+    >>> np.sum([0.5, 0.7, 0.2, 1.5], dtype=np.int32)
+    1
+    >>> np.sum([[0, 1], [0, 5]])
+    6
+    >>> np.sum([[0, 1], [0, 5]], axis=0)
+    array([0, 6])
+    >>> np.sum([[0, 1], [0, 5]], axis=1)
+    array([1, 5])
+
+    If the accumulator is too small, overflow occurs:
+
+    >>> np.ones(128, dtype=np.int8).sum(dtype=np.int8)
+    -128
+
+    """
+
+```
+
+We see a nice docstring seperating into several sections. A short description of the function is given, then all the input parameters are listed, then the outputs, there are some notes and examples. 
+Please note the docstring is longer than the code. And there are few comments in the actual code.
+
 
 ###Short exercise: Make a module###
 
