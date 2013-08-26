@@ -146,12 +146,9 @@ The remainder of this section will outline an exercise to get your feet wet in
 using some of GitHub's features. We'll be continuing our work on testing as an
 example.
 
-For the rest of this section, I'll assume that there are two collaborators,
-Kendra and Darren. I'll assume that they have super-easy github names, and that
-their repositories are at github.com/kendra and github.com/darren. We'll be
-working on an "exercise" branch, because we always want our master branch to
-mirror its upstream counterpart! Never pollute your master branch if you're
-working on a fork!
+For the rest of this section, I'll assume that there are two collaborators, A
+and B. I'll assume that they have super-easy github names, and that their
+repositories are at github.com/a and github.com/b.
 
 ### Exercise : Get set up
 
@@ -162,15 +159,15 @@ Step 2 : Create an exercise branch
     $ git checkout -b exercise
 
 Step 3 : Add your collaborator as a remote and check to make sure you're
-connected, e.g., Darren would type the following
+connected, e.g., B would type the following
 
-    $ git remote add kendra https://github.com/kendra/REPO_NAME.git
+    $ git remote add a https://github.com/a/REPO_NAME.git
     $ git remote -v
-    $ git fetch kendra
+    $ git fetch a
 
-Let's say that Darren is interested in adding a feature to the code he and
-Kendra are working on. Previously, we worked on a mean function, so let's add a
-median function.
+Let's say that B is interested in adding a feature to the code that B and A are
+working on. Previously, we worked on a mean function, so let's add a median
+function.
 
 ```python
 def median(numlist):
