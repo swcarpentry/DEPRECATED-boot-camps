@@ -159,12 +159,24 @@ connected, e.g., Beta would type the following
 
     $ git remote add alpha https://github.com/alpha/simplestats.git
     $ git remote -v
+    origin  https://github.com/YOU/boot-camps.git (fetch)
+    origin  https://github.com/YOU/boot-camps.git (push)
+    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
+    alpha           https://github.com/alpha/boot-camps.git (fetch)
+    alpha           https://github.com/alpha/boot-camps.git (push)
     $ git fetch alpha
 
-and alpha would type
+and Alpha would type
 
     $ git remote add beta https://github.com/beta/simplestats.git
     $ git remote -v
+    origin  https://github.com/YOU/boot-camps.git (fetch)
+    origin  https://github.com/YOU/boot-camps.git (push)
+    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
+    beta            https://github.com/beta/boot-camps.git (fetch)
+    beta            https://github.com/beta/boot-camps.git (push)
     $ git fetch beta
 
 Let's say that Beta is interested in adding a feature to the code that Beta and
@@ -208,14 +220,14 @@ Step 3 : Update your remote
 
     $ git add mean.py
     $ git commit -m "I added a median function!"
-    $ git push origin master
+    $ git push origin median
 
 Step 4 : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as alpha/simplestats, the base as master, the head fork 
-    as beta/simplestats, and the compare as median
+  - choose the base fork as **alpha/simplestats**, the base as **master**, the 
+    head fork as **beta/simplestats**, and the compare as **median**
   - write a descriptive message and send it off!
 
 For Alpha:
@@ -264,14 +276,14 @@ Step 3 : Update your remote
 
     $ git add mean.py
     $ git commit -m "I added tests to the median function!"
-    $ git push origin master
+    $ git push origin median-tests
 
 Step 4 : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as beta/simplestats, the base as master, the head fork 
-    as alpha/simplestats, and the compare as median-tests
+  - choose the base fork as **beta/simplestats**, the base as **master**, the 
+    head fork as **alpha/simplestats**, and the compare as **median-tests**
   - write a descriptive message and send it off!
 
 For Beta:
