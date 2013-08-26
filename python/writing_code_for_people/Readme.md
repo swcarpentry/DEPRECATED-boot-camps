@@ -484,6 +484,36 @@ dictionary, whereas a list cannot as we will see in a moment.
 ***Excercise***
 Display the second element of the tuple with two different slices.
 
+## Sets
+
+Most introductory python courses do not go over sets this early (or at
+all), but I've found this data type to be useful. The python set type is
+similar to the idea of a mathematical set: it is an unordered collection of
+unique things. Consider:
+
+```
+In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+```
+
+Since sets contain only unique items, there's only one banana in the set
+fruit.
+
+You can do things like intersections, unions on sets just like in
+math. Here's an example of an intersection of two sets (the common items in
+both sets).
+
+```
+In [4]: firstBowl = set(["apple", "banana", "pear", "peach"])
+
+In [5]: secondBowl = set(["peach", "watermelon", "orange", "apple"])
+
+In [6]: set.intersection(firstBowl, secondBowl)
+Out[6]: set(['apple', 'peach'])
+```
+
+You can check out more info using the help docs. We won't be returning to
+sets, but its good for you to know they exist.
+
 ## Dictionaries
 
 Recall our file data.dat which contained our current-voltage data and also
