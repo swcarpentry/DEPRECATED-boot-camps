@@ -65,12 +65,12 @@ Step 2 : Clone it. From your terminal :
 
 Step 3 : 
 
-    $ git remote add upstream https://github.com/UW-Madison-ACI/boot-camps.git
+    $ git remote add upstream https://github.com/UW-Madison-ACI/simplestats.git
     $ git remote -v
-    origin  https://github.com/YOU/boot-camps.git (fetch)
-    origin  https://github.com/YOU/boot-camps.git (push)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
@@ -159,24 +159,24 @@ connected, e.g., Beta would type the following
 
     $ git remote add alpha https://github.com/alpha/simplestats.git
     $ git remote -v
-    origin  https://github.com/YOU/boot-camps.git (fetch)
-    origin  https://github.com/YOU/boot-camps.git (push)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
-    alpha           https://github.com/alpha/boot-camps.git (fetch)
-    alpha           https://github.com/alpha/boot-camps.git (push)
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
+    alpha           https://github.com/alpha/simplestats.git (fetch)
+    alpha           https://github.com/alpha/simplestats.git (push)
     $ git fetch alpha
 
 and Alpha would type
 
     $ git remote add beta https://github.com/beta/simplestats.git
     $ git remote -v
-    origin  https://github.com/YOU/boot-camps.git (fetch)
-    origin  https://github.com/YOU/boot-camps.git (push)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
-    beta            https://github.com/beta/boot-camps.git (fetch)
-    beta            https://github.com/beta/boot-camps.git (push)
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
+    beta            https://github.com/beta/simplestats.git (fetch)
+    beta            https://github.com/beta/simplestats.git (push)
     $ git fetch beta
 
 Let's say that Beta is interested in adding a feature to the code that Beta and
