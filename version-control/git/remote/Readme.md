@@ -268,13 +268,14 @@ single ```git checkout -b median-tests``` command)
     $ git branch median-tests
     $ git checkout median-tests
 
-Step 2 : Modify the simplestats.py module to add tests for the median function
+Step 2 : Modify the simplestats_tests.py module to add tests for the median
+function.
 
 Now continue the exercise as was done previously with roles swapped.
 
 Step 3 : Update your remote
 
-    $ git add simplestats.py
+    $ git add simplestats_tests.py
     $ git commit -m "I added tests to the median function!"
     $ git push origin median-tests
 
@@ -375,8 +376,8 @@ characters to it. Specifically, you'll see something like:
     >>>>>>> upstream:simplestats.py
 
 Now, your job is to determine how the code *should* look. For this example, that
-means there should be the changes the PI added and your median function should
-fit underneath it. 
+means you should replace the PI's ```median``` function with yours, and keep the
+PI's ```median``` placeholder below it.
 
 ### Exercise : Resolve a Conflict
 
