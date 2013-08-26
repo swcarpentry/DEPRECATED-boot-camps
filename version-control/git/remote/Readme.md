@@ -146,28 +146,24 @@ The remainder of this section will outline an exercise to get your feet wet in
 using some of GitHub's features. We'll be continuing our work on testing as an
 example.
 
-For the rest of this section, I'll assume that there are two collaborators, A
-and B. I'll assume that they have super-easy github names, and that their
-repositories are at github.com/a and github.com/b.
+For the rest of this section, I'll assume that there are two collaborators,
+Alpha and Beta. I'll assume that they have super-easy github names, and that
+their repositories are at github.com/alpha and github.com/beta.
 
 ### Exercise : Get set up
 
 Step 1 : Group up in pairs
 
-Step 2 : Create an exercise branch
+Step 2 : Add your collaborator as a remote and check to make sure you're
+connected, e.g., Beta would type the following
 
-    $ git checkout -b exercise
-
-Step 3 : Add your collaborator as a remote and check to make sure you're
-connected, e.g., B would type the following
-
-    $ git remote add a https://github.com/a/REPO_NAME.git
+    $ git remote add alpha https://github.com/alpha/REPO_NAME.git
     $ git remote -v
-    $ git fetch a
+    $ git fetch alpha
 
-Let's say that B is interested in adding a feature to the code that B and A are
-working on. Previously, we worked on a mean function, so let's add a median
-function.
+Let's say that Beta is interested in adding a feature to the code that Beta and
+Alpha are working on. Previously, we worked on a mean function, so let's add a
+median function.
 
 ```python
 def median(numlist):
@@ -180,11 +176,64 @@ def median(numlist):
        return numlist[index]
 ```
 
-## Pull Requests : Sending Your Collaborators an Update
+## Pull Requests : Sending Your Collaborators an Update 
 
-A pull request is a notification that you've added a feature to a code base and
-that you'd like it to be pulled into that code base. 
+From GitHub's [website](https://help.github.com/articles/using-pull-requests), a
+pull request
 
+> lets you tell others about changes you've pushed to a GitHub repository. Once
+a pull request is sent, interested parties can review the set of changes,
+discuss potential modifications, and even push follow-up commits if necessary.
+
+### Exercise : Issue a Pull Request and Review it
+
+For Beta:
+
+Step 1 : Start a new feature branch, named median (you could do this in single
+```git checkout -b median``` command)
+
+    $ git branch median
+    $ git checkout median
+
+Step 2 : Modify the mean.py module to add the median function (and maybe a test
+if you're feeling up to it!)
+
+Step 3 : Update your remote
+
+    $ git add mean.py
+    $ git commit -m "I added a median function!"
+    $ git push origin master
+
+Step 4 : Issue a Pull Request
+
+  - Go to your remote's page (github.com/beta/REPO_NAME)
+  - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
+  - choose the base fork as alpha/REPO_NAME, the base as master, the head fork 
+    as beta/REPO_NAME, and the compare as median
+  - write a descriptive message and send it off!
+
+For Alpha:
+
+Step 1 : Review the pull request
+
+  - Is the code clear? Does it need comments? Is it correct? Does something 
+    need clarifying? Feel free to provide in-line comments.
+
+Step 2 : Merge the pull request using the merge button
+
+Step 3 : Update your local repository
+
+    $ git checkout master 
+    $ git fetch origin
+    $ git git merge origin/master
+
+For Beta:
+
+Step 5 : Update your local repository
+
+    $ git checkout master 
+    $ git fetch alpha
+    $ git git merge alpha/master
 
 
 ## gitolite
