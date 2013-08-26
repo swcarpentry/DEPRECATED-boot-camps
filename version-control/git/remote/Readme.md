@@ -213,12 +213,12 @@ Step 1 : Start a new feature branch, named median (you could do this in single
     $ git branch median
     $ git checkout median
 
-Step 2 : Modify the mean.py module to add the median function (and maybe a test
+Step 2 : Modify the simplestats.py module to add the median function (and maybe a test
 if you're feeling up to it!)
 
 Step 3 : Update your remote
 
-    $ git add mean.py
+    $ git add simplestats.py
     $ git commit -m "I added a median function!"
     $ git push origin median
 
@@ -268,13 +268,13 @@ single ```git checkout -b median-tests``` command)
     $ git branch median-tests
     $ git checkout median-tests
 
-Step 2 : Modify the mean.py module to add tests for the median function
+Step 2 : Modify the simplestats.py module to add tests for the median function
 
 Now continue the exercise as was done previously with roles swapped.
 
 Step 3 : Update your remote
 
-    $ git add mean.py
+    $ git add simplestats.py
     $ git commit -m "I added tests to the median function!"
     $ git push origin median-tests
 
@@ -318,16 +318,28 @@ Remember that there are actually three remotes that have a relationship in this
 example: upstream, alpha, and beta. To put this in more realistic terms, imagine
 that the upstream branch is managed by your PI or another manager and the alpha
 and beta branches are students working on a project. All of you have a copy of
-mean.py, but Alpha and Beta have made changes to that file in sync with each
+simplestats.py, but Alpha and Beta have made changes to that file in sync with each
 other. What happens if the PI (upstream) also makes changes on the same lines? A
 dreaded conflict...
 
-Now, I'll assume the roll of PI, and I want to add an additional test to the
-mean function. I'll add the test and push it to the upstream repository. Sadly,
-this test addition overlaps with your recent median addition. It is standard in
-using version control for the person or group who is working on the *feature* to
+Now, I'll assume the roll of PI. Let's say that I know there's a series of
+functions we want to add to our simplestats module. Instead of waiting around
+for my grad students to finish their work, I've chosen to add some basic
+function signatures, e.g., 
+
+```python
+def median(numlist):
+    pass
+
+def mode(numlist):
+    pass
+```
+
+I'll add this to simplestats.py and push it to the upstream repository. Sadly,
+this addition overlaps with your recent median addition. It is standard in using
+version control for the person or group who is working on the *feature* to
 remain up-to-date with the upstream branch. With git, this is easy to do (and is
-one of its strengths vs. centralized version control systems like SVN). 
+one of its strengths vs. centralized version control systems like SVN).
 
 ### Exercise : Experience a Conflict
 
@@ -335,8 +347,8 @@ Step 1 : Experience the Conflict
 
     $ git fetch upstream
     $ git merge upstream/master
-    Auto-merging mean.py
-    CONFLICT (content): Merge conflict in mean.py
+    Auto-merging simplestats.py
+    CONFLICT (content): Merge conflict in simplestats.py
     Automatic merge failed; fix conflicts and then commit the result.
 
 ## Resolving Conflicts
@@ -349,18 +361,18 @@ Git has paused the merge. You can see this with the ```git status`` command.
     # Unmerged paths:
     #   (use "git add/rm <file>..." as appropriate to mark resolution)
     #
-    #       unmerged:      mean.py
+    #       unmerged:      simplestats.py
     #
     no changes added to commit (use "git add" and/or "git commit -a")
 
-If you open your mean.py file, you'll notice that git has added some strange
+If you open your simplestats.py file, you'll notice that git has added some strange
 characters to it. Specifically, you'll see something like:
 
-    <<<<<<< HEAD:mean.py
+    <<<<<<< HEAD:simplestats.py
     ** your version of the code **
     =======
     ** upstream's version of the code **
-    >>>>>>> upstream:mean.py
+    >>>>>>> upstream:simplestats.py
 
 Now, your job is to determine how the code *should* look. For this example, that
 means there should be the changes the PI added and your median function should
@@ -368,15 +380,20 @@ fit underneath it.
 
 ### Exercise : Resolve a Conflict
 
-Step 1 : Resolve the conflict by editing your mean.py file. It should look run
-as expected and should look exactly like your version, but with the PI's changes
-included.
+Step 1 : Resolve the conflict by editing your simplestats.py file. It should
+look run as expected and should look exactly like your version, but with the
+PI's changes included.
 
 Step 2 : Add the updated version and commit
 
-    $ git add mean.py
+    $ git add simplestats.py
     $ git commit -m "merged from upstream"
     $ git push origin master
+
+## A GitHub Tour
+
+Let's take a look at Issues and Milestones, both of which are great project
+planning tools.
 
 ## Extra Credit
 
