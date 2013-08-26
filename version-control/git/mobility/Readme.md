@@ -105,7 +105,7 @@ but you'd really rather go home and cook dinner first. Let's set up that home
 repository so you can pick up exactly where you left off.
 
     $ cd ~/home
-    $ git clone ~/home/myrepo.git
+    $ git clone ~/server/myrepo.git
     $ ls
     myrepo
 
