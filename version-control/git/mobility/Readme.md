@@ -138,4 +138,4 @@ graph taken from John Cook's
 [website](http://www.johndcook.com/blog/2008/04/03/microsoft-word-and-latex/)
 that explains the difference.
 
-![alt text](https://github.com/gidden/boot-camps/blob/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
+![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
