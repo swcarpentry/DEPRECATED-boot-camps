@@ -17,8 +17,7 @@ work computer, and a home (laptop) computer. The server will host the "base"
 repository, and the server can live anywhere you have a connection to. For
 example, you could use your GitHub repository (described in the
 [Collaborate](../remote/Readme.md) section as the server. If you have access to
-a server on campus (e.g., have user space on CAE's server,
-best-tux.cae.wisc.edu), you can host your repository there.
+a server on campus (e.g., server.uni.edu), you can host your repository there.
 
 For the purposes of this exercise, all of the repositories will be represented
 by different folders on your ACI user space in order to provide you with the
