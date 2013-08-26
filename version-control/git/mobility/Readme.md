@@ -131,11 +131,19 @@ general work flow for now. You'll get better at it over time.
 
 #### Aside: Latex and the Limits of the Version Control Workflow
 
-[Latex](http://www.latex-project.org/) is a great, text-based document
-preparation system. Have you ever struggled with formatting Word's equations,
-chapters, bibliography, etc.? Latex works wonders with that. Here's a great
-graph taken from John Cook's
+Have you ever struggled with formatting Word's equations, chapters,
+bibliography, etc.? [Latex](http://www.latex-project.org/) works wonders with
+that. Here's a great graph taken from John Cook's
 [website](http://www.johndcook.com/blog/2008/04/03/microsoft-word-and-latex/)
 that explains the difference.
 
 ![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
+
+I'll add that, from my experience, the types of documents needed for the left
+side of the curve (where Word is easier than Latex) are simple enough to just
+use Google Docs (which is version controlled as well!). 
+
+Latex works great with the workflow described here because it's text-based. You
+are literally altering text files, so there's **nothing else** going on behind
+the scenes. Word files, etc., have lot's going on under the hood, and so are
+poor candidates for version control. 
