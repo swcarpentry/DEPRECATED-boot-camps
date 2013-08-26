@@ -42,11 +42,11 @@ have to go through these steps.
 We'll start off in the home directory and create a bare repository in a new
 directory.
 
-    $ cd server
+    $ cd ~/server
     $ git init --bare myrepo.git
 
-You'll see a new directory in ~/server named myrepo. If you ```cd``` into myrepo
-and give an ```ls``` command, you'll see a bunch of weird stuff.
+You'll see a new directory in ~/server named myrepo. If you ```cd``` into
+myrepo.git and give an ```ls``` command, you'll see a bunch of weird stuff.
 
     $ cd myrepo.git
     $ ls
@@ -80,8 +80,8 @@ computer! You'll find the repository is named properly.
     $ ls
     myrepo
 
-Go ahead an cd into myrepo and look around at the files, you'll find that it's
-empty (except for the .git folder)! Also, take a gander at that remote.
+Go ahead and ```cd``` into myrepo and look around at the files, you'll find that
+it's empty (except for the .git folder)! Also, take a gander at that remote.
 
     $ cd myrepo
     $ ls -a
