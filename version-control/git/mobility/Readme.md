@@ -49,7 +49,6 @@ and give an ```ls``` command, you'll see a bunch of weird stuff.
 This is git's way of storing your repository's information. You shouldn't touch
 this, and you can safely ignore it.
 
-----
 ### Aside: Bare Repositories
 
 A bare repository is meant to simply **store** your files. It actually stores
@@ -64,7 +63,11 @@ Why use a bare repository? The answer is that non-bare repositories don't always
 play nice together, and it turns out it helps to have a single, base repository
 that's "always right". You can get a more detailed answer
 [here](http://gitolite.com/concepts/bare.html).
-----
+###
+
+Ok, so now we have an (empty) bare repository. Let's clone it on our work
+computer!
+
 
     
 
