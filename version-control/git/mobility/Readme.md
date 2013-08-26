@@ -143,6 +143,21 @@ I'll add that, from my experience, the types of documents needed for the left
 side of the curve (where Word is easier than Latex) are simple enough to just
 use Google Docs (which is version controlled as well!). 
 
+Furthermore, I simply **can't imagine** having to write something as complicated
+as a prelim or thesis using Word. You'd spend as much time formatting the thing
+as you do actually writing the content. In other words, it's worth the
+(smallish) headache of getting used to Latex in order to use it for bigger
+documents. There's even a [Wisconsin Thesis
+Template](https://github.com/willb/wi-thesis-template)! That's right, you'd have
+to do **0** work to correctly format your thesis. How ridiculous is that!
+
+Finally, and this is pure aesthetics, Latex looks **good**. I mean, **real
+good**. Have you ever read a paper and thought "wow, those equations look
+great"? I'd be willing to give 10-to-1 odds it was written in Latex. Plus, once
+you write your first paper, you have all the infrastructure to write the next
+one. I literally copy the files into a different directory and rewrite
+content. Super simple!
+
 Latex works great with the workflow described here because it's text-based. You
 are literally altering text files, so there's **nothing else** going on behind
 the scenes. Word files, etc., have lot's going on under the hood, and so are
