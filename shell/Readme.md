@@ -53,7 +53,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b 2013-04-uwmadison https://github.com/UW-Madison-ACI/boot-camps.git
+    git clone -b 2013-08-uwmadison /home/UW-Madison-ACI/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
 the internet.  (We will talk about the `git` command later in the
@@ -555,7 +555,7 @@ are identical to the `man` program.
 | key     | action |
 | ------- | ---------- | 
 | "space" | to go forward |
-|  "b"    | to go backwarsd |
+|  "b"    | to go backward |
 |  "g"    | to go to the beginning |
 |  "G"    | to go to the end |
 |  "q"    | to quit |
@@ -565,8 +565,8 @@ are identical to the `man` program.
 to search for and hit enter. It will jump to the next location where
 that word is found. Try searching the `dictionary.txt` file for the
 word "cat". If you hit "/" then "enter", `less` will just repeat
-the previous search. `less` searches from the current location and
-works its way forward. If you are at the end of the file and search
+the previous search. `less` only searches forward from the current 
+location. If you are at the end of the file and search
 for the word "cat", `less` will not find it. You need to go to the
 beginning of the file and search.
 
@@ -575,12 +575,6 @@ therefore uses the same commands, so you can search documentation
 using "/" as well!
 
 * * * *
-**Short Exercise**
-
-Use the commands we've learned so far to figure out how to search
-in reverse while using `less`.
-
-* * * * 
 
 
 ## Redirection
@@ -601,7 +595,7 @@ Now enter the following command:
 This tells the shell to take the output from the `cat au*` command and
 dump it into a new file called `../all_data`. To verify that this
 worked, examine the `all_data` file. If `all_data` had already
-existed, we would overwritten it. So the `>` character tells the shell
+existed, we would have overwritten it. So the `>` character tells the shell
 to take the output from what ever is on the left and dump it into the
 file on the right. The `>>` characters do almost the same thing,
 except that they will append the output to the file if it already
@@ -611,11 +605,8 @@ exists.
 **Short Exercise**
 
 Use `>>`, to append the contents of all of the files whose names
-contain the number 4 in the directory:
-
-    /home/<username>/boot-camps/shell/data/gerdal
-
-to the existing `all_data` file. Thus, when you are done `all_data`
+contain the number 4 in the directory `/home/<username>/boot-camps/shell/data/gerdal` 
+to the existing `all_data` file. Thus, when you are done,>> `all_data`
 should contain all of the experiment data from Bert and any
 experimental data file from gerdal with filenames that contain the
 number 4.
@@ -645,13 +636,13 @@ to. It is a temporary place for storing files. Data stored in `/tmp`
 is automatically deleted when the computer shuts down.
 
 Now `all_data_backup` has been created as a copy of `all_data`. We can
-move files around using the command `mv`. Enter this command:
+move files and directories around using the command `mv`. Enter this command:
 
     mv all_data_backup /tmp/<username>
 
 This moves `all_data_backup` into the directory `/tmp`. 
 
-The `mv` command is also how you rename files. Since this file is so
+The `mv` command is also how you rename files and diretories. Since this file is so
 important, let's rename it:
 
     mv all_data all_data_IMPORTANT
@@ -702,7 +693,7 @@ operation on each file. Try this command out:
 
     find . -type f -exec grep Volume {} \;
 
-This command finds every file starting from `.`. Then it searches each
+This command first finds every file starting from `.`. Then `grep` searches each
 file for a line which contains the word "Volume". The `{}` refers to
 the name of each file. The trailing `\;` is used to terminate the
 command.  This command is slow, because it is calling a new instance
