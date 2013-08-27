@@ -354,3 +354,5 @@ In [10] reset
 Once deleted, variables cannot be recovered. Proceed (y/[n])?
 ```
 
+Back to [Write Code for People](../writing_code_for_people/Readme.md)
+
