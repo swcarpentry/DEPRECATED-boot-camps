@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People Ib](../data_structures/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
 
 
 # Write Code for People: Variables, Data Structures and Conditionals
