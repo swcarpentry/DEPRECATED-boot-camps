@@ -1,5 +1,5 @@
 [Up To Schedule](../../README.md) -
-Back To [Introduction to the Shell](../Readme.md) - Forward To [Ipython Intro](../../python/ipython/Readme.md)
+Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/writing_code_for_people/Readme.md)
 
 # Automating Workflows
 

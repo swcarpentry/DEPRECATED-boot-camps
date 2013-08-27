@@ -1,59 +1,12 @@
 
 # iPython Intro
-[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People](../writing_code_for_people/Readme.md)
-
+[Up To Schedule](../../README.md) - Back To [Write Code for People](../writing_code_for_people/Readme.md)
 * * * * *
 
 
 **Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
 R. Smith, Will Trimble, and many more**
 
-## Introduction
-This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
-
-This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'll continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
-
-Here is the reference material.
-
-* [Dive into Python] (http://www.diveintopython.net/toc/index.html)
-* [Software Carpentry's Python Lectures] (http://software-carpentry.org/4_0/python/)
-* [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
-* [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
-
-Once we briefly deal with ipython, I'll cover python in the following order:
-
-## What We'll cover
-
-We'll focus on two overarching concepts that are important to any programming language: 
-
-1) How to write code for people. That is code that is readable and understandable to others in your group and most importantly to your future self 3 months or 3 years down the road.
-
-2) How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
-
-### Ipython Intro
-* Ipython
-
-### Lesson 1 (Write Code for People)
-* print statements
-* variables
-* integers
-* floats
-* strings
-* types
-* type coercion
-* basic operations: add numbers, concatenate strings, basic data type functionality
-* list
-* dictionary 
-* tuple
-* conditional (if) statements
-
-### Lesson 2 (Don't Repeat Yourself)
-* for loop
-* while loops
-* iteration
-* methods
-* reading & writing files
-* modules
 
 ## iPython
 You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run iPython, or you can run iPython notebook.  iPython is an alternative to the built-in Python interpreter with some nice features.  iPython notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".

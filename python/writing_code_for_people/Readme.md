@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Back To [Ipython Intro](../ipython/Readme.md) - Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
 
 
 # Write Code for People: Variables, Data Structures and Conditionals
@@ -10,21 +10,29 @@
 **Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
 R. Smith, Will Trimble, and many more**
 
-This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people.
-As we introduce variables we will discuss how to name them, when to comment and which comments are useful. 
-As we introduce types we will discuss how type choice can be influenced by code readability considerations.
-The above readability considerations are to a certain degree universal to all programming, regardless of language.
-Finally, we introduce conditionals, such as if statements; we will see what an important role white space plays in python and how it can improve readability. 
+This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython.  I expect this lecture to be interactive, so stop me at any point if you have questions. 
 
+This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'll continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
 
-Here are some reference materials.
+Here is the reference material.
 
 * [Dive into Python] (http://www.diveintopython.net/toc/index.html)
 * [Software Carpentry's Python Lectures] (http://software-carpentry.org/4_0/python/)
 * [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
 * [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
 
-In this lesson we will cover:
+Once we briefly deal with ipython, I'll cover python in the following order:
+
+## What We'll cover
+
+We'll focus on two overarching concepts that are important to any programming language: 
+
+1) How to write code for people. That is code that is readable and understandable to others in your group and most importantly to your future self 3 months or 3 years down the road.
+
+2) How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
+
+### Ipython Intro
+* Ipython
 
 ### Lesson 1 (Write Code for People)
 * print statements
@@ -38,8 +46,29 @@ In this lesson we will cover:
 * list
 * dictionary 
 * tuple
-* conditionals
+* conditional (if) statements
 
+### Lesson 2 (Don't Repeat Yourself)
+* for loop
+* while loops
+* iteration
+* methods
+* reading & writing files
+* modules
+
+
+## Ipython
+
+Please follow the link.
+[Ipython Intro](../ipython/Readme.md)
+
+## Back to Write Code for People
+
+This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people.
+As we introduce variables we will discuss how to name them, when to comment and which comments are useful. 
+As we introduce types we will discuss how type choice can be influenced by code readability considerations.
+The above readability considerations are to a certain degree universal to all programming, regardless of language.
+Finally, we introduce conditionals, such as if statements; we will see what an important role white space plays in python and how it can improve readability. 
 
 ## Variables
 
