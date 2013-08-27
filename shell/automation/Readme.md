@@ -3,9 +3,9 @@ Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for P
 
 # Automating Workflows
 
-**Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+**Material by Paul Wilson, Lauren Michael, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
-## Count the words
+## Count the Words
 
 The `wc` program (word count) counts the number of lines, words, and
 characters in one or more files. Make sure you are in the `data`
@@ -147,7 +147,7 @@ Notice that the names are now printed in alphabetical order.
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it and make a new file called Sorted.
+name to the file, then sort it and make a new file called `Sorted`.
 
 * * * *
 
@@ -183,7 +183,7 @@ Hint: To print the smallest file, use:
 
 * * * * 
 
-##Shell Scripts
+#Shell Scripts
 
 Printing the smallest file seems pretty useful. We don't want to type
 out that long command often. Let's create a simple script, a simple
@@ -222,7 +222,7 @@ Congratulations, you just created your first shell script! You can now execute i
 by entering the path location of `smallest` (absolute or relative) from within the 
 directory you'd like to analyze.
 
-# Searching Files
+## Searching Files
 
 You can search the contents of a file using the command `grep`. The
 `grep` program is very powerful and useful especially when combined
@@ -244,7 +244,7 @@ file containing the line with the smallest "Range" value. Use the commands
 
 * * * * 
 
-# Variables
+## Variables
 
 We were earlier introduced to the `$PATH` variable.  This is a
 variable that the shell expects to be able to function properly.
