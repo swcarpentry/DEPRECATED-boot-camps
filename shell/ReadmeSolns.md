@@ -1,4 +1,4 @@
-# Solutions to execises in Introduction to Shell
+# Solutions to exercises in Introduction to Shell
 
 * * * *
 ##Arguments
@@ -44,7 +44,7 @@ different file types, especially executables.  You might specifically
 recognize that we have programs like 'ls' and 'cp' in this directory.
 
 * * * *
-###Wild Cards
+##Wild Cards
 
 **Short Exercise**
 
@@ -64,7 +64,7 @@ navigating to a different directory.
     `ls /bin/*a*b* /bin/*b*a*`
 
 * * * *
-##Examining Files
+#Working with Files
 
 **Short Exercises**
 
@@ -140,7 +140,7 @@ cp all_data foo/.
 ```
 
 * * * * 
-# Finding files
+## Finding files
 
 **Short Exercise**
 
