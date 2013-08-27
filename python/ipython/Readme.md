@@ -284,7 +284,7 @@ In [2]: dir(__builtin__)
 str is the python name for strings.
 Let's say we want to know what you can do with strings in python. We can type dir(str)
 
-
+```
 In [6]: dir(str)
 ['__add__',
  '__class__',
@@ -357,20 +357,24 @@ In [6]: dir(str)
  'translate',
  'upper',
  'zfill']
+```
 
 Let's look up what some of these functions do.
 ? displays more information about each datatype/ function. Let's try str.swapcase()?.
 
+```
 In [7]: str.swapcase()?
 Type:       method_descriptor
 String Form:<method 'swapcase' of 'str' objects>
 Namespace:  Python builtin
 Docstring:
 S.swapcase() -> string
+```
 
 Return a copy of the string S with uppercase characters
 converted to lowercase and vice versa.
 
+```
 In [8]: "Hello world".swapcase()
 Out[8]: 'hELLO WORLD'
 ```
