@@ -3,7 +3,7 @@ Forward To [Automating Workflows](automation/Readme.md)
 
 # Introduction to The Shell
 
-**Material by Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
+**Material by Paul Wilson, Lauren Michael, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
 # What is the shell how do I access the shell?
 
