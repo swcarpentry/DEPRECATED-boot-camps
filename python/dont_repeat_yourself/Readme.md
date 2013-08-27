@@ -1,14 +1,12 @@
 [Up To Schedule](../../README.md) - Back To [Write Code for People I](../variables_and_types/Readme.md) - Forward to [Don't Repeat Yourself](../functions_and_modules/Readme.md)
 
-# Don't repeat yourself
-## Python: Loops, Functions & Modules
+# Don't repeat yourself: Loops, Functions & Modules
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
 We will  continue with one of the most important principles of programming: "Don't repeat yourself". 
 We will see how instead of copying and pasting statements with slight modifications we can use loops.
 Then we will learn how functions allow us to pack sections of code into reusable parts.
-Finally we will use 
 We will finish with a lot of interesting and sometime challenging examples and exercises.
 
 Pasting into iPython
@@ -48,7 +46,7 @@ paste with **ctrl+v** though this won't work with all ipython builds.
 While Loops
 ===========
 
-Lets start by looking at while loops since they function like while
+Let's start by looking at while loops since they function like while
 loops in many other languages. The example below takes a list of
 integers and computes the product of each number in the list up to the
 -1 element.
@@ -99,7 +97,7 @@ For Loops
 =========
 
 For loops in python operate a little differently from other languages.
-Lets start with a simple example which prints all of the numbers from 0
+Let's start with a simple example which prints all of the numbers from 0
 to 9:
 
 ```python
@@ -262,7 +260,7 @@ for i,d in enumerate(data_list):
 
 ## Reading from files
 
-We've seen a lot so far. Lets work through a slightly lengthier example
+We've seen a lot so far. Let's work through a slightly lengthier example
 together. I'll use some of the concepts we already saw and introduce a
 few new concepts. To run the example, you'll need to locate a short file
 containing phone numbers. The file can be found in your 
@@ -405,7 +403,7 @@ print round(calculate_gc('ATaGtTCaAGcTCgATtGaATaGgTAaCt'), ndigits = 2) == 0.34
 
 ##Modules##
 
-Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like sin, we need to `import` the math module. Lets take a look at a simple example:
+Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like sin, we need to `import` the math module. Let's take a look at a simple example:
 
 ```python
 
@@ -419,7 +417,7 @@ print dir(math) # See a list of everything in the math module
 help(math) # Get help information for the math module
 ```
 
-It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Lets take a look at an example:
+It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Let's take a look at an example:
 
 ```python
 
@@ -667,7 +665,7 @@ Write a function that mimics transcription. The input argument is a string that 
 * Convert G to C
 * Convert C to G
  
-Hint: You can iterate through a string using a for loop similary to how you loop through a list.
+Hint: You can iterate through a string using a for loop similarly to how you loop through a list.
 
 ```python
 def transcribe(seq):

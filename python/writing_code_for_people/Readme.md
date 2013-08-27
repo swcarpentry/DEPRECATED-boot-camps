@@ -12,9 +12,9 @@ R. Smith, Will Trimble, and many more**
 
 This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people.
 As we introduce variables we will discuss how to name them, when to comment and which comments are useful. 
-As we introduce types we will discuss how type choice choice can be influenced by code readability considerations.
+As we introduce types we will discuss how type choice can be influenced by code readability considerations.
 The above readability considerations are to a certain degree universal to all programming, regardless of language.
-Finally, a we introduce conditionals, such as if statements we will see what an important role white space plays in python and how it can improve readability. 
+Finally, we introduce conditionals, such as if statements; we will see what an important role white space plays in python and how it can improve readability. 
 
 
 Here are some reference materials.
@@ -64,7 +64,7 @@ Can you add the extra space between my last and first name?
 
 ## Types and Dynamic Typing
 
-Like most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
+Like in most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
 
 ```
 In [5]: type?
@@ -81,9 +81,9 @@ Out[6]: str
 ```
 
 
-Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. Its actually important, but its importance may not be clear to you until long after this class is over.
+Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. It's actually important, but its importance may not be clear to you until long after this class is over.
 
-Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Lets say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
+Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Let's say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
 
 Here's an example of dynamic typing. 
 
@@ -96,7 +96,7 @@ In [9]: type(voltage)
 Out[9]: int
 ```
 
-Lets assign a value of 2.7 (which is clearly a float) to voltage. What happens to the type?
+Let's assign a value of 2.7 (which is clearly a float) to voltage. What happens to the type?
 
 ```
 In [10]: voltage = 2.7
@@ -148,7 +148,7 @@ Variable names should be:
 * meaningful (to those who are going to read the code)
 * short enough so you don't misstype them
 
-Variable name choice is extremely important a well named variable might be self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments.
+Variable name choice is important; a well named variable might be self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments.
 
 In most communities there will be a common practice. [For my community it is camel case starting with a lower case letter].
 
@@ -196,7 +196,7 @@ This point becomes important when we start operating on data in the next section
 
 ## Data Operations
 
-In this section all of the discussion in the previous section becomes important. I don't know if I'd call this stuff fundamental to the language, but its pretty important and it will zing you if you aren't careful. The takeaway is that you need to be precise with what you are doing. Lets say you want to add some integers.
+In this section all of the discussion in the previous section becomes important. I don't know if I'd call this stuff fundamental to the language, but it's pretty important and it will zing you if you aren't careful. The takeaway is that you need to be precise with what you are doing. Let's say you want to add some integers.
 
 ```
 In [31]: a = 1
@@ -287,7 +287,7 @@ and tuples as well. I'll also go over reading text data from files.
 
 ## Lists
 
-A list is an ordered, indexable collection of data. Lets say you have
+A list is an ordered, indexable collection of data. Let's say you have
 collected some current and voltage data that looks like this:
 
 ```
@@ -351,7 +351,7 @@ In [7]: currentList[-2]
 Out[7]: 0.5
 ```
 
-You can "slice" items from within a list. Lets say we wanted the second
+You can "slice" items from within a list. Let's say we wanted the second
 through fourth items from voltageList
 
 ```
@@ -457,7 +457,7 @@ In [22]: b
 Out[22]: [1, 2, 10]
 ```
 
-There's a ton more to know about lists, but lets press on. Check out Dive
+There's a ton more to know about lists, but let's press on. Check out Dive
 Into Python or the help documentation for more info.
 
 ## Tuples
@@ -569,7 +569,7 @@ In [13]: dataDict["user"] = "Johann G. von Ulm"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
-Lets say you wanted all the keys from a particular dictionary.
+Let's say you wanted all the keys from a particular dictionary.
 
 ```
 In [14]: dataDict.keys()
