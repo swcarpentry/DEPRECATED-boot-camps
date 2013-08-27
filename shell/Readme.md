@@ -182,7 +182,7 @@ referring back to the manual page frequently.
 **Short Exercise**
 
 1. Use the manual page for `ls` to guess what you would expect from
-using the arguments `-l`, '-t', '-r' at the same time.
+using the arguments `-l`, `-t`, `-r` at the same time.
 2. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
    * `ls -lS` (equivalent to `ls -l -S`)
    * `ls -lt` (equivalent to `ls -l -t`)
