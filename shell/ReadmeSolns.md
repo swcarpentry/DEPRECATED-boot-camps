@@ -1,17 +1,20 @@
 # Solutions to execises in Introduction to Shell
 
 * * * *
-**Short Exercise**
+##Arguments
 
-1. Use the manual page for `ls` to guess what you would expect from
-using the arguments `-l`, '-t', '-r' at the same time.
+**Short Exercises**
+
+*1*. Use the manual page for `ls` to guess what you would expect from
+using the arguments `-l`, `-t`, and `-r` at the same time.
 
 ***Solution***
 
 This will produce a long listing `-l`, sorted by the time that the
 file last changed `-t`, and in the reverse order `-r`.
 
-2. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
+* * * *
+*2*. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
    * `ls -lS` (equivalent to `ls -l -S`)
    * `ls -lt` (equivalent to `ls -l -t`)
    * `ls -1`  (that's the number one, not a letter 'ell')
@@ -24,6 +27,8 @@ In this order, these will produce;
 * `ls -1`  lists files in a brief listing, but 1 per line
 
 * * * *
+##Full vs. Relative Paths
+
 **Short Exercise**
 
 Now, list the contents of the /bin directory. Do you see anything
@@ -39,6 +44,8 @@ different file types, especially executables.  You might specifically
 recognize that we have programs like 'ls' and 'cp' in this directory.
 
 * * * *
+###Wild Cards
+
 **Short Exercise**
 
 Do each of the following using a single `ls` command without
@@ -57,10 +64,11 @@ navigating to a different directory.
     `ls /bin/*a*b* /bin/*b*a*`
 
 * * * *
+##Examining Files
 
 **Short Exercises**
 
-1.  Print out the contents of the `~/boot-camps/shell/dictionary.txt`
+*1*.  Print out the contents of the `~/boot-camps/shell/dictionary.txt`
     file. What does this file contain?
 
 ***Solution***
@@ -71,7 +79,8 @@ cat ~/boot-camps/shell/dictionary.txt
 
 This file contains a list of english language words in alphabetical order.
 
-2.  Without changing directories, (you should still be in `shell`),
+* * * *
+*2*.  Without changing directories, (you should still be in `shell`),
     use one short command to print the contents of all of the files in
     the `/home/<username>/boot-camps/shell/data/THOMAS` directory.
 
@@ -82,29 +91,13 @@ cat data/THOMAS/*
 ```
 
 * * * *
-**Short Exercise**
-
-Use the commands we've learned so far to figure out how to search
-in reverse while using `less`.
-
-***Solution***
-
-Once you have started a search with `/` you can continue it forward
-with `n` and in reverse with `N`.
-
-You can start a search in the reverse direction with `?`.
-
-
-* * * * 
+##Redirection
 
 **Short Exercise**
 
 Use `>>`, to append the contents of all of the files whose names
-contain the number 4 in the directory:
-
-    /home/<username>/boot-camps/shell/data/gerdal
-
-to the existing `all_data` file. Thus, when you are done `all_data`
+contain the number 4 in the directory `/home/<username>/boot-camps/shell/data/gerdal` 
+to the existing `all_data` file. Thus, when you are done, `all_data`
 should contain all of the experiment data from Bert and any
 experimental data file from gerdal with filenames that contain the
 number 4.
@@ -126,6 +119,8 @@ cat gerdal/*4* >> all_data
 ```
 
 * * * * 
+## Creating, moving, copying, and removing
+
 **Short Exercise**
 
 Do the following:
@@ -135,8 +130,8 @@ Do the following:
 3.  Then, copy the `all_data` file into `foo`
 
 ***Solution***
-This assmes that a file named `all_data_IMPORTANT` has already been created.
-Then the following commands:
+This assumes that a file named `all_data_IMPORTANT` has already been created.
+Then the following set of commands should work for 1-3 above:
 
 ```
 mv all_data_IMPORTANT all_data
@@ -144,13 +139,16 @@ mkdir foo
 cp all_data foo/.
 ```
 
+* * * * 
+# Finding files
+
 **Short Exercise**
 
 Navigate to the `data` directory. Use one `find` command to perform each
 of the operations listed below (except number 2, which does not
 require a `find` command):
 
-1.  Find any file whose name is "NOTES" within `data` and delete it 
+*1*.  Find any file whose name is "NOTES" within `data` and delete it 
 
 ***Solution***
 One solution is to use find with its -exec argument:
@@ -173,7 +171,8 @@ This is similar but instead of using find to run the rm command, it
 passes all of the results of find as if they were command line
 arguments for rm.
 
-2.  Create a new directory called `cleaneddata`
+* * * *
+*2*.  Create a new directory called `cleaneddata`
 
 ***Solution***
 
@@ -181,7 +180,8 @@ arguments for rm.
 mkdir cleaneddata
 ```
 
-3.  Move all of the files within `data` to the `cleaneddata` directory
+* * * *
+*3*.  Move all of the files within `data` to the `cleaneddata` directory
 
 ***Solution***
 
@@ -191,8 +191,8 @@ mv */* cleaneddata
 
 Will move all the files (*) in each directory (*/) into the director cleaneddata.
 
-
-4.  Rename all of the files to ensure that they end in `.txt` (note:
+* * * *
+*4*.  Rename all of the files to ensure that they end in `.txt` (note:
     it is ok for the file name to end in `.txt.txt`
 
 ***Solution***
@@ -205,6 +205,7 @@ This will find only files and not directories (-type f) in the
 hierarchy starting with cleaneddata and for each one {} will move it
 to the same name with .txt added.
 
+* * * * 
 
 **BONUS**
 
