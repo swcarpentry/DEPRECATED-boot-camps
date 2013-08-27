@@ -13,7 +13,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/UW-Madison-ACI/boot-camps/tree/2013-04-uwmadison
+    https://github.com/UW-Madison-ACI/boot-camps/tree/2013-08-uwmadison
 
 Click on the directory named `shell`.
 
@@ -46,7 +46,7 @@ are different. I recommend sticking with bash and learning it well.
 To open a terminal, just single click on the "Terminal" icon on the
 Desktop.
 
-# The Example: Manipulating Experimental Data Files
+## The Example: Manipulating Experimental Data Files
 
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data from a hearing test. To get
@@ -56,10 +56,10 @@ command:
     git clone -b 2013-08-uwmadison /home/UW-Madison-ACI/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
-the internet.  (We will talk about the `git` command later in the
-workshop.)
+a local repository that has been copied from our central GitHub repository. 
+(We will talk about the `git` command later in the workshop.)
 
-# Let's get started
+# Interacting with the Shell
 
 One very basic command is `echo`. This command just prints text to
 the terminal. Try the command:
@@ -71,7 +71,7 @@ to you. The echo command is useful for printing from a shell script,
 for displaying variables, and for generating known values to pass
 to other programs.
 
-## Moving around the file system
+# Navigating the file system
 
 Let's learn how to move around the file system using command line
 programs. This is really easy to do using a GUI (just click on
@@ -267,9 +267,9 @@ familiar in there?
 
 * * * * 
 
-## Saving time with shortcuts, wild cards, and tab completion
+# Saving time with shortcuts, wild cards, and tab completion
 
-### Shortcuts
+## Shortcuts
 
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
@@ -301,7 +301,7 @@ To summarize, while you are in the `shell` directory, the commands
 same thing. These shortcuts are not necessary, they are provided for
 your convenience.
 
-### Our data set: Cochlear Implants
+## Our data set: Cochlear Implants
 
 A cochlear implant is a small electronic device that is surgically
 implanted in the inner ear to give deaf people a sense of
@@ -338,7 +338,7 @@ commands to get this data into shape. By the end we would like to:
 If we can get through this example in the available time, we will move
 onto more advanced shell topics...
 
-### Wild cards
+## Wild cards
 
 Navigate to the `~/boot-camps/shell/data/THOMAS` directory. This
 directory contains our hearing test data for THOMAS. If we type `ls`,
@@ -387,7 +387,7 @@ navigating to a different directory.
 
 * * * *
 
-### Tab Completion
+## Tab Completion
 
 Navigate to the home directory. Typing out directory names can waste a
 lot of time. When you start typing out the name of a directory, then
@@ -411,7 +411,7 @@ enter `e<tab><tab>`. You will see the name of every program that
 starts with an `e`. One of those is `echo`. If you enter `ech<tab>` you
 will see that tab completion works.
 
-## Command History
+# Command History
 
 You can easily access previous commands.  Hit the up arrow.  
 Hit it again.  You can step backwards through your command history. 
@@ -450,7 +450,7 @@ files in /bin) and reissue that command.
 
 * * * * 
 
-## Which program?
+# Which program?
 
 Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
 on the computer. A program is just a file that you can *execute*. The
@@ -511,7 +511,7 @@ When there are no `/` characters, the shell assumes you want to look
 in one of the default places for the program.
 
 
-## Examining Files
+# Working with Files
 
 We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
@@ -669,7 +669,7 @@ delete a directory using the `-r` option. Enter the following command:
     rm -r foo
 
 
-# Finding files
+## Finding files
 
 The `find` program can be used to find files based on arbitrary
 criteria. Navigate to the `data` directory and enter the following
