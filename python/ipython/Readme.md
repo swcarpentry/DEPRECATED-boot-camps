@@ -1,6 +1,6 @@
 
 # iPython Intro
-[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People](../writing_code for_people/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Write Code for People](../writing_code_for_people/Readme.md)
 
 * * * * *
 
