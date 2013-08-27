@@ -3,10 +3,10 @@
 # Collaborate: Remote Version Control
 ----
 
-**Based on material by Katy Huff, Anthony Scopatz, and Sri Hari Krishna
-Narayanan**
+**Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
+Narayanan, and Matt Gidden**
 
-## github.com?
+## GitHub.com?
 
 GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
@@ -31,10 +31,10 @@ etc.) provides :
 want to share (in the most liberal sense) your stuff with the world, pay
 girths money for private repos, or host your own.
 
-## github password 
+## GitHub password 
 
-Setting up github requires a github user name and password.  Please take a
-moment to [create a free github account](https://github.com/signup/free) (if you
+Setting up GitHub requires a GitHub user name and password.  Please take a
+moment to [create a free GitHub account](https://github.com/signup/free) (if you
 want to start paying, you can add that to your account some other day).
 
 ## git remote : Steps for Forking a Repository
@@ -48,30 +48,29 @@ The **git remote** command allows you to add, name, rename, list, and
 delete repositories such as the original one **upstream** from your
 fork, others that may be **parallel** to your fork, and so on.
 
+We'll be continuing our testing exercises using GitHub as the online repository,
+so you'll need to start off by getting a copy of that repository to work on!
+
 ### Exercise : Fork Our GitHub Repository
 
-While you probably already have a copy of the SWC-bootcamp repository,
-GitHub doesn't know about it yet. You'll need to tell github you want to
-have an official fork of this repository.
-
 Step 1 : Go to our
-[repository](https://github.com/UW-Madison-ACI/boot-camps/tree/YYYY-MM-PLACE)
+[repository](https://github.com/UW-Madison-ACI/simplestats)
 from your browser, and click on the Fork button. Choose to fork it to your
-username rather than any organizations.
+user name rather than any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone https://github.com/YOU/boot-camps.git
-    $ cd boot-camps
+    $ git clone https://github.com/YOU/simplestats.git
+    $ cd simplestats
 
 Step 3 : 
 
-    $ git remote add upstream https://github.com/UW-Madison-ACI/boot-camps.git
+    $ git remote add upstream https://github.com/UW-Madison-ACI/simplestats.git
     $ git remote -v
-    origin  https://github.com/YOU/boot-camps.git (fetch)
-    origin  https://github.com/YOU/boot-camps.git (push)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/boot-camps.git (push)
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
 
 All repositories that are clones begin with a remote called origin.
 
@@ -79,7 +78,7 @@ All repositories that are clones begin with a remote called origin.
 
 Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
-want your master branch to track updates in the original SWC-bootcamp
+want your master branch to track updates in the original simplestats
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
@@ -92,22 +91,28 @@ repository, it is necessary to also merge.
 ## git merge : Merging the contents of a remote
 
 To incorporate upstream changes from the original master repository (in
-this case UW-Madison-ACI/boot-camps) into your local working copy, you
+this case UW-Madison-ACI/simplestats) into your local working copy, you
 must both fetch and merge. The process of merging may result in
 conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.
 
 ### Exercise : Fetch and Merge the Contents of Our GitHub Repository
 
+This exercise is meant to represent the general work flow you should use to
+update your fork. Let's say that you come in and sit down in the morning, you've
+gotten your coffee (or tea) and you're ready to get started. However, someone
+from your research group has added something to the project you're working on,
+and you need to add it into your work to keep up to date. I'll add a comment,
+then let's get started!
+
 Step 1 : Fetch the recent remote repository history
 
     $ git fetch upstream
 
-Step 2 : Make certain you are in the 2013-04-uwmadison branch and merge the
-upstream 2013-04-uwmadison branch into your 2013-04-uwmadison branch
+Step 2 : Merge the master branch
 
-    $ git checkout 2013-04-uwmadison
-    $ git merge upstream/2013-04-uwmadison
+    $ git checkout master
+    $ git merge upstream/master
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -135,142 +140,288 @@ Before pushing, a developer should always pull (or fetch + merge), so
 that there is an opportunity to resolve conflicts before pushing to the
 remote. 
 
-Note: Depending on your connection set-up with git, you may need to add an ssh
-key, following [these](https://help.github.com/articles/generating-ssh-keys)
-steps. We will walk through them if needed.
+# Collaboration : An exercise in GitHub and Testing
 
-### Exercise : Push a change to github
-We'll talk about conflicts later, but first, since we have no conflicts
-and are up to date, we can make a minor change and send our changes to
-your fork, the "origin."
+The remainder of this section will outline an exercise to get your feet wet in
+using some of GitHub's features. We'll be continuing our work on testing as an
+example.
 
-    $ git push origin 2013-04-uwmadison
+For the rest of this section, I'll assume that there are two collaborators,
+Alpha and Beta. I'll assume that they have super-easy GitHub names, and that
+their repositories are at github.com/alpha and github.com/beta.
 
-If you have permission to push to the upstream repository, sending
-commits to that remote is exactly analogous.
+### Exercise : Get set up
 
-    $ git push upstream 2013-04-uwmadison
+Step 1 : Group up in pairs
 
-In the case of the 2013-04-uwmadison code, new developer accounts will not allow
-this push to succeed. You're welcome to try it though.
+Step 2 : Add your collaborator as a remote and check to make sure you're
+connected, e.g., Beta would type the following
+
+    $ git remote add alpha https://github.com/alpha/simplestats.git
+    $ git remote -v
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
+    alpha           https://github.com/alpha/simplestats.git (fetch)
+    alpha           https://github.com/alpha/simplestats.git (push)
+    $ git fetch alpha
+
+and Alpha would type
+
+    $ git remote add beta https://github.com/beta/simplestats.git
+    $ git remote -v
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
+    beta            https://github.com/beta/simplestats.git (fetch)
+    beta            https://github.com/beta/simplestats.git (push)
+    $ git fetch beta
+
+Let's say that Beta is interested in adding a feature to the code that Beta and
+Alpha are working on. Previously, we worked on a mean function, so let's add a
+median function.
+
+```python
+def median(numlist):
+    numlist.sort()
+    length = len(numlist)
+    index = length/2
+    if length % 2 == 0:
+       return mean([numlist[index], numlist[index - 1]])
+    else:
+       return numlist[index]
+```
+
+## Pull Requests : Sending Your Collaborators an Update 
+
+From GitHub's [website](https://help.github.com/articles/using-pull-requests), a
+pull request
+
+> lets you tell others about changes you've pushed to a GitHub repository. Once
+a pull request is sent, interested parties can review the set of changes,
+discuss potential modifications, and even push follow-up commits if necessary.
+
+### Exercise : Issue a Pull Request and Review it
+
+For Beta:
+
+Step 1 : Start a new feature branch, named median (you could do this in single
+```git checkout -b median``` command)
+
+    $ git branch median
+    $ git checkout median
+
+Step 2 : Modify the simplestats.py module to add the median function (and maybe a test
+if you're feeling up to it!)
+
+Step 3 : Update your remote
+
+    $ git add simplestats.py
+    $ git commit -m "I added a median function!"
+    $ git push origin median
+
+Step 4 : Issue a Pull Request
+
+  - Go to your remote's page (github.com/beta/simplestats)
+  - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
+  - choose the base fork as **alpha/simplestats**, the base as **master**, the 
+    head fork as **beta/simplestats**, and the compare as **median**
+  - write a descriptive message and send it off!
+
+For Alpha:
+
+Step 1 : Review the pull request
+
+  - Is the code clear? Does it need comments? Is it correct? Does something 
+    need clarifying? Feel free to provide in-line comments. Beta can always 
+    update their version of commits during a pull request!
+
+Step 2 : Merge the pull request using the merge button
+
+Step 3 : Update your local repository
+
+    $ git checkout master 
+    $ git fetch origin
+    $ git merge origin/master
+
+For Beta:
+
+Step 5 : Update your local repository
+
+    $ git checkout master 
+    $ git fetch alpha
+    $ git merge alpha/master
+
+### Exercise : Swap Roles
+
+Ok, so we've successfully issued a pull request and merged the updated code
+base. Let's swap the roles of pull requester and reviewer. This time, Alpha will
+add some tests to the median function.
+
+For Alpha:
+
+Step 1 : Start a new feature branch, named median-tests (you could do this in
+single ```git checkout -b median-tests``` command)
+
+    $ git branch median-tests
+    $ git checkout median-tests
+
+Step 2 : Modify the simplestats_tests.py module to add tests for the median
+function.
+
+Now continue the exercise as was done previously with roles swapped.
+
+Step 3 : Update your remote
+
+    $ git add simplestats_tests.py
+    $ git commit -m "I added tests to the median function!"
+    $ git push origin median-tests
+
+Step 4 : Issue a Pull Request
+
+  - Go to your remote's page (github.com/beta/simplestats)
+  - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
+  - choose the base fork as **beta/simplestats**, the base as **master**, the 
+    head fork as **alpha/simplestats**, and the compare as **median-tests**
+  - write a descriptive message and send it off!
+
+For Beta:
+
+Step 1 : Review the pull request
+
+  - Is the code clear? Does it need comments? Is it correct? Does something 
+    need clarifying? Feel free to provide in-line comments. Alpha can always 
+    update their version of commits during a pull request!
+
+Step 2 : Merge the pull request using the merge button
+
+Step 3 : Update your local repository
+
+    $ git checkout master 
+    $ git fetch origin
+    $ git merge origin/master
+
+For Alpha:
+
+Step 5 : Update your local repository
+
+    $ git checkout master 
+    $ git fetch beta
+    $ git merge beta/master
 
 ## git merge : Conflicts
 
-This is the trickiest part of version control, so let's take it very
-carefully.
+This is the trickiest part of version control, so let's take it very carefully.
 
-In the 2013-04-uwmadison code, you'll find a file called Readme.md. This is a
-standard documentation file that appears rendered on the landing page
-for the repository in github. To see the rendered version, visit your
-fork on github, (https://github.com/YOU/boot-camps/tree/2013-04-uwmadison/README.md).
+Remember that there are actually three remotes that have a relationship in this
+example: upstream, alpha, and beta. To put this in more realistic terms, imagine
+that the upstream branch is managed by your PI or another manager and the alpha
+and beta branches are students working on a project. All of you have a copy of
+simplestats.py, but Alpha and Beta have made changes to that file in sync with each
+other. What happens if the PI (upstream) also makes changes on the same lines? A
+dreaded conflict...
 
-For illustration, let's imagine that, suddenly, each of the developers
-on the 2013-04-uwmadison code would like to welcome visitors in a language other
-than English. Since we're all from so many different places and speak
-so many languages, there will certainly be disagreements about what to
-say instead of "Welcome."
+Now, I'll assume the roll of PI. Let's say that I know there's a series of
+functions we want to add to our simplestats module. Instead of waiting around
+for my grad students to finish their work, I've chosen to add some basic
+function signatures, e.g., 
 
-You may speak another language, perhaps even English, however, and may the word
-'welcome' with an equivalent word that you prefer (willkommen, bienvenido,
-benvenuti, etc.).
+```python
+def median(numlist):
+    pass
 
-You'll want to start a new branch for development. It's a good convention
-to think of your master branch (in this case your 2013-04-uwmadison branch) as
-the "production branch," typically by keeping that branch clean of your
-local edits until they are ready for release. Developers typically use the
-master branch of their local fork to track other developers changes in the
-remote repository until their own local development branch changes are
-ready for production.
+def mode(numlist):
+    pass
+```
+
+I'll add this to simplestats.py and push it to the upstream repository. Sadly,
+this addition overlaps with your recent median addition. It is standard in using
+version control for the person or group who is working on the *feature* to
+remain up-to-date with the upstream branch. With git, this is easy to do (and is
+one of its strengths vs. centralized version control systems like SVN).
 
 ### Exercise : Experience a Conflict
 
-Step 1 : Make a new branch, edit the readme file in that branch, and
-commit your changes.
+Step 1 : Experience the Conflict
 
-    $ git branch development
-    $ git checkout development
-    Switched to branch 'development'
-    $ nano Readme.md
-    <edit the readme file and exit nano>
-    $ git commit -am "Changed the welcome message to ... "
-
-Step 2 : Mirror the remote upstream repository in your master branch (in
-this case your 2013-04-uwmadison branch) by pulling down my changes
-
-    $ git checkout 2013-04-uwmadison
-    Switched to branch '2013-04-uwmadison'
     $ git fetch upstream
-    $ git merge upstream/2013-04-uwmadison
-    Updating 43844ea..3b36a87
-    Fast-forward
-     README.rst |   2 +-
-     1 files changed, 1 insertions(+), 1 deletions(-)
-
-Step 3 : You want to push it to the internet eventually, so you pull
-updates from the upstream repository, but will experience a conflict.
-
-    $ git merge development
-    Auto-merging Ream.md
-    CONFLICT (content): Merge conflict in Readme.md
+    $ git merge upstream/master
+    Auto-merging simplestats.py
+    CONFLICT (content): Merge conflict in simplestats.py
     Automatic merge failed; fix conflicts and then commit the result.
 
-## git resolve : Resolving Conflicts
+## Resolving Conflicts
 
 Now what?
 
-Git has paused the merge. You can see this with the **git status**
-command.
+Git has paused the merge. You can see this with the ```git status`` command.
 
-    # On branch 2013-04-uwmadison
+    # On branch master
     # Unmerged paths:
     #   (use "git add/rm <file>..." as appropriate to mark resolution)
     #
-    #       unmerged:      Readme.md
+    #       unmerged:      simplestats.py
     #
     no changes added to commit (use "git add" and/or "git commit -a")
 
-The only thing that has changed is the Readme.md file. Opening it,
-you'll see something like this at the beginning of the file.
+If you open your simplestats.py file, you'll notice that git has added some strange
+characters to it. Specifically, you'll see something like:
 
-    =====================
-    <<<<<<< HEAD
-    Vanakkam
+    <<<<<<< HEAD:simplestats.py
+    ** your version of the code **
     =======
-    Willkommen
-    >>>>>>> development
-    =====================
+    ** upstream's version of the code **
+    >>>>>>> upstream:simplestats.py
 
-The intent is for you to edit the file, knowing now that I wanted the
-Welcome to say Vanakkam. If you want it to say Willkommen, you should
-delete the other lines. However, if you want to be inclusive, you may
-want to change it to read Vanakkam and Willkommen. Decisions such as this
-one must be made by a human, and why conflict resolution is not handled
-more automatically by the version control system.
+Now, your job is to determine how the code *should* look. For this example, that
+means you should replace the PI's ```median``` function with yours, and keep the
+PI's ```median``` placeholder below it.
 
-    Vanakkam and Willkommen
+### Exercise : Resolve a Conflict
 
-This results in a status To alert git that you have made appropriate
-alterations,
+Step 1 : Resolve the conflict by editing your simplestats.py file. It should
+look run as expected and should look exactly like your version, but with the
+PI's changes included.
 
-    $ git add Readme.md
-    $ git commit
-    Merge branch 'development'
+Step 2 : Add the updated version and commit
 
-    Conflicts:
-      Readme.md
-    #
-    # It looks like you may be committing a MERGE.
-    # If this is not correct, please remove the file
-    # .git/MERGE_HEAD
-    # and try again.
-    #
-    $ git push origin 2013-04-uwmadison
-    Counting objects: 10, done.
-    Delta compression using up to 2 threads.
-    Compressing objects: 100% (6/6), done.
-    Writing objects: 100% (6/6), 762 bytes, done.
-    Total 6 (delta 2), reused 0 (delta 0)
-    To git@github.com:username/boot-camps.git
+    $ git add simplestats.py
+    $ git commit -m "merged from upstream"
+    $ git push origin master
+
+## A GitHub Tour
+
+Let's take a look at Issues and Milestones, both of which are great project
+planning tools.
+
+## Extra Credit
+
+Repeat the median function exercise with a mode function. You might find the
+[defaultdict](http://docs.python.org/2/library/collections.html#collections.defaultdict)
+container useful -- it provides default values for key-value pairs! Here's an
+example of its use.
+
+```
+In [1]: from collections import defaultdict
+In [2]: number_frequencies = defaultdict(int)
+In [3]: number_found = 42
+In [4]: number_frequencies[number_found] += 1
+In [5]: print number_frequencies[number_found]
+Out[5]: 1
+```
+
+You might also ask how to get the maximum value in a python dictionary. Here's
+one way.
+
+```
+In [6]: max_counts = max(number_frequencies, key = number_frequencies.get)
+In [7]: print max_counts
+Out[7]: 42
+```
+
+It works great, right? Maybe we should add a test for bimodal distributions...
 
 ## gitolite
 
