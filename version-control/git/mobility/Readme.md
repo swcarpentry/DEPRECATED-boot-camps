@@ -8,16 +8,17 @@
 
 One of the powerful ways to use version control is to maintain your workflow
 between the office, home, and wherever else you find yourself being
-productive. This type of workflow can be extensively with both research work
-(i.e., coding project collaboration) and thesis writing (i.e., "personal"
+productive. This type of workflow can be used extensively with both research
+work (i.e., coding project collaboration) and thesis writing (i.e., "personal"
 activities).
 
 The workflow in this section describes three repository locations - a server, a
 work computer, and a home (laptop) computer. The server will host the "base"
 repository, and the server can live anywhere you have a connection to. For
 example, you could use your GitHub repository (described in the
-[Collaborate](../remote/Readme.md) section as the server. If you have access to
-a server on campus (e.g., server.uni.edu), you can host your repository there.
+[Collaborate](../remote/Readme.md) section) as the server. If you have access to
+a server on campus (e.g., server.uni.edu), you can host your repository there
+(and it's private!).
 
 For the purposes of this exercise, all of the repositories will be represented
 by different folders on your ACI user space in order to provide you with the
@@ -44,8 +45,10 @@ directory.
     $ cd ~/server
     $ git init --bare myrepo.git
 
-You'll see a new directory in ~/server named myrepo. If you ```cd``` into
-myrepo.git and give an ```ls``` command, you'll see a bunch of weird stuff.
+You'll see a new directory in ~/server named myrepo.git. If you ```cd``` into
+myrepo.git and give an ```ls``` command, you'll the contents of the .git
+directory you saw earlier in the [Use Version Control](../local/Readme.md)
+section.
 
     $ cd myrepo.git
     $ ls
@@ -86,8 +89,8 @@ it's empty (except for the .git folder)! Also, take a gander at that remote.
     $ ls -a
     . .. .git
     $ git remote -v
-    origin	 ~/../server/myrepo.git (fetch)
-    origin	 ~/../server/myrepo.git (push)
+    origin	 /home/<you>/server/myrepo.git (fetch)
+    origin	 /home/<you>/server/myrepo.git (push)
 
 Sweet, it automatically added the bare repository as the origin remote. We're
 set up to get some work done! Go ahead an add a file and commit it.
@@ -140,7 +143,7 @@ that explains the difference.
 ![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
 
 With the advent of Google Drive, it's often as easy to use that tool if a
-document is simple enough, i.e., on the left side of the curver (where Word is
+document is simple enough, i.e., on the left side of the curve (where Word is
 easier than Latex). Note that Google Docs is version controlled as well!
 
 Furthermore, simply **imagine** having to write something as complicated as a
