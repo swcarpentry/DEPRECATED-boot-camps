@@ -4,7 +4,7 @@ UW-Madison Software Carpentry Boot Camp
 =======================================
 Welcome!
 
-August 29 & 30, 2013
+August 28 & 29, 2013
 --------------------
 
 Discovery Building
