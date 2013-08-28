@@ -42,7 +42,7 @@ Day 2
 
 | Time         | Topic                                   | Instructor  |
 | ------------ | --------------------------------------- |-------------|
-| 9:00-10:30   | [Plan for Mistakes](version-control/git/local/Readme.md) | Paul Wilson |
+| 9:00-10:30   | [Use Version Control](version-control/git/local/Readme.md) | Paul Wilson |
 | 10:30-10:45  | Break                                   |             |
 | 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Anthony Scopatz |
 | 12:00-1:00   | Lunch                                   |             |
