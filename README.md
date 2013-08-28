@@ -28,27 +28,27 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           | Paul Wilson  |
-| 9:00-9:45    | What we know about software engineering | Steve McGough|
-| 9:45-10:45   | [Introducing the Shell](shell/Readme.md)| Paul Wilson  |
+| 9:00-9:45    | What we know about software engineering | Paul Wilson  |
+| 9:45-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
 | 10:45-11:00  | Break                                   |              |
-| 11:00-12:30  | [Automating Workflows](shell/automation/Readme.md)     | Paul Wilson  |
+| 11:00-12:30  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
 | 12:30-1:30   | Lunch                                   |              |
-| 1:30-3:00    | [Write Code for People I](python/variables_and_types/Readme.md)| Steve McGough|
+| 1:30-3:00    | [Write Code for People](python/writing_code_for_people/Readme.md)| Jens von der Linden |
 | 3:00-3:15    | Break                                   |              |
-| 3:15-4:30    | [Write Code for People II](python/flow_control/Readme.md)| Aronne Mirelli |
+| 3:15-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Jens von der Linden |
 
 Day 2
 ======
 
 | Time         | Topic                                   | Instructor  |
 | ------------ | --------------------------------------- |-------------|
-| 9:00-10:30   | [Don't Repeat Yourself](python/functions_and_modules/Readme.md) | Aronne Mirelli |
+| 9:00-10:30   | [Plan for Mistakes](version-control/git/local/Readme.md) | Paul Wilson |
 | 10:30-10:45  | Break                                   |             |
-| 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
+| 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Anthony Scopatz |
 | 12:00-1:00   | Lunch                                   |             |
-| 1:00-2:30    | [Use Version Control](version-control/git/local/Readme.md) | Paul Wilson |
+| 1:00-2:30    | [Collaborate](version-control/git/remote/Readme.md) | Matt Gidden |
 | 2:30-2:45    | Break                                   |      |
-| 2:45-4:00    | [Collaborate](version-control/git/remote/Readme.md)        | Matt Gidden |
+| 2:45-4:00    | Open Hours                            | Matt Gidden |
 
 Coincidence?
 ============
