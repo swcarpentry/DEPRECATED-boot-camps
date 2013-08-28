@@ -132,6 +132,17 @@ branch. This stuff may not be intuitive when you're first starting out, though,
 so just play around and get used to the general work flow for now. You'll get
 better at it over time.
 
+## Cloning from the Server in Real Life
+
+In the toy example, the home and work repositories were cloned easily using the
+local path to the served repository (~/server/myrepo.git). If the repository in
+real life is served on an external (e.g., university) server, you'll likely have
+to use git's ssh cloning
+protocol. [Here](http://git-scm.com/book/en/Git-on-the-Server-The-Protocols#The-SSH-Protocol)'s
+a great, short explanation of how to do that. GitHub's cloning protocol is
+pretty simple, and described on the [Fork help
+page](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
+
 #### Aside: Latex and the Limits of the Version Control Workflow
 
 Have you ever struggled with formatting Word's equations, chapters,
