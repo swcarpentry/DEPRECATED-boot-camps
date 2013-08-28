@@ -213,12 +213,12 @@ Step 1 : Start a new feature branch, named median (you could do this in single
     $ git branch median
     $ git checkout median
 
-Step 2 : Modify the simplestats.py module to add the median function (and maybe a test
+Step 2 : Modify the stats.py module to add the median function (and maybe a test
 if you're feeling up to it!)
 
 Step 3 : Update your remote
 
-    $ git add simplestats.py
+    $ git add stats.py
     $ git commit -m "I added a median function!"
     $ git push origin median
 
@@ -268,14 +268,14 @@ single ```git checkout -b median-tests``` command)
     $ git branch median-tests
     $ git checkout median-tests
 
-Step 2 : Modify the simplestats_tests.py module to add tests for the median
+Step 2 : Modify the test_stats.py module to add tests for the median
 function.
 
 Now continue the exercise as was done previously with roles swapped.
 
 Step 3 : Update your remote
 
-    $ git add simplestats_tests.py
+    $ git add test_stats.py
     $ git commit -m "I added tests to the median function!"
     $ git push origin median-tests
 
@@ -319,7 +319,7 @@ Remember that there are actually three remotes that have a relationship in this
 example: upstream, alpha, and beta. To put this in more realistic terms, imagine
 that the upstream branch is managed by your PI or another manager and the alpha
 and beta branches are students working on a project. All of you have a copy of
-simplestats.py, but Alpha and Beta have made changes to that file in sync with each
+stats.py, but Alpha and Beta have made changes to that file in sync with each
 other. What happens if the PI (upstream) also makes changes on the same lines? A
 dreaded conflict...
 
@@ -331,12 +331,9 @@ function signatures, e.g.,
 ```python
 def median(numlist):
     pass
-
-def mode(numlist):
-    pass
 ```
 
-I'll add this to simplestats.py and push it to the upstream repository. Sadly,
+I'll add this to stats.py and push it to the upstream repository. Sadly,
 this addition overlaps with your recent median addition. It is standard in using
 version control for the person or group who is working on the *feature* to
 remain up-to-date with the upstream branch. With git, this is easy to do (and is
@@ -348,8 +345,8 @@ Step 1 : Experience the Conflict
 
     $ git fetch upstream
     $ git merge upstream/master
-    Auto-merging simplestats.py
-    CONFLICT (content): Merge conflict in simplestats.py
+    Auto-merging stats.py
+    CONFLICT (content): Merge conflict in stats.py
     Automatic merge failed; fix conflicts and then commit the result.
 
 ## Resolving Conflicts
@@ -362,18 +359,18 @@ Git has paused the merge. You can see this with the ```git status`` command.
     # Unmerged paths:
     #   (use "git add/rm <file>..." as appropriate to mark resolution)
     #
-    #       unmerged:      simplestats.py
+    #       unmerged:      stats.py
     #
     no changes added to commit (use "git add" and/or "git commit -a")
 
-If you open your simplestats.py file, you'll notice that git has added some strange
+If you open your stats.py file, you'll notice that git has added some strange
 characters to it. Specifically, you'll see something like:
 
-    <<<<<<< HEAD:simplestats.py
+    <<<<<<< HEAD:stats.py
     ** your version of the code **
     =======
     ** upstream's version of the code **
-    >>>>>>> upstream:simplestats.py
+    >>>>>>> upstream:stats.py
 
 Now, your job is to determine how the code *should* look. For this example, that
 means you should replace the PI's ```median``` function with yours, and keep the
@@ -381,13 +378,13 @@ PI's ```median``` placeholder below it.
 
 ### Exercise : Resolve a Conflict
 
-Step 1 : Resolve the conflict by editing your simplestats.py file. It should
+Step 1 : Resolve the conflict by editing your stats.py file. It should
 look run as expected and should look exactly like your version, but with the
 PI's changes included.
 
 Step 2 : Add the updated version and commit
 
-    $ git add simplestats.py
+    $ git add stats.py
     $ git commit -m "merged from upstream"
     $ git push origin master
 
