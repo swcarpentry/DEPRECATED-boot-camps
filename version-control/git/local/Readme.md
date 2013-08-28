@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Plan for Mistakes](../../../python/testing) - Forward To [Collaborate](../remote/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
 
 # Use Version Control
 ----
@@ -518,3 +518,5 @@ Step 5 : Play around with it.
 ## Resources
 
 [git book](http://git-scm.com/book)
+
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
