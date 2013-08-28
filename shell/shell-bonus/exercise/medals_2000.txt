@@ -1,0 +1,80 @@
+2000	Algeria	3	1	1
+2000	Argentina	3	17	0
+2000	Armenia	1	0	0
+2000	Australia	54	69	60
+2000	Austria	0	1	3
+2000	Azerbaijan	1	0	2
+2000	Bahamas	5	0	6
+2000	Barbados	1	0	0
+2000	Belarus	11	8	3
+2000	Belgium	4	3	0
+2000	Brazil	36	12	0
+2000	Bulgaria	2	6	5
+2000	Cameroon	0	0	18
+2000	Canada	23	4	4
+2000	Chile	17	0	0
+2000	China	17	23	39
+2000	Chinese Taipei	4	1	0
+2000	Colombia	0	0	1
+2000	Costa Rica	2	0	0
+2000	Croatia	9	0	1
+2000	Cuba	12	35	18
+2000	Czech Republic	4	3	2
+2000	Denmark	4	3	18
+2000	Estonia	2	0	1
+2000	Ethiopia	3	1	4
+2000	Finland	1	1	3
+2000	France	14	30	22
+2000	Georgia	6	0	0
+2000	Germany	64	23	31
+2000	Great Britain	12	20	22
+2000	Greece	8	6	4
+2000	Hungary	4	24	25
+2000	Iceland	1	0	0
+2000	India	1	0	0
+2000	Indonesia	2	4	2
+2000	Iran	1	0	3
+2000	Ireland	0	1	0
+2000	Israel	1	0	0
+2000	Italy	29	14	22
+2000	Jamaica	3	20	0
+2000	Japan	8	31	5
+2000	Kazakhstan	0	4	3
+2000	Kenya	2	3	2
+2000	Kuwait	1	0	0
+2000	Kyrgyzstan	1	0	0
+2000	Latvia	1	1	1
+2000	Lithuania	15	0	2
+2000	Macedonia	1	0	0
+2000	Mexico	3	2	1
+2000	Moldova	1	1	0
+2000	Morocco	4	1	0
+2000	Mozambique	0	0	1
+2000	Netherlands	23	29	27
+2000	New Zealand	3	0	1
+2000	Nigeria	0	2	6
+2000	North Korea	3	1	0
+2000	Norway	19	4	20
+2000	Poland	7	10	7
+2000	Portugal	2	0	0
+2000	Qatar	1	0	0
+2000	Romania	13	6	27
+2000	Russia	54	67	66
+2000	Saudi Arabia	1	1	0
+2000	Serbia and Montenegro	13	1	11
+2000	Slovakia	1	3	2
+2000	Slovenia	0	0	3
+2000	South Africa	3	2	0
+2000	South Korea	35	26	12
+2000	Spain	20	19	3
+2000	Sri Lanka	0	1	0
+2000	Sweden	8	20	4
+2000	Switzerland	2	11	1
+2000	Thailand	2	0	1
+2000	Trinidad and Tobago	1	1	0
+2000	Turkey	2	0	3
+2000	Ukraine	12	20	3
+2000	United States	52	61	130
+2000	Uruguay	0	1	0
+2000	Uzbekistan	2	1	1
+2000	Vietnam	0	1	0
