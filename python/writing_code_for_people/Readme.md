@@ -76,15 +76,15 @@ Finally, we introduce conditionals, such as if statements; we will see what an i
 All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Let's set a variable.
 
 ```
-In [1]: firstName = "Jens"
-In [2]: lastName = "von der Linden"
+In [1]: first_name = "Jens"
+In [2]: last_name = "von der Linden"
 ```
 
 We can concatenate strings with the + operator. Computers don't understand context.
 
 ```
-In [3]: fullName = firstName + lastName
-In [4]: print fullName
+In [3]: full_name = first_name + last_name
+In [4]: print full_name
 Out[4]: Jensvon der Linden
 ```
 
@@ -179,7 +179,7 @@ Variable names should be:
 
 Variable name choice is important; a well named variable might be self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments.
 
-In most communities there will be a common practice. [For my community it is camel case starting with a lower case letter].
+In most communities there will be a common practice.
 
 
 ## On Being Precise with floats and ints
@@ -338,67 +338,67 @@ current:
 So you could put that data into lists like
 
 ```
-In [1]: voltageList = [-2.0, -1.0, 0.0, 1.0, 2.0]
+In [1]: voltage_list = [-2.0, -1.0, 0.0, 1.0, 2.0]
 
-In [2]: currentList = [-1.0, -0.5, 0.0, 0.5, 1.0]
+In [2]: current_list = [-1.0, -0.5, 0.0, 0.5, 1.0]
 ```
 
-obviously voltageList is of type list:
+obviously voltage_list is of type list:
 
 ```
-In [3]: type(voltageList)
+In [3]: type(voltage_list)
 Out[3]: list
 ```
 
 Python lists have the charming (annoying?) feature that they are indexed
-from zero. Therefore, to find the value of the first item in voltageList:
+from zero. Therefore, to find the value of the first item in voltage_list:
 
 ```
-In [4]: voltageList[0]
+In [4]: voltage_list[0]
 Out[4]: -2.0
 ```
 
 And to find the value of the third item
 
 ```
-In [5]: voltageList[2]
+In [5]: voltage_list[2]
 Out[5]: 0.0
 ```
 
 Lists can be indexed from the back using a negative index. The last item of
-currentList
+current_list
 
 ```
-In [6]: currentList[-1]
+In [6]: current_list[-1]
 Out[6]: 1.0
 ```
 
 and the next-to-last
 
 ```
-In [7]: currentList[-2]
+In [7]: current_list[-2]
 Out[7]: 0.5
 ```
 
 You can "slice" items from within a list. Let's say we wanted the second
-through fourth items from voltageList
+through fourth items from voltage_list
 
 ```
-In [8]: voltageList[1:4]
+In [8]: voltage_list[1:4]
 Out[8]: [-1.0, 0.0, 1.0]
 ```
 
 Or from the third item to the end
 
 ```
-In [9]: voltageList[2:]
+In [9]: voltage_list[2:]
 Out[9]: [0.0, 1.0, 2.0]
 ```
 
 and so on.
 
 ***Excercise***
-What does voltageList[::2] mean?
+What does voltage_list[::2] mean?
 
 ### Append and Extend
 
@@ -424,11 +424,11 @@ current:
 If you want to append items to the end of a list, use the append method.
 
 ```
-In [11]: voltageList.append(3.)
+In [11]: voltage_list.append(3.)
 
-In [12]: voltageList.append(4.)
+In [12]: voltage_list.append(4.)
 
-In [13]: voltageList
+In [13]: voltage_list
 Out[13]: [-2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
 ```
 
@@ -436,9 +436,9 @@ You can see how that approach might be tedious in certain cases. If you
 want to concatenate a list onto the end of another one, use extend.
 
 ```
-In [14]: currentList.extend([1.5, 2.0])
+In [14]: current_list.extend([1.5, 2.0])
 
-In [15]: currentList
+In [15]: current_list
 Out[15]: [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 ```
 
@@ -447,7 +447,7 @@ Out[15]: [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 Sometimes you want to know how many items are in a list. Use the len command.
 
 ```
-In [16]: len(voltageList)
+In [16]: len(voltage_list)
 Out[16]: 7
 ```
 
@@ -456,7 +456,7 @@ Out[16]: 7
 Lists can contain hetergeneous data.
 
 ```
-In [17]: dataList = ["experiment: current vs. voltage", \
+In [17]: data_list = ["experiment: current vs. voltage", \
    ....:             "run", 47, \
    ....:             "temperature", 372.756, \
    ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
@@ -532,11 +532,11 @@ math. Here's an example of an intersection of two sets (the common items in
 both sets).
 
 ```
-In [4]: firstBowl = set(["apple", "banana", "pear", "peach"])
+In [4]: first_bowl = set(["apple", "banana", "pear", "peach"])
 
-In [5]: secondBowl = set(["peach", "watermelon", "orange", "apple"])
+In [5]: second_bowl = set(["peach", "watermelon", "orange", "apple"])
 
-In [6]: set.intersection(firstBowl, secondBowl)
+In [6]: set.intersection(first_bowl, second_bowl)
 Out[6]: set(['apple', 'peach'])
 ```
 
@@ -554,7 +554,7 @@ Here's a way to create a dictionary that contains all the data in our
 data.dat file in a more sensible way than a list.
 
 ```
-In [7] dataDict = {"experiment": "current vs. voltage", \
+In [7] data_dict = {"experiment": "current vs. voltage", \
                    "run": 47, \
                    "temperature": 372.756, \
                    "current": [-1.0, -0.5, 0.0, 0.5, 1.0], \
@@ -566,21 +566,21 @@ the run number is in the second position of the list, you just refer
 directly to "run":
 
 ```
-In [9]: dataDict["run"]
+In [9]: data_dict["run"]
 Out[9]: 47
 ```
 
 If you wanted the voltage data list:
 
 ```
-In [10]: dataDict["voltage"]
+In [10]: data_dict["voltage"]
 Out[10]: [-2.0, -1.0, 0.0, 1.0, 2.0]
 ```
 
 Or perhaps you wanted the last element of the current data list
 
 ```
-In [11]: dataDict["current"][-1]
+In [11]: data_dict["current"][-1]
 Out[11]: 1.0
 ```
 
@@ -588,27 +588,27 @@ Once a dictionary has been created, you can change the values of the data
 if you like.
 
 ```
-In [12]: dataDict["temperature"] = 3275.39
+In [12]: data_dict["temperature"] = 3275.39
 ```
 
 You can also add new keys to the dictionary.
 
 ```
-In [13]: dataDict["user"] = "Johann G. von Ulm"
+In [13]: data_dict["user"] = "Johann G. von Ulm"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
 Let's say you wanted all the keys from a particular dictionary.
 
 ```
-In [14]: dataDict.keys()
+In [14]: data_dict.keys()
 Out[14]: ['run', 'temperature', 'current', 'experiment', 'user', 'voltage']
 ```
 
 also, values
 
 ```
-In [15]: dataDict.values()
+In [15]: data_dict.values()
 Out[15]: 
 [47,
  3275.39,
@@ -655,7 +655,7 @@ i!=j # i is not equal to j : TRUE
 However, python has other equivalence test statements that are fairly
 unique to python. To check whether an object is contained in a list :
 
-```pythona 
+```python 
 beatle="John"
 beatles=["George", "Ringo","John", "Paul"]
 print beatle in beatles # is John one of the beatles? : TRUE
