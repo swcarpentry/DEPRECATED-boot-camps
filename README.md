@@ -4,11 +4,11 @@ UW-Madison Software Carpentry Boot Camp
 =======================================
 Welcome!
 
-April 29 & 30, 2013
+August 29 & 29, 2013
 --------------------
 
-Union South
---------------
+Discovery Building
+------------------
 
 This repository contains the course material for the upcoming Software
 Carpentry boot camp being hosted by the Advanced Computing
