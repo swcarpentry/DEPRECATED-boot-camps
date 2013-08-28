@@ -1,4 +1,3 @@
-
 [Up To Schedule](../../README.md) - Back To [Don't Repeat Yourself](../functions_and_modules/Readme.md) -
 Forward To [Use Version Control](../../version-control/git/local/Readme.md)
 
@@ -31,7 +30,7 @@ following questions:
 -   Does it continue to work after system configurations or libraries
     are upgraded?
 -   Does it respond properly for a full range of input parameters?
--   What about **edge or corner cases**?
+-   What about **edge and corner cases**?
 -   What's the limit on that input parameter?
 -   How will it affect your
     [publications](http://www.nature.com/news/2010/101013/full/467775a.html)?
@@ -80,7 +79,7 @@ def mean(numlist):
     return total/length
 ```
 
-Sometimes tests they are functions alongside the function definitions
+Sometimes tests are functions alongside the function definitions
 they are testing.
 
 ```python
@@ -106,7 +105,9 @@ def test_floating_mean():
     assert mean([1, 2]) == 1.5
 ```
 
-Sometimes they are in an executable independent of the main executable.
+Sometimes tests live in an executable independent of the main executable.
+
+**Implementation File:** `mean.py`
 
 ```python
 def mean(numlist):
@@ -120,10 +121,10 @@ def mean(numlist):
     return total/length
 ```
 
-Where, in a different file exists a test module:
+**Test File:** `test_mean.py`
 
 ```python
-import mean
+from stats import mean
 
 def test_mean():
     assert mean([0, 0, 0, 0]) == 0
@@ -366,137 +367,142 @@ style was put forth most strongly by [Kent Beck in
 
 ## A TDD Example
 
-Say you want to write a fib() function which generates values of the [Fibonacci
-sequence](http://en.wikipedia.org/wiki/Fibonacci_number) of given indexes. You
-would - of course - start by writing the test, possibly testing a single value:
+Say you want to write a std() function which computes the [Standard 
+Deviation](http://en.wikipedia.org/wiki/Standard_deviation). You
+would - of course - start by writing the test, possibly testing a single set of 
+numbers:
 
 ```python
-from nose.tools import assert_equal
+from nose.tools import assert_equal, assert_almost_equal
 
-def test_fib1():
-    obs = fib(2)
-    exp = 1
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
     assert_equal(obs, exp)
 ```
 
 You would *then* go ahead and write the actual function:
 
 ```python
-def fib(n):
+def std(vals):
     # you snarky so-and-so
-    return 1
+    return 1.0
 ```
 
-And that is it right?! Well, not quite. This implementation fails for
+And that is it, right?! Well, not quite. This implementation fails for
 most other values. Adding tests we see that:
 
 ```python
-def test_fib1():
-    obs = fib(2)
-    exp = 1
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
     assert_equal(obs, exp)
 
-
-def test_fib2():
-    obs = fib(0)
-    exp = 0
+def test_std2():
+    obs = std([])
+    exp = 0.0
     assert_equal(obs, exp)
 
-    obs = fib(1)
-    exp = 1
+def test_std3():
+    obs = std([0.0, 4.0])
+    exp = 2.0
     assert_equal(obs, exp)
 ```
 
-This extra test now requires that we bother to implement at least the
-initial values:
+These extra tests now require that we bother to implement at least a slightly 
+more reasonable function:
 
 ```python
-def fib(n):
+def std(vals):
     # a little better
-    if n == 0 or n == 1:
-        return n
-    return 1
+    if len(vals) == 0:
+        return 0.0
+    return vals[-1] / 2.0
 ```
 
-However, this function still falls over for `2 < n`. Time for more
-tests!
+However, this function still fails whenever vals has more than two elements or
+the first element is not zero. Time for more tests!
 
 ```python
-def test_fib1():
-    obs = fib(2)
-    exp = 1
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
     assert_equal(obs, exp)
 
-
-def test_fib2():
-    obs = fib(0)
-    exp = 0
+def test_std2():
+    obs = std([])
+    exp = 0.0
     assert_equal(obs, exp)
 
-    obs = fib(1)
-    exp = 1
+def test_std3():
+    obs = std([0.0, 4.0])
+    exp = 2.0
     assert_equal(obs, exp)
 
-
-def test_fib3():
-    obs = fib(3)
-    exp = 2
+def test_std4():
+    obs = std([1.0, 3.0])
+    exp = 1.0
     assert_equal(obs, exp)
 
-    obs = fib(6)
-    exp = 8
+def test_std5():
+    obs = std([1.0, 1.0, 1.0])
+    exp = 0.0
     assert_equal(obs, exp)
 ```
 
 At this point, we had better go ahead and try do the right thing...
 
 ```python
-def fib(n):
+def std(vals):
     # finally, some math
-    if n == 0 or n == 1:
-        return n
-    else:
-        return fib(n - 1) + fib(n - 2)
+    n = len(vals)
+    if n == 0:
+        return 0.0
+    mu = sum(vals) / n
+    var = 0.0
+    for val in vals:
+        var = var + (val - mu)**2
+    return (var / n)**0.5
 ```
 
 Here it becomes very tempting to take an extended coffee break or
-possibly a power lunch. But then you remember those pesky negative
-numbers and floats. Perhaps the right thing to do here is to just be
-undefined.
+possibly a power lunch. But then you remember those pesky infinite values!
+Perhaps the right thing to do here is to just be undefined.  Infinity in 
+Python may be represented by any literal float greater than or equal to 1e309.
 
 ```python
-def test_fib1():
-    obs = fib(2)
-    exp = 1
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
     assert_equal(obs, exp)
 
-
-def test_fib2():
-    obs = fib(0)
-    exp = 0
+def test_std2():
+    obs = std([])
+    exp = 0.0
     assert_equal(obs, exp)
 
-    obs = fib(1)
-    exp = 1
+def test_std3():
+    obs = std([0.0, 4.0])
+    exp = 2.0
     assert_equal(obs, exp)
 
-
-def test_fib3():
-    obs = fib(3)
-    exp = 2
+def test_std4():
+    obs = std([1.0, 3.0])
+    exp = 1.0
     assert_equal(obs, exp)
 
-    obs = fib(6)
-    exp = 8
+def test_std5():
+    obs = std([1.0, 1.0, 1.0])
+    exp = 0.0
     assert_equal(obs, exp)
 
-
-def test_fib4():
-    obs = fib(13.37)
+def test_std6():
+    obs = std([1e500])
     exp = NotImplemented
     assert_equal(obs, exp)
 
-    obs = fib(-9000)
+def test_std7():
+    obs = std([0.0, 1e4242])
     exp = NotImplemented
     assert_equal(obs, exp)
 ```
@@ -505,32 +511,42 @@ This means that it is time to add the appropriate case to the function
 itself:
 
 ```python
-def fib(n):
+def std(vals):
     # sequence and you shall find
-    if n < 0 or int(n) != n:
+    n = len(vals)
+    if n == 0:
+        return 0.0
+    mu = sum(vals) / n
+    if mu == 1e500:
         return NotImplemented
-    elif n == 0 or n == 1:
-        return n
-    else:
-        return fib(n - 1) + fib(n - 2)
+    var = 0.0
+    for val in vals:
+        var = var + (val - mu)**2
+    return (var / n)**0.5
 ```
 
 # Quality Assurance Exercise
 
-Can you think of other tests to make for the fibonacci function? I promise there
+Can you think of other tests to make for the std() function? I promise there
 are at least two.
 <!---
-	1. How about fib(string) or fib(array)?
-	2. How about fib(None)?
+	1. How about std(string) or std(array)?
+	2. How about std(None)?
 --->
 
-Implement one new test in test_fib.py, run nosetests, and if it fails, implement
+Implement one new test in test_stats.py, run nosetests, and if it fails, implement
 a more robust function for that case.
 
 And thus - finally - we have a robust function together with working
 tests!
 
-# Exercise
+# Further Statistics Tests
+
+The `stats.py` and `test_stats.py` files contain stubs for other simple statistics 
+functions: variance, median, and mode.  Try your new test-driven development chops
+by implementing one or more of these functions along with their corresponding tests.
+
+# Advanced Exercise
 
 **The Problem:** In 2D or 3D, we have two points (p1 and p2) which
 define a line segment. Additionally there exists experimental data which
