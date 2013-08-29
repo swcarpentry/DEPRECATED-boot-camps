@@ -1,6 +1,6 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes II](../../../python/testing)
+[Up To Schedule](../../../README.md) - Back To [Planning for Mistakes](../../../python/testing) - Forward To [Collaboration](../remote)
 
-# Use Version Control
+# Branching in Version Control
 ----
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
@@ -24,7 +24,7 @@ The master branch is created when the repository is initialized. With an
 argument, the **branch** command creates a new branch with the given
 name.
 
-    $ git branch experimentals
+    $ git branch experimental
     $ git branch
     * master
       experimental
@@ -83,7 +83,7 @@ Step 2 : Make changes in each new branch and commit them.
      0 files changed, 0 insertions(+), 0 deletions(-)
      create mode 100644 secondnewfile
 
-Step 3 : Merge the two branches into the core
+Step 3 : Merge the two branches into the master branch
 
     $ git checkout first
     Switched to branch 'first'
@@ -99,19 +99,6 @@ Step 3 : Merge the two branches into the core
      0 files changed, 0 insertions(+), 0 deletions(-)
      create mode 100644 firstnewfile
      create mode 100644 secondnewfile
-
-## git clone : Copying a Repository
-
-Yesterday, you checked out a git type repository at
-https://github.com/UW-Madsion-CLI/boot-camps/tree/2013-04-uwmadison
-
-When you clone the Original repository, the one that is created on your
-local machine is a copy, and will behave as a fully fledged local
-repository locally. However, with the right configuration, it will be
-able to pull changes from collaborators to your local machine and push
-your changes to the Original repository. We'll get to that soon, but for
-now, let's **fork** the repository from GitHub.
-
 
 ## Aside: Make your Prompt Pretty
 
@@ -171,3 +158,5 @@ Step 5 : Play around with it.
 ## Resources
 
 [git book](http://git-scm.com/book)
+
+[Up To Schedule](../../../README.md) - Back To [Planning for Mistakes](../../../python/testing) - Forward To [Collaboration](../remote)

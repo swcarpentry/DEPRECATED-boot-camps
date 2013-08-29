@@ -115,10 +115,10 @@ about. The command to do this is **git init** .
 Step 1 : Initialize your repository.
 
     $ cd
-    $ mkdir good_science
-    $ cd good_science
+    $ mkdir simplestats
+    $ cd simplestats
     $ git init
-    Initialized empty Git repository in /Users/swc/good_science/.git/
+    Initialized empty Git repository in /Users/swc/simplestats/.git/
 
 Step 2 : Browse the directory's hidden files to see what happened here.
 Open directories, browse file contents. Learn what you can in a minute.
@@ -131,8 +131,9 @@ Open directories, browse file contents. Learn what you can in a minute.
 
 Step 3 : Use what you've learned. You may have noticed the file called
 description. You can describe your repository by opening the description
-file and replacing the text with a name for the repository. Mine will be
-called "Reproducible Science". You may call yours anything you like.
+file and replacing the text with a name for the repository.  We will be
+creating a module with some simple statistical methods, so mine will be
+called "Some simple methods for statistical analysis". You may call yours anything you like.
 
     $ nano description
 
@@ -158,12 +159,12 @@ create one, then we'll learn the **git add** command.
 
 Step 1 : Create a file to add to your repository.
 
-    $ touch readme.rst
+    $ touch README.md
 
 Step 2 : Inform git that you would like to keep track of future changes
 in this file.
 
-    $ git add readme.rst
+    $ git add README.md
 
 ## git status : Checking the Status of Your Local Copy
 
@@ -183,13 +184,13 @@ different about them in the terminal, try:
 
     #   (use "git rm --cached <file>..." to unstage)
     #
-    #       new file:   readme.rst
+    #       new file:   README.md
     #
 
 The null result means that you're up to date with the current version of
 the repository online. This result indicates that the current difference
 between the repository HEAD (which, so far, is empty) and your
-good\_science directory is this new readme.rst file.
+`simplestats` directory is this new README.md file.
 
 ## git commit : Saving a Snapshot
 
@@ -210,7 +211,7 @@ More frequent commits increase the granularity of your **undo** button.
 
 There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
 
-[Our repo](https://github.com/USERNAME/boot-camps/commits/YYYY-MM-PLACE) has some good commit messages.
+[Our repo](https://github.com/UW-Madison-ACI/boot-camps/commits/2013-08-uwmadison) has some good commit messages.
 
 ### Exercise : Commit Your Changes
 
@@ -219,7 +220,7 @@ Step 1 : Commit the file you've added to your repository.
     $ git commit -am "This is the first commit. It adds a readme file."
     [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
      1 files changed, 2 insertions(+), 0 deletions(-)
-     create mode 100644 readme.rst
+     create mode 100644 README.md
 
 Step 2 : Admire your work.
 
@@ -250,7 +251,7 @@ file.
 
 Thus, git diff will output the changes in your working directory that
 are not yet staged for a commit. To see how this works, make a change in
-your readme.rst file, but don't yet commit it.
+your README.md file, but don't yet commit it.
 
     $ git diff
 
@@ -292,20 +293,62 @@ There are some useful flags for this command, such as
     --author=<pattern>
 
 ## git reset : Unstaging a staged file
-    git reset filename     (opposite of 'git add filename')
+
+There are a number of ways that you may accidentally stage a file that
+you don't want to commit.  Create a file called `temp_notes` that
+describes what you had for breakfast, and then add that file to your
+repo.  Check with `status` to see that it is added but not committed.
+
+You can now unstage that file with:
+
+    git reset temp_notes
+
+Check with `status`.
 
 ## git checkout : Discarding unstaged modifications (git checkout has other purposes)
-    git checkout -- filename     
+
+Perhaps you have made a number of changes that you realize are not
+going anywhere.  Add a line to `README.md` that describes your dinner
+last night.  Check with `status` to see that the file is changed and
+ready to be added.
+
+You can now return to previous checked in version with:
+
+    git checkout -- README.md
+
+Check with `status` and take a look at the file.
     
 ## git rm : Removing files
-   git rm filename   (Removes a file from the repository)
-   
-### Exercise : 
-    1) Create 5 files in your directory with one line of content in each file.
-    2) Commit the files to the repository.
-    3) Change 2 of the 5 files and commit them.
-    4) Undo the changes in step 3)
-    5) Print out the last entry in the log.
+
+There are a variety of reasons you way want to remove a file from the
+repository after it has been committed.  Create a file called
+`READYOU.md` with the first names of all your immediate family
+members, and add/commit it to the repository.
+
+You can now remove the file from the repository with:
+
+    git rm READYOU.md
+
+List the directory to see that you have no file named `READYOU.md`.
+Use `status` to determine if you need any additional steps.
+
+What if you delete a file in the shell without `git rm`? Try deleting
+`README.md`
+
+     rm README.md
+
+What does `git status` say?  Oops! How can you recover this important
+file?
+
+     git checkout -- README.md
+
+
+### Exercise :
+
+1. Create 5 files in your directory with one line of
+    content in each file.  2) Commit the files to the repository.  3)
+    Change 2 of the 5 files and commit them.  4) Undo the changes in
+    step 3) 5) Print out the last entry in the log.
     
 
 ## Resources
