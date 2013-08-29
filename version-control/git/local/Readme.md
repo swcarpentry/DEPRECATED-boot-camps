@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Plan for Mistakes](../../../python/testing) - Forward To [Collaborate](../remote/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
 
 # Use Version Control
 ----
@@ -6,19 +6,15 @@
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
 
-## Example: A Slide Deck for a Presentation
+# Motivation
+----
 
-Imagine you have two computers: the first is a big, powerful desktop machine 
-with a big, dual monitor setup. The second is a tiny lightweight netbook you 
-take with you when you travel. Imagine also that you have a presentation at a 
-conference overseas. You know that no matter how "finished" you think you are 
-with your slide deck, inevitably you will realize you need to add an extra figure 
-or recalculate some data AFTER leaving the country and your main desktop 
-workstation. How can you be sure your slide deck, data, and the programs you've 
-written are synchronized between your two machines? How can you be sure that 
-every little change you've made on your netbook is reflected on your desktop? 
-What happens if you start making changes on your slide deck, only to realize you 
-need to drop back to the slide deck you had five days ago?
+From a recent [tweet](https://twitter.com/kcranstn/statuses/370914072511791104)
+
+```
+@mtholder motivating git: You mostly collaborate with yourself, and
+me-from-two-months-ago never responds to email. @swcarpentry
+```
 
 ## git : What is Version Control ?
 
@@ -124,10 +120,10 @@ about. The command to do this is **git init** .
 Step 1 : Initialize your repository.
 
     $ cd
-    $ mkdir good_science
-    $ cd good_science
+    $ mkdir simplestats
+    $ cd simplestats
     $ git init
-    Initialized empty Git repository in /Users/swc/good_science/.git/
+    Initialized empty Git repository in /Users/swc/simplestats/.git/
 
 Step 2 : Browse the directory's hidden files to see what happened here.
 Open directories, browse file contents. Learn what you can in a minute.
@@ -140,8 +136,9 @@ Open directories, browse file contents. Learn what you can in a minute.
 
 Step 3 : Use what you've learned. You may have noticed the file called
 description. You can describe your repository by opening the description
-file and replacing the text with a name for the repository. Mine will be
-called "Reproducible Science". You may call yours anything you like.
+file and replacing the text with a name for the repository.  We will be
+creating a module with some simple statistical methods, so mine will be
+called "Some simple methods for statistical analysis". You may call yours anything you like.
 
     $ nano description
 
@@ -167,12 +164,12 @@ create one, then we'll learn the **git add** command.
 
 Step 1 : Create a file to add to your repository.
 
-    $ touch readme.rst
+    $ touch README.md
 
 Step 2 : Inform git that you would like to keep track of future changes
 in this file.
 
-    $ git add readme.rst
+    $ git add README.md
 
 ## git status : Checking the Status of Your Local Copy
 
@@ -192,13 +189,13 @@ different about them in the terminal, try:
 
     #   (use "git rm --cached <file>..." to unstage)
     #
-    #       new file:   readme.rst
+    #       new file:   README.md
     #
 
 The null result means that you're up to date with the current version of
 the repository online. This result indicates that the current difference
 between the repository HEAD (which, so far, is empty) and your
-good\_science directory is this new readme.rst file.
+`simplestats` directory is this new README.md file.
 
 ## git commit : Saving a Snapshot
 
@@ -219,7 +216,7 @@ More frequent commits increase the granularity of your **undo** button.
 
 There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
 
-[Our repo](https://github.com/USERNAME/boot-camps/commits/YYYY-MM-PLACE) has some good commit messages.
+[Our repo](https://github.com/UW-Madison-ACI/boot-camps/commits/2013-08-uwmadison) has some good commit messages.
 
 ### Exercise : Commit Your Changes
 
@@ -228,7 +225,7 @@ Step 1 : Commit the file you've added to your repository.
     $ git commit -am "This is the first commit. It adds a readme file."
     [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
      1 files changed, 2 insertions(+), 0 deletions(-)
-     create mode 100644 readme.rst
+     create mode 100644 README.md
 
 Step 2 : Admire your work.
 
@@ -259,7 +256,7 @@ file.
 
 Thus, git diff will output the changes in your working directory that
 are not yet staged for a commit. To see how this works, make a change in
-your readme.rst file, but don't yet commit it.
+your README.md file, but don't yet commit it.
 
     $ git diff
 
@@ -301,220 +298,85 @@ There are some useful flags for this command, such as
     --author=<pattern>
 
 ## git reset : Unstaging a staged file
-    git reset filename     (opposite of 'git add filename')
+
+There are a number of ways that you may accidentally stage a file that
+you don't want to commit.  Create a file called `temp_notes` that
+describes what you had for breakfast, and then add that file to your
+repo.  Check with `status` to see that it is added but not committed.
+
+You can now unstage that file with:
+
+    git reset temp_notes
+
+Check with `status`.
 
 ## git checkout : Discarding unstaged modifications (git checkout has other purposes)
-    git checkout -- filename     
+
+Perhaps you have made a number of changes that you realize are not
+going anywhere.  Add a line to `README.md` that describes your dinner
+last night.  Check with `status` to see that the file is changed and
+ready to be added.
+
+You can now return to previous checked in version with:
+
+    git checkout -- README.md
+
+Check with `status` and take a look at the file.
     
 ## git rm : Removing files
-   git rm filename   (Removes a file from the repository)
-   
-### Exercise : 
-    1) Create 5 files in your directory with one line of content in each file.
-    2) Commit the files to the repository.
-    3) Change 2 of the 5 files and commit them.
-    4) Undo the changes in step 3)
-    5) Print out the last entry in the log.
+
+There are a variety of reasons you way want to remove a file from the
+repository after it has been committed.  Create a file called
+`READYOU.md` with the first names of all your immediate family
+members, and add/commit it to the repository.
+
+You can now remove the file from the repository with:
+
+    git rm READYOU.md
+
+List the directory to see that you have no file named `READYOU.md`.
+Use `status` to determine if you need any additional steps.
+
+What if you delete a file in the shell without `git rm`? Try deleting
+`README.md`
+
+     rm README.md
+
+What does `git status` say?  Oops! How can you recover this important
+file?
+
+     git checkout -- README.md
+
+## git revert : the promised "undo" button
+
+It is possible that after many commits, you decide that you really
+want to "rollback" a set of commits and start over.  It is easy to
+revert your code to a previous version.
+
+You can use `git log` and `git diff` to explore your history and
+determine which version you are interested in.  Choose a version and
+note the *hash* for that version. (Let's assume `abc456`)
+
+     git revert abc456
+
+**Importantly,** this will not erase the intervening commits.  This
+will create a new commit that is changed from the previous commit by a
+change that will recreate the desired version.  This retains a
+complete provenance of your software, and be compared to the
+prohibition in removing pages from a lab notebook.
+
+### Exercise :
+
+1. Create 5 files in your directory with one line of content in each
+   file.
+2. Commit the files to the repository.
+3. Change 2 of the 5 files and commit them.
+4. Undo the changes in step 3.
+5. Print out the last entry in the log.
     
-## git branch : Listing, Creating, and Deleting Branches
-
-Branches are parallel instances of a repository that can be edited and
-version controlled in parallel. They are useful for pursuing various
-implementations experimentally or maintaining a stable core while
-developing separate sections of a code base.
-
-Without an argument, the **branch** command lists the branches that
-exist in your repository.
-
-    $ git branch
-    * master
-
-The master branch is created when the repository is initialized. With an
-argument, the **branch** command creates a new branch with the given
-name.
-
-    $ git branch experimentals
-    $ git branch
-    * master
-      experimental
-
-To delete a branch, use the **-d** flag.
-
-    $ git branch -d experimental
-    $ git branch
-    * master
-
-## git checkout : Switching Between Branches, Abandoning Local Changes
-
-The **git checkout** command allows context switching between branches
-as well as abandoning local changes.
-
-To switch between branches, try
-
-    $ git branch newbranch 
-    $ git checkout newbranch 
-    $ git branch
-
-How can you tell we've switched between branches? When we used the
-branch command before there was an asterisk next to the master branch.
-That's because the asterisk indicates which branch you're currently in.
-
-## git merge : Merging Branches
-
-At some point, the experimental branch may be ready to become part of
-the core or two testing branches may be ready to be combined for further
-integration testing. The method for combining the changes in two
-parallel branches is the **merge** command.
-
-### Exercise : Create and Merge Branches
-
-Step 1 : Create two new branches and list them
-
-    $ git branch first
-    $ git branch second
-
-Step 2 : Make changes in each new branch and commit them.
-
-    $ git checkout first
-    Switched to branch 'first'
-    $ touch firstnewfile
-    $ git add firstnewfile
-    $ git commit -am "Added firstnewfile to the first branch."
-    [first 68eba44] Added firstnewfile to first branch.
-     0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 firstnewfile
-    $ git checkout second
-    Switched to branch 'second'
-    $ touch secondnewfile
-    $ git add secondnewfile
-    $ git commit -am "Added secondnewfile to the second branch."
-    [second 45dd34c] Added secondnewfile to the second branch.
-     0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 secondnewfile
-
-Step 3 : Merge the two branches into the core
-
-    $ git checkout first
-    Switched to branch 'first'
-    $ git merge second
-    Merge made by recursive.
-     0 files changed, 0 insertions(+), 0 deletions(-)
-      create mode 100644 secondnewfile
-    $ git checkout master
-    Switched to branch 'master'
-    $ git merge first
-    Updating 1863aef..ce7e4b5
-    Fast-forward
-     0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 firstnewfile
-     create mode 100644 secondnewfile
-
-## git clone : Copying a Repository
-
-Yesterday, you checked out a git type repository at
-https://github.com/UW-Madsion-CLI/boot-camps/tree/2013-04-uwmadison
-
-When you clone the Original repository, the one that is created on your
-local machine is a copy, and will behave as a fully fledged local
-repository locally. However, with the right configuration, it will be
-able to pull changes from collaborators to your local machine and push
-your changes to the Original repository. We'll get to that soon, but for
-now, let's **fork** the repository from GitHub.
-
-### Exercise : Cloning a Repository from GitHub
-
-Step 1 : Pick any repository you like. There are many cool projects
-hosted on GitHub. Take a few minutes here, and pick a piece of code.
-
-Step 2 : Clone it. If you didn't find anything cool, you can chose the
-"instructional" Spoon-Knife repository:
-
-    $ git clone https://github.com/octocat/Spoon-Knife.git
-    Cloning into Spoon-Knife...
-    remote: Counting objects: 24, done.
-    remote: Compressing objects: 100% (21/21), done.
-    remote: Total 24 (delta 7), reused 17 (delta 1)
-    Receiving objects: 100% (24/24), 74.36 KiB, done.
-    Resolving deltas: 100% (7/7), done.
-
-Step 3 : You should see many files download themselves onto your
-machine. Let's make sure it worked. Change directories to the source
-code and list the contents.
-
-    $ cd Spoon-Knife
-    $ ls 
-
-## git pull : Pulling updates from the Original Repository
-
-Updating your repository is like voting. You should update early and
-often especially if you intend to contribute back to the upstream
-repository and particularly before you make or commit any changes. This
-will ensure you're working with the most up-to-date version of the
-repository. Updating won't overwrite any changes you've made locally
-without asking, so don't get nervous. When in doubt, update.
-
-    $ git pull 
-    Already up-to-date.
-
-Since we just pulled the repository down, we will be up to date unless
-there has been a commit by someone else to the Original repository in
-the meantime.
-
-## Aside: Make your Prompt Pretty
-
-In the next section, we'll get into the gritty details of remotes and branches
-as we head toward web-based storage of your repositories. It turns out that some
-folks have created a way to make this kind of navigation more convenient,
-showing you what branch you're on using your bash prompt. Some super nice
-properties also include color-coding when you've got changed files or when your
-branch is fresh.
-
-### Exercise : Update your prompt
-
-Step 1 : Download [git-prompt.sh](http://volnitsky.com/project/git-prompt/git-prompt.sh).
-    
-    $ wget http://volnitsky.com/project/git-prompt/git-prompt.sh
-
-Step 2 : Move it to a local directory.
-    
-    $ mkdir ~/.source
-    $ mv git-prompt.sh ~/.source/
-
-Step 3 : Copy the following lines into your ~/.bashrc file (taken from Mike
-Stewart's [website](http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt)).
-    
-    source ~/.source/git-prompt.sh
-
-    Color_Off="\[\033[0m\]"       # Text Reset                                                                                                           
-    Yellow="\[\033[0;33m\]"       # Yellow                                                                                                               
-    Green="\[\033[0;32m\]"        # Green                                                                                                                
-    IBlack="\[\033[0;90m\]"       # Black                                                                                                                
-    IRed="\[\033[0;91m\]"         # Red                                                                                                                  
-    BYellow="\[\033[1;33m\]"      # Yellow                                                                                                               
-    Time12h="\T"
-    PathShort="\w"
-
-    export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\                                                                                      
-    if [ $? -eq 0 ]; then \                                                                                                                              
-      echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \                                                                           
-      if [ "$?" -eq "0" ]; then \                                                                                                                        
-        # @4 - Clean repository - nothing to commit                                                                                                      
-        echo "'$Green'"$(__git_ps1 " (%s)"); \                                                                                                           
-      else \                                                                                                                                             
-        # @5 - Changes to working tree                                                                                                                   
-        echo "'$IRed'"$(__git_ps1 " {%s}"); \                                                                                                            
-      fi) '$BYellow$PathShort$Color_Off'\$ "; \                                                                                                          
-    else \                                                                                                                                               
-      # @2 - Prompt when not in GIT repo                                                                                                                 
-      echo " '$Yellow$PathShort$Color_Off'\$ "; \                                                                                                        
-    fi)'
-
-Step 4 : Source your bashrc (it'll change immediately)
-
-    $ source ~/.bashrc
-
-Step 5 : Play around with it.
 
 ## Resources
 
 [git book](http://git-scm.com/book)
+
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
