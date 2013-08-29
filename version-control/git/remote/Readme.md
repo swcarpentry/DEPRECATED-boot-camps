@@ -405,7 +405,7 @@ In [1]: from collections import defaultdict
 In [2]: number_frequencies = defaultdict(int)
 In [3]: number_found = 42
 In [4]: number_frequencies[number_found] += 1
-In [5]: print number_frequencies[number_found]
+In [5]: number_frequencies[number_found]
 Out[5]: 1
 ```
 
@@ -414,7 +414,7 @@ one way.
 
 ```
 In [6]: max_counts = max(number_frequencies, key = number_frequencies.get)
-In [7]: print max_counts
+In [7]: max_counts
 Out[7]: 42
 ```
 
