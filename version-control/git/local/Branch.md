@@ -42,63 +42,49 @@ as well as abandoning local changes.
 
 To switch between branches, try
 
-    $ git branch newbranch 
-    $ git checkout newbranch 
+    $ git branch add_stats
+    $ git checkout add_stats
     $ git branch
 
 How can you tell we've switched between branches? When we used the
 branch command before there was an asterisk next to the master branch.
 That's because the asterisk indicates which branch you're currently in.
 
+### Exercise : Copy files into your repo
+
+Let's make sure we have a good copy of `stats.py` and `test_stats.py`.
+
+```
+$ cd ~/simplestats
+$ cp ~/boot-camps/python/testing/stats.py .
+$ cp ~/boot-camps/python/testing/test_stats.py .
+```
+
+Now let's add them to our repo, but in the current branch.
+
+```
+$ git add *stats.py
+$ git commit -m "Adding a first version of the files for mean."
+```
+
+### Exercise : Add an additional test for std() and commit the changes.
+
+1. Write an additional test for std().  *(Ask us for a tip if necessary)*
+2. Improve std() to pass this test.
+3. Commit the changed files to your repo.
+
 ## git merge : Merging Branches
 
-At some point, the experimental branch may be ready to become part of
-the core or two testing branches may be ready to be combined for further
-integration testing. The method for combining the changes in two
-parallel branches is the **merge** command.
+At some point, the `add_stats` branch may be ready to become part of
+the `master` branch.  In real life, we might do a lot more testing and
+development.  For now, let's assume that our mean function is ready
+and merge this back to the master.  One method for combining the
+changes in two parallel branches is the **merge** command.
 
-### Exercise : Create and Merge Branches
-
-Step 1 : Create two new branches and list them
-
-    $ git branch first
-    $ git branch second
-
-Step 2 : Make changes in each new branch and commit them.
-
-    $ git checkout first
-    Switched to branch 'first'
-    $ touch firstnewfile
-    $ git add firstnewfile
-    $ git commit -am "Added firstnewfile to the first branch."
-    [first 68eba44] Added firstnewfile to first branch.
-     0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 firstnewfile
-    $ git checkout second
-    Switched to branch 'second'
-    $ touch secondnewfile
-    $ git add secondnewfile
-    $ git commit -am "Added secondnewfile to the second branch."
-    [second 45dd34c] Added secondnewfile to the second branch.
-     0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 secondnewfile
-
-Step 3 : Merge the two branches into the master branch
-
-    $ git checkout first
-    Switched to branch 'first'
-    $ git merge second
-    Merge made by recursive.
-     0 files changed, 0 insertions(+), 0 deletions(-)
-      create mode 100644 secondnewfile
-    $ git checkout master
-    Switched to branch 'master'
-    $ git merge first
-    Updating 1863aef..ce7e4b5
-    Fast-forward
-     0 files changed, 0 insertions(+), 0 deletions(-)
-     create mode 100644 firstnewfile
-     create mode 100644 secondnewfile
+```
+$ git checkout master
+$ git merge add_stats
+```
 
 ## Aside: Make your Prompt Pretty
 
