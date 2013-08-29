@@ -111,49 +111,46 @@ branch is fresh.
 
 ### Exercise : Update your prompt
 
-Step 1 : Download [git-prompt.sh](http://volnitsky.com/project/git-prompt/git-prompt.sh).
-    
-    $ wget http://volnitsky.com/project/git-prompt/git-prompt.sh
+Step 1 : Copy the following lines into your ~/.bashrc file (taken from a
+combination of [two](http://stackoverflow.com/a/6086978)
+[sources](https://gist.github.com/woods/31967)).
 
-Step 2 : Move it to a local directory.
-    
-    $ mkdir ~/.source
-    $ mv git-prompt.sh ~/.source/
+```
+function color_my_prompt {
+    local __user_and_host="\[\033[01;32m\]\u@\h"
+    local __cur_location="\[\033[01;34m\]\w"
+    local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+    local __prompt_tail="\[\033[35m\]$"
+    local __last_color="\[\033[00m\]"
 
-Step 3 : Copy the following lines into your ~/.bashrc file (taken from Mike
-Stewart's [website](http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt)).
-    
-    source ~/.source/git-prompt.sh
+    RED="\[\033[0;31m\]"
+    YELLOW="\[\033[0;33m\]"
+    GREEN="\[\033[0;32m\]"
 
-    Color_Off="\[\033[0m\]"       # Text Reset                                                                                                           
-    Yellow="\[\033[0;33m\]"       # Yellow                                                                                                               
-    Green="\[\033[0;32m\]"        # Green                                                                                                                
-    IBlack="\[\033[0;90m\]"       # Black                                                                                                                
-    IRed="\[\033[0;91m\]"         # Red                                                                                                                  
-    BYellow="\[\033[1;33m\]"      # Yellow                                                                                                               
-    Time12h="\T"
-    PathShort="\w"
+    # Capture the output of the "git status" command.                                                                                               
+    git_status="$(git status 2> /dev/null)"
 
-    export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\                                                                                      
-    if [ $? -eq 0 ]; then \                                                                                                                              
-      echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \                                                                           
-      if [ "$?" -eq "0" ]; then \                                                                                                                        
-        # @4 - Clean repository - nothing to commit                                                                                                      
-        echo "'$Green'"$(__git_ps1 " (%s)"); \                                                                                                           
-      else \                                                                                                                                             
-        # @5 - Changes to working tree                                                                                                                   
-        echo "'$IRed'"$(__git_ps1 " {%s}"); \                                                                                                            
-      fi) '$BYellow$PathShort$Color_Off'\$ "; \                                                                                                          
-    else \                                                                                                                                               
-      # @2 - Prompt when not in GIT repo                                                                                                                 
-      echo " '$Yellow$PathShort$Color_Off'\$ "; \                                                                                                        
-    fi)'
+    # Set color based on clean/staged/dirty.                                                                                                           
+    if [[ ${git_status} =~ "working directory clean" ]]; then
+        state="${GREEN}"
+    elif [[ ${git_status} =~ "Changes to be committed" ]]; then
+        state="${YELLOW}"
+    else
+        state="${RED}"
+    fi
 
-Step 4 : Source your bashrc (it'll change immediately)
+    export PS1="$__user_and_host $__cur_location ${state}$__git_branch$__prompt_tail$__last_color "
+}
+
+# Tell bash to execute this function just before displaying its prompt.                                                                              
+PROMPT_COMMAND=color_my_prompt
+```
+
+Step 2 : Source your bashrc (it'll change immediately)
 
     $ source ~/.bashrc
 
-Step 5 : Play around with it.
+Step 3 : Play around with it.
 
 ## Resources
 
