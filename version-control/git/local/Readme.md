@@ -6,6 +6,11 @@
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
 
+# Motivation
+----
+
+From a recent [tweet](https://twitter.com/kcranstn/statuses/370914072511791104)
+
 ```
 @mtholder motivating git: You mostly collaborate with yourself, and
 me-from-two-months-ago never responds to email. @swcarpentry
