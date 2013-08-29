@@ -342,6 +342,23 @@ file?
 
      git checkout -- README.md
 
+## git revert : the promised "undo" button
+
+It is possible that after many commits, you decide that you really
+want to "rollback" a set of commits and start over.  It is easy to
+revert your code to a previous version.
+
+You can use `git log` and `git diff` to explore your history and
+determine which version you are interested in.  Choose a version and
+note the *hash* for that version. (Let's assume `abc456`)
+
+     git revert abc456
+
+**Importantly,** this will not erase the intervening commits.  This
+will create a new commit that is changed from the previous commit by a
+change that will recreate the desired version.  This retains a
+complete provenance of your software, and be compared to the
+prohibition in removing pages from a lab notebook.
 
 ### Exercise :
 
