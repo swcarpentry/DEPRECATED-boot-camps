@@ -345,10 +345,12 @@ file?
 
 ### Exercise :
 
-1. Create 5 files in your directory with one line of
-    content in each file.  2) Commit the files to the repository.  3)
-    Change 2 of the 5 files and commit them.  4) Undo the changes in
-    step 3) 5) Print out the last entry in the log.
+1. Create 5 files in your directory with one line of content in each
+   file.
+2. Commit the files to the repository.
+3. Change 2 of the 5 files and commit them.
+4. Undo the changes in step 3.
+5. Print out the last entry in the log.
     
 
 ## Resources
