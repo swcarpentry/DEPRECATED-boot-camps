@@ -1,5 +1,5 @@
-[Up To Schedule](../../README.md) - Back To [Don't Repeat Yourself](../functions_and_modules/Readme.md) -
-Forward To [Use Version Control](../../version-control/git/local/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Use Version Control](../../version-control/git/local/Readme.md) -
+Forward To [Branching in Version Control](../../version-control/git/local/Branch.md)
 
 # Plan for Mistakes (or: Testing)
 ----
