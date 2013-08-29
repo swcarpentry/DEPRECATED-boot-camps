@@ -48,7 +48,7 @@ Day 2
 | 12:00-1:00   | Lunch                                   |             |
 | 1:00-2:30    | [Collaborate](version-control/git/remote/Readme.md) | Matt Gidden |
 | 2:30-2:45    | Break                                   |      |
-| 2:45-4:00    | Open Hours                            | Matt Gidden |
+| 2:45-4:00    | Open Hours                            | All |
 
 Coincidence?
 ============
