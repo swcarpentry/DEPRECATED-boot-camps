@@ -420,6 +420,13 @@ Out[7]: 42
 
 It works great, right? Maybe we should add a test for bimodal distributions...
 
+# Extra Information
+
+## Moving from Home to Work
+
+[Here](../local/Readme.md)'s a tutorial about how to get yourself set up for
+keeping your work at home and the office in sync.
+
 ## gitolite
 
 [Gitolite](https://github.com/sitaramc/gitolite) is a way for you to host
