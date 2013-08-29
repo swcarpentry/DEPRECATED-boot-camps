@@ -42,20 +42,62 @@ as well as abandoning local changes.
 
 To switch between branches, try
 
-    $ git branch newbranch 
-    $ git checkout newbranch 
+    $ git branch add_mean
+    $ git checkout add_mean
     $ git branch
 
 How can you tell we've switched between branches? When we used the
 branch command before there was an asterisk next to the master branch.
 That's because the asterisk indicates which branch you're currently in.
 
+### Exercise : Copy files into your repo
+
+Let's make sure we have a good copy of `mean.py` and `test_mean.py`.
+
+```
+$ cd ~/boot-camps
+$ git checkout -- python/testing/*mean.py
+$ cd ~/simplestats
+$ cp ~/boot-camps/python/testing/mean.py .
+$ cp ~/boot-camps/python/testing/test_mean.py .
+```
+
+Now let's add them to our repo, but in the current branch.
+
+```
+$ git add *mean.py
+$ git commit -m "Adding a first version of the files for mean."
+```
+
+We'll briefly revisit the update to `mean.py`.
+
+```
+$ nosetests test_mean.py
+```
+
+One way to fix `mean.py` is to convert the sum to a float.  Change the
+line that calculates the sum:
+
+```
+total = float(sum(numlist))
+```
+
+### Exercise : Commit your updates.
+
+Now that we've made this improvement, we can commit the new files to our repository.
+
 ## git merge : Merging Branches
 
-At some point, the experimental branch may be ready to become part of
-the core or two testing branches may be ready to be combined for further
-integration testing. The method for combining the changes in two
-parallel branches is the **merge** command.
+At some point, the `add_mean` branch may be ready to become part of
+the `master` branch.  In real life, we might do a lot more testing and
+development.  For now, let's assume that our mean function is ready
+and merge this back to the master.  One method for combining the
+changes in two parallel branches is the **merge** command.
+
+### Exercise : Merge branches
+
+```
+```
 
 ### Exercise : Create and Merge Branches
 
