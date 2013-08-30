@@ -28,7 +28,7 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           | Paul Wilson  |
-| 9:00-9:45    | What we know about software engineering | Paul Wilson  |
+| 9:00-9:45    | [If it's not reproducible, it is still science?](BestPractice.pdf) | Paul Wilson  |
 | 9:45-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
 | 10:45-11:00  | Break                                   |              |
 | 11:00-12:30  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
