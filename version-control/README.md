@@ -2,6 +2,11 @@
 
 [Git](http://git-scm.com/)
 
+![](version_control.png)
+
+Note: To follow along with the presentation, navigate to this folder (through Finder, Explorer, or your shell) and open the `index.html` fiel in the `git_intro` folder in your browser.
+
+
 ## Git command-line
 
     $ git --version
@@ -46,6 +51,16 @@ Global configuration.
     [core]
 	editor = nano
     $ git config -l
+
+Add some aliases
+
+    co = checkout
+    ci = commit
+    st = status
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [  %cn]" --decorate
+    gr = log --graph --oneline --all
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [  %cn]" --decorate --numstat
+
 
 ### Working with files in the repository
 
