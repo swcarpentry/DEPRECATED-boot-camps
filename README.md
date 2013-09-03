@@ -6,7 +6,7 @@ Thursday 12-Friday 13 September 2013.
 
 ## Timetable
 
-Monday 15th
+Thursday 12th
 
 * 09:00 Arrival and [Welcome](Welcome.ppt) - Andrew / Chris
 * 09:30 [Using the shell to do more in less time (part 1)](shell/README.md) - Karthik
@@ -19,7 +19,7 @@ Monday 15th
 * 16:30 [Documenting code](Python/3_documenting_code.md) - Chris
 * 17:30 Close 
 
-Tuesday 16th
+Friday 13th
 
 * 09:00 Recap
 * 09:30 [Object-orientation](Python/4_object_orientation.md)
