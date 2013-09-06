@@ -13,15 +13,18 @@ us as we come around the room.
 
 The course is divided into a related series of sessions:
 
-This afternoon
+This morning
 
  * [Python - Containers, Lists and Dictionaries](1_lists_and_dictionaries.md)
+
+This afternoon
+
  * [Good Programming Practice - Functions and Modules](2_functions_and_modules.md)
+ * [Good Programming Practice - Documenting Code](3_documenting_code.md)
 
 Tomorrow
 
- * [Good Programming Practice - Documenting Code](3_documenting_code.md)
  * [Object Orientation](4_object_orientation.md)
- * [Program Design as Exemplified in MatPlotLib](5_matplotlib.md)
+ * [Program Design as Exemplified in NumPy](5_numpy.md)
 
 
