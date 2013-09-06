@@ -84,4 +84,6 @@ Finally, turn the above four tests into a nose-tests script to test numpy.matrix
 
     $ assert( (matrix1 == matrix2).all() )
 
-If you are stuck, there is an example completed script in (5/example/matrix_test.py)[5/example/matrix_test.py]
+If you are stuck, there is an example completed script in [5/example/matrix_test.py](5/example/matrix_test.py)
+
+# [Previous](4_object_orientation.md) [Up](python_and_good_programming_practice.md)

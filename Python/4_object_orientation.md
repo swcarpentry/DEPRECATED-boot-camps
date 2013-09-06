@@ -184,4 +184,4 @@ Make sure that you commit your edited script to your Git repository.
     $ git commit -am "...commit message..."
     $ git push
 
-# [Previous](3_documenting_code.md) [Up](python_and_good_programming_practice.md) [Next](5_matplotlib.md) 
+# [Previous](3_documenting_code.md) [Up](python_and_good_programming_practice.md) [Next](5_numpy.md) 
