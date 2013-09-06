@@ -26,7 +26,7 @@ Friday 13th
 * 10:30 Break
 * 10:45 [How (and how much) to test software](testing/README.md) ([slides](testing/Testing.ppt)) - Karthik
 * 12:00 Lunch
-* 13:00 [Program Design](Python/5_matplotlib.md) - Chris
+* 13:00 [Program Design](Python/5_numpy.md) - Chris
 * 14:45 Break
 * 15:15 [Using the shell to do more in less time (part 2)](shell/README.md) - Karthik
 * 16:15 [Pulling it all together](Conclusion.ppt) - Andrew / Karthik / Chris
