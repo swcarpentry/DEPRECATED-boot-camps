@@ -86,4 +86,12 @@ Finally, turn the above four tests into a nose-tests script to test numpy.matrix
 
 If you are stuck, there is an example completed script in [5/example/matrix_test.py](5/example/matrix_test.py)
 
+### Exercise 5b
+
+Read and work through [http://wiki.scipy.org/Tentative_NumPy_Tutorial](this official NumPy tutorial).
+
+What do you think? Does it do a good job of explaining how to use the software?
+
+What changes would you make to the tutorial? What information do you think is needed for a new user?
+
 # [Previous](4_object_orientation.md) [Up](python_and_good_programming_practice.md)
