@@ -372,6 +372,18 @@ which nano
 
 
 
+## Short exercise 2
+
+cd into a folder under `shell` called `messy-folder`.  
+Then create three directories: `data`, `notes`, `images`.  
+Then move the respective file types into their matching folder type.Go back to the main shell folder.
+Rename (it's the same as mv command) `messy-folder` to `clean-folder`.
+
+Hints: You can combine several steps into one. Tab completion and wildcards are your friends.
+
+  
+
+
 
 
 
