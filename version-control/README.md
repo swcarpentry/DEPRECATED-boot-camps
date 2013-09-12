@@ -1,19 +1,50 @@
 # Version Control and Git - crib sheet
 
-[Git](http://git-scm.com/)
+Git is officially available for download here → [git-scm.com](http://git-scm.com/)
 
-![](version_control.png)
+[![](version_control.png)](http://karthikram.github.io/git_intro/)
 
-Note: To follow along with the presentation, navigate to this folder (through Finder, Explorer, or your shell) and open the `index.html` fiel in the `git_intro` folder in your browser.
+Note: To follow along with the presentation, navigate to this folder (through Finder, Explorer, or your shell) and open the `index.html` file in the `git_intro` folder in your browser. Or simply click the thumbnail below.
+
+From terminal:
+
+    $ open index.html
+
+## Initial setup
+
+ If you are one a computer account that has not used git before
+ then you should probably introduce yourself to git. This information
+ will be associated with the changes that you make to files later:
+
+    $ git config --global user.name "Karthik Ram"
+    $ git config --global user.email "karthik.ram@berkeley.edu"
+
+Because working with git will involve making notes about your changes
+you should probably go ahead and register your text editor with git.
+The following lines tell git how to call your text editor in a way that  will pause git until you close your editing session. The commands differ a bit from editor to editor. 
+
+You can use `nano` as we did this morning. 
+
+    $ git config --global core.editor "nano" 
 
 
-## Git command-line
+###  Other editors (optional for today)
 
-    $ git --version
-    $ man git
-    $ git help
-    $ git help --all
-    $ git help checkout
+On Windows using Notepad++ in the standard location for a 64-bit machine, you would use:
+
+    $ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+(thanks to [StackOverflow](http://stackoverflow.com/questions/1634161/how-do-i-use-notepad-or-other-with-msysgit/2486342#2486342)  for that useful tip)
+
+On Mac, with TextWrangler if you installed TextWrangler's command line tools
+then you should have an "edit" command. So you can use the git command:
+
+    $  git config --global core.editor "edit -w"
+
+
+All of these options are stored in a file called `.gitconfig`. I've included a sample [here](sample.gitconfig).
+
+---
 
 ## Working with a local repository
 
@@ -31,18 +62,7 @@ Git configuration files in `.git` directory.
 
 ### Git configuration
 
-Who we are.
-
-    $ git config --global user.name "Your Name"
-    $ git config --global user.email "yourname@yourplace.org"
-
-Editor.
-
-    $ git config --global core.editor nano
-    $ git config --global core.editor vi
-    $ git config --global core.editor xemacs
-    
-Global configuration.
+Let's look at our Global configuration from the options we just added.
 
     $ cat ~/.gitconfig
     [user]
@@ -52,7 +72,7 @@ Global configuration.
 	editor = nano
     $ git config -l
 
-Add some aliases
+Add some aliases (see `sample.gitconfig` for more)
 
     co = checkout
     ci = commit
@@ -61,12 +81,17 @@ Add some aliases
     gr = log --graph --oneline --all
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [  %cn]" --decorate --numstat
 
+---
 
 ### Working with files in the repository
 
 [Markdown](http://daringfireball.net/projects/markdown/syntax) file.
 
     $ nano rfc-template.md
+
+Next, type in some text that looks like so (doesn't have to be verbatim):
+
+```markdown    
     # Title
 
     by Authors
@@ -83,6 +108,10 @@ Add some aliases
     
     * Reference
     * ...
+```
+
+Now let's look at our Git status.
+
 
     $ git status rfc-template.md
 
@@ -121,55 +150,22 @@ Provide commit message via command-line.
 
 Edit.
 
-    # Super distributed data concept RFC
+```markdown
+# Bristol Python bootcamp notes
 
-    by Mike Jackson, Mario Antonioletti, Amrey Krause
+by Christopher Woods, Andrew Walker, and Karthik Ram
 
-    ## Overview
-
-    A distributed data management platform.
-
-    ## Key points
-
-    * Revolutionary.
-    * Novel.
-    * Modest.
-
-    ## References
+## Overview
+```
     
-    * WS-DAIR specification
 
     $ git status data-rfc.md
 
 Modified - changed but not staged or commited.
 
     $ git add data-rfc.md
-    $ git commit -m "Added title, authors, overview, points, references" data-rfc.md 
+    $ git commit -m "Added title, authors, overview, points, references" 
 
-Top tip: good commits are atomic. Code should be reviewable in an hour.
-
-What we know about software development - code reviews work. Fagan (1976) discovered that a rigorous inspection can remove 60-90% of errors before the first test is run. M.E., Fagan (1976). [Design and Code inspections to reduce errors in program development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15 (3): pp. 182-211.
-
-What we know about software development - code reviews should be about 60 minutes long. Cohen (2006) discovered that all the value of a code review comes within the first hour, after which reviewers can become exhausted and the issues they find become ever more trivial. J. Cohen (2006). [Best Kept Secrets of Peer Code Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
-
-    $ mkdir images
-    $ cd images
-
-Use wget to pull your photo from the web or find a suitable alternative (call it me.jpg or use whatever extension).
-
-    $ wget http://software-carpentry.org/img/bootcamps/2012-12-uta.png
-    $ mv 2012-12-uta.png > authors.png
-    $ cd ..
-
-Add hyper-link.   
-
-    ![Group photo](images/authors.png "This is us!")
-
-    $ git add images
-    $ git commit -m "Added an images directory and image of authors." images
-    $ git commit -m "Added link to image of authors." data-rfc.md
-
-Top tip: Commit anything that cannot be automatically recreated e.g. `.tex`, `.java`, `.py`, `.c`, not `.pdf`, `.dvi`, `.dll`, `.jar`, `.exe`. Reduce risk of source-binary divergence.
 
 ### Discarding changes
 
@@ -187,6 +183,8 @@ Throw away changes or revert.
 ### History
 
     $ git log
+    $ git ls
+    $ git ll
     $ git log data-rfc.md
 
 Globally-unique commit identifier.
@@ -211,25 +209,9 @@ Using revision control the only bound is space available!
 
 Commit changes to sets of files and rollback to exact state.
 
-### Tags
-
-Nicknames for commit identifiers
-
-    $ git tag BOOT_CAMP
-    $ git tag
-
-Make more changes.
-
-    $ git add data-rfc.md
-    $ git commit -m "..." data-rfc.md
-    $ git checkout BOOT_CAMP
-    $ git checkout master
-
-Top tip: tag significant "events" e.g. submitted papers, released versions.
-
 ### Branches
 
-    $ git status data-rfc.md
+    $ git status 
 
 `master` is a branch name.
 
