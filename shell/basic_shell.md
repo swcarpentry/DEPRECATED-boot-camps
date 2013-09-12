@@ -133,7 +133,7 @@ from **anywhere**.
 Tip: Just plain `cd` with no options should take you back home. Try it. `cd` to some place else and type in `cd` again.
 
 
-**Quick exercise**
+**Quick exercise 01**
 
 1. Change into your HOME (or wherever you downloaded the boot-camps folder). Then into `boot-camps`. Then `shell`. List the contents of this folder. Then change back into your home again.
 
@@ -241,7 +241,7 @@ Location.md: ASCII English text
 
 Examine files with the `less` command. Keeps the content from scrolling of the screen. You can also use the arrow keys to navigate up or down. Press enter to keep scrolling down and the `q` key to quit. 
 
-**Quick exercise**
+**Quick exercise 02**
 
 1. cd `HOME`
 2. cd into `boot-camps` 
@@ -293,7 +293,7 @@ One of the biggest reasons using shell is faster than ever using a GUI file mana
 
 
 
-### Short exercise 
+**Short exercise 01**
 
 Do each of the following using a single `ls` command without navigating to a different directory.
 
