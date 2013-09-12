@@ -50,6 +50,7 @@ All of these options are stored in a file called `.gitconfig`. I've included a s
 git config --global alias.st status 
 git config --global alias.ci commit 
 git config --global alias.co checkout
+git config --global alias.ls 'log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
 ```
 
 
