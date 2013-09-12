@@ -13,7 +13,7 @@ Thursday 12th
 * 10:30 Break
 * 10:45 [Python and Good programming practice (part 1)](Python/python_and_good_programming_practice.md) - Chris
 * 12:00 Lunch
-* 13:00 [Using version control to manage and share information](version-control/README.md) ([slides](karthikram.github.io/git_intro) - Karthik
+* 13:00 [Using version control to manage and share information](version-control/README.md) ([slides](http://karthikram.github.io/git_intro/) - Karthik
 * 15:00 Break
 * 15:30 [Python and Good programming practice (part 2)](Python/python_and_good_programming_practice.md) - Chris
 * 16:30 [Documenting code](Python/3_documenting_code.md) - Chris
