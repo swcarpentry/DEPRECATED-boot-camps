@@ -34,7 +34,7 @@ Friday 13th
 
 ## Etherpad
 
-We'll be using an [Etherpad](https://swcuk.etherpad.mozilla.org/12) to provide additional information on the day. This will be made public on the day.
+We'll be using an [Etherpad](https://etherpad.mozilla.org/swcbristol) to provide additional information on the day. This will be made public on the day.
 
 ## Hints and tips
 
