@@ -44,6 +44,16 @@ then you should have an "edit" command. So you can use the git command:
 
 All of these options are stored in a file called `.gitconfig`. I've included a sample [here](sample.gitconfig).
 
+**Add some aliases**
+
+```
+git config --global alias.st status 
+git config --global alias.ci commit 
+git config --global alias.co checkout
+```
+
+
+
 ---
 
 ## Working with a local repository
