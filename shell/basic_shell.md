@@ -158,7 +158,7 @@ or even multiple directories at once
 
 ```
 ls ~ /usr
-``
+```
 
 Now we can start adding more options. Recall that commands can take both options (with a `-`) followed by arguments. Let's add some to ls. 
 
