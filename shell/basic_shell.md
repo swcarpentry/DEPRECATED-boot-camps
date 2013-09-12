@@ -13,7 +13,7 @@ My shell prompt looks like this:
 
 ![](shell_prompt.png)
 
-Yours might looks different (these can be easily customized). Usually include your `username@machinename`, followed by the current working directory (more about that soon) and a dollar sign
+Yours might looks different (these can be easily customized). Usually includes something like `username@machinename`, followed by the current working directory (more about that soon) and a $ sign
 
 ## Entering commands into the shell
 
@@ -22,6 +22,8 @@ You can just enter commands directly into the shell.
 ```
 echo Morning Bristol
 ```
+
+We just used a command called `echo` and gave it an argument called `Morning Bristol`.
 
 If you enter a command that shell doesn't recognize, it will just report an error
 
@@ -67,18 +69,19 @@ The first thing you want to do when you're somewhere new is get a map or figure 
 
 Three really imporant commands:
 
-* `pwd` *Acronym for print working directory*. Tell you where you are
-* `cd` *Change directory*. Give it options for where to take you.
-* `ls` *Short for list*. List all the files and folders in your current location.
+* `pwd` *Acronym for print working directory*. Tell you where you are.  
+* `cd` *Change directory*. Give it options for where to take you.  
+* `ls` *Short for list*. List all the files and folders in your current location.  
 
-Most operating systems have a hierarchical directory structure. The very top is called the `root directory`. It contains files, subfolders and so on.
+Most operating systems have a hierarchical directory structure. The very top is called the `root directory`. It contains files, subfolders and so on. Everything else is nested below.
+
 
 ```
 $ pwd
 /Users/karthik
 ```
 
-Note that I'm in my HOME directory. Your's should (hopefully) look different. 
+Note that I'm in my HOME directory. Yours should (hopefully) look different. 
 
 
 **List all the files in this directory**
@@ -91,7 +94,7 @@ You can change the working directory at any time using the `cd` command.
 
 ```
 cd /usr/bin 
-pwd /usr/bin
+pwd 
 ls
 ```
 Now change back to your home again
@@ -132,16 +135,16 @@ Tip: Just plain `cd` with no options should take you back home. Try it. `cd` to 
 
 **Quick exercise**
 
-1. Change into your HOME. Then into `boot-camps`. Then `shell`. List the contents of this folder. Then change back into your home again.
+1. Change into your HOME (or wherever you downloaded the boot-camps folder). Then into `boot-camps`. Then `shell`. List the contents of this folder. Then change back into your home again.
 
 ---
 ## Exploring your file system
 
 Three really important commands
 
-* ls
-* file
-* less
+* `ls`
+* `file`
+* `less`
 
 `ls` is extremely useful both for beginners and experts. `ls` can not only list the current directory contents but also contents from anywhere without changing working directories.
 
@@ -213,15 +216,15 @@ total 13944
 -rw-r--r--   1 karthik  staff     1972 Sep  8 15:48 Location.md
 drwxr-xr-x  19 karthik  staff      646 Sep 11 21:07 Python
 ```
-Files begin with a `-` and directories with a `d`.  
-Followed by permissions for the user, group, and everyone.   
-Permissions are in the order of read, write, and execute. If any group is missing a permission, you'll see a `-`.  
-Ignore field 3 for now (it's the number of links to the file)  
-The owner of the file  
-What group this person belongs to  
-Size of file in bytes  (Quick question: How do you change this?)  
-Date an time the file was last modified  
-Name of file.  
+* Files begin with a `-` and directories with a `d`.  
+* Followed by permissions for the user, group, and everyone.   
+* Permissions are in the order of read, write, and execute. If any * group is missing a permission, you'll see a `-`.  
+* Ignore field 3 for now (it's the number of links to the file)  
+* The owner of the file  
+* What group this person belongs to  
+* Size of file in bytes  (Quick question: How do you change this?)  
+* Date an time the file was last modified  
+* Name of file.  
 
 **Determining file type**
 
@@ -262,7 +265,9 @@ cd bo<tab>
 
 What just happened?
 
-When you hit the first `tab`, nothing happens. The reason is that there are multiple directories in the home directory which start with s. Thus, the shell does not know which one to fill in. When you hit `tab` again, the shell will list the possible choices.
+Try pressing `s`, then hitting tab?
+
+When you hit the first `tab`, nothing happens. The reason is that there are multiple directories in the home directory which start with `s`. Thus, the shell does not know which one to fill in. When you hit `tab` again, the shell will list the possible choices.
 
 Tab completion can also fill in the names of programs. For example, enter `e<tab><tab>`. You will see the name of every program that starts with an e. One of those is echo. If you enter `ech<tab>`` you will see that `tab` completion works.
 
