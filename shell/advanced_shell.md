@@ -9,19 +9,17 @@
 
 ## Pipes and redirects
 
-```
-cat - concat files
-sort - sort lines
-uniq - avoid duplicates
-grep - global regular expression patterns
-tail - view end of file
-head - view top of file
-tee - transfer standard input between pipes
-```
+`cat` - concat files
+`sort` - sort lines
+`uniq` - avoid duplicates
+`grep` - global regular expression patterns
+`tail` - view end of file
+`head` - view top of file
+
 
 By now you're well aware of how to list files with `ls`.
 
-```
+```shell
 # cd and pwd in your boot-camp folder
 ls -l
 ```
@@ -64,7 +62,8 @@ cat errors.txt
 ---
 
 
-**Cat** *- concatenate files*
+## Cat   
+*- concatenate files*
 
 Cat not just outputs contents of a file to screen but you can also use it to combine files. 
 
@@ -173,7 +172,9 @@ Notice that the names are now printed in alphabetical order.
 
 Enter the following command:
 
-   cat names.txt | sort -k 2 -n
+```
+cat names.txt | sort -k 2 -n
+```
 
 The contents of the `names.txt` file are now read and sorted by column number 2 (going in numeric order rather than column name). This list is then piped into the `sort` command, so that it can be sorted. Notice there are two options given to sort:
 
