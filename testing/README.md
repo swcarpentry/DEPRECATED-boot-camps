@@ -478,6 +478,19 @@ run test_morse.py
 ## Additional test driven development example
 *Please try this on your own time*
 
+If you don't have the `pisa` module, download it with:
+
+```
+pip install pisa
+```
+
+or
+
+```
+easy_install pisa
+```
+
+
 Say you want to write a fib() function which generates values of the
 Fibonacci sequence of given indexes. You would - of course - start by
 writing the test, possibly testing a single value:
