@@ -247,11 +247,12 @@ fun().
 
 Computers don't do floating point arithmetic too well.
 
-    $ python
-    >>> expected = 0
-    >>> actual = 0.1 + 0.1 + 0.1 - 0.3
-    >>> assert expected == actual
-    >>> print actual
+```python
+expected = 0
+actual = 0.1 + 0.1 + 0.1 - 0.3
+assert expected == actual
+print actual
+```
 
 Compare to within a threshold, or delta e.g. expected == actual  if expected - actual < 0.0000000000000001.
 
@@ -259,12 +260,13 @@ Thresholds are application-specific.
 
 Python [decimal](http://docs.python.org/2/library/decimal.html), floating-point arithmetic functions.
 
-    $ python
-    >>> from nose.tools import assert_almost_equal
-    >>> assert_almost_equal(expected, actual, 0)
-    >>> assert_almost_equal(expected, actual, 10)
-    >>> assert_almost_equal(expected, actual, 15)
-    >>> assert_almost_equal(expected, actual, 16)
+```python
+from nose.tools import assert_almost_equal
+assert_almost_equal(expected, actual, 0)
+assert_almost_equal(expected, actual, 10)
+assert_almost_equal(expected, actual, 15)
+assert_almost_equal(expected, actual, 16)
+```
 
 `nose.testing` uses absolute tolerance: abs(x, y) <= delta
 
@@ -340,7 +342,10 @@ list of strings?
 
 **Example**:
 
-    nosetests test_mean.py
+```python
+nosetests test_mean.py
+```
+
 
 # Test Driven Development
 
@@ -365,9 +370,11 @@ style was put forth most strongly by [Kent Beck in
 
 [morse.py](python/morse/morse.py)
 
-    $ python morse.py
-    encode
-    1 + 2 = 3
+```python
+run morse.py
+encode
+1 + 2 = 3
+```
 
 `KeyError` is an exception.
 
@@ -446,8 +453,9 @@ Remove test code from `MorseTranslator`.
 
 Run tests.
 
-    $ python test_morse.py
-
+```python
+run test_morse.py
+```
 
 
 
