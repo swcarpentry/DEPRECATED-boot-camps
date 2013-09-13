@@ -9,12 +9,12 @@
 
 ## Pipes and redirects
 
-`cat` - concat files
-`sort` - sort lines
-`uniq` - avoid duplicates
-`grep` - global regular expression patterns
-`tail` - view end of file
-`head` - view top of file
+`cat` - concat files  
+`sort` - sort lines  
+`uniq` - avoid duplicates  
+`grep` - global regular expression patterns  
+`tail` - view end of file  
+`head` - view top of file  
 
 
 By now you're well aware of how to list files with `ls`.
