@@ -133,7 +133,7 @@ indicated. The final line contains this information summed over all of the files
 
 **head and tail**
 
-```
+```shell
 head dictionary.txt
 head -n 5  dictionary.txt
 tail dictionary.txt
@@ -154,18 +154,10 @@ want to create a file which contains the following names:
     Diane 34
     Charles 22
 
-To do this, we need a program which allows us to create text
-files. There are many such programs, the easiest one which is
-installed on almost all systems is called `nano`. Navigate to `/tmp`
-and enter the following command:
 
     nano names.txt
 
-Now enter the four names.txt as shown above. When you are done, press
-CONTROL+O to write out the file. Press enter to use the file name
-`names.txt`. Then press CONTROL+x to exit `nano`.
-
-When you are back to the command line, enter the command:
+Now paste the four names.txt as shown above.  When you are back to the command line, enter the command:
 
     sort names.txt
 
