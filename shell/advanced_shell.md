@@ -64,8 +64,6 @@ cat errors.txt
 ---
 
 
-**cat**
-
 **Cat** *- concatenate files*
 
 Cat not just outputs contents of a file to screen but you can also use it to combine files. 
@@ -84,7 +82,7 @@ Try the following example:
 
 ```
 cat Python/1_lists_and_dictionaries.md Python/2_functions_and_modules.md Python/3_documenting_code.md Python/4_object_orientation.md Python/5_matplotlib.md Python/5_numpy.md > all_python_files.md
-
+```
 
 ## Pipes
 
