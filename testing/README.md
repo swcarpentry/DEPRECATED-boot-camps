@@ -270,7 +270,11 @@ assert_almost_equal(expected, actual, 16)
 
 `nose.testing` uses absolute tolerance: abs(x, y) <= delta
 
-[Numpy](http://www.numpy.org/)'s `numpy.testing` uses relative tolerance: abs(x, y) <= delta * (max(abs(x), abs(y)). 
+[Numpy](http://www.numpy.org/)'s `numpy.testing` uses relative tolerance: 
+
+```python
+abs(x, y) <= delta * (max(abs(x), abs(y))
+```
 
 `assert_allclose(actual_array, expected_array, relative_tolerance, absolute_tolerance)`
 
