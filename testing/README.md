@@ -241,36 +241,37 @@ is a method of the Person class. In order to check the fun function,
 then, we need to create an appropriate Person object on which to run
 fun().
 
-**Setup and teardown:** Creating fixtures is often done in a call to a
-setup function. Deleting them and other cleanup is done in a teardown
-function.
+---
 
-**The Big Picture:** Putting all this together, the testing algorithm is
-often:
+## When 1 + 1 = 2.0000001
 
-```python
-setup()
-test()
-teardown()
-```
+Computers don't do floating point arithmetic too well.
 
-But, sometimes it's the case that your tests change the fixtures. If so,
-it's better for the setup() and teardown() functions to occur on either
-side of each test. In that case, the testing algorithm should be:
+    $ python
+    >>> expected = 0
+    >>> actual = 0.1 + 0.1 + 0.1 - 0.3
+    >>> assert expected == actual
+    >>> print actual
 
-```python
-setup()
-test1()
-teardown()
+Compare to within a threshold, or delta e.g. expected == actual  if expected - actual < 0.0000000000000001.
 
-setup()
-test2()
-teardown()
+Thresholds are application-specific. 
 
-setup()
-test3()
-teardown()
-```
+Python [decimal](http://docs.python.org/2/library/decimal.html), floating-point arithmetic functions.
+
+    $ python
+    >>> from nose.tools import assert_almost_equal
+    >>> assert_almost_equal(expected, actual, 0)
+    >>> assert_almost_equal(expected, actual, 10)
+    >>> assert_almost_equal(expected, actual, 15)
+    >>> assert_almost_equal(expected, actual, 16)
+
+`nose.testing` uses absolute tolerance: abs(x, y) <= delta
+
+[Numpy](http://www.numpy.org/)'s `numpy.testing` uses relative tolerance: abs(x, y) <= delta * (max(abs(x), abs(y)). 
+
+`assert_allclose(actual_array, expected_array, relative_tolerance, absolute_tolerance)`
+
 
 * * * * *
 
