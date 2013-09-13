@@ -216,8 +216,7 @@ code base still functions after changes have been made.
 
 # Elements of a Test
 
-**Behavior:** The behavior you want to test. For example, you might want
-to test the fun() function.
+**Behavior:** The behavior you want to test.  
 
 **Expected Result:** This might be a single number, a range of numbers,
 a new fully defined object, a system state, an exception, etc. When we
@@ -232,14 +231,9 @@ even if the function being tested isn't.
 conditional is false, the test fails.
 
 **Fixtures:** Sometimes you have to do some legwork to create the
-objects that are necessary to run one or many tests. These objects are
-called fixtures as they are not really part of the test themselves but
-rather involve getting the computer into the appropriate state.
+objects that are necessary to run one or many tests. These objects are called fixtures as they are not really part of the test themselves but rather involve getting the computer into the appropriate state.
 
-For example, since fun varies a lot between people, the fun() function
-is a method of the Person class. In order to check the fun function,
-then, we need to create an appropriate Person object on which to run
-fun().
+
 
 ---
 
@@ -386,10 +380,12 @@ Traceback shows Python's exception stack trace.
 
 Runtime tests can make code robust and behave gracefully.
 
-    try:
-        print "Encoded is '%s'" % translator.encode(message)
-    except KeyError:
-        print "The input should be a string of a-z, A-Z, 0-9 or space"
+```python
+try:
+    print "Encoded is '%s'" % translator.encode(message)
+except KeyError:
+    print "The input should be a string of a-z, A-Z, 0-9 or space"
+```    
 
 Exception is caught by the `except` block.
 
@@ -397,8 +393,10 @@ Exception can be converted and passed e.g. if this was deep within a function we
 
 Can `raise` an exception e.g.
 
-    except KeyError:
-        raise ValueError("The input should be a string of a-z, A-Z, 0-9 or space")
+```python
+except KeyError:
+    raise ValueError("The input should be a string of a-z, A-Z, 0-9 or space")
+```
 
 ## Exercise: add runtime test for decode
 
@@ -410,34 +408,44 @@ Write down set of test steps so won't forget.
 
 Still time-consuming.
 
-    def test(self):
-        print "sos is ", self.encode("sos")
-        print "... --- ... is ", self.decode("... --- ...")
-        print "OK"
+```python
+def test(self):
+    print "sos is ", self.encode("sos")
+    print "... --- ... is ", self.decode("... --- ...")
+    print "OK"
+```    
 
 Extend UI.
 
-    while True:
+```python
+while True:
 
-        elif line == "test":
-            print "Testing..."
-            translator.test()
-            break
+    elif line == "test":
+        print "Testing..."
+        translator.test()
+        break
+```
 
 Automate checking.
 
+```python
     def test(self):
         assert "... --- ..." == self.encode("sos")
         assert "sos" == self.decode("... --- ...")
         print "OK"
+```
 
 `assert` checks whether condition is true and, if not, raises an exception.
 
 Put test functions in separate file for modularity.
 
-    $ cp morse.py test_morse.py
-    $ nano test_morse.py
+```python
+cp morse.py test_morse.py
+nano test_morse.py
+```
 
+
+```python
     from morse import MorseTranslator
 
     class TestMorseTranslator:
@@ -452,6 +460,7 @@ Put test functions in separate file for modularity.
 
         test_translator = TestMorseTranslator()
         test_translator.test()
+```
 
 Remove test code from `MorseTranslator`.
 
