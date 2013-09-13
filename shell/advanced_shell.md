@@ -133,10 +133,12 @@ indicated. The final line contains this information summed over all of the files
 
 **head and tail**
 
+```
 head dictionary.txt
 head -n 5  dictionary.txt
 tail dictionary.txt
 tail -n 5 dictionary.txt
+```
 
 
 * * * *
