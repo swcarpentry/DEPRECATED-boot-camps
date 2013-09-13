@@ -358,7 +358,7 @@ It found all my Python files.
 
 # Other shell tricks
 
-Create lots of subdirectories at once using patterns
+Create lots of subdirectories at once using brace expansions.
 
 ```
 echo Experiment-{A,B,C}-master
