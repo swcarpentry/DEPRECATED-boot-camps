@@ -204,7 +204,7 @@ Then enter the following text:
     #!/bin/bash
     wc * | sort -k 3 -n | head -n 1
 
-cd into the `data` folder. Now enter the command `../smallest`. Notice that it says permission denied. This happens because we haven't told the shell that this is an executable file. If you do `ls -l ../smallest`, it will show you the permissions on the left of the listing.
+cd into the `Python` folder. Now enter the command `../smallest`. Notice that it says permission denied. This happens because we haven't told the shell that this is an executable file. If you do `ls -l ../smallest`, it will show you the permissions on the left of the listing.
 
 Enter the following commands:
 
@@ -234,11 +234,10 @@ use `- i` to ignore case.
 
 
 ```
-grep able dictionary.txt
-grep on dictionary.txt
-grep on$ dictionary.txt
-grep -n on$ dictionary.txt
-grep -n on$ 
+grep 'able' dictionary.txt
+grep 'on' dictionary.txt
+grep 'on$' dictionary.txt
+grep -n 'on$' dictionary.txt
 ```
 
 Let's make a new file with all the application names
