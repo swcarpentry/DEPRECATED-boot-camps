@@ -287,7 +287,7 @@ arguably attributed to inventing the testing framework.
 Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
 `test_`. Specifically, these satisfy the testMatch regular expression
 `[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
-in the unittest.TestCase subclasses chat you create in your code. You
+in the unittest.TestCase subclasses that you create in your code. You
 can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
 expression.)
