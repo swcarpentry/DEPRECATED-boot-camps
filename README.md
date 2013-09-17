@@ -7,4 +7,4 @@
 
 Please see the boot camp [website](http://swcarpentry.github.io/boot-camps/2013-09-23-msu/) for the schedule and installation instructions.
 
-Please contact [Randy Olson](mailto:rso@randalolson.com) or [Jory Schossau](jory@msu.edu) with any questions.
+Please contact [Randy Olson](mailto:rso@randalolson.com) or [Jory Schossau](mailto:jory@msu.edu) with any questions.
