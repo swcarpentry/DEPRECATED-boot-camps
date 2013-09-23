@@ -2,6 +2,7 @@
 
 * * * * *
 
+If you don't already have a copy of the class material, then...
 Copy and paste all of the following into your command line (in home dir):
 
     mkdir bootcamp
