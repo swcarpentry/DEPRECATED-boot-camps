@@ -11,3 +11,4 @@ Copy and paste all of the following into your command line (in home dir):
     git fetch origin 2013-09-msu:origin/2013-09-msu
     git checkout -b 2013-09-msu --track origin/2013-09-msu
     git status
+    ls
