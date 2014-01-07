@@ -657,7 +657,7 @@ unique to python. To check whether an object is contained in a list :
 
 ```python 
 beatle="John"
-beatles=["George", "Ringo","John", "Paul"]
+beatles=["George", "Ringo", "John", "Paul"]
 print beatle in beatles # is John one of the beatles? : TRUE
 print "Katy" not in beatles # this is also TRUE. 
 ```
@@ -684,7 +684,7 @@ A better use of `is` would be to compare objects like lists, for example the sam
 ```python
 number_list = [1,2,4,8]
 dict1 = {"thing_widths": number_list}
-dict2 = {"item_costs":number_list}
+dict2 = {"item_costs": number_list}
 dict1["thing_widths"] is dict2["item_costs"]  # True - this is the same list
 ```
 
@@ -707,16 +707,19 @@ print sign
 The behavior of this code snippet should be pretty clear, but there is
 something peculiar. How does Python know where the if-statement ends?
 Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code. For example, in MatLab you begin an if
-statement with the word `if` and you end it with `end if`. In C/C++ you
-delimit blocks with curly braces. Python uses **indentation** to delimit
-code blocks. The **indentation** above is NOT just to make things look
-pretty - it tells Python what the body of the `if`-statement is. This is
-true when ever we create any code blocks, such as the bodies of loops,
-functions or classes.
+delimiting blocks of code.
+
+For example, in MatLab you begin an if statement with the word `if`
+and you end it with `end if`. In C/C++ you delimit blocks with curly
+braces. Python uses **indentation** to delimit code blocks. The
+**indentation** above is NOT just to make things look pretty - it
+tells Python what the body of the `if`-statement is. This is true when
+ever we create any code blocks, such as the bodies of loops, functions
+or classes.
 
 ***Excercise***
-Write an if statement prints whether x is even or odd.
+Write an if statement that prints whether x is even or odd.
+
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
 
 
