@@ -314,10 +314,10 @@ In [6]: dir(str)
 ```
 
 Let's look up what some of these functions do.
-? displays more information about each datatype/ function. Let's try str.swapcase()?.
+? displays more information about each datatype/ function. Let's try str.swapcase?.
 
 ```
-In [7]: str.swapcase()?
+In [7]: str.swapcase?
 Type:       method_descriptor
 String Form:<method 'swapcase' of 'str' objects>
 Namespace:  Python builtin
