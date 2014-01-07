@@ -156,7 +156,7 @@ Choosing an appropriate variable type is not just a practical concern it can als
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
 ```
-In [15]: voltage = 4 # set the voltage to 4 <- bad comment
+In [15]: voltage = 4 # set the voltage to 4       <- bad comment
 
 In [16]: voltage = 4 # The voltage in the circuit <- good, provides more information
 ```
