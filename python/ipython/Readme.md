@@ -30,7 +30,7 @@ We can also write python commands in a file and execute them from the command li
 
 ```
 frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
-Hello World
+hello world
 ```
 
 iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out:
