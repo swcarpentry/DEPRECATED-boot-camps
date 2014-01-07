@@ -76,8 +76,8 @@ Finally, we introduce conditionals, such as if statements; we will see what an i
 All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Let's set a variable.
 
 ```
-In [1]: first_name = "Jens"
-In [2]: last_name = "von der Linden"
+In [1]: first_name = "Cliff"
+In [2]: last_name = "Rodgers"
 ```
 
 We can concatenate strings with the + operator. Computers don't understand context.
@@ -85,7 +85,7 @@ We can concatenate strings with the + operator. Computers don't understand conte
 ```
 In [3]: full_name = first_name + last_name
 In [4]: print full_name
-Out[4]: Jensvon der Linden
+Out[4]: 'CliffRodgers'
 ```
 
 ***Excercise***
