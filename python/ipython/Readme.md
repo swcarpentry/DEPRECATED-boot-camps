@@ -29,7 +29,7 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-frodgers@acibootcamp ~ $ python hello.py 
+frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
 Hello World
 ```
 
