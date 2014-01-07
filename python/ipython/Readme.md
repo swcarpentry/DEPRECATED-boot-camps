@@ -342,7 +342,7 @@ Can you find with help of the ? which function turns "Hello world" into "HELLO W
 If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so:
 
 ```
-In [9] %run hello.py
+In [9] %run ~/boot-camps/python/ipython/hello.py
 ```
 
 ### Clearing iPython
