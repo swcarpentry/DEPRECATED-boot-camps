@@ -594,7 +594,7 @@ In [12]: data_dict["temperature"] = 3275.39
 You can also add new keys to the dictionary.
 
 ```
-In [13]: data_dict["user"] = "Johann G. von Ulm"
+In [13]: data_dict["user"] = "F. C. Rodgers"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
