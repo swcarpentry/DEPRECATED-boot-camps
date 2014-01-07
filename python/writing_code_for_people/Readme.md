@@ -104,7 +104,7 @@ Docstring:
 type(object) -> the object's type
 type(name, bases, dict) -> a new type
 
-In [6]: type(fullname)
+In [6]: type(full_name)
 Out[6]: str
 
 ```
