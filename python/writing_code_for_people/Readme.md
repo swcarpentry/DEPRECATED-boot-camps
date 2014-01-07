@@ -152,7 +152,7 @@ In [14]: voltage = 2
 Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
 
 ## Writing comments for people
-g
+
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
 ```
