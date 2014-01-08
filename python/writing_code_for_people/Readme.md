@@ -241,7 +241,7 @@ In [38]: type(a), type(b), type(c)
 Out[38]: (int, int, int)
 ```
 
-So we got a vale of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
+So we got a value of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
 
 So what about the case where a is an integer and b is a float?
 
@@ -308,11 +308,11 @@ In [57]: type(a), type(b), type(c)
 Out[57]: (float, float, float)
 ```
 
-## Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+## Compound Data Types: Lists, Dictionaries, Sets, and Tuples
 
 Python would be a fairly useless language if it weren't for the compound
 data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. I'll also go over reading text data from files. 
+and tuples as well. 
 
 ## Lists
 
