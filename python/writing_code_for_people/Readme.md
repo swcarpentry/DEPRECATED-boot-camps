@@ -547,13 +547,15 @@ sets, but it's good for you to know they exist.
 
 ## Dictionaries
 
-Recall our file data.dat which contained our current-voltage data and also
-some metadata. We were able to import the data as a list, but clearly the
-list type is not the optimal choice for a data model. The dictionary is a
-much better choice. A python dictionary is a collection of key, value
-pairs. The key is a way to name the data, and the value is the data itself.
-Here's a way to create a dictionary that contains all the data in our
-data.dat file in a more sensible way than a list.
+Recall our variable data_list which contained our current-voltage data
+and also some metadata. We were able to store the data as a list, but
+clearly the list type is not the optimal choice for a data model. The
+dictionary is a much better choice.
+
+A python dictionary is a collection of key, value pairs. The key is a
+way to name the data, and the value is the data itself.  Here's a way
+to create a dictionary that contains all the data in our data.dat file
+in a more sensible way than a list.
 
 ```
 In [7] data_dict = {"experiment": "current vs. voltage", \
