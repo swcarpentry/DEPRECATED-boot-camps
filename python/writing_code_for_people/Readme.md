@@ -459,10 +459,10 @@ Lists can contain hetergeneous data.
 
 ```
 In [17]: data_list = ["experiment: current vs. voltage", \
-   ....:             "run", 47, \
-   ....:             "temperature", 372.756, \
-   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
-   ....:             "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
+                      "run", 47, \
+                      "temperature", 372.756, \
+                      "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
+                      "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
 
 ```
 
