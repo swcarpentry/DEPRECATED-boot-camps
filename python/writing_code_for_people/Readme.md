@@ -518,9 +518,12 @@ Display the second element of the tuple with two different slices.
 ## Sets
 
 Most introductory python courses do not go over sets this early (or at
-all), but I've found this data type to be useful. The python set type is
-similar to the idea of a mathematical set: it is an unordered collection of
-unique things. Consider:
+all), and in the interest of time we're no different. The python set
+type is a useful data type similar to the idea of a mathematical set:
+it is an unordered collection of unique things.
+
+Consider the following examples if you're interested in the useful
+sorts of things you can do with python sets:
 
 ```
 In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
