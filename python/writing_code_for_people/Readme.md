@@ -93,7 +93,9 @@ Can you add the extra space between my last and first name?
 
 ## Types and Dynamic Typing
 
-Like in most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
+Like in most programming languages, things in python are typed. The
+type refers to the type of data.  You can inspect the type of a
+variable by using the type command.
 
 ```
 In [5]: type?
@@ -541,7 +543,7 @@ Out[6]: set(['apple', 'peach'])
 ```
 
 You can check out more info using the help docs. We won't be returning to
-sets, but its good for you to know they exist.
+sets, but it's good for you to know they exist.
 
 ## Dictionaries
 
