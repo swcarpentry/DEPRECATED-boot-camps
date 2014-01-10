@@ -526,7 +526,7 @@ is where the name comes from, `cat` is short for concatenate).
 
 * * * *
 
-**Viewing file contents with `less`
+##Viewing file contents with `less`
 
 `cat` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, `less`, is useful for this
@@ -712,7 +712,7 @@ following:
 3.  Enter the command: `git checkout -- data` You should see that the
     data directory has reappeared in its original state
 
-**BONUS**
+**BONUS Challenge**
 
 Redo exercise 4, except rename only the files which do not already end
 in `.txt`. You will have to use the `man` command to figure out how to
