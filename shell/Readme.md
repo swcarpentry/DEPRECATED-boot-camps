@@ -21,7 +21,7 @@ A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
 operating systems.
 	 
-There are many reasons to learn about the shell. In my opinion, the
+There are many reasons to learn about the shell. In our opinion, the
 most important reasons are that: 
 
 1.  It is very common to encounter the shell and
@@ -38,9 +38,9 @@ The shell is just a program and there are many different shell
 programs that have been developed. The most common shell (and the one
 we will use) is called the Bourne-Again SHell (bash). Even if bash is
 not the default shell, it is usually installed on most systems and can be
-started by typing `bash` in the terminal. Many commands, especially a
-lot of the basic ones, work across the various shells but many things
-are different. I recommend sticking with bash and learning it well.
+started by typing `bash` in the terminal. Most commands, especially a
+lot of the basic ones, work across the various shells but some things may 
+be different. I recommend sticking with bash and learning it well.
 ([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
 To open a terminal, just single click on the "Terminal" icon on the
@@ -67,7 +67,7 @@ the terminal. Try the command:
     echo Hello, World
 
 Then press enter. You should see the text "Hello, World" printed back
-to you. The echo command is useful for printing from a shell script,
+to you as "standard output". The echo command is useful for printing from a shell script,
 for displaying variables, and for generating known values to pass
 to other programs.
 
@@ -82,8 +82,8 @@ First we have to know where we are. The program `pwd` (print working
 directory) tells you where you are sitting in the directory tree. The
 command `ls` will list the files in files in the current
 directory. Directories are often called "folders" because of how they
-are represented in GUIs. Directories are just listings of files. They
-can contain other files or directories.
+are represented in GUIs. Directories are just organizational groupings of files. They
+can contain files or other directories.
 
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
@@ -160,7 +160,7 @@ directory.
 
 Most programs take additional arguments that control their exact
 behavior. For example, `-F` and `-l` are arguments to `ls`.  The `ls`
-program, like many programs, take a lot of arguments. But how do we
+program, like many programs, can take a variety of arguments. But how do we
 know what the options are to particular commands?
 
 Most commonly used shell programs have a manual. You can access the
@@ -181,12 +181,8 @@ referring back to the manual page frequently.
 * * * *
 **Short Exercise**
 
-1. Use the manual page for `ls` to guess what you would expect from
+Use the manual page for `ls` to guess what you would expect from
 using the arguments `-l`, `-t`, `-r` at the same time.
-2. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
-   * `ls -lS` (equivalent to `ls -l -S`)
-   * `ls -lt` (equivalent to `ls -l -t`)
-   * `ls -1`  (that's the number one, not a letter 'ell')
 
 * * * *
 
@@ -218,11 +214,14 @@ the intermediate directory.
 ## Full vs. Relative Paths
 
 The `cd` command takes an argument which is the directory
-name. Directories can be specified using either a *relative* path a
-full *path*. The directories on the computer are arranged into a
+name. Directories can be specified using either a *relative* path or 
+a *full* path. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
-hierarchy. Navigate to the home directory. Now, enter the `pwd`
-command and you should see:
+hierarchy. Navigate to *your* home directory with
+
+    cd ~
+
+Now, enter the `pwd` command and you should see:
 
     /home/<username>
 
@@ -273,8 +272,8 @@ familiar in there?
 
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
-`~`, is a shortcut for your home directory. Navigate to the `shell`
-directory, then enter the command:
+`~`, is a shortcut for your home directory, as we used it with `cd` before. 
+Navigate to the `shell` directory, then enter the command:
 
     ls ~
 
@@ -301,7 +300,7 @@ To summarize, while you are in the `shell` directory, the commands
 same thing. These shortcuts are not necessary, they are provided for
 your convenience.
 
-## Our data set: Cochlear Implants
+## Introducing our data set: Cochlear Implants
 
 A cochlear implant is a small electronic device that is surgically
 implanted in the inner ear to give deaf people a sense of
@@ -381,9 +380,8 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+1.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
+2.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
 
 * * * *
 
@@ -402,14 +400,9 @@ The shell will fill in the rest of the directory name for
     ls s<tab><tab>
 
 When you hit the first tab, nothing happens. The reason is that there
-are multiple directories in the home directory which start with
+are *multiple* directories in the home directory which start with
 `s`. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices. 
-
-Tab completion can also fill in the names of programs. For example,
-enter `e<tab><tab>`. You will see the name of every program that
-starts with an `e`. One of those is `echo`. If you enter `ech<tab>` you
-will see that tab completion works.
 
 # Command History
 
@@ -427,8 +420,7 @@ You can also review your recent commands with the `history` command.  Just enter
     history
 
 to see a numbered list of recent commands, including this just issues
-`history` command.  You can reuse one of these commands directly by
-referring to the number of that command.
+`history` command.
 
 If your history looked like this:
 
@@ -492,24 +484,16 @@ this directory. Now, try to run the program by entering:
 
 You should get an error saying that hello cannot be found. That is
 because the directory `/home/<username>/boot-camps/shell` is not in the
-`PATH`. You can run the `hello` program by entering:
+`PATH`. Instead, you can run the `hello` program by entering:
 
     ./hello
 
 Remember that `.` is a shortcut for the current working
 directory. This tells the shell to run the `hello` program which is
-located right here. So, you can run any program by entering the path
+located in your current location. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
     /home/<username>/boot-camps/shell/hello
-
-Or by entering:
-
-    ../shell/hello
-
-When there are no `/` characters, the shell assumes you want to look
-in one of the default places for the program.
-
 
 # Working with Files
 
@@ -521,12 +505,13 @@ contents using the program `cat`. Enter the following command:
 
     cat ex_data.txt
 
-This prints out the contents of the `ex_data.txt` file. If you enter:
+This prints out the contents of the `ex_data.txt` file to the terminal 
+as standard output. If you enter:
 
     cat ex_data.txt ex_data.txt
 
 It will print out the contents of `ex_data.txt` twice. `cat` just
-takes a list of file names and writes them out one after another (this
+takes a list of file names and writes out their contents one after another (this
 is where the name comes from, `cat` is short for concatenate). 
 
 * * * *
@@ -535,11 +520,13 @@ is where the name comes from, `cat` is short for concatenate).
 1.  Print out the contents of the `~/boot-camps/shell/dictionary.txt`
     file. What does this file contain?
 
-2.  Without changing directories, (you should still be in `shell`),
+2.  Without changing directories (you should still be in `shell`),
     use one short command to print the contents of all of the files in
     the `/home/<username>/boot-camps/shell/data/THOMAS` directory.
 
 * * * *
+
+**Viewing file contents with `less`
 
 `cat` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, `less`, is useful for this
@@ -561,17 +548,18 @@ are identical to the `man` program.
 |  "q"    | to quit |
 
 `less` also gives you a way of searching through files. Just hit the
-"/" key to begin a search. Enter the name of the word you would like
-to search for and hit enter. It will jump to the next location where
+"/" key to begin a search, type the name of the word you would like
+to search for, and hit `<enter>`. It will jump to the next location where
 that word is found. Try searching the `dictionary.txt` file for the
 word "cat". If you hit "/" then "enter", `less` will just repeat
 the previous search. `less` only searches forward from the current 
-location. If you are at the end of the file and search
+location. Note: If you are at the end of the file and search
 for the word "cat", `less` will not find it. You need to go to the
-beginning of the file and search.
+beginning of the file (by typing `g`) and then search. Now quit the less 
+program.
 
 Remember, the `man` program actually uses `less` internally and
-therefore uses the same commands, so you can search documentation
+therefore uses the same commands, so you can search program manuals 
 using "/" as well!
 
 * * * *
@@ -582,7 +570,7 @@ using "/" as well!
 Let's turn to the experimental data from the hearing tests that we
 began with. This data is located in the `~/boot-camps/shell/data`
 directory. Each subdirectory corresponds to a particular participant
-in the study. Navigate to the `Bert` subdirectory in `data`.  There
+in the study. Navigate to the `Bert` subdirectory in `data`. There
 are a bunch of text files which contain experimental data
 results. Lets print them all:
 
@@ -593,12 +581,12 @@ Now enter the following command:
     cat au* > ../all_data
 
 This tells the shell to take the output from the `cat au*` command and
-dump it into a new file called `../all_data`. To verify that this
+redirect it into a new file called `../all_data`. To verify that this
 worked, examine the `all_data` file. If `all_data` had already
-existed, we would have overwritten it. So the `>` character tells the shell
-to take the output from what ever is on the left and dump it into the
-file on the right. The `>>` characters do almost the same thing,
-except that they will append the output to the file if it already
+existed, we would have overwritten it because the `>` character tells the shell
+to take the output from the command on the left and turn that into the contents
+of the file on the right. The `>>` characters do almost the same thing,
+except that they will *append* the output to the file if it already
 exists.
 
 * * * *
@@ -606,8 +594,8 @@ exists.
 
 Use `>>`, to append the contents of all of the files whose names
 contain the number 4 in the directory `/home/<username>/boot-camps/shell/data/gerdal` 
-to the existing `all_data` file. Thus, when you are done,>> `all_data`
-should contain all of the experiment data from Bert and any
+to the existing `all_data` file. Thus, when you are done, `all_data`
+should contain all of the experiment data from Bert AND any
 experimental data file from gerdal with filenames that contain the
 number 4.
 
@@ -616,10 +604,10 @@ number 4.
 
 ## Creating, moving, copying, and removing
 
-We've created a file called `all_data` using the redirection operator
+We first created a file called `all_data` using the redirection operator
 `>`. This file is critical - it's our analysis results - so we want to
 make copies so that the data is backed up.
-Lets copy the file using the `cp` command. The `cp`
+Let's copy the file using the `cp` command. The `cp`
 command backs up the file. Navigate to the `data` directory and enter:
 
     cp all_data all_data_backup
@@ -640,9 +628,9 @@ move files and directories around using the command `mv`. Enter this command:
 
     mv all_data_backup /tmp/<username>
 
-This moves `all_data_backup` into the directory `/tmp`. 
+This moves `all_data_backup` into your directory within `/tmp`. 
 
-The `mv` command is also how you rename files and diretories. Since this file is so
+The `mv` command is also how you can rename files and diretories. Since this file is so
 important, let's rename it:
 
     mv all_data all_data_IMPORTANT
@@ -657,19 +645,20 @@ the backup file now:
 
 Do the following:
 
-1.  Rename the `all_data_IMPORTANT` file to `all_data`.
+1.  Rename the `all_data_IMPORTANT` file back to `all_data`.
 2.  Create a directory in the `data` directory called `foo`
-3.  Then, copy the `all_data` file into `foo`
+3.  Then, *copy* the `all_data` file into `foo`
 
 * * * *
 
 By default, `rm`, will NOT delete directories. You can tell `rm` to
-delete a directory using the `-r` option. Enter the following command:
+delete a directory and all of its contents using the `-r` option. 
+Enter the following command:
 
     rm -r foo
 
 
-## Finding files
+## BONUS: Finding files
 
 The `find` program can be used to find files based on arbitrary
 criteria. Navigate to the `data` directory and enter the following
@@ -691,25 +680,14 @@ This tells `find` to locate only files. Now try these commands:
 The `find` command can acquire a list of files and perform some
 operation on each file. Try this command out:
 
-    find . -type f -exec grep Volume {} \;
-
-This command first finds every file starting from `.`. Then `grep` searches each
-file for a line which contains the word "Volume". The `{}` refers to
-the name of each file. The trailing `\;` is used to terminate the
-command.  This command is slow, because it is calling a new instance
-of `grep` for each item the `find` returns.
-
-A faster way to do this is to use the `xargs` command:
-
     find . -type f -print | xargs grep Volume
 
 `find` generates a list of all the files we are interested in, 
-then we pipe them to `xargs`.  `xargs` takes the items given to it 
-and passes them as arguments to `grep`.  `xargs` generally only creates
-a single instance of `grep` (or whatever program it is running).
+then we *pipe* them to `xargs`, which passes the list of items 
+as arguments to `grep`.
 
 * * * * 
-**Short Exercise**
+**BONUS Exercises**
 
 Navigate to the `data` directory. Use one `find` command to perform each
 of the operations listed below (except number 2, which does not
