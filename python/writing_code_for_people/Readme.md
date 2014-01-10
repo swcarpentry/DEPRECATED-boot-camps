@@ -114,7 +114,14 @@ Out[6]: str
 
 Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. It's actually important, but its importance may not be clear to you until long after this class is over.
 
-Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Let's say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
+Dynamic typing means that you don't have to declare the type of a
+variable when you define it; python just figures it out based on how
+you are setting the variable.
+
+Let's say you set a variable. Sometime later you can just change the
+type of data assigned to a variable and python is perfectly happy
+about that. Since it won't be obvious until (possibly much) later why
+that's important, I'll let you marinate on that idea for a second.
 
 Here's an example of dynamic typing. 
 
