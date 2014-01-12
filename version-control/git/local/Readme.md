@@ -99,6 +99,7 @@ as their descriptions.
 
      $ git config --global user.name "YOUR NAME"
      $ git config --global user.email "YOUR EMAIL"
+     $ git config --global core.editor nano
      
 ## git init : Creating a Local Repository
 
