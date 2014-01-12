@@ -76,8 +76,8 @@ Finally, we introduce conditionals, such as if statements; we will see what an i
 All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Let's set a variable.
 
 ```
-In [1]: first_name = "Jens"
-In [2]: last_name = "von der Linden"
+In [1]: first_name = "Cliff"
+In [2]: last_name = "Rodgers"
 ```
 
 We can concatenate strings with the + operator. Computers don't understand context.
@@ -85,7 +85,7 @@ We can concatenate strings with the + operator. Computers don't understand conte
 ```
 In [3]: full_name = first_name + last_name
 In [4]: print full_name
-Out[4]: Jensvon der Linden
+Out[4]: 'CliffRodgers'
 ```
 
 ***Excercise***
@@ -93,7 +93,9 @@ Can you add the extra space between my last and first name?
 
 ## Types and Dynamic Typing
 
-Like in most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
+Like in most programming languages, things in python are typed. The
+type refers to the type of data.  You can inspect the type of a
+variable by using the type command.
 
 ```
 In [5]: type?
@@ -104,7 +106,7 @@ Docstring:
 type(object) -> the object's type
 type(name, bases, dict) -> a new type
 
-In [6]: type(fullname)
+In [6]: type(full_name)
 Out[6]: str
 
 ```
@@ -112,7 +114,14 @@ Out[6]: str
 
 Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. It's actually important, but its importance may not be clear to you until long after this class is over.
 
-Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Let's say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
+Dynamic typing means that you don't have to declare the type of a
+variable when you define it; python just figures it out based on how
+you are setting the variable.
+
+Let's say you set a variable. Sometime later you can just change the
+type of data assigned to a variable and python is perfectly happy
+about that. Since it won't be obvious until (possibly much) later why
+that's important, I'll let you marinate on that idea for a second.
 
 Here's an example of dynamic typing. 
 
@@ -152,11 +161,11 @@ In [14]: voltage = 2
 Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
 
 ## Writing comments for people
-g
+
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
 ```
-In [15]: voltage = 4 # set the voltage to 4 <- bad comment
+In [15]: voltage = 4 # set the voltage to 4       <- bad comment
 
 In [16]: voltage = 4 # The voltage in the circuit <- good, provides more information
 ```
@@ -241,7 +250,7 @@ In [38]: type(a), type(b), type(c)
 Out[38]: (int, int, int)
 ```
 
-So we got a vale of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
+So we got a value of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
 
 So what about the case where a is an integer and b is a float?
 
@@ -308,11 +317,11 @@ In [57]: type(a), type(b), type(c)
 Out[57]: (float, float, float)
 ```
 
-## Compound Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+## Compound Data Types: Lists, Dictionaries, Sets, and Tuples
 
 Python would be a fairly useless language if it weren't for the compound
 data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. I'll also go over reading text data from files. 
+and tuples as well. 
 
 ## Lists
 
@@ -457,10 +466,10 @@ Lists can contain hetergeneous data.
 
 ```
 In [17]: data_list = ["experiment: current vs. voltage", \
-   ....:             "run", 47, \
-   ....:             "temperature", 372.756, \
-   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
-   ....:             "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
+                      "run", 47, \
+                      "temperature", 372.756, \
+                      "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
+                      "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
 
 ```
 
@@ -516,9 +525,12 @@ Display the second element of the tuple with two different slices.
 ## Sets
 
 Most introductory python courses do not go over sets this early (or at
-all), but I've found this data type to be useful. The python set type is
-similar to the idea of a mathematical set: it is an unordered collection of
-unique things. Consider:
+all), and in the interest of time we're no different. The python set
+type is a useful data type similar to the idea of a mathematical set:
+it is an unordered collection of unique things.
+
+Consider the following examples if you're interested in the useful
+sorts of things you can do with python sets:
 
 ```
 In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
@@ -541,17 +553,19 @@ Out[6]: set(['apple', 'peach'])
 ```
 
 You can check out more info using the help docs. We won't be returning to
-sets, but its good for you to know they exist.
+sets, but it's good for you to know they exist.
 
 ## Dictionaries
 
-Recall our file data.dat which contained our current-voltage data and also
-some metadata. We were able to import the data as a list, but clearly the
-list type is not the optimal choice for a data model. The dictionary is a
-much better choice. A python dictionary is a collection of key, value
-pairs. The key is a way to name the data, and the value is the data itself.
-Here's a way to create a dictionary that contains all the data in our
-data.dat file in a more sensible way than a list.
+Recall our variable data_list which contained our current-voltage data
+and also some metadata. We were able to store the data as a list, but
+clearly the list type is not the optimal choice for a data model. The
+dictionary is a much better choice.
+
+A python dictionary is a collection of key, value pairs. The key is a
+way to name the data, and the value is the data itself.  Here's a way
+to create a dictionary that contains all the data in our data.dat file
+in a more sensible way than a list.
 
 ```
 In [7] data_dict = {"experiment": "current vs. voltage", \
@@ -594,7 +608,7 @@ In [12]: data_dict["temperature"] = 3275.39
 You can also add new keys to the dictionary.
 
 ```
-In [13]: data_dict["user"] = "Johann G. von Ulm"
+In [13]: data_dict["user"] = "F. C. Rodgers"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
@@ -614,7 +628,7 @@ Out[15]:
  3275.39,
  [-1.0, -0.5, 0.0, 0.5, 1.0],
  'current vs. voltage',
- 'Johann G. von Ulm',
+ 'F. C. Rodgers',
  [-2.0, -1.0, 0.0, 1.0, 2.0]]
 ```
 
@@ -657,7 +671,7 @@ unique to python. To check whether an object is contained in a list :
 
 ```python 
 beatle="John"
-beatles=["George", "Ringo","John", "Paul"]
+beatles=["George", "Ringo", "John", "Paul"]
 print beatle in beatles # is John one of the beatles? : TRUE
 print "Katy" not in beatles # this is also TRUE. 
 ```
@@ -684,7 +698,7 @@ A better use of `is` would be to compare objects like lists, for example the sam
 ```python
 number_list = [1,2,4,8]
 dict1 = {"thing_widths": number_list}
-dict2 = {"item_costs":number_list}
+dict2 = {"item_costs": number_list}
 dict1["thing_widths"] is dict2["item_costs"]  # True - this is the same list
 ```
 
@@ -707,16 +721,19 @@ print sign
 The behavior of this code snippet should be pretty clear, but there is
 something peculiar. How does Python know where the if-statement ends?
 Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code. For example, in MatLab you begin an if
-statement with the word `if` and you end it with `end if`. In C/C++ you
-delimit blocks with curly braces. Python uses **indentation** to delimit
-code blocks. The **indentation** above is NOT just to make things look
-pretty - it tells Python what the body of the `if`-statement is. This is
-true when ever we create any code blocks, such as the bodies of loops,
-functions or classes.
+delimiting blocks of code.
+
+For example, in MatLab you begin an if statement with the word `if`
+and you end it with `end if`. In C/C++ you delimit blocks with curly
+braces. Python uses **indentation** to delimit code blocks. The
+**indentation** above is NOT just to make things look pretty - it
+tells Python what the body of the `if`-statement is. This is true when
+ever we create any code blocks, such as the bodies of loops, functions
+or classes.
 
 ***Excercise***
-Write an if statement prints whether x is even or odd.
+Write an if statement that prints whether x is even or odd.
+
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
 
 
@@ -724,3 +741,5 @@ Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
 
 We learned some basics of python and saw that variable type, name, comments and white space affect more than just code functionality, they affect the readability for others and your future self.
 Variable names can make a huge difference in code readability and types are important in conveying intent. 
+
+[Up To Schedule](../../README.md) - Back To [Automating Workflows](../../shell/automation/Readme.md) - Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)

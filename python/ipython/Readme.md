@@ -14,7 +14,7 @@ You can run python commands in a handful of ways; you can create executable scri
 Lets give the built-in interpreter a spin just this once:
 
 ```
-[asm@submit-3 ~]$ python
+frodgers@acibootcamp ~ $ python
 Enthought Python Distribution -- www.enthought.com
 Version: 7.3-2 (64-bit)
 
@@ -29,14 +29,14 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-[asm@submit-3 ~]$ python hello.py 
-Hello World
+frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
+hello world
 ```
 
 iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out:
 
 ```
-[asm@submit-3 ~]$ ipython
+frodgers@acibootcamp ~ $ ipython
 Enthought Python Distribution -- www.enthought.com
 
 Python 2.7.3 |EPD 7.3-2 (64-bit)| (default, Apr 11 2012, 17:52:16) 
@@ -314,10 +314,10 @@ In [6]: dir(str)
 ```
 
 Let's look up what some of these functions do.
-? displays more information about each datatype/ function. Let's try str.swapcase()?.
+? displays more information about each datatype/ function. Let's try str.swapcase?.
 
 ```
-In [7]: str.swapcase()?
+In [7]: str.swapcase?
 Type:       method_descriptor
 String Form:<method 'swapcase' of 'str' objects>
 Namespace:  Python builtin
@@ -342,7 +342,7 @@ Can you find with help of the ? which function turns "Hello world" into "HELLO W
 If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so:
 
 ```
-In [9] %run hello.py
+In [9] %run ~/boot-camps/python/ipython/hello.py
 ```
 
 ### Clearing iPython
