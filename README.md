@@ -28,7 +28,7 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           | All  |
-| 9:00-9:45    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/sync-sched/BestPractices.pdf?raw=true) | Paul Wilson  |
+| 9:00-9:45    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-01-uwmadison/BestPractices.pdf?raw=true) | Paul Wilson  |
 | 9:45-10:30   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
 | 10:30-10:45  | Break                                   |              |
 | 10:45-11:45  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
