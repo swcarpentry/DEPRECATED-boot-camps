@@ -284,7 +284,8 @@ We can type shell commands into ipython by prefacing them with '!'
 '!nano phonenums.txt'
 
 Let's use a simple loop on the file:
-```
+```python
+
 f = open("phonenums.txt") # Open the text file
 for line in f: # iterate through the text file, one line at a time
     print line
