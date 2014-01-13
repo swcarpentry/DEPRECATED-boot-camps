@@ -28,21 +28,21 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           | All  |
-| 9:00-9:45    | [If it's not reproducible, it is still science?](BestPractices.pdf) | Paul Wilson  |
+| 9:00-9:45    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-01-uwmadison/BestPractices.pdf?raw=true) | Paul Wilson  |
 | 9:45-10:30   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
 | 10:30-10:45  | Break                                   |              |
-| 10:45-11:45  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
+| 10:45-11:45  | [Let the Computer Do the Work](shell/automation/Readme.md)     | Lauren Michael  |
 | 11:45-12:45  | Lunch                                   |              |
-| 12:45-3:00   | [Write Code for People](python/writing_code_for_people/Readme.md)| Will Trimble |
-| 3:00-3:15    | Break                                   |              |
-| 3:15-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Will Trimble |
+| 12:45-2:30   | [Write Code for People](python/writing_code_for_people/Readme.md)| Cliff Rodgers |
+| 2:30-2:45    | Break                                   |              |
+| 2:45-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Will Trimble |
 
 Day 2
 ======
 
 | Time         | Topic                                   | Instructor  |
 | ------------ | --------------------------------------- |-------------|
-| 9:00-10:30   | [Use Version Control](version-control/git/local/Readme.md) | Aronne Merrelli |
+| 9:00-10:30   | [Make Incremental Changes](version-control/git/local/Readme.md) | Aronne Merrelli |
 | 10:30-10:45  | Break                                   |             |
 | 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Aronne Merrelli |
 | 12:00-1:00   | Lunch                                   |             |
@@ -53,6 +53,6 @@ Day 2
 Coincidence?
 ============
 
-On the first day of our last boot camp (August 28), we were offered this [XKCD Comic](http://xkcd.com/1205/):
+On the first day of our first boot camp (April 29, 2013), we were offered this [XKCD Comic](http://xkcd.com/1205/):
 ![Today's XKCD Comic](http://imgs.xkcd.com/comics/is_it_worth_the_time.png)
 
