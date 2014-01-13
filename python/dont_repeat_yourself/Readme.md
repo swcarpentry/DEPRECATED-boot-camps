@@ -367,6 +367,7 @@ print question.replace('%', '').replace('@', 'i').replace('$', 'h').replace('z',
 
 answer = '=H=&!dr=a=nk!c=~ff&&!be=f~r&=!i=t!w=as!c=~~l.='
 print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', ' ')
+```
 
 ###Short Exercise: Calculate GC content of DNA###
 
