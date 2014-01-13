@@ -361,7 +361,13 @@ print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', '
 
 ###Short Exercise: Calculate GC content of DNA###
 
-Because the binding strength of guanine (G) to cytosine (C) is different from the binding strength of adenine (A) to thymine (T) (and many other differences), it is often useful to know the fraction of a DNA sequence that is G's or C's. Go to the [string method section](http://docs.python.org/2/library/string.html) of the Python documentation and find the string method that will allow you to calculate this fraction.
+Because the binding strength of guanine (G) to cytosine (C) is different from
+the binding strength of adenine (A) to thymine (T) (and many other
+differences), it is often useful to know the fraction of a DNA sequence that
+is G's or C's. Go to the [string method
+section](http://docs.python.org/2/library/string.html) of the Python
+documentation and find the string method that will allow you to calculate this
+fraction.
 
 ```python
 # Calculate the fraction of G's and C's in this DNA sequence
