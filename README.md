@@ -28,7 +28,7 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           | All  |
-| 9:00-9:45    | [If it's not reproducible, it is still science?](BestPractices.pdf) | Paul Wilson  |
+| 9:00-9:45    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/sync-sched/BestPractices.pdf?raw=true) | Paul Wilson  |
 | 9:45-10:30   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
 | 10:30-10:45  | Break                                   |              |
 | 10:45-11:45  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
@@ -53,6 +53,6 @@ Day 2
 Coincidence?
 ============
 
-On the first day of our last boot camp (August 28), we were offered this [XKCD Comic](http://xkcd.com/1205/):
+On the first day of our first boot camp (April 29, 2013), we were offered this [XKCD Comic](http://xkcd.com/1205/):
 ![Today's XKCD Comic](http://imgs.xkcd.com/comics/is_it_worth_the_time.png)
 
