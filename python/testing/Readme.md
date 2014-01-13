@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Back To [Use Version Control](../../version-control/git/local/Readme.md) -
+[Up To Schedule](../../README.md) - Back To [Make Incremental Changes](../../version-control/git/local/Readme.md) -
 Forward To [Collaborate](../../version-control/git/remote/Readme.md)
 
 # Plan for Mistakes (or: Testing)
