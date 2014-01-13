@@ -285,7 +285,9 @@ We can type shell commands into ipython by prefacing them with '!'
 
 Let's use a simple loop on the file:
 ```
-
+f = open("phonenums.txt") # Open the text file
+for line in f: # iterate through the text file, one line at a time
+    print line
 ```
 
 We see a list of phonenumbers. We want to count how many are in each areacode.
