@@ -14,19 +14,6 @@ This will produce a long listing `-l`, sorted by the time that the
 file last changed `-t`, and in the reverse order `-r`.
 
 * * * *
-*2*. Try the following and see if you can figure out what they do, either by examining the results or consulting the manual page.
-   * `ls -lS` (equivalent to `ls -l -S`)
-   * `ls -lt` (equivalent to `ls -l -t`)
-   * `ls -1`  (that's the number one, not a letter 'ell')
-
-***Solutions***
-
-In this order, these will produce;
-* `ls -lS` lists files in a long listing sorted by their size
-* `ls -lt` lists files in a long listing sorted by its time
-* `ls -1`  lists files in a brief listing, but 1 per line
-
-* * * *
 ##Full vs. Relative Paths
 
 **Short Exercise**
@@ -58,10 +45,6 @@ navigating to a different directory.
 2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
 
     `ls /bin/*a* /bin/*b*`
-
-3.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
-
-    `ls /bin/*a*b* /bin/*b*a*`
 
 * * * *
 #Working with Files
@@ -140,9 +123,9 @@ cp all_data foo/.
 ```
 
 * * * * 
-## Finding files
+## BONUS: Finding files
 
-**Short Exercise**
+**BONUS Exercises**
 
 Navigate to the `data` directory. Use one `find` command to perform each
 of the operations listed below (except number 2, which does not
@@ -207,7 +190,7 @@ to the same name with .txt added.
 
 * * * * 
 
-**BONUS**
+**BONUS Challenge**
 
 Redo exercise 4, except rename only the files which do not already end
 in `.txt`. You will have to use the `man` command to figure out how to
