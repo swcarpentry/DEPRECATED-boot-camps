@@ -28,27 +28,27 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           | All  |
-| 9:00-9:45    | [If it's not reproducible, it is still science?](BestPractices.pdf) | TBA  |
-| 9:45-10:45   | [Introducing the Shell](shell/Readme.md)| TBA  |
-| 10:45-11:00  | Break                                   |              |
-| 11:00-12:30  | [Automating Workflows](shell/automation/Readme.md)     | TBA  |
-| 12:30-1:30   | Lunch                                   |              |
-| 1:30-3:00    | [Write Code for People](python/writing_code_for_people/Readme.md)| TBA |
+| 9:00-9:45    | [If it's not reproducible, it is still science?](BestPractices.pdf) | Paul Wilson  |
+| 9:45-10:30   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
+| 10:30-10:45  | Break                                   |              |
+| 10:45-11:45  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
+| 11:45-12:45  | Lunch                                   |              |
+| 12:45-3:00   | [Write Code for People](python/writing_code_for_people/Readme.md)| Will Trimble |
 | 3:00-3:15    | Break                                   |              |
-| 3:15-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| TBA |
+| 3:15-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Will Trimble |
 
 Day 2
 ======
 
 | Time         | Topic                                   | Instructor  |
 | ------------ | --------------------------------------- |-------------|
-| 9:00-10:30   | [Use Version Control](version-control/git/local/Readme.md) | TBA |
+| 9:00-10:30   | [Use Version Control](version-control/git/local/Readme.md) | Aronne Merrelli |
 | 10:30-10:45  | Break                                   |             |
-| 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | TBA |
+| 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Aronne Merrelli |
 | 12:00-1:00   | Lunch                                   |             |
-| 1:00-2:30    | [Collaborate](version-control/git/remote/Readme.md) | TBA |
+| 1:00-2:30    | [Collaborate](version-control/git/remote/Readme.md) | Paul Wilson |
 | 2:30-2:45    | Break                                   |      |
-| 2:45-4:00    | Open/TBA                            | All |
+| 2:45-4:30    | Open/TBA                            | All |
 
 Coincidence?
 ============
