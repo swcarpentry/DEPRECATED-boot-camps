@@ -42,7 +42,7 @@ Day 2
 
 | Time         | Topic                                   | Instructor  |
 | ------------ | --------------------------------------- |-------------|
-| 9:00-10:30   | [Use Version Control](version-control/git/local/Readme.md) | Aronne Merrelli |
+| 9:00-10:30   | [Make Incremental Changes](version-control/git/local/Readme.md) | Aronne Merrelli |
 | 10:30-10:45  | Break                                   |             |
 | 10:45-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Aronne Merrelli |
 | 12:00-1:00   | Lunch                                   |             |
