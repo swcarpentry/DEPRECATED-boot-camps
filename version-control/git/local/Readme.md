@@ -1,6 +1,6 @@
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
 
-# Use Version Control
+# Make Incremental Changes: Use Version Control
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
