@@ -35,7 +35,7 @@ Day 1
 | 11:45-12:45  | Lunch                                   |              |
 | 12:45-2:30   | [Write Code for People](python/writing_code_for_people/Readme.md)| Will Trimble |
 | 2:30-2:45    | Break                                   |              |
-| 3:15-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Will Trimble |
+| 2:45-4:30    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Will Trimble |
 
 Day 2
 ======
