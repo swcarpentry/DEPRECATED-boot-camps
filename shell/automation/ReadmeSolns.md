@@ -33,7 +33,7 @@ Charles
 To add to the your name to file
 
 ```
-echo Paul >> toBeSorted
+echo Lauren >> toBeSorted
 ```
 
 The file can be sorted into a new file with
@@ -49,7 +49,7 @@ sort toBeSorted > Sorted
 reverse order.
 
 **Solution**
-To change the order of the `sort` command you add the `-r` argument.
+To reverse the order of the `sort` command you add the `-r` argument.
 
 2. Combine the `wc`, `sort`, `head` and `tail` commands so that only the
 `wc` information for the largest file is listed
@@ -60,7 +60,7 @@ Hint: To print the smallest file, use:
 
 **Solution**
 
-It is important realize that when we are using `wc` on a set of files
+It is important to realize that when we are using `wc` on a set of files
 `Bert/*` it will always conclude with a line that is the sum.  No
 matter how we sort this, the largest single file is always either the
 2nd line or the 2nd last line.
