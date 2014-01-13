@@ -31,7 +31,7 @@ Day 1
 | 9:00-9:45    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-01-uwmadison/BestPractices.pdf?raw=true) | Paul Wilson  |
 | 9:45-10:30   | [Introducing the Shell](shell/Readme.md)| Lauren Michael  |
 | 10:30-10:45  | Break                                   |              |
-| 10:45-11:45  | [Automating Workflows](shell/automation/Readme.md)     | Lauren Michael  |
+| 10:45-11:45  | [Let the Computer Do the Work](shell/automation/Readme.md)     | Lauren Michael  |
 | 11:45-12:45  | Lunch                                   |              |
 | 12:45-3:00   | [Write Code for People](python/writing_code_for_people/Readme.md)| Will Trimble |
 | 3:00-3:15    | Break                                   |              |

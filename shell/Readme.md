@@ -1,5 +1,5 @@
 [Up To Schedule](../README.md) -
-Forward To [Automating Workflows](automation/Readme.md)
+Forward To [Let the Computer Do the Work](automation/Readme.md)
 
 # Introduction to The Shell
 
