@@ -75,7 +75,7 @@ this, we want to tell the shell to take the output of
 character (called pipe) is used for this purpose. Enter the following
 command:
 
-    wc Bert/* gerdal/Data0559 | tail -n 1
+    wc Bert/* gerdal/*4* | tail -n 1
 
 This will print only the total number of lines, words, and characters 
 across all of these files. What is happening here? Well, `tail`, like
@@ -94,12 +94,12 @@ data to come in. Now type:
     are
     good
 
-then CONTROL+d. You should see the lines:
+then <CONTROL>+d. You should see the lines:
 
     are
     good
 
-printed back at you. The CONTROL+d keyboard shortcut inserts an
+printed back at you. The <CONTROL>+d keyboard shortcut inserts an
 *end-of-file* character. It is sort of the standard way of telling the
 program "I'm done entering data". 
 
@@ -108,8 +108,8 @@ the `|`) as input to the second program on the right. Therefor, you can
 string all sorts of commands together using the pipe. 
 
 The philosophy behind these command line programs is that none of them
-really do anything all that impressive. BUT when you start chaining
-them together, you can do some really powerful things really
+really do anything all that impressive. BUT when you start *chaining them together*, 
+you can do some really powerful things really
 efficiently. If you want to be proficient at using the shell, you must
 learn to become proficient with the pipe and redirection operators:
 `|`, `>`, `>>`.
@@ -127,15 +127,15 @@ want to create a file which contains the following names:
 
 To do this, we need a program which allows us to create text
 files. There are many such programs, the easiest one of which is
-installed on almost all systems is called `nano`. Navigate to
+installed on almost all systems and is called `nano`. Navigate to
 `/tmp/<username>` and enter the following command to create and 
 add text to a new file called `toBeSorted`:
 
     nano toBeSorted
 
 Now enter the four names as shown above. When you are done, press
-CONTROL+O to write out these changes to the file. Press ENTER to use the file name
-`toBeSorted`. Then press CONTROL+X to exit `nano`.
+<CONTROL>+O to write out these changes to the file. Press ENTER to use the file name
+`toBeSorted`. Then press <CONTROL>+X to exit `nano`.
 
 When you are back to the command line, enter the command:
 
@@ -217,7 +217,7 @@ you enter the following:
 
     ls -l ../smallest
 
-you will see that the file name is green and the permissions have changed. 
+you will see that the file name is now green and the permissions have changed. 
 Congratulations, you just created your first shell script! You can now execute it
 by entering the path location of `smallest` (absolute or relative) from within the 
 directory you'd like to analyze.
@@ -253,17 +253,17 @@ of variables just enter:
 
     set
 
-or better yet, pipe that through `less` like:
+or better yet, pipe that through `less` like this:
 
-   set | less
+    set | less
 
-Now you will see a long list of variables that are already set.  Some
+Now you will see a long list of variables that are already set. Some
 of these are built-in to the bash shell, others are set by the system
 administrator for all users.
 
 Some important variables you can expect to see:
 
-| Variable | What is stores |
+| Variable | What it stores |
 | -------- | -------------- |
 | HOME     | the full path to your home directory |
 | HOSTNAME | the name of this computer |
@@ -306,7 +306,7 @@ and then update it to show a longer path relative to your home:
     PS1="[\u@\h \w]\$ "
 
 When you define a variable, it is only available in this current shell
-process.  If spawn a new shell from this one, the variables will be
+process.  If you spawn a new shell from this one, the variables will be
 back to the default set.  After changing your prompt, as above, start
 a new shell:
 
@@ -329,8 +329,8 @@ exit that shell again.
 
 While redirection is useful to capture output in a file, you may want
 to sometimes capture output in a variable.  The bash shell lets you do
-that using so-called backticks.  These are the backwards apostrophes
-that appear on a US English keyboard at the upperr left, under the ~
+that using so-called *backticks*.  These are the backwards apostrophes
+that appear on a US English keyboard at the upperr left, under the `~`
 (tilde).
 
 A command inside a pair of these ticks is substituted with the
@@ -354,27 +354,6 @@ funtion as the `smallest` script that we made earlier.  If you enter:
 you will have created a new command `my_smallest` that will be
 available in any directory.
 
-Some people also like to guard against accidentally deleting a file
-and will create an alias for the `rm` command as such:
-
-    alias rm='rm -i'
-
-By establishing this alias, the user will be asked their intent every time 
-he/she attempts to delete a file.  After creating the above alias, try:
-
-    touch testfile
-    rm testfile
-
-Some system administrators will make this a default, and some users
-find it annoying.  You can find a list of aliases by just entering:
-
-    alias
-
-If you would like to remove this constant questioning, you can just
-enter:
-
-    unalias rm
-
 
 # Startup Scripts
 
@@ -393,7 +372,6 @@ defined above:
     export DATADIR="$HOME/boot-camps/shell/data"
     export MYDATADIR="$DATADIR/$USER"
     export PS1="[\u@\h \w]\$ "
-    alias rm='rm -i'
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
 
 Now logout and login again, and confirm that those variables and
@@ -474,10 +452,10 @@ Now let's try it for the `0213` file in `THOMAS`:
 Let's add a loop so that we can make a single CSV file from many data
 files.  The general form of a loop is:
 
-    for var in list
-    do
-       act on $var
-    done
+   for var in list
+   do
+      act on $var
+   done
 
 In our case, the `list` will be a list of filenames that will come from
 the arguments to the script, known in bash as `$@`.  The action for
