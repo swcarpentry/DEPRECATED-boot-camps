@@ -1,5 +1,5 @@
 [Up To Schedule](../../README.md) - Back To [Use Version Control](../../version-control/git/local/Readme.md) -
-Forward To [Branching in Version Control](../../version-control/git/local/Branch.md)
+Forward To [Collaborate](../../version-control/git/remote/)
 
 # Plan for Mistakes (or: Testing)
 ----

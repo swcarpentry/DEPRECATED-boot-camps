@@ -1,13 +1,11 @@
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
 
 # Use Version Control
-----
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
 
 # Motivation
-----
 
 From a recent [tweet](https://twitter.com/kcranstn/statuses/370914072511791104)
 
@@ -511,11 +509,7 @@ Step 3 : Play around with it.
 
 ## Resources
 
-[git book](http://git-scm.com/book)
-
-
-## Resources
-
-[git book](http://git-scm.com/book)
+* [git book](http://git-scm.com/book)
+* [git game][http://pcottle.github.io/learnGitBranching/index.html]
 
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
