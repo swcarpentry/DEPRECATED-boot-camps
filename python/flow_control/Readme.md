@@ -33,24 +33,24 @@ Many equivalence test statements exist in Python that are similar in
 other languages:
 
 ```python
-i=1
-j=2
-i==j # i is equal to j : FALSE
-i<j  # i is less than j
-i<=j # i is less than or equal to j : TRUE
-i>j  # i is greater than j
-i>=j # i is greater than or equal to j : FALSE
-i!=j # i is not equal to j : TRUE
+i = 1
+j = 2
+i == j # i is equal to j : FALSE
+i < j  # i is less than j
+i <= j # i is less than or equal to j : TRUE
+i > j  # i is greater than j
+i >= j # i is greater than or equal to j : FALSE
+i != j # i is not equal to j : TRUE
 ```
 
 However, python has other equivalence test statements that are fairly
 unique to python. To check whether an object is contained in a list :
 
 ```python
-beatle="John"
-beatles=["George", "Ringo","John", "Paul"]
-print beatle in beatles # is John one of the beatles? : TRUE
-print "Katy" not in beatles # this is also TRUE. 
+python="Cleese"
+beatles=["Chapman", "Cleese", "Jones", "Gilliam", "Idle", "Palin"]
+print python in pythons # is Cleese one of the Pythons? : TRUE 
+  print "Wilson" not in beatles # this is also TRUE. 
 ```
 
 There is also a comparison to determine if two variables reference the same object. Two different objects can have the same value, so return true for an equality comparison:
@@ -86,11 +86,11 @@ a look at the following example:
 i = 4
 sign = "zero"
 if i < 0:
-  sign = "negative"
+    sign = "negative"
 elif i > 0:
-  sign = "positive"
+    sign = "positive"
 else:
-  print "Sign must be zero"
+    print "Sign must be zero"
   print "Have a nice day"
 print sign
 ```
@@ -151,15 +151,15 @@ Since a while loop will continue until its conditional is no longer
 true, a **poorly formed** while loop might repeat forever. For example :
 
 ```python
-i=1
+i = 1
 print "Well, there's egg and bacon, egg and spam, egg bacon and"
 while i == 1:
-  print "spam "
+    print "spam "
 print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..." 
 ```
 
 Since the variable `i` never changes within the while loop, we can
-expect that the conditional, `i=1` will remain true forever and the
+expect that the conditional, `i==1` will remain true forever and the
 while loop will just go round and round, as if this restaurant offered
 nothing but spam. (If you try this at home, please note that one way to
 interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
@@ -172,16 +172,16 @@ weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..
 tries=0
 script=""
 while tries < len(weapons) :
-  i=0
-  while i<tries :
-    script += weapons[i]
-    script += " and "
-    i+=1
-  script += weapons[tries]
-  script += ". "
-  if tries == len(weapons) - 1 :
-    script += " and nice red uniforms. Oh damn!"
-  tries +=1
+    i=0
+    while i<tries :
+        script += weapons[i]
+        script += " and "
+        i+=1
+    script += weapons[tries]
+    script += ". "
+    if tries == len(weapons) - 1 :
+        script += " and nice red uniforms. Oh damn!"
+    tries +=1
 print script
 ```
 
@@ -194,7 +194,7 @@ to 9:
 
 ```python
 for i in range(10):
-  print i
+    print i
 ```
 
 You may be wondering how this works. Start by using help(range) to see
@@ -267,11 +267,11 @@ what will fill those variables. Here, we rewrite the previous loop using
 this clever syntax.
 
 ```python
-italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
-india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-us = ["Chicago", "Austin", "New York", "San Fran"]
-nations = {"italy":italy, "argentina":argentina, "india":india, "us":us}
+italy_cities = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina_cities = ["Mendoza", "Buenos Aires", "Patagonia"]
+india_cities = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
+us_cities = ["Chicago", "Austin", "New York", "San Fran"]
+nations = {"italy":italy_cities, "argentina":argentina_cities, "india":india_cities, "us":us_cities}
 for nation, cities in nations.iteritems() :
     print nation + " : "
     for city in cities :
@@ -306,25 +306,35 @@ for n in range(1,10):
 
 What is the difference between the output of these two?
 
-Importantly, Python allows you to use an `else` statement in a for loop.
-
-That is :
+We can combine loops and flow control to take actions that are 
+more complex, and that depend on the data. First, let us define 
+a dictionary with some names and titles, and a list with a 
+subset of the names we will treat differently.
 
 ```python
-knights={"Sir Belvedere":"the Wise", "Sir Lancelot":"the Brave", \
-         "Sir Galahad":"the Pure", "Sir Robin":"the Brave", "The Black Knight":"John Clease"} 
+  knights = {"Sir Belvedere":"the Wise", 
+           "Sir Lancelot":"the Brave", 
+           "Sir Galahad":"the Pure", 
+           "Sir Robin":"the Brave", 
+           "The Black Knight":"John Cleese"} # create a dict with names and titles
+  favorites = knights.keys()      # create a list of favorites with all the knights
+  favorites.remove("Sir Robin") # change favorites to include all but one.
+  print knights
+  print favorites
+```
 
-favorites=knights.keys()
-favorites.remove("Sir Robin")
-for name, title in knights.iteritems() : 
-    string = name + ", "
-    for fav in favorites :
-        if fav == name :
-            string += title
-            break
-    else:
-        string += title + ", but not quite so brave as Sir Lancelot." 
-    print string
+We can loop through the dict of names and titles and do one of 
+two different things for each by putting an if statement inside 
+the for loop:
+
+```python
+  for name, title in knights.items(): 
+      string = name + ", "
+      if name in favorites:   # this returns True if any of the values in favorites match.
+          string = string + title
+      else:
+          string = string + title + ", but not quite so brave as Sir Lancelot." 
+      print string
 ```
 
 Other useful python functions

@@ -58,8 +58,8 @@ conditional that defines it is no longer true.
 mult = 1
 sequence = [1, 5, 7, 9, 3, -1, 5, 3]
 while sequence[0] != -1:
-  mult = mult * sequence[0]
-  sequence.pop(0)
+    mult = mult * sequence[0]
+    sequence.pop(0)
 
 print mult
 ```
@@ -102,7 +102,7 @@ to 9:
 
 ```python
 for i in range(10):
-  print i
+    print i
 ```
 
 You may be wondering how this works. Start by using help(range) to see
@@ -129,7 +129,7 @@ loop then simply iterates over that list, setting i to each value.
 
 ***Excercise***
 
-Using a loop, calculate the factorial of 42 (the product of all integers up to and including 42).
+Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
 
 For Loops with Lists and Dictionaries
 =====================================
@@ -223,25 +223,35 @@ for n in range(1,10):
 
 What is the difference between the output of these two?
 
-Importantly, Python allows you to use an `else` statement in a for loop.
-
-That is :
+We can combine loops and flow control to take actions that are 
+more complex, and that depend on the data. First, let us define 
+a dictionary with some names and titles, and a list with a 
+subset of the names we will treat differently.
 
 ```python
-knights = {"Sir Belvedere":"the Wise", "Sir Lancelot":"the Brave", \
-         "Sir Galahad":"the Pure", "Sir Robin":"the Brave", "The Black Knight":"John Clease"} 
+  knights = {"Sir Belvedere":"the Wise", 
+           "Sir Lancelot":"the Brave", 
+           "Sir Galahad":"the Pure", 
+           "Sir Robin":"the Brave", 
+           "The Black Knight":"John Cleese"} # create a dict with names and titles
+  favorites = knights.keys()      # create a list of favorites with all the knights
+  favorites.remove("Sir Robin") # change favorites to include all but one.
+  print knights
+  print favorites
+```
 
-favorites = knights.keys()
-favorites.remove("Sir Robin")
-for name, title in knights.iteritems() : 
-    string = name + ", "
-    for fav in favorites :
-        if fav == name :
-            string += title
-            break
-    else:
-        string += title + ", but not quite so brave as Sir Lancelot." 
-    print string
+We can loop through the dict of names and titles and do one of 
+two different things for each by putting an if statement inside 
+the for loop:
+
+```python
+  for name, title in knights.items(): 
+      string = name + ", "
+      if name in favorites:   # this returns True if any of the values in favorites match.
+          string = string + title
+      else:
+          string = string + title + ", but not quite so brave as Sir Lancelot." 
+      print string
 ```
 
 ###enumerate###
