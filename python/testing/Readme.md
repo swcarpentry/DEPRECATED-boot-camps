@@ -152,7 +152,7 @@ used for something important is too late.
 If we have a robust set of tests, we can run them before adding
 something new and after adding something new. If the tests give the same
 results (as appropriate), we can have some assurance that we didn't
-wreak anything. The same idea applies to making changes in your system
+wreck anything. The same idea applies to making changes in your system
 configuration, updating support codes, etc.
 
 Another important feature of testing is that it helps you remember what
@@ -214,7 +214,7 @@ when your code might be used by a number of users who may have various
 versions of libraries.
 
 **Test Suites:** Putting a series of unit tests into a collection of
-modules creates, a test suite. Typically the suite as a whole is
+modules creates a test suite. Typically the suite as a whole is
 executed (rather than each test individually) when verifying that the
 code base still functions after changes have been made.
 
@@ -228,7 +228,7 @@ a new fully defined object, a system state, an exception, etc. When we
 run the fun() function, we expect to generate some fun. If we don't
 generate any fun, the fun() function should fail its test.
 Alternatively, if it does create some fun, the fun() function should
-pass this test. The the expected result should known *a priori*. For
+pass this test. The expected result should known *a priori*. For
 numerical functions, this is result is ideally analytically determined
 even if the function being tested isn't.
 
@@ -284,7 +284,7 @@ The testing framework we'll discuss today is called nose. However, there are
 several other testing frameworks available in most language. Most notably there
 is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
 inventing the testing framework. Google also provides a [test
-framework](code.google.com/p/googletest/) for C++ applications (note, there's
+framework](http://code.google.com/p/googletest/) for C++ applications (note, there's
 also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).  There
 is at least one testing framework for R:
 [testthat](http://cran.r-project.org/web/packages/testthat/index.html).
