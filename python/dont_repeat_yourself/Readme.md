@@ -157,15 +157,15 @@ indicate a list of things. What about a nested loops around a list of
 lists?
 
 ```python
-italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
-india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-us = ["Chicago", "Austin", "New York", "San Fran"]
-nations = [italy, argentina, india, us]
+italy_cities = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina_cities = ["Mendoza", "Buenos Aires", "Patagonia"]
+india_cities = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
+us_cities = ["Chicago", "Austin", "New York", "San Fran"]
+all_cities = [italy_cities, argentina_cities, india_cities, us_cities]
 nationnames = ["italy","argentina", "india", "us"]
-for nation in nations :
-    print nationnames[nations.index(nation)] + ": "
-    for city in nation :
+for cities in all_cities :
+    print nationnames[all_cities.index(cities)] + ": "
+    for city in cities :
         print "  " + city 
 ```
 
@@ -184,11 +184,11 @@ what will fill those variables. Here, we rewrite the previous loop using
 this clever syntax.
 
 ```python
-italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
-india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-us = ["Chicago", "Austin", "New York", "San Fran"]
-nations = {"italy":italy, "argentina":argentina, "india":india, "us":us}
+italy_cities = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina_cities = ["Mendoza", "Buenos Aires", "Patagonia"]
+india_cities = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
+us_cities = ["Chicago", "Austin", "New York", "San Fran"]
+nations = {"italy":italy_cities, "argentina":argentina_cities, "india":india_cities, "us":us_cities}
 for nation, cities in nations.iteritems() :
     print nation + " : "
     for city in cities :
