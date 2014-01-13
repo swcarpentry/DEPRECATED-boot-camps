@@ -447,7 +447,7 @@ Now let's try it for the `0213` file in `THOMAS`:
     cat THOMAS/0213
     ./data2csv THOMAS/0213
 
-## Loops in Shell Scripts
+## BONUS: Loops in Shell Scripts
 
 Let's add a loop so that we can make a single CSV file from many data
 files.  The general form of a loop is:
