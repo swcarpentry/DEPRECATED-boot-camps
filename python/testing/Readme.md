@@ -73,9 +73,9 @@ def mean(numlist):
         total = sum(numlist)
         length = len(numlist)
     except TypeError:
-        raise TypeError("The number list was not a list of numbers.")
+        raise TypeError("The list contained non-numeric elements.")
     except:
-        print "There was a problem evaluating the number list."
+        print "Something unknown happened with the list."
     return total/length
 ```
 
@@ -124,7 +124,7 @@ def mean(numlist):
 **Test File:** `test_mean.py`
 
 ```python
-from stats import mean
+from mean import mean
 
 def test_mean():
     assert mean([0, 0, 0, 0]) == 0
