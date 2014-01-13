@@ -99,6 +99,7 @@ as their descriptions.
 
      $ git config --global user.name "YOUR NAME"
      $ git config --global user.email "YOUR EMAIL"
+     $ git config --global core.editor nano
      
 ## git init : Creating a Local Repository
 
@@ -145,7 +146,7 @@ called "Some simple methods for statistical analysis". You may call yours anythi
 Step 4 : Applications sometimes create files that are not needed. For
 example, emacs creates a temporary file called 'filename~' when you edit
 the file 'filename'. You can ask git to ignore such files by editing
-the file '.git/info/exclude'. Edit the file to ignore files the end with '~'.
+the file '.git/info/exclude'. Edit the file to ignore files that end with '~'.
 
      git ls-files --others --exclude-from=.git/info/exclude
     # Lines that start with '#' are comments.
@@ -174,11 +175,12 @@ in this file.
 ## git status : Checking the Status of Your Local Copy
 
 The files you've created on your machine are your local "working" copy.
-The changes your make in this local copy aren't backed up online
+The changes your make in this local copy aren't stored in the repository 
 automatically. Until you commit them, the changes you make are local
 changes. When you change anything, your set of files becomes different
-from the files in the official repository copy. To find out what's
-different about them in the terminal, try:
+from the files in the most recent official repository copy, known 
+as the repository HEAD. To find out what's different about them in the 
+terminal, try:
 
     $ git status
     # On branch master
@@ -192,8 +194,7 @@ different about them in the terminal, try:
     #       new file:   README.md
     #
 
-The null result means that you're up to date with the current version of
-the repository online. This result indicates that the current difference
+This result indicates that the current difference
 between the repository HEAD (which, so far, is empty) and your
 `simplestats` directory is this new README.md file.
 
