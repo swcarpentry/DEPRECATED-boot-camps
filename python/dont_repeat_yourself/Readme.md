@@ -338,11 +338,20 @@ will learn how to utilize available Python functions as well as write our own. T
 * Writing our own functions
 * Importing Python modules
 
-As you saw in the last lesson, computers are very useful for doing the same operation over and over. When you know you will be performing the same operation many times, it is best to abstract this functionality into a function (aka method). For example, you used the function `open` in an earlier section. This allowed you to easily open a connection to a file without worrying about the underlying code that made it possible (this idea is known as abstraction).   
+As you saw in the last lesson, computers are very useful for doing the same
+operation over and over. When you know you will be performing the same
+operation many times, it is best to abstract this functionality into a
+function (aka method). For example, you used the function `open` in an earlier
+section. This allowed you to easily open a connection to a file without
+worrying about the underlying code that made it possible (this idea is known
+as abstraction).
 
 ##Built-in string methods##
 
-The base distribution comes with many useful functions. When a function works on a specific type of data (lists, strings, dictionaries, etc.), it is called a method.  I will cover some of the basic string methods since they are very useful for reading data into Python.
+The base distribution comes with many useful functions. When a function works
+on a specific type of data (lists, strings, dictionaries, etc.), it is called
+a method.  I will cover some of the basic string methods since they are very
+useful for reading data into Python.
 
 ```python
 # Find the start codon of a gene
