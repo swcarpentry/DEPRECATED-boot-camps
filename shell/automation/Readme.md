@@ -1,7 +1,7 @@
 [Up To Schedule](../../README.md) -
 Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/writing_code_for_people/Readme.md)
 
-# Automating Workflows
+# Let the Computer Do the Work: Automating Workflows
 
 **Material by Paul Wilson, Lauren Michael, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
