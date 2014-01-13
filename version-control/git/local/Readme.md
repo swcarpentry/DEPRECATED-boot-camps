@@ -377,8 +377,6 @@ prohibition in removing pages from a lab notebook.
     
 
 # Branching in Version Control
-----
-
     
 ## git branch : Listing, Creating, and Deleting Branches
 
