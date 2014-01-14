@@ -510,6 +510,6 @@ Step 3 : Play around with it.
 ## Resources
 
 * [git book](http://git-scm.com/book)
-* [git game][http://pcottle.github.io/learnGitBranching/index.html]
+* [git game](http://pcottle.github.io/learnGitBranching/index.html)
 
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
