@@ -8,7 +8,7 @@ If a bioinformatic task is relatively common, it is likely that **someone else h
 
 Format conversions, paired-read merging, quality trimming, recruitment to references, diploid SNP calling, haploid
 re-sequencing--these are all problems that can be solved by finding out what software purports to do the job, 
-figuring out how to install it, getting the data into the right input formats and getting the results out of 
+installing it, getting the data into the right input formats and getting the results out of 
 whatever formats the tools write to.  
 
 Depending on the complexity of the task and the ease-of-use and scope of the existing alternatives, it could be 
@@ -32,7 +32,7 @@ One day, a colleague of mine showed me that the MG-RAST website had an interface
 http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
 has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  The data bundle may not display conveniently in all browsers, but there's a lot of good data in there, encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
 Fortunately, there is a python module to painlessly parse JSON into a python dict of dict.
-The script `metagenome_statistics-example.py` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spend my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
+The script `metagenome_statistics-example.py` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spent my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
 
 ##Biopython##
 Biopython has a large collection of subroutines that do potentially useful things with biological data.
@@ -91,7 +91,7 @@ filename = "%s.gbk" % accessionno
 open(filename, "w").write(genbankdata)
 ```
 
-Note that all we did was get the data and dump it to a file here; we will go through the data and look at what is inside later.  Note: this code snipped (and `retreivegbk.py`) contain a syntax error--fix the syntax error and give your local version of the script your email address.  You want to tell NCBI who you are as a matter of politeness (they are giving you data for free).  In case your script goes horribly wrong, and you mistakenly launch a denial-of-service attack against NCBI, NCBI might send you an email letting you know.  The guidelines for automated download of data from NCBI include the guidance
+Note that all we did was get the data and dump it to a file here; we will go through the data and look at what is inside later.  Note: this code snippet (and `retreivegbk.py`) contain a syntax error--fix the syntax error and give your local version of the script your email address.  You want to tell NCBI who you are as a matter of politeness (they are giving you data for free).  In case your script goes horribly wrong, and you mistakenly launch a denial-of-service attack against NCBI, NCBI might send you an email letting you know.  The guidelines for automated download of data from NCBI include the guidance
 >In order not to overload the E-utility servers, NCBI recommends that users post no more than three URL requests per second and limit large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern time during weekdays. 
 
 Easy Exercise:
@@ -104,7 +104,7 @@ Once you have the sequences, you can convert them to FASTA, concatenate the FAST
 
 ### Iterating through data records ###
 
-Biopython provides a variety of methods for stepping through data sources one record at a time.  There is variety in the places we
+Biopython provides a variety of methods for stepping through data sources one record at a time.  
 
 * Data sources can be web interfaces, filenames, or file handles.  
 
@@ -181,7 +181,7 @@ Exercise:
 Modify the existing program `exercise-reversecomplement.py` to output fasta whose sequences have been reverse-complemented.  
 
 ####Fasta sequence parsing####
-The minimal data type for sequence data, this format includes only a text record description and a (possibly long) sequence.  Nucleic acid sequences, partially-ambiguous nucleic acid sequences, and amino acid sequences can all be encoded in this bare-bones format.  
+The minimal data type for sequence data, this format includes only a record identifier, an optional text comment and a (possibly long) sequence.  Nucleic acid sequences, partially-ambiguous nucleic acid sequences, and amino acid sequences can all be encoded in this bare-bones format.  
 
 `SeqRecord` data types have the attributes
 * `.name`  which is the **fasta id** -- all the text before the first whitespace on the header line
@@ -361,19 +361,19 @@ fastq-dump SRR036919.sra
 will extract the sequence data from SRR036919.sra and create SRR036919.fastq
 
 ###What is it good for?###
-Scripts using the shell, python, and the standard unix can do things that *you can't do by hand* and they can do things you *could* do by hand faster and with fewer mistakes.
+Scripts using the shell, python, and the standard unix tools can do things that *you can't do by hand* and they can do things you *could* do by hand faster and with fewer mistakes.
 
-###Being smart### 
+### Being smart ### 
 
 Life is short and we have better things to do than solve easy problems.   
 
 Here are some meta-strategies:
 
-* Test the accuracy of the procedure on data with known correct answers.   It's the only way you will know.
+* Test the accuracy of the procedure on data with **known correct answers**.  
 
-* Test that all the parts work with each other first with a *small* subset of the data.  If something isn't working, you want to know now, not after ten hours.  Do as much testing and debugging as you can, when it's cheap, before scaling up the the whole zottobyte dataset.
+* Test that all the parts work with each other first with a **small subset of the data**.  If something isn't working, you want to know now, not after ten hours.  Do as much testing and debugging as you can, when it's cheap, before scaling up the the whole zottobyte dataset.
  
-* Estimate how long your tasks are going to take, if you can.    For much of sequence analysis, ten times as much data take ten times as long to move, process.
+* Estimate how long your tasks are going to take, if you can.    For much of sequence analysis, ten times as much data take ten times as long to move, uncompress, and perform routine processing.
 
 * Plan like you're going to have to do <any particular task> again.  A lot.  You probably are.  You probably made a mistake.  
 
