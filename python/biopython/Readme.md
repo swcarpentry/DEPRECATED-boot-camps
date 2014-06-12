@@ -338,7 +338,7 @@ Hard exercise:
 Modify the program `skeleton.py` to generate a table of sequence id, sequence length, and the value of `.annotations['taxonomy']` for all the sequences in a genbank-formatted file specified as an argument on the command line.   Run this to generate a summary table of your lady slipper orchid sequences.
 
 
-###High-throughput data--getting it###
+###High-throughput data--getting it from SRA###
 High-throughput sequencing datasets range in size from a few megabytes to a few hundreds of gigabytes in size.  
 Some institutions make raw sequence data available by FTP, but the sequence archive is the largest warehouse of raw sequence data.
 
@@ -352,7 +352,7 @@ The sequence read archive maintains its own formats, and its own library of prog
 To illustrate getting short-read sequencing data form SRA, let's get an Illumina sequencing dataset for with the PhiX control genome described at http://www.ncbi.nlm.nih.gov/sra/SRX017204 .  The SRR accession number is SRR036919, and it's a 1x45 bp sequencing run.
 
 We can download the SRA-formatted dataset from here 
-wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/litesra/SRR/SRR036/SRR036919/SRR036919.sra 
+wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR036/SRR036919/
 This is only a 300 Mbyte download.  You can expect NGS datasets (particularly shotgun and metatranscriptomic datasets) to be larger.  
 `fastq-dump` is the program in the SRA tools that will extract the data form sra format to fastq:
 ```
