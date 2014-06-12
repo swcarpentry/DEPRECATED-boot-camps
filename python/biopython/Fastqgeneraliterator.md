@@ -3,9 +3,9 @@ FASTQ is the de-facto standard data format for the output of modern high-through
 In addition to sequence ID and header, this format includes a quality symbol for each base.
 
 One way to parse fastq is using exactly the same `SeqIO.parse()` method, just with `fastq` instead of `fasta` as the format parameter.
-The sequence is in the `seq` attribute and the quality scores (as ints) is in the letter_annotations["phred_quality"] attribute.  
+The sequence is in the `seq` attribute and the quality scores (as ints) is in the `letter_annotations["phred_quality"]` attribute.  
 
-Another approach is to use `FastqGeneralIterator`.  Unlike `SeqIO.parse()` it takes file handles (not file names) and has no format parameter (it only works for fastq).  It returns tuples with the sequence description, the sequence string, and the quality string without additional methods to interpret and format the results.   The following code snippet opens the file tiny.fastq and writes truncated versions of the data to standard out.  (Note that if any of the input sequences are less than 30 base pairs in length, this code breaks.)
+Another approach is to use `FastqGeneralIterator`.  Unlike `SeqIO.parse()` it takes file handles (not file names) and has no format parameter (it only works for fastq).  It returns tuples with the sequence description, the sequence string, and the quality string without additional methods to interpret and format the results.   The following code snippet opens the file tiny.fastq and writes truncated versions of the data to standard out.
 
 ```python
 from Bio.SeqIO.QualityIO import FastqGeneralIterator
