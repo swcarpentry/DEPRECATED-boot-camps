@@ -7,7 +7,7 @@ import numpy as np
 
 # retrieve the data by sending at HTTP GET request to the MG-RAST API
 ACCESSIONNUMBER = "mgm4440613.3"   # this is a public job
-some_url = "http://api.metagenomics.anl.gov/api2.cgi/metagenome_statistics/%s?verbosity=full" % ACCESSIONNUMBER
+some_url = "http://api.metagenomics.anl.gov/1/metagenome/%s?verbosity=full" % ACCESSIONNUMBER
 sys.stderr.write("Retrieving %s\n" % some_url) 
 jsonobject = urllib.urlopen(some_url).read()
 
@@ -15,9 +15,9 @@ jsonobject = urllib.urlopen(some_url).read()
 jsonstructure = json.loads(jsonobject)
 
 # get the elements of the data that we want out of the dict of dicts..
-spectrum = np.array( jsonstructure["qc"]["kmer"]["15_mer"]["data"], dtype="float")
-lengthdistribution = np.array( jsonstructure["length_histogram"]["upload"], dtype="int")
-lengthdistribution2 = np.array( jsonstructure["length_histogram"]["post_qc"], dtype="int")
+spectrum = np.array( jsonstructure["statistics"]["qc"]["kmer"]["15_mer"]["data"], dtype="float")
+lengthdistribution = np.array( jsonstructure["statistics"]["length_histogram"]["upload"], dtype="int")
+lengthdistribution2 = np.array( jsonstructure["statistics"]["length_histogram"]["post_qc"], dtype="int")
 
 # display the first ten lines of the data table
 np.savetxt(sys.stderr, spectrum[0:10], fmt="%d", delimiter="\t")
@@ -30,4 +30,5 @@ plt.xlabel("length (bp)")
 plt.ylabel("number of reads")
 plt.title("Length distribution for %s" % ACCESSIONNUMBER ) 
 plt.legend()
+print "Showing plot of before and after sequence lengths"
 plt.show()
