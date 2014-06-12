@@ -29,7 +29,7 @@ def downloadgbk(accessionno):
 
 def main():
     if len(sys.argv) != 2:    # check that exactly one argument was suppplied 
-        sys.exit("Usage: retrieve.py <accession number>")
+        sys.exit("Usage: retrievebk.py <accession number>\nExample: retrievegbk.py NC_000913")
     accession = sys.argv[1]     # assign the first argument to accession
     downloadgbk(accession)      # call the subroutine downloadgbk
 
