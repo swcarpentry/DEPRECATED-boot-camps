@@ -1,10 +1,14 @@
+Lecture materials originally contributed by Will Trimble. 
+
+This module covers some aspects of programming in Biopython and programming for biological sequence analysis.
+
 ##How to program if you must##
 
 If a bioinformatic task is relatively common, it is likely that **someone else has written software to do it already**.
 
 Format conversions, paired-read merging, quality trimming, recruitment to references, diploid SNP calling, haploid
 re-sequencing--these are all problems that can be solved by finding out what software purports to do the job, 
-figuring out how to install it, getting the data into the right input formats and getting the results out of 
+installing it, getting the data into the right input formats and getting the results out of 
 whatever formats the tools write to.  
 
 Depending on the complexity of the task and the ease-of-use and scope of the existing alternatives, it could be 
@@ -19,18 +23,16 @@ Biopython affords high-level access to subroutines that access the biological se
 
 ###Optimizing time###
 Solving any particular data manipulation problem takes a certain amount of time, time that should include the time to 
-fix the mistakes and confirm that your code is really is doing what you think it is.   It is dramatically easier to write a program that
-you will use once and then throw away than to write a program that is useful to you again and again.  Ask: do you really
-want to solve a particular (easy) format-conversion problem six times, once for each new collaboration and each new dataset?  
-If you invest effort in identifying what you need and what parts you will use again and again, you can forget the details of how you solved
-this (boring) problem in the first place and direct your time to more interesting things.
+fix the mistakes and confirm that your code is really is doing what you think it is.   
+
+It is dramatically easier to write a program that you will use once and then throw away than to write a program that is useful to you again and again.  Ask: do you really want to solve a particular (easy) format-conversion problem six times, once for each new collaboration and each new dataset?  If you invest effort in identifying what you need and what parts you will use again and again, you can forget the details of how you solved this (boring) problem in the first place and direct your time to more interesting things.
 
 ###An anecdote: using python to get and plot data from a web interface###
 One day, a colleague of mine showed me that the MG-RAST website had an interface that would deliver a bundle of data about a dataset in response to an HTTP request.  Specifically, the request 
-http://api.metagenomics.anl.gov/metagenome_statistics/mgm4440613.3?verbosity=full
-has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  (The data bundle may not display conveniently in all browsers, but there's a lot of good data in there, encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
+http://api.metagenomics.anl.gov/metagenome/mgm4440613.3?verbosity=full
+has tables of numbers representing the length distribution, GC-content, and high-level summaries of the taxonomic annotations of an NGS dataset.  The data bundle may not display conveniently in all browsers, but there's a lot of good data in there, encoded in JSON format. http://en.wikipedia.org/wiki/JSON 
 Fortunately, there is a python module to painlessly parse JSON into a python dict of dict.
-The script `metagenome_statistics-example.py` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spend my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
+The script `metagenome_statistics-example.py` contains example code that retrieves data from the website, gets some of the data out of the JSON structure, and plots it.  Python code that solves the sub-problems (retrieving data via HTTP, getting data out of JSON objects, and plotting) has already been written, so I spent my time invoking and debugging calls to these subroutines instead of finding out how to write a HTTP client or a JSON parser.  
 
 ##Biopython##
 Biopython has a large collection of subroutines that do potentially useful things with biological data.
@@ -45,9 +47,11 @@ from Bio import SeqIO
 from your python environment and not get an error.   Biopython is included with the anaconda python distribution; for the Canopy python distribution it is available as a module. 
 
 We will show 
-+ an example of how to get data from NCBI using EFETCH
-+ examples of how Biopython goes through FASTA, FASTQ, and GENBANK data and where the data is inside of the resulting objects 
-+ we will give some exercises for doing things to sequences one at a time, like retrieving sequences with a given id or automatically selecting one gene from an annotated genome.
+* an example of how to get data from NCBI using EFETCH
+
+* examples of how Biopython goes through FASTA, FASTQ, and GENBANK data and where the data is inside of the resulting objects 
+
+* we will give some exercises for doing things to sequences one at a time, like retrieving sequences with a given id or automatically selecting one gene from an annotated genome.
 
 ###Get reference data--NCBI's EUTILS###
 Sequence comparison is at the heart of bioinformatics; to do useful comparisons, you need data (sequences) against which to compare your new, exciting sequences.  NCBI provides an interface to allow automated download of various (sequence) data products using HTTP GET requests.
@@ -87,7 +91,7 @@ filename = "%s.gbk" % accessionno
 open(filename, "w").write(genbankdata)
 ```
 
-Note that all we did was get the data and dump it to a file here; we will go through the data and look at what is inside later.  Note: this code snipped (and `retreivegbk.py`) contain a syntax error--fix the syntax error and give your local version of the script your email address.  You want to tell NCBI who you are as a matter of politeness (they are giving you data for free).  In case your script goes horribly wrong, and you mistakenly launch a denial-of-service attack against NCBI, NCBI might send you an email letting you know.  The guidelines for automated download of data from NCBI include the guidance
+Note that all we did was get the data and dump it to a file here; we will go through the data and look at what is inside later.  Note: this code snippet (and `retreivegbk.py`) contain a syntax error--fix the syntax error and give your local version of the script your email address.  You want to tell NCBI who you are as a matter of politeness (they are giving you data for free).  In case your script goes horribly wrong, and you mistakenly launch a denial-of-service attack against NCBI, NCBI might send you an email letting you know.  The guidelines for automated download of data from NCBI include the guidance
 >In order not to overload the E-utility servers, NCBI recommends that users post no more than three URL requests per second and limit large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern time during weekdays. 
 
 Easy Exercise:
@@ -100,14 +104,13 @@ Once you have the sequences, you can convert them to FASTA, concatenate the FAST
 
 ### Iterating through data records ###
 
-Biopython provides a variety of methods for stepping through data sources one record at a time.  There is variety in the places we
-can get the data from, variety in the data types, and variety in the procedures used to access the data.  
+Biopython provides a variety of methods for stepping through data sources one record at a time.  
 
-+ Data sources can be web interfaces, filenames, or file handles.  
+* Data sources can be web interfaces, filenames, or file handles.  
 
-+ Data types can include amino acid sequences, short-read nucleic acid sequences with or without qualities, draft genomes in hundreds of contigs,  or complete genomes with gene coordinates, translations, and additional notes about how the genes were identified.    These are normalized into the `SeqRecord` data type.
+* Data types can include amino acid sequences, short-read nucleic acid sequences with or without qualities, draft genomes in hundreds of contigs,  or complete genomes with gene coordinates, translations, and additional notes about how the genes were identified.    These are normalized into the `SeqRecord` data type.
 
-+ The access procedures include opening a data source and loading it all into memory at once, as either a list or a dict, or reading a data source one record at a time. 
+* The access procedures include opening a data source and loading it all into memory at once, as either a list or a dict, or reading a data source one record at a time. 
 
 ####Parsing####
 
@@ -178,12 +181,14 @@ Exercise:
 Modify the existing program `exercise-reversecomplement.py` to output fasta whose sequences have been reverse-complemented.  
 
 ####Fasta sequence parsing####
-The minimal data type for sequence data, this format includes only a text record description and a (possibly long) sequence.  Nucleic acid sequences, partially-ambiguous nucleic acid sequences, and amino acid sequences can all be encoded in this bare-bones format.  
+The minimal data type for sequence data, this format includes only a record identifier, an optional text comment and a (possibly long) sequence.  Nucleic acid sequences, partially-ambiguous nucleic acid sequences, and amino acid sequences can all be encoded in this bare-bones format.  
 
 `SeqRecord` data types have the attributes
-+ `.name`  which is the **fasta id** -- all the text before the first whitespace on the header line
-+ `.description` the entire header line, including the fasta id and anything after the first whitespace
-+ `.seq`  the sequence, as a `SeqIO.Seq` object
+* `.name`  which is the **fasta id** -- all the text before the first whitespace on the header line
+
+* `.description` the entire header line, including the fasta id and anything after the first whitespace
+
+* `.seq`  the sequence, as a `SeqIO.Seq` object
 
 ```python
 from Bio import SeqIO
@@ -333,21 +338,21 @@ Hard exercise:
 Modify the program `skeleton.py` to generate a table of sequence id, sequence length, and the value of `.annotations['taxonomy']` for all the sequences in a genbank-formatted file specified as an argument on the command line.   Run this to generate a summary table of your lady slipper orchid sequences.
 
 
-###High-throughput data--getting it###
+###High-throughput data--getting it from SRA###
 High-throughput sequencing datasets range in size from a few megabytes to a few hundreds of gigabytes in size.  
 Some institutions make raw sequence data available by FTP, but the sequence archive is the largest warehouse of raw sequence data.
 
 The NCBI offers a guide to downloading data here http://www.ncbi.nlm.nih.gov/books/NBK47540/
 which includes links to downloading the *SRA toolkit*. 
 Linux:  http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=std
-Mac and Windows precompiled binaries: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software
+You can download precompiled binaries for Mac and Windows here: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software
 
 The sequence read archive maintains its own formats, and its own library of programs to get data out of the SRA format.  The options for the utilities (and the formats themselves) change from time to time, so it is helpful to update update your copy of the SRA toolkit a few times a year.
 
 To illustrate getting short-read sequencing data form SRA, let's get an Illumina sequencing dataset for with the PhiX control genome described at http://www.ncbi.nlm.nih.gov/sra/SRX017204 .  The SRR accession number is SRR036919, and it's a 1x45 bp sequencing run.
 
 We can download the SRA-formatted dataset from here 
-wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/litesra/SRR/SRR036/SRR036919/SRR036919.sra 
+wget ftp://ftp.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR036/SRR036919/
 This is only a 300 Mbyte download.  You can expect NGS datasets (particularly shotgun and metatranscriptomic datasets) to be larger.  
 `fastq-dump` is the program in the SRA tools that will extract the data form sra format to fastq:
 ```
@@ -356,19 +361,19 @@ fastq-dump SRR036919.sra
 will extract the sequence data from SRR036919.sra and create SRR036919.fastq
 
 ###What is it good for?###
-Scripts using the shell, python, and the standard unix can do things that *you can't do by hand* and they can do things you *could* do by hand faster and with fewer mistakes.
+Scripts using the shell, python, and the standard unix tools can do things that *you can't do by hand* and they can do things you *could* do by hand faster and with fewer mistakes.
 
-###Being smart### 
+### Being smart ### 
 
 Life is short and we have better things to do than solve easy problems.   
 
 Here are some meta-strategies:
 
-+ Test the accuracy of the procedure on data with known correct answers.   It's the only way you will know.
+* Test the accuracy of the procedure on data with **known correct answers**.  
 
-+ Test that all the parts work with each other first with a *small* subset of the data.  If something isn't working, you want to know now, not after ten hours.  Do as much testing and debugging as you can, when it's cheap, before scaling up the the whole zottobyte dataset.
+* Test that all the parts work with each other first with a **small subset of the data**.  If something isn't working, you want to know now, not after ten hours.  Do as much testing and debugging as you can, when it's cheap, before scaling up the the whole zottobyte dataset.
  
-+ Estimate how long your tasks are going to take, if you can.    For much of sequence analysis, ten times as much data take ten times as long to move, process.
+* Estimate how long your tasks are going to take, if you can.    For much of sequence analysis, ten times as much data take ten times as long to move, uncompress, and perform routine processing.
 
-+ Plan like you're going to have to do <any particular task> again.  A lot.  You probably are.  You probably made a mistake.  
+* Plan like you're going to have to do <any particular task> again.  A lot.  You probably are.  You probably made a mistake.  
 
