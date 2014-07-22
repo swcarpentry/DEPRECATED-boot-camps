@@ -37,6 +37,7 @@ Day 2
 =======
 
 | Time         | Topic                                   | Instructor   |
+| ------------ | --------------------------------------- |--------------|
 | 1:00-2:15    | [Write Code for People](python/writing_code_for_people/Readme.md)| Nate Vack |
 | 2:15-2:30    | Break                                   |              |
 | 2:30-3:30    | [Write Code for People (cont.)](python/writing_code_for_people/Readme.md),[Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Nate Vack, Danielle Nielsen |
@@ -56,6 +57,7 @@ Day 4
 =======
 
 | Time         | Topic                                   | Instructor   |
+| ------------ | --------------------------------------- |--------------|
 | 1:00-2:00    | [Collaborate](version-control/git/remote/Readme.md) | Paul Wilson |
 | 2:00-2:15    | Break                                   |      |
 | 2:15-3:15    | GitHub Repos                            | Paul Wilson |
