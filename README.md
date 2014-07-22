@@ -42,7 +42,7 @@ Day 2
 | 2:15-2:30    | Break                                   |              |
 | 2:30-3:30    | [Write Code for People (cont.)](python/writing_code_for_people/Readme.md),[Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Nate Vack, Danielle Nielsen |
 | 3:30-3:45    | Break					 |		|
-| 3:45-4:30p   | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Nate Vack, Danielle Nielsen |
+| 3:45-4:30p   | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md)| Danielle Nielsen |
 
 Day 3
 =======
