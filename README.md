@@ -7,7 +7,7 @@ Welcome!
 August 4, 7, 8, 11; 2014
 --------------------
 
-Waisman Center, room TBA
+Waisman Center, John D Wiley Conference Room
 ------------------
 
 This repository contains the course material for the upcoming Software
@@ -21,6 +21,12 @@ This bootcamp has been structured around the concepts put forth in the
 recent paper "Best Practices for Scientific Computing" by G. Wilson,
 et al. In so doing, the sessions names have been chosen to correspond
 with some of the most important practices to start early.
+
+Setup and Preparation
+-----------
+
+You will need to bring a laptop to all sessions of the bootcamp. Please 
+the [Putty](https://www.putty.org)
 
 Day 1
 =======
