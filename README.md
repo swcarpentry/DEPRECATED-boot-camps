@@ -25,8 +25,11 @@ with some of the most important practices to start early.
 Setup and Preparation
 -----------
 
-You will need to bring a laptop to all sessions of the bootcamp. Please 
-the [Putty](https://www.putty.org)
+You will need to bring a laptop to all sessions of the bootcamp. If you 
+are using a Windows laptop, please install the [Putty](https://www.putty.org) 
+software, which will allow you to connect to the boot camp server. Linux 
+and Mac laptops will not need to install additional software, as the 
+Terminal application will be used to connect to the server.
 
 Day 1
 =======
