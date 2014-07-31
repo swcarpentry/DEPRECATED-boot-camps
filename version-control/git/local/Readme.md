@@ -2,7 +2,7 @@
 
 # Make Incremental Changes: Use Version Control
 
-**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
+**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
 # Motivation
@@ -30,10 +30,10 @@ suffice.
 
 Version Control System Tool Options
 
-- **Distributed** 
-  - Decentralized CVS (dcvs)  
+- **Distributed**
+  - Decentralized CVS (dcvs)
   - mercurial (hg)
-  - git (git) 
+  - git (git)
   - bazaar (bzr)
 - **Centralized**
   - concurrent versions system (cvs)
@@ -98,7 +98,7 @@ as their descriptions.
      $ git config --global user.name "YOUR NAME"
      $ git config --global user.email "YOUR EMAIL"
      $ git config --global core.editor nano
-     
+
 ## git init : Creating a Local Repository
 
 To keep track of numerous versions of your work without saving numerous
@@ -131,7 +131,7 @@ Open directories, browse file contents. Learn what you can in a minute.
     .git
     $ cd .git
     $ ls -A
-    HEAD        config      description hooks       info        objects     refs 
+    HEAD        config      description hooks       info        objects     refs
 
 Step 3 : Use what you've learned. You may have noticed the file called
 description. You can describe your repository by opening the description
@@ -152,7 +152,7 @@ the file '.git/info/exclude'. Edit the file to ignore files that end with '~'.
     # exclude patterns (uncomment them if you want to use them):
     # *.[oa]
     # *~
-    
+
 ## git add : Adding a File To Version Control
 
 For the git repository to know which files within this directory you
@@ -173,11 +173,11 @@ in this file.
 ## git status : Checking the Status of Your Local Copy
 
 The files you've created on your machine are your local "working" copy.
-The changes your make in this local copy aren't stored in the repository 
+The changes your make in this local copy aren't stored in the repository
 automatically. Until you commit them, the changes you make are local
 changes. When you change anything, your set of files becomes different
-from the files in the most recent official repository copy, known 
-as the repository HEAD. To find out what's different about them in the 
+from the files in the most recent official repository copy, known
+as the repository HEAD. To find out what's different about them in the
 terminal, try:
 
     $ git status
@@ -321,7 +321,7 @@ You can now return to previous checked in version with:
     git checkout -- README.md
 
 Check with `status` and take a look at the file.
-    
+
 ## git rm : Removing files
 
 There are a variety of reasons you way want to remove a file from the
@@ -354,14 +354,17 @@ revert your code to a previous version.
 
 You can use `git log` and `git diff` to explore your history and
 determine which version you are interested in.  Choose a version and
-note the *hash* for that version. (Let's assume `abc456`)
+note the *hash* for that version. (Let's assume `abc456`).  **NOTE:**
+the version you choose will be the changes you wish to remove, not the
+final point that you want to reach.  In this case, you will remove the
+changes made in `abc456`, rather than 'rolling back' to `abc456`.
 
      git revert abc456
 
 **Importantly,** this will not erase the intervening commits.  This
 will create a new commit that is changed from the previous commit by a
 change that will recreate the desired version.  This retains a
-complete provenance of your software, and be compared to the
+complete provenance of your software, and can be compared to the
 prohibition in removing pages from a lab notebook.
 
 ### Exercise :
@@ -372,10 +375,10 @@ prohibition in removing pages from a lab notebook.
 3. Change 2 of the 5 files and commit them.
 4. Undo the changes in step 3.
 5. Print out the last entry in the log.
-    
+
 
 # Branching in Version Control
-    
+
 ## git branch : Listing, Creating, and Deleting Branches
 
 Branches are parallel instances of a repository that can be edited and
@@ -482,10 +485,10 @@ function color_my_prompt {
     YELLOW="\[\033[0;33m\]"
     GREEN="\[\033[0;32m\]"
 
-    # Capture the output of the "git status" command.                                                                                               
+    # Capture the output of the "git status" command.
     git_status="$(git status 2> /dev/null)"
 
-    # Set color based on clean/staged/dirty.                                                                                                           
+    # Set color based on clean/staged/dirty.
     if [[ ${git_status} =~ "working directory clean" ]]; then
         state="${GREEN}"
     elif [[ ${git_status} =~ "Changes to be committed" ]]; then
@@ -497,7 +500,7 @@ function color_my_prompt {
     export PS1="$__user_and_host $__cur_location ${state}$__git_branch$__prompt_tail$__last_color "
 }
 
-# Tell bash to execute this function just before displaying its prompt.                                                                              
+# Tell bash to execute this function just before displaying its prompt.
 PROMPT_COMMAND=color_my_prompt
 ```
 
