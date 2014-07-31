@@ -67,7 +67,7 @@ Click with the right mouse button over the window.
 Click with the right mouse button over the window and then "Paste".
 
 #### Mac OSX
-Press cmd+C.
+Press ⌘+V.
 
 #### Linux
 Click with the right mouse button over the window and then "Paste".
