@@ -20,8 +20,7 @@ Very briefly, version control is a way to keep a backup of changing
 files, to store a history of those changes, and most importantly to
 allow many people in a collaboration to make changes to the same files
 concurrently. There are a lot of version control systems. Wikipedia
-provides both a nice vocabulary list and a fairly complete table of some
-popular version control systems and their equivalent commands.
+provides both [a nice vocabulary list and a fairly complete table of some popular version control systems and their equivalent commands](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software).
 
 Today, we'll be using git. Git is an example of a distributed version
 control system, distinct from centralized versing control systems. I'll
