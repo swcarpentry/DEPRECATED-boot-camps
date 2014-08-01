@@ -52,7 +52,7 @@ keywords by typing **/** followed by the search term. I'm interested in
 help, so I type **/help** and then hit enter. It looks like the syntax
 for getting help with git is **git --help**.
 
-To exit the manual page, type q.
+To exit the manual page, type **q**.
 
 Let's see what happens when we type :
 
@@ -221,9 +221,9 @@ There are no hard and fast rules, but good commits are atomic: they are the smal
 
 Step 1 : Commit the file you've added to your repository.
 
-    $ git commit -am "This is the first commit. It adds a readme file."
+    $ git commit -m "This is the first commit. It adds a readme file."
     [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
-     1 files changed, 2 insertions(+), 0 deletions(-)
+     0 files changed, 0 insertions(+), 0 deletions(-)
      create mode 100644 README.md
 
 Step 2 : Admire your work.
