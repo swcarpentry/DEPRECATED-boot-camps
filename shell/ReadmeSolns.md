@@ -174,36 +174,6 @@ mv */* cleaneddata
 
 Will move all the files (*) in each directory (*/) into the director cleaneddata.
 
-* * * *
-*4*.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is ok for the file name to end in `.txt.txt`
-
-***Solution***
-
-```
-find cleaneddata -type f -exec mv {} {}.txt \;
-```
-
-This will find only files and not directories (-type f) in the
-hierarchy starting with cleaneddata and for each one {} will move it
-to the same name with .txt added.
-
-* * * * 
-
-**BONUS Challenge**
-
-Redo exercise 4, except rename only the files which do not already end
-in `.txt`. You will have to use the `man` command to figure out how to
-search for files which do not match a certain name. 
-
-***Solution***
-
-```
-find cleaneddata -type f -not -name "*.txt" -exec mv {} {}.txt \;
-```
-
-This adds the condition that the name does not end in ".txt".
-
 
 * * * *
 
