@@ -352,7 +352,7 @@ This lists every file that ends with a `1`. This command:
 
     ls /usr/bin/*.sh
 
-Lists every file in `/usr/bin` that ends in the characters `.sh`. And
+lists every file in `/usr/bin` that ends in the characters `.sh`. And
 this command:
 
     ls *4*1
@@ -557,7 +557,7 @@ for the word "cat", `less` will not find it. You need to go to the
 beginning of the file (by typing `g`) and then search. Now quit the less 
 program.
 
-Remember, the `man` program actually uses `less` internally and
+Pro-tip: The `man` program actually uses `less` internally and
 therefore uses the same commands, so you can search program manuals 
 using "/" as well!
 
