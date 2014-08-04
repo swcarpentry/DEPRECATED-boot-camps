@@ -123,9 +123,9 @@ cp all_data foo/.
 ```
 
 * * * * 
-## BONUS: Finding files
+## Finding files
 
-**BONUS Exercises**
+**Exercises**
 
 Navigate to the `data` directory. Use one `find` command to perform each
 of the operations listed below (except number 2, which does not
