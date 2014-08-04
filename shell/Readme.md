@@ -149,8 +149,7 @@ the directory containing the data for the shell tutorial:
 
 Now use the `ls` command to see what is inside this directory. You
 will see that there is an entry which is green. This means that this
-is an executable. If you use `ls -F` you will see that this file ends
-with a star.
+is an executable.
 
 If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
