@@ -698,9 +698,6 @@ require a `find` command):
 
 3.  Move all of the files within `data` to the `cleaneddata` directory
 
-4.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is ok for the file name to end in `.txt.txt`
-
 Hint: If you make a mistake and need to start over just do the
 following:
 
@@ -710,12 +707,6 @@ following:
 
 3.  Enter the command: `git checkout -- data` You should see that the
     data directory has reappeared in its original state
-
-**BONUS Challenge**
-
-Redo exercise 4, except rename only the files which do not already end
-in `.txt`. You will have to use the `man` command to figure out how to
-search for files which do not match a certain name. 
 
 * * * * 
 
