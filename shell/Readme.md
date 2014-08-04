@@ -13,7 +13,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison
+    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-08-04-Davidson
 
 Click on the directory named `shell`.
 
