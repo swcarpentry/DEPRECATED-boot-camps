@@ -691,11 +691,11 @@ as arguments to `grep`.
 Navigate to the `data` directory. Use one `find` command to perform #1 
 below. Numbers 2 and 3 do not require `find`:
 
-1.  Find any file whose name is "NOTES" within `data` and delete it 
+1.  Find any file whose name is "NOTES" within `data` and its subdirectories, and delete it 
 
 2.  Create a new directory called `cleaneddata`
 
-3.  Move all of the files within `data` to the `cleaneddata` directory
+3.  Move all of the files within `data` and its subdirectories to the `cleaneddata` directory
 
 Hint: If you make a mistake and need to start over just do the
 following:
