@@ -455,7 +455,7 @@ Now let's try it for the `0213` file in `THOMAS`:
     cat THOMAS/0213
     ./data2csv THOMAS/0213
 
-## BONUS: Loops in Shell Scripts
+## Loops in Shell Scripts
 
 Let's add a loop so that we can make a single CSV file from many data
 files.  The general form of a loop is:
@@ -493,16 +493,15 @@ Jump to look at the [solutions to all the Automation exercises.](ReadmeSolns.md)
 
 
 ## Bonus topics:
+You may wish to look into the below topics/tools to become even more advanced in using the shell:
 
+
+[**ssh and scp**](http://software-carpentry.org/v4/shell/ssh.html)
+
+[**Permissions**](http://software-carpentry.org/v4/shell/perm.html)
 
 **du**
 
 **ln**
 
-**ssh and scp**
-
 **Regular Expressions**
-
-**Permissions**
-
-**Chaining commands together**
