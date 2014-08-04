@@ -657,7 +657,7 @@ Enter the following command:
     rm -r foo
 
 
-## BONUS: Finding files
+## Finding files
 
 The `find` program can be used to find files based on arbitrary
 criteria. Navigate to the `data` directory and enter the following
@@ -686,7 +686,7 @@ then we *pipe* them to `xargs`, which passes the list of items
 as arguments to `grep`.
 
 * * * * 
-**BONUS Exercises**
+**Exercises**
 
 Navigate to the `data` directory. Use one `find` command to perform each
 of the operations listed below (except number 2, which does not
