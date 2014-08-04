@@ -253,7 +253,14 @@ of variables just enter:
 
     set
 
-or better yet, pipe that through `less` like this:
+You may recognize that the output includes some scripted portions 
+(as your admins have created 
+somethings specifically useful to your group), but the default "set" 
+listing on Linux servers is a _set_ of variables defined for 
+your shell session. 
+
+To work with the information, pipe it through 
+`less` like this:
 
     set | less
 
