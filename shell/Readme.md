@@ -688,9 +688,8 @@ as arguments to `grep`.
 * * * * 
 **Exercises**
 
-Navigate to the `data` directory. Use one `find` command to perform each
-of the operations listed below (except number 2, which does not
-require a `find` command):
+Navigate to the `data` directory. Use one `find` command to perform #1 
+below. Numbers 2 and 3 do not require `find`:
 
 1.  Find any file whose name is "NOTES" within `data` and delete it 
 
