@@ -164,7 +164,11 @@ Step 1 : Create a file to add to your repository.
 
     $ touch README.md
 
-Step 2 : Inform git that you would like to keep track of future changes
+Step 2 : Add some text to the readme.
+
+    $ nano README.md
+
+Step 3 : Inform git that you would like to keep track of future changes
 in this file.
 
     $ git add README.md
@@ -222,7 +226,7 @@ Step 1 : Commit the file you've added to your repository.
 
     $ git commit -m "This is the first commit. It adds a readme file."
     [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
-     0 files changed, 0 insertions(+), 0 deletions(-)
+     1 files changed, 1 insertions(+), 0 deletions(-)
      create mode 100644 README.md
 
 Step 2 : Admire your work.
