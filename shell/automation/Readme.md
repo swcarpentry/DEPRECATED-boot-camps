@@ -412,10 +412,11 @@ Our data is fixed so we'll write a standard header:
     echo '"Reported","Subject","Year/month of birth","Sex","CI type","Volume","Range","Discrimination"'
 
 If this script is intended to process a single file, we'll need a way
-to indicate which one.  The arguments listed on the command-line after a
-shell script is called are available as variables.  The first argument is `$1`,
+to indicate which one.  When you run a shell script, you can provide arguments 
+to the shell script that may be used as variables.  The first argument is used 
+by the shell script as `$1`,
 the second is `$2`, and so on.  Our script will be told which file to use 
-by the first argument and we'll save this file name in a variable that will
+from the first argument, and we'll save this filename in a variable to
 remind us what it's for.
 
     datafile=$1
