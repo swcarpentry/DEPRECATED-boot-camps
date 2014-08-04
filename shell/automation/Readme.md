@@ -94,12 +94,12 @@ data to come in. Now type:
     are
     good
 
-then <CONTROL>+d. You should see the lines:
+then <kbd>CONTROL</kbd>+<kbd>d</kbd>. You should see the lines:
 
     are
     good
 
-printed back at you. The <CONTROL>+d keyboard shortcut inserts an
+printed back at you. The <kbd>CONTROL</kbd>+<kbd>d</kbd> keyboard shortcut inserts an
 *end-of-file* character. It is sort of the standard way of telling the
 program "I'm done entering data". 
 
