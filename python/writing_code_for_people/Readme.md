@@ -93,7 +93,7 @@ Can you add the extra space between my last and first name?
 
 ## Types and Dynamic Typing
 
-Like in most programming languages, things in python are *typed* — the *type* refers to the type of data and what you can do with it. For example, you can do different things with strings and numbers. You can inspect the type of a variable with the `type` command.
+Like in most programming languages, things in python are *typed* — the *type* refers to the type of data and what you can do with it. For example, you can do different things with strings and numbers. Numbers can have decimal components or not, and so on. You can see the type of a variable with the `type` command.
 
 ```
 In [5]: type?
