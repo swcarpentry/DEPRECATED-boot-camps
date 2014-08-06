@@ -64,11 +64,9 @@ Please follow the link.
 
 ## Back to Write Code for People
 
-This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people.
-As we introduce variables we will discuss how to name them, when to comment and which comments are useful. 
-As we introduce types we will discuss how type choice can be influenced by code readability considerations.
-The above readability considerations are to a certain degree universal to all programming, regardless of language.
-Finally, we introduce conditionals, such as if statements; we will see what an important role white space plays in python and how it can improve readability. 
+This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people. As we introduce variables we will discuss how to name them, when to comment and which comments are useful. As we introduce types we will discuss how type choice can be influenced by code readability considerations. The above readability considerations are to a certain degree universal to all programming, regardless of language. Finally, we introduce conditionals, such as if statements; we will see what an important role white space plays in python and how it can improve readability.
+
+But first: let's introduce you to python.
 
 ## Variables
 
