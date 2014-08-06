@@ -156,12 +156,12 @@ Choosing an appropriate variable type is not just a practical concern it can als
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
 ```
-In [15]: voltage = 4 # set the voltage to 4       <- bad comment
+In [15]: voltage = 4 # set the voltage to 4   <- well, duh
 
-In [16]: voltage = 4 # The voltage in the circuit <- good, provides more information
+In [16]: voltage = 4 # Input to the circuit   <- better; says what this voltage means
 ```
 
-## What's in a name?
+## Naming Your Variables
 
 Which of these variable names are good?
 
@@ -177,9 +177,9 @@ Variable names should be:
 * meaningful (to those who are going to read the code)
 * short enough so you don't misstype them
 
-Variable name choice is important; a well named variable might be self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments.
+Variable name choice is important; a well-named variable is self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments. Remember that context matters a lot: in some cases, you'll want to spell out `voltage` or even `input_voltage`. In other cases, `v` is a shorthand that everyone will understand.
 
-In most communities there will be a common practice.
+It's also important to choose a naming convention for your whole project, and get the people working on it to agree. Mixing `batteryVoltage` and `capacitor_value` in one place makes code hard to read.
 
 
 ## On Being Precise with floats and ints
