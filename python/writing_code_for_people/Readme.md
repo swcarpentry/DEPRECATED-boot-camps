@@ -93,9 +93,7 @@ Can you add the extra space between my last and first name?
 
 ## Types and Dynamic Typing
 
-Like in most programming languages, things in python are typed. The
-type refers to the type of data.  You can inspect the type of a
-variable by using the type command.
+Like in most programming languages, things in python are *typed* — the *type* refers to the type of data and what you can do with it. For example, you can do different things with strings and numbers. You can inspect the type of a variable with the `type` command.
 
 ```
 In [5]: type?
@@ -108,54 +106,49 @@ type(name, bases, dict) -> a new type
 
 In [6]: type(full_name)
 Out[6]: str
+In [7]: type(10)
+Out[7]: int
 
 ```
 
 
-Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. It's actually important, but its importance may not be clear to you until long after this class is over.
+Python is what is known as a *dynamically typed* language. Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. This is in contrast to *statically typed* languages, where you must say up front that a variable is going to be used for strings or numbers or whatever. There are good and bad points to both approaches.
 
-Dynamic typing means that you don't have to declare the type of a
-variable when you define it; python just figures it out based on how
-you are setting the variable.
+But back to Python. Let's say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second.
 
-Let's say you set a variable. Sometime later you can just change the
-type of data assigned to a variable and python is perfectly happy
-about that. Since it won't be obvious until (possibly much) later why
-that's important, I'll let you marinate on that idea for a second.
-
-Here's an example of dynamic typing. 
+Here's an example of dynamic typing:
 
 ```
-In [7]: voltage = 2
-In [8]: print voltage
+In [8]: voltage = 2
+In [9]: print voltage
 2
 
-In [9]: type(voltage)
-Out[9]: int
+In [10]: type(voltage)
+Out[10]: int
 ```
 
-Let's assign a value of 2.7 (which is clearly a float) to voltage. What happens to the type?
+It's an `int`, which is an integer — a number with no decimal component. Let's assign a value of 2.7 (which has a decimal part) to voltage. What happens to the type?
 
 ```
-In [10]: voltage = 2.7
+In [11]: voltage = 2.7
 
-In [11]: type(voltage)
-Out[11]: float
+In [12]: type(voltage)
+Out[12]: float
 ```
 
-You can even now assign a string to the variable voltage and python would be happy to comply.
+Neat! That's a `float`, which does have a decimal part. You can assign a string to the variable voltage in the same way:
 
 ```python
-In [12]: voltage = "2.7 volts"
+In [13]: voltage = "2.7 volts"
 
-In [13]: type(voltage)
-Out[13]: str
+In [14]: type(voltage)
+Out[14]: str
 ```
 
 I'll let you ruminate on the pros and cons of this construction while I change the value of voltage back to an int:
 
 ```
-In [14]: voltage = 2
+In [15]: voltage = 2
 ```
 
 Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
