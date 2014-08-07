@@ -127,9 +127,12 @@ Range is a function that returns a list containing a sequence of
 integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The for
 loop then simply iterates over that list, setting i to each value.
 
-***Excercise***
+* * * *
+**Exercise**
 
 Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
+
+* * * *
 
 For Loops with Lists and Dictionaries
 =====================================
@@ -369,7 +372,8 @@ answer = '=H=&!dr=a=nk!c=~ff&&!be=f~r&=!i=t!w=as!c=~~l.='
 print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', ' ')
 ```
 
-###Short Exercise: Calculate GC content of DNA###
+* * * *
+**Short Exercise: Calculate GC content of DNA**
 
 Because the binding strength of guanine (G) to cytosine (C) is different from
 the binding strength of adenine (A) to thymine (T) (and many other
@@ -390,6 +394,9 @@ Check your work:
 ```python
 round(gc, ndigits = 2) == .47
 ```
+
+* * * *
+
 
 ##Creating your own functions!##
 
@@ -412,7 +419,8 @@ hello('afternoon', 'Software Carpentry')
 
 The description right below the function name is called a docstring. For best practices on composing docstrings, read [PEP 257 -- Docstring Conventions](http://www.python.org/dev/peps/pep-0257/).
 
-###Short exercise: Write a function to calculate GC content of DNA###
+* * * *
+**Short exercise: Write a function to calculate GC content of DNA**
 
 Make a function that calculate the GC content of a given DNA sequence. For the more advanced participants, make your function able to handle sequences of mixed case (see the third test case).
 
@@ -429,6 +437,8 @@ print round(calculate_gc('ATGC'), ndigits = 2) == 0.50
 print round(calculate_gc('AGCGTCGTCAGTCGT'), ndigits = 2) == 0.60
 print round(calculate_gc('ATaGtTCaAGcTCgATtGaATaGgTAaCt'), ndigits = 2) == 0.34
 ```
+
+* * * *
 
 ##Modules##
 
@@ -565,8 +575,8 @@ def sum(a, axis=None, dtype=None, out=None, keepdims=False):
 We see a nice docstring seperating into several sections. A short description of the function is given, then all the input parameters are listed, then the outputs, there are some notes and examples. 
 Please note the docstring is longer than the code. And there are few comments in the actual code.
 
-
-###Short exercise: Make a module###
+* * * *
+**Short exercise: Make a module**
 
 We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the ipython session between imports in the same way as the examples.
 
@@ -577,6 +587,8 @@ import myFunctions as myFun
 # ... editing myFunctions.py in nano or other text editor...
 reload(myFun)
 ```
+
+* * * *
 
 ###Short exercise: Write a function to calculate content fraction of DNA###
 
