@@ -59,8 +59,13 @@ We'll focus on two overarching concepts that are important to any programming la
 
 ## iPython
 
-Please follow the link.
-[iPython Intro](../ipython/Readme.md)
+In this class, we're going to want to use a different python than the one that automatically comes on the server, so we'll need to edit our PATH environment variable (remember last time?) so our shells will find the right python. Type or paste this in your shell:
+
+```
+export PATH=/apps/python27/x86_64_sci6/bin:$PATH
+```
+
+... and follow the link to the [iPython Intro](../ipython/Readme.md).
 
 ## Back to Write Code for People
 
