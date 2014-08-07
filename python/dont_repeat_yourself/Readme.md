@@ -590,7 +590,18 @@ reload(myFun)
 
 * * * *
 
-###Short exercise: Write a function to calculate content fraction of DNA###
+
+
+##The General Problem##
+
+![xkcd](http://imgs.xkcd.com/comics/the_general_problem.png "I find that when someone's taking time to do something right in the present, they're a perfectionist with no ability to prioritize, whereas when someone took time to do something right in the past, they're a master artisan of great foresight.")
+
+From [xkcd](http://www.xkcd.com)
+ 
+Now that you can write your own functions, you too will experience the dilemma of deciding whether to spend the extra time to make your code more general, and therefore more easily reused in the future.
+
+* * * *
+**Short exercise: Write a function to calculate content fraction of DNA**
 
 One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases. Add this to your own module file. Remember to `reload` the module after adding or modifying the python file. (This function will be more complicated than previous functions, so writing it interactively within iPython will not work as well.)
 
@@ -620,15 +631,7 @@ print calculate_dna_fraction(test_x, '')
 print calculate_dna_fraction(test_x, 2.0)
 ```
 
-##The General Problem##
-
-![xkcd](http://imgs.xkcd.com/comics/the_general_problem.png "I find that when someone's taking time to do something right in the present, they're a perfectionist with no ability to prioritize, whereas when someone took time to do something right in the past, they're a master artisan of great foresight.")
-
-From [xkcd](http://www.xkcd.com)
- 
-Now that you can write your own functions, you too will experience the dilemma of deciding whether to spend the extra time to make your code more general, and therefore more easily reused in the future.
-
-
+* * * *
 
 
 ##Longer exercise: Reading Cochlear implant into Python##
