@@ -672,11 +672,14 @@ i = 4
 sign = "zero"
 if i < 0:
     sign = "negative"
+
 elif i > 0:
     sign = "positive"
+
 else:
     print("Sign must be zero")
     print("Have a nice day")
+
 print(sign)
 ```
 
@@ -686,14 +689,17 @@ Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
 delimiting blocks of code.
 
 For example, in MatLab you begin an if statement with the word `if`
-and you end it with `end if`. In C/C++ you delimit blocks with curly
-braces. Python uses **indentation** to delimit code blocks. The
-**indentation** above is NOT just to make things look pretty - it
-tells Python what the body of the `if`-statement is. This is true when
-ever we create any code blocks, such as the bodies of loops, functions
-or classes.
+and you end it with `end if`. In C/C++ you delimit code blocks with curly
+braces.
 
-***Exercise***
+Python uses *white space* — in this case, *indentation,* to group lines of code. In this case, there are four spaces at the beginning of the line following the `if` statement. This is not just to make things look pretty - it
+tells Python what the body of the `if`-statement is.
+
+Marking blocks of code is a fundamental part of a language. In C, you'll see curly braces everywhere. In Python, you'll see indentation everywhere. It's how you (and the computer) know what your code means.
+
+Other white space in Python (and most other languages) is only for people. Little things like putting blank lines in "sane" places, and putting spaces between variables and operators (say, `a + b` rather than `a+b`) can make your code a lot easier to read.
+
+**Exercise**
 Write an if statement that prints whether x is even or odd.
 
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
