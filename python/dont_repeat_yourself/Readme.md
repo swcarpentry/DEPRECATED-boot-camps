@@ -127,9 +127,12 @@ Range is a function that returns a list containing a sequence of
 integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The for
 loop then simply iterates over that list, setting i to each value.
 
-***Excercise***
+* * * *
+**Exercise**
 
 Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
+
+* * * *
 
 For Loops with Lists and Dictionaries
 =====================================
@@ -229,15 +232,15 @@ a dictionary with some names and titles, and a list with a
 subset of the names we will treat differently.
 
 ```python
-  knights = {"Sir Belvedere":"the Wise", 
-           "Sir Lancelot":"the Brave", 
-           "Sir Galahad":"the Pure", 
-           "Sir Robin":"the Brave", 
-           "The Black Knight":"John Cleese"} # create a dict with names and titles
-  favorites = knights.keys()      # create a list of favorites with all the knights
-  favorites.remove("Sir Robin") # change favorites to include all but one.
-  print knights
-  print favorites
+knights = {"Sir Belvedere":"the Wise", 
+         "Sir Lancelot":"the Brave", 
+         "Sir Galahad":"the Pure", 
+         "Sir Robin":"the Brave", 
+         "The Black Knight":"John Cleese"} # create a dict with names and titles
+favorites = knights.keys()      # create a list of favorites with all the knights
+favorites.remove("Sir Robin") # change favorites to include all but one.
+print knights
+print favorites
 ```
 
 We can loop through the dict of names and titles and do one of 
@@ -245,13 +248,13 @@ two different things for each by putting an if statement inside
 the for loop:
 
 ```python
-  for name, title in knights.items(): 
-      string = name + ", "
-      if name in favorites:   # this returns True if any of the values in favorites match.
-          string = string + title
-      else:
-          string = string + title + ", but not quite so brave as Sir Lancelot." 
-      print string
+for name, title in knights.items(): 
+    string = name + ", "
+    if name in favorites:   # this returns True if any of the values in favorites match.
+        string = string + title
+    else:
+        string = string + title + ", but not quite so brave as Sir Lancelot." 
+    print string
 ```
 
 ###enumerate###
@@ -369,7 +372,8 @@ answer = '=H=&!dr=a=nk!c=~ff&&!be=f~r&=!i=t!w=as!c=~~l.='
 print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', ' ')
 ```
 
-###Short Exercise: Calculate GC content of DNA###
+* * * *
+**Short Exercise: Calculate GC content of DNA**
 
 Because the binding strength of guanine (G) to cytosine (C) is different from
 the binding strength of adenine (A) to thymine (T) (and many other
@@ -390,6 +394,9 @@ Check your work:
 ```python
 round(gc, ndigits = 2) == .47
 ```
+
+* * * *
+
 
 ##Creating your own functions!##
 
@@ -412,7 +419,8 @@ hello('afternoon', 'Software Carpentry')
 
 The description right below the function name is called a docstring. For best practices on composing docstrings, read [PEP 257 -- Docstring Conventions](http://www.python.org/dev/peps/pep-0257/).
 
-###Short exercise: Write a function to calculate GC content of DNA###
+* * * *
+**Short exercise: Write a function to calculate GC content of DNA**
 
 Make a function that calculate the GC content of a given DNA sequence. For the more advanced participants, make your function able to handle sequences of mixed case (see the third test case).
 
@@ -429,6 +437,8 @@ print round(calculate_gc('ATGC'), ndigits = 2) == 0.50
 print round(calculate_gc('AGCGTCGTCAGTCGT'), ndigits = 2) == 0.60
 print round(calculate_gc('ATaGtTCaAGcTCgATtGaATaGgTAaCt'), ndigits = 2) == 0.34
 ```
+
+* * * *
 
 ##Modules##
 
@@ -565,8 +575,8 @@ def sum(a, axis=None, dtype=None, out=None, keepdims=False):
 We see a nice docstring seperating into several sections. A short description of the function is given, then all the input parameters are listed, then the outputs, there are some notes and examples. 
 Please note the docstring is longer than the code. And there are few comments in the actual code.
 
-
-###Short exercise: Make a module###
+* * * *
+**Short exercise: Make a module**
 
 We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the ipython session between imports in the same way as the examples.
 
@@ -578,7 +588,20 @@ import myFunctions as myFun
 reload(myFun)
 ```
 
-###Short exercise: Write a function to calculate content fraction of DNA###
+* * * *
+
+
+
+##The General Problem##
+
+![xkcd](http://imgs.xkcd.com/comics/the_general_problem.png "I find that when someone's taking time to do something right in the present, they're a perfectionist with no ability to prioritize, whereas when someone took time to do something right in the past, they're a master artisan of great foresight.")
+
+From [xkcd](http://www.xkcd.com)
+ 
+Now that you can write your own functions, you too will experience the dilemma of deciding whether to spend the extra time to make your code more general, and therefore more easily reused in the future.
+
+* * * *
+**Short exercise: Write a function to calculate content fraction of DNA**
 
 One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases. Add this to your own module file. Remember to `reload` the module after adding or modifying the python file. (This function will be more complicated than previous functions, so writing it interactively within iPython will not work as well.)
 
@@ -608,15 +631,7 @@ print calculate_dna_fraction(test_x, '')
 print calculate_dna_fraction(test_x, 2.0)
 ```
 
-##The General Problem##
-
-![xkcd](http://imgs.xkcd.com/comics/the_general_problem.png "I find that when someone's taking time to do something right in the present, they're a perfectionist with no ability to prioritize, whereas when someone took time to do something right in the past, they're a master artisan of great foresight.")
-
-From [xkcd](http://www.xkcd.com)
- 
-Now that you can write your own functions, you too will experience the dilemma of deciding whether to spend the extra time to make your code more general, and therefore more easily reused in the future.
-
-
+* * * *
 
 
 ##Longer exercise: Reading Cochlear implant into Python##

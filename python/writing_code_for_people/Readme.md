@@ -59,8 +59,7 @@ We'll focus on two overarching concepts that are important to any programming la
 
 ## iPython
 
-Please follow the link.
-[iPython Intro](../ipython/Readme.md)
+Please follow the link to the [iPython Intro](../ipython/Readme.md).
 
 ## Back to Write Code for People
 
@@ -88,6 +87,36 @@ Out[4]: 'CliffRodgers'
 
 ***Exercise***
 Can you add the extra space between my last and first name?
+
+## Naming Your Variables
+
+Which of these variable names are good?
+
+```
+v = 4
+voltage = 4
+TheVoltageInTheCircuitAtPointA = 4 # Camel Case
+the_voltage_is = 4 # Pothole
+monkey = 4
+```
+Variable names should be:
+
+* Meaningful (to those who are going to read the code)
+* Short enough so you don't misstype them
+
+Variable name choice is important; a well-named variable is self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments. Remember that context matters a lot: in some cases, you'll want to spell out `voltage` or even `input_voltage`. In other cases, `v` is a shorthand that everyone will understand.
+
+It's also important to choose a naming convention for your whole project, and get the people working on it to agree. Mixing `batteryVoltage` and `capacitor_value` in one place makes code hard to read.
+
+## Writing Comments For People
+
+Above, you may have noticed the `#` character, which denotes a comment in python. Comments should describe meaning but not what the statement is doing.
+
+```
+In [15]: voltage = 4 # set the voltage to 4   <- well, duh
+
+In [16]: voltage = 4 # Input to the circuit   <- better; says what this voltage means
+```
 
 ## Types and Dynamic Typing
 
@@ -149,37 +178,7 @@ I'll let you ruminate on the pros and cons of this construction while I change t
 In [15]: voltage = 2
 ```
 
-Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
-
-## Writing Comments For People
-
-The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
-
-```
-In [15]: voltage = 4 # set the voltage to 4   <- well, duh
-
-In [16]: voltage = 4 # Input to the circuit   <- better; says what this voltage means
-```
-
-## Naming Your Variables
-
-Which of these variable names are good?
-
-```
-v = 4
-voltage = 4
-TheVoltageInTheCircuitAtPointA = 4 # Camel Case
-the_voltage_is = 4 # Pothole
-monkey = 4
-```
-Variable names should be:
-
-* Meaningful (to those who are going to read the code)
-* Short enough so you don't misstype them
-
-Variable name choice is important; a well-named variable is self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments. Remember that context matters a lot: in some cases, you'll want to spell out `voltage` or even `input_voltage`. In other cases, `v` is a shorthand that everyone will understand.
-
-It's also important to choose a naming convention for your whole project, and get the people working on it to agree. Mixing `batteryVoltage` and `capacitor_value` in one place makes code hard to read.
+Choosing an appropriate variable type is not just a practical concern; it can also have an effect on code readability. Is this number used for calculations or only in print statements?
 
 
 ## On Being Precise With floats and ints
@@ -196,7 +195,7 @@ Lets say you had some voltage data that looks like the following
 2
 ```
 
-Obviously, if you just assigned this data individually to a variable, you'd end up with the following types:
+If you just assigned this data individually to a variable, you'd end up with the following types:
 
 ```
 0   -> int
@@ -513,39 +512,6 @@ dictionary, whereas a list cannot as we will see in a moment.
 ***Exercise***
 Display the second element of the tuple with two different slices.
 
-## Sets
-
-Most introductory python courses do not go over sets this early (or at
-all), and in the interest of time we're no different. The python set
-type is a useful data type similar to the idea of a mathematical set:
-it is an unordered collection of unique things.
-
-Consider the following examples if you're interested in the useful
-sorts of things you can do with python sets:
-
-```
-In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
-```
-
-Since sets contain only unique items, there's only one banana in the set
-fruit.
-
-You can do things like intersections, unions on sets just like in
-math. Here's an example of an intersection of two sets (the common items in
-both sets).
-
-```
-In [4]: first_bowl = set(["apple", "banana", "pear", "peach"])
-
-In [5]: second_bowl = set(["peach", "watermelon", "orange", "apple"])
-
-In [6]: set.intersection(first_bowl, second_bowl)
-Out[6]: set(['apple', 'peach'])
-```
-
-You can check out more info using the help docs. We won't be returning to
-sets, but it's good for you to know they exist.
-
 ## Dictionaries
 
 Recall our variable data_list which contained our current-voltage data
@@ -636,6 +602,39 @@ When you architect software in python, most data will end up looking either
 like a list or a dictionary. These two data types are very important in
 python and you'll end up using them all the time.
 
+## Sets
+
+Most introductory python courses do not go over sets this early (or at
+all), and in the interest of time we're no different. The python set
+type is a useful data type similar to the idea of a mathematical set:
+it is an unordered collection of unique things.
+
+Consider the following examples if you're interested in the useful
+sorts of things you can do with python sets:
+
+```
+In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+```
+
+Since sets contain only unique items, there's only one banana in the set
+fruit.
+
+You can do things like intersections, unions on sets just like in
+math. Here's an example of an intersection of two sets (the common items in
+both sets).
+
+```
+In [4]: first_bowl = set(["apple", "banana", "pear", "peach"])
+
+In [5]: second_bowl = set(["peach", "watermelon", "orange", "apple"])
+
+In [6]: set.intersection(first_bowl, second_bowl)
+Out[6]: set(['apple', 'peach'])
+```
+
+You can check out more info using the help docs. We won't be returning to
+sets, but it's good for you to know they exist.
+
 ## Conditionals
 
 A conditional (`if` statement) is some statement that in general says :
@@ -664,32 +663,6 @@ beatle="John"
 beatles=["George", "Ringo", "John", "Paul"]
 print beatle in beatles # is John one of the beatles? : TRUE
 print "Katy" not in beatles # this is also TRUE. 
-```
-
-There is also a comparison to determine if two variables reference the same object. Two different objects can have the same value, so return true for an equality comparison:
-
-```python
-a = 1234
-b = 1234
-a == b # True, they have the same value
-a is b # False, are different objects
-```
-
-However, `is` should generally not be used for comparisons between integers. Python does treat some small valued integers differently, for example:
-
-```python
-a = 1
-b = 1
-a is b # True - special case for 1
-```
-
-A better use of `is` would be to compare objects like lists, for example the same list could be inserted into two different dictionaries. A comparison with `is` would reveal this:
-
-```python
-number_list = [1,2,4,8]
-dict1 = {"thing_widths": number_list}
-dict2 = {"item_costs": number_list}
-dict1["thing_widths"] is dict2["item_costs"]  # True - this is the same list
 ```
 
 Conditionals (`if` statements) are also really easy to use in python. Take
@@ -725,7 +698,6 @@ or classes.
 Write an if statement that prints whether x is even or odd.
 
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
-
 
 ##Writing Code for People summary
 
