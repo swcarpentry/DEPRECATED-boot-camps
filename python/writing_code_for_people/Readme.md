@@ -12,18 +12,18 @@ R. Smith, Will Trimble, and many more**
 
 This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython.  I expect this lecture to be interactive, so stop me at any point if you have questions. 
 
-This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'll continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
+This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the iPython interpreter (to a lesser extent). The iPython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'll continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
 
 Here is the reference material.
 
-* [Dive into Python] (http://www.diveintopython.net/toc/index.html)
-* [Software Carpentry's Python Lectures] (http://software-carpentry.org/4_0/python/)
-* [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
-* [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
+* [Dive into Python](http://www.diveintopython.net/toc/index.html)
+* [Software Carpentry's Python Lectures](http://software-carpentry.org/4_0/python/)
+* [IPython: A System for Interactive Scientific Computing](http://dx.doi.org/10.1109/MCSE.2007.53)
+* [How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 
-Once we briefly deal with ipython, I'll cover python in the following order:
+Once we briefly deal with iPython, I'll cover python in the following order:
 
-## What We'll cover
+## What We'll Cover
 
 We'll focus on two overarching concepts that are important to any programming language: 
 
@@ -31,40 +31,40 @@ We'll focus on two overarching concepts that are important to any programming la
 
 2) How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
 
-### Ipython Intro
-* Ipython
+### iPython Intro
+* iPython
 
 ### Lesson 1 (Write Code for People)
-* print statements
-* variables
-* integers
-* floats
-* strings
-* types
-* type coercion
-* basic operations: add numbers, concatenate strings, basic data type functionality
-* list
-* dictionary 
-* tuple
-* conditional (if) statements
+* Print statements
+* Variables
+* Integers
+* Floats
+* Strings
+* Types
+* Type Coercion
+* Basic Operations: add numbers, concatenate strings, basic data type functionality
+* List
+* Dictionary 
+* Tuple
+* Conditional (if) statements
 
 ### Lesson 2 (Don't Repeat Yourself)
-* for loop
-* while loops
-* iteration
-* methods
-* reading & writing files
-* modules
+* For Loops
+* While Loops
+* Iteration
+* Methods
+* Reading & Writing Files
+* Modules
 
 
-## Ipython
+## iPython
 
 Please follow the link.
-[Ipython Intro](../ipython/Readme.md)
+[iPython Intro](../ipython/Readme.md)
 
 ## Back to Write Code for People
 
-This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people. As we introduce variables we will discuss how to name them, when to comment and which comments are useful. As we introduce types we will discuss how type choice can be influenced by code readability considerations. The above readability considerations are to a certain degree universal to all programming, regardless of language. Finally, we introduce conditionals, such as if statements; we will see what an important role white space plays in python and how it can improve readability.
+This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people. As we introduce variables we will discuss how to name them, when to comment and which comments are useful. As we introduce types we will discuss how type choice can be influenced by code readability considerations. The above readability considerations are to a certain degree universal to all programming, regardless of language. Finally, we introduce conditionals, such as `if` statements; we will see what an important role white space plays in python and how it can improve readability.
 
 But first: let's introduce you to python.
 
@@ -78,7 +78,7 @@ In [1]: first_name = "Cliff"
 In [2]: last_name = "Rodgers"
 ```
 
-We can concatenate strings with the + operator. Computers don't understand context.
+We can glue strings together with the + operator. Computers don't understand context.
 
 ```
 In [3]: full_name = first_name + last_name
@@ -86,7 +86,7 @@ In [4]: print full_name
 Out[4]: 'CliffRodgers'
 ```
 
-***Excercise***
+***Exercise***
 Can you add the extra space between my last and first name?
 
 ## Types and Dynamic Typing
@@ -151,7 +151,7 @@ In [15]: voltage = 2
 
 Choosing an appropriate variable type is not just a practical concern it can also have an effect on code readability. Is this number used for calculations or only in print statements?
 
-## Writing comments for people
+## Writing Comments For People
 
 The '#' character denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
@@ -174,15 +174,15 @@ monkey = 4
 ```
 Variable names should be:
 
-* meaningful (to those who are going to read the code)
-* short enough so you don't misstype them
+* Meaningful (to those who are going to read the code)
+* Short enough so you don't misstype them
 
 Variable name choice is important; a well-named variable is self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments. Remember that context matters a lot: in some cases, you'll want to spell out `voltage` or even `input_voltage`. In other cases, `v` is a shorthand that everyone will understand.
 
 It's also important to choose a naming convention for your whole project, and get the people working on it to agree. Mixing `batteryVoltage` and `capacitor_value` in one place makes code hard to read.
 
 
-## On Being Precise with floats and ints
+## On Being Precise With floats and ints
 
 Again, the following may seem esoteric and pedantic, but it is very important. So bear with me.
 
@@ -196,7 +196,7 @@ Lets say you had some voltage data that looks like the following
 2
 ```
 
-Obviously, if you just assigned this data individually to a variable, you'd end up with the following types
+Obviously, if you just assigned this data individually to a variable, you'd end up with the following types:
 
 ```
 0   -> int
@@ -212,10 +212,10 @@ But what if you wanted all of that data to be floats on its way in? You could as
 In [28]: voltage = float(1)
 ```
 
-But that's ugly. If you want whats otherwise an integer to be a float, just add a period at the end
+But that's ugly. If you want whats otherwise an integer to be a float, add `.0` to the end:
 
 ```python
-In [29]: voltage = 1.
+In [29]: voltage = 1.0
 
 In [30]: type(voltage)
 Out[30]: float
@@ -397,7 +397,7 @@ Out[9]: [0.0, 1.0, 2.0]
 
 and so on.
 
-***Excercise***
+***Exercise***
 What does voltage_list[::2] mean?
 
 ### Append and Extend
@@ -504,13 +504,13 @@ Out[2]: tuple
 
 You can slice and index the tuple exactly like you would a list. 
 
-### Why use Tuples
+### Why Use Tuples
 
 Tuples can emphasize intent, although you could make a list and not change it, setting the type to be a tuple makes that intent clear to a reader. 
 Tuples are used in the inner workings of python, and a tuple can be used as a key in a
 dictionary, whereas a list cannot as we will see in a moment.
 
-***Excercise***
+***Exercise***
 Display the second element of the tuple with two different slices.
 
 ## Sets
@@ -636,10 +636,9 @@ When you architect software in python, most data will end up looking either
 like a list or a dictionary. These two data types are very important in
 python and you'll end up using them all the time.
 
-Conditionals
-============
+## Conditionals
 
-A conditional (if statement) is some statement that in general says :
+A conditional (`if` statement) is some statement that in general says :
 "When some boolean is true, do the following. Elsewise, do this other
 thing."
 
@@ -700,12 +699,12 @@ a look at the following example:
 i = 4
 sign = "zero"
 if i < 0:
-  sign = "negative"
+    sign = "negative"
 elif i > 0:
-  sign = "positive"
+    sign = "positive"
 else:
-  print "Sign must be zero"
-  print "Have a nice day"
+    print "Sign must be zero"
+    print "Have a nice day"
 print sign
 ```
 
@@ -722,7 +721,7 @@ tells Python what the body of the `if`-statement is. This is true when
 ever we create any code blocks, such as the bodies of loops, functions
 or classes.
 
-***Excercise***
+***Exercise***
 Write an if statement that prints whether x is even or odd.
 
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
