@@ -40,18 +40,18 @@ Click with the right mouse button over the window and then "Paste".
 The code should paste and execute in iPython.
 
 If you also type %autocall to turn autocall OFF, you may be able to
-paste with **ctrl+v** though this won't work with all ipython builds.
+paste with **ctrl+v** though this won't work with all iPython builds.
 
 
 While Loops
 ===========
 
-Let's start by looking at while loops since they function like while
+Let's start by looking at `while` loops since they function like while
 loops in many other languages. The example below takes a list of
 integers and computes the product of each number in the list up to the
 -1 element.
 
-A while loop will repeat the instructions within itself until the
+A `while` loop will repeat the instructions within itself until the
 conditional that defines it is no longer true.
 
 ```python
@@ -75,7 +75,7 @@ Some new syntax has been introduced in this example.
 
 **Watch Out**
 
-Since a while loop will continue until its conditional is no longer
+Since a `while` loop will continue until its conditional is no longer
 true, a **poorly formed** while loop might repeat forever. For example :
 
 ```python
@@ -96,7 +96,7 @@ interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
 For Loops
 =========
 
-For loops in python operate a little differently from other languages.
+`For` loops in python operate a little differently from other languages.
 Let's start with a simple example which prints all of the numbers from 0
 to 9:
 
@@ -105,7 +105,7 @@ for i in range(10):
     print i
 ```
 
-You may be wondering how this works. Start by using help(range) to see
+You may be wondering how this works. Start by using `help(range)` to see
 what the range function does.
 
 ```
@@ -123,9 +123,9 @@ range()?
         For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
         These are exactly the valid indices for a list of 4 elements.
 
-Range is a function that returns a list containing a sequence of
-integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The for
-loop then simply iterates over that list, setting i to each value.
+`Range` is a function that returns a list containing a sequence of
+integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The `for`
+loop then simply iterates over that list, setting `i` to each value.
 
 * * * *
 **Exercise**
@@ -137,7 +137,7 @@ Using a loop, calculate the factorial of 6 (the product of all positive integers
 For Loops with Lists and Dictionaries
 =====================================
 
-With range, we learned that `for` loops in python are really used to
+With `range`, we learned that `for` loops in python are really used to
 iterate over sequences of things (they can be used for much more, but
 for now this definition will do). Try entering the following to see what
 happens:
@@ -243,9 +243,9 @@ print knights
 print favorites
 ```
 
-We can loop through the dict of names and titles and do one of 
-two different things for each by putting an if statement inside 
-the for loop:
+We can loop through the dictionary of names and titles and do one of 
+two different things for each by putting an `if` statement inside 
+the `for` loop:
 
 ```python
 for name, title in knights.items(): 
@@ -259,7 +259,7 @@ for name, title in knights.items():
 
 ###enumerate###
 
-Python lists and dictionaries can easily be iterated through in a for loop by using `in`. As we saw above, this is clearer than writing a for loop over the integers up to the length of the list (or dictionary, or other iterable). However, sometimes you may need the index value at the same time, for example for some calculation. The `enumerate` function generates the integer index for you, which can be used instead of the `range` function. The following two loops are equivalent:
+Python lists and dictionaries can easily be iterated through in a `for` loop by using `in`. As we saw above, this is clearer than writing a for loop over the integers up to the length of the list (or dictionary, or other iterable). However, sometimes you may need the index value at the same time, for example for some calculation. The `enumerate` function generates the integer index for you, which can be used instead of the `range` function. The following two loops are equivalent:
 
 ```python
 data_list = [23,45,67]
@@ -278,12 +278,12 @@ together. I'll use some of the concepts we already saw and introduce a
 few new concepts. To run the example, you'll need to locate a short file
 containing phone numbers. The file can be found in your 
 repository within the phonenums directory and is called phonenums.txt. 
-Now we have to move ipython to that directory so it can find the
-phonenums.txt file. You navigate within ipython in the same way that you
+Now we have to move iPython to that directory so it can find the
+phonenums.txt file. You navigate within iPython in the same way that you
 navigate in the shell, by entering "cd [path]" .
 
 Let's look at the phonenums.txt file.
-We can type shell commands into ipython by prefacing them with '!'
+We can type shell commands into iPython by prefacing them with '!'
 '!nano phonenums.txt'
 
 Let's use a simple loop on the file:
@@ -317,19 +317,20 @@ for line in f: # iterate through the text file, one line at a time (think of the
 print areacodes # Print the answer
 ```
 
-Example : Iteritems
--------------------
+* * * *
+**Short Exercise**
 
-Use the iteritems dictionary method in combination with a for loop to
-print the keys/values of the areacodes dictionary one to a line. In
-other words, the goal is to write a loop that prints:
+Use a loop to print the area codes and number of occurences in one line.
+Remember how we previously looped through a dictionary using `iteritems`.
+
+Your output should look like this:
 
     203 4
     800 4
     608 8
     773 3
 
-This example is a little tricky to figure out, but give it a shot.
+* * * *
 
 
 # Python Functions and Modules
@@ -442,7 +443,7 @@ print round(calculate_gc('ATaGtTCaAGcTCgATtGaATaGgTAaCt'), ndigits = 2) == 0.34
 
 ##Modules##
 
-Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like sin, we need to `import` the math module. Let's take a look at a simple example:
+Python has a lot of useful data type and functions built into the language, some of which you have already seen. For a full list, you can type `dir(__builtins__)`. However, there are even more functions stored in modules. An example is the sine function, which is stored in the math module. In order to access mathematical functions, like `sin`, we need to `import` the math module. Let's take a look at a simple example:
 
 ```python
 
@@ -578,7 +579,7 @@ Please note the docstring is longer than the code. And there are few comments in
 * * * *
 **Short exercise: Make a module**
 
-We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the ipython session between imports in the same way as the examples.
+We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the iPython session between imports in the same way as the examples.
 
 Try adding a new function to the module. Note that you need to `reload` the module in python to update it, if the module is already imported. For example:
 
@@ -709,7 +710,7 @@ Write a function that mimics transcription. The input argument is a string that 
 * Convert G to C
 * Convert C to G
  
-Hint: You can iterate through a string using a for loop similarly to how you loop through a list.
+Hint: You can iterate through a string using a `for` loop similarly to how you loop through a list.
 
 ```python
 def transcribe(seq):
