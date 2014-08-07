@@ -61,7 +61,6 @@ We'll focus on two overarching concepts that are important to any programming la
 
 Please follow the link to the [iPython Intro](../ipython/Readme.md).
 
-
 ## Back to Write Code for People
 
 This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people. As we introduce variables we will discuss how to name them, when to comment and which comments are useful. As we introduce types we will discuss how type choice can be influenced by code readability considerations. The above readability considerations are to a certain degree universal to all programming, regardless of language. Finally, we introduce conditionals, such as `if` statements; we will see what an important role white space plays in python and how it can improve readability.
@@ -82,7 +81,7 @@ We can glue strings together with the + operator. Computers don't understand con
 
 ```
 In [3]: full_name = first_name + last_name
-In [4]: print full_name
+In [4]: print(full_name)
 Out[4]: 'CliffRodgers'
 ```
 
@@ -148,7 +147,7 @@ Here's an example of dynamic typing:
 
 ```
 In [8]: voltage = 2
-In [9]: print voltage
+In [9]: print(voltage)
 2
 
 In [10]: type(voltage)
@@ -662,8 +661,8 @@ unique to python. To check whether an object is contained in a list :
 ```python 
 beatle="John"
 beatles=["George", "Ringo", "John", "Paul"]
-print beatle in beatles # is John one of the beatles? : TRUE
-print "Katy" not in beatles # this is also TRUE. 
+print(beatle in beatles)     # is John one of the beatles? : TRUE
+print("Katy" not in beatles) # this is also TRUE. 
 ```
 
 Conditionals (`if` statements) are also really easy to use in python. Take
@@ -677,9 +676,9 @@ if i < 0:
 elif i > 0:
     sign = "positive"
 else:
-    print "Sign must be zero"
-    print "Have a nice day"
-print sign
+    print("Sign must be zero")
+    print("Have a nice day")
+print(sign)
 ```
 
 The behavior of this code snippet should be pretty clear, but there is
