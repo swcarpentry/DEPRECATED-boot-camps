@@ -455,17 +455,15 @@ Out[16]: 7
 Lists can contain hetergeneous data.
 
 ```
-In [17]: data_list = ["experiment: current vs. voltage", \
-                      "run", 47, \
-                      "temperature", 372.756, \
-                      "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
+In [17]: data_list = ["experiment: current vs. voltage",
+                      "run", 47,
+                      "temperature", 372.756,
+                      "current", [-1.0, -0.5, 0.0, 0.5, 1.0],
                       "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
 
 ```
 
-We've got strings, ints, floats, and even other lists in there. The slashes
-are there so we can continue on the next line. They aren't necessary but
-they can sometimes make things look better.
+We've got strings, ints, floats, and even other lists in there. While this is a perfectly valid thing to do in a list, it's often not a good idea. Generally, you want to be able to run the same operation on every element of a list. If you want to put different kinds of things in a list structure, you often want to use something called a *tuple,* which we'll talk about in a minute.
 
 ## Assigning Variables to Other Variables
 
@@ -485,8 +483,19 @@ In [22]: b
 Out[22]: [1, 2, 10]
 ```
 
-There's a ton more to know about lists, but let's press on. Check out Dive
-Into Python or the help documentation for more info.
+If you want to see if that's what's going on in your case, python has a special `is` operation that will test to see if two variables point to the same thing:
+
+```
+In [23]: a is b
+Out[23]: True
+In [24]: c = [1, 2, 10]
+In [25]: a is c
+Out[25]: False
+In [26]: a == c
+Out[26]: True
+```
+
+There's a ton more to know about lists, but let's press on. [Dive into Python](http://www.diveintopython.net/toc/index.html) or the help documentation for more info.
 
 ## Tuples
 
@@ -501,16 +510,21 @@ In [2]: type(tup)
 Out[2]: tuple
 ```
 
-You can slice and index the tuple exactly like you would a list. 
+You can slice and index the tuple exactly like you would a list.
 
 ### Why Use Tuples
 
-Tuples can emphasize intent, although you could make a list and not change it, setting the type to be a tuple makes that intent clear to a reader. 
-Tuples are used in the inner workings of python, and a tuple can be used as a key in a
-dictionary, whereas a list cannot as we will see in a moment.
+Tuples can emphasize intent in two ways. First, you can't easily change the items in a tuple, so if you want to specify that a list shouldn't change, a tuple is a great way to indicate that. Second, in a tuple, the order of the items is usually more significant: you might do something like:
+
+```
+In [1]: person_data = ('Nate', 35, 'njvack@wisc.edu')
+In [2]: name = person_data[0]
+```
+
+... though in practice, you'll more often use a `dictionary` for something like this.
 
 ***Exercise***
-Display the second element of the tuple with two different slices.
+Display the second element of a tuple with two different slices.
 
 ## Dictionaries
 
