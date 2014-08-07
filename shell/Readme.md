@@ -13,7 +13,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison
+    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-08-04-Davidson
 
 Click on the directory named `shell`.
 
@@ -53,7 +53,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b 2014-01-uwmadison /opt/UW-Madison-ACI/boot-camps.git
+    git clone -b 2014-08-04-Davidson /home/labuser04/boot-camps
 
 This command will grab all of the data needed for this workshop from
 a local repository that has been copied from our central GitHub repository. 
@@ -149,8 +149,7 @@ the directory containing the data for the shell tutorial:
 
 Now use the `ls` command to see what is inside this directory. You
 will see that there is an entry which is green. This means that this
-is an executable. If you use `ls -F` you will see that this file ends
-with a star.
+is an executable.
 
 If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
@@ -353,7 +352,7 @@ This lists every file that ends with a `1`. This command:
 
     ls /usr/bin/*.sh
 
-Lists every file in `/usr/bin` that ends in the characters `.sh`. And
+lists every file in `/usr/bin` that ends in the characters `.sh`. And
 this command:
 
     ls *4*1
@@ -558,7 +557,7 @@ for the word "cat", `less` will not find it. You need to go to the
 beginning of the file (by typing `g`) and then search. Now quit the less 
 program.
 
-Remember, the `man` program actually uses `less` internally and
+Pro-tip: The `man` program actually uses `less` internally and
 therefore uses the same commands, so you can search program manuals 
 using "/" as well!
 
@@ -658,7 +657,7 @@ Enter the following command:
     rm -r foo
 
 
-## BONUS: Finding files
+## Finding files
 
 The `find` program can be used to find files based on arbitrary
 criteria. Navigate to the `data` directory and enter the following
@@ -687,20 +686,16 @@ then we *pipe* them to `xargs`, which passes the list of items
 as arguments to `grep`.
 
 * * * * 
-**BONUS Exercises**
+**Exercises**
 
-Navigate to the `data` directory. Use one `find` command to perform each
-of the operations listed below (except number 2, which does not
-require a `find` command):
+Navigate to the `data` directory. Use one `find` command to perform #1 
+below. Numbers 2 and 3 do not require `find`:
 
-1.  Find any file whose name is "NOTES" within `data` and delete it 
+1.  Find any file whose name is "NOTES" within `data` and its subdirectories, and delete it 
 
 2.  Create a new directory called `cleaneddata`
 
-3.  Move all of the files within `data` to the `cleaneddata` directory
-
-4.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is ok for the file name to end in `.txt.txt`
+3.  Move all of the files within `data` and its subdirectories to the `cleaneddata` directory
 
 Hint: If you make a mistake and need to start over just do the
 following:
@@ -711,12 +706,6 @@ following:
 
 3.  Enter the command: `git checkout -- data` You should see that the
     data directory has reappeared in its original state
-
-**BONUS Challenge**
-
-Redo exercise 4, except rename only the files which do not already end
-in `.txt`. You will have to use the `man` command to figure out how to
-search for files which do not match a certain name. 
 
 * * * * 
 

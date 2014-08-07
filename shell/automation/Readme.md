@@ -253,7 +253,14 @@ of variables just enter:
 
     set
 
-or better yet, pipe that through `less` like this:
+You may recognize that the output includes some scripted portions 
+(as your admins have created 
+somethings specifically useful to your group), but the default "set" 
+listing on Linux servers is a _set_ of variables defined for 
+your shell session. 
+
+To work with the information, pipe it through 
+`less` like this:
 
     set | less
 
@@ -405,10 +412,11 @@ Our data is fixed so we'll write a standard header:
     echo '"Reported","Subject","Year/month of birth","Sex","CI type","Volume","Range","Discrimination"'
 
 If this script is intended to process a single file, we'll need a way
-to indicate which one.  The arguments listed on the command-line after a
-shell script is called are available as variables.  The first argument is `$1`,
+to indicate which one.  When you run a shell script, you can provide arguments 
+to the shell script that may be used as variables.  The first argument is used 
+by the shell script as `$1`,
 the second is `$2`, and so on.  Our script will be told which file to use 
-by the first argument and we'll save this file name in a variable that will
+from the first argument, and we'll save this filename in a variable to
 remind us what it's for.
 
     datafile=$1
@@ -447,7 +455,7 @@ Now let's try it for the `0213` file in `THOMAS`:
     cat THOMAS/0213
     ./data2csv THOMAS/0213
 
-## BONUS: Loops in Shell Scripts
+## Loops in Shell Scripts
 
 Let's add a loop so that we can make a single CSV file from many data
 files.  The general form of a loop is:
@@ -485,16 +493,15 @@ Jump to look at the [solutions to all the Automation exercises.](ReadmeSolns.md)
 
 
 ## Bonus topics:
+You may wish to look into the below topics/tools to become even more advanced in using the shell:
 
+
+[**ssh and scp**](http://software-carpentry.org/v4/shell/ssh.html)
+
+[**Permissions**](http://software-carpentry.org/v4/shell/perm.html)
 
 **du**
 
 **ln**
 
-**ssh and scp**
-
 **Regular Expressions**
-
-**Permissions**
-
-**Chaining commands together**
