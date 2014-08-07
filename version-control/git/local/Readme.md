@@ -444,9 +444,9 @@ $ git commit -m "Adding a first version of the files for mean."
 
 ### Exercise : Add an additional function for std() in stats.py and commit the changes.
 
-1. Write an additional test for std().  *(Ask us for a tip if necessary)*
-2. Improve std() to pass this test.
-3. Commit the changed files to your repo.
+1. Write a function for `std`.  To keep it simple we will just have it
+   `pass` for now.
+2. Commit the changed files to your repo.
 
 ## git merge : Merging Branches
 
