@@ -667,32 +667,6 @@ print beatle in beatles # is John one of the beatles? : TRUE
 print "Katy" not in beatles # this is also TRUE. 
 ```
 
-There is also a comparison to determine if two variables reference the same object. Two different objects can have the same value, so return true for an equality comparison:
-
-```python
-a = 1234
-b = 1234
-a == b # True, they have the same value
-a is b # False, are different objects
-```
-
-However, `is` should generally not be used for comparisons between integers. Python does treat some small valued integers differently, for example:
-
-```python
-a = 1
-b = 1
-a is b # True - special case for 1
-```
-
-A better use of `is` would be to compare objects like lists, for example the same list could be inserted into two different dictionaries. A comparison with `is` would reveal this:
-
-```python
-number_list = [1,2,4,8]
-dict1 = {"thing_widths": number_list}
-dict2 = {"item_costs": number_list}
-dict1["thing_widths"] is dict2["item_costs"]  # True - this is the same list
-```
-
 Conditionals (`if` statements) are also really easy to use in python. Take
 a look at the following example:
 
