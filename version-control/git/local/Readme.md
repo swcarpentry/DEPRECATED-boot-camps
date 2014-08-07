@@ -162,6 +162,7 @@ create one, then we'll learn the **git add** command.
 
 Step 1 : Create a file to add to your repository.
 
+    $ cd ~/simplestats/
     $ touch README.md
 
 Step 2 : Add some text to the readme.
