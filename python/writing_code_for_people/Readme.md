@@ -247,7 +247,7 @@ So what about the case where a is an integer and b is a float?
 ```
 In [39]: a = 1
 
-In [40]: b = 2.
+In [40]: b = 2.0
 
 In [41]: c = a + b
 
@@ -294,9 +294,9 @@ Here's why type is important. Dividing two integers returns an integer: this ope
 If everything was a float, the division is what you would expect.
 
 ```
-In [53]: a = 1.
+In [53]: a = 1.0
 
-In [54]: b = 2.
+In [54]: b = 2.0
 
 In [55]: c = a / b
 
@@ -658,22 +658,22 @@ Many equivalence test statements exist in Python that are similar in
 other languages:
 
 ```python
-i=1
-j=2
-i==j # i is equal to j : FALSE
-i<j  # i is less than j
-i<=j # i is less than or equal to j : TRUE
-i>j  # i is greater than j
-i>=j # i is greater than or equal to j : FALSE
-i!=j # i is not equal to j : TRUE
+i = 1
+j = 2
+i == j  # i is equal to j : False
+i < j   # i is less than j : True
+i <= j  # i is less than or equal to j : True
+i > j   # i is greater than j : False
+i >= j  # i is greater than or equal to j : False
+i != j  # i is not equal to j : True
 ```
 
 However, python has other equivalence test statements that are fairly
 unique to python. To check whether an object is contained in a list :
 
 ```python 
-beatle="John"
-beatles=["George", "Ringo", "John", "Paul"]
+beatle = "John"
+beatles = ["George", "Ringo", "John", "Paul"]
 print(beatle in beatles)     # is John one of the beatles? : TRUE
 print("Katy" not in beatles) # this is also TRUE. 
 ```
