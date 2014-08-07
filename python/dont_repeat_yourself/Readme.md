@@ -317,19 +317,20 @@ for line in f: # iterate through the text file, one line at a time (think of the
 print areacodes # Print the answer
 ```
 
-Example : Iteritems
--------------------
+* * * *
+**Short Exercise**
 
-Use the iteritems dictionary method in combination with a for loop to
-print the keys/values of the areacodes dictionary one to a line. In
-other words, the goal is to write a loop that prints:
+Use a loop to print the area codes and number of occurences in one line.
+Remember how we previously looped through a dictionary using `iteritems`.
+
+Your output should look like this:
 
     203 4
     800 4
     608 8
     773 3
 
-This example is a little tricky to figure out, but give it a shot.
+* * * *
 
 
 # Python Functions and Modules
