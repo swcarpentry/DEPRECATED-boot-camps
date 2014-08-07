@@ -14,7 +14,7 @@ You can run python commands in a handful of ways; you can create executable scri
 Lets give the built-in interpreter a spin just this once:
 
 ```
-frodgers@acibootcamp ~ $ python
+frodgers@acibootcamp ~ $ python27
 Enthought Python Distribution -- www.enthought.com
 Version: 7.3-2 (64-bit)
 
@@ -29,14 +29,14 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
+frodgers@acibootcamp ~ $ python27 ~/boot-camps/python/ipython/hello.py 
 hello world
 ```
 
 iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out:
 
 ```
-frodgers@acibootcamp ~ $ ipython
+frodgers@acibootcamp ~ $ ipython27
 Enthought Python Distribution -- www.enthought.com
 
 Python 2.7.3 |EPD 7.3-2 (64-bit)| (default, Apr 11 2012, 17:52:16) 
@@ -67,18 +67,18 @@ Click with the right mouse button over the window.
 Click with the right mouse button over the window and then "Paste".
 
 #### Mac OSX
-Press ⌘+V.
+Press <kbd>⌘</kbd>+<kbd>V</kbd>.
 
 #### Linux
 Click with the right mouse button over the window and then "Paste".
 
 ### History
 
-iPython has a history. If you press the up and down keys, you can access the history. Try it now.
+iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd> keys, you can access the history. Try it now.
 
 ### Tab Completion
 
-iPython also has tab completion of previous commands. Try typing "pr" and then hit the tab key. What if you type "pri" followed by tab?
+iPython also has tab completion of previous commands. Try typing "pr" and then hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
 
 ### Getting Help
 
