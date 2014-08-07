@@ -428,22 +428,21 @@ That's because the asterisk indicates which branch you're currently in.
 
 ### Exercise : Copy files into your repo
 
-Let's make sure we have a good copy of `stats.py` and `test_stats.py`.
+Let's make sure we have a good copy of `stats.py`.
 
 ```
 $ cd ~/simplestats
-$ cp ~/boot-camps/python/testing/stats.py .
-$ cp ~/boot-camps/python/testing/test_stats.py .
+$ cp ~/boot-camps/version-control/git/local/stats.py .
 ```
 
 Now let's add them to our repo, but in the current branch.
 
 ```
-$ git add *stats.py
+$ git add stats.py
 $ git commit -m "Adding a first version of the files for mean."
 ```
 
-### Exercise : Add an additional test for std() and commit the changes.
+### Exercise : Add an additional function for std() in stats.py and commit the changes.
 
 1. Write an additional test for std().  *(Ask us for a tip if necessary)*
 2. Improve std() to pass this test.
