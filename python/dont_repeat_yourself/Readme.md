@@ -229,15 +229,15 @@ a dictionary with some names and titles, and a list with a
 subset of the names we will treat differently.
 
 ```python
-  knights = {"Sir Belvedere":"the Wise", 
-           "Sir Lancelot":"the Brave", 
-           "Sir Galahad":"the Pure", 
-           "Sir Robin":"the Brave", 
-           "The Black Knight":"John Cleese"} # create a dict with names and titles
-  favorites = knights.keys()      # create a list of favorites with all the knights
-  favorites.remove("Sir Robin") # change favorites to include all but one.
-  print knights
-  print favorites
+knights = {"Sir Belvedere":"the Wise", 
+         "Sir Lancelot":"the Brave", 
+         "Sir Galahad":"the Pure", 
+         "Sir Robin":"the Brave", 
+         "The Black Knight":"John Cleese"} # create a dict with names and titles
+favorites = knights.keys()      # create a list of favorites with all the knights
+favorites.remove("Sir Robin") # change favorites to include all but one.
+print knights
+print favorites
 ```
 
 We can loop through the dict of names and titles and do one of 
@@ -245,13 +245,13 @@ two different things for each by putting an if statement inside
 the for loop:
 
 ```python
-  for name, title in knights.items(): 
-      string = name + ", "
-      if name in favorites:   # this returns True if any of the values in favorites match.
-          string = string + title
-      else:
-          string = string + title + ", but not quite so brave as Sir Lancelot." 
-      print string
+for name, title in knights.items(): 
+    string = name + ", "
+    if name in favorites:   # this returns True if any of the values in favorites match.
+        string = string + title
+    else:
+        string = string + title + ", but not quite so brave as Sir Lancelot." 
+    print string
 ```
 
 ###enumerate###
