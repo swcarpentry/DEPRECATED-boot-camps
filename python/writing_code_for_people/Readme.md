@@ -632,8 +632,7 @@ In [6]: set.intersection(first_bowl, second_bowl)
 Out[6]: set(['apple', 'peach'])
 ```
 
-You can check out more info using the help docs. We won't be returning to
-sets, but it's good for you to know they exist.
+You can check out more info using the help docs. The important thing here isn't that sets exist or what exactly they can do, but the main concept: different types of data can do different things easily. Choosing your data types well will both make your code clearer and simpler to write.
 
 ## Conditionals
 
