@@ -70,6 +70,17 @@ def mean(numlist):
     return total/length
 ```
 
+## Practice using git
+
+Make a branch in this repository for adding tests:
+
+    git checkout -b add_tests
+
+or
+
+    git branch add_tests
+    git checkout add_tests
+
 The simplest way to add a test is to add a function that calls this function
 with arguments for which we already know the answer.
 
@@ -94,6 +105,15 @@ You can try this test in iPython:
 In [1]: import stats as s
 In [2]: s.test_mean()
 ```
+
+<span>
+## Practice using git
+
+Commit this addition to the repository
+
+    git add stats.py
+    git commit -m "Added the first test"
+</span>
 
 Let's add one more test:
 
