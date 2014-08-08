@@ -106,9 +106,7 @@ In [1]: import stats as s
 In [2]: s.test_mean()
 ```
 
-**Practice using git**
-
-Commit this addition to the repository
+**Practice using git:** Commit this addition to the repository
 
     git add stats.py
     git commit -m "Added the first test"
@@ -129,6 +127,11 @@ In [5]: s.test_float_mean()
 ```
 
 The newest test fails, but we don't get much explanation of why it fails.
+
+**Practice using git:** Commit this change to the repository
+
+    git add stats.py
+    git commit -m "Added a floating point test, but if fails"
 
 # Separating Tests
 
@@ -170,14 +173,20 @@ and then run this from the command-line:
 
     python27 test_stats.py
 
-The same tests pass and fail, but still not much explanation.  We could start
-adding some lines to give us more information about each test and why it might
-fail, but that could get tedious as we write basically the same things over
-and over for each test.  Since we don't want to repeat ourselves, we might
-write some functions to keep track of the expected result, and report when it
-doesn't match the observed results.  However, that seems like something that
-many people need, so maybe someone else did that already, and we don't want to
-repeat others, either.
+The same tests pass and fail, but still not much explanation.
+
+**Practice using git:** Commit this change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Moved tests to a separate file to declutter module."
+
+We could start adding some lines to give us more information about each test
+and why it might fail, but that could get tedious as we write basically the
+same things over and over for each test.  Since we don't want to repeat
+ourselves, we might write some functions to keep track of the expected result,
+and report when it doesn't match the observed results.  However, that seems
+like something that many people need, so maybe someone else did that already,
+and we don't want to repeat others, either.
 
 # Nose: A Python Testing Framework
 
@@ -215,9 +224,15 @@ the tests and just use our existing `test_stat.py` file like this:
 
     nosetests test_stat.py
 
-We get a little more information, but still not that helpful.  However, nose
-itself defines number of convenient assert functions which can be used to test
-more specific aspects of the code base.
+We get a little more information, but still not that helpful.
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Introduced nose testing"
+
+However, nose itself defines number of convenient assert functions which can
+be used to test more specific aspects of the code base.
 
 ```python
 assert_equal(a, b)
@@ -239,6 +254,12 @@ Notice how much useful information you get from `nose` tests:
 * details about the failed test including the values that were not equal
 * the total number of tests that were completed
 * the time it took to run those tests
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Using nose tools to get even better output"
+
 
 ## What should I test?
 
@@ -262,6 +283,11 @@ be.  Here are some cases that we might try for the mean function
 * What is necessary to fix the failing tests?  Try using `assert_almost_equal`
   and make it pass the test.
 
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Added many more tests"
+
 # Planning for bigger mistakes
 
 What happens if someone tries to use this function with strings?
@@ -283,6 +309,30 @@ exception, by using the nose tool `assert_raises`:
 def test_string_mean():
     assert_raises(TypeError,mean,['hello','world'])
 ```
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Added a test for exceptions when passing in non-numeric results."
+
+We can provide some extra information to the user by catching the TypeError exception:
+
+```python
+def mean(numlist)
+def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
+    try:
+        total = sum(numlist)
+        length = len(numlist)
+    except TypeError:
+        raise TypeError("The list contains non-numeric elements")
+    return total/length
+```
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Added extra error message for TypeError."
+
 
 # When should we test?
 
