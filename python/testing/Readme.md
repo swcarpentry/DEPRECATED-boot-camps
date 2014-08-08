@@ -82,7 +82,7 @@ def mean(numlist):
     
 def test_mean():
     """Test some standard behavior of the mean() function."""
-    assert mean([2, 4]) == 3
+    assert(mean([2, 4]) == 3)
 ```
 
 The `assert` command will make your program stop if the condition is not true
@@ -94,6 +94,128 @@ You can try this test in iPython:
 In [1]: import stats as s
 In [2]: s.test_mean()
 ```
+
+Let's add one more test:
+
+```python
+def test_float_mean():
+    """Test some standard behavior when the result is not an integer."""
+    assert(mean([1,2])==1.5)
+```
+
+and try it with:
+
+```
+In [4]: reload(s)
+In [5]: s.test_float_mean()
+```
+
+The newest test fails, but we don't get much explanation of why it fails.
+
+# Separating Tests
+
+It is more common to place tests in a different file so that they don't
+clutter the module that does the real work.  Let's move our tests to a new
+file called `test_stats.py`.  Now, our `stats.py` file contains only:
+
+```python
+def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
+    total = sum(numlist)
+    length = len(numlist)
+    return total/length
+```
+
+and our `test_stats.py` file contains:
+
+```python
+from stats import mean
+
+def test_mean():
+    """Test some standard behavior of the mean() function."""
+    assert(mean([2, 4]) == 3)
+
+def test_float_mean():
+    """Test some standard behavior when the result is not an integer."""
+    assert(mean([1,2])==1.5)
+```
+
+To make it even easier to test, we can add some lines at the bottom of
+`test_stats.py` to run each of our tests:
+
+```python
+test_mean()
+test_float_mean()
+```
+
+and then run this from the command-line:
+
+    python27 test_stats.py
+
+The same tests pass and fail, but still not much explanation.  We could start
+adding some lines to give us more information about each test and why it might
+fail, but that could get tedious as we write basically the same things over
+and over for each test.  Since we don't want to repeat ourselves, or anyone
+else, we look to others for a solution.
+
+# Nose: A Python Testing Framework
+
+The testing framework we'll discuss today is called `nose`. However, there are
+several other testing frameworks available in most language. Most notably there
+is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
+inventing the testing framework. Google also provides a [test
+framework](http://code.google.com/p/googletest/) for C++ applications (note, there's
+also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).  There
+is at least one testing framework for R:
+[testthat](http://cran.r-project.org/web/packages/testthat/index.html).
+
+## Where do nose tests live?
+
+Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
+`test_`. Specifically, these satisfy the testMatch regular expression
+`[Tt]est[-_]`. (You can also teach `nose` to find tests by declaring them
+in the unittest.TestCase subclasses that you create in your code. You
+can also create test functions which are not unittest.TestCase
+subclasses if they are named with the configured testMatch regular
+expression.)
+
+## Nose Test Syntax
+
+To write a nose test, we use the same assertions as we've used so far.
+
+```python
+assert should_be_true()
+assert not should_not_be_true()
+```
+
+Therefore, we can remove the lines that call the tests and just use our existing `test_stat.py` file.
+
+    nosetests test_stat.py
+
+We get a little more information, but still not that helpful.  However, nose
+itself defines number of convenient assert functions which can be used to test
+more specific aspects of the code base.
+
+```python
+assert_equal(a, b)
+assert_almost_equal(a, b)
+assert_true(a)
+assert_false(a)
+assert_raises(exception, func, *args, **kwargs)
+assert_is_instance(a, b)
+# and many more!
+```
+
+## Short Exercise
+
+1. Change the two tests to use `assert_equal` and run with nosetests.
+2. Fix the `mean()` function to resolve the test
+
+Notice how much useful information you get from `nose` tests:
+* some .... to indicate progress
+* details about the failed test including the values that were not equal
+* the total number of tests that were completed
+* the time it took to run those tests
 
 ## What should I test?
 
@@ -107,15 +229,15 @@ be.  Here are some cases that we might try for the mean function
     * [-4, -2]
     * [-2, 2, 4]
 * floating point numbers:
-    * [1, 2]
     * [2.0, 4.0, 6.0]
-    * [2.5, 4.5, 6.5]
+    * [2.5, 4.5, 6.0]
 
 ## Short Exercise
 
 * Add tests for each of by adding either new functions or new lines to the
   existing function.  Note: some of them may fail!
-* What is necessary to fix the failing tests?
+* What is necessary to fix the failing tests?  Try using `assert_almost_equal`
+  and make it pass the test.
 
 # Planning for bigger mistakes
 
@@ -126,98 +248,19 @@ mean(['hello','world'])
 ```
 
 Some mistakes don't just give a wrong answer, but fail to even finish.  Python
-provides a mechanism to deal with this called **exceptions**.  Exceptions have
-a `try` block followed by a mechanism to deal with more violent failure:
-
-```python
-def mean(numlist):
-    try:
-        total = sum(numlist)
-        length = len(numlist)
-    except TypeError:
-        raise TypeError("The list contained non-numeric elements.")
-    except:
-        print "Something unknown happened with the list."
-    return float(total/length)
-```
+provides a mechanism to deal with this called **exceptions**.
 
 In this example, python automatically *raises* a TypeError exception when we
-try to take the sum of a string.  We can catch that TypeError and *raise* it
-again, adding the error message shown.
+try to take the sum of a string.
 
 In this case, we can add a test for the expected behavior: raising a TypeError
-exception, by catching that exception in our test.  Any other kind of failure
-will look like a failure.
+exception, by using the nose tool `assert_raises`:
 
 ```python
 def test_string_mean():
-    try:
-        mean(['hello','world!'])
-    except TypeError:
-        pass
+    assert_raises(TypeError,mean,['hello','world'])
 ```
 
-# Separating Tests
-
-It is more common to place tests in a different file so that they don't
-clutter the module that does the real work.  Let's move our tests to a new
-file called `test_stats.py`.  Now, our `stats.py` file contains only:
-
-```python
-def mean(numlist):
-    """Calculate the arithmetic mean of a list of numbers in numlist"""
-    try:
-        total = sum(numlist)
-        length = len(numlist)
-    except TypeError:
-        raise TypeError("The number list was not a list of numbers.")
-    except:
-        print "There was a problem evaluating the number list."
-    return float(total/length)
-```
-
-and our `test_stats.py` file contains:
-
-```python
-from stats import mean
-
-def test_mean():
-    """Test some standard behavior of the mean() function."""
-    assert mean([2, 4]) == 3
-    assert mean([2,4,6]) == 4
-    assert mean([2, 4, 6, 8]) == 5
-
-def test_negative_mean():
-    """Test standard behavior of the mean() function with negative numbers."""
-    assert mean([-4, -2]) == -3
-    assert mean([-2, 1, 4]) == 1
-
-def test_float_mean():
-    """Test standard behavior of the mean() function with floats numbers."""
-    assert mean([1, 2]) == 1.5
-    assert mean([2.0, 4.0, 6.0]) == 4.0
-    assert mean([2.5, 4.5, 6.5]) == 4.5
-
-def test_string_mean():
-    try:
-        mean(['hello','world!'])
-    except TypeError:
-        pass
-```
-
-To make it even easier to test, we can add some lines at the bottom of
-`test_stats.py` to run each of our tests:
-
-```python
-test_mean()
-test_negative_mean()
-test_float_mean()
-test_string_mean()
-```
-
-and then run this from the command-line:
-
-    python27 test_stats.py
 
 # When should we test?
 
@@ -256,80 +299,6 @@ the percent of their functions that they feel confident are
 comprehensively tested.
 
 * * * * *
-
-# Nose: A Python Testing Framework
-
-The testing framework we'll discuss today is called `nose`. However, there are
-several other testing frameworks available in most language. Most notably there
-is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
-inventing the testing framework. Google also provides a [test
-framework](http://code.google.com/p/googletest/) for C++ applications (note, there's
-also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).  There
-is at least one testing framework for R:
-[testthat](http://cran.r-project.org/web/packages/testthat/index.html).
-
-## Where do nose tests live?
-
-Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
-`test_`. Specifically, these satisfy the testMatch regular expression
-`[Tt]est[-_]`. (You can also teach `nose` to find tests by declaring them
-in the unittest.TestCase subclasses that you create in your code. You
-can also create test functions which are not unittest.TestCase
-subclasses if they are named with the configured testMatch regular
-expression.)
-
-## Nose Test Syntax
-
-To write a nose test, we make assertions.
-
-```python
-assert should_be_true()
-assert not should_not_be_true()
-```
-
-Additionally, nose itself defines number of convenient assert functions which can
-be used to test more specific aspects of the code base.
-
-```python
-from nose.tools import *
-
-assert_equal(a, b)
-assert_almost_equal(a, b)
-assert_true(a)
-assert_false(a)
-assert_raises(exception, func, *args, **kwargs)
-assert_is_instance(a, b)
-# and many more!
-```
-
-## Exercise: Writing nose tests for mean()
-
-Let's convert the existing tests to nose tests.  In each case of:
-
-    assert(mean[...] == x)
-
-replace it with
-
-    assert_equal(mean[...],x)
-
-and remove the lines at the end that call each test.  Also add a floating point
-test with a more interesting result, for example:
-
-    assert_equal(mean[2.5,4.5,6.0],4.3333)
-
-You can run these test with:
-
-    nosetests test_stats.py
-
-Notice how much useful information you get from `nose` tests:
-* some .... to indicate progress
-* details about the failed test including the values that were not equal
-* the total number of tests that were completed
-* the time it took to run those tests
-
-## Short Exercise
-
-Convert the last floating point test to `assert_almost_equal` and make it pass the test.
 
 
 # Test Driven Development
