@@ -71,7 +71,7 @@ def mean(numlist):
 ```
 
 The simplest way to add a test is to add a function that calls this function
-with arguments for which we already know the answer:
+with arguments for which we already know the answer.
 
 ```python
 def mean(numlist):
@@ -155,8 +155,11 @@ and then run this from the command-line:
 The same tests pass and fail, but still not much explanation.  We could start
 adding some lines to give us more information about each test and why it might
 fail, but that could get tedious as we write basically the same things over
-and over for each test.  Since we don't want to repeat ourselves, or anyone
-else, we look to others for a solution.
+and over for each test.  Since we don't want to repeat ourselves, we might
+write some functions to keep track of the expected result, and report when it
+doesn't match the observed results.  However, that seems like something that
+many people need, so maybe someone else did that already, and we don't want to
+repeat others, either.
 
 # Nose: A Python Testing Framework
 
@@ -188,7 +191,9 @@ assert should_be_true()
 assert not should_not_be_true()
 ```
 
-Therefore, we can remove the lines that call the tests and just use our existing `test_stat.py` file.
+Since the `nose` package finds the tests and runs them automatically, we don't
+need to include lines that run the tests.  We can remove the lines that call
+the tests and just use our existing `test_stat.py` file like this:
 
     nosetests test_stat.py
 
@@ -261,7 +266,6 @@ def test_string_mean():
     assert_raises(TypeError,mean,['hello','world'])
 ```
 
-
 # When should we test?
 
 The three right answers are:
@@ -299,7 +303,6 @@ the percent of their functions that they feel confident are
 comprehensively tested.
 
 * * * * *
-
 
 # Test Driven Development
 
