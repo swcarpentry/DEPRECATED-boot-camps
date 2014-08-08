@@ -531,32 +531,6 @@ the following functions along with their corresponding tests:
    * mode
    * variance
 
-# Advanced Exercise
-
-**The Problem:** In 2D or 3D, we have two points (p1 and p2) which
-define a line segment. Additionally there exists experimental data which
-can be anywhere in the domain. Find the data point which is closest to
-the line segment.
-
-In the `close_line.py` file there are four different implementations
-which all solve this problem. [You can read more about them
-here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
-there are no tests! Please write from scratch a `test_close_line.py`
-file which tests the closest\_data\_to\_line() functions.
-
-*Hint:* you can use one implementation function to test another. Below
-is some sample data to help you get started.
-
-![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/evo_sol1.png)
-> -
-
-```python
-import numpy as np
-
-p1 = np.array([0.0, 0.0])
-p2 = np.array([1.0, 1.0])
-data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
-```
 
 
 # How are tests written?
@@ -660,4 +634,31 @@ teardown()
 setup()
 test3()
 teardown()
+```
+
+# Advanced Exercise
+
+**The Problem:** In 2D or 3D, we have two points (p1 and p2) which
+define a line segment. Additionally there exists experimental data which
+can be anywhere in the domain. Find the data point which is closest to
+the line segment.
+
+In the `close_line.py` file there are four different implementations
+which all solve this problem. [You can read more about them
+here.](http://inscight.org/2012/03/31/evolution_of_a_solution/) However,
+there are no tests! Please write from scratch a `test_close_line.py`
+file which tests the closest\_data\_to\_line() functions.
+
+*Hint:* you can use one implementation function to test another. Below
+is some sample data to help you get started.
+
+![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/evo_sol1.png)
+> -
+
+```python
+import numpy as np
+
+p1 = np.array([0.0, 0.0])
+p2 = np.array([1.0, 1.0])
+data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
 ```
