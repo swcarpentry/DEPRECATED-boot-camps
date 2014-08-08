@@ -64,6 +64,7 @@ It has a file `stats.py` with the following averaging function:
 
 ```python
 def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
     total = sum(numlist)
     length = len(numlist)
     return total/length
@@ -108,7 +109,7 @@ be.  Here are some cases that we might try for the mean function
 * floating point numbers:
     * [1, 2]
     * [2.0, 4.0, 6.0]
-    * [2.5, 4.5, 6.0]
+    * [2.5, 4.5, 6.5]
 
 ## Short Exercise
 
@@ -145,7 +146,8 @@ try to take the sum of a string.  We can catch that TypeError and *raise* it
 again, adding the error message shown.
 
 In this case, we can add a test for the expected behavior: raising a TypeError
-exception, by catching that exception in our test:
+exception, by catching that exception in our test.  Any other kind of failure
+will look like a failure.
 
 ```python
 def test_string_mean():
@@ -163,6 +165,7 @@ file called `test_stats.py`.  Now, our `stats.py` file contains only:
 
 ```python
 def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
     try:
         total = sum(numlist)
         length = len(numlist)
@@ -181,19 +184,19 @@ from stats import mean
 def test_mean():
     """Test some standard behavior of the mean() function."""
     assert mean([2, 4]) == 3
-    assert_mean([2,4,6]) == 4
-    assert_mean([2, 4, 6, 8]) == 5
+    assert mean([2,4,6]) == 4
+    assert mean([2, 4, 6, 8]) == 5
 
 def test_negative_mean():
     """Test standard behavior of the mean() function with negative numbers."""
     assert mean([-4, -2]) == -3
-    assert_mean([-2, 1, 4]) == 1
+    assert mean([-2, 1, 4]) == 1
 
 def test_float_mean():
     """Test standard behavior of the mean() function with floats numbers."""
     assert mean([1, 2]) == 1.5
     assert mean([2.0, 4.0, 6.0]) == 4.0
-    assert_mean([2.5, 4.5, 6.0]) == 6.5
+    assert mean([2.5, 4.5, 6.5]) == 4.5
 
 def test_string_mean():
     try:
@@ -202,7 +205,18 @@ def test_string_mean():
         pass
 ```
 
+To make it even easier to test, we can add some lines at the bottom to run each of our tests:
 
+```python
+test_mean()
+test_negative_mean()
+test_float_mean()
+test_string_mean()
+```
+
+and then run this from the command-line:
+
+    python27 test_stats.py
 
 # When should we test?
 
