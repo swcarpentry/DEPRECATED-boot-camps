@@ -106,14 +106,12 @@ In [1]: import stats as s
 In [2]: s.test_mean()
 ```
 
-<span>
-## Practice using git
+**Practice using git**
 
 Commit this addition to the repository
 
     git add stats.py
     git commit -m "Added the first test"
-</span>
 
 Let's add one more test:
 
