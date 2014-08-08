@@ -390,10 +390,10 @@ style was put forth most strongly by [Kent Beck in
 
 ## A TDD Example
 
-Say you want to write a std() function which computes the [Standard 
-Deviation](http://en.wikipedia.org/wiki/Standard_deviation). You
-would - of course - start by writing the test, possibly testing a single set of 
-numbers:
+Say you want to write a std() function which computes the
+[Standard Deviation](http://en.wikipedia.org/wiki/Standard_deviation). You
+would - of course - start by writing the test, possibly testing a single set
+of numbers, by adding this to `test_stats.py`:
 
 ```python
 from nose.tools import assert_equal, assert_almost_equal
@@ -411,6 +411,11 @@ def std(vals):
     # you snarky so-and-so
     return 1.0
 ```
+
+**Practice using git:** Since this works, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added a test for std() and then a function that passes the test."
 
 And that is it, right?! Well, not quite. This implementation fails for
 most other values. Adding tests we see that:
@@ -442,6 +447,11 @@ def std(vals):
         return 0.0
     return vals[-1] / 2.0
 ```
+
+**Practice using git:** Since this works again, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added moore tests for std() and updated function so that is passes all tests."
 
 However, this function still fails whenever vals has more than two elements or
 the first element is not zero. Time for more tests!
@@ -487,6 +497,11 @@ def std(vals):
         var = var + (val - mu)**2
     return (var / n)**0.5
 ```
+
+**Practice using git:** Since this works again, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added more tests for std() and updated function so that is passes all tests."
 
 Here it becomes very tempting to take an extended coffee break or
 possibly a power lunch. But then you remember those pesky infinite values!
@@ -547,6 +562,12 @@ def std(vals):
         var = var + (val - mu)**2
     return (var / n)**0.5
 ```
+
+**Practice using git:** Since this works again, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added tests for infinity in std() and updated function so that is passes all tests."
+
 
 # Quality Assurance Exercise
 
