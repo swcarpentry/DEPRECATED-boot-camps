@@ -56,86 +56,283 @@ random numbers, eg Monte Carlo methods.
 
 # Where are tests?
 
-Say we have an averaging function:
+Let's return the the simplestats module that we began earlier:
+
+    cd ~/simplestats
+
+It has a file `stats.py` with the following averaging function:
 
 ```python
 def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
     total = sum(numlist)
     length = len(numlist)
     return total/length
 ```
 
-Tests could be implemented as runtime **exceptions in the function**:
+## Practice using git
+
+Make a branch in this repository for adding tests:
+
+    git checkout -b add_tests
+
+or
+
+    git branch add_tests
+    git checkout add_tests
+
+The simplest way to add a test is to add a function that calls this function
+with arguments for which we already know the answer.
 
 ```python
 def mean(numlist):
-    try:
-        total = sum(numlist)
-        length = len(numlist)
-    except TypeError:
-        raise TypeError("The list contained non-numeric elements.")
-    except:
-        print "Something unknown happened with the list."
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
+    total = sum(numlist)
+    length = len(numlist)
+    return total/length
+    
+def test_mean():
+    """Test some standard behavior of the mean() function."""
+    assert(mean([2, 4]) == 3)
+```
+
+The `assert` command will make your program stop if the condition is not true
+and is common when writing tests.
+
+You can try this test in iPython:
+
+```
+In [1]: import stats as s
+In [2]: s.test_mean()
+```
+
+**Practice using git:** Commit this addition to the repository
+
+    git add stats.py
+    git commit -m "Added the first test"
+
+Let's add one more test:
+
+```python
+def test_float_mean():
+    """Test some standard behavior when the result is not an integer."""
+    assert(mean([1,2])==1.5)
+```
+
+and try it with:
+
+```
+In [4]: reload(s)
+In [5]: s.test_float_mean()
+```
+
+The newest test fails, but we don't get much explanation of why it fails.
+
+**Practice using git:** Commit this change to the repository
+
+    git add stats.py
+    git commit -m "Added a floating point test, but if fails"
+
+# Separating Tests
+
+It is more common to place tests in a different file so that they don't
+clutter the module that does the real work.  Let's move our tests to a new
+file called `test_stats.py`.  Now, our `stats.py` file contains only:
+
+```python
+def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
+    total = sum(numlist)
+    length = len(numlist)
     return total/length
 ```
 
-Sometimes tests are functions alongside the function definitions
-they are testing.
+and our `test_stats.py` file contains:
 
 ```python
-def mean(numlist):
-    try:
-        total = sum(numlist)
-        length = len(numlist)
-    except TypeError:
-        raise TypeError("The number list was not a list of numbers.")
-    except:
-        print "There was a problem evaluating the number list."
-    return total/length
-
+from stats import mean
 
 def test_mean():
-    assert mean([0, 0, 0, 0]) == 0
-    assert mean([0, 200]) == 100
-    assert mean([0, -200]) == -100
-    assert mean([0]) == 0
+    """Test some standard behavior of the mean() function."""
+    assert(mean([2, 4]) == 3)
 
-
-def test_floating_mean():
-    assert mean([1, 2]) == 1.5
+def test_float_mean():
+    """Test some standard behavior when the result is not an integer."""
+    assert(mean([1,2])==1.5)
 ```
 
-Sometimes tests live in an executable independent of the main executable.
-
-**Implementation File:** `mean.py`
+To make it even easier to test, we can add some lines at the bottom of
+`test_stats.py` to run each of our tests:
 
 ```python
+test_mean()
+test_float_mean()
+```
+
+and then run this from the command-line:
+
+    python27 test_stats.py
+
+The same tests pass and fail, but still not much explanation.
+
+**Practice using git:** Commit this change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Moved tests to a separate file to declutter module."
+
+We could start adding some lines to give us more information about each test
+and why it might fail, but that could get tedious as we write basically the
+same things over and over for each test.  Since we don't want to repeat
+ourselves, we might write some functions to keep track of the expected result,
+and report when it doesn't match the observed results.  However, that seems
+like something that many people need, so maybe someone else did that already,
+and we don't want to repeat others, either.
+
+# Nose: A Python Testing Framework
+
+The testing framework we'll discuss today is called `nose`. However, there are
+several other testing frameworks available in most language. Most notably there
+is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
+inventing the testing framework. Google also provides a [test
+framework](http://code.google.com/p/googletest/) for C++ applications (note, there's
+also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).  There
+is at least one testing framework for R:
+[testthat](http://cran.r-project.org/web/packages/testthat/index.html).
+
+## Where do nose tests live?
+
+Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
+`test_`. Specifically, these satisfy the testMatch regular expression
+`[Tt]est[-_]`. (You can also teach `nose` to find tests by declaring them
+in the unittest.TestCase subclasses that you create in your code. You
+can also create test functions which are not unittest.TestCase
+subclasses if they are named with the configured testMatch regular
+expression.)
+
+## Nose Test Syntax
+
+To write a nose test, we use the same assertions as we've used so far.
+
+```python
+assert should_be_true()
+assert not should_not_be_true()
+```
+
+Since the `nose` package finds the tests and runs them automatically, we don't
+need to include lines that run the tests.  We can remove the lines that call
+the tests and just use our existing `test_stat.py` file like this:
+
+    nosetests test_stat.py
+
+We get a little more information, but still not that helpful.
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Introduced nose testing"
+
+However, nose itself defines number of convenient assert functions which can
+be used to test more specific aspects of the code base.
+
+```python
+assert_equal(a, b)
+assert_almost_equal(a, b)
+assert_true(a)
+assert_false(a)
+assert_raises(exception, func, *args, **kwargs)
+assert_is_instance(a, b)
+# and many more!
+```
+
+## Short Exercise
+
+1. Change the two tests to use `assert_equal` and run with nosetests.
+2. Fix the `mean()` function to resolve the test
+
+Notice how much useful information you get from `nose` tests:
+* some .... to indicate progress
+* details about the failed test including the values that were not equal
+* the total number of tests that were completed
+* the time it took to run those tests
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Using nose tools to get even better output"
+
+
+## What should I test?
+
+One of the challenges of testing is to determine what the *edge cases* might
+be.  Here are some cases that we might try for the mean function
+
+* different lengths of lists:
+    * [2, 4, 6]
+    * [2, 4, 6, 8]
+* negative numbers:
+    * [-4, -2]
+    * [-2, 2, 4]
+* floating point numbers:
+    * [2.0, 4.0, 6.0]
+    * [2.5, 4.5, 6.0]
+
+## Short Exercise
+
+* Add tests for each of by adding either new functions or new lines to the
+  existing function.  Note: some of them may fail!
+* What is necessary to fix the failing tests?  Try using `assert_almost_equal`
+  and make it pass the test.
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Added many more tests"
+
+# Planning for bigger mistakes
+
+What happens if someone tries to use this function with strings?
+
+```python
+mean(['hello','world'])
+```
+
+Some mistakes don't just give a wrong answer, but fail to even finish.  Python
+provides a mechanism to deal with this called **exceptions**.
+
+In this example, python automatically *raises* a TypeError exception when we
+try to take the sum of a string.
+
+In this case, we can add a test for the expected behavior: raising a TypeError
+exception, by using the nose tool `assert_raises`:
+
+```python
+def test_string_mean():
+    assert_raises(TypeError,mean,['hello','world'])
+```
+
+**Practice using git:** Commit this change to the repository
+
+    git add test_stats.py
+    git commit -m "Added a test for exceptions when passing in non-numeric results."
+
+We can provide some extra information to the user by catching the TypeError exception:
+
+```python
+def mean(numlist)
 def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
     try:
         total = sum(numlist)
         length = len(numlist)
     except TypeError:
-        raise TypeError("The number list was not a list of numbers.")
-    except:
-        print "There was a problem evaluating the number list."
+        raise TypeError("The list contains non-numeric elements")
     return total/length
 ```
+**Practice using git:** Commit this change to the repository
 
-**Test File:** `test_mean.py`
+    git add test_stats.py
+    git commit -m "Added extra error message for TypeError."
 
-```python
-from mean import mean
-
-def test_mean():
-    assert mean([0, 0, 0, 0]) == 0
-    assert mean([0, 200]) == 100
-    assert mean([0, -200]) == -100
-    assert mean([0]) == 0
-
-
-def test_floating_mean():
-    assert mean([1, 2]) == 1.5
-```
 
 # When should we test?
 
@@ -172,6 +369,230 @@ as a whole.
 Professionals often test their code, and take pride in test coverage,
 the percent of their functions that they feel confident are
 comprehensively tested.
+
+* * * * *
+
+# Test Driven Development
+
+Test driven development (TDD) is a philosophy whereby the developer
+creates code by **writing the tests first**. That is to say you write the
+tests *before* writing the associated code!
+
+This is an iterative process whereby you write a test then write the
+minimum amount code to make the test pass. If a new feature is needed,
+another test is written and the code is expanded to meet this new use
+case. This continues until the code does what is needed.
+
+TDD operates on the YAGNI principle (You Ain't Gonna Need It). People
+who diligently follow TDD swear by its effectiveness. This development
+style was put forth most strongly by [Kent Beck in
+2002](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530).
+
+## A TDD Example
+
+Say you want to write a std() function which computes the
+[Standard Deviation](http://en.wikipedia.org/wiki/Standard_deviation). You
+would - of course - start by writing the test, possibly testing a single set
+of numbers, by adding this to `test_stats.py`:
+
+```python
+from nose.tools import assert_equal, assert_almost_equal
+
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+```
+
+You would *then* go ahead and write the actual function:
+
+```python
+def std(vals):
+    # you snarky so-and-so
+    return 1.0
+```
+
+**Practice using git:** Since this works, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added a test for std() and then a function that passes the test."
+
+And that is it, right?! Well, not quite. This implementation fails for
+most other values. Adding tests we see that:
+
+```python
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+
+def test_std2():
+    obs = std([])
+    exp = 0.0
+    assert_equal(obs, exp)
+
+def test_std3():
+    obs = std([0.0, 4.0])
+    exp = 2.0
+    assert_equal(obs, exp)
+```
+
+These extra tests now require that we bother to implement at least a slightly 
+more reasonable function:
+
+```python
+def std(vals):
+    # a little better
+    if len(vals) == 0:
+        return 0.0
+    return vals[-1] / 2.0
+```
+
+**Practice using git:** Since this works again, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added moore tests for std() and updated function so that is passes all tests."
+
+However, this function still fails whenever vals has more than two elements or
+the first element is not zero. Time for more tests!
+
+```python
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+
+def test_std2():
+    obs = std([])
+    exp = 0.0
+    assert_equal(obs, exp)
+
+def test_std3():
+    obs = std([0.0, 4.0])
+    exp = 2.0
+    assert_equal(obs, exp)
+
+def test_std4():
+    obs = std([1.0, 3.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+
+def test_std5():
+    obs = std([1.0, 1.0, 1.0])
+    exp = 0.0
+    assert_equal(obs, exp)
+```
+
+At this point, we had better go ahead and try do the right thing...
+
+```python
+def std(vals):
+    # finally, some math
+    n = len(vals)
+    if n == 0:
+        return 0.0
+    mu = sum(vals) / n
+    var = 0.0
+    for val in vals:
+        var = var + (val - mu)**2
+    return (var / n)**0.5
+```
+
+**Practice using git:** Since this works again, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added more tests for std() and updated function so that is passes all tests."
+
+Here it becomes very tempting to take an extended coffee break or
+possibly a power lunch. But then you remember those pesky infinite values!
+Perhaps the right thing to do here is to just be undefined.  Infinity in 
+Python may be represented by any literal float greater than or equal to 1e309.
+
+```python
+def test_std1():
+    obs = std([0.0, 2.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+
+def test_std2():
+    obs = std([])
+    exp = 0.0
+    assert_equal(obs, exp)
+
+def test_std3():
+    obs = std([0.0, 4.0])
+    exp = 2.0
+    assert_equal(obs, exp)
+
+def test_std4():
+    obs = std([1.0, 3.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+
+def test_std5():
+    obs = std([1.0, 1.0, 1.0])
+    exp = 0.0
+    assert_equal(obs, exp)
+
+def test_std6():
+    obs = std([1e500])
+    exp = NotImplemented
+    assert_equal(obs, exp)
+
+def test_std7():
+    obs = std([0.0, 1e4242])
+    exp = NotImplemented
+    assert_equal(obs, exp)
+```
+
+This means that it is time to add the appropriate case to the function
+itself:
+
+```python
+def std(vals):
+    # sequence and you shall find
+    n = len(vals)
+    if n == 0:
+        return 0.0
+    mu = sum(vals) / n
+    if mu == 1e500:
+        return NotImplemented
+    var = 0.0
+    for val in vals:
+        var = var + (val - mu)**2
+    return (var / n)**0.5
+```
+
+**Practice using git:** Since this works again, commit the change to the repository
+
+    git add stats.py test_stats.py
+    git commit -m "Added tests for infinity in std() and updated function so that is passes all tests."
+
+
+# Quality Assurance Exercise
+
+Can you think of other tests to make for the std() function? I promise there
+are at least two.
+<!---
+	1. How about std(string) or std(array)?
+	2. How about std(None)?
+--->
+
+Implement one new test in test_stats.py, run nosetests, and if it fails, implement
+a more robust function for that case.
+
+And thus - finally - we have a robust function together with working
+tests!
+
+# Further Statistics Tests
+
+Try your new test-driven development chops by implementing one or more of
+the following functions along with their corresponding tests:
+   * median
+   * mode
+   * variance
+
+
 
 # How are tests written?
 
@@ -275,276 +696,6 @@ setup()
 test3()
 teardown()
 ```
-
-* * * * *
-
-# Nose: A Python Testing Framework
-
-The testing framework we'll discuss today is called nose. However, there are
-several other testing frameworks available in most language. Most notably there
-is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
-inventing the testing framework. Google also provides a [test
-framework](http://code.google.com/p/googletest/) for C++ applications (note, there's
-also [CTest](http://cmake.org/Wiki/CMake/Testing_With_CTest)).  There
-is at least one testing framework for R:
-[testthat](http://cran.r-project.org/web/packages/testthat/index.html).
-
-## Where do nose tests live?
-
-Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
-`test_`. Specifically, these satisfy the testMatch regular expression
-`[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
-in the unittest.TestCase subclasses chat you create in your code. You
-can also create test functions which are not unittest.TestCase
-subclasses if they are named with the configured testMatch regular
-expression.)
-
-## Nose Test Syntax
-
-To write a nose test, we make assertions.
-
-```python
-assert should_be_true()
-assert not should_not_be_true()
-```
-
-Additionally, nose itself defines number of assert functions which can
-be used to test more specific aspects of the code base.
-
-```python
-from nose.tools import *
-
-assert_equal(a, b)
-assert_almost_equal(a, b)
-assert_true(a)
-assert_false(a)
-assert_raises(exception, func, *args, **kwargs)
-assert_is_instance(a, b)
-# and many more!
-```
-
-Moreover, numpy offers similar testing functions for arrays:
-
-```python
-from numpy.testing import *
-
-assert_array_equal(a, b)
-assert_array_almost_equal(a, b)
-# etc.
-```
-
-## Exercise: Writing tests for mean()
-
-There are a few tests for the mean() function that we listed in this
-lesson. What are some tests that should fail? Add at least three test
-cases to this set. Edit the `test_mean.py` file which tests the mean()
-function in `mean.py`.
-
-*Hint:* Think about what form your input could take and what you should
-do to handle it. Also, think about the type of the elements in the list.
-What should be done if you pass a list of integers? What if you pass a
-list of strings?
-
-**Example**:
-
-    nosetests test_mean.py
-
-# Test Driven Development
-
-Test driven development (TDD) is a philosophy whereby the developer
-creates code by **writing the tests first**. That is to say you write the
-tests *before* writing the associated code!
-
-This is an iterative process whereby you write a test then write the
-minimum amount code to make the test pass. If a new feature is needed,
-another test is written and the code is expanded to meet this new use
-case. This continues until the code does what is needed.
-
-TDD operates on the YAGNI principle (You Ain't Gonna Need It). People
-who diligently follow TDD swear by its effectiveness. This development
-style was put forth most strongly by [Kent Beck in
-2002](http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530).
-
-## A TDD Example
-
-Say you want to write a std() function which computes the [Standard 
-Deviation](http://en.wikipedia.org/wiki/Standard_deviation). You
-would - of course - start by writing the test, possibly testing a single set of 
-numbers:
-
-```python
-from nose.tools import assert_equal, assert_almost_equal
-
-def test_std1():
-    obs = std([0.0, 2.0])
-    exp = 1.0
-    assert_equal(obs, exp)
-```
-
-You would *then* go ahead and write the actual function:
-
-```python
-def std(vals):
-    # you snarky so-and-so
-    return 1.0
-```
-
-And that is it, right?! Well, not quite. This implementation fails for
-most other values. Adding tests we see that:
-
-```python
-def test_std1():
-    obs = std([0.0, 2.0])
-    exp = 1.0
-    assert_equal(obs, exp)
-
-def test_std2():
-    obs = std([])
-    exp = 0.0
-    assert_equal(obs, exp)
-
-def test_std3():
-    obs = std([0.0, 4.0])
-    exp = 2.0
-    assert_equal(obs, exp)
-```
-
-These extra tests now require that we bother to implement at least a slightly 
-more reasonable function:
-
-```python
-def std(vals):
-    # a little better
-    if len(vals) == 0:
-        return 0.0
-    return vals[-1] / 2.0
-```
-
-However, this function still fails whenever vals has more than two elements or
-the first element is not zero. Time for more tests!
-
-```python
-def test_std1():
-    obs = std([0.0, 2.0])
-    exp = 1.0
-    assert_equal(obs, exp)
-
-def test_std2():
-    obs = std([])
-    exp = 0.0
-    assert_equal(obs, exp)
-
-def test_std3():
-    obs = std([0.0, 4.0])
-    exp = 2.0
-    assert_equal(obs, exp)
-
-def test_std4():
-    obs = std([1.0, 3.0])
-    exp = 1.0
-    assert_equal(obs, exp)
-
-def test_std5():
-    obs = std([1.0, 1.0, 1.0])
-    exp = 0.0
-    assert_equal(obs, exp)
-```
-
-At this point, we had better go ahead and try do the right thing...
-
-```python
-def std(vals):
-    # finally, some math
-    n = len(vals)
-    if n == 0:
-        return 0.0
-    mu = sum(vals) / n
-    var = 0.0
-    for val in vals:
-        var = var + (val - mu)**2
-    return (var / n)**0.5
-```
-
-Here it becomes very tempting to take an extended coffee break or
-possibly a power lunch. But then you remember those pesky infinite values!
-Perhaps the right thing to do here is to just be undefined.  Infinity in 
-Python may be represented by any literal float greater than or equal to 1e309.
-
-```python
-def test_std1():
-    obs = std([0.0, 2.0])
-    exp = 1.0
-    assert_equal(obs, exp)
-
-def test_std2():
-    obs = std([])
-    exp = 0.0
-    assert_equal(obs, exp)
-
-def test_std3():
-    obs = std([0.0, 4.0])
-    exp = 2.0
-    assert_equal(obs, exp)
-
-def test_std4():
-    obs = std([1.0, 3.0])
-    exp = 1.0
-    assert_equal(obs, exp)
-
-def test_std5():
-    obs = std([1.0, 1.0, 1.0])
-    exp = 0.0
-    assert_equal(obs, exp)
-
-def test_std6():
-    obs = std([1e500])
-    exp = NotImplemented
-    assert_equal(obs, exp)
-
-def test_std7():
-    obs = std([0.0, 1e4242])
-    exp = NotImplemented
-    assert_equal(obs, exp)
-```
-
-This means that it is time to add the appropriate case to the function
-itself:
-
-```python
-def std(vals):
-    # sequence and you shall find
-    n = len(vals)
-    if n == 0:
-        return 0.0
-    mu = sum(vals) / n
-    if mu == 1e500:
-        return NotImplemented
-    var = 0.0
-    for val in vals:
-        var = var + (val - mu)**2
-    return (var / n)**0.5
-```
-
-# Quality Assurance Exercise
-
-Can you think of other tests to make for the std() function? I promise there
-are at least two.
-<!---
-	1. How about std(string) or std(array)?
-	2. How about std(None)?
---->
-
-Implement one new test in test_stats.py, run nosetests, and if it fails, implement
-a more robust function for that case.
-
-And thus - finally - we have a robust function together with working
-tests!
-
-# Further Statistics Tests
-
-The `stats.py` and `test_stats.py` files contain stubs for other simple statistics 
-functions: variance, median, and mode.  Try your new test-driven development chops
-by implementing one or more of these functions along with their corresponding tests.
 
 # Advanced Exercise
 
