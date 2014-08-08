@@ -205,7 +205,8 @@ def test_string_mean():
         pass
 ```
 
-To make it even easier to test, we can add some lines at the bottom to run each of our tests:
+To make it even easier to test, we can add some lines at the bottom of
+`test_stats.py` to run each of our tests:
 
 ```python
 test_mean()
@@ -254,114 +255,11 @@ Professionals often test their code, and take pride in test coverage,
 the percent of their functions that they feel confident are
 comprehensively tested.
 
-# How are tests written?
-
-The type of tests that are written is determined by the testing
-framework you adopt. Don't worry, there are a lot of choices.
-
-## Types of Tests
-
-**Exceptions:** Exceptions can be thought of as type of runtime test.
-They alert the user to exceptional behavior in the code. Often,
-exceptions are related to functions that depend on input that is unknown
-at compile time. Checks that occur within the code to handle exceptional
-behavior that results from this type of input are called Exceptions.
-
-**Unit Tests:** Unit tests are a type of test which test the fundamental
-units of a program's functionality. Often, this is on the class or
-function level of detail. However what defines a *code unit* is not
-formally defined.
-
-To test functions and classes, the interfaces (API) - rather than the
-implementation - should be tested. Treating the implementation as a
-black box, we can probe the expected behavior with boundary cases for
-the inputs.
-
-**System Tests:** System level tests are intended to test the code as a
-whole. As opposed to unit tests, system tests ask for the behavior as a
-whole. This sort of testing involves comparison with other validated
-codes, analytical solutions, etc.
-
-**Regression Tests:** A regression test ensures that new code does
-change anything. If you change the default answer, for example, or add a
-new question, you'll need to make sure that missing entries are still
-found and fixed.
-
-**Integration Tests:** Integration tests query the ability of the code
-to integrate well with the system configuration and third party
-libraries and modules. This type of test is essential for codes that
-depend on libraries which might be updated independently of your code or
-when your code might be used by a number of users who may have various
-versions of libraries.
-
-**Test Suites:** Putting a series of unit tests into a collection of
-modules creates a test suite. Typically the suite as a whole is
-executed (rather than each test individually) when verifying that the
-code base still functions after changes have been made.
-
-# Elements of a Test
-
-**Behavior:** The behavior you want to test. For example, you might want
-to test the fun() function.
-
-**Expected Result:** This might be a single number, a range of numbers,
-a new fully defined object, a system state, an exception, etc. When we
-run the fun() function, we expect to generate some fun. If we don't
-generate any fun, the fun() function should fail its test.
-Alternatively, if it does create some fun, the fun() function should
-pass this test. The expected result should known *a priori*. For
-numerical functions, this is result is ideally analytically determined
-even if the function being tested isn't.
-
-**Assertions:** Require that some conditional be true. If the
-conditional is false, the test fails.
-
-**Fixtures:** Sometimes you have to do some legwork to create the
-objects that are necessary to run one or many tests. These objects are
-called fixtures as they are not really part of the test themselves but
-rather involve getting the computer into the appropriate state.
-
-For example, since fun varies a lot between people, the fun() function
-is a method of the Person class. In order to check the fun function,
-then, we need to create an appropriate Person object on which to run
-fun().
-
-**Setup and teardown:** Creating fixtures is often done in a call to a
-setup function. Deleting them and other cleanup is done in a teardown
-function.
-
-**The Big Picture:** Putting all this together, the testing algorithm is
-often:
-
-```python
-setup()
-test()
-teardown()
-```
-
-But, sometimes it's the case that your tests change the fixtures. If so,
-it's better for the setup() and teardown() functions to occur on either
-side of each test. In that case, the testing algorithm should be:
-
-```python
-setup()
-test1()
-teardown()
-
-setup()
-test2()
-teardown()
-
-setup()
-test3()
-teardown()
-```
-
 * * * * *
 
 # Nose: A Python Testing Framework
 
-The testing framework we'll discuss today is called nose. However, there are
+The testing framework we'll discuss today is called `nose`. However, there are
 several other testing frameworks available in most language. Most notably there
 is [JUnit](http://www.junit.org/) in Java which can arguably attributed to
 inventing the testing framework. Google also provides a [test
@@ -374,8 +272,8 @@ is at least one testing framework for R:
 
 Nose tests are files that begin with `Test-`, `Test_`, `test-`, or
 `test_`. Specifically, these satisfy the testMatch regular expression
-`[Tt]est[-_]`. (You can also teach nose to find tests by declaring them
-in the unittest.TestCase subclasses chat you create in your code. You
+`[Tt]est[-_]`. (You can also teach `nose` to find tests by declaring them
+in the unittest.TestCase subclasses that you create in your code. You
 can also create test functions which are not unittest.TestCase
 subclasses if they are named with the configured testMatch regular
 expression.)
@@ -389,7 +287,7 @@ assert should_be_true()
 assert not should_not_be_true()
 ```
 
-Additionally, nose itself defines number of assert functions which can
+Additionally, nose itself defines number of convenient assert functions which can
 be used to test more specific aspects of the code base.
 
 ```python
@@ -404,31 +302,35 @@ assert_is_instance(a, b)
 # and many more!
 ```
 
-Moreover, numpy offers similar testing functions for arrays:
+## Exercise: Writing nose tests for mean()
 
-```python
-from numpy.testing import *
+Let's convert the existing tests to nose tests.  In each case of:
 
-assert_array_equal(a, b)
-assert_array_almost_equal(a, b)
-# etc.
-```
+    assert(mean[...] == x)
 
-## Exercise: Writing tests for mean()
+replace it with
 
-There are a few tests for the mean() function that we listed in this
-lesson. What are some tests that should fail? Add at least three test
-cases to this set. Edit the `test_mean.py` file which tests the mean()
-function in `mean.py`.
+    assert_equal(mean[...],x)
 
-*Hint:* Think about what form your input could take and what you should
-do to handle it. Also, think about the type of the elements in the list.
-What should be done if you pass a list of integers? What if you pass a
-list of strings?
+and remove the lines at the end that call each test.  Also add a floating point
+test with a more interesting result, for example:
 
-**Example**:
+    assert_equal(mean[2.5,4.5,6.0],4.3333)
 
-    nosetests test_mean.py
+You can run these test with:
+
+    nosetests test_stats.py
+
+Notice how much useful information you get from `nose` tests:
+* some .... to indicate progress
+* details about the failed test including the values that were not equal
+* the total number of tests that were completed
+* the time it took to run those tests
+
+## Short Exercise
+
+Convert the last floating point test to `assert_almost_equal` and make it pass the test.
+
 
 # Test Driven Development
 
@@ -652,4 +554,108 @@ import numpy as np
 p1 = np.array([0.0, 0.0])
 p2 = np.array([1.0, 1.0])
 data = np.array([[0.3, 0.6], [0.25, 0.5], [1.0, 0.75]])
+```
+
+
+# How are tests written?
+
+The type of tests that are written is determined by the testing
+framework you adopt. Don't worry, there are a lot of choices.
+
+## Types of Tests
+
+**Exceptions:** Exceptions can be thought of as type of runtime test.
+They alert the user to exceptional behavior in the code. Often,
+exceptions are related to functions that depend on input that is unknown
+at compile time. Checks that occur within the code to handle exceptional
+behavior that results from this type of input are called Exceptions.
+
+**Unit Tests:** Unit tests are a type of test which test the fundamental
+units of a program's functionality. Often, this is on the class or
+function level of detail. However what defines a *code unit* is not
+formally defined.
+
+To test functions and classes, the interfaces (API) - rather than the
+implementation - should be tested. Treating the implementation as a
+black box, we can probe the expected behavior with boundary cases for
+the inputs.
+
+**System Tests:** System level tests are intended to test the code as a
+whole. As opposed to unit tests, system tests ask for the behavior as a
+whole. This sort of testing involves comparison with other validated
+codes, analytical solutions, etc.
+
+**Regression Tests:** A regression test ensures that new code does
+change anything. If you change the default answer, for example, or add a
+new question, you'll need to make sure that missing entries are still
+found and fixed.
+
+**Integration Tests:** Integration tests query the ability of the code
+to integrate well with the system configuration and third party
+libraries and modules. This type of test is essential for codes that
+depend on libraries which might be updated independently of your code or
+when your code might be used by a number of users who may have various
+versions of libraries.
+
+**Test Suites:** Putting a series of unit tests into a collection of
+modules creates a test suite. Typically the suite as a whole is
+executed (rather than each test individually) when verifying that the
+code base still functions after changes have been made.
+
+# Elements of a Test
+
+**Behavior:** The behavior you want to test. For example, you might want
+to test the fun() function.
+
+**Expected Result:** This might be a single number, a range of numbers,
+a new fully defined object, a system state, an exception, etc. When we
+run the fun() function, we expect to generate some fun. If we don't
+generate any fun, the fun() function should fail its test.
+Alternatively, if it does create some fun, the fun() function should
+pass this test. The expected result should known *a priori*. For
+numerical functions, this is result is ideally analytically determined
+even if the function being tested isn't.
+
+**Assertions:** Require that some conditional be true. If the
+conditional is false, the test fails.
+
+**Fixtures:** Sometimes you have to do some legwork to create the
+objects that are necessary to run one or many tests. These objects are
+called fixtures as they are not really part of the test themselves but
+rather involve getting the computer into the appropriate state.
+
+For example, since fun varies a lot between people, the fun() function
+is a method of the Person class. In order to check the fun function,
+then, we need to create an appropriate Person object on which to run
+fun().
+
+**Setup and teardown:** Creating fixtures is often done in a call to a
+setup function. Deleting them and other cleanup is done in a teardown
+function.
+
+**The Big Picture:** Putting all this together, the testing algorithm is
+often:
+
+```python
+setup()
+test()
+teardown()
+```
+
+But, sometimes it's the case that your tests change the fixtures. If so,
+it's better for the setup() and teardown() functions to occur on either
+side of each test. In that case, the testing algorithm should be:
+
+```python
+setup()
+test1()
+teardown()
+
+setup()
+test2()
+teardown()
+
+setup()
+test3()
+teardown()
 ```
