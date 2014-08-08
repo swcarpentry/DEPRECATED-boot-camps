@@ -56,7 +56,11 @@ random numbers, eg Monte Carlo methods.
 
 # Where are tests?
 
-Say we have an averaging function:
+Let's return the the simplestats module that we began earlier:
+
+    cd ~/simplestats
+
+It has a file `stats.py` with the following averaging function:
 
 ```python
 def mean(numlist):
@@ -65,7 +69,64 @@ def mean(numlist):
     return total/length
 ```
 
-Tests could be implemented as runtime **exceptions in the function**:
+The simplest way to add a test is to add a function that calls this function
+with arguments for which we already know the answer:
+
+```python
+def mean(numlist):
+    """Calculate the arithmetic mean of a list of numbers in numlist"""
+    total = sum(numlist)
+    length = len(numlist)
+    return total/length
+    
+def test_mean():
+    """Test some standard behavior of the mean() function."""
+    assert mean([2, 4]) == 3
+```
+
+The `assert` command will make your program stop if the condition is not true
+and is common when writing tests.
+
+You can try this test in iPython:
+
+```
+In [1]: import stats as s
+In [2]: s.test_mean()
+```
+
+## What should I test?
+
+One of the challenges of testing is to determine what the *edge cases* might
+be.  Here are some cases that we might try for the mean function
+
+* different lengths of lists:
+    * [2, 4, 6]
+    * [2, 4, 6, 8]
+* negative numbers:
+    * [-4, -2]
+    * [-2, 2, 4]
+* floating point numbers:
+    * [1, 2]
+    * [2.0, 4.0, 6.0]
+    * [2.5, 4.5, 6.0]
+
+## Short Exercise
+
+* Add tests for each of by adding either new functions or new lines to the
+  existing function.  Note: some of them may fail!
+* What is necessary to fix the failing tests?
+
+# Planning for bigger mistakes
+
+What happens if someone tries to use this function with strings?
+
+```python
+mean(['hello','world'])
+```
+
+Some mistakes don't just give a wrong answer, but fail to even finish.  Python
+provides a mechanism to deal with this called **exceptions**.  Exceptions have
+a `try` block followed by a mechanism to deal with more violent failure:
 
 ```python
 def mean(numlist):
@@ -76,11 +137,29 @@ def mean(numlist):
         raise TypeError("The list contained non-numeric elements.")
     except:
         print "Something unknown happened with the list."
-    return total/length
+    return float(total/length)
 ```
 
-Sometimes tests are functions alongside the function definitions
-they are testing.
+In this example, python automatically *raises* a TypeError exception when we
+try to take the sum of a string.  We can catch that TypeError and *raise* it
+again, adding the error message shown.
+
+In this case, we can add a test for the expected behavior: raising a TypeError
+exception, by catching that exception in our test:
+
+```python
+def test_string_mean():
+    try:
+        mean(['hello','world!'])
+    except TypeError:
+        pass
+```
+
+# Separating Tests
+
+It is more common to place tests in a different file so that they don't
+clutter the module that does the real work.  Let's move our tests to a new
+file called `test_stats.py`.  Now, our `stats.py` file contains only:
 
 ```python
 def mean(numlist):
@@ -91,51 +170,39 @@ def mean(numlist):
         raise TypeError("The number list was not a list of numbers.")
     except:
         print "There was a problem evaluating the number list."
-    return total/length
-
-
-def test_mean():
-    assert mean([0, 0, 0, 0]) == 0
-    assert mean([0, 200]) == 100
-    assert mean([0, -200]) == -100
-    assert mean([0]) == 0
-
-
-def test_floating_mean():
-    assert mean([1, 2]) == 1.5
+    return float(total/length)
 ```
 
-Sometimes tests live in an executable independent of the main executable.
-
-**Implementation File:** `mean.py`
+and our `test_stats.py` file contains:
 
 ```python
-def mean(numlist):
+from stats import mean
+
+def test_mean():
+    """Test some standard behavior of the mean() function."""
+    assert mean([2, 4]) == 3
+    assert_mean([2,4,6]) == 4
+    assert_mean([2, 4, 6, 8]) == 5
+
+def test_negative_mean():
+    """Test standard behavior of the mean() function with negative numbers."""
+    assert mean([-4, -2]) == -3
+    assert_mean([-2, 1, 4]) == 1
+
+def test_float_mean():
+    """Test standard behavior of the mean() function with floats numbers."""
+    assert mean([1, 2]) == 1.5
+    assert mean([2.0, 4.0, 6.0]) == 4.0
+    assert_mean([2.5, 4.5, 6.0]) == 6.5
+
+def test_string_mean():
     try:
-        total = sum(numlist)
-        length = len(numlist)
+        mean(['hello','world!'])
     except TypeError:
-        raise TypeError("The number list was not a list of numbers.")
-    except:
-        print "There was a problem evaluating the number list."
-    return total/length
+        pass
 ```
 
-**Test File:** `test_mean.py`
 
-```python
-from mean import mean
-
-def test_mean():
-    assert mean([0, 0, 0, 0]) == 0
-    assert mean([0, 200]) == 100
-    assert mean([0, -200]) == -100
-    assert mean([0]) == 0
-
-
-def test_floating_mean():
-    assert mean([1, 2]) == 1.5
-```
 
 # When should we test?
 
