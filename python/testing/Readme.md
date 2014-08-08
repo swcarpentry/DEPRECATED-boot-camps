@@ -525,9 +525,11 @@ tests!
 
 # Further Statistics Tests
 
-The `stats.py` and `test_stats.py` files contain stubs for other simple statistics 
-functions: variance, median, and mode.  Try your new test-driven development chops
-by implementing one or more of these functions along with their corresponding tests.
+Try your new test-driven development chops by implementing one or more of
+the following functions along with their corresponding tests:
+   * median
+   * mode
+   * variance
 
 # Advanced Exercise
 
