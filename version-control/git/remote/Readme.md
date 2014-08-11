@@ -27,15 +27,18 @@ etc.) provides :
 -   commit triggered mailing lists
 -   other service hooks (twitter, etc.)
 
-**NOTE** Public repos have public licenses **by default**. If you don't
-want to share (in the most liberal sense) your stuff with the world, pay
-girths money for private repos, or host your own.
+**NOTE** Public repos have public licenses **by default**. If you don't want
+to share (in the most liberal sense) your stuff with the world, you can make a
+private repo.  While that often costs money on Github, they now
+have [education discounts](https://github.com/blog/1775-github-goes-to-school).
 
 ## GitHub password 
 
 Setting up GitHub requires a GitHub user name and password.  Please take a
-moment to [create a free GitHub account](https://github.com/signup/free) (if you
-want to start paying, you can add that to your account some other day).
+moment to [create a free GitHub account](https://github.com/signup/free) (if
+you want an
+[education discount](https://education.github.com/discount_requests/new) or to
+[start paying](https://github.com/pricing), you can add that to your account some other day).
 
 ## git remote : Steps for Forking a Repository
 
@@ -62,8 +65,14 @@ Step 2 : Clone it. From your terminal :
 
     $ git clone https://github.com/YOU/simplestats.git
     $ cd simplestats
+    $ git remote -v
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
 
-Step 3 : 
+Your local repository is now connected to the remote repository using the
+alias `origin`.
+
+Step 3 : Add a connection to the common repository :
 
     $ git remote add upstream https://github.com/UW-Madison-ACI/simplestats.git
     $ git remote -v
@@ -72,7 +81,9 @@ Step 3 :
     upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
     upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
 
-All repositories that are clones begin with a remote called origin.
+All repositories that are clones begin with a remote called `origin`.  The most
+common convention is clone from your own fork (`origin`) and add a remote to the
+common repository as `upstream`.
 
 ## git fetch : Fetching the contents of a remote
 
@@ -82,21 +93,63 @@ want your master branch to track updates in the original simplestats
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
 
+    $ git fetch upstream
+
 The fetch command alone merely pulls down information recent changes
-from the original master (upstream) repository. By itself, the fetch
+from the original master (`upstream`) repository. By itself, the fetch
 command does not change your local working copy. To update your local
-working copy to include recent changes in the original (upstream)
+working copy to include recent changes in the original (`upstream`)
 repository, it is necessary to also merge.
 
-## git merge : Merging the contents of a remote
+## git diff : Examine the differences
 
-To incorporate upstream changes from the original master repository (in
-this case UW-Madison-ACI/simplestats) into your local working copy, you
-must both fetch and merge. The process of merging may result in
-conflicts, so pay attention. This is where version control is both at
-its most powerful and its most complicated.
+Now that you have fetched the `upstream` repo, you can look at the differences
+between that and your local copy.  To see a summary of which files have
+changed and by how much:
 
-### Exercise : Fetch and Merge the Contents of Our GitHub Repository
+    $ git diff --stat upstream/master
+
+To explore the actual changes:
+
+    $ git diff upstream/master
+
+## git rebase vs git merge: Insert changes that have happened on the remote
+
+To incorporate upstream changes from the original master repository (in this
+case UW-Madison-ACI/simplestats) into your local working copy, you must do
+more than simply `fetch` the changes.  After fetching the changes, your local
+repo know about the upstream changes, but hasn't combined them with any local
+changes you may have already made.  There are two mechanisms for doing this,
+with slightly different behavior.
+
+The role of git is to keep track of little bundles of change (each commit).
+In theory, it doesn't matter in what order these changes are applied, it
+should end up with the same version of the files.  In practice, however, you
+may want to take some control of this.  In particular, when you are combining
+upstream changes into a branch where you are making local changes, it is
+almost always better to **insert** all the upstream changes before your local
+changes, using `rebase`.  This takes each of your commits, since the point at
+which the two branches began to differ, and replays them at the end of the
+upstream branch.  If there are conflicts, you will be notified and asked to
+review them manually.
+
+By contract, `merge` takes each commit from the upstream branch, since the
+point at which the two branches began to differ, and replays them at the end
+of your branch.  Again, if there are conflicts, you will be notified and asked
+to review them manually.
+
+There are lots of details to consider when choosing between `rebase` and
+`merge`, but the simplest guidelines are:
+
+* **rebase** when incorporating changes from an authoritative upstream
+  repository
+* **merge** when incorporating changes from a feature branch or collabortor
+
+The process of rebasing/merging may result in conflicts, so pay
+attention. This is where version control is both at its most powerful and its
+most complicated.
+
+### Exercise : Fetch and Rebase the Contents of Our GitHub Repository
 
 This exercise is meant to represent the general work flow you should use to
 update your fork. Let's say that you come in and sit down in the morning, you've
@@ -112,7 +165,7 @@ Step 1 : Fetch the recent remote repository history
 Step 2 : Merge the master branch
 
     $ git checkout master
-    $ git merge upstream/master
+    $ git rebase upstream/master
 
 Step 3 : Check out what happened by browsing the directory.
 
@@ -125,7 +178,7 @@ than fetching and merging as it automates the branch matching.
 Specifically, to perform the same task as we did in the previous
 exercise, the pull command would be :
 
-    $ git pull upstream
+    $ git pull origin
     Already up-to-date.
 
 When there have been remote changes, the pull will apply those changes
@@ -216,13 +269,16 @@ Step 1 : Start a new feature branch, named median (you could do this in single
 Step 2 : Modify the stats.py module to add the median function (and maybe a test
 if you're feeling up to it!)
 
-Step 3 : Update your remote
+Step 3 : Commit your changes
 
     $ git add stats.py
     $ git commit -m "I added a median function!"
+
+Step 4 : Update your remote
+
     $ git push origin median
 
-Step 4 : Issue a Pull Request
+Step 5 : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
@@ -240,11 +296,12 @@ Step 1 : Review the pull request
 
 Step 2 : Merge the pull request using the merge button
 
-Step 3 : Update your local repository
+Step 3 : Update your local repository.  At this point, all the changes exist
+**only** on the remote repository.
 
     $ git checkout master 
     $ git fetch origin
-    $ git merge origin/master
+    $ git rebase origin/master
 
 For Beta:
 
@@ -252,7 +309,7 @@ Step 5 : Update your local repository
 
     $ git checkout master 
     $ git fetch alpha
-    $ git merge alpha/master
+    $ git rebase alpha/master
 
 ### Exercise : Swap Roles
 
@@ -273,13 +330,16 @@ function.
 
 Now continue the exercise as was done previously with roles swapped.
 
-Step 3 : Update your remote
+Step 3 : Commit your changes
 
     $ git add test_stats.py
     $ git commit -m "I added tests to the median function!"
+
+Step 4 : Update your remote
+
     $ git push origin median-tests
 
-Step 4 : Issue a Pull Request
+Step 5 : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
@@ -301,7 +361,7 @@ Step 3 : Update your local repository
 
     $ git checkout master 
     $ git fetch origin
-    $ git merge origin/master
+    $ git rebase origin/master
 
 For Alpha:
 
@@ -309,9 +369,9 @@ Step 5 : Update your local repository
 
     $ git checkout master 
     $ git fetch beta
-    $ git merge beta/master
+    $ git rebase beta/master
 
-## git merge : Conflicts
+## git rebase/merge : Conflicts
 
 This is the trickiest part of version control, so let's take it very carefully.
 
@@ -344,23 +404,40 @@ one of its strengths vs. centralized version control systems like SVN).
 Step 1 : Experience the Conflict
 
     $ git fetch upstream
-    $ git merge upstream/master
+    $ git rebase upstream/master
+    First, rewinding head to replay your work on top of it...
+    Applying: added a conflicting change
+    Using index info to reconstruct a base tree...
+    M	stats.py
+    Falling back to patching base and 3-way merge...
     Auto-merging stats.py
     CONFLICT (content): Merge conflict in stats.py
-    Automatic merge failed; fix conflicts and then commit the result.
+    Failed to merge in the changes.
+    Patch failed at 0001 added a conflicting change
+    The copy of the patch that failed is found in:
+       /home/YOU/simplestats/.git/rebase-apply/patch
+
+    When you have resolved this problem, run "git rebase --continue".
+    If you prefer to skip this patch, run "git rebase --skip" instead.
+    To check out the original branch and stop rebasing, run "git rebase --abort".
 
 ## Resolving Conflicts
 
 Now what?
 
-Git has paused the merge. You can see this with the ```git status`` command.
+Git has paused the rebase. You can see this with the ```git status`` command.
 
-    # On branch master
+    # HEAD detached at c23f1e4
+    # You are currently rebasing branch 'test_change2' on 'c23f1e4'.
+    #   (fix conflicts and then run "git rebase --continue")
+    #   (use "git rebase --skip" to skip this patch)
+    #   (use "git rebase --abort" to check out the original branch)
+    #
     # Unmerged paths:
-    #   (use "git add/rm <file>..." as appropriate to mark resolution)
+    #   (use "git reset HEAD <file>..." to unstage)
+    #   (use "git add <file>..." to mark resolution)
     #
-    #       unmerged:      stats.py
-    #
+    #	both modified:      stats.py
     no changes added to commit (use "git add" and/or "git commit -a")
 
 If you open your stats.py file, you'll notice that git has added some strange
@@ -379,14 +456,13 @@ PI's ```median``` placeholder below it.
 ### Exercise : Resolve a Conflict
 
 Step 1 : Resolve the conflict by editing your stats.py file. It should
-look run as expected and should look exactly like your version, but with the
+run as expected and should look exactly like your version, but with the
 PI's changes included.
 
 Step 2 : Add the updated version and commit
 
     $ git add stats.py
-    $ git commit -m "merged from upstream"
-    $ git push origin master
+    $ git rebase --continue
 
 ## A GitHub Tour
 
