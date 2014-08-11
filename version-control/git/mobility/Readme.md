@@ -21,7 +21,7 @@ a server on campus (e.g., server.uni.edu), you can host your repository there
 (and it's private!).
 
 For the purposes of this exercise, all of the repositories will be represented
-by different folders on your ACI user space in order to provide you with the
+by different folders in your Wiasman account in order to provide you with the
 "flavor" of how such a workflow would work. For example, we'll use ~/work to
 represent your work station. You should assume that ~/work is effectively your
 work station's home directory.
@@ -46,7 +46,7 @@ directory.
     $ git init --bare myrepo.git
 
 You'll see a new directory in ~/server named myrepo.git. If you ```cd``` into
-myrepo.git and give an ```ls``` command, you'll the contents of the .git
+myrepo.git and give an ```ls``` command, you'll see the contents of the .git
 directory you saw earlier in the [Use Version Control](../local/Readme.md)
 section.
 
@@ -74,8 +74,8 @@ that's "always right". You can get a more detailed answer
 
 ## Setting Up the "Work" Repository
 
-Ok, so now we have an (empty) bare repository. Let's clone it on our work
-computer! You'll find the repository is named properly.
+Ok, so now we have an (empty) bare repository. Let's clone it on our "work
+computer"! You'll find the repository is named properly.
 
     $ cd ~/work
     $ git clone ~/server/myrepo.git
@@ -103,8 +103,8 @@ set up to get some work done! Go ahead an add a file and commit it.
 ## Setting Up the "Home" Repository
 
 Ok, you've spent a long day at work. Maybe you still have a little more to do,
-but you'd really rather go home and cook dinner first. Let's set up that home
-repository so you can pick up exactly where you left off.
+but you'd really rather go home and cook dinner first. Let's set up that "home
+repository" so you can pick up exactly where you left off.
 
     $ cd ~/home
     $ git clone ~/server/myrepo.git
@@ -127,7 +127,7 @@ your changes.
 
 At this point, you're fully set up to work in a best-practice, version-control
 work flow. Experience shows that its best to work in branches to make sure the
-master branch stays up-to-date with your server's (upstream's) master
+master branch stays up-to-date with your server's (origin's) master
 branch. This stuff may not be intuitive when you're first starting out, though,
 so just play around and get used to the general work flow for now. You'll get
 better at it over time.
