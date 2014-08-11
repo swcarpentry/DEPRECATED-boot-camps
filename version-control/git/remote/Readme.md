@@ -12,8 +12,8 @@ GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
 documenting code. Your home institution may have a repository hosting
 system of it's own. To find out, ask your system administrator.  GitHub,
-much like other forge hosting services (
-[launchpad](https://launchpad.net), [bitbucket](https://bitbucket.org),
+much like other forge hosting services ([launchpad](https://launchpad.net), 
+[bitbucket](https://bitbucket.org),
 [googlecode](http://code.google.com), [sourceforge](http://sourceforge.net)
 etc.) provides :
 
