@@ -67,9 +67,9 @@ Day 4
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 1:00-2:00    | [Collaborate](version-control/git/remote/Readme.md) | Paul Wilson |
+| 1:00-2:00    | [Make Incremental Changes - Remote](version-control/git/mobility/Readme.md) | Paul Wilson |
 | 2:00-2:15    | Break                                   |      |
-| 2:15-3:15    | GitHub Repos                            | Paul Wilson |
+| 2:15-3:15    | [Collaborate](version-control/git/remote/Readme.md) | Paul Wilson |
 | 3:15-3:30    | Break					 | 	|
 | 3:30-4:30    | Guided Next Steps and Discussion	 | all	|
 
