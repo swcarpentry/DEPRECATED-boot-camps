@@ -21,7 +21,7 @@ a server on campus (e.g., server.uni.edu), you can host your repository there
 (and it's private!).
 
 For the purposes of this exercise, all of the repositories will be represented
-by different folders in your Wiasman account in order to provide you with the
+by different folders in your Waisman account in order to provide you with the
 "flavor" of how such a workflow would work. For example, we'll use ~/work to
 represent your work station. You should assume that ~/work is effectively your
 work station's home directory.
