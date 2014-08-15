@@ -43,9 +43,8 @@ Day 1
 | 12:30-1:30   | Lunch                                   |              |
 | 1:30-2:30    | [Write Code for People](python/writing_code_for_people/Readme.md) | Paul Wilson |
 | 2:30-2:45    | Break                                   |              |
-| 10:45-11:00  | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md) | Paul Wilson |
-| 2:30-2:45    | Break                                   |              |
-| 2:45-4:00    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Karl Broman |
+| 2:45-4:00    | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md) | Paul Wilson |
+| 4:00-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Karl Broman |
 
 Day 2
 =======
