@@ -7,7 +7,7 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 # Motivation
 
-See [slides](motivation.pdf).
+See [motivation.pdf](motivation.pdf).
 
 ## git config : Controls the behavior of git
 
