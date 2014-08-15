@@ -73,7 +73,7 @@ Go ahead an add a file and commit it,
     $ git push origin report
 
 Note that if you're working on your own repository's master branch, that last
-command would look like ```$ git push origin master```.
+command would look like ```git push origin master```.
 
 ### Setting Up the "Home" Repository
 
