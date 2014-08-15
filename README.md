@@ -52,7 +52,7 @@ Day 2
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 9:00-9:45    | [Don't Repeat Others (cont.)](python/dont_repeat_yourself/Readme.md)| Paul Wilson |
+| 9:00-9:45    | Don't Repeat Others			 | Paul Wilson  |
 | 9:45-10:45   | Make Incremental Changes II             | Karl Broman  |
 | 10:45-11:00  | Break					 | 		|
 | 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
