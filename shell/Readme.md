@@ -13,7 +13,7 @@ with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
 Use a browser to open the tutorial on github, located at:
-    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-08-04-Davidson
+    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-08-25
 
 Click on the directory named `shell`.
 
@@ -29,7 +29,8 @@ most important reasons are that:
     probably have to learn it eventually 
 
 2.  The shell is a really powerful way of interacting with your
-    computer. GUIs and the shell are complementary - by knowing both
+    computer. GUIs (clickable window interfaces) and the shell are 
+    complementary - by knowing both
     you will greatly expand the range of tasks you can accomplish with
     your computer. You will also be able to perform many tasks more
     efficiently.
@@ -37,14 +38,16 @@ most important reasons are that:
 The shell is just a program and there are many different shell
 programs that have been developed. The most common shell (and the one
 we will use) is called the Bourne-Again SHell (bash). Even if bash is
-not the default shell, it is usually installed on most systems and can be
-started by typing `bash` in the terminal. Most commands, especially a
+not the default shell, it is usually installed on most systems unix-based 
+systems (Mac or Linux operating systems), but Windows users can use something 
+like Git Bash. Most commands, especially a
 lot of the basic ones, work across the various shells but some things may 
-be different. I recommend sticking with bash and learning it well.
+be different. We recommend sticking with bash and learning it well.
 ([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
-To open a terminal, just single click on the "Terminal" icon on the
-Desktop.
+To open a terminal on a Mac or Linux computer, just single click on the 
+"Terminal" icon on the Desktop (or in Applications). For Windows, open 
+the Git Bash program you installed for the bootcamp.
 
 ## The Example: Manipulating Experimental Data Files
 
@@ -53,7 +56,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b 2014-08-04-Davidson /home/labuser04/boot-camps
+    git clone -b 2014-08-25 <repo location>
 
 This command will grab all of the data needed for this workshop from
 a local repository that has been copied from our central GitHub repository. 
@@ -67,38 +70,36 @@ the terminal. Try the command:
     echo Hello, World
 
 Then press enter. You should see the text "Hello, World" printed back
-to you as "standard output". The echo command is useful for printing from a shell script,
-for displaying variables, and for generating known values to pass
-to other programs.
+to you as "standard output". The echo command is useful for printing from 
+a shell script, for displaying variables, and for generating known values 
+to pass to other programs.
 
-# Navigating the file system
+# 1. Navigating the file system
 
-Let's learn how to move around the file system using command line
-programs. This is really easy to do using a GUI (just click on
+Let's learn how to move around your file system using command line
+programs. This is really easy to do using a GUI (you just click on
 things). Once you learn the basic commands, you'll see that it is
 really easy to do in the shell too. 
 
 First we have to know where we are. The program `pwd` (print working
 directory) tells you where you are sitting in the directory tree. The
-command `ls` will list the files in files in the current
+command `ls` will list the files and other directories in the current
 directory. Directories are often called "folders" because of how they
-are represented in GUIs. Directories are just organizational groupings of files. They
-can contain files or other directories.
+are represented in GUIs. Directories are just organizational groupings 
+of files. They can contain files or other directories.
 
 Whenever you start up a terminal, you will start in a special
 directory called the *home* directory. Every user has their own home
-directory where they have full access to do whatever they want. In
-this case, the `pwd` command tells us that we are in the
-`/home/<username>` directory, where <username> is the name you used to
-login in.  This is the home directory for your user. You can always
+directory where they have full access to do whatever they want. This 
+is the home directory for your user. You can always
 find out your user name by entering the command `whoami`.
 
 ## File Types
 
-When you enter the `ls` command lists the contents of the current
-directory. There are several items in the home directory, notice that
-they are all colored blue. This tells us that all of these items are
-directories as opposed to files.
+When you enter the `ls` command, you'll get back a list of contents of 
+the current directory. There are several items in the home directory, 
+notice that they are all colored blue. These directories and files 
+should be generally familiar to you.
 
 Lets create an empty file using the `touch` command. Enter the
 command:
@@ -106,19 +107,17 @@ command:
     touch testfile
 
 Then list the contents of the directory again. You should see that a
-new entry, called `testfile`, exists. It is colored white meaning that
-it is a file, as opposed to a directory. The `touch` command just
-creates an empty file. 
+new entry, called `testfile`, exists.
 
-Some terminals will not color the directory entries in this very
-convenient way. In those terminals, use `ls -F` instead of `ls`. The
+Some terminals will not color the directory entries (though yours might, 
+already). In those terminals, use `ls -F` instead of `ls`. The
 `-F` argument modifies the results so that a slash is placed at the
 end of directories. If the file is *executable* meaning that it can be
 run like a program, then a star will be placed at the end of of the
 file name.
 
 You can also use the command `ls -l` to see whether items in a
-directory are files or directories. `ls -l` gives a lot more
+directory are files or directories. `ls -l` gives a lot of other
 information too, such as the size of the file and information about
 the owner. If the entry is a directory, then the first letter will be
 a "d". The fifth column shows you the size of the entries in
