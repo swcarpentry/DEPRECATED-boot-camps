@@ -7,50 +7,7 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 # Motivation
 
-[![Final.doc comic by Jorge Cham](pics/phd101212s.gif)](http://www.phdcomics.com/comics/archive.php?comicid=1531)
-
-## Basic methods for tracking versions of files
-
-- Don't keep track
-- Save numbered files
-- Formal version control
-
-Suppose things stop working. Can you go back and figure out where the
-problem arose?
-
-[![me-from-two-months-ago never responds to email](pics/kcranstn_tweet.png)](https://twitter.com/kcranstn/statuses/370914072511791104)
-
-## Why use Version Control ?
-
-- Backup changing files
-- Store a history of changes
-- Able to go explore that history
-- Make temporary changes without breaking things that work
-- Merge changes from multiple people collaborating concurrently
-
-There are a lot of version control systems. Wikipedia
-provides both [a nice vocabulary list and a fairly complete table of some popular version control systems and their equivalent commands](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software).
-
-Today, we'll be using [git](http://git-scm.com/). A key advantage of
-learning git is to then make use of [GitHub](http://github.com), which
-is a home for git repositories and an interface for exploring those
-repositories, with great tools for collaboration.
-
-## Examples
-
-Here's a screenshot of a git repository on GitHub. Think of it as a
-directory containing all of the files and subdirectories for a particular project.
-
-[![example git repository on github](pics/pybroman_repo.png)](http://github.com/kbroman/PyBroman)
-
-Here's a screenshot of the changes that have been made to that
-repository over time. Each change is called a "commit".
-
-[![history of commits](pics/pybroman_commits.png)](https://github.com/kbroman/PyBroman/commits/master)
-
-If you click on particular commit, you'll see the changes that were made.
-
-[![a commit](pics/pybroman_acommit.png)](https://github.com/kbroman/PyBroman/commit/fed56b664c)
+See [slides](motivation.pdf).
 
 ## git config : Controls the behavior of git
 
