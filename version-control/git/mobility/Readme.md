@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Use Version Control](../local/Readme.md) - Forward To [Collaborate](../remote/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Github and Remote Version Control](../git-and-github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
 
 # Mobility: Using Version Control at Work and Home
 
@@ -15,62 +15,22 @@ activities).
 The workflow in this section describes three repository locations - a server, a
 work computer, and a home (laptop) computer. The server will host the "base"
 repository, and the server can live anywhere you have a connection to. For
-example, you could use your GitHub repository (described in the
-[Collaborate](../remote/Readme.md) section) as the server. If you have access to
-a server on campus (e.g., server.uni.edu), you can host your repository there
-(and it's private!).
+example, you could use your GitHub repository (described in the [Github and
+Remote Version Control](../git-and-github/Readme.md) section) as the server. If
+you have access to a server on campus (e.g., server.uni.edu), you can host your
+repository there (and it's private!).
 
 For the purposes of this exercise, all of the repositories will be represented
-by different folders in your Waisman account in order to provide you with the
-"flavor" of how such a workflow would work. For example, we'll use ~/work to
-represent your work station. You should assume that ~/work is effectively your
-work station's home directory.
+by different folders in order to provide you with the "flavor" of how such a
+workflow would work. For example, we'll use ~/work to represent your work
+station. You should assume that ~/work is effectively your work station's home
+directory.
 
 Let's start by making each "home directory".
 
     $ cd
-    $ mkdir server
     $ mkdir work
     $ mkdir home
-
-## Setting Up the "Base" Repository
-
-If you want to use GitHub as your repository host, you can safely skip this
-step. If you want to use a university server as your repository host, you'll
-have to go through these steps.
-
-We'll start off in the home directory and create a bare repository in a new
-directory.
-
-    $ cd ~/server
-    $ git init --bare myrepo.git
-
-You'll see a new directory in ~/server named myrepo.git. If you ```cd``` into
-myrepo.git and give an ```ls``` command, you'll see the contents of the .git
-directory you saw earlier in the [Use Version Control](../local/Readme.md)
-section.
-
-    $ cd myrepo.git
-    $ ls
-    branches  config  description  HEAD  hooks  info  objects  refs
-
-This is git's way of storing your repository's information. You shouldn't touch
-this, and you can safely ignore it.
-
-#### Aside: Bare Repositories
-
-A bare repository is meant to simply **store** your files. It actually stores
-the contents of the .git directory that you see in all normal repositories. It's
-generally not meant to be touched by a human's hands, and is designed to
-communicate through git with other non-bare repositories. 
-
-In fact, when you initialize a new repository on GitHub, GitHub's version is a
-bare repository! 
-
-Why use a bare repository? The answer is that non-bare repositories don't always
-play nice together, and it turns out it helps to have a single, base repository
-that's "always right". You can get a more detailed answer
-[here](http://gitolite.com/concepts/bare.html).
 
 ## Setting Up the "Work" Repository
 
@@ -175,3 +135,43 @@ Latex works great with the workflow described here because it's text-based. You
 are literally altering text files, so there's **nothing else** going on behind
 the scenes. Word files, etc., have lot's going on under the hood, and so are
 poor candidates for version control. 
+
+#### Aside: Setting Up a "Base" Repository
+
+If you want to use GitHub as your repository host, you can safely skip this. If
+you want to use a university server as your repository host, you'll have to go
+through these steps.
+
+We'll start off in the home directory and create a bare repository in a new
+directory.
+
+    $ mkdir server
+    $ cd ~/server
+    $ git init --bare myrepo.git
+
+You'll see a new directory in ~/server named myrepo.git. If you ```cd``` into
+myrepo.git and give an ```ls``` command, you'll see the contents of the .git
+directory you saw earlier in the [Use Version Control](../local/Readme.md)
+section.
+
+    $ cd myrepo.git
+    $ ls
+    branches  config  description  HEAD  hooks  info  objects  refs
+
+This is git's way of storing your repository's information. You shouldn't touch
+this, and you can safely ignore it.
+
+#### Aside: Bare Repositories
+
+A bare repository is meant to simply **store** your files. It actually stores
+the contents of the .git directory that you see in all normal repositories. It's
+generally not meant to be touched by a human's hands, and is designed to
+communicate through git with other non-bare repositories. 
+
+In fact, when you initialize a new repository on GitHub, GitHub's version is a
+bare repository! 
+
+Why use a bare repository? The answer is that non-bare repositories don't always
+play nice together, and it turns out it helps to have a single, base repository
+that's "always right". You can get a more detailed answer
+[here](http://gitolite.com/concepts/bare.html).

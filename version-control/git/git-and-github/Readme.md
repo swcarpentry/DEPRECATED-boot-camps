@@ -1,6 +1,6 @@
 [Up To Schedule](../../../README.md) - Back To [Plan for Mistakes](../../../python/testing/Readme.md)
 
-# Collaborate: Remote Version Control
+# Github and Remote Version Control
 ----
 
 **Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
