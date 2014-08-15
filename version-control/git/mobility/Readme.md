@@ -26,56 +26,74 @@ workflow would work. For example, we'll use ~/work to represent your work
 station. You should assume that ~/work is effectively your work station's home
 directory.
 
-Let's start by making each "home directory".
+## Exercise: Adding a Report to Simplestats
+
+You've been working on your stats module for a while, and you'd like to add a
+report to it. You've heard about [Latex](http://www.latex-project.org/) and that
+it works really well with version control systems, so you wanted to try it
+out. You're spending your time writing, so you'd like to be able to move between
+work, some coffee shops, and home.
+
+Let's start by making a home and work directory.
 
     $ cd
     $ mkdir work
     $ mkdir home
 
-## Setting Up the "Work" Repository
+### Setting Up the "Work" Repository
 
 Ok, so now we have an (empty) bare repository. Let's clone it on our "work
 computer"! You'll find the repository is named properly.
 
     $ cd ~/work
-    $ git clone ~/server/myrepo.git
+    $ git clone https://github.com/YOU/simplestats.git
     $ ls
-    myrepo
+    simplestats
 
-Go ahead and ```cd``` into myrepo and look around at the files, you'll find that
-it's empty (except for the .git folder)! Also, take a gander at that remote.
+Go ahead and ```cd``` into simplestats and look around at the files. Also, take a
+gander at that remote.
 
-    $ cd myrepo
+    $ cd simplestats
     $ ls -a
-    . .. .git
+    .  ..  .git  README.md  stats.py  test_stats.py
     $ git remote -v
-    origin	 /home/<you>/server/myrepo.git (fetch)
-    origin	 /home/<you>/server/myrepo.git (push)
+    origin  https://github.com/YOU/simplestats.git (fetch)
+    origin  https://github.com/YOU/simplestats.git (push)
 
-Sweet, it automatically added the bare repository as the origin remote. We're
-set up to get some work done! Go ahead an add a file and commit it.
+Let's do some work in a branch,
+
+    $ git branch report
+    $ git checkout report
+
+Go ahead an add a file and commit it,
 
     $ touch report.tex
     $ git add report.tex
     $ git commit -m "added the base tex file for my report"
+    $ git push origin report
+
+Note that if you're working on your own repository's master branch, that last
+command would look like
+
     $ git push origin master
 
-## Setting Up the "Home" Repository
+### Setting Up the "Home" Repository
 
 Ok, you've spent a long day at work. Maybe you still have a little more to do,
 but you'd really rather go home and cook dinner first. Let's set up that "home
 repository" so you can pick up exactly where you left off.
 
     $ cd ~/home
-    $ git clone ~/server/myrepo.git
+    $ git clone https://github.com/YOU/simplestats.git
     $ ls
-    myrepo
+    simplestats
 
 Let's investigate what's inside.
 
-    $ cd myrepo
-    $ ls -a 
-    . .. .git report.tex
+    $ cd simplestats
+    $ git checkout report
+    $ ls -a
+    .  ..  .git  README.md  report.tex stats.py  test_stats.py
 
 Ok, awesome! So now the work and home machines are synced against the repository
 that's on the server. Any time you're doing work, as long as you **commit and
@@ -85,23 +103,28 @@ internet. Once your repository is up to date, you can do all your editing and
 committing without being online. Once you have a connection again, you can push
 your changes.
 
+Let's try making one set of changes. We'll add some content to the report
+
+    $ echo "this is one fancy report" >> report.tex
+    $ git add report.tex
+    $ git commit -m "added some content to the report"
+    $ git push origin report
+
+And now let's update our work machine
+
+    $ cd ~/work/simplestats
+    $ git pull origin report
+    $ tail report.tex
+    this is one fancy report
+
+Perfect! Work and home are synced again!
+
 At this point, you're fully set up to work in a best-practice, version-control
 work flow. Experience shows that its best to work in branches to make sure the
 master branch stays up-to-date with your server's (origin's) master
 branch. This stuff may not be intuitive when you're first starting out, though,
 so just play around and get used to the general work flow for now. You'll get
 better at it over time.
-
-## Cloning from the Server in Real Life
-
-In the toy example, the home and work repositories were cloned easily using the
-local path to the served repository (~/server/myrepo.git). If the repository in
-real life is served on an external (e.g., university) server, you'll likely have
-to use git's ssh cloning
-protocol. [Here](http://git-scm.com/book/en/Git-on-the-Server-The-Protocols#The-SSH-Protocol)'s
-a great, short explanation of how to do that. GitHub's cloning protocol is
-pretty simple, and described on the [Fork help
-page](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
 
 #### Aside: Latex and the Limits of the Version Control Workflow
 
@@ -175,3 +198,12 @@ Why use a bare repository? The answer is that non-bare repositories don't always
 play nice together, and it turns out it helps to have a single, base repository
 that's "always right". You can get a more detailed answer
 [here](http://gitolite.com/concepts/bare.html).
+
+#### More than One Way to Clone
+
+If the repository is served on an external (e.g., university)
+server, you'll likely have to use git's ssh cloning
+protocol. [Here](http://git-scm.com/book/en/Git-on-the-Server-The-Protocols#The-SSH-Protocol)'s
+a great, short explanation of how to do that. GitHub's cloning protocol is
+pretty simple, and described on the [Fork help
+page](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
