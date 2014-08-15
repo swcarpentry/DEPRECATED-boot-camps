@@ -34,11 +34,11 @@ it works really well with version control systems, so you wanted to try it
 out. You're spending your time writing, so you'd like to be able to move between
 work, some coffee shops, and home.
 
-Let's start by making a home and work directory.
+Let's start by making a laptop and work directory.
 
     $ cd
     $ mkdir work
-    $ mkdir home
+    $ mkdir laptop
 
 ### Setting Up the "Work" Repository
 
@@ -75,13 +75,13 @@ Go ahead an add a file and commit it,
 Note that if you're working on your own repository's master branch, that last
 command would look like ```git push origin master```.
 
-### Setting Up the "Home" Repository
+### Setting Up the "Laptop" Repository
 
 Ok, you've spent a long day at work. Maybe you still have a little more to do,
-but you'd really rather go home and cook dinner first. Let's set up that "home
+but you'd really rather go home and cook dinner first. Let's set up that "laptop
 repository" so you can pick up exactly where you left off.
 
-    $ cd ~/home
+    $ cd ~/laptop
     $ git clone https://github.com/YOU/simplestats.git
     $ ls
     simplestats
@@ -115,7 +115,7 @@ And now let's update our work machine
     $ tail report.tex
     this is one fancy report
 
-Perfect! Work and home are synced again!
+Perfect! Work and laptop are synced again!
 
 At this point, you're fully set up to work in a best-practice, version-control
 work flow. Experience shows that its best to work in branches to make sure the
