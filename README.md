@@ -41,7 +41,7 @@ Day 1
 | 10:45-11:00  | Break                                   |              |
 | 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) | Daijiang Li |
 | 12:30-1:30   | Lunch                                   |              |
-| 1:30-2:30    | [Write Code for People](python/writin_code_for_people/Readme.md | Paul Wilson |
+| 1:30-2:30    | [Write Code for People](python/writing_code_for_people/Readme.md | Paul Wilson |
 | 2:30-2:45    | Break                                   |              |
 | 10:45-11:00  | [Don't Repeat Yourself](python/dont_repeat_yourself/Readme.md | Paul Wilson |
 | 2:30-2:45    | Break                                   |              |
