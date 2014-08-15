@@ -7,7 +7,7 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 # Motivation
 
-[!["Final.doc" comic by Jorge Cham](http://www.phdcomics.com/comics/archive/phd101212s.gif)](http://www.phdcomics.com/comics/archive.php?comicid=1531)
+[![Final.doc comic by Jorge Cham](http://www.phdcomics.com/comics/archive/phd101212s.gif)](http://www.phdcomics.com/comics/archive.php?comicid=1531)
 
 [![me-from-two-months-ago never responds to email](pics/kcranstn_tweet.png)](https://twitter.com/kcranstn/statuses/370914072511791104))
 
