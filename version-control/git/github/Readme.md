@@ -56,6 +56,14 @@ so you'll need to start off by getting a copy of that repository to work on!
 
 ### Exercise : Fork Our GitHub Repository
 
+Step 0 : Clean Up Your Local Space
+
+We'll be interacting with remote repositories now, so let's clean up the
+simplestats folder on your machine.
+
+    $ cd
+    $ rm simplestats
+
 Step 1 : Go to our
 [repository](https://github.com/UW-Madison-ACI/simplestats)
 from your browser, and click on the Fork button. Choose to fork it to your
