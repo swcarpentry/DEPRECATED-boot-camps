@@ -9,85 +9,48 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 [![Final.doc comic by Jorge Cham](pics/phd101212s.gif)](http://www.phdcomics.com/comics/archive.php?comicid=1531)
 
-[![me-from-two-months-ago never responds to email](pics/kcranstn_tweet.png)](https://twitter.com/kcranstn/statuses/370914072511791104))
+## Basic methods for tracking versions of files
 
-## git : What is Version Control ?
+- Don't keep track
+- Save numbered files
+- Formal version control
 
-Very briefly, version control is a way to keep a backup of changing
-files, to store a history of those changes, and most importantly to
-allow many people in a collaboration to make changes to the same files
-concurrently. There are a lot of version control systems. Wikipedia
+Suppose things stop working. Can you go back and figure out where the
+problem arose?
+
+[![me-from-two-months-ago never responds to email](pics/kcranstn_tweet.png)](https://twitter.com/kcranstn/statuses/370914072511791104)
+
+## Why use Version Control ?
+
+- Backup changing files
+- Store a history of changes
+- Able to go explore that history
+- Make temporary changes without breaking things that work
+- Merge changes from multiple people collaborating concurrently
+
+There are a lot of version control systems. Wikipedia
 provides both [a nice vocabulary list and a fairly complete table of some popular version control systems and their equivalent commands](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software).
 
-Today, we'll be using git. Git is an example of a distributed version
-control system, distinct from centralized versing control systems. I'll
-make the distinction clear later, but for now, the table below will
-suffice.
+Today, we'll be using [git](http://git-scm.com/). A key advantage of
+learning git is to then make use of [GitHub](http://github.com), which
+is a home for git repositories and an interface for exploring those
+repositories, with great tools for collaboration.
 
-Version Control System Tool Options
+## Examples
 
-- **Distributed**
-  - Decentralized CVS (dcvs)
-  - mercurial (hg)
-  - git (git)
-  - bazaar (bzr)
-- **Centralized**
-  - concurrent versions system (cvs)
-  - subversion (svn)
+Here's a screenshot of a git repository on GitHub. Think of it as a
+directory containing all of the files and subdirectories for a particular project.
 
-## git --help : Getting Help
+[![example git repository on github](pics/pybroman_repo.png)](http://github.com/kbroman/PyBroman)
 
-The first thing I like to know about any tool is how to get help. From
-the command line type
+Here's a screenshot of the changes that have been made to that
+repository over time. Each change is called a "commit".
 
-    $ man git
+[![history of commits](pics/pybroman_commits.png)](https://github.com/kbroman/PyBroman/commits/master)
 
-The manual entry for the git version control system will appear before
-you. You may scroll through it using arrows, or you can search for
-keywords by typing **/** followed by the search term. I'm interested in
-help, so I type **/help** and then hit enter. It looks like the syntax
-for getting help with git is **git --help**.
+If you click on particular commit, you'll see the changes that were made.
 
-To exit the manual page, type **q**.
-
-Let's see what happens when we type :
-
-    $ git --help
-
-Excellent, it gives a list of commands it is able to help with, as well
-as their descriptions.
-
-    $ git --help
-    usage: git [--version] [--exec-path[=<path>]] [--html-path]
-               [-p|--paginate|--no-pager] [--no-replace-objects]
-               [--bare] [--git-dir=<path>] [--work-tree=<path>]
-               [-c name=value] [--help]
-               <command> [<args>]
-
-    The most commonly used git commands are:
-       add        Add file contents to the index
-       bisect     Find by binary search the change that introduced a bug
-       branch     List, create, or delete branches
-       checkout   Checkout a branch or paths to the working tree
-       clone      Clone a repository into a new directory
-       commit     Record changes to the repository
-       diff       Show changes between commits, commit and working tree, etc
-       fetch      Download objects and refs from another repository
-       grep       Print lines matching a pattern
-       init       Create an empty git repository or reinitialize an existing one
-       log        Show commit logs
-       merge      Join two or more development histories together
-       mv         Move or rename a file, a directory, or a symlink
-       pull       Fetch from and merge with another repository or a local branch
-       push       Update remote refs along with associated objects
-       rebase     Forward-port local commits to the updated upstream head
-       reset      Reset current HEAD to the specified state
-       rm         Remove files from the working tree and from the index
-       show       Show various types of objects
-       status     Show the working tree status
-       tag        Create, list, delete or verify a tag object signed with GPG
-
-    See 'git help <command>' for more information on a specific command.
+[![a commit](pics/pybroman_acommit.png)](https://github.com/kbroman/PyBroman/commit/fed56b664c)
 
 ## git config : Controls the behavior of git
 
