@@ -332,23 +332,6 @@ this shell with the `export` command:
 Now launch a new shell and confirm that the prompt has changed, and
 exit that shell again.
 
-## Backticks to Capture Output
-
-While redirection is useful to capture output in a file, you may want
-to sometimes capture output in a variable.  The bash shell lets you do
-that using so-called *backticks*.  These are the backwards apostrophes
-that appear on a US English keyboard at the upperr left, under the `~`
-(tilde).
-
-A command inside a pair of these ticks is substituted with the
-results of that command.  Since `pwd` told us the current directory,
-we can capture that in a variable:
-
-    THIS_DIR=`pwd`
-    echo $THIS_DIR
-    cd
-    echo $THIS_DIR
-
 # Aliases
 
 Another way to avoid having to retype commands is to use an **alias**.
@@ -388,105 +371,6 @@ respectively.
 Many experienced users will gradually build up a long list of
 important variables and aliases.
 
-# Workflow Scripts
-
-Perhaps we'd like to rearrange and combine the data we have in all of our data files so
-that we can more easily import it into a spreadsheet.  One simple
-format is known as a *comma separated values* or "CSV" format, which can be 
-opened in Excel and other spreadsheet applications.  It takes all the
-data from one record an puts it on a single line, separated by commas.
-
-Let's start a new script in our data directory callaed `data2csv`:
-
-    nano data2csv
-
-To make this a shell script, the first line will be
-
-    #!/bin/bash
-
-Since we'll be able to capture any output using redirection, we'll
-just write everything we want out to the standard output.
-
-Our data is fixed so we'll write a standard header:
-
-    echo '"Reported","Subject","Year/month of birth","Sex","CI type","Volume","Range","Discrimination"'
-
-If this script is intended to process a single file, we'll need a way
-to indicate which one.  When you run a shell script, you can provide arguments 
-to the shell script that may be used as variables.  The first argument is used 
-by the shell script as `$1`,
-the second is `$2`, and so on.  Our script will be told which file to use 
-from the first argument, and we'll save this filename in a variable to
-remind us what it's for.
-
-    datafile=$1
-
-Now let's capture the data in other variables. 
-
-    reported=`grep Reported $datafile | sed -e 's/Reported: \(.*\)$/\1/'`
-    subject=`grep Subject $datafile | sed -e 's/Subject: \(.*\)$/\1/'`
-    year_month=`grep Year $datafile | sed -e 's/Year\/month of birth: \(.*\)$/\1/'`
-    sex=`grep Sex $datafile | sed -e 's/Sex: \(.*\)$/\1/'`
-    type=`grep type $datafile | sed -e 's/CI type: \(.*\)$/\1/'`
-    volume=`grep Volume $datafile | sed -e 's/Volume: \(.*\)$/\1/'`
-    range=`grep Range $datafile | sed -e 's/Range: \(.*\)$/\1/'`
-    discrimination=`grep Discrimination $datafile | sed -e 's/Discrimination: \(.*\)$/\1/'`
-
-The `sed` program is one of many powerful tools to process text on the
-command line.  We won't be going into much detail about sed today, but it 
-is used for this script to combine the data from our data files into appropriate 
-fields within a csv file (that can later be treated as columns in Excel).  
-The later Python sessions will introduce other
-tools for this kind of text processing.
-
-We now need to write out a CSV line for this file:
-
-    echo \"$reported\", \"$subject\", \"$year_month\", $sex, $type, $volume, $range, $discrimination
-
-The escape character `\` before the quotation marks ensures that the quotation 
-marks will appear in the file.
-
-Now save the file and exit nano before making the file executable:
-
-    chmod u+x data2csv
-
-Now let's try it for the `0213` file in `THOMAS`:
-
-    cat THOMAS/0213
-    ./data2csv THOMAS/0213
-
-## Loops in Shell Scripts
-
-Let's add a loop so that we can make a single CSV file from many data
-files.  The general form of a loop is:
-
-   for var in list
-   do
-      act on $var
-   done
-
-In our case, the `list` will be a list of filenames that will come from
-the arguments to the script, known in bash as `$@`.  The action for
-each file will be the parts necessary to generate a CSV line.
-
-Open your script again:
-
-    nano data2csv
-
-Replace the line that set the `$datafile` variable with
-
-    for datafile in $@
-    do
-
-And after the last `echo` command add:
-
-    done
-
-After we save and exit, we can now run that script on the entire set of 
-files in `THOMAS`:
-
-    ./data2csv THOMAS/*
-
 
 * * * * 
 Jump to look at the [solutions to all the Automation exercises.](ReadmeSolns.md)
@@ -495,13 +379,16 @@ Jump to look at the [solutions to all the Automation exercises.](ReadmeSolns.md)
 ## Bonus topics:
 You may wish to look into the below topics/tools to become even more advanced in using the shell:
 
-
 [**ssh and scp**](http://software-carpentry.org/v4/shell/ssh.html)
 
-[**Permissions**](http://software-carpentry.org/v4/shell/perm.html)
+[**permissions**](http://software-carpentry.org/v4/shell/perm.html)
+
+**backticks and variables**
+
+**loops**
 
 **du**
 
 **ln**
 
-**Regular Expressions**
+**regular expressions**
