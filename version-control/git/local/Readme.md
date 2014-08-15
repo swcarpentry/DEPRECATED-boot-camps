@@ -21,7 +21,7 @@ on using git from the command-line in the bash shell.
 ## Initial setup: `git config`
 
 We first need to setup git with our user name and email address, and
-tell it what editor to use.
+tell it what editor we use.
 
      $ git config --global user.name "YOUR NAME"
      $ git config --global user.email "YOUR EMAIL"
@@ -30,24 +30,25 @@ tell it what editor to use.
 These commands modify the file `~/.gitconfig`. Type
 `less ~/.gitconfig` to see what it did.
 
-## git init : Creating a Local Repository
+## Create a Local Repository: `git init`
 
 To keep track of numerous versions of your work without saving numerous
-copies, you can make a local repository for it on your computer. What git
-does is to save the first version, then for each subsequent version it
-saves only the changes. That is, git only records the difference between
-the new version and the one before it. With this compact information,
-git is able to recreate any version on demand by adding the changes to
-the original in order up to the version of interest.
+copies, you can make a local repository for it on your computer. 
+
+You local repository will be a directory on your computer: you'll have
+git track the files and subdirectories in that directory. 
 
 To create your own local (on your own machine) repository, you must
 initialize the repository with the infrastructure git needs in order to
-keep a record of things within the repository that you're concerned
-about. The command to do this is **git init** .
+keep a record of things within the repository.
+The command to do this is `git init`.
+
+Starting from scratch, you'll first create a directory for your
+repository, change to that directory, and type `git init`.
 
 ### Exercise : Create a Local Repository
 
-Step 1 : Initialize your repository.
+**Step 1** : Initialize your repository.
 
     $ cd
     $ mkdir simplestats
@@ -55,7 +56,7 @@ Step 1 : Initialize your repository.
     $ git init
     Initialized empty Git repository in /Users/swc/simplestats/.git/
 
-Step 2 : Browse the directory's hidden files to see what happened here.
+**Step 2** : Browse the directory's hidden files to see what happened here.
 Open directories, browse file contents. Learn what you can in a minute.
 
     $ ls -A
@@ -64,25 +65,13 @@ Open directories, browse file contents. Learn what you can in a minute.
     $ ls -A
     HEAD        config      description hooks       info        objects     refs
 
-Step 3 : Use what you've learned. You may have noticed the file called
-description. You can describe your repository by opening the description
+** Step 3** : Use what you've learned. You may have noticed the file called
+`description`. You can describe your repository by opening the description
 file and replacing the text with a name for the repository.  We will be
 creating a module with some simple statistical methods, so mine will be
 called "Some simple methods for statistical analysis". You may call yours anything you like.
 
     $ nano description
-
-Step 4 : Applications sometimes create files that are not needed. For
-example, emacs creates a temporary file called 'filename~' when you edit
-the file 'filename'. You can ask git to ignore such files by editing
-the file '.git/info/exclude'. Edit the file to ignore files that end with '~'.
-
-     git ls-files --others --exclude-from=.git/info/exclude
-    # Lines that start with '#' are comments.
-    # For a project mostly in C, the following would be a good set of
-    # exclude patterns (uncomment them if you want to use them):
-    # *.[oa]
-    # *~
 
 ## git add : Adding a File To Version Control
 
