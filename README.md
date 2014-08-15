@@ -18,7 +18,7 @@ Schedule
 -----------
 
 This bootcamp has been structured around the concepts put forth in the
-recent paper "Best Practices for Scientific Computing" by G. Wilson,
+recent paper "[Best Practices for Scientific Computing](http://www.plosbiology.org/article/info%3Adoi%2F10.1371%2Fjournal.pbio.1001745)" by G. Wilson,
 et al (at the top of this repository). In so doing, the sessions names 
 have been chosen to correspond
 with some of the most important practices to start early in the research process.
@@ -26,9 +26,9 @@ with some of the most important practices to start early in the research process
 Setup and Preparation
 -----------
 
-Please follow the 
-[setup instructions on our Bootcamp Web Page](http://uw-madison-aci.github.io/2014-08-25-wisc/),
-though you will not need to install SQLite.
+You will need to bring a laptop to all sessions of the bootcamp.
+Before you arrive, please
+[follow the instructions to install python and other software](setup/README.md).
 
 Day 1
 =======
