@@ -5,15 +5,30 @@
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
-# Motivation
+## Motivation
 
 See [motivation.pdf](motivation.pdf).
 
-## git config : Controls the behavior of git
+## Introduction
+
+We will cover [git](http://git-scm.com) (and
+[GitHub](http://github.com)) in several sessions.  There exist
+numerous graphical user interfaces for git (including
+[GitHub for Mac](https://mac.github.com/) and
+[GitHub for Windows](https://windows.github.com/)), but we will focus
+on using git from the command-line in the bash shell.
+
+## Initial setup: `git config`
+
+We first need to setup git with our user name and email address, and
+tell it what editor to use.
 
      $ git config --global user.name "YOUR NAME"
      $ git config --global user.email "YOUR EMAIL"
      $ git config --global core.editor nano
+
+These commands modify the file `~/.gitconfig`. Type
+`less ~/.gitconfig` to see what it did.
 
 ## git init : Creating a Local Repository
 
