@@ -74,22 +74,27 @@ repository.
 
 Day-to-day, the basic use of git is the following:
 
-- Change some files
+* Change some files
 
-- See what you've changed
+* See what you've changed
 
-       git status
-       git diff
-       git log
+  ```
+  git status  
+  git diff  
+  git log  
+  ```
 
-- Indicate what changes to save
+* Indicate what changes to save
 
-       git add
+  ```
+  git add
+  ```
 
-- Commit to those changes
+* Commit to those changes
 
-       git commit
-
+  ```
+  git commit
+  ```
 
 ## git add : Adding a File To Version Control
 
