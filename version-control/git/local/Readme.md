@@ -31,7 +31,7 @@ tell it what editor we use. The last command tells git to provided output in col
 These commands modify the file `~/.gitconfig`. Type
 `less ~/.gitconfig` to see what it did.
 
-## Create a Local Repository: `git init`
+## Create a local repository: `git init`
 
 A git repository is a directory on your computer. You will use git to
 track the files and subdirectories in that directory. To begin to use
@@ -41,7 +41,7 @@ with `git init`.
 Starting from scratch, you first create a directory for your
 repository, change to that directory, and type `git init`.
 
-### ![Exercise](pics/exercise.jpg) Exercise : Create a Local Repository
+### ![Exercise](pics/exercise.jpg) Exercise: Create a Local Repository
 
 Initialize your repository: change to your home directory, create a
 new directory, change to that directory, and type `git init`.
@@ -74,31 +74,71 @@ Day-to-day, the basic use of git is the following:
 - Indicate what changes to save, with `git add`.
 - Commit to those changes, with `git commit`.
 
-## git add : Adding a File To Version Control
+## Check the status of your repository: `git status` 
 
-For the git repository to know which files within this directory you
-would like to keep track of, you must add them. First, you'll need to
-create one, then we'll learn the **git add** command.
+Use `git status` to check the current status of things in your repository
 
-### ![Exercise](pics/exercise.jpg) Exercise : Add a File to Your Local Repository
+```
+$ git status
+On branch master
 
-Step 1 : Create a file to add to your repository.
+Initial commit
 
-    $ cd ~/simplestats/
-    $ touch README.md
+nothing to commit (create/copy files and use "git add" to track)
+```
 
-Step 2 : Add some text to the Readme file.
-
-    $ nano README.md
-
-Step 3 : Inform git that you would like to keep track of future changes
-in this file.
-
-    $ git add README.md
+This says that nothing much is going on.
+We will talk about _branches_ tomorrow.
 
 
+## Adding a File To Version Control: `git add`
 
-## git status : Checking the Status of Your Local repository
+You need to specify which files within the directory you would like to
+keep track of. To do so, you must add them to the repository with `git
+add`. But first you need to create a file.
+
+Typically the first file to add would be a ReadMe file describing the
+project. This can be a plain text file or a [Markdown](http://daringfireball.net/projects/markdown/)
+file (with the `.md` extension). Markdown is simple system for adding
+some light mark-up (like bold and italics, or to indicate sections)
+and hyperlinks.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Add a File to Your Local Repository
+
+**Step 1**: Create a file to add to your repository.
+
+```
+$ cd ~/simplestats/
+$ touch README.md
+```
+
+**Step 2**: Add some text to the Readme file.
+
+```
+$ nano README.md
+```
+
+**Step 3**: Use `git status` to check the status of the repository.
+
+```
+$ git status
+```
+
+**Step 4**: Tell git that you want to keep track of this file.
+
+```
+$ git add README.md
+```
+
+**Step 5**: Check the status again.
+
+```
+$ git status
+```
+
+## Checking the Status of Your Local repository: `git status`
+
+Use `git status` to check the current status of things in your repository
 
 The files you've created on your machine are your local "working" copy.
 The changes your make in this local copy aren't stored in the repository
@@ -124,14 +164,31 @@ This result indicates that the current difference
 between the repository HEAD (which, so far, is empty) and your
 `simplestats` directory is this new README.md file.
 
-## git commit : Saving a Snapshot
+## Commit your changes: `git commit`
 
-In order to save a snapshot of the current state (revision) of the
-repository, we use the commit command. This command is always associated
-with a message describing the changes since the last commit and
-indicating their purpose. Informative commit messages will serve you
-well someday, so make a habit of never committing changes without at
-least a full sentence description.
+Committing changes to your repository involves two steps: indicating
+the changes to be committed (known as "staging the changes") with `git
+add` (which we have just done), and then actually _committing_ those
+changes (with `git commit`).
+
+If you type just `git commit`, an editor will open for you to add a
+comment describing the changes. Alternatively, use can use the `-m`
+flag followed by the comment in quotes.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Commit Your Changes
+
+**Step 1**: Commit the file you just added to your repository.
+
+    $ git commit -m "This is the first commit. It adds a readme file."
+    [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
+     1 files changed, 1 insertions(+), 0 deletions(-)
+     create mode 100644 README.md
+
+**Step 2**: Admire your work.
+
+    $ git status
+    # On branch master
+    nothing to commit (working directory clean)
 
 **ADVICE: Commit often**
 
@@ -141,66 +198,82 @@ More frequent commits increase the granularity of your **undo** button.
 
 **ADVICE: Good commit messages**
 
-There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
+There are no hard and fast rules, but good commits are atomic: they
+are the smallest change that remain meaningful. A good commit message
+usually contains a one-line overview followed by a longer
+explanation if necessary.
 
 [The repository for this course](https://github.com/UW-Madison-ACI/boot-camps/commits/2014-08-25) has some good commit messages.
 
-### ![Exercise](pics/exercise.jpg) Exercise : Commit Your Changes
+## Viewing the differences: `git diff`
 
-Step 1 : Commit the file you've added to your repository.
+`git diff` is similiar to the shell command `diff`, but rather than
+comparing two files, it is used to show the historical changes in a 
+repository.
 
-    $ git commit -m "This is the first commit. It adds a readme file."
-    [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
-     1 files changed, 1 insertions(+), 0 deletions(-)
-     create mode 100644 README.md
+If you type `git diff` alone, it will show all changes in your working
+directory that have not yet been staged for a commit.
 
-Step 2 : Admire your work.
+### ![Exercise](pics/exercise.jpg) Exercise: Try `git diff`
 
-    $ git status
-    # On branch master
-    nothing to commit (working directory clean)
+**Step 1**: Try out `git diff` without having made any changes
 
-## git diff : Viewing the Differences
+```
+$ git diff
+```
 
-There are many diff tools.
+**Step 2**: Make a change to the `README.md` file.
 
-If you have a favorite you can set your default git diff tool to execute
-that one. Git, however, comes with its own diff system.
+```
+$ nano README.md
+```
 
-Let's recall the behavior of the diff command on the command line.
-Choosing two files that are similar, the command :
+**Step 3**: Use git diff to view the changes.
 
-    $ diff file1 file2
+```
+$ git diff
+```
 
-will output the lines that differ between the two files. This
-information can be saved as what's known as a patch, but we won't go
-deeply into that just now.
-
-The only difference between the command line diff tool and git's diff
-tool is that the git tool is aware of all of the revisions in your
-repository, allowing each revision of each file to be treated as a full
-file.
-
-Thus, git diff will output the changes in your working directory that
-are not yet staged for a commit. To see how this works, make a change in
-your README.md file, but don't yet commit it.
-
-    $ git diff
-
-A summarized version of this output can be output with the --stat flag :
+A summarized version of this output can be output with the `--stat` flag:
 
     $ git diff --stat
 
-To see only the differences in a certain path, try:
+To see only the differences in a certain file or subdirectory, try:
 
-    $ git diff HEAD -- [path]
+    $ git diff README.md
 
-To see what IS staged for commit (that is, what will be committed if you
-type git commit without the -a flag), you can try :
+To see the changes that **are** staged for commit, use
 
     $ git diff --cached
 
-## git log : Viewing the History
+### ![Exercise](pics/exercise.jpg) Exercise: Use `git diff` with staged changes
+
+**Step 1**: Commit the change you made to `README.md`.
+
+```
+$ git add README.md
+$ git commit -m "Small change to README.md"
+```
+
+**Step 2**: Try `git diff` on its own.
+
+```
+$ git diff
+```
+
+**Step 3**: Use `git diff` to see the staged changes.
+
+```
+$ git diff --cached
+```
+
+**Step 4**: Commit your change
+
+```
+$ git commit -m "Small change to README.md"
+```
+
+## Viewing the history: `git log`
 
 A log of the commit messages is kept by the repository and can be
 reviewed with the log command.
@@ -224,55 +297,131 @@ There are some useful flags for this command, such as
     --until=X.minutes/hours/days/weeks/months/years or YY-MM-DD-HH:MM
     --author=<pattern>
 
-## git reset : Unstaging a staged file
+## Unstaging a staged file: `git reset`
 
 There are a number of ways that you may accidentally stage a file that
-you don't want to commit.  Create a file called `temp_notes` that
-describes what you had for breakfast, and then add that file to your
-repo.  Check with `status` to see that it is added but not committed.
+you don't want to commit.  Use `git reset` to unstage a file.
 
-You can now unstage that file with:
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
 
-    git reset temp_notes
+**Step 1**: Create a file and add it to the repository.
 
-Check with `status`.
+```
+$ touch notes.txt
+$ git add notes.txt
+```
 
-## git checkout : Discarding unstaged modifications (git checkout has other purposes)
+**Step 2**: Check the status of the repository, to see that the file
+  has been staged.
 
-Perhaps you have made a number of changes that you realize are not
-going anywhere.  Add a line to `README.md` that describes your dinner
-last night.  Check with `status` to see that the file is changed and
-ready to be added.
+```
+$ git status
+```
 
-You can now return to previous checked in version with:
+**Step 3**: Unstage the file with `git reset`
 
-    git checkout -- README.md
+```
+$ git reset HEAD notes.txt
+```
 
-Check with `status` and take a look at the file.
+**Step 4**: Check the status again.
 
-## git rm : Removing files
+```
+$ git status
+```
 
-There are a variety of reasons you way want to remove a file from the
-repository after it has been committed.  Create a file called
-`READYOU.md` with the first names of all your immediate family
-members, and add/commit it to the repository.
 
-You can now remove the file from the repository with:
+## Discarding unstaged modifications: `git checkout`
 
-    git rm READYOU.md
+If you've made changes to a file and want to just scrap those changes
+and go back to the last committed version of the file, use `git
+checkout`.
 
-List the directory to see that you have no file named `READYOU.md`.
-Use `status` to determine if you need any additional steps.
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
 
-What if you delete a file in the shell without `git rm`? Try deleting
-`README.md`
+**Step 1**: Add a line to the `README.md` file.
 
-     rm README.md
+```
+$ nano README.md
+```
+
+**Step 2**: Check the status of the repository, and look at your
+  unstaged changes.
+  
+```
+$ git status
+$ git diff
+```
+
+**Step 3**: Discard the changes.
+
+```
+$ git checkout README.md
+```
+
+**Step 4**: Look at the status of things again.
+
+```
+$ git status
+$ git diff
+```
+
+## Removing files: `git rm`
+
+If you want to remove a file from your repository, use `git rm`.
+Not that past versions of the file will remain in the repository history.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git rm`
+
+**Step 1**: Create a file, and add and commit it to the repository.
+
+```
+$ nano READYOU.md
+$ git add READYOU.md
+$ git commit -m "Add READYOU.md file"
+```
+
+**Step 2**: Remove the file from the repository.
+
+```
+$ git rm READYOU.md
+```
+
+**Step 3**: Check the status.
+
+```
+$ git status
+```
+
+**Step 4**: Commit the change (removing the file)
+
+```
+$ git commit -m "Remove READYOU.md"
+```
+
+**Step 5**: Check the status again.
+
+```
+$ git status
+```
+
+What happens if you delete a file in the shell without `git rm`? Try deleting
+`README.md` with `rm` rather than `git rm`.
+
+```
+$ rm README.md
+```
 
 What does `git status` say?  Oops! How can you recover this important
 file?
 
-     git checkout -- README.md
+```
+$ git checkout README.md
+```
+
+Note that, just as you should use `git rm` rather than `rm` for
+removing files, you should use `git mv` rather than `mv` for moving or
+renaming files.
 
 ## Resources
 
