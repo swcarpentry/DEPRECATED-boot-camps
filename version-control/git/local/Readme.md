@@ -69,27 +69,10 @@ repository.
 
 Day-to-day, the basic use of git is the following:
 
-* Change some files
-
-* See what you've changed
-
-  ```
-  git status  
-  git diff  
-  git log  
-  ```
-
-* Indicate what changes to save
-
-  ```
-  git add
-  ```
-
-* Commit to those changes
-
-  ```
-  git commit
-  ```
+- Change some files
+- See what you've changed, with `git status`, `git diff`, and `git log`.
+- Indicate what changes to save, with `git add`.
+- Commit to those changes, with `git commit`.
 
 ## git add : Adding a File To Version Control
 
