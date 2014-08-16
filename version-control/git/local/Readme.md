@@ -41,7 +41,7 @@ with `git init`.
 Starting from scratch, you first create a directory for your
 repository, change to that directory, and type `git init`.
 
-### Exercise : Create a Local Repository
+### ![Exercise](pics/exercise.jpg) Exercise : Create a Local Repository
 
 Initialize your repository: change to your home directory, create a
 new directory, change to that directory, and type `git init`.
@@ -97,7 +97,7 @@ For the git repository to know which files within this directory you
 would like to keep track of, you must add them. First, you'll need to
 create one, then we'll learn the **git add** command.
 
-### Exercise : Add a File to Your Local Repository
+### ![Exercise](pics/exercise.jpg) Exercise : Add a File to Your Local Repository
 
 Step 1 : Create a file to add to your repository.
 
@@ -162,7 +162,7 @@ There are no hard and fast rules, but good commits are atomic: they are the smal
 
 [The repository for this course](https://github.com/UW-Madison-ACI/boot-camps/commits/2014-08-25) has some good commit messages.
 
-### Exercise : Commit Your Changes
+### ![Exercise](pics/exercise.jpg) Exercise : Commit Your Changes
 
 Step 1 : Commit the file you've added to your repository.
 
