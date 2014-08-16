@@ -30,15 +30,14 @@ directory. Here are the basic commands, discussed
 
 - `git log`: Summarize the history of changes.
 
-### ![Exercise](pics/exercise.jpg) Exercise: Refresh your understanding of
- git
+### ![Exercise](pics/exercise.jpg) Exercise: Refresh your understanding of git
  
 **Step 1**: Go back to your `~/simplestats` repository. Make a change to the
 `README.md` file, or create a new file.
 
 **Step 2**: Add and commit your changes.
 
-**Step 3**: Study some of those differences and the repository log.
+**Step 3**: Study some of those differences as well as the repository log.
 
 
 ## `git revert`: the promised "undo" button
@@ -140,7 +139,7 @@ $ git commit -m "Adding a first version of stats.py."
 and taking the square of the result.
 2. Commit the changed file to your repository.
 
-## git merge : Merging Branches
+## `git merge`: Merging Branches
 
 At some point, the `add_var` branch may be ready to become part of
 the `master` branch.  In real life, we might do a lot more testing and
@@ -162,9 +161,10 @@ showing you what branch you're on using your bash prompt. Some super nice
 properties also include color-coding when you've got changed files or when your
 branch is fresh.
 
-### Exercise : Update your prompt
+### ![Exercise](pics/exercise.jpg) Exercise: Update your prompt
 
-Step 1 : Copy the following lines into your ~/.bashrc file (taken from a
+**Step 1**: Copy the following lines into your `~/.bashrc` file, or
+`~/.bash_profile` in Mac OS X (taken from a
 combination of [two](http://stackoverflow.com/a/6086978)
 [sources](https://gist.github.com/woods/31967)).
 
@@ -199,11 +199,12 @@ function color_my_prompt {
 PROMPT_COMMAND=color_my_prompt
 ```
 
-Step 2 : Source your bashrc (it'll change immediately)
+**Step 2**: Source your `.bashrc` file.
+(Use `~/.bash_profile` instead of `~/.bashrc` in Mac OS X)
 
     $ source ~/.bashrc
 
-Step 3 : Play around with it.
+**Step 3**: Play around with it.
 
 ## Resources
 
