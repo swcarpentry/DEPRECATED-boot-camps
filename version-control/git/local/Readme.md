@@ -21,7 +21,7 @@ on using git from the command-line in the bash shell.
 ## Initial setup: `git config`
 
 We first need to setup git with our user name and email address, and
-tell it what editor we use.
+tell it what editor we use. The last command tells git to provided output in color.
 
     $ git config --global user.name "YOUR NAME"
     $ git config --global user.email "YOUR EMAIL"
@@ -33,21 +33,15 @@ These commands modify the file `~/.gitconfig`. Type
 
 ## Create a Local Repository: `git init`
 
-To keep track of numerous versions of your work without saving numerous
-copies, you can make a local repository for it on your computer. 
+A git repository is a directory on your computer. You will use git to
+track the files and subdirectories in that directory. To begin to use
+git to track a directory, you must first initialize the repository
+with `git init`.
 
-You local repository will be a directory on your computer: you'll have
-git track the files and subdirectories in that directory. 
-
-To create your own local (on your own machine) repository, you must
-initialize the repository with the infrastructure git needs in order to
-keep a record of things within the repository.
-The command to do this is `git init`.
-
-Starting from scratch, you'll first create a directory for your
+Starting from scratch, you first create a directory for your
 repository, change to that directory, and type `git init`.
 
-### Exercise : Create a Local Repository
+### <a class=exercise>Exercise : Create a Local Repository</a>
 
 Initialize your repository: change to your home directory, create a
 new directory, change to that directory, and type `git init`.
@@ -103,7 +97,7 @@ For the git repository to know which files within this directory you
 would like to keep track of, you must add them. First, you'll need to
 create one, then we'll learn the **git add** command.
 
-### Exercise : Add a File to Your Local Repository
+### <a class=exercise>Exercise : Add a File to Your Local Repository</a>
 
 Step 1 : Create a file to add to your repository.
 
@@ -166,9 +160,9 @@ More frequent commits increase the granularity of your **undo** button.
 
 There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
 
-[Our repo](https://github.com/UW-Madison-ACI/boot-camps/commits/2014-08-25) has some good commit messages.
+[The repository for this course](https://github.com/UW-Madison-ACI/boot-camps/commits/2014-08-25) has some good commit messages.
 
-### Exercise : Commit Your Changes
+### <a class=exercise>Exercise : Commit Your Changes</a>
 
 Step 1 : Commit the file you've added to your repository.
 
@@ -302,3 +296,10 @@ file?
 * [git book](http://git-scm.com/book)
 
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
+
+
+<style>
+a.exercise {
+  background: #ffcfff;
+}
+</style>
