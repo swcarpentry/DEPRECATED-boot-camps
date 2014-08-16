@@ -1,6 +1,6 @@
 [Up To Schedule](../../../README.md) - Back To [Planning for Mistakes](../../../python/testing) - Forward To [Collaboration](../remote)
 
-# Make Incremental Changes: Use Version Control
+# Make Incremental Changes II: Reverting and branching in git
 
 ----
 
@@ -8,28 +8,61 @@
 Hari Krishna Narayanan, and Matthew Gidden**
 
     
-## git revert : the promised "undo" button
+## Refresher on the basics of git
+
+We use git to keep track of changes to the files in a particular
+directory. Here are the basic commands, discussed
+[yesterday](Readme.md).
+
+- `git init`: Initialize a directory as a git repository.
+
+- `git status`: Check the current status of things.
+
+- `git add`: Add a new file to the repository, or stage the changes
+  to a file.
+  
+- `git rm`: Remove a file from the repository.
+
+- `git commit`: Commit the changes (adding, modifying, or removing
+  files).
+  
+- `git diff`: Study the changes.
+
+- `git log`: Summarize the history of changes.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Refresh your understanding of
+ git
+ 
+**Step 1**: Go back to your `~/simplestats` repository. Make a change to the
+`README.md` file, or create a new file.
+
+**Step 2**: Add and commit your changes.
+
+**Step 3**: Study some of those differences and the repository log.
+
+
+## `git revert`: the promised "undo" button
 
 It is possible that after many commits, you decide that you really
-want to "rollback" a set of commits and start over.  It is easy to
+want to "roll back" a set of commits and start over.  It is easy to
 revert your code to a previous version.
 
 You can use `git log` and `git diff` to explore your history and
 determine which version you are interested in.  Choose a version and
-note the *hash* for that version. (Let's assume `abc456`).  **NOTE:**
+note the *hash* for that version. (Let's assume it's `abc456`).  **NOTE**:
 the version you choose will be the changes you wish to remove, not the
 final point that you want to reach.  In this case, you will remove the
-changes made in `abc456`, rather than 'rolling back' to `abc456`.
+changes made in `abc456`, rather than "rolling back" to `abc456`.
 
      git revert abc456
 
-**Importantly,** this will not erase the intervening commits.  This
+**Importantly**, this will not erase the intervening commits.  This
 will create a new commit that is changed from the previous commit by a
 change that will recreate the desired version.  This retains a
 complete provenance of your software, and can be compared to the
 prohibition in removing pages from a lab notebook.
 
-### Exercise :
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git revert`
 
 1. Create 5 files in your directory with one line of content in each
    file.
@@ -40,21 +73,21 @@ prohibition in removing pages from a lab notebook.
 
 
 
-## git branch : Listing, Creating, and Deleting Branches
+## `git branch`: Listing, Creating, and Deleting Branches
 
 Branches are parallel instances of a repository that can be edited and
-version controlled in parallel. They are useful for pursuing various
-implementations experimentally or maintaining a stable core while
-developing separate sections of a code base.
+version-controlled in parallel. They are useful for experimenting with
+different ideas, for maintaining a stable core while testing
+developing new features.
 
-Without an argument, the **branch** command lists the branches that
+Without an argument, `git branch` lists the branches that
 exist in your repository.
 
     $ git branch
     * master
 
 The master branch is created when the repository is initialized. With an
-argument, the **branch** command creates a new branch with the given
+argument, `git branch` creates a new branch with the given
 name.
 
     $ git branch experimental
@@ -62,61 +95,62 @@ name.
     * master
       experimental
 
-To delete a branch, use the **-d** flag.
+To delete a branch, use the `-d` flag.
 
     $ git branch -d experimental
     $ git branch
     * master
 
-## git checkout : Switching Between Branches, Abandoning Local Changes
+## `git checkout`: Switching Between Branches
 
-The **git checkout** command allows context switching between branches
-as well as abandoning local changes.
+We had previously used `git checkout` to abandon local changes. It is
+also used to switch between branches.
 
-To switch between branches, try
+### ![Exercise](pics/exercise.jpg) Exercise: Switch to a new branch
 
-    $ git branch add_stats
-    $ git checkout add_stats
+Create an `add_var` branch and switch to it.
+
+    $ git branch add_var
+    $ git checkout add_var
     $ git branch
 
 How can you tell we've switched between branches? When we used the
 branch command before there was an asterisk next to the master branch.
-That's because the asterisk indicates which branch you're currently in.
+The asterisk indicates which branch you are currently in.
 
-### Exercise : Copy files into your repo
+### ![Exercise](pics/exercise.jpg) Exercise: Copy files into your repository
 
-Let's make sure we have a good copy of `stats.py` and `test_stats.py`.
+Let's make sure we have a good copy of `stats.py`.
 
 ```
 $ cd ~/simplestats
 $ cp ~/boot-camps/python/testing/stats.py .
-$ cp ~/boot-camps/python/testing/test_stats.py .
 ```
 
-Now let's add them to our repo, but in the current branch.
+Now let's add it to our repository, but in the current branch.
 
 ```
-$ git add *stats.py
-$ git commit -m "Adding a first version of the files for mean."
+$ git add stats.py
+$ git commit -m "Adding a first version of stats.py."
 ```
 
-### Exercise : Add an additional test for std() and commit the changes.
+### ![Exercise](pics/exercise.jpg) Exercise: Implement the `var()` function.
 
-1. Write an additional test for std().  *(Ask us for a tip if necessary)*
-2. Improve std() to pass this test.
-3. Commit the changed files to your repo.
+1. Write code for the `var()` function, calling the `std()` function
+and taking the square of the result.
+2. Commit the changed file to your repository.
 
 ## git merge : Merging Branches
 
-At some point, the `add_stats` branch may be ready to become part of
+At some point, the `add_var` branch may be ready to become part of
 the `master` branch.  In real life, we might do a lot more testing and
-development.  For now, let's assume that our mean function is ready
-and merge this back to the master.  One method for combining the
-changes in two parallel branches is the **merge** command.
+development.  For now, let's assume that our variance function is ready
+and merge this back into the master branch.  We use `git merge` to
+combine the changes in two parallel branches.
 
 ```
 $ git checkout master
-$ git merge add_stats
+$ git merge add_var
 ```
 
 ## Aside: Make your Prompt Pretty
