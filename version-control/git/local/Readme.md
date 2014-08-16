@@ -93,14 +93,14 @@ We will talk about _branches_ tomorrow.
 
 ## Adding a File To Version Control: `git add`
 
-You need to specify which files within the directory you would like to
+You need to _specify_ which files within the directory you would like to
 keep track of. To do so, you must add them to the repository with `git
 add`. But first you need to create a file.
 
 Typically the first file to add would be a ReadMe file describing the
 project. This can be a plain text file or a [Markdown](http://daringfireball.net/projects/markdown/)
 file (with the `.md` extension). Markdown is simple system for adding
-some light mark-up (like bold and italics, or to indicate sections)
+some light mark-up, like bold and italics, to indicate sections,
 and hyperlinks.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Add a File to Your Local Repository
@@ -112,7 +112,7 @@ $ cd ~/simplestats/
 $ touch README.md
 ```
 
-**Step 2**: Add some text to the Readme file.
+**Step 2**: Add some text to the file.
 
 ```
 $ nano README.md
@@ -136,40 +136,12 @@ $ git add README.md
 $ git status
 ```
 
-## Checking the Status of Your Local repository: `git status`
-
-Use `git status` to check the current status of things in your repository
-
-The files you've created on your machine are your local "working" copy.
-The changes your make in this local copy aren't stored in the repository
-automatically. Until you commit them, the changes you make are local
-changes. When you change anything, your set of files becomes different
-from the files in the most recent official repository copy, known
-as the repository HEAD. To find out what's different about them in the
-terminal, try:
-
-    $ git status
-    # On branch master
-    #
-    # Initial commit
-    #
-    # Changes to be committed:
-
-    #   (use "git rm --cached <file>..." to unstage)
-    #
-    #       new file:   README.md
-    #
-
-This result indicates that the current difference
-between the repository HEAD (which, so far, is empty) and your
-`simplestats` directory is this new README.md file.
-
 ## Commit your changes: `git commit`
 
 Committing changes to your repository involves two steps: indicating
-the changes to be committed (known as "staging the changes") with `git
-add` (which we have just done), and then actually _committing_ those
-changes (with `git commit`).
+the changes to be committed with `git add` (known as "staging the changes",
+which we have just done), and then actually _committing_ those
+changes with `git commit`.
 
 If you type just `git commit`, an editor will open for you to add a
 comment describing the changes. Alternatively, use can use the `-m`
@@ -179,16 +151,15 @@ flag followed by the comment in quotes.
 
 **Step 1**: Commit the file you just added to your repository.
 
-    $ git commit -m "This is the first commit. It adds a readme file."
-    [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
-     1 files changed, 1 insertions(+), 0 deletions(-)
-     create mode 100644 README.md
+```
+$ git commit -m "This is the first commit. It adds a readme file."
+```
 
 **Step 2**: Admire your work.
 
-    $ git status
-    # On branch master
-    nothing to commit (working directory clean)
+```
+$ git status
+```
 
 **ADVICE: Commit often**
 
@@ -238,7 +209,8 @@ A summarized version of this output can be output with the `--stat` flag:
 
     $ git diff --stat
 
-To see only the differences in a certain file or subdirectory, try:
+To see only the differences in a certain file or subdirectory, use
+`git diff [path]`. For example:
 
     $ git diff README.md
 
@@ -248,11 +220,10 @@ To see the changes that **are** staged for commit, use
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Use `git diff` with staged changes
 
-**Step 1**: Commit the change you made to `README.md`.
+**Step 1**: Stage the change you made to `README.md`.
 
 ```
 $ git add README.md
-$ git commit -m "Small change to README.md"
 ```
 
 **Step 2**: Try `git diff` on its own.
@@ -304,11 +275,11 @@ you don't want to commit.  Use `git reset` to unstage a file.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
 
-**Step 1**: Create a file and add it to the repository.
+**Step 1**: Make a change to the `README.md` file and stage the change.
 
 ```
-$ touch notes.txt
-$ git add notes.txt
+$ nano README.md
+$ git add README.md
 ```
 
 **Step 2**: Check the status of the repository, to see that the file
@@ -318,10 +289,11 @@ $ git add notes.txt
 $ git status
 ```
 
-**Step 3**: Unstage the file with `git reset`
+**Step 3**: Unstage the file with `git reset`. `HEAD` refers to the
+  most commit to the repository.
 
 ```
-$ git reset HEAD notes.txt
+$ git reset HEAD README.md
 ```
 
 **Step 4**: Check the status again.
@@ -329,7 +301,6 @@ $ git reset HEAD notes.txt
 ```
 $ git status
 ```
-
 
 ## Discarding unstaged modifications: `git checkout`
 
@@ -339,13 +310,7 @@ checkout`.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
 
-**Step 1**: Add a line to the `README.md` file.
-
-```
-$ nano README.md
-```
-
-**Step 2**: Check the status of the repository, and look at your
+**Step 1**: Check the status of the repository, and look at your
   unstaged changes.
   
 ```
@@ -353,13 +318,13 @@ $ git status
 $ git diff
 ```
 
-**Step 3**: Discard the changes.
+**Step 2**: Discard the changes.
 
 ```
 $ git checkout README.md
 ```
 
-**Step 4**: Look at the status of things again.
+**Step 3**: Look at the status of things again.
 
 ```
 $ git status
@@ -369,7 +334,7 @@ $ git diff
 ## Removing files: `git rm`
 
 If you want to remove a file from your repository, use `git rm`.
-Not that past versions of the file will remain in the repository history.
+Note that past versions of the file will remain in the repository history.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git rm`
 
