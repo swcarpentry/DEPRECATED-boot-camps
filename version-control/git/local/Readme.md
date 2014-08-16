@@ -23,9 +23,10 @@ on using git from the command-line in the bash shell.
 We first need to setup git with our user name and email address, and
 tell it what editor we use.
 
-     $ git config --global user.name "YOUR NAME"
-     $ git config --global user.email "YOUR EMAIL"
-     $ git config --global core.editor nano
+    $ git config --global user.name "YOUR NAME"
+    $ git config --global user.email "YOUR EMAIL"
+    $ git config --global core.editor nano
+    $ git config --global color.ui true
 
 These commands modify the file `~/.gitconfig`. Type
 `less ~/.gitconfig` to see what it did.
