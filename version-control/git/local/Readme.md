@@ -358,7 +358,7 @@ $ git rm READYOU.md
 $ git status
 ```
 
-**Step 4**: Commit the change (removing the file)
+**Step 4**: Commit the change (removing the file).
 
 ```
 $ git commit -m "Remove READYOU.md"
