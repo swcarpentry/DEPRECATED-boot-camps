@@ -48,7 +48,8 @@ repository, change to that directory, and type `git init`.
 
 ### Exercise : Create a Local Repository
 
-**Step 1** : Initialize your repository.
+Initialize your repository: change to your home directory, create a
+new directory, change to that directory, and type `git init`.
 
     $ cd
     $ mkdir simplestats
@@ -56,22 +57,33 @@ repository, change to that directory, and type `git init`.
     $ git init
     Initialized empty Git repository in /Users/swc/simplestats/.git/
 
-**Step 2** : Browse the directory's hidden files to see what happened here.
-Open directories, browse file contents. Learn what you can in a minute.
+A `.git` subdirectory is created; git will store all of its material (configuration
+information and the entire history) here.
 
     $ ls -A
     .git
-    $ cd .git
-    $ ls -A
+    $ ls -A .git
     HEAD        config      description hooks       info        objects     refs
 
-** Step 3** : Use what you've learned. You may have noticed the file called
-`description`. You can describe your repository by opening the description
-file and replacing the text with a name for the repository.  We will be
-creating a module with some simple statistical methods, so mine will be
-called "Some simple methods for statistical analysis". You may call yours anything you like.
 
-    $ nano description
+
+## Routine use of git
+
+You use `git init` just once for a project, to initialize the git
+repository.
+
+Day-to-day, the basic use of git is the following:
+
+- Change some files
+- See what you've changed
+      git status
+      git diff
+      git log
+- Indicate what changes to save
+      git add
+- Commit to those changes
+      git commit
+
 
 ## git add : Adding a File To Version Control
 
@@ -86,7 +98,7 @@ Step 1 : Create a file to add to your repository.
     $ cd ~/simplestats/
     $ touch README.md
 
-Step 2 : Add some text to the readme.
+Step 2 : Add some text to the Readme file.
 
     $ nano README.md
 
@@ -95,7 +107,9 @@ in this file.
 
     $ git add README.md
 
-## git status : Checking the Status of Your Local Copy
+
+
+## git status : Checking the Status of Your Local repository
 
 The files you've created on your machine are your local "working" copy.
 The changes your make in this local copy aren't stored in the repository
@@ -140,7 +154,7 @@ More frequent commits increase the granularity of your **undo** button.
 
 There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
 
-[Our repo](https://github.com/UW-Madison-ACI/boot-camps/commits/2013-08-uwmadison) has some good commit messages.
+[Our repo](https://github.com/UW-Madison-ACI/boot-camps/commits/2014-08-25) has some good commit messages.
 
 ### Exercise : Commit Your Changes
 
