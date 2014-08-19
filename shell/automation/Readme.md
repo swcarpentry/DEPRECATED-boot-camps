@@ -26,7 +26,7 @@ the same number of characters:
     wc all_data
 
 Every character in the file takes up one byte of disk space. Thus, the
-size of the file in bytes should also be 10445. Let's confirm this:
+size of the file in bytes should also be 10449. Let's confirm this:
 
     ls -l all_data
 
@@ -52,7 +52,7 @@ the following
     wc all_data
 
 Sure, this works, but I had to create the `all_data` file to do this. Thus, I
-have wasted a precious 10445 bytes of hard disk space. We can do this
+have wasted a precious 10449 bytes of hard disk space. We can do this
 *without* creating a temporary file, but first I have to show you two
 more commands: `head` and `tail`. These commands print the first few,
 or last few, lines of a file, respectively. Try them out on
