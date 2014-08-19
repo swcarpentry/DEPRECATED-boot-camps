@@ -17,7 +17,7 @@ For each of the files indicated, `wc` has printed a line with three
 numbers. The first is the number of lines in that file. The second is
 the number of words. Finally, the total number of characters is
 indicated. The final line contains this information summed over all of
-the files. Thus, there were 10445 characters in total. 
+the files. Thus, there were 10449 characters in total. 
 
 Remember that the `Bert/*` and `gerdal/*4*` files were merged
 into the `all_data` file. So, we should see that `all_data` contains
@@ -134,8 +134,8 @@ add text to a new file called `toBeSorted`:
     nano toBeSorted
 
 Now enter the four names as shown above. When you are done, press
-<CONTROL>+O to write out these changes to the file. Press ENTER to use the file name
-`toBeSorted`. Then press <CONTROL>+X to exit `nano`.
+<kbd>CONTROL</kbd>+<kbd>O</kbd> to write out these changes to the file. Press <kbd>ENTER</kbd> to use the file name
+`toBeSorted`. Then press <kbd>CONTROL</kbd>+<kbd>X</kbd> to exit `nano`.
 
 When you are back to the command line, enter the command:
 
