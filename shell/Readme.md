@@ -373,17 +373,17 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `~/boot-camps/shell/data` that contain the letter `a` or the letter `e` (including files that may contain both).
-2.  List all of the files in `/bin` that contain the letter `a` *AND* the letter `e`.
+1.  List all of the directories in `~/boot-camps/shell/data` that contain the letter `a` or the letter `e` (including files that may contain both). Hint: `ls -d` will list directories and not files.
+2.  List all of the directories in `~/boot-camps/shell/data` that contain the letter `a` *AND* the letter `e`.
 
 * * * *
 
 ## Tab Completion
 
 Navigate to the home directory. Typing out directory names can waste a
-lot of time. When you start typing out the name of a directory, then
-hit the tab key, the shell will try to fill in the rest of the
-directory name. For example, enter:
+lot of time. Instead, you can just start typing out the name of a directory, 
+and then hit the tab key; the shell will try to fill in the rest of the
+directory name you! For example, enter:
 
     cd b<tab>
 
@@ -418,9 +418,9 @@ to see a numbered list of recent commands, including this just-issued
 
 If your history looked like this:
 
-    259  ls *!
-    260  ls /usr/bin/*.sh
-    261  ls *4*1
+    259  ls ../../
+    260  cd ~/boot-camps/shell/data/THOMAS
+    261  ls *1
 
 then you could repeat command #260 by simply entering:
 
@@ -432,62 +432,64 @@ then you could repeat command #260 by simply entering:
 **Short Exercise**
 
 1. Find the line number in your history for the last exercise (listing
-files in /bin) and reissue that command.
+directories in `~/boot-camps/shell/data`) and reissue that command.
 
 * * * * 
 
 # Which program?
 
 Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
-on the computer. A program is just a file that you can *execute*. The
-program `which` tells you the location of a particular program. For
-example:
+that exist on the computer (or that come along with Git Bash, for Windows 
+users). A program is just a file that you can *execute*, otherwise 
+known as an *executable*. If you want to find the location of a program, you 
+can use `which`. For example:
 
     which rm
 
-Will return "/bin/rm". Thus, we can see that `rm` is a program that
-sits inside of the `/bin` directory. Now enter:
+will return "/bin/rm" on unix-based computers. Thus, we can see that `rm` is 
+a program that sits inside of the `/bin` directory. Now enter:
 
     which find
 
 You will see that `find` is a program that sits inside of the
-`/usr/bin` directory.
+`/usr/bin` directory, if you're on a unix-based computer.
 
 So when we enter a program name, like `ls`, and hit enter, how does
 the shell know where to look for that program? How does it know to run
 `/bin/ls` when we enter `ls`. The answer is that when we enter a
 program name and hit enter, there are a few standard places that the
 shell automatically looks. If it can't find the program in any of
-those places, it will print an error saying "command not found". Enter
-the command:
+those places, it will print an error saying "command not found". 
+
+These standard places are stored in your *path*. To see your path, 
+enter the following command:
 
     echo $PATH
 
-This will print out the value of the `PATH` environment variable. More
-on environment variables later. Notice that a list of directories,
-separated by colon characters, is listed. These are the places the
-shell looks for programs to run. If your program is not in this list,
-then an error is printed. The shell ONLY checks in the places listed
-in the `PATH` environment variable. 
+This will print out the value of the `PATH` environment variable (more
+on environment variables later...). Notice that a list of directories 
+is displayed, separated by colon characters. These are the places the
+shell looks for programs to run. 
 
-Navigate to the `shell` directory and list the contents. You will
+If your program is not in this list, then an error is printed. For 
+example, Navigate to the `shell` directory and list the contents. You will
 notice that there is a program (executable file) called `hello` in
 this directory. Now, try to run the program by entering:
 
     hello
 
 You should get an error saying that hello cannot be found. That is
-because the directory `/home/<username>/boot-camps/shell` is not in the
+because the directory `~/boot-camps/shell` is not in the
 `PATH`. Instead, you can run the `hello` program by entering:
 
     ./hello
 
 Remember that `.` is a shortcut for the current working
-directory. This tells the shell to run the `hello` program which is
+directory. This tells the shell to run the `hello` program that is
 located in your current location. So, you can run any program by entering the path
 to that program. You can run `hello` equally well by specifying:
 
-    /home/<username>/boot-camps/shell/hello
+    ~/boot-camps/shell/hello
 
 # Working with Files
 
@@ -506,7 +508,7 @@ as standard output. If you enter:
 
 It will print out the contents of `ex_data.txt` twice. `cat` just
 takes a list of file names and writes out their contents one after another (this
-is where the name comes from, `cat` is short for concatenate). 
+is where the name comes from, `cat` is short for "concatenate"). 
 
 * * * *
 **Short Exercises**
@@ -516,7 +518,7 @@ is where the name comes from, `cat` is short for concatenate).
 
 2.  Without changing directories (you should still be in `shell`),
     use one short command to print the contents of all of the files in
-    the `/home/<username>/boot-camps/shell/data/THOMAS` directory.
+    the `~/boot-camps/shell/data/THOMAS` directory.
 
 * * * *
 
@@ -552,9 +554,9 @@ for the word "cat", `less` will not find it. You need to go to the
 beginning of the file (by typing `g`) and then search. Now quit the less 
 program.
 
-Pro-tip: The `man` program actually uses `less` internally and
-therefore uses the same commands, so you can search program manuals 
-using "/" as well!
+Pro-tip: The `man` program actually uses `less` to show you the contents 
+of the manual file for each program, so you can search program manuals 
+using "/" and use all other less commands as well!
 
 * * * *
 
@@ -587,7 +589,7 @@ exists.
 **Short Exercise**
 
 Use `>>`, to append the contents of all of the files whose names
-contain the number 4 in the directory `/home/<username>/boot-camps/shell/data/gerdal` 
+contain the number 4 in the directory `~/boot-camps/shell/data/gerdal` 
 to the existing `all_data` file. Thus, when you are done, `all_data`
 should contain all of the experiment data from Bert AND any
 experimental data file from gerdal with filenames that contain the
@@ -610,29 +612,26 @@ Let's make a temporary directory to store that file.  The `mkdir`
 command is used to make a directory. Just enter `mkdir` followed by a
 space, then the directory name:
 
-    mkdir /tmp/<username>
+    mkdir backup
 
-This makes a directory with your username in the directory `/tmp`.
-The directory `/tmp` is a special directory that all users can write
-to. It is a temporary place for storing files. Data stored in `/tmp`
-is automatically deleted when the computer shuts down.
+This makes a directory with your username in the directory `backup`.
 
 Now `all_data_backup` has been created as a copy of `all_data`. We can
 move files and directories around using the command `mv`. Enter this command:
 
-    mv all_data_backup /tmp/<username>
+    mv all_data_backup backup/
 
-This moves `all_data_backup` into your directory within `/tmp`. 
+This moves `all_data_backup` into your directory within `backup`. 
 
 The `mv` command is also how you can rename files and diretories. Since this file is so
 important, let's rename it:
 
     mv all_data all_data_IMPORTANT
 
-Now the file name has been changed to all_data_IMPORTANT. Let's delete
+Now the file name has been changed to `all_data_IMPORTANT`. Let's delete
 the backup file now:
 
-    rm /tmp/<username>/all_data_backup
+    rm backup/all_data_backup
 
 * * * *
 **Short Exercise**
