@@ -56,7 +56,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b 2014-08-25 <repo location>
+    git clone -b 2014-08-25 https://github.com/UW-Madison-ACI/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
 a local repository that has been copied from our central GitHub repository. 
@@ -403,9 +403,9 @@ You can easily access previous commands.  Hit the up arrow.
 Hit it again.  You can step backwards through your command history. 
 The down arrow takes you forward in the command history.  
 
-<control>+C will cancel the command you are writing, and give you a fresh prompt.
+<kbd>CONTROL</kbd>+<kbd>c</kbd> will cancel the command you are writing, and give you a fresh prompt.
 
-<control>+R will do a reverse-search through your command history. You can also 
+<kbd>CONTROL</kbd>+<kbd>r</kbd> will do a reverse-search through your command history. You can also 
 use the up and down arrows to navigate through your command history, which can 
 be usefule for easily repeating a recent command. Useful, right?
 
@@ -715,7 +715,7 @@ below. Number 2 does not require `find`:
 3.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is ok for the file name to end in `.txt.txt`)
+    it is okay for certain files to end in `.txt.txt`)
 
 **BONUS**
 
