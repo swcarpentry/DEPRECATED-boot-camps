@@ -5,6 +5,23 @@ Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for P
 
 **Material by Paul Wilson, Lauren Michael, Milad Fatenejad, Sasha Wood, and Radhika Khetani**
 
+#Working with Files (cont...)
+
+## Searching Within Files
+
+You can search the contents of a file using the command `grep`. The
+`grep` program is very powerful and useful especially when combined
+with other commands by using the pipe. Navigate to the `Bert`
+directory. Every data file in this directory has a line which says
+"Range". The range represents the smallest frequency range that can be
+discriminated. Lets list all of the ranges from the tests that Bert
+conducted:
+
+    grep Range *
+
+Notice that this is a much shorter command than the `find` command we 
+used to view the "Volume" line of each file.
+
 ## Count the Words
 
 The `wc` program (word count) counts the number of lines, words, and
@@ -41,7 +58,7 @@ Figure out how to get `wc` to print the length of the longest line in
 
 * * * *
 
-## The awesome power of the Pipe
+# The awesome power of the Pipe
 
 Suppose I wanted to only see the total number of lines, words, and 
 characters across the files `Bert/*` and `gerdal/*4*`. I don't want to
@@ -72,7 +89,7 @@ Let's turn back to the problem of printing only the total number of
 lines in a set of files without creating any temporary files. To do
 this, we want to tell the shell to take the output of  
 `wc Bert/* gerdal/*4*` and send it into the `tail -n 1` command. The `|`
-character (called pipe) is used for this purpose. Enter the following
+character (called "pipe") is used for this purpose. Enter the following
 command:
 
     wc Bert/* gerdal/*4* | tail -n 1
@@ -222,18 +239,6 @@ Congratulations, you just created your first shell script! You can now execute i
 by entering the path location of `smallest` (absolute or relative) from within the 
 directory you'd like to analyze.
 
-## Searching Files
-
-You can search the contents of a file using the command `grep`. The
-`grep` program is very powerful and useful especially when combined
-with other commands by using the pipe. Navigate to the `Bert`
-directory. Every data file in this directory has a line which says
-"Range". The range represents the smallest frequency range that can be
-discriminated. Lets list all of the ranges from the tests that Bert
-conducted:
-
-    grep Range *
-
 * * * * 
 **Short Exercise**
 
@@ -286,7 +291,7 @@ You can also define your own variables.  If you are always needing to
 go to the same directory for your work, you could store it's path as a
 variable.  Change to your home directory and try:
 
-    DATADIR="/home/<username>/boot-camps/shell/data"
+    DATADIR="~/boot-camps/shell/data"
     cd $DATADIR
 
 You can also use one variable as part of the definition to another:
@@ -364,12 +369,10 @@ defined above:
     export PS1="[\u@\h \w]\$ "
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
 
-Now logout and login again, and confirm that those variables and
-aliases are set with the `set` command and `alias` command,
-respectively.
-
-Many experienced users will gradually build up a long list of
-important variables and aliases.
+These variables should then be available to you in the future. On a server, 
+these variables would be avialable even after you log out and log back in. Many 
+experienced users will gradually build up a long list of
+important variables and aliases for tasks they do frequently.
 
 
 * * * * 
