@@ -654,7 +654,7 @@ Enter the following command:
 ## Finding files
 
 The `find` program can be used to find files based on arbitrary
-criteria. Navigate to the `data` directory and enter the following
+criteria. Navigate to the `shell` directory and enter the following
 command:
 
     find . -print
@@ -667,39 +667,61 @@ from the current directory. Let's exclude all of the directories:
 This tells `find` to locate only files. Now try these commands:
 
     find . -type f -name "*1*"
-    find . -type f -name "*1*" -or -name "*2*" -print
+    find . -maxdepth 1 -type f -print
+    find . -mindepth 2 -type f -print
+    find . -type f -name "*1*" -print -o -name "*2*" -print
     find . -type f -name "*1*" -and -name "*2*" -print
 
 The `find` command can acquire a list of files and perform some
 operation on each file. Try this command out:
 
+    find . -type f -exec grep Volume {} \;
+
+This command finds every file within and below the current directory, 
+and then searches each file for a line which contains the word "Volume". 
+How does it do this? The `-exec` argument allow `find` to run to the 
+program `grep`, multiple times, such that each file name is inserted 
+whenever the `{}` occurs (as an arguement to `grep`. The trailing `\;` is used to terminate the
+command, in order to end the task run by `-exec`. 
+
+We'll talk a bit more 
+about grep after the break, but you'll use the `{}` trick in the 
+exercises below.
+
+## BONUS Topic: Using xargs to pass information to another program
+
+The above command is slow, because it is calling a new instance
+of `grep` for each item the `find` returns. A faster way to repeat 
+the same task is to use the `xargs` command:
+
     find . -type f -print | xargs grep Volume
 
 `find` generates a list of all the files we are interested in, 
-then we *pipe* them to `xargs`, which passes the list of items 
-as arguments to `grep`.
+then we *pipe* (`|`) them to `xargs`. `xargs` takes the items given to it 
+and passes them as arguments to `grep`. `xargs` generally only creates
+a single instance of `grep` (or whatever program it is running). We'll 
+also use the *pipe* (`|`) more after the break.
 
 * * * * 
 **Exercises**
 
-Navigate to the `data` directory. Use one `find` command to perform #1 
-below. Numbers 2 and 3 do not require `find`:
+Let's clean up this data! Navigate to the `data` directory. Use one `find` command to perform #1 
+below. Number 2 does not require `find`:
 
 1.  Find any file whose name is "NOTES" within `data` and its subdirectories, and delete it 
 
 2.  Create a new directory called `cleaneddata`
 
-3.  Move all of the files within `data` and its subdirectories to the `cleaneddata` directory
+3.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
 
-Hint: If you make a mistake and need to start over just do the
-following:
+4.  Rename all of the files to ensure that they end in `.txt` (note:
+    it is ok for the file name to end in `.txt.txt`)
 
-1.  Navigate to the `shell` directory
+**BONUS**
 
-2.  Delete the `data` directory
-
-3.  Enter the command: `git checkout -- data` You should see that the
-    data directory has reappeared in its original state
+Redo exercise 4, except rename only the files which do not already end
+in `.txt`. You will have to use the `man` command to figure out how to
+search for files which do not match a certain name.
 
 * * * * 
 
