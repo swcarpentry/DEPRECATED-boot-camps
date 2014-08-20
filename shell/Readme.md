@@ -8,14 +8,9 @@ Forward To [Let the Computer Do the Work](automation/Readme.md)
 # What is the shell how do I access the shell?
 
 The *shell* is a program that presents a command line interface
-which allows you to control your computer using commands entered
-with a keyboard instead of controlling graphical user interfaces
-(GUIs) with a mouse/keyboard combination.
-
-Use a browser to open the tutorial on github, located at:
-    https://github.com/UW-Madison-ACI/boot-camps/tree/2014-08-25
-
-Click on the directory named `shell`.
+which allows you to control your computer. Tasks are accomplished 
+by entering commands with a keyboard instead of controlling graphical user interfaces
+(GUIs or application "windows") that use a mouse/keyboard combination.
 
 A *terminal* is a program you run that gives you access to the
 shell. There are many different terminal programs that vary across
@@ -215,20 +210,20 @@ The `cd` command takes an argument which is the directory
 name. Directories can be specified using either a *relative* path or 
 a *full* path. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
-hierarchy. Navigate to *your* home directory with
+hierarchy. Navigate to your "home directory" with
 
     cd ~
 
 Now, enter the `pwd` command and you should see:
 
-the full name of your home directory. This tells you that you
+the full name of *your* home directory. This tells you that you
 are in a directory called `<username>`, and indicates the *full path* 
 for that directory, starting with the top of the directory structure, 
 which is indicated by `/`.
 
 For example, you can enter a command to `cd` into `boot-camps/shell`, but 
-using the *full* path based upon your output from `pwd`. How is this 
-different for Windows versus unix-based computers?
+using the *full* path based upon your output from `pwd`. How is the full 
+path different for Windows versus unix-based computers?
 
 Now go back to the home directory. We saw earlier that the
 command:
@@ -705,8 +700,8 @@ also use the *pipe* (`|`) more after the break.
 * * * * 
 **Exercises**
 
-Let's clean up this data! Navigate to the `data` directory. Use one `find` command to perform #1 
-below. Number 2 does not require `find`:
+Let's clean up this data! Navigate to the `data` directory. Use a single 
+`find` command to perform the below exercises. Number 2 does not require `find`:
 
 1.  Find any file whose name is "NOTES" within `data` and its subdirectories, and delete it 
 
