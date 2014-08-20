@@ -221,46 +221,39 @@ hierarchy. Navigate to *your* home directory with
 
 Now, enter the `pwd` command and you should see:
 
-    /home/<username>
+the full name of your home directory. This tells you that you
+are in a directory called `<username>`, and indicates the *full path* 
+for that directory, starting with the top of the directory structure, 
+which is indicated by `/`.
 
-which is the full name of your home directory. This tells you that you
-are in a directory called `<username>`, which sits inside a directory
-called `home` which sits inside the very top directory in the
-hierarchy. The very top of the hierarchy is a directory called `/`
-which is usually referred to as the *root directory*. So, to
-summarize: `<username>` is a directory in `home` which is a directory
-in `/`.
+For example, you can enter a command to `cd` into `boot-camps/shell`, but 
+using the *full* path based upon your output from `pwd`. How is this 
+different for Windows versus unix-based computers?
 
-Now enter the following command:
-
-    cd /home/<username>/boot-camps/shell
-
-where <username> is the username you used to login, and can be
-determined by running the command `whoami`.  This jumps to
-`shell`. Now go back to the home directory. We saw earlier that the
+Now go back to the home directory. We saw earlier that the
 command:
 
     cd boot-camps/shell
 
 had the same effect - it took us to the `shell` directory. But,
-instead of specifying the full path
-(`/home/<username>/boot-camps/shell`), we specified a *relative path*. In
+instead of specifying the full path, we specified a *relative path*. In
 other words, we specified the path relative to our current
 directory. A full path always starts with a `/`. A relative path does
 not. You can usually use either a full path or a relative path
-depending on what is most convenient. If we are in the home directory,
+depending on what is most convenient for you. If we are in the home directory,
 it is more convenient to just enter the relative path since it
 involves less typing.
 
 Over time, it will become easier for you to keep a mental note of the
-structure of the directories that you are using hand how to quickly
+structure of the directories that you are using and how to quickly
 navigate amongst them.
 
 * * * *
 **Short Exercise**
 
-Now, list the contents of the /bin directory. Do you see anything
-familiar in there?
+Now, list the contents of a directory of your own, by using the full
+path (and without using `cd`, so that you are running the command 
+from your current location).
 
 * * * * 
 
@@ -287,16 +280,17 @@ these together, so:
     ls ../../
 
 prints the contents of `/home/<username>` which is your home
-directory. Finally, the special directory `.` always refers to your
+directory. 
+
+Finally, the special directory `.` always refers to your
 current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
 same thing, they print the contents of the current directory. This may
 seem like a useless shortcut right now, but we'll see when it is
 needed in a little while.
 
 To summarize, while you are in the `shell` directory, the commands
-`ls ~`, `ls ~/.`, `ls ../../`, and `ls /home/<username>` all do exactly the
-same thing. These shortcuts are not necessary, they are provided for
-your convenience.
+`ls ~`, `ls ~/.`, and `ls ../../` all do exactly the
+same thing. *Or* you could use the full path, too.
 
 ## Introducing our data set: Cochlear Implants
 
@@ -315,7 +309,7 @@ report:
 To participate, subjects attended our laboratory and one of our lab
 techs played an audio sample, and recorded their data - when they
 first heard the sound, or first heard a difference in the sound.  Each
-set of test results were written out to a text file, one set per file.
+set of test results were written out to a text file, with one set per file.
 Each participant has a unique subject ID, and a made-up subject name.
 Each experiment has a unique experiment ID. The experiment has
 collected 351 files so far.
@@ -333,7 +327,7 @@ commands to get this data into shape. By the end we would like to:
 3.  Get rid of the extraneous "NOTES" files
 
 If we can get through this example in the available time, we will move
-onto more advanced shell topics...
+on to more advanced shell topics...
 
 ## Wild cards
 
@@ -349,20 +343,21 @@ directory. Now try this command:
 
 This lists every file that ends with a `1`. This command:
 
-    ls /usr/bin/*.sh
-
-lists every file in `/usr/bin` that ends in the characters `.sh`. And
-this command:
-
     ls *4*1
 
 lists every file in the current directory whose name contains the
-number `4`, and ends with the number `1`. There are four such files:
+number `4`, and ends with the number `1` (so it has also 
+established that `4` must be before `1` in the filename). There are four such files:
 `0241`, `0341`, `0431`, and `0481`.
 
 So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for filenames
-that match the given pattern. In this case, it identified four such
+that match the given pattern. Using the wildcard does *NOT* 
+exclude cases where there are no characters between `4` and `1`, as the 
+wildcard includes cases where there are *any* number of characters
+in place of the `*` character, even if there are zero characters. 
+
+In this case, it identified four such
 files. Then, it replaced the `*4*1` with the list of files, separated
 by spaces. In other words, the two commands:
 
@@ -378,8 +373,8 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
-2.  List all of the files in `/bin` that contain the letter `a` AND the letter `b`
+1.  List all of the files in `~/boot-camps/shell/data` that contain the letter `a` or the letter `e` (including files that may contain both).
+2.  List all of the files in `/bin` that contain the letter `a` *AND* the letter `e`.
 
 * * * *
 
@@ -406,18 +401,19 @@ tab again, the shell will list the possible choices.
 
 You can easily access previous commands.  Hit the up arrow.  
 Hit it again.  You can step backwards through your command history. 
-The down arrow takes your forwards in the command history.  
+The down arrow takes you forward in the command history.  
 
-^-C will cancel the command you are writing, and give you a fresh prompt.
+<control>+C will cancel the command you are writing, and give you a fresh prompt.
 
-^-R will do a reverse-search through your command history.  This
-is very useful.
+<control>+R will do a reverse-search through your command history. You can also 
+use the up and down arrows to navigate through your command history, which can 
+be usefule for easily repeating a recent command. Useful, right?
 
-You can also review your recent commands with the `history` command.  Just enter:
+You can also review all of your recent commands at once with the `history` command.  Just enter:
 
     history
 
-to see a numbered list of recent commands, including this just issues
+to see a numbered list of recent commands, including this just-issued
 `history` command.
 
 If your history looked like this:
