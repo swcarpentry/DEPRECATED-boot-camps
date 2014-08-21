@@ -158,13 +158,14 @@ want to create a file which contains the following names:
 To do this, we need a program which allows us to create text
 files. There are many such programs, the easiest one of which is
 installed on almost all systems and is called `nano`. Navigate to
-`/tmp/<username>` and enter the following command to create and 
-add text to a new file called `toBeSorted` (for Windows users, you can just create this file in your home directory):
+the `shell` directory and enter the following command to create and 
+add text to a new file called `toBeSorted`:
 
     nano toBeSorted
 
 Now enter the four names as shown above. When you are done, press
-<kbd>CONTROL</kbd>+<kbd>O</kbd> to write out these changes to the file. Press <kbd>ENTER</kbd> to use the file name
+<kbd>CONTROL</kbd>+<kbd>O</kbd> to write out these changes to the file. 
+Press <kbd>ENTER</kbd> to use the file name
 `toBeSorted`. Then press <kbd>CONTROL</kbd>+<kbd>X</kbd> to exit `nano`.
 
 When you are back to the command line, enter the command:
