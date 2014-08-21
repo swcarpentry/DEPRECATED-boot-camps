@@ -1,12 +1,45 @@
 [Up To Schedule](../../../README.md) - Back To [Planning for Mistakes](../../../python/testing) - Forward To [Collaboration](../remote)
 
-# Branching in Version Control
+# Make Incremental Changes: Use Version Control
+
 ----
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
 
     
+## git revert : the promised "undo" button
+
+It is possible that after many commits, you decide that you really
+want to "rollback" a set of commits and start over.  It is easy to
+revert your code to a previous version.
+
+You can use `git log` and `git diff` to explore your history and
+determine which version you are interested in.  Choose a version and
+note the *hash* for that version. (Let's assume `abc456`).  **NOTE:**
+the version you choose will be the changes you wish to remove, not the
+final point that you want to reach.  In this case, you will remove the
+changes made in `abc456`, rather than 'rolling back' to `abc456`.
+
+     git revert abc456
+
+**Importantly,** this will not erase the intervening commits.  This
+will create a new commit that is changed from the previous commit by a
+change that will recreate the desired version.  This retains a
+complete provenance of your software, and can be compared to the
+prohibition in removing pages from a lab notebook.
+
+### Exercise :
+
+1. Create 5 files in your directory with one line of content in each
+   file.
+2. Commit the files to the repository.
+3. Change 2 of the 5 files and commit them.
+4. Undo the changes in step 3.
+5. Print out the last entry in the log.
+
+
+
 ## git branch : Listing, Creating, and Deleting Branches
 
 Branches are parallel instances of a repository that can be edited and
@@ -140,6 +173,7 @@ Step 3 : Play around with it.
 
 ## Resources
 
-[git book](http://git-scm.com/book)
+* [git book](http://git-scm.com/book)
+* [git game](http://pcottle.github.io/learnGitBranching/index.html)
 
 [Up To Schedule](../../../README.md) - Back To [Planning for Mistakes](../../../python/testing) - Forward To [Collaboration](../remote)

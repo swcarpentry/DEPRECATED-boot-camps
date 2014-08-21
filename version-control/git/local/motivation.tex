@@ -1,0 +1,227 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% header stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% get rid of junk
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+
+% font
+\usepackage{fontspec}
+\setsansfont
+  [ ExternalLocation = fonts/ ,
+    UprightFont = *-regular , 
+    BoldFont = *-bold ,
+    ItalicFont = *-italic ,
+    BoldItalicFont = *-bolditalic ]{texgyreheros}
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+% "TeX Gyre Heros can be used as a replacement for Helvetica"
+% I've placed them in ../fonts/; alternatively you can install them
+% permanently on your system as follows:
+%     Download http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
+%     In Unix, unzip it into ~/.fonts
+%     In Mac, unzip it, double-click the .otf files, and install using "FontBook"
+
+% named colors
+\definecolor{offwhite}{RGB}{255,250,240}
+\definecolor{gray}{RGB}{155,155,155}
+
+\definecolor{background}{RGB}{255,255,255}
+\definecolor{foreground}{RGB}{24,24,24}
+\definecolor{title}{RGB}{27,94,134}
+\definecolor{subtitle}{RGB}{22,175,124}
+\definecolor{hilit}{RGB}{122,0,128}
+\definecolor{vhilit}{RGB}{255,0,128}
+\definecolor{lolit}{RGB}{95,95,95}
+
+\newcommand{\hilit}{\color{hilit}}
+\newcommand{\vhilit}{\color{vhilit}}
+\newcommand{\nhilit}{\color{nhilit}}
+\newcommand{\nvhilit}{\color{nvhilit}}
+\newcommand{\lolit}{\color{lolit}}
+
+% use those colors
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=lolit}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=lolit}
+\setbeamercolor{itemize/enumerate subbody}{fg=lolit}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+% page number
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\lolit
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+% add a bit of space at the top of the notes page
+\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
+
+% default link color
+\hypersetup{colorlinks, urlcolor={hilit}}
+
+% a few macros
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\bbi}{\vspace{24pt} \begin{itemize} \itemsep8pt}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+\newcommand{\ttsm}{\tt \small}
+\newcommand{\ttfn}{\tt \footnotesize}
+\newcommand{\figh}[2]{\centerline{\includegraphics[height=#2\textheight]{#1}}}
+\newcommand{\figw}[2]{\centerline{\includegraphics[width=#2\textwidth]{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Make Incremental Changes}
+\subtitle{Version Control with git and GitHub}
+\date{}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{ \titlepage }
+}
+
+\begin{frame}[c]{}
+
+% comic from http://www.phdcomics.com/comics/archive.php?comicid=1531
+\figh{pics/phd101212s.png}{0.9}
+
+\vfill
+\color{lolit} \tiny
+\centerline{\url{http://www.phdcomics.com/comics/archive.php?comicid=1531}}
+
+\end{frame}
+
+
+
+
+\begin{frame}{\only<1>{Methods for tracking versions}\only<2>{Suppose it stops working\dots}}
+\bbi
+\item Don't keep track
+\onslide<2>{
+\bi
+\item Good luck!
+\ei
+}
+\item Save numbered files
+\onslide<2>{
+\bi
+\item Manually compare files (with {\tt diff})
+\ei
+}
+\item Formal version control
+\onslide<2>{
+\bi
+\item Easy to study changes back in time
+\item Easy to jump back and test
+\ei
+}
+\ei
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{}
+
+\vspace*{2cm}
+
+\figw{pics/kcranstn_tweet.png}{0.7}
+
+\vspace*{3cm}
+
+\color{lolit} \tiny
+\centerline{\url{http://bit.ly/kcranstn_tweet}}
+
+\end{frame}
+
+
+
+\begin{frame}{Why use formal version control?}
+\bbi
+\item Backup files that are changing
+\item Store a history of those changes
+\item Explore that history
+\item No worries about breaking things that work
+\item Merge changes from multiple people
+\ei
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Example repository}
+
+\figh{pics/pybroman_repo.png}{0.9}
+
+\end{frame}
+
+
+\begin{frame}[c]{Example history}
+
+\figh{pics/pybroman_commits.png}{0.9}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Example commit}
+
+\figh{pics/pybroman_acommit.png}{0.9}
+\end{frame}
+
+
+\begin{frame}{Why git?}
+\bbi
+\item It's fast
+\item You don't need access to a server
+\item Amazingly good at merging simultaneous changes
+\item It's popular
+\item GitHub
+\onslide<2>{
+  \bi
+  \item A home for git repositories
+  \item Interface for exploring git repositories
+  \item Like facebook for programmers (and data scientists)
+  \ei
+}
+\ei
+\end{frame}
+
+
+\begin{frame}{It's not just for software}
+
+\vspace*{5mm}
+You can track any content {\lolit (but mostly plain text files)}
+\vspace*{-5mm}
+
+\bbi
+\item source code
+\item data analysis projects
+\item manuscripts
+\item presentations
+\item websites
+\ei
+
+\end{frame}
+
+
+\end{document}

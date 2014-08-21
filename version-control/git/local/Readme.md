@@ -1,121 +1,50 @@
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md) - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
 
-# Make Incremental Changes: Use Version Control
+# Make Incremental Changes I: Use Version Control
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
-# Motivation
+## Motivation
 
-From a recent [tweet](https://twitter.com/kcranstn/statuses/370914072511791104)
+See [motivation.pdf](motivation.pdf).
 
-```
-@mtholder motivating git: You mostly collaborate with yourself, and
-me-from-two-months-ago never responds to email. @swcarpentry
-```
+## Introduction
 
-## git : What is Version Control ?
+We will cover [git](http://git-scm.com) (and
+[GitHub](http://github.com)) in several sessions.  There exist
+numerous graphical user interfaces for git (including
+[GitHub for Mac](https://mac.github.com/) and
+[GitHub for Windows](https://windows.github.com/)), but we will focus
+on using git from the command-line in the bash shell.
 
-Very briefly, version control is a way to keep a backup of changing
-files, to store a history of those changes, and most importantly to
-allow many people in a collaboration to make changes to the same files
-concurrently. There are a lot of version control systems. Wikipedia
-provides both [a nice vocabulary list and a fairly complete table of some popular version control systems and their equivalent commands](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software).
+## Initial setup: `git config`
 
-Today, we'll be using git. Git is an example of a distributed version
-control system, distinct from centralized versing control systems. I'll
-make the distinction clear later, but for now, the table below will
-suffice.
+We first need to setup git with our user name and email address, and
+tell it what editor we use. The last command tells git to provided output in color.
 
-Version Control System Tool Options
+    $ git config --global user.name "YOUR NAME"
+    $ git config --global user.email "YOUR EMAIL"
+    $ git config --global core.editor nano
+    $ git config --global color.ui true
 
-- **Distributed**
-  - Decentralized CVS (dcvs)
-  - mercurial (hg)
-  - git (git)
-  - bazaar (bzr)
-- **Centralized**
-  - concurrent versions system (cvs)
-  - subversion (svn)
+These commands modify the file `~/.gitconfig`. Type
+`less ~/.gitconfig` to see what it did.
 
-## git --help : Getting Help
+## Create a local repository: `git init`
 
-The first thing I like to know about any tool is how to get help. From
-the command line type
+A git repository is a directory on your computer. You will use git to
+track the files and subdirectories in that directory. To begin to use
+git to track a directory, you must first initialize the repository
+with `git init`.
 
-    $ man git
+Starting from scratch, you first create a directory for your
+repository, change to that directory, and type `git init`.
 
-The manual entry for the git version control system will appear before
-you. You may scroll through it using arrows, or you can search for
-keywords by typing **/** followed by the search term. I'm interested in
-help, so I type **/help** and then hit enter. It looks like the syntax
-for getting help with git is **git --help**.
+### ![Exercise](pics/exercise.jpg) Exercise: Create a Local Repository
 
-To exit the manual page, type **q**.
-
-Let's see what happens when we type :
-
-    $ git --help
-
-Excellent, it gives a list of commands it is able to help with, as well
-as their descriptions.
-
-    $ git --help
-    usage: git [--version] [--exec-path[=<path>]] [--html-path]
-               [-p|--paginate|--no-pager] [--no-replace-objects]
-               [--bare] [--git-dir=<path>] [--work-tree=<path>]
-               [-c name=value] [--help]
-               <command> [<args>]
-
-    The most commonly used git commands are:
-       add        Add file contents to the index
-       bisect     Find by binary search the change that introduced a bug
-       branch     List, create, or delete branches
-       checkout   Checkout a branch or paths to the working tree
-       clone      Clone a repository into a new directory
-       commit     Record changes to the repository
-       diff       Show changes between commits, commit and working tree, etc
-       fetch      Download objects and refs from another repository
-       grep       Print lines matching a pattern
-       init       Create an empty git repository or reinitialize an existing one
-       log        Show commit logs
-       merge      Join two or more development histories together
-       mv         Move or rename a file, a directory, or a symlink
-       pull       Fetch from and merge with another repository or a local branch
-       push       Update remote refs along with associated objects
-       rebase     Forward-port local commits to the updated upstream head
-       reset      Reset current HEAD to the specified state
-       rm         Remove files from the working tree and from the index
-       show       Show various types of objects
-       status     Show the working tree status
-       tag        Create, list, delete or verify a tag object signed with GPG
-
-    See 'git help <command>' for more information on a specific command.
-
-## git config : Controls the behavior of git
-
-     $ git config --global user.name "YOUR NAME"
-     $ git config --global user.email "YOUR EMAIL"
-     $ git config --global core.editor nano
-
-## git init : Creating a Local Repository
-
-To keep track of numerous versions of your work without saving numerous
-copies, you can make a local repository for it on your computer. What git
-does is to save the first version, then for each subsequent version it
-saves only the changes. That is, git only records the difference between
-the new version and the one before it. With this compact information,
-git is able to recreate any version on demand by adding the changes to
-the original in order up to the version of interest.
-
-To create your own local (on your own machine) repository, you must
-initialize the repository with the infrastructure git needs in order to
-keep a record of things within the repository that you're concerned
-about. The command to do this is **git init** .
-
-### Exercise : Create a Local Repository
-
-Step 1 : Initialize your repository.
+Initialize your repository: change to your home directory, create a
+new directory, change to that directory, and type `git init`.
 
     $ cd
     $ mkdir simplestats
@@ -123,91 +52,114 @@ Step 1 : Initialize your repository.
     $ git init
     Initialized empty Git repository in /Users/swc/simplestats/.git/
 
-Step 2 : Browse the directory's hidden files to see what happened here.
-Open directories, browse file contents. Learn what you can in a minute.
+A `.git` subdirectory is created; git will store all of its material (configuration
+information and the entire history) here.
 
     $ ls -A
     .git
-    $ cd .git
-    $ ls -A
+    $ ls -A .git
     HEAD        config      description hooks       info        objects     refs
 
-Step 3 : Use what you've learned. You may have noticed the file called
-description. You can describe your repository by opening the description
-file and replacing the text with a name for the repository.  We will be
-creating a module with some simple statistical methods, so mine will be
-called "Some simple methods for statistical analysis". You may call yours anything you like.
 
-    $ nano description
 
-Step 4 : Applications sometimes create files that are not needed. For
-example, emacs creates a temporary file called 'filename~' when you edit
-the file 'filename'. You can ask git to ignore such files by editing
-the file '.git/info/exclude'. Edit the file to ignore files that end with '~'.
+## Routine use of git
 
-     git ls-files --others --exclude-from=.git/info/exclude
-    # Lines that start with '#' are comments.
-    # For a project mostly in C, the following would be a good set of
-    # exclude patterns (uncomment them if you want to use them):
-    # *.[oa]
-    # *~
+You use `git init` just once for a project, to initialize the git
+repository.
 
-## git add : Adding a File To Version Control
+Day-to-day, the basic use of git is the following:
 
-For the git repository to know which files within this directory you
-would like to keep track of, you must add them. First, you'll need to
-create one, then we'll learn the **git add** command.
+- Change some files
+- See what you've changed, with `git status`, `git diff`, and `git log`.
+- Indicate what changes to save, with `git add`.
+- Commit to those changes, with `git commit`.
 
-### Exercise : Add a File to Your Local Repository
+## Check the status of your repository: `git status` 
 
-Step 1 : Create a file to add to your repository.
+Use `git status` to check the current status of things in your repository
 
-    $ cd ~/simplestats/
-    $ touch README.md
+```
+$ git status
+On branch master
 
-Step 2 : Add some text to the readme.
+Initial commit
 
-    $ nano README.md
+nothing to commit (create/copy files and use "git add" to track)
+```
 
-Step 3 : Inform git that you would like to keep track of future changes
-in this file.
+This says that nothing much is going on.
+We will talk about _branches_ tomorrow.
 
-    $ git add README.md
 
-## git status : Checking the Status of Your Local Copy
+## Adding a File To Version Control: `git add`
 
-The files you've created on your machine are your local "working" copy.
-The changes your make in this local copy aren't stored in the repository
-automatically. Until you commit them, the changes you make are local
-changes. When you change anything, your set of files becomes different
-from the files in the most recent official repository copy, known
-as the repository HEAD. To find out what's different about them in the
-terminal, try:
+You need to _specify_ which files within the directory you would like to
+keep track of. To do so, you must add them to the repository with `git
+add`. But first you need to create a file.
 
-    $ git status
-    # On branch master
-    #
-    # Initial commit
-    #
-    # Changes to be committed:
+Typically the first file to add would be a ReadMe file describing the
+project. This can be a plain text file or a [Markdown](http://daringfireball.net/projects/markdown/)
+file (with the `.md` extension). Markdown is simple system for adding
+some light mark-up, like bold and italics, to indicate sections,
+and hyperlinks.
 
-    #   (use "git rm --cached <file>..." to unstage)
-    #
-    #       new file:   README.md
-    #
+### ![Exercise](pics/exercise.jpg) Exercise: Add a File to Your Local Repository
 
-This result indicates that the current difference
-between the repository HEAD (which, so far, is empty) and your
-`simplestats` directory is this new README.md file.
+**Step 1**: Create a file to add to your repository.
 
-## git commit : Saving a Snapshot
+```
+$ cd ~/simplestats/
+$ touch README.md
+```
 
-In order to save a snapshot of the current state (revision) of the
-repository, we use the commit command. This command is always associated
-with a message describing the changes since the last commit and
-indicating their purpose. Informative commit messages will serve you
-well someday, so make a habit of never committing changes without at
-least a full sentence description.
+**Step 2**: Add some text to the file.
+
+```
+$ nano README.md
+```
+
+**Step 3**: Use `git status` to check the status of the repository.
+
+```
+$ git status
+```
+
+**Step 4**: Tell git that you want to keep track of this file.
+
+```
+$ git add README.md
+```
+
+**Step 5**: Check the status again.
+
+```
+$ git status
+```
+
+## Commit your changes: `git commit`
+
+Committing changes to your repository involves two steps: indicating
+the changes to be committed with `git add` (known as "staging the changes",
+which we have just done), and then actually _committing_ those
+changes with `git commit`.
+
+If you type just `git commit`, an editor will open for you to add a
+comment describing the changes. Alternatively, use can use the `-m`
+flag followed by the comment in quotes.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Commit Your Changes
+
+**Step 1**: Commit the file you just added to your repository.
+
+```
+$ git commit -m "This is the first commit. It adds a readme file."
+```
+
+**Step 2**: Admire your work.
+
+```
+$ git status
+```
 
 **ADVICE: Commit often**
 
@@ -217,66 +169,82 @@ More frequent commits increase the granularity of your **undo** button.
 
 **ADVICE: Good commit messages**
 
-There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.
+There are no hard and fast rules, but good commits are atomic: they
+are the smallest change that remain meaningful. A good commit message
+usually contains a one-line overview followed by a longer
+explanation if necessary.
 
-[Our repo](https://github.com/UW-Madison-ACI/boot-camps/commits/2013-08-uwmadison) has some good commit messages.
+[The repository for this course](https://github.com/UW-Madison-ACI/boot-camps/commits/2014-08-25) has some good commit messages.
 
-### Exercise : Commit Your Changes
+## Viewing the differences: `git diff`
 
-Step 1 : Commit the file you've added to your repository.
+`git diff` is similiar to the shell command `diff`, but rather than
+comparing two files, it is used to show the historical changes in a 
+repository.
 
-    $ git commit -m "This is the first commit. It adds a readme file."
-    [master (root-commit) 1863aef] This is the first commit. It adds a readme file.
-     1 files changed, 1 insertions(+), 0 deletions(-)
-     create mode 100644 README.md
+If you type `git diff` alone, it will show all changes in your working
+directory that have not yet been staged for a commit.
 
-Step 2 : Admire your work.
+### ![Exercise](pics/exercise.jpg) Exercise: Try `git diff`
 
-    $ git status
-    # On branch master
-    nothing to commit (working directory clean)
+**Step 1**: Try out `git diff` without having made any changes
 
-## git diff : Viewing the Differences
+```
+$ git diff
+```
 
-There are many diff tools.
+**Step 2**: Make a change to the `README.md` file.
 
-If you have a favorite you can set your default git diff tool to execute
-that one. Git, however, comes with its own diff system.
+```
+$ nano README.md
+```
 
-Let's recall the behavior of the diff command on the command line.
-Choosing two files that are similar, the command :
+**Step 3**: Use git diff to view the changes.
 
-    $ diff file1 file2
+```
+$ git diff
+```
 
-will output the lines that differ between the two files. This
-information can be saved as what's known as a patch, but we won't go
-deeply into that just now.
-
-The only difference between the command line diff tool and git's diff
-tool is that the git tool is aware of all of the revisions in your
-repository, allowing each revision of each file to be treated as a full
-file.
-
-Thus, git diff will output the changes in your working directory that
-are not yet staged for a commit. To see how this works, make a change in
-your README.md file, but don't yet commit it.
-
-    $ git diff
-
-A summarized version of this output can be output with the --stat flag :
+A summarized version of this output can be output with the `--stat` flag:
 
     $ git diff --stat
 
-To see only the differences in a certain path, try:
+To see only the differences in a certain file or subdirectory, use
+`git diff [path]`. For example:
 
-    $ git diff HEAD -- [path]
+    $ git diff README.md
 
-To see what IS staged for commit (that is, what will be committed if you
-type git commit without the -a flag), you can try :
+To see the changes that **are** staged for commit, use
 
     $ git diff --cached
 
-## git log : Viewing the History
+### ![Exercise](pics/exercise.jpg) Exercise: Use `git diff` with staged changes
+
+**Step 1**: Stage the change you made to `README.md`.
+
+```
+$ git add README.md
+```
+
+**Step 2**: Try `git diff` on its own.
+
+```
+$ git diff
+```
+
+**Step 3**: Use `git diff` to see the staged changes.
+
+```
+$ git diff --cached
+```
+
+**Step 4**: Commit your change
+
+```
+$ git commit -m "Small change to README.md"
+```
+
+## Viewing the history: `git log`
 
 A log of the commit messages is kept by the repository and can be
 reviewed with the log command.
@@ -300,222 +268,128 @@ There are some useful flags for this command, such as
     --until=X.minutes/hours/days/weeks/months/years or YY-MM-DD-HH:MM
     --author=<pattern>
 
-## git reset : Unstaging a staged file
+## Unstaging a staged file: `git reset`
 
 There are a number of ways that you may accidentally stage a file that
-you don't want to commit.  Create a file called `temp_notes` that
-describes what you had for breakfast, and then add that file to your
-repo.  Check with `status` to see that it is added but not committed.
+you don't want to commit.  Use `git reset` to unstage a file.
 
-You can now unstage that file with:
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
 
-    git reset temp_notes
+**Step 1**: Make a change to the `README.md` file and stage the change.
 
-Check with `status`.
+```
+$ nano README.md
+$ git add README.md
+```
 
-## git checkout : Discarding unstaged modifications (git checkout has other purposes)
+**Step 2**: Check the status of the repository, to see that the file
+  has been staged.
 
-Perhaps you have made a number of changes that you realize are not
-going anywhere.  Add a line to `README.md` that describes your dinner
-last night.  Check with `status` to see that the file is changed and
-ready to be added.
+```
+$ git status
+```
 
-You can now return to previous checked in version with:
+**Step 3**: Unstage the file with `git reset`. `HEAD` refers to the
+  most commit to the repository.
 
-    git checkout -- README.md
+```
+$ git reset HEAD README.md
+```
 
-Check with `status` and take a look at the file.
+**Step 4**: Check the status again.
 
-## git rm : Removing files
+```
+$ git status
+```
 
-There are a variety of reasons you way want to remove a file from the
-repository after it has been committed.  Create a file called
-`READYOU.md` with the first names of all your immediate family
-members, and add/commit it to the repository.
+## Discarding unstaged modifications: `git checkout`
 
-You can now remove the file from the repository with:
+If you've made changes to a file and want to just scrap those changes
+and go back to the last committed version of the file, use `git
+checkout`.
 
-    git rm READYOU.md
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
 
-List the directory to see that you have no file named `READYOU.md`.
-Use `status` to determine if you need any additional steps.
+**Step 1**: Check the status of the repository, and look at your
+  unstaged changes.
+  
+```
+$ git status
+$ git diff
+```
 
-What if you delete a file in the shell without `git rm`? Try deleting
-`README.md`
+**Step 2**: Discard the changes.
 
-     rm README.md
+```
+$ git checkout README.md
+```
+
+**Step 3**: Look at the status of things again.
+
+```
+$ git status
+$ git diff
+```
+
+## Removing files: `git rm`
+
+If you want to remove a file from your repository, use `git rm`.
+Note that past versions of the file will remain in the repository history.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git rm`
+
+**Step 1**: Create a file, and add and commit it to the repository.
+
+```
+$ nano READYOU.md
+$ git add READYOU.md
+$ git commit -m "Add READYOU.md file"
+```
+
+**Step 2**: Remove the file from the repository.
+
+```
+$ git rm READYOU.md
+```
+
+**Step 3**: Check the status.
+
+```
+$ git status
+```
+
+**Step 4**: Commit the change (removing the file).
+
+```
+$ git commit -m "Remove READYOU.md"
+```
+
+**Step 5**: Check the status again.
+
+```
+$ git status
+```
+
+What happens if you delete a file in the shell without `git rm`? Try deleting
+`README.md` with `rm` rather than `git rm`.
+
+```
+$ rm README.md
+```
 
 What does `git status` say?  Oops! How can you recover this important
 file?
 
-     git checkout -- README.md
-
-## git revert : the promised "undo" button
-
-It is possible that after many commits, you decide that you really
-want to "rollback" a set of commits and start over.  It is easy to
-revert your code to a previous version.
-
-You can use `git log` and `git diff` to explore your history and
-determine which version you are interested in.  Choose a version and
-note the *hash* for that version. (Let's assume `abc456`).  **NOTE:**
-the version you choose will be the changes you wish to remove, not the
-final point that you want to reach.  In this case, you will remove the
-changes made in `abc456`, rather than 'rolling back' to `abc456`.
-
-     git revert abc456
-
-**Importantly,** this will not erase the intervening commits.  This
-will create a new commit that is changed from the previous commit by a
-change that will recreate the desired version.  This retains a
-complete provenance of your software, and can be compared to the
-prohibition in removing pages from a lab notebook.
-
-### Exercise :
-
-1. Create 5 files in your directory with one line of content in each
-   file.
-2. Commit the files to the repository.
-3. Change 2 of the 5 files and commit them.
-4. Undo the changes in step 3.
-5. Print out the last entry in the log.
-
-
-# Branching in Version Control
-
-## git branch : Listing, Creating, and Deleting Branches
-
-Branches are parallel instances of a repository that can be edited and
-version controlled in parallel. They are useful for pursuing various
-implementations experimentally or maintaining a stable core while
-developing separate sections of a code base.
-
-Without an argument, the **branch** command lists the branches that
-exist in your repository.
-
-    $ git branch
-    * master
-
-The master branch is created when the repository is initialized. With an
-argument, the **branch** command creates a new branch with the given
-name.
-
-    $ git branch experimental
-    $ git branch
-    * master
-      experimental
-
-To delete a branch, use the **-d** flag.
-
-    $ git branch -d experimental
-    $ git branch
-    * master
-
-## git checkout : Switching Between Branches, Abandoning Local Changes
-
-The **git checkout** command allows context switching between branches
-as well as abandoning local changes.
-
-To switch between branches, try
-
-    $ git branch add_stats
-    $ git checkout add_stats
-    $ git branch
-
-How can you tell we've switched between branches? When we used the
-branch command before there was an asterisk next to the master branch.
-That's because the asterisk indicates which branch you're currently in.
-
-### Exercise : Copy files into your repo
-
-Let's make sure we have a good copy of `stats.py`.
-
 ```
-$ cd ~/simplestats
-$ cp ~/boot-camps/version-control/git/local/stats.py .
+$ git checkout README.md
 ```
 
-Now let's add them to our repo, but in the current branch.
-
-```
-$ git add stats.py
-$ git commit -m "Adding a first version of the files for mean."
-```
-
-### Exercise : Add an additional function for std() in stats.py and commit the changes.
-
-1. Write a function for `std`.  To keep it simple we will just have it
-   `pass` for now.
-2. Commit the changed files to your repo.
-
-## git merge : Merging Branches
-
-At some point, the `add_stats` branch may be ready to become part of
-the `master` branch.  In real life, we might do a lot more testing and
-development.  For now, let's assume that our mean function is ready
-and merge this back to the master.  One method for combining the
-changes in two parallel branches is the **merge** command.
-
-```
-$ git checkout master
-$ git merge add_stats
-```
-
-## Aside: Make your Prompt Pretty
-
-In the next section, we'll get into the gritty details of remotes and branches
-as we head toward web-based storage of your repositories. It turns out that some
-folks have created a way to make this kind of navigation more convenient,
-showing you what branch you're on using your bash prompt. Some super nice
-properties also include color-coding when you've got changed files or when your
-branch is fresh.
-
-### Exercise : Update your prompt
-
-Step 1 : Copy the following lines into your ~/.bashrc file (taken from a
-combination of [two](http://stackoverflow.com/a/6086978)
-[sources](https://gist.github.com/woods/31967)).
-
-```
-function color_my_prompt {
-    local __user_and_host="\[\033[01;32m\]\u@\h"
-    local __cur_location="\[\033[01;34m\]\w"
-    local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
-    local __prompt_tail="\[\033[35m\]$"
-    local __last_color="\[\033[00m\]"
-
-    RED="\[\033[0;31m\]"
-    YELLOW="\[\033[0;33m\]"
-    GREEN="\[\033[0;32m\]"
-
-    # Capture the output of the "git status" command.
-    git_status="$(git status 2> /dev/null)"
-
-    # Set color based on clean/staged/dirty.
-    if [[ ${git_status} =~ "working directory clean" ]]; then
-        state="${GREEN}"
-    elif [[ ${git_status} =~ "Changes to be committed" ]]; then
-        state="${YELLOW}"
-    else
-        state="${RED}"
-    fi
-
-    export PS1="$__user_and_host $__cur_location ${state}$__git_branch$__prompt_tail$__last_color "
-}
-
-# Tell bash to execute this function just before displaying its prompt.
-PROMPT_COMMAND=color_my_prompt
-```
-
-Step 2 : Source your bashrc (it'll change immediately)
-
-    $ source ~/.bashrc
-
-Step 3 : Play around with it.
+Note that, just as you should use `git rm` rather than `rm` for
+removing files, you should use `git mv` rather than `mv` for moving or
+renaming files.
 
 ## Resources
 
 * [git book](http://git-scm.com/book)
-* [git game](http://pcottle.github.io/learnGitBranching/index.html)
 
 [Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself) - Forward To [Plan for Mistakes](../../../python/testing)
