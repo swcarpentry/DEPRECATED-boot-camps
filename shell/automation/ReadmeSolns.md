@@ -3,6 +3,18 @@
 * * * *
 **Short Exercise**
 
+From the `data` directory, use a single command to view the `Subject` 
+line of every file in `THOMAS` and `jamesm`.
+
+**Solution**
+```
+grep Subject THOMAS/* jamesm/*
+```
+
+* * * *
+
+**Short Exercise**
+
 Figure out how to get `wc` to print the length of the longest line in
 `all_data`.
 
