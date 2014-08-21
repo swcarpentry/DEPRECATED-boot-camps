@@ -9,7 +9,7 @@ Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for P
 
 ## Searching Within Files
 
-We've searched *for* files with `find`, but you can also search for 
+We've searched for *files* with `find`, but you can also search for 
 specific *contents* in one or more files using the command `grep` 
 (and without laboriously searching through each file with something like `less`). 
 The `grep` program is very powerful and useful, especially when combined
@@ -159,7 +159,7 @@ To do this, we need a program which allows us to create text
 files. There are many such programs, the easiest one of which is
 installed on almost all systems and is called `nano`. Navigate to
 `/tmp/<username>` and enter the following command to create and 
-add text to a new file called `toBeSorted`:
+add text to a new file called `toBeSorted` (for Windows users, you can just create this file in your home directory):
 
     nano toBeSorted
 
@@ -230,7 +230,7 @@ Enter the following text and save your changes before exiting:
     wc * | sort -k 3 -n | head -n 1
 
 Now, `cd` into the `Bert` directory and enter the command
-`../smallest`. Notice that it says "permission denied". This happens
+`../smallest`. Notice that it says "permission denied" (For Windows users, you may can execute without problem.). This happens
 because we haven't told the shell that this is an executable
 file. If you do `ls -l ../smallest`, it will show you the permissions on 
 the left of the listing.
@@ -355,7 +355,7 @@ exit that shell again.
 Another way to avoid having to retype commands is to use an **alias**.
 Most shells allow you to define an alias so that it is available
 to use in that shell.  Let's define an alias to perform the same
-funtion as the `smallest` script that we made earlier.  If you enter:
+function as the `smallest` script that we made earlier.  If you enter:
 
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
 
@@ -383,7 +383,7 @@ defined above:
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
 
 These variables should then be available to you in the future. On a server, 
-these variables would be avialable even after you log out and log back in. Many 
+these variables would be available even after you log out and log back in. Many 
 experienced users will gradually build up a long list of
 important variables and aliases for tasks they do frequently.
 

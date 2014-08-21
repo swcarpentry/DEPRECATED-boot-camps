@@ -47,7 +47,16 @@ navigating to a different directory.
     `ls /bin/*a* /bin/*b*`
 
 * * * *
-#Working with Files
+## Command history
+
+**Short Exercise**
+
+1. Find the line number in your history for the last exercise (listing
+directories in `~/boot-camps/shell/data`) and reissue that command.
+
+
+* * * *
+## Working with Files
 
 **Short Exercises**
 

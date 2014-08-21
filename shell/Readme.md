@@ -38,7 +38,7 @@ systems (Mac or Linux operating systems), but Windows users can use something
 like Git Bash. Most commands, especially a
 lot of the basic ones, work across the various shells but some things may 
 be different. We recommend sticking with bash and learning it well.
-([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell))
+([Here is a link for more information](http://en.wikipedia.org/wiki/Bash_(Unix_shell)))
 
 To open a terminal on a Mac or Linux computer, just single click on the 
 "Terminal" icon on the Desktop (or in Applications). For Windows, open 
@@ -53,8 +53,7 @@ command:
 
     git clone -b 2014-08-25 https://github.com/UW-Madison-ACI/boot-camps.git
 
-This command will grab all of the data needed for this workshop from
-a local repository that has been copied from our central GitHub repository. 
+This command will grab all of the data needed for this workshop from our central GitHub repository. 
 (We will talk about the `git` command later in the workshop.)
 
 # Interacting with the Shell
@@ -93,7 +92,7 @@ find out your user name by entering the command `whoami`.
 
 When you enter the `ls` command, you'll get back a list of contents of 
 the current directory. There are several items in the home directory, 
-notice that they are all colored blue. These directories and files 
+notice that they are all colored blue (but not colored in Windows). These directories and files 
 should be generally familiar to you.
 
 Lets create an empty file using the `touch` command. Enter the
@@ -142,7 +141,7 @@ the directory containing the data for the shell tutorial:
     cd shell
 
 Now use the `ls` command to see what is inside this directory. You
-will see that there is an entry which is green. This means that this
+will see that there is an entry which is green (not in Windows). This means that this
 is an executable.
 
 If you enter the `cd` command by itself, you will return to the home
@@ -157,12 +156,12 @@ program, like many programs, can take a variety of arguments. But how do we
 know what the options are to particular commands?
 
 Most commonly used shell programs have a manual. You can access the
-manual using the `man` program. Try entering:
+manual using the `man` program (For Windows users, you may do not have this). Try entering:
 
     man ls
 
-This will open the manual page for `ls`. Use the space key to go
-forward and b to go backwards. When you are done reading, just hit `q`
+This will open the manual page for `ls`. Use the <kbd>space</kbd> key to go
+forward and <kbd>b</kbd> to go backwards. When you are done reading, just hit <kbd>q</kbd>
 to quit.
 
 Programs that are run from the shell can get extremely complicated. To
@@ -441,8 +440,7 @@ can use `which`. For example:
 
     which rm
 
-will return "/bin/rm" on unix-based computers. Thus, we can see that `rm` is 
-a program that sits inside of the `/bin` directory. Now enter:
+will return `/bin/rm` on unix-based computers. Thus, we can see that `rm` is a program that sits inside of the `/bin` directory. Now enter:
 
     which find
 
@@ -618,7 +616,7 @@ move files and directories around using the command `mv`. Enter this command:
 
 This moves `all_data_backup` into your directory within `backup`. 
 
-The `mv` command is also how you can rename files and diretories. Since this file is so
+The `mv` command is also how you can rename files and directories. Since this file is so
 important, let's rename it:
 
     mv all_data all_data_IMPORTANT
@@ -676,7 +674,7 @@ This command finds every file within and below the current directory,
 and then searches each file for a line which contains the word "Volume". 
 How does it do this? The `-exec` argument allow `find` to run to the 
 program `grep`, multiple times, such that each file name is inserted 
-whenever the `{}` occurs (as an arguement to `grep`. The trailing `\;` is used to terminate the
+whenever the `{}` occurs (as an argument to `grep`. The trailing `\;` is used to terminate the
 command, in order to end the task run by `-exec`. 
 
 We'll talk a bit more 
