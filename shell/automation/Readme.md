@@ -9,8 +9,10 @@ Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for P
 
 ## Searching Within Files
 
-You can search the contents of a file using the command `grep`. The
-`grep` program is very powerful and useful especially when combined
+We've searched *for* files with `find`, but you can also search for 
+specific *contents* in one or more files using the command `grep` 
+(and without laboriously searching through each file with something like `less`). 
+The `grep` program is very powerful and useful, especially when combined
 with other commands by using the pipe. Navigate to the `Bert`
 directory. Every data file in this directory has a line which says
 "Range". The range represents the smallest frequency range that can be
@@ -22,10 +24,20 @@ conducted:
 Notice that this is a much shorter command than the `find` command we 
 used to view the "Volume" line of each file.
 
+* * * *
+**Short Exercise**
+
+From the `data` directory, use a single command to view the `Subject` 
+line of every file in `THOMAS` and `jamesm`.
+
+* * * *
+
 ## Count the Words
 
-The `wc` program (word count) counts the number of lines, words, and
-characters in one or more files. Make sure you are in the `data`
+What if you want to understand the total size of files you have in 
+particular locations? The `wc` program (word count) counts the number 
+of lines, words, and characters in one or more files. Make sure you 
+are in the `data`
 directory, then enter the following command:
 
     wc Bert/* gerdal/*4*
@@ -69,17 +81,18 @@ the following
     wc all_data
 
 Sure, this works, but I had to create the `all_data` file to do this. Thus, I
-have wasted a precious 10449 bytes of hard disk space. We can do this
+have wasted a precious 10449 bytes of hard disk space that is already used 
+by the number of individual files. We can do the same count
 *without* creating a temporary file, but first I have to show you two
 more commands: `head` and `tail`. These commands print the first few,
-or last few, lines of a file, respectively. Try them out on
-`all_data`:
+or last few, lines of data from a file or set of text, respectively. Try them out on
+`dictionary.txt`:
 
-    head all_data
-    tail all_data
+    head ../dictionary.txt
+    tail ../dictionary.txt
 
 The `-n` option to either of these commands can be used to print the
-first or last `n` lines of a file. To print the first/last line of the
+first or last `n` number of lines. To print the first/last line of the
 file use:
 
     head -n 1 all_data
