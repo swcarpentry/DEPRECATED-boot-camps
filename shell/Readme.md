@@ -83,9 +83,7 @@ are represented in GUIs. Directories are just organizational groupings
 of files. They can contain files or other directories.
 
 Whenever you start up a terminal, you will start in a special
-directory called the *home* directory. Every user has their own home
-directory where they have full access to do whatever they want. This 
-is the home directory for your user. You can always
+directory called the *home* directory. You can always
 find out your user name by entering the command `whoami`.
 
 ## File Types
@@ -140,9 +138,8 @@ the directory containing the data for the shell tutorial:
 
     cd shell
 
-Now use the `ls` command to see what is inside this directory. You
-will see that there is an entry which is green (not in Windows). This means that this
-is an executable.
+Now use the `ls` command to see what is inside this directory. Do you 
+see files of different colors?
 
 If you enter the `cd` command by itself, you will return to the home
 directory. Try this, and then navigate back to the `shell`
@@ -155,8 +152,10 @@ behavior. For example, `-F` and `-l` are arguments to `ls`.  The `ls`
 program, like many programs, can take a variety of arguments. But how do we
 know what the options are to particular commands?
 
-Most commonly used shell programs have a manual. You can access the
-manual using the `man` program (For Windows users, you may do not have this). Try entering:
+Most commonly-used shell programs have a manual. Unix-based (Mac and Linux) 
+users can access the manual using the `man` program. Windows users may not 
+have the `man` program, but can use Linux man pages online: http://www.linuxmanpages.com/ 
+On Mac or Linux, try entering:
 
     man ls
 
@@ -168,12 +167,12 @@ Programs that are run from the shell can get extremely complicated. To
 see an example, open up the manual page for the `find` program,
 which we will use later this session. No one can possibly learn all of
 these arguments, of course. So you will probably find yourself
-referring back to the manual page frequently.
+referring back to the manual frequently.
 
 * * * *
 **Short Exercise**
 
-Use the manual page for `ls` to guess what you would expect from
+Use the manual for `ls` to guess what you would expect from
 using the arguments `-l`, `-t`, `-r` at the same time.
 
 * * * *
@@ -268,13 +267,12 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/<username>/boot-camps`. You can chain
-these together, so:
+prints the contents of the `boot-camps` folder when you are in `shell`. 
+You can chain these together, so:
 
     ls ../../
 
-prints the contents of `/home/<username>` which is your home
-directory. 
+prints the contents of your home directory from `shell`. 
 
 Finally, the special directory `.` always refers to your
 current directory. So, `ls`, `ls .`, and `ls ././././.` all do the
@@ -313,7 +311,7 @@ are extraneous "NOTES" files that we'd like to get rid of, and the
 data is spread across many directories. We are going to use shell
 commands to get this data into shape. By the end we would like to:
 
-1.  Put all of the data into one directory called "alldata"
+1.  Put all of the data into one directory called "cleaneddata"
 
 2.  Have all of the data files in there, and ensure that every file
     has a ".txt" extension
@@ -708,7 +706,7 @@ Let's clean up this data! Navigate to the `data` directory. Use a single
 3.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
-    it is okay for certain files to end in `.txt.txt`)
+    it is okay for certain files to end in `.txt.txt`, as some already end with `.txt`.)
 
 **BONUS**
 
