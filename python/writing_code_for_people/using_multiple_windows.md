@@ -33,3 +33,7 @@ command-line or interpreter where you will run the script.
 **Bonus:** In most operating systems there is a quick way to switch between
   these two windows using the keyboard.  <kbd>Alt</kbd>+<kbd>Tab</kbd> works
   in Windows and linux/unix, while <kbd>Cmd</kbd>+<kbd>Tab</kbd> works on OSX.
+
+- - - - 
+
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
