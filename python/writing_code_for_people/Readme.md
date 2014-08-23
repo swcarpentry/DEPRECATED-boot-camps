@@ -2,17 +2,66 @@
 
 
 # Write Code for People: Variables, Data Structures and Conditionals
-  
 
 * * * * *
 
+This lecture covers a number of topics under the heading of writing code for people:
+* choosing good variable names
+* choosing appropriate data types
+* breaking your code/script into small pieces
 
-**Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
-R. Smith, Will Trimble, and many more**
+These concepts are important and apply to any language.  For today's lecture,
+we'll use python as the language, but you use a different language, you should
+think about how you would use these practices in your language.
 
-This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython.  I expect this lecture to be interactive, so stop me at any point if you have questions. 
+At the same time, this exercise will demonstrate one way to think about
+developing and designing code/scripts in a modular way.
 
-This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the iPython interpreter (to a lesser extent). The iPython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'll continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
+## Motivating Example
+
+For this lecture, we will return to the simulated cochlear implant data that
+we used in the lecture on using the shell.  This data was in many different
+files, each distributed over many different directories.  One of the exercises
+was to place all of those files in a single directory named `cleandata` and
+give them all the same extension.
+
+However, all those data in different files does not make it easy for us use
+for additional analysis.  It would be easier if that data was all in a single
+file.  We could do that by simply concatenating all the files to make one
+single file, but this will make it less obvious which pieces of data belong
+together.
+
+Therefore, for this exercise, we will create a single file with all this data,
+but with one line per file, with all the data from that file.  The different
+pieces of data will appear in the same order in each line, and will be
+separated by commas.  This is a so-called *comma-separated values* (or CSV)
+file and is a common simple way to represent tables of data.  In fact, this
+type of file can be loaded into most spreadsheet software.
+
+We chose this example because it represents a common task: amalgamating data
+from a number of files into a single table or database.  By choosing a CSV
+file, it may resonate even more strongly since it means you can use such a
+file in a spreadsheet.  Imagine the effort of making a spreadsheet from this
+set of more than 350 files.  Although spreadsheets are frequently NOT the best
+way to process data, they are probably something with which you are familiar.
+
+## 
+
+This lecture is on basic programming in python. In order to do the examples,
+we are going to use an environment called iPython.  I expect this lecture to
+be interactive, so stop me at any point if you have questions.
+
+This lecture will be structured as follows: I will be teaching the basics of
+two things: the python programming language (to a greater extent) and the
+iPython interpreter (to a lesser extent). The iPython interpreter is one of
+many different ways to implement python code. As far as the python component,
+I'll shoot for a layered approach: I'll continue building on my previous
+concepts. It turns out that like any sufficiently complex topic, its not
+really possible to force the pedagogy into a serial stream. Also, we have a
+pretty serious time constraint. I'm just going to drop it on you. Because of
+the brief nature of this tutorial, I've included links to some excellent
+reference material. Also, if we have time, I'll take questions based on the
+specific programming needs of this class.
 
 Here is the reference material.
 
@@ -27,9 +76,13 @@ Once we briefly deal with iPython, I'll cover python in the following order:
 
 We'll focus on two overarching concepts that are important to any programming language: 
 
-1) How to write code for people. That is code that is readable and understandable to others in your group and most importantly to your future self 3 months or 3 years down the road.
+1) How to write code for people. That is code that is readable and
+understandable to others in your group and most importantly to your future
+self 3 months or 3 years down the road.
 
-2) How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
+2) How to not repeat yourself. How to reuse your code with loops and
+functions. And how to eventually build modules, collections of functions, you
+and others can use in all your codes. And how to use other people's modules.
 
 ### iPython Intro
 * iPython
