@@ -22,10 +22,13 @@ Instead, it is convenient to open multiple windows and arrange them on your
 screen so that you can quickly go back and forth between the editor and the
 command-line or interpreter where you will run the script.
 
+### Short Exercise
+
 1. Open two terminal windows
 2. Arrange them on the screen so that one takes the left half and the other
    takes the right half of your screen.
 3. Open a text editor in one terminal
+4. Open the iPython interpreter in the other terminal
 
 **Bonus:** In most operating systems there is a quick way to switch between
   these two windows using the keyboard.  <kbd>Alt</kbd>+<kbd>Tab</kbd> works
