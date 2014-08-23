@@ -1,5 +1,7 @@
 [Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
 
+- - - - 
+
 # Working in multiple windows
 
 When anyone starts using a new language like python, it is often convenient to
