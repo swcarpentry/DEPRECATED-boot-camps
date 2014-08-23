@@ -6,8 +6,9 @@
 * * * * *
 
 This lecture covers a number of topics under the heading of writing code for people:
-* choosing good variable names
+* naming variables in meaningful ways
 * choosing appropriate data types
+* writing effective comments
 * breaking your code/script into small pieces
 
 These concepts are important and apply to any language.  For today's lecture,
@@ -45,7 +46,12 @@ file in a spreadsheet.  Imagine the effort of making a spreadsheet from this
 set of more than 350 files.  Although spreadsheets are frequently NOT the best
 way to process data, they are probably something with which you are familiar.
 
-## 
+**Pro-tip:** [Using two windows](using_multiple_windows.md) will make it much
+  easier to follow this exercise.
+
+## Step 1: Start at the top
+
+A script like this one is 
 
 This lecture is on basic programming in python. In order to do the examples,
 we are going to use an environment called iPython.  I expect this lecture to
