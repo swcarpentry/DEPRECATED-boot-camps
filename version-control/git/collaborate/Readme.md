@@ -50,14 +50,14 @@ Let's say that Beta is interested in adding a feature to the code that Beta and
 Alpha are working on. Let's look at a `median()` function.
 
 ```python
-def median(numlist):
-    numlist.sort()
-    length = len(numlist)
+def median(vals):
+    vals.sort()
+    length = len(vals)
     index = length / 2
     if length % 2 == 0:
-       return mean([numlist[index], numlist[index - 1]])
+       return mean([vals[index], vals[index - 1]])
     else:
-       return numlist[index]
+       return vals[index]
 ```
 
 ## Pull Requests : Sending Your Collaborators an Update 
@@ -203,7 +203,7 @@ for my grad students to finish their work, I've chosen to add some basic
 function signatures, e.g., 
 
 ```python
-def median(numlist):
+def median(vals):
     pass
 ```
 

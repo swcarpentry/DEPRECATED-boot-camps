@@ -62,10 +62,10 @@ Let's return the the simplestats module that we began earlier:
 It has a file `stats.py` with the following averaging function:
 
 ```python
-def mean(numlist):
-    """Calculate the arithmetic mean of a list of numbers in numlist"""
-    total = sum(numlist)
-    length = len(numlist)
+def mean(vals):
+    """Calculate the arithmetic mean of a list of numbers in vals"""
+    total = sum(vals)
+    length = len(vals)
     return total/length
 ```
 
@@ -84,10 +84,10 @@ The simplest way to add a test is to add a function that calls this function
 with arguments for which we already know the answer.
 
 ```python
-def mean(numlist):
-    """Calculate the arithmetic mean of a list of numbers in numlist"""
-    total = sum(numlist)
-    length = len(numlist)
+def mean(vals):
+    """Calculate the arithmetic mean of a list of numbers in vals"""
+    total = sum(vals)
+    length = len(vals)
     return total/length
     
 def test_mean():
@@ -139,10 +139,10 @@ clutter the module that does the real work.  Let's move our tests to a new
 file called `test_stats.py`.  Now, our `stats.py` file contains only:
 
 ```python
-def mean(numlist):
-    """Calculate the arithmetic mean of a list of numbers in numlist"""
-    total = sum(numlist)
-    length = len(numlist)
+def mean(vals):
+    """Calculate the arithmetic mean of a list of numbers in vals"""
+    total = sum(vals)
+    length = len(vals)
     return total/length
 ```
 
@@ -320,11 +320,11 @@ def test_string_mean():
 We can provide some extra information to the user by catching the TypeError exception:
 
 ```python
-def mean(numlist):
-    """Calculate the arithmetic mean of a list of numbers in numlist"""
+def mean(vals):
+    """Calculate the arithmetic mean of a list of numbers in vals"""
     try:
-        total = sum(numlist)
-        length = len(numlist)
+        total = sum(vals)
+        length = len(vals)
     except TypeError:
         raise TypeError("The list contains non-numeric elements")
     return total/length

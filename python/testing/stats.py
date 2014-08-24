@@ -1,7 +1,7 @@
-def mean(numlist):
+def mean(vals):
     """Computes the mean from a list of values."""
-    total = sum(numlist)
-    length = len(numlist)
+    total = sum(vals)
+    length = len(vals)
     return total/length
 
 def median(vals):
