@@ -3,15 +3,16 @@
 def extractData(line):
     """Assume the first colon (:) separates the key from the value."""
     separator = ':'
-    numeric_columns = ("CI type","Volume","Range","Discrimination")
     line_data = line.strip().split(separator)
     key = line_data[0]
     # the value may contain a separator so will need to be reassembled from
     # possibly multiple elements
-    value = separator.join(line_data[1:])
-    if key in numeric_columns:
-        value = float(value.strip())
-    return key,value.strip()
+    value = separator.join(line_data[1:]).strip()
+    numeric_columns = ("CI type","Volume","Range","Discrimination")
+    if key in numeric_columns and value != "" :
+        # print key, numeric_columns, value
+        value = float(value)
+    return key,value
 
 
 def parseFile(filename):

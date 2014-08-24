@@ -317,8 +317,8 @@ def extractData(line):
     key = line_data[0]
     # the value may contain a separator so will need to be reassembled from
     # possibly multiple elements
-    value = separator.join(line_data[1:])
-    return key,value.strip()
+    value = separator.join(line_data[1:]).strip()
+    return key,value
 ```
 
 ### Getting help on new functions
