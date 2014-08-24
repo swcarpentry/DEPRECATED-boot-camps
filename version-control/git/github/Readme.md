@@ -62,7 +62,12 @@ We'll be interacting with remote repositories now, so let's clean up the
 simplestats folder on your machine.
 
     $ cd
-    $ rm simplestats
+    $ rm -r simplestats
+
+Or if you'd like to keep it around
+
+    $ cd
+    $ mv simplestats old-simplestats
 
 Step 1 : Go to our
 [repository](https://github.com/UW-Madison-ACI/simplestats)
