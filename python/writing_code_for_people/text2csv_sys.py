@@ -35,15 +35,17 @@ def writeCSVRow(column_labels,data_record,csv_separator):
     print csv_separator.join(row)
 
 # use a list to establish the order
-column_labels = ["Subject","Reported","Year/month of birth","Sex","CI type","Volume","Range","Discrimination"]
-csv_separator = ','
+column_labels = ("Subject","Reported","Year/month of birth","Sex","CI type","Volume","Range","Discrimination")
 all_data = []
 
 import sys
+filelist = sys.argv[1:]
 
-for filename in sys.argv[1:]:
+for filename in filelist:
     data_record = parseFile(filename)
     all_data.append(data_record)
+
+csv_separator = ','
 
 writeCSVHeader(column_labels,csv_separator)
 

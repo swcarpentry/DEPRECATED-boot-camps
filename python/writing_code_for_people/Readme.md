@@ -9,6 +9,7 @@ This lecture covers a number of topics under the heading of writing code for peo
 * naming variables in meaningful ways
 * choosing appropriate data types
 * writing effective comments
+* don't repeat yourself
 * breaking your code/script into small pieces
 
 These concepts are important and apply to any language.  For today's lecture,
@@ -51,7 +52,113 @@ way to process data, they are probably something with which you are familiar.
 
 ## Step 1: Start at the top
 
-A script like this one is 
+Let's start with the big picture view of what this script needs to do:
+
+* loop through a list of filenames
+    * parse each filename into a single data record
+    * save that record
+* write a header in the correct CSV syntax
+* loop through each record
+    * write that record in the correct CSV syntax
+
+```python
+for filename in filelist:
+    data_record = parseFile(filename)
+    all_data.append(data_record)
+
+csv_separator = ','
+
+writeCSVHeader(column_labels,csv_separator)
+
+for data_record in all_data:
+    writeCSVRow(column_labels,data_record,csv_separator)
+```
+
+Let's review the best practices so far:
+
+### Modular development and design
+
+These 8 lines (including 2 blank lines) represent all the main steps that our
+script must accomplish.  We have only 6 variables and 4 functions to track in
+our heads.
+
+### Writing effective comments
+
+These lines don't really need comments since we have chosen expressive
+variable and function names in a short script that performs clear operations.
+
+### Variable and function naming
+
+We have chosen meaningful names for each variable: filename, filelist,
+data_record, all_data, column_labels, csv_separator.  It is often recommended
+that variables be given names that are nouns, indicating that they represent
+things rather than actions.
+
+We have chosen meaningful names for each function: parseFile, writeCVSHeader,
+writeCVSRow.  It is often recommended that functions be given names that are
+verbs, indiciating that they represent action rather than things.
+
+We have used a consistent style that helps the reader distinguish between
+variables, in which words are separated by underscores, and functions, in
+which CamelCase is used.
+
+### Choosing appropriate data types
+
+At this point we haven't made very few decisions on data types:
+
+* the `filelist` variable should be some type that allows us to take advantage
+  of python's ability to iterate over the members
+* the `data_record` variable should be some type that stores all the
+  information from a single file
+* the `all_data` variable should be some type that allows us to use the
+  `append()` method
+* the `column_labels` variable should store all the column labels for our CSV
+  file
+
+Now is a good time to explore the different
+[compound data types in python](compound_data_types.md).  Most languages have
+some compound data types and you should learn about them and their features to
+make the best choices in your scripts/code in that langauge.
+
+For our problem the following choices are probably wise:
+
+* `filelist` should be a list
+  * lists are a common default unless you need other features like key-value
+    pairs (dictionaries), immutability (tuples), or uniqueness (sets)
+* `data_record` should be a dictionary
+  * each record will store the data that is already in key-value pairs in the file
+* `all_data` should be a list of those dictionaries
+* `column_labels` should be a tuple because we want it to be immutable
+
+
+### Initialize some of these variables
+
+1. We can initialize the list of files from the command-line arguments.
+2. We should also declare the immutable ordered list of column labels.
+3. Now that we know `all_data` should be a list, we should initialize it as a
+   empty list by adding this line at the beginning.
+
+```python
+import sys
+filelist = sys.argv[1:]
+column_labels = ("Subject","Reported","Year/month of birth","Sex","CI type","Volume","Range","Discrimination")
+all_data = []
+
+```
+
+## Step 2: Adding some data
+
+
+
+
+
+
+
+* naming variables in meaningful ways
+* choosing appropriate data types
+* writing effective comments
+* breaking your code/script into small pieces
+
 
 This lecture is on basic programming in python. In order to do the examples,
 we are going to use an environment called iPython.  I expect this lecture to
