@@ -1,6 +1,6 @@
 [Up To Schedule](../../README.md) - 
-Back To[Let the Computer Do the Work](../../shell/automation/Readme.md) -
-Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
+Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) -
+Forward To [Make Incremental Changes I](../../version-control/git/local/Readme.md)
 
 - - - -
 
@@ -90,6 +90,14 @@ for data_record in all_data:
     writeCSVRow(column_labels,data_record,csv_separator)
 ```
 
+----
+![Exercise](pics/exercise.jpg) **Follow along**
+
+1. Open a new file in your editor called `text2csv.py`
+2. Copy & paste the above code into that editor.
+
+---
+
 Let's review the best practices so far:
 
 ### Modular development and design
@@ -113,7 +121,8 @@ represent things rather than actions.
 The length of variable names is also important: too short and they loose some
 meaning; too long and they become prone to errors when typing them.
 
-**Short Exercise**
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
 
 Which of these are bad choices and why?  Which are reasonable alternatives?
 * `fn`
@@ -123,8 +132,10 @@ Which of these are bad choices and why?  Which are reasonable alternatives?
 * `sep`
 * `col_labels` 
 
-We have chosen meaningful names for each function: parseFile, writeCVSHeader,
-writeCVSRow.  It is often recommended that functions be given names that are
+----
+
+We have chosen meaningful names for each function: `parseFile`, `writeCVSHeader`,
+`writeCVSRow`.  It is often recommended that functions be given names that are
 verbs, indiciating that they represent action rather than things.
 
 We have used a consistent style that helps the reader distinguish between
@@ -177,6 +188,9 @@ has two advantages:
 3. Now that we know `all_data` should be a list, we should initialize it as a
    empty list.
 
+----
+![Exercise](pics/exercise.jpg) **Follow Along**
+
 Add these lines above the others in your script:
 ```python
 import sys
@@ -185,6 +199,8 @@ column_labels = ("Subject","Reported","Year/month of birth",
                 "Sex","CI type","Volume","Range","Discrimination")
 all_data = []
 ```
+
+----
 
 ## Step 2: Parse a single file
 
@@ -209,6 +225,7 @@ Just like the last time, we'll consider what the big picture steps are:
   * add that data to the dictionary
 * return the complete dictionary
 
+Or written as python:
 ```python
 def parseFile(filename):
     """Read all the lines from a file and return them as a dictionary of key/value pairs"""
@@ -222,20 +239,30 @@ def parseFile(filename):
     return data_record
 ```
 
-### Reading from files
+----
+![Exercise](pics/exercise.jpg) **Follow along**
+
+1. Copy & paste the above code into your file at the top.
+
+---
+
+### New concept: Reading from files
 
 At this point we've had to introduce a new concept: reading data from files.
 For most purposes, python makes this very easy.  When we `open` a file, we get
 an object over which we can iterate, much like a list.  Let's look at the file
 `phonenums.txt` using this concept:
 
-**Try it exercise**
+----
+![Exercise](pics/exercise.jpg) **Try it exercise**
 
 ```python
 In [15]: file_data = open('phonenums.txt')
 In [16]: for line in file_data:
    ....:     print line
 ```
+
+----
 
 Again we'll review the best practices.
  
@@ -317,9 +344,17 @@ def extractData(line):
     key = line_data[0]
     # the value may contain a separator so will need to be reassembled from
     # possibly multiple elements
-    value = separator.join(line_data[1:])
-    return key,value.strip()
+    value = separator.join(line_data[1:]).strip()
+    return key,value
 ```
+
+----
+![Exercise](pics/exercise.jpg) **Follow along**
+
+1. Copy & paste the above code into your file at the top.
+
+---
+
 
 ### Getting help on new functions
 
@@ -355,7 +390,10 @@ discussed in previous functions.  The `separator` variable is an appropriate
 length and expressive in describing its role.  The list `line_data` is a
 descriptive name, but other names would be fine.
 
-**Think aloud:** Recommend some alternative variable names for `line_data`.
+----
+![Exercise](pics/exercise.jpg) **Think aloud:** Recommend some alternative variable names for `line_data`.
+
+----
 
 ### Choosing appropriate data types
 
@@ -365,7 +403,7 @@ string functions we call.
 
 ## Step 4: Write the CSV data
 
-**Discussion Exercise** Given the following implementation of the final two
+![Exercise](pics/exercise.jpg) **Discussion Exercise** Given the following implementation of the final two
   functions, discuss ways in which they follow the best practices, and ways
   that they could be improved, if any.
 
@@ -395,4 +433,4 @@ difference in code readability and types are important in conveying intent.
 
 [Up To Schedule](../../README.md) -
 Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) -
-Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
+Forward To [Make Incremental Changes I](../../version-control/git/local/Readme.md)

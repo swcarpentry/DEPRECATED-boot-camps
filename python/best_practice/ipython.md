@@ -29,7 +29,7 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
+frodgers@acibootcamp ~ $ python ~/boot-camps/python/best_practice/hello.py 
 hello world
 ```
 
@@ -56,15 +56,19 @@ In [2]:
 
 ### Pasting
 
-Unfortunately pasting depends on your operating system and ssh program:
+Unfortunately pasting depends on your operating system and ssh program.  In
+general, for multi-line pasting, you should either use the `%autocall` feature
+or the `%cpaste` feature of iPython.
 
 #### Windows
 
+##### Git Bash
+
+When in the iPython interpreter, the easiest way to paste is with the right
+mouse button over the window, choosing "Paste".
+
 ##### Putty
 Click with the right mouse button over the window.
-
-##### Bitvise SSH
-Click with the right mouse button over the window and then "Paste".
 
 #### Mac OSX
 Press <kbd>⌘</kbd>+<kbd>V</kbd>.
@@ -74,16 +78,20 @@ Click with the right mouse button over the window and then "Paste".
 
 ### History
 
-iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd> keys, you can access the history. Try it now.
+iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd>
+keys, you can access the history. Try it now.
 
 ### Tab Completion
 
-iPython also has tab completion of previous commands. Try typing "pr" and then hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
+iPython also has tab completion of previous commands. Try typing "pr" and then
+hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
 
 ### Getting Help
 
 iPython has some nice help features.
-If you wanted to see all the built-in commands available for something, use the dir command.
+
+If you wanted to see all the built-in commands available for something, use
+the dir command.
 
 ```
 In [2]: dir(__builtin__)
@@ -100,123 +108,9 @@ In [2]: dir(__builtin__)
  'Exception',
  'False',
  'FloatingPointError',
- 'FutureWarning',
- 'GeneratorExit',
- 'IOError',
- 'ImportError',
- 'ImportWarning',
- 'IndentationError',
- 'IndexError',
- 'KeyError',
- 'KeyboardInterrupt',
- 'LookupError',
- 'MemoryError',
- 'NameError',
- 'None',
- 'NotImplemented',
- 'NotImplementedError',
- 'OSError',
- 'OverflowError',
- 'PendingDeprecationWarning',
- 'ReferenceError',
- 'RuntimeError',
- 'RuntimeWarning',
- 'StandardError',
- 'StopIteration',
- 'SyntaxError',
- 'SyntaxWarning',
- 'SystemError',
- 'SystemExit',
- 'TabError',
- 'True',
- 'TypeError',
- 'UnboundLocalError',
- 'UnicodeDecodeError',
- 'UnicodeEncodeError',
- 'UnicodeError',
- 'UnicodeTranslateError',
- 'UnicodeWarning',
- 'UserWarning',
- 'ValueError',
- 'Warning',
- 'WindowsError',
- 'ZeroDivisionError',
- '__IPYTHON__',
- '__IPYTHON__active',
- '__debug__',
- '__doc__',
- '__import__',
- '__name__',
- '__package__',
- 'abs',
- 'all',
- 'any',
- 'apply',
- 'basestring',
- 'bin',
- 'bool',
- 'buffer',
- 'bytearray',
- 'bytes',
- 'callable',
- 'chr',
- 'classmethod',
- 'cmp',
- 'coerce',
- 'compile',
- 'complex',
- 'copyright',
- 'credits',
- 'delattr',
- 'dict',
- 'dir',
- 'divmod',
- 'dreload',
- 'enumerate',
- 'eval',
- 'execfile',
- 'file',
- 'filter',
- 'float',
- 'format',
- 'frozenset',
- 'get_ipython',
- 'getattr',
- 'globals',
- 'hasattr',
- 'hash',
- 'help',
- 'hex',
- 'id',
- 'input',
- 'int',
- 'intern',
- 'isinstance',
- 'issubclass',
- 'iter',
- 'len',
- 'license',
- 'list',
- 'locals',
- 'long',
- 'map',
- 'max',
- 'memoryview',
- 'min',
- 'next',
- 'object',
- 'oct',
- 'open',
- 'ord',
- 'pow',
- 'print',
- 'property',
- 'range',
- 'raw_input',
- 'reduce',
- 'reload',
- 'repr',
- 'reversed',
+
+ ....
+
  'round',
  'set',
  'setattr',
@@ -259,42 +153,9 @@ In [6]: dir(str)
  '__len__',
  '__lt__',
  '__mod__',
- '__mul__',
- '__ne__',
- '__new__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__rmod__',
- '__rmul__',
- '__setattr__',
- '__sizeof__',
- '__str__',
- '__subclasshook__',
- '_formatter_field_name_split',
- '_formatter_parser',
- 'capitalize',
- 'center',
- 'count',
- 'decode',
- 'encode',
- 'endswith',
- 'expandtabs',
- 'find',
- 'format',
- 'index',
- 'isalnum',
- 'isalpha',
- 'isdigit',
- 'islower',
- 'isspace',
- 'istitle',
- 'isupper',
- 'join',
- 'ljust',
- 'lower',
- 'lstrip',
- 'partition',
+
+ ...
+ 
  'replace',
  'rfind',
  'rindex',
@@ -333,16 +194,20 @@ In [8]: "Hello world".swapcase()
 Out[8]: 'hELLO WORLD'
 ```
 
-***Excercise***
+----
+
+![Exercise](pics/exercise.jpg) **Exercise**
+
 Can you find with help of the ? which function turns "Hello world" into "HELLO WORLD"?
 
+----
 
 ### Executing code in files
 
 If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so:
 
 ```
-In [9] %run ~/boot-camps/python/ipython/hello.py
+In [9] %run ~/boot-camps/python/best_practice/hello.py
 ```
 
 ### Clearing iPython
@@ -373,8 +238,12 @@ In [4]: print(full_name)
 Out[4]: 'CliffRodgers'
 ```
 
-***Exercise***
+----
+![Exercise](pics/exercise.jpg) **Exercise**
+
 Can you add the extra space between my last and first name?
+
+----
 
 ### Conditionals
 
@@ -448,10 +317,13 @@ languages) is only for people. Little things like putting blank lines in
 "sane" places, and putting spaces between variables and operators (say, `a +
 b` rather than `a+b`) can make your code a lot easier to read.
 
-**Exercise**
+----
+![Exercise](pics/exercise.jpg) **Exercise**
 Write an if statement that prints whether x is even or odd.
 
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
+
+----
 
 ### Loops
 
@@ -550,11 +422,12 @@ range()?
 integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The `for`
 loop then simply iterates over that list, setting `i` to each value.
 
-* * * *
-**Exercise**
+----
+![Exercise](pics/exercise.jpg) **Exercise**
 
 Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
 
+----
 
 break, continue, and else
 =========================

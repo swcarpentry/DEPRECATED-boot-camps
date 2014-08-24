@@ -24,7 +24,9 @@ Instead, it is convenient to open multiple windows and arrange them on your
 screen so that you can quickly go back and forth between the editor and the
 command-line or interpreter where you will run the script.
 
-### Short Exercise
+----
+
+### ![Exercise](pics/exercise.jpg) Short Exercise
 
 1. Open two terminal windows
 2. Arrange them on the screen so that one takes the left half and the other
@@ -36,6 +38,6 @@ command-line or interpreter where you will run the script.
   these two windows using the keyboard.  <kbd>Alt</kbd>+<kbd>Tab</kbd> works
   in Windows and linux/unix, while <kbd>Cmd</kbd>+<kbd>Tab</kbd> works on OSX.
 
-- - - - 
+----
 
 [Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
