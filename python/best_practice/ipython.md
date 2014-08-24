@@ -29,7 +29,7 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
+frodgers@acibootcamp ~ $ python ~/boot-camps/python/best_practice/hello.py 
 hello world
 ```
 
@@ -56,15 +56,19 @@ In [2]:
 
 ### Pasting
 
-Unfortunately pasting depends on your operating system and ssh program:
+Unfortunately pasting depends on your operating system and ssh program.  In
+general, for multi-line pasting, you should either use the `%autocall` feature
+or the `%cpaste` feature of iPython.
 
 #### Windows
 
+##### Git Bash
+
+When in the iPython interpreter, the easiest way to paste is with the right
+mouse button over the window, choosing "Paste".
+
 ##### Putty
 Click with the right mouse button over the window.
-
-##### Bitvise SSH
-Click with the right mouse button over the window and then "Paste".
 
 #### Mac OSX
 Press <kbd>⌘</kbd>+<kbd>V</kbd>.
@@ -74,16 +78,20 @@ Click with the right mouse button over the window and then "Paste".
 
 ### History
 
-iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd> keys, you can access the history. Try it now.
+iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd>
+keys, you can access the history. Try it now.
 
 ### Tab Completion
 
-iPython also has tab completion of previous commands. Try typing "pr" and then hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
+iPython also has tab completion of previous commands. Try typing "pr" and then
+hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
 
 ### Getting Help
 
 iPython has some nice help features.
-If you wanted to see all the built-in commands available for something, use the dir command.
+
+If you wanted to see all the built-in commands available for something, use
+the dir command.
 
 ```
 In [2]: dir(__builtin__)
@@ -199,7 +207,7 @@ Can you find with help of the ? which function turns "Hello world" into "HELLO W
 If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so:
 
 ```
-In [9] %run ~/boot-camps/python/ipython/hello.py
+In [9] %run ~/boot-camps/python/best_practice/hello.py
 ```
 
 ### Clearing iPython

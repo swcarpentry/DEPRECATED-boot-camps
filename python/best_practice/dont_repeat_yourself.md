@@ -23,30 +23,30 @@ your code together into reusable modules.
 To paste text from another application (i.e. these lecture notes) into
 iPython :
 
-1.  select text from the wiki
-2.  copy with <kbd>cntl</kbd>+<kbd>c</kbd>
+1.  select text from the website
+2.  copy with <kbd>cntl</kbd>+<kbd>C</kbd> (or <kbd>⌘</kbd>+<kbd>C</kbd> on Mac OSX)
 3.  unfortunately pasting depends on your operating system and ssh program:
 
-### Windows
+#### Windows
 
-#### Putty
+##### Git Bash
+
+When in the iPython interpreter, the easiest way to paste is with the right
+mouse button over the window, choosing "Paste".
+
+##### Putty
 Click with the right mouse button over the window.
 
-#### Bitvise SSH
+#### Mac OSX
+Press <kbd>⌘</kbd>+<kbd>V</kbd>.
+
+#### Linux
 Click with the right mouse button over the window and then "Paste".
-
-### Mac OSX
-Press cmd+C.
-
-### Linux
-Click with the right mouse button over the window and then "Paste".
-
 
 The code should paste and execute in iPython.
 
-If you also type `%autocall` to turn autocall OFF, you may be able to paste
-with <kbd>ctrl</kbd>+<kbd>v</kbd> though this won't work with all iPython
-builds.
+In general, for multi-line pasting, you should either use the `%autocall`
+feature or the `%cpaste` feature of iPython.
 
 # Python Modules
 
