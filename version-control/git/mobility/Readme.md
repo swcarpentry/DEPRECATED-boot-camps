@@ -93,13 +93,7 @@ Let's investigate what's inside.
     $ ls -a
     .  ..  .git  README.md  report.tex stats.py  test_stats.py
 
-Ok, awesome! So now the work and home machines are synced against the repository
-that's on the server. Any time you're doing work, as long as you **commit and
-push** the work you're doing, it will be available to you anywhere you have
-access to the internet. In fact, you don't even **need** access to the
-internet. Once your repository is up to date, you can do all your editing and
-committing without being online. Once you have a connection again, you can push
-your changes.
+Ok, awesome! We were able to checkout the updated version of the repository.
 
 Let's try making one set of changes. We'll add some content to the report
 
@@ -108,7 +102,15 @@ Let's try making one set of changes. We'll add some content to the report
     $ git commit -m "added some content to the report"
     $ git push origin report
 
-And now let's update our work machine
+So now the home machine is synced against the repository that's on the
+server. Any time you're doing work, as long as you **commit and push** the work
+you're doing, it will be available to you anywhere you have access to the
+internet. In fact, you don't even **need** access to the internet. Once your
+repository is up to date, you can do all your editing and committing without
+being online. Once you have a connection again, you can push your changes.
+
+And now let's update our work machine to also be synced agaisnt our github
+repository.
 
     $ cd ~/work/simplestats
     $ git pull origin report
