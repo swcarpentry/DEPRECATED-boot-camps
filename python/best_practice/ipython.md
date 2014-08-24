@@ -57,8 +57,7 @@ In [2]:
 ### Pasting
 
 Unfortunately pasting depends on your operating system and ssh program.  In
-general, for multi-line pasting, you should either use the `%autocall` feature
-or the `%cpaste` feature of iPython.
+general, for multi-line pasting, you should use the `%cpaste` feature of iPython.
 
 #### Windows
 
@@ -275,7 +274,7 @@ sign = "zero"
 if i < 0:
     sign = "negative"
 
-elif i > 0:
+elseif i > 0:
     sign = "positive"
 
 else:
