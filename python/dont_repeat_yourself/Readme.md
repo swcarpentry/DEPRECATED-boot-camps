@@ -246,7 +246,7 @@ So that our script now ends with the following lines:
 
 ```python
 import csv
-csv_writer = csv.DictWriter(sys.stdout, delimiter=',', fieldnames=column_labels, quoting=csv.QUOTE_MINIMAL)
+csv_writer = csv.DictWriter(sys.stdout, delimiter=',', fieldnames=column_labels)
 
 csv_writer.writeheader()
 csv_writer.writerows(all_data)
