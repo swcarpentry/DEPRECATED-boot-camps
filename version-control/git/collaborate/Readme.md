@@ -239,7 +239,7 @@ Step 1 : Experience the Conflict
 
 Now what?
 
-Git has paused the rebase. You can see this with the ```git status`` command.
+Git has paused the rebase. You can see this with the ``git status`` command.
 
     # HEAD detached at c23f1e4
     # You are currently rebasing branch 'test_change2' on 'c23f1e4'.
@@ -294,16 +294,18 @@ example of its use.
 In [1]: from collections import defaultdict
 In [2]: number_frequencies = defaultdict(int)
 In [3]: number_found = 42
-In [4]: number_frequencies[number_found] += 1
-In [5]: number_frequencies[number_found]
-Out[5]: 1
+In [4]: number_frequencies[number_found]
+Out[4]: 0
+In [5]: number_frequencies[number_found] += 1
+In [6]: number_frequencies[number_found]
+Out[6]: 1
 ```
 
 You might also ask how to get the maximum value in a python dictionary. Here's
 one way.
 
 ```
-In [6]: max_counts = max(number_frequencies, key = number_frequencies.get)
+In [6]: max_counts = max(number_frequencies, key=number_frequencies.get)
 In [7]: max_counts
 Out[7]: 42
 ```
@@ -311,11 +313,6 @@ Out[7]: 42
 It works great, right? Maybe we should add a test for bimodal distributions...
 
 # Extra Information
-
-## Moving from Home to Work
-
-[Here](../mobility/Readme.md)'s a tutorial about how to get yourself set up for
-keeping your work at home and the office in sync.
 
 ## gitolite
 
