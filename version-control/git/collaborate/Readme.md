@@ -80,7 +80,8 @@ Step 1 : Start a new feature branch, named median (you could do this in single
     $ git checkout median
 
 Step 2 : Modify the stats.py module to add the median function (and maybe a test
-if you're feeling up to it!)
+if you're feeling up to it!). Add your ``median()`` function between the
+``mean()`` and ``mode()`` functions.
 
 Step 3 : Commit your changes
 
