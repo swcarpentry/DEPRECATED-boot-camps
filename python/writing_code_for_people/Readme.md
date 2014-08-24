@@ -113,7 +113,7 @@ represent things rather than actions.
 The length of variable names is also important: too short and they loose some
 meaning; too long and they become prone to errors when typing them.
 
-**Short Exercise**
+![Exercise](pics/exercise.jpg) **Short Exercise**
 
 Which of these are bad choices and why?  Which are reasonable alternatives?
 * `fn`
@@ -229,7 +229,7 @@ For most purposes, python makes this very easy.  When we `open` a file, we get
 an object over which we can iterate, much like a list.  Let's look at the file
 `phonenums.txt` using this concept:
 
-**Try it exercise**
+![Exercise](pics/exercise.jpg) **Try it exercise**
 
 ```python
 In [15]: file_data = open('phonenums.txt')
@@ -365,7 +365,7 @@ string functions we call.
 
 ## Step 4: Write the CSV data
 
-**Discussion Exercise** Given the following implementation of the final two
+![Exercise](pics/exercise.jpg) **Discussion Exercise** Given the following implementation of the final two
   functions, discuss ways in which they follow the best practices, and ways
   that they could be improved, if any.
 

@@ -91,7 +91,7 @@ Out[9]: [0.0, 1.0, 2.0]
 
 and so on.
 
-***Exercise***
+![Exercise](pics/exercise.jpg) **Exercise**
 What does voltage_list[::2] mean?
 
 ### Append and Extend
@@ -136,7 +136,7 @@ In [15]: current_list
 Out[15]: [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 ```
 
-**Try it exercise:**
+![Exercise](pics/exercise.jpg) **Try it exercise:**
 
 What happens if you try to add two items to a list using append instead of extend?
 
@@ -239,7 +239,7 @@ In [2]: name = person_data[0]
 ... though in practice, you'll more often use a `dictionary` for something
 like this.
 
-***Exercise***
+![Exercise](pics/exercise.jpg) ***Exercise***
 Display the second element of a tuple with two different slices.
 
 ## Dictionaries
