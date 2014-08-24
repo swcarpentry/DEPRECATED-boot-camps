@@ -274,7 +274,7 @@ sign = "zero"
 if i < 0:
     sign = "negative"
 
-elseif i > 0:
+elif i > 0:
     sign = "positive"
 
 else:
