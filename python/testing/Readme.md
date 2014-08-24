@@ -7,7 +7,6 @@ Forward To [Collaborate](../../version-control/git/remote/Readme.md)
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
-![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/test_prod.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
@@ -116,7 +115,7 @@ Let's add one more test:
 ```python
 def test_float_mean():
     """Test some standard behavior when the result is not an integer."""
-    assert(mean([1,2])==1.5)
+    assert(mean([1, 2]) == 1.5)
 ```
 
 and try it with:
@@ -158,7 +157,7 @@ def test_mean():
 
 def test_float_mean():
     """Test some standard behavior when the result is not an integer."""
-    assert(mean([1,2])==1.5)
+    assert(mean([1, 2]) == 1.5)
 ```
 
 To make it even easier to test, we can add some lines at the bottom of
@@ -171,7 +170,7 @@ test_float_mean()
 
 and then run this from the command-line:
 
-    python27 test_stats.py
+    python test_stats.py
 
 The same tests pass and fail, but still not much explanation.
 
@@ -235,6 +234,9 @@ However, nose itself defines number of convenient assert functions which can
 be used to test more specific aspects of the code base.
 
 ```python
+from nose.tools import assert_equal, assert_almost_equal, assert_true, \
+    assert_false, assert_raises, assert_is_instance
+
 assert_equal(a, b)
 assert_almost_equal(a, b)
 assert_true(a)
@@ -307,7 +309,7 @@ exception, by using the nose tool `assert_raises`:
 
 ```python
 def test_string_mean():
-    assert_raises(TypeError,mean,['hello','world'])
+    assert_raises(TypeError, mean, ['hello','world'])
 ```
 
 **Practice using git:** Commit this change to the repository
@@ -318,7 +320,6 @@ def test_string_mean():
 We can provide some extra information to the user by catching the TypeError exception:
 
 ```python
-def mean(numlist)
 def mean(numlist):
     """Calculate the arithmetic mean of a list of numbers in numlist"""
     try:
@@ -569,9 +570,9 @@ def std(vals):
     git commit -m "Added tests for infinity in std() and updated function so that is passes all tests."
 
 
-# Quality Assurance Exercise
+## Quality Assurance Exercise
 
-Can you think of other tests to make for the std() function? I promise there
+Can you think of other tests to make for the ``std()`` function? I promise there
 are at least two.
 <!---
 	1. How about std(string) or std(array)?
@@ -584,15 +585,10 @@ a more robust function for that case.
 And thus - finally - we have a robust function together with working
 tests!
 
-# Further Statistics Tests
+## Exercise: A different function
 
-Try your new test-driven development chops by implementing one or more of
-the following functions along with their corresponding tests:
-   * median
-   * mode
-   * variance
-
-
+Try your new test-driven development chops by implementing the ``var()``
+function, noting that the variance is the square of the standard devation.
 
 # How are tests written?
 
