@@ -386,24 +386,15 @@ types well will both make your code clearer and simpler to write.
 
 ## Finding items in compound data types
 
-One of the features of python that makes it very readable and effective is the
-ease with which you can test whether an item is in a compound data type.  All
-four of these data structures can use the `if item in compound:` conditional
-pattern.
+In addition to the conditional operations we learned previously, python has
+other equivalence test statements that are fairly unique to python. To check
+whether an object is contained in a list :
 
-```
-In [7]: if 1.0 in voltage_list:
-   ...:    print "Found 1.0 in voltage_list"
-In [8]: if 'Nate' in person_data:
-   ...:    print "Found 'Nate' in person_data"
-In [9]: if 'apple' in first_bowl:
-   ...:    print "Found 'apple' in first_bowl"
-```
-Dictionaries are only a little bit different because they contain both keys and values:
-
-```
-In [10]: if 'temperature' in data_dict.keys():
-   ....:     print "Found 'temperature' = ' + data_dict['temperature'] + " in data_dict."
+```python 
+beatle = "John"
+beatles = ["George", "Ringo", "John", "Paul"]
+print(beatle in beatles)     # is John one of the beatles? : TRUE
+print("Katy" not in beatles) # this is also TRUE. 
 ```
 
 ## For Loops with Lists and Dictionaries
