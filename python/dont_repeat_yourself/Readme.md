@@ -1,8 +1,10 @@
-[Up To Schedule](../../README.md) - Back To [Write Code for People](../writing_code_for_people/Readme.md) - Forward to [Make Incremental Changes I](../../version-control/git/local/Readme.md)
+[Up To Schedule](../../README.md) -
+Back To [Make Incremental Changes I](../../version-control/git/local/Readme.md) - 
+Forward To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) - 
 
-# Don't repeat yourself: Loops, Functions & Modules
+# Don't repeat yourself (or others): Python Modules
 
-**Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
+**Based on Lecture Materials By: Milad Fatenejad, Katy Huff, and Paul Wilson**
 
 In this lecture we shift gears slightly.  The best practices of "Write Code
 for People" continue to be important, but we'll start to place more emphasis
@@ -11,13 +13,10 @@ on the best practices of "Don't Repeat Yourself", and its twin practice of
 
 We've already seen the importance of loops as a way to avoid repeating
 yourself.  We've also already discussed the use of functions.  In this lesson,
-we'll explore how to package pieces of code together into reusable modules,
-and how to use other people's modules.
+we'll explore how to use other people's modules, and how to package pieces of
+your code together into reusable modules.
 
 ## Reminder: Pasting into iPython
-
-This part of the lesson includes a lot of text, but it will be useful to
-run it yourself in iPython.
 
 To paste text from another application (i.e. these lecture notes) into
 iPython :
@@ -185,7 +184,7 @@ Please note the docstring is longer than the code. And there are few comments in
 * * * *
 **Short exercise: Learn about sys**
 
-In the script we wrote to convert text files to CSV, we used the `sys` module.  Use the iPython interpreter to learn more about the `sys` module and what it does.  What is `sys.argv` and why did we only use the last n-1 elements?
+In the script we wrote to convert text files to CSV, we used the `sys` module.  Use the iPython interpreter to learn more about the `sys` module and what it does.  What is `sys.argv` and why did we only use the last n-1 elements? What is `sys.stdout`?
 
 * * * *
 
@@ -246,6 +245,8 @@ csv_writer.writerows(all_data)
 **Short Exercise:** Figure out how to change the quoting behavior of the CSV writer and explore different options.  Do any of them put the strings in quotations but not the numbers?
 
 **Bonus Exercise:** The CSV module even has a method to write multiple rows: `writerows()`.  Try using it in stead of the loop over `all_data`.
+
+# Writing Your Own Module
 
 
 
