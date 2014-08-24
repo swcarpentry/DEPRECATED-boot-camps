@@ -7,7 +7,6 @@ Forward To [Collaborate](../../version-control/git/remote/Readme.md)
 **Based on materials by Katy Huff, Rachel Slaybaugh, and Anthony
 Scopatz**
 
-![image](https://github.com/UW-Madison-ACI/boot-camps/raw/2013-04-uwmadison/python/testing/test_prod.jpg)
 # What is testing?
 
 Software testing is a process by which one or more expected behaviors
