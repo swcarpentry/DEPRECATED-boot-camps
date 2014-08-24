@@ -186,9 +186,13 @@ In [8]: "Hello world".swapcase()
 Out[8]: 'hELLO WORLD'
 ```
 
-***Excercise***
+----
+
+![Exercise](pics/exercise.jpg) **Exercise**
+
 Can you find with help of the ? which function turns "Hello world" into "HELLO WORLD"?
 
+----
 
 ### Executing code in files
 
@@ -227,7 +231,7 @@ Out[4]: 'CliffRodgers'
 ```
 
 ----
-![Exercise](pics/exercise.jpg) ***Exercise***
+![Exercise](pics/exercise.jpg) **Exercise**
 
 Can you add the extra space between my last and first name?
 
