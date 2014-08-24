@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Github and Remote Version Control](../git-and-github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Github and Remote Version Control](../github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
 
 # Mobility: Using Version Control at Work and Home
 

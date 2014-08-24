@@ -51,14 +51,15 @@ Day 2
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 9:00-9:45    | Don't Repeat Others			 | Paul Wilson  |
-| 9:45-10:45   | Make Incremental Changes II             | Karl Broman  |
+| 9:00-9:45    | [Don't Repeat Others](broken)			 | Paul Wilson  |
+| 9:45-10:45   | [Make Incremental Changes II](version-control/git/local/Revert_and_branch.md) | Karl Broman  |
 | 10:45-11:00  | Break					 | 		|
 | 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
 | 12:00- 1:00  | Lunch					 |		|
-| 1:00-2:30    | [Make Changes from Anywhere (GitHub)](version-control/git/mobility/Readme.md) | Paul Wilson |
+| 1:00-2:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Matt Gidden |
+| 2:00-2:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden |
 | 2:30-2:45    | Break                                   |      	|
-| 2:45-4:00    | [Collaborate](version-control/git/remote/Readme.md) | Paul Wilson |
+| 2:45-4:00    | [Collaborate](version-control/git/collaborate/Readme.md) | Matt Gidden |
 | 3:00-4:00    | Best Practices Summary and Discussion	 |   All	|
 
 Coincidence?
