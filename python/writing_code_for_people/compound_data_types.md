@@ -374,9 +374,31 @@ isn't that sets exist or what exactly they can do, but the main concept:
 different types of data can do different things easily. Choosing your data
 types well will both make your code clearer and simpler to write.
 
+## Finding items in compound data types
+
+One of the features of python that makes it very readable and effective is the
+ease with which you can test whether an item is in a compound data type.  All
+four of these data structures can use the `if item in compound:` conditional
+pattern.
+
+```
+In [7]: if 1.0 in voltage_list:
+   ...:    print "Found 1.0 in voltage_list"
+In [8]: if 'Nate' in person_data:
+   ...:    print "Found 'Nate' in person_data"
+In [9]: if 'apple' in first_bowl:
+   ...:    print "Found 'apple' in first_bowl"
+```
+Dictionaries are only a little bit different because they contain both keys and values:
+
+```
+In [10]: if 'temperature' in data_dict.keys():
+   ....:     print "Found 'temperature' = ' + data_dict['temperature'] + " in data_dict."
+```
+
 ## Iterating through compound data types
 
-One of the features of python that makes it very readable is the ease with
+Another of the features of python that makes it very readable is the ease with
 which you can iterate over a compound data structure.  All four of these data
 structures can use the `for each_item in compound:` pattern:
 
@@ -389,7 +411,7 @@ In [9]: for item in first_bowl:
    ...:     print item
 ```
 
-Dictionaries are only a little bit different because they contain both keys and values:
+Again, dictionaries are a little different:
 
 ```
 In [10]: for item in data_dict.keys():
