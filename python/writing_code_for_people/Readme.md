@@ -90,6 +90,13 @@ for data_record in all_data:
     writeCSVRow(column_labels,data_record,csv_separator)
 ```
 
+----
+![Exercise](pics/exercise.jpg) **Follow along**
+
+1. Open a new file in your editor called `text2csv.py`
+2. Copy & paste the above code into that editor.
+---
+
 Let's review the best practices so far:
 
 ### Modular development and design
@@ -355,7 +362,7 @@ discussed in previous functions.  The `separator` variable is an appropriate
 length and expressive in describing its role.  The list `line_data` is a
 descriptive name, but other names would be fine.
 
-**Think aloud:** Recommend some alternative variable names for `line_data`.
+![Exercise](pics/exercise.jpg) **Think aloud:** Recommend some alternative variable names for `line_data`.
 
 ### Choosing appropriate data types
 
