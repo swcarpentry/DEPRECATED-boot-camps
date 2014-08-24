@@ -170,7 +170,7 @@ test_float_mean()
 
 and then run this from the command-line:
 
-    python27 test_stats.py
+    python test_stats.py
 
 The same tests pass and fail, but still not much explanation.
 
