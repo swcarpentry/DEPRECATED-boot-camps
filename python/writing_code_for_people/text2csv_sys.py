@@ -8,18 +8,18 @@ def extractData(line):
     # the value may contain a colon so will need to be reassembled from
     # possibly multiple elements
     value = separator.join(line_data[1:])  
-    return key,value
+    return key,value.strip()
 
 
 def parseFile(filename):
     """Read all the lines from a file and return them as a dictionary of key/value pairs"""
-    textfile = open(filename, 'r')
+    textfile = open(filename)
     data_record = {}
     for line in textfile:
         # all lines that contain key/value pairs must have at least on colon
         if ':' in line:
             (key,value) = extractData(line)
-            data_record[key] = value.strip()
+            data_record[key] = value
     return data_record
 
 def writeCSVHeader(column_labels,csv_separator):
