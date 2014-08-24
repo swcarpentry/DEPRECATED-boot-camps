@@ -567,7 +567,7 @@ def std(vals):
     git commit -m "Added tests for infinity in std() and updated function so that is passes all tests."
 
 
-# Quality Assurance Exercise
+## Quality Assurance Exercise
 
 Can you think of other tests to make for the ``std()`` function? I promise there
 are at least two.
@@ -582,7 +582,7 @@ a more robust function for that case.
 And thus - finally - we have a robust function together with working
 tests!
 
-# Further Statistics Tests
+## Exercise: A different function
 
 Try your new test-driven development chops by implementing the ``var()``
 function, noting that the variance is the square of the standard devation.
