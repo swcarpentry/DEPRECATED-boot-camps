@@ -2,6 +2,8 @@
 Back To [Make Incremental Changes I](../../version-control/git/local/Readme.md) - 
 Forward To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) - 
 
+- - - - 
+
 # Don't repeat yourself (or others): Python Modules
 
 **Based on Lecture Materials By: Milad Fatenejad, Katy Huff, and Paul Wilson**
@@ -182,7 +184,7 @@ We see a nice docstring seperating into several sections. A short description of
 Please note the docstring is longer than the code. And there are few comments in the actual code.
 
 * * * *
-**Short exercise: Learn about sys**
+![Exercise](pics/exercise.jpg) **Short exercise: Learn about sys**
 
 In the script we wrote to convert text files to CSV, we used the `sys` module.  Use the iPython interpreter to learn more about the `sys` module and what it does.  What is `sys.argv` and why did we only use the last n-1 elements? What is `sys.stdout`?
 
@@ -190,18 +192,26 @@ In the script we wrote to convert text files to CSV, we used the `sys` module.  
 
 ## The python CSV Module
 
-In the last lecture, we wrote code to write out some structured information in a CSV formatted file.  In that case, we enclosed every element of the table in quotes.  For most tools that read CSV files, this causes those elements to always be interpretted a strings.  However, we had many numerical entries and may want those to be recorded as numbers.
+In the last lecture, we wrote code to write out some structured information in
+a CSV formatted file.  In that case, we enclosed every element of the table in
+quotes.  For most tools that read CSV files, this causes those elements to
+always be interpretted a strings.  However, we had many numerical entries and
+may want those to be recorded as numbers.
 
 There are three ways to do this:
-1. Rewrite our functions to only enclose the string elements in quotation marks for this particular data set.  Straightforward, but only useful in this particular project.
-2. Rewrite our functions to detect which elements are really strings and which are not.  Probably quite difficult and error prone.
+1. Rewrite our functions to only enclose the string elements in quotation
+   marks for this particular data set.  Straightforward, but only useful in
+   this particular project.
+2. Rewrite our functions to detect which elements are really strings and which
+   are not.  Probably quite difficult and error prone.
 3. Find a module that does this for us already.  Clearly the best choice!!!
 
 In fact, there is a CSV module already available.
 
-**Short Exercise** Use google to search for a `python csv module`.
+![Exercise](pics/exercise.jpg) **Short Exercise** Use google to search for a `python csv module`.
 
-Instead of having you learn about the CSV module from the documentation and examples, we'll point you to the most important things:
+Instead of having you learn about the CSV module from the documentation and
+examples, we'll point you to the most important things:
 
 ```
 In [25]: import csv
@@ -211,7 +221,9 @@ In [28]: dir(csv.DictWriter)
 In [29]: csv.DictWriter?
 ```
 
-The truth is that the documentation provided here is probably not enough to learn it by yourself.  The online documentation is better, and even better are some examples that you can find online.
+The truth is that the documentation provided here is probably not enough to
+learn it by yourself.  The online documentation is better, and even better are
+some examples that you can find online.
 
 We'll start by adding the following to our file:
 
@@ -240,160 +252,75 @@ csv_writer.writeheader()
 csv_writer.writerows(all_data)
 ```
 
-**Try it now!**
+![Exercise](pics/exercise.jpg) **Try it now!**
 
-**Short Exercise:** Figure out how to change the quoting behavior of the CSV writer and explore different options.  Do any of them put the strings in quotations but not the numbers?
+![Exercise](pics/exercise.jpg) **Short Exercise:** Figure out how to change the quoting behavior of the CSV writer and explore different options.  Do any of them put the strings in quotations but not the numbers?
 
-**Bonus Exercise:** The CSV module even has a method to write multiple rows: `writerows()`.  Try using it in stead of the loop over `all_data`.
+![Exercise](pics/exercise.jpg) **Bonus Exercise:** The CSV module even has a method to write multiple rows: `writerows()`.  Try using it in stead of the loop over `all_data`.
+
+WE still need to ensure that the numerical results in our original files are
+being treated as numbers.  To do so, immediately before returning our value
+from `extractData()` we'll:
+* define a list of columns that should be treated as numeric
+* if we find one, convert it to a float
+
+```python
+    numeric_columns = ("CI type","Volume","Range","Discrimination")
+    if key in numeric_columns and value != "" :
+        value = float(value)
+```
 
 # Writing Your Own Module
 
+For our set of cochlear implant data, we may now be interested in performing
+some simple statistical analysis of the results.  For example, we may want to
+know the mean value of the `Volume` data from all the subjects.
 
+Since we know that taking the mean value of many numbers (and other
+statistics) is something we may want to do in many different projects in the
+future, let's make a module that contains those functions.  (Note: Most of
+these functions are already available in existing modules and it would be best
+to use those, but this is a convenient example that everyone probably can
+understand equally well.)
 
-We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the iPython session between imports in the same way as the examples.
-
-Try adding a new function to the module. Note that you need to `reload` the module in python to update it, if the module is already imported. For example:
+Making a new module is as simple as defining functions in a new python file.
+Let's call our file `stats.py` and start by adding a function to calculate the
+mean.
 
 ```python
-import myFunctions as myFun
-# ... editing myFunctions.py in nano or other text editor...
-reload(myFun)
+def mean(vals):
+    """Calculate the arithmetic mean of a list of numbers in vals"""
+    total = sum(vals)
+    length = len(vals)
+    return total/length
 ```
+
+We can now use this module in our original script.
+
+**Exercise:**
+1. Add some lines to the original script to get a list with only the `Volume` data.
+2. Use this `mean()` function to calculate the mean of those numbers.
 
 * * * *
 
 
 ##The General Problem##
 
-![xkcd](http://imgs.xkcd.com/comics/the_general_problem.png "I find that when someone's taking time to do something right in the present, they're a perfectionist with no ability to prioritize, whereas when someone took time to do something right in the past, they're a master artisan of great foresight.")
+![xkcd](http://imgs.xkcd.com/comics/the_general_problem.png "I find that when
+ someone's taking time to do something right in the present, they're a
+ perfectionist with no ability to prioritize, whereas when someone took time
+ to do something right in the past, they're a master artisan of great
+ foresight.")
 
 From [xkcd](http://www.xkcd.com)
  
-Now that you can write your own functions, you too will experience the dilemma of deciding whether to spend the extra time to make your code more general, and therefore more easily reused in the future.
-
-* * * *
-**Short exercise: Write a function to calculate content fraction of DNA**
-
-One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases. Add this to your own module file. Remember to `reload` the module after adding or modifying the python file. (This function will be more complicated than previous functions, so writing it interactively within iPython will not work as well.)
-
-```python
-def calculate_dna_fraction(x, bases):
-    """Calculate the fraction of DNA sequence x, for a set of input bases.
-    x: a string composed only of A's, T's, G's, and C's.
-    bases: a string containing the bases of interest (A, T, G, C, or 
-       some combination)"""
-```
-
-Check your work. Note that since this is a generalization of `calculate_gc`, it should reproduce the same results as that function with the proper input:
+Now that you can write your own functions, you too will experience the dilemma
+of deciding whether to spend the extra time to make your code more general,
+and therefore more easily reused in the future.
 
 
-```python
-test_x = 'AGCGTCGTCAGTCGT'
-print calculate_gc(test_x) == calculate_dna_fraction(test_x, 'GC')
-print round(calculate_dna_fraction(test_x, 'C'), ndigits = 2) == 0.27
-print round(calculate_dna_fraction(test_x, 'TGC'), ndigits = 2) == 0.87
-```
+- - - -
 
-Generalization can bring problems, due to "corner cases", and unexpected inputs. You need to keep these in mind while writing the function; this is also where you should think about test cases. For example, what should the results from these calls be?
-
-```python
-print calculate_dna_fraction(test_x, 'AA')
-print calculate_dna_fraction(test_x, '')
-print calculate_dna_fraction(test_x, 2.0)
-```
-
-* * * *
-
-
-##Longer exercise: Reading Cochlear implant into Python##
-
-For this exercise we will return to the cochlear implant data first introduced in the section on the shell. In order to analyse the data, we need to import the data into Python. Furthermore, since this is something that would have to be done many times, we will write a function to do this. As before, beginners should aim to complete Part 1 and more advanced participants should try to complete Part 2 and Part 3 as well.
-
-###Part 1: View the contents of the file from within Python###
-
-Write a function `view_cochlear` that will open the file and print out each line. The only input to the function should be the name of the file as a string. 
-
-```python
-def view_cochlear(filename):
-    """Write your docstring here.
-    """
-```
-
-Test it out:
-
-```python
-view_cochlear('/home/<username>/boot-camps/shell/data/alexander/data_216.DATA')
-view_cochlear('/home/<username>/boot-camps/shell/data/Lawrence/Data0525')
-```
-
-###Part 2:###
-
-Adapt your function above to exclude the first line using the flow control techniques we learned in the last lesson. The first line is just `#` (but don't forget to remove the `'\n'`).
-
-```python
-def view_cochlear(filename):
-    """Write your docstring here.
-    """
-```
-
-Test it out:
-
-
-```python
-view_cochlear('/home/<username>/boot-camps/shell/data/alexander/data_216.DATA')
-view_cochlear('/home/<username>/boot-camps/shell/data/Lawrence/Data0525')
-```
-
-###Part 3:###
-
-Adapt your function above to return a dictionary containing the contents of the file. Split each line of the file by a colon followed by a space (': '). The first half of the string should be the key of the dictionary, and the second half should be the value of the dictionary.
-
-```python
-def load_cochlear(filename):
-    """Write your docstring here.
-    """
-```
-
-Check your work:
-
-```python
-data_216 = load_cochlear("/home/<username>/boot-camps/shell/data/alexander/data_216.DATA")
-print data_216["Subject"]
-
-Data0525 = load_cochlear("/home/<username>/boot-camps/shell/data/Lawrence/Data0525")
-print Data0525["CI type"]
-```
-
-
-##Bonus Exercise: Transcribe DNA to RNA##
-
-###Motivation:###
-
-During transcription, an enzyme called RNA Polymerase reads the DNA sequence and creates a complementary RNA sequence. Furthermore, RNA has the nucleotide uracil (U) instead of thymine (T). 
-
-###Task:###
-
-Write a function that mimics transcription. The input argument is a string that contains the letters A, T, G, and C. Create a new string following these rules: 
-
-* Convert A to U
-* Convert T to A
-* Convert G to C
-* Convert C to G
- 
-Hint: You can iterate through a string using a `for` loop similarly to how you loop through a list.
-
-```python
-def transcribe(seq):
-    """Write your docstring here.
-    """
-```
-
-Check your work:
-
-```python
-transcribe('ATGC') == 'UACG'
-
-transcribe('ATGCAGTCAGTGCAGTCAGT') == 'UACGUCAGUCACGUCAGUCA'
-```
-
-[Up To Schedule](../../README.md) - Back To [Write Code for People](../writing_code_for_people/Readme.md) - Forward to [Make Incremental Changes I](../../version-control/git/local/Readme.md)
+[Up To Schedule](../../README.md) -
+Back To [Make Incremental Changes I](../../version-control/git/local/Readme.md) - 
+Forward To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) - 
