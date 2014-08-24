@@ -34,12 +34,12 @@ def writeCSVRow(column_labels,data_record,csv_separator):
         row.append('"' + data_record[column] + '"')
     print csv_separator.join(row)
 
-# use a list to establish the order
-column_labels = ("Subject","Reported","Year/month of birth","Sex","CI type","Volume","Range","Discrimination")
-all_data = []
-
 import sys
 filelist = sys.argv[1:]
+column_labels = ("Subject","Reported","Year/month of birth",
+                 "Sex","CI type","Volume","Range","Discrimination")
+all_data = []
+
 
 for filename in filelist:
     data_record = parseFile(filename)
