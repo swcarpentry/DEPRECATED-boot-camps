@@ -115,7 +115,7 @@ Let's add one more test:
 ```python
 def test_float_mean():
     """Test some standard behavior when the result is not an integer."""
-    assert(mean([1,2])==1.5)
+    assert(mean([1, 2]) == 1.5)
 ```
 
 and try it with:
@@ -157,7 +157,7 @@ def test_mean():
 
 def test_float_mean():
     """Test some standard behavior when the result is not an integer."""
-    assert(mean([1,2])==1.5)
+    assert(mean([1, 2]) == 1.5)
 ```
 
 To make it even easier to test, we can add some lines at the bottom of
@@ -306,7 +306,7 @@ exception, by using the nose tool `assert_raises`:
 
 ```python
 def test_string_mean():
-    assert_raises(TypeError,mean,['hello','world'])
+    assert_raises(TypeError, mean, ['hello','world'])
 ```
 
 **Practice using git:** Commit this change to the repository
