@@ -107,10 +107,10 @@ also used to switch between branches.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Switch to a new branch
 
-Create an `add_var` branch and switch to it.
+Create an `add_median` branch and switch to it.
 
-    $ git branch add_var
-    $ git checkout add_var
+    $ git branch add_median
+    $ git checkout add_median
     $ git branch
 
 How can you tell we've switched between branches? When we used the
@@ -133,7 +133,7 @@ $ git add stats.py
 $ git commit -m "Adding a first version of stats.py."
 ```
 
-### ![Exercise](pics/exercise.jpg) Exercise: Implement the `var()` function.
+### ![Exercise](pics/exercise.jpg) Exercise: Implement the `median()` function.
 
 1. Use the list's `sort()` method to implement the `median()` function. (The
 median is either the middle value of an odd set of numbers *or* the `mean()` of
@@ -142,15 +142,15 @@ the middle two values of an even set of numbers.)
 
 ## `git merge`: Merging Branches
 
-At some point, the `add_var` branch may be ready to become part of
+At some point, the `add_median` branch may be ready to become part of
 the `master` branch.  In real life, we might do a lot more testing and
-development.  For now, let's assume that our variance function is ready
+development.  For now, let's assume that our median function is ready
 and merge this back into the master branch.  We use `git merge` to
 combine the changes in two parallel branches.
 
 ```
 $ git checkout master
-$ git merge add_var
+$ git merge add_median
 ```
 
 ## Aside: Make your Prompt Pretty
