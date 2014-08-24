@@ -52,7 +52,7 @@ Day 2
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 9:00-9:45    | Don't Repeat Others			 | Paul Wilson  |
-| 9:45-10:45   | Make Incremental Changes II             | Karl Broman  |
+| 9:45-10:45   | [Make Incremental Changes II](version-control/git/local/Revert_and_branch.md) | Karl Broman  |
 | 10:45-11:00  | Break					 | 		|
 | 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
 | 12:00- 1:00  | Lunch					 |		|

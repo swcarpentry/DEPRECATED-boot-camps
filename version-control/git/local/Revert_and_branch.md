@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Planning for Mistakes](../../../python/testing) - Forward To [Collaboration](../remote)
+[Up To Schedule](../../../README.md) - Back To [Make Incremental Changes I](./Readme.md)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
 
 # Make Incremental Changes II: Reverting and branching in git
 
