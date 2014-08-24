@@ -136,8 +136,8 @@ $ git commit -m "Adding a first version of stats.py."
 ### ![Exercise](pics/exercise.jpg) Exercise: Implement the `var()` function.
 
 1. Use the list's `sort()` method to implement the `median()` function. (The
-median is either the middle value of an even set of numbers *or* the `mean()` of
-the middle two values in an odd set of numbers.)
+median is either the middle value of an odd set of numbers *or* the `mean()` of
+the middle two values of an even set of numbers.)
 2. Commit the changed file to your repository.
 
 ## `git merge`: Merging Branches
