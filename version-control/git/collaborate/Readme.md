@@ -24,37 +24,36 @@ Step 1 : Group up in pairs
 Step 2 : Add your collaborator as a remote and check to make sure you're
 connected, e.g., Beta would type the following
 
-    $ git remote add alpha https://github.com/alpha/simplestats.git
+    $ git remote add alpha https://github.com/alpha/simplestats
     $ git remote -v
-    origin  https://github.com/YOU/simplestats.git (fetch)
-    origin  https://github.com/YOU/simplestats.git (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
-    alpha           https://github.com/alpha/simplestats.git (fetch)
-    alpha           https://github.com/alpha/simplestats.git (push)
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
+    alpha           https://github.com/alpha/simplestats (fetch)
+    alpha           https://github.com/alpha/simplestats (push)
     $ git fetch alpha
 
 and Alpha would type
 
-    $ git remote add beta https://github.com/beta/simplestats.git
+    $ git remote add beta https://github.com/beta/simplestats
     $ git remote -v
-    origin  https://github.com/YOU/simplestats.git (fetch)
-    origin  https://github.com/YOU/simplestats.git (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
-    beta            https://github.com/beta/simplestats.git (fetch)
-    beta            https://github.com/beta/simplestats.git (push)
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
+    beta            https://github.com/beta/simplestats (fetch)
+    beta            https://github.com/beta/simplestats (push)
     $ git fetch beta
 
 Let's say that Beta is interested in adding a feature to the code that Beta and
-Alpha are working on. Previously, we worked on a mean function, so let's add a
-median function.
+Alpha are working on. Let's look at a `median()` function.
 
 ```python
 def median(numlist):
     numlist.sort()
     length = len(numlist)
-    index = length/2
+    index = length / 2
     if length % 2 == 0:
        return mean([numlist[index], numlist[index - 1]])
     else:
