@@ -297,7 +297,7 @@ def mean(vals):
 
 We can now use this module in our original script.
 
-**Exercise:**
+![Exercise](pics/exercise.jpg) **Exercise:**
 
 1. Add some lines to the original script to get a list with only the `Volume` data.
 2. Use this `mean()` function to calculate the mean of those numbers.
