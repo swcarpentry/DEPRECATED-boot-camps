@@ -1,6 +1,6 @@
 
 # iPython Intro
-[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#motivating-example)
 * * * * *
 
 
@@ -465,5 +465,5 @@ for n in range(1,10):
 
 - - - - 
 
-Back to [Write Code for People](Readme.md)
+Back to [Write Code for People](Readme.md#motivating-example)
 
