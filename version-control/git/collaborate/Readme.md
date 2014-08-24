@@ -24,37 +24,36 @@ Step 1 : Group up in pairs
 Step 2 : Add your collaborator as a remote and check to make sure you're
 connected, e.g., Beta would type the following
 
-    $ git remote add alpha https://github.com/alpha/simplestats.git
+    $ git remote add alpha https://github.com/alpha/simplestats
     $ git remote -v
-    origin  https://github.com/YOU/simplestats.git (fetch)
-    origin  https://github.com/YOU/simplestats.git (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
-    alpha           https://github.com/alpha/simplestats.git (fetch)
-    alpha           https://github.com/alpha/simplestats.git (push)
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
+    alpha           https://github.com/alpha/simplestats (fetch)
+    alpha           https://github.com/alpha/simplestats (push)
     $ git fetch alpha
 
 and Alpha would type
 
-    $ git remote add beta https://github.com/beta/simplestats.git
+    $ git remote add beta https://github.com/beta/simplestats
     $ git remote -v
-    origin  https://github.com/YOU/simplestats.git (fetch)
-    origin  https://github.com/YOU/simplestats.git (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
-    beta            https://github.com/beta/simplestats.git (fetch)
-    beta            https://github.com/beta/simplestats.git (push)
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
+    beta            https://github.com/beta/simplestats (fetch)
+    beta            https://github.com/beta/simplestats (push)
     $ git fetch beta
 
 Let's say that Beta is interested in adding a feature to the code that Beta and
-Alpha are working on. Previously, we worked on a mean function, so let's add a
-median function.
+Alpha are working on. Let's look at a `median()` function.
 
 ```python
 def median(numlist):
     numlist.sort()
     length = len(numlist)
-    index = length/2
+    index = length / 2
     if length % 2 == 0:
        return mean([numlist[index], numlist[index - 1]])
     else:
@@ -81,7 +80,8 @@ Step 1 : Start a new feature branch, named median (you could do this in single
     $ git checkout median
 
 Step 2 : Modify the stats.py module to add the median function (and maybe a test
-if you're feeling up to it!)
+if you're feeling up to it!). Add your ``median()`` function between the
+``mean()`` and ``mode()`` functions.
 
 Step 3 : Commit your changes
 
@@ -239,7 +239,7 @@ Step 1 : Experience the Conflict
 
 Now what?
 
-Git has paused the rebase. You can see this with the ```git status`` command.
+Git has paused the rebase. You can see this with the ``git status`` command.
 
     # HEAD detached at c23f1e4
     # You are currently rebasing branch 'test_change2' on 'c23f1e4'.
@@ -294,16 +294,18 @@ example of its use.
 In [1]: from collections import defaultdict
 In [2]: number_frequencies = defaultdict(int)
 In [3]: number_found = 42
-In [4]: number_frequencies[number_found] += 1
-In [5]: number_frequencies[number_found]
-Out[5]: 1
+In [4]: number_frequencies[number_found]
+Out[4]: 0
+In [5]: number_frequencies[number_found] += 1
+In [6]: number_frequencies[number_found]
+Out[6]: 1
 ```
 
 You might also ask how to get the maximum value in a python dictionary. Here's
 one way.
 
 ```
-In [6]: max_counts = max(number_frequencies, key = number_frequencies.get)
+In [6]: max_counts = max(number_frequencies, key=number_frequencies.get)
 In [7]: max_counts
 Out[7]: 42
 ```
@@ -311,11 +313,6 @@ Out[7]: 42
 It works great, right? Maybe we should add a test for bimodal distributions...
 
 # Extra Information
-
-## Moving from Home to Work
-
-[Here](../mobility/Readme.md)'s a tutorial about how to get yourself set up for
-keeping your work at home and the office in sync.
 
 ## gitolite
 
