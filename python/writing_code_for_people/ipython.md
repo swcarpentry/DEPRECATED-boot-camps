@@ -226,8 +226,12 @@ In [4]: print(full_name)
 Out[4]: 'CliffRodgers'
 ```
 
+----
 ![Exercise](pics/exercise.jpg) ***Exercise***
+
 Can you add the extra space between my last and first name?
+
+----
 
 ### Conditionals
 
@@ -301,10 +305,13 @@ languages) is only for people. Little things like putting blank lines in
 "sane" places, and putting spaces between variables and operators (say, `a +
 b` rather than `a+b`) can make your code a lot easier to read.
 
+----
 ![Exercise](pics/exercise.jpg) **Exercise**
 Write an if statement that prints whether x is even or odd.
 
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
+
+----
 
 ### Loops
 
@@ -403,11 +410,12 @@ range()?
 integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The `for`
 loop then simply iterates over that list, setting `i` to each value.
 
-* * * *
+----
 ![Exercise](pics/exercise.jpg) **Exercise**
 
 Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
 
+----
 
 break, continue, and else
 =========================
