@@ -95,6 +95,7 @@ for data_record in all_data:
 
 1. Open a new file in your editor called `text2csv.py`
 2. Copy & paste the above code into that editor.
+
 ---
 
 Let's review the best practices so far:
