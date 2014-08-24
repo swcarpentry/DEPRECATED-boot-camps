@@ -258,7 +258,7 @@ csv_writer.writerows(all_data)
 
 ![Exercise](pics/exercise.jpg) **Bonus Exercise:** The CSV module even has a method to write multiple rows: `writerows()`.  Try using it in stead of the loop over `all_data`.
 
-WE still need to ensure that the numerical results in our original files are
+We still need to ensure that the numerical results in our original files are
 being treated as numbers.  To do so, immediately before returning our value
 from `extractData()` we'll:
 * define a list of columns that should be treated as numeric
@@ -298,6 +298,7 @@ def mean(vals):
 We can now use this module in our original script.
 
 **Exercise:**
+
 1. Add some lines to the original script to get a list with only the `Volume` data.
 2. Use this `mean()` function to calculate the mean of those numbers.
 
