@@ -5,7 +5,7 @@ def extractData(line):
     separator = ':'
     line_data = line.strip().split(separator)
     key = line_data[0]
-    # the value may contain a colon so will need to be reassembled from
+    # the value may contain a separator so will need to be reassembled from
     # possibly multiple elements
     value = separator.join(line_data[1:])  
     return key,value.strip()
