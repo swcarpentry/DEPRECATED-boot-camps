@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Return To [Write Code for People](compound_data_types.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
 
 - - - -
 
@@ -483,4 +483,4 @@ for i,d in enumerate(data_list):
 
 - - - -
 
-[Up To Schedule](../../README.md) - Return To [Write Code for People](compound_data_types.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)

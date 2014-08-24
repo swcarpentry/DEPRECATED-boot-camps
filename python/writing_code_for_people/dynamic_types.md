@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Return To [Write Code for People](compound_data_types.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
 
 - - - -
 
@@ -199,5 +199,5 @@ Out[57]: (float, float, float)
 
 - - - -
 
-[Up To Schedule](../../README.md) - Return To [Write Code for People](compound_data_types.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
 
