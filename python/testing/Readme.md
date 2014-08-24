@@ -569,7 +569,7 @@ def std(vals):
 
 # Quality Assurance Exercise
 
-Can you think of other tests to make for the std() function? I promise there
+Can you think of other tests to make for the ``std()`` function? I promise there
 are at least two.
 <!---
 	1. How about std(string) or std(array)?
@@ -584,13 +584,8 @@ tests!
 
 # Further Statistics Tests
 
-Try your new test-driven development chops by implementing one or more of
-the following functions along with their corresponding tests:
-   * median
-   * mode
-   * variance
-
-
+Try your new test-driven development chops by implementing the ``var()``
+function, noting that the variance is the square of the standard devation.
 
 # How are tests written?
 
