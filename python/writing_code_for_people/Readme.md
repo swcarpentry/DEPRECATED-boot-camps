@@ -4,14 +4,17 @@ Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
 
 - - - -
 
-# Write Code for People: Variables, Data Structures and Conditionals
+# Write Code for People: Variables, Data Types, Comments and Modularity
 
-This lecture covers a number of topics under the heading of writing code for people:
+This lecture covers a number of topics under the heading of *"writing code for
+people"*:
 * naming variables in meaningful ways
 * choosing appropriate data types
 * writing effective comments
-* don't repeat yourself
 * breaking your code/script into small pieces
+
+In some cases, we'll also look at the best practice of *"don't repeat
+yourself"*.
 
 These concepts are important and apply to any language.  For today's lecture,
 we'll use python as the language, but you use a different language, you should
