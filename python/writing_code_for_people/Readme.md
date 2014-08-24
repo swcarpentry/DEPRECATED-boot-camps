@@ -14,10 +14,21 @@ This lecture covers a number of topics under the heading of writing code for peo
 
 These concepts are important and apply to any language.  For today's lecture,
 we'll use python as the language, but you use a different language, you should
-think about how you would use these practices in your language.
+think about how you would use these practices in your language.  In
+particular, we will use the [iPython interpreter](../ipython/Readme.md), a
+version of python with some added features.
 
 At the same time, this exercise will demonstrate one way to think about
 developing and designing code/scripts in a modular way.
+
+This is not designed to teach python, *per se*, but use it as a relatively
+accessible language with features that help shine a light on best practices.
+For more on python, consider the following reference material.
+
+* [Dive into Python](http://www.diveintopython.net/toc/index.html)
+* [Software Carpentry's Python Lectures](http://software-carpentry.org/4_0/python/)
+* [IPython: A System for Interactive Scientific Computing](http://dx.doi.org/10.1109/MCSE.2007.53)
+* [How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 
 ## Motivating Example
 
@@ -268,36 +279,104 @@ need to initialize it as a new dictionary each time.
 
 ## Step 3: Extracting the data from each line
 
+The next function that we will add will operate on a small amount of data to
+separate a single line of the form:
+
+```
+Some keyword phrase: data that is the value
+```
+
+into two variables where:
+
+```
+key = "Some keyword phrase"
+value = "data that is the value"
+```
+
+The line of data is a string, so we'll be using some methods of the built-in
+string class.  There are many ways to accomplish this task, but we'll rely on
+the `split()` method of the string class with the following high level algorithm:
+
+* split the line at the location of the separator into a list of strings
+* use the first of this list as the key
+* use the remainder of the list as the value
+
+```python
+def extractData(line):
+    """Assume the first colon (:) separates the key from the value."""
+    separator = ':'
+    line_data = line.strip().split(separator)
+    key = line_data[0]
+    # the value may contain a separator so will need to be reassembled from
+    # possibly multiple elements
+    value = separator.join(line_data[1:])
+    return key,value.strip()
+```
+
+### Getting help on new functions
+
+One of the features of iPython is it's ability to show you help of a function,
+typically in the form of its docstring.  You can learn more about the
+`strip()` and `split()` string functions:
+
+```
+In [21]: str.strip?
+In [22]: str.split?
+```
+
+Let's again review the best practices:
+
+### Modular development and design
+
+Not much new to say here: a short method: 9 lines including 3 comments, and
+only 5 variables.  At this point, we have used 12 different variables
+throughout the script, but no single block of the script uses more than 6 of
+them.
+
+### Writing effective comments
+
+In addition to a docstring, we have a comment to remind us that when the
+separator happens to appear as part of the value, the `line_data` list will
+have more than just 2 elements, and we need to reassemble all but the first
+one into the value.
+
+### Variable and function naming
+
+Of the 5 variables used in this function, 3 are based on names defined and
+discussed in previous functions.  The `separator` variable is an appropriate
+length and expressive in describing its role.  The list `line_data` is a
+descriptive name, but other names would be fine.
+
+**Think aloud:** Recommend some alternative variable names for `line_data`.
+
+### Choosing appropriate data types
+
+All the choices in this case were made for us by the requirements of the
+string functions we call.
 
 
-* naming variables in meaningful ways
-* choosing appropriate data types
-* writing effective comments
-* breaking your code/script into small pieces
+## Step 4: Write the CSV data
+
+**Discussion Exercise** Given the following implementation of the final two
+  functions, discuss ways in which they follow the best practices, and ways
+  that they could be improved, if any.
+
+```python
+def writeCSVHeader(column_labels,csv_separator):
+    header = []
+    for column in column_labels:
+        header.append('"' + column + '"')
+    print csv_separator.join(header)
+
+def writeCSVRow(column_labels,data_record,csv_separator):
+    row = []
+    for column in column_labels:
+        row.append('"' + data_record[column] + '"')
+    print csv_separator.join(row)
+```
 
 
-This lecture is on basic programming in python. In order to do the examples,
-we are going to use an environment called iPython.  I expect this lecture to
-be interactive, so stop me at any point if you have questions.
 
-This lecture will be structured as follows: I will be teaching the basics of
-two things: the python programming language (to a greater extent) and the
-iPython interpreter (to a lesser extent). The iPython interpreter is one of
-many different ways to implement python code. As far as the python component,
-I'll shoot for a layered approach: I'll continue building on my previous
-concepts. It turns out that like any sufficiently complex topic, its not
-really possible to force the pedagogy into a serial stream. Also, we have a
-pretty serious time constraint. I'm just going to drop it on you. Because of
-the brief nature of this tutorial, I've included links to some excellent
-reference material. Also, if we have time, I'll take questions based on the
-specific programming needs of this class.
-
-Here is the reference material.
-
-* [Dive into Python](http://www.diveintopython.net/toc/index.html)
-* [Software Carpentry's Python Lectures](http://software-carpentry.org/4_0/python/)
-* [IPython: A System for Interactive Scientific Computing](http://dx.doi.org/10.1109/MCSE.2007.53)
-* [How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 
 Once we briefly deal with iPython, I'll cover python in the following order:
 
