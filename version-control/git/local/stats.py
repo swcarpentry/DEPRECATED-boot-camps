@@ -1,4 +1,4 @@
-def mean(numlist):
-    total = sum(numlist)
-    length = len(numlist)
+def mean(vals):
+    total = sum(vals)
+    length = len(vals)
     return total/length
