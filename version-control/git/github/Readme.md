@@ -62,7 +62,12 @@ We'll be interacting with remote repositories now, so let's clean up the
 simplestats folder on your machine.
 
     $ cd
-    $ rm simplestats
+    $ rm -r simplestats
+
+Or if you'd like to keep it around
+
+    $ cd
+    $ mv simplestats old-simplestats
 
 Step 1 : Go to our
 [repository](https://github.com/UW-Madison-ACI/simplestats)
@@ -71,23 +76,23 @@ user name rather than any organizations.
 
 Step 2 : Clone it. From your terminal :
 
-    $ git clone https://github.com/YOU/simplestats.git
+    $ git clone https://github.com/YOU/simplestats
     $ cd simplestats
     $ git remote -v
-    origin  https://github.com/YOU/simplestats.git (fetch)
-    origin  https://github.com/YOU/simplestats.git (push)
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
 
 Your local repository is now connected to the remote repository using the
 alias `origin`.
 
 Step 3 : Add a connection to the common repository :
 
-    $ git remote add upstream https://github.com/UW-Madison-ACI/simplestats.git
+    $ git remote add upstream https://github.com/UW-Madison-ACI/simplestats
     $ git remote -v
-    origin  https://github.com/YOU/simplestats.git (fetch)
-    origin  https://github.com/YOU/simplestats.git (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats.git (push)
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
 
 All repositories that are clones begin with a remote called `origin`.  The most
 common convention is clone from your own fork (`origin`) and add a remote to the
@@ -144,3 +149,15 @@ remote repository. The syntax is git push [remote] [local branch].
 Before pushing, a developer should always pull (or fetch + merge), so
 that there is an opportunity to resolve conflicts before pushing to the
 remote. 
+
+## Exercise: Update your remote to an upstream change
+
+Assume that your lab group collectively works on a project (like `simplestats`),
+and someone has updated the `master` branch (we can simulate that by a helper
+doing an update -- helpers?).
+
+It is now your job to: 
+
+* get the upstream changes
+* apply them to your local repository
+* apply them to your fork
