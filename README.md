@@ -56,9 +56,10 @@ Day 2
 | 10:45-11:00  | Break					 | 		|
 | 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
 | 12:00- 1:00  | Lunch					 |		|
-| 1:00-2:30    | [Make Changes from Anywhere (GitHub)](version-control/git/mobility/Readme.md) | Matt Gidden |
+| 1:00-2:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Matt Gidden |
+| 2:00-2:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden |
 | 2:30-2:45    | Break                                   |      	|
-| 2:45-4:00    | [Collaborate](version-control/git/remote/Readme.md) | Matt Gidden |
+| 2:45-4:00    | [Collaborate](version-control/git/collaborate/Readme.md) | Matt Gidden |
 | 3:00-4:00    | Best Practices Summary and Discussion	 |   All	|
 
 Coincidence?
