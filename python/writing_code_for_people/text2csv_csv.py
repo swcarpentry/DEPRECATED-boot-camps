@@ -10,7 +10,6 @@ def extractData(line):
     value = separator.join(line_data[1:]).strip()
     numeric_columns = ("CI type","Volume","Range","Discrimination")
     if key in numeric_columns and value != "" :
-        # print key, numeric_columns, value
         value = float(value)
     return key,value
 
