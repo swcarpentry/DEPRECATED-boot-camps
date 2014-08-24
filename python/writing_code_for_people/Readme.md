@@ -89,10 +89,23 @@ variable and function names in a short script that performs clear operations.
 
 ### Variable and function naming
 
-We have chosen meaningful names for each variable: filename, filelist,
-data_record, all_data, column_labels, csv_separator.  It is often recommended
-that variables be given names that are nouns, indicating that they represent
-things rather than actions.
+We have chosen meaningful names for each variable: `filename`, `filelist`,
+`data_record`, `all_data`, `column_labels`, `csv_separator`.  It is often
+recommended that variables be given names that are nouns, indicating that they
+represent things rather than actions.
+
+The length of variable names is also important: too short and they loose some
+meaning; too long and they become prone to errors when typing them.
+
+**Short Exercise**
+
+Which of these are bad choices and why?  Which are reasonable alternatives?
+* `fn`
+* `all_data_from_all_the_files_in_the_list`
+* `col_lbls`
+* `record`
+* `sep`
+* `col_labels` 
 
 We have chosen meaningful names for each function: parseFile, writeCVSHeader,
 writeCVSRow.  It is often recommended that functions be given names that are
@@ -130,27 +143,130 @@ For our problem the following choices are probably wise:
 * `all_data` should be a list of those dictionaries
 * `column_labels` should be a tuple because we want it to be immutable
 
+### Don't repeat yourself
+
+At this point there are two examples of using this best practice.  In it's
+simplest form, we have used loops so that the computer repeats the same task
+for many different items. In addition, using the `csv_separator` variable
+instead of just typing `','` has two advantages:
+1. it provides context for what this means
+2. it means we can change it in a single place
 
 ### Initialize some of these variables
 
 1. We can initialize the list of files from the command-line arguments.
 2. We should also declare the immutable ordered list of column labels.
 3. Now that we know `all_data` should be a list, we should initialize it as a
-   empty list by adding this line at the beginning.
+   empty list.
 
 ```python
 import sys
 filelist = sys.argv[1:]
-column_labels = ("Subject","Reported","Year/month of birth","Sex","CI type","Volume","Range","Discrimination")
+column_labels = ("Subject","Reported","Year/month of birth",
+                "Sex","CI type","Volume","Range","Discrimination")
 all_data = []
-
 ```
 
-## Step 2: Adding some data
+## Step 2: Parse a single file
 
+To continue with our script we can now focus on the first funciton,
+`parseFile`.  Python functions have the same components of functions in most
+languages.
 
+1. a way to declare where the function starts: `def`
+2. a function name
+3. arguments to the function
+4. a way to return some result(s) from a function
+5. a way to declare where the function ends: indentation
 
+For our function, we already know that the name is `parseFile` and that it
+will take a single argument that is a `filename`.
 
+Just like the last time, we'll consider what the big picture steps are:
+
+* open the file
+* loop over all the lines in the file
+  * extract the data from that line in a key/value pair
+  * add that data to the dictionary
+* return the complete dictionary
+
+```python
+def parseFile(filename):
+    """Read all the lines from a file and return them as a dictionary of key/value pairs"""
+    textfile = open(filename, 'r')
+    data_record = {}
+    for line in textfile:
+        # all lines that contain key/value pairs must have at least on colon
+        if ':' in line:
+            (key,value) = extractData(line)
+            data_record[key] = value
+    return data_record
+```
+
+### Reading from files
+
+At this point we've had to introduce a new concept: reading data from files.
+For most purposes, python makes this very easy.  When we `open` a file, we get
+an object over which we can iterate, much like a list.  Let's look at the file
+`phonenums.txt` using this concept:
+
+**Try it exercise**
+
+```python
+In [15]: file_data = open('phonenums.txt')
+In [16]: for line in file_data:
+   ....:     print line
+```
+
+Again we'll review the best practices.
+ 
+### Modular development and design
+
+Once again we have a short method with only 10 lines, including 2 comments,
+and only 6 variables.  To keep this method focused, we will rely on another
+new function.
+
+### Writing effective comments
+
+In this case there are 2 places where comments are useful.  Every function in
+python should have a special comment at the beginning known as a `docstring`.
+A docstring has special meaning to tools that, for example, can show help
+about a function.
+
+This function also requires a special test to ensure that the line is actually
+a data line, using the assumption that all data lines have at least one colon
+(:).  This is a useful place for a comment because the conditional clause is
+not obvious without it.
+
+### Variable and function naming
+
+Two of the variables used in this function use the same name and same meaning
+as the corresponding variables in the main script: `filename` and
+`data_record`.  Although this is not necessary, it makes code more readable
+when variables in different places that have the same meaning can also have
+the same name.  In functions that broader utility, this may be neither
+possible nor logical.
+
+The other variables have names that are obvious matches to their purposes:
+`textfile`, `line`, `key`, and `value`.  These are all nouns and the only
+method that we have declared is a verb: `extractData`.
+
+### Choosing appropriate data types
+
+One of the features of python that we may start to notice is that it relies on
+something called [dynamic typing](dynamic_types.md).  Although the type of a
+variable can change over its lifetime, too much change can make the script
+more difficult to follow.  It is helpful to know what type is implied and
+endeavor to use that consistently.
+
+In addition, the type of `textfile` is a built-in object of type `file`,
+determined dynamically by the object returned by the call to the `open`
+method.
+
+Because `data_record` is a new dictionary each time we call this function, we
+need to initialize it as a new dictionary each time.
+
+## Step 3: Extracting the data from each line
 
 
 
@@ -390,7 +506,11 @@ This point becomes important when we start operating on data in the next section
 
 ## Data Operations
 
-In this section all of the discussion in the previous section becomes important. I don't know if I'd call this stuff fundamental to the language, but it's pretty important and it will zing you if you aren't careful. The takeaway is that you need to be precise with what you are doing. Let's say you want to add some integers.
+In this section all of the discussion in the previous section becomes
+important. I don't know if I'd call this stuff fundamental to the language,
+but it's pretty important and it will zing you if you aren't careful. The
+takeaway is that you need to be precise with what you are doing. Let's say you
+want to add some integers.
 
 ```
 In [31]: a = 1
@@ -406,7 +526,8 @@ In [38]: type(a), type(b), type(c)
 Out[38]: (int, int, int)
 ```
 
-So we got a value of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
+So we got a value of three for the sum, which also happens to be an
+integer. Any operation between two integers is another integer. Makes sense.
 
 So what about the case where a is an integer and b is a float?
 
