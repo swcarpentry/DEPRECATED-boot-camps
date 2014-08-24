@@ -317,7 +317,6 @@ def test_string_mean():
 We can provide some extra information to the user by catching the TypeError exception:
 
 ```python
-def mean(numlist)
 def mean(numlist):
     """Calculate the arithmetic mean of a list of numbers in numlist"""
     try:
