@@ -1,9 +1,10 @@
-[Up To Schedule](../../README.md) - Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) - Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
+[Up To Schedule](../../README.md) - 
+Back To[Let the Computer Do the Work](../../shell/automation/Readme.md) -
+Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
 
+- - - -
 
 # Write Code for People: Variables, Data Structures and Conditionals
-
-* * * * *
 
 This lecture covers a number of topics under the heading of writing code for people:
 * naming variables in meaningful ways
@@ -15,7 +16,7 @@ This lecture covers a number of topics under the heading of writing code for peo
 These concepts are important and apply to any language.  For today's lecture,
 we'll use python as the language, but you use a different language, you should
 think about how you would use these practices in your language.  In
-particular, we will use the [iPython interpreter](../ipython/Readme.md), a
+particular, we will use the [iPython interpreter](ipython.md), a
 version of python with some added features.
 
 At the same time, this exercise will demonstrate one way to think about
@@ -158,8 +159,10 @@ For our problem the following choices are probably wise:
 
 At this point there are two examples of using this best practice.  In it's
 simplest form, we have used loops so that the computer repeats the same task
-for many different items. In addition, using the `csv_separator` variable
-instead of just typing `','` has two advantages:
+for many different items.
+
+In addition, using the `csv_separator` variable instead of just typing `','`
+has two advantages:
 1. it provides context for what this means
 2. it means we can change it in a single place
 
@@ -383,6 +386,8 @@ and white space affect more than just code functionality, they affect the
 readability for others and your future self.  Variable names can make a huge
 difference in code readability and types are important in conveying intent.
 
-[Up To Schedule](../../README.md) - Back To
-[Let the Computer Do the Work](../../shell/automation/Readme.md) - Forward To
-[Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
+* * * * *
+
+[Up To Schedule](../../README.md) -
+Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) -
+Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)

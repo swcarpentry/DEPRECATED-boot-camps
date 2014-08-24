@@ -396,26 +396,88 @@ In [10]: if 'temperature' in data_dict.keys():
    ....:     print "Found 'temperature' = ' + data_dict['temperature'] + " in data_dict."
 ```
 
-## Iterating through compound data types
+## For Loops with Lists and Dictionaries
 
-Another of the features of python that makes it very readable is the ease with
-which you can iterate over a compound data structure.  All four of these data
-structures can use the `for each_item in compound:` pattern:
+With `range`, we learned that `for` loops in python are really used to
+iterate over sequences of things (they can be used for much more, but
+for now this definition will do). Try entering the following to see what
+happens:
 
-```
-In [7]: for item in voltage_list:
-   ...:     print item
-In [8]: for item in person_data:
-   ...:     print item
-In [9]: for item in first_bowl:
-   ...:     print item
+```python
+for c in ["one", 2, "three", 4, "five"]:
+    print c
 ```
 
-Again, dictionaries are a little different:
+this is equivalent to:
 
+```python
+c = ["one", 2, "three", 4, "five"]
+for i in range(len(c)):
+    print c[i]
 ```
-In [10]: for item in data_dict.keys():
-   ....:     print item + " = " + data_dict[item]
+
+With a list, then, it's clear that we can use the `in` keyword to
+indicate a list of things. What about a nested loops around a list of
+lists?
+
+```python
+nationnames = ["Italy","Argentina", "India", "US"]
+
+italy_city_list = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina_city_list = ["Mendoza", "Buenos Aires", "Patagonia"]
+india_city_list = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
+us_city_list = ["Chicago", "Austin", "New York", "San Fran"]
+all_cities = [italy_city_list, argentina_city_list, india_city_list, us_city_list]
+
+for city_list in all_cities :
+    print nationnames[all_cities.index(city_list)] + ": "
+    for city in city_list :
+        print "  " + city 
+```
+
+Of course, this information is better stored in a dictionary, isn't it?
+The data makes more sense if the keys were the nation names and the
+values were lists of cities. Importantly, python has given us a tool
+specifically for dictionary looping.
+
+The syntax for looping through the keys and values of a dictionary is :
+
+    for key, value in dictionary.iteritems():
+
+Importantly, you don't have to use the words key and value. That's just
+what will fill those variables. Here, we rewrite the previous loop using
+this clever syntax.
+
+```python
+italy_city_list  = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina_city_list = ["Mendoza", "Buenos Aires", "Patagonia"]
+india_city_list = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
+us_city_list = ["Chicago", "Austin", "New York", "San Fran"]
+nations = {"Italy":italy_city_list, "Argentina":argentina_city_list, "India":india_city_list, "US":us_city_list}
+for nation, city_list in nations.iteritems() :
+    print nation + " : "
+    for city in city_list :
+        print "  " + city 
+```
+
+###enumerate###
+
+Python lists and dictionaries can easily be iterated through in a `for` loop
+by using `in`. As we saw above, this is clearer than writing a for loop over
+the integers up to the length of the list (or dictionary, or other
+iterable). However, sometimes you may need the index value at the same time,
+for example for some calculation. The `enumerate` function generates the
+integer index for you, which can be used instead of the `range` function. The
+following two loops are equivalent:
+
+```python
+data_list = [23,45,67]
+
+for i in range(len(data_list)):
+    print data_list[i], ' is item number ', i, ' in the list'
+
+for i,d in enumerate(data_list):
+    print d, ' is item number ', i, ' in the list'
 ```
 
 
