@@ -76,6 +76,7 @@ Let's start with the big picture view of what this script needs to do:
 * loop through each record
     * write that record in the correct CSV syntax
 
+Written in python that is:
 ```python
 for filename in filelist:
     data_record = parseFile(filename)
@@ -176,6 +177,7 @@ has two advantages:
 3. Now that we know `all_data` should be a list, we should initialize it as a
    empty list.
 
+Add these lines above the others in your script:
 ```python
 import sys
 filelist = sys.argv[1:]
@@ -186,7 +188,7 @@ all_data = []
 
 ## Step 2: Parse a single file
 
-To continue with our script we can now focus on the first funciton,
+To continue with our script we can now focus on the first function,
 `parseFile`.  Python functions have the same components of functions in most
 languages.
 
