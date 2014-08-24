@@ -234,7 +234,8 @@ However, nose itself defines number of convenient assert functions which can
 be used to test more specific aspects of the code base.
 
 ```python
-from nose.tools import assert_equal, assert_almost_equal, assert_true, assert_false, assert_raises, assert_is_instance
+from nose.tools import assert_equal, assert_almost_equal, assert_true, \
+    assert_false, assert_raises, assert_is_instance
 
 assert_equal(a, b)
 assert_almost_equal(a, b)
