@@ -1,4 +1,6 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md) - Forward To [Don't Repeat Others](./broken)
+[Up To Schedule](../../../README.md) - Back To [Write Code for People](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)
+
+----
 
 # Make Incremental Changes I: Use Version Control
 
@@ -392,4 +394,6 @@ renaming files.
 
 * [git book](http://git-scm.com/book)
 
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md) - Forward To [Don't Repeat Others](./broken)
+----
+
+[Up To Schedule](../../../README.md) - Back To [Write Code for People](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)

@@ -1,8 +1,9 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Others](broken)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
+
+----
 
 # Make Incremental Changes II: Reverting and branching in git
 
-----
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
@@ -212,4 +213,6 @@ PROMPT_COMMAND=color_my_prompt
 * [git book](http://git-scm.com/book)
 * [git game](http://pcottle.github.io/learnGitBranching/index.html)
 
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Others](broken)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
+----
+
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
