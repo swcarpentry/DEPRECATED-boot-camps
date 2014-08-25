@@ -1,5 +1,5 @@
-[Up To Schedule](../../README.md) - Back To [Make Incremental Changes II](../../version-control/git/local/Readme.md) -
-Forward To [Collaborate](../../version-control/git/remote/Readme.md)
+[Up To Schedule](../../README.md) - Back To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) -
+Forward To [Collaborate](../../version-control/git/collaborate/Readme.md)
 
 # Plan for Mistakes (or: Testing)
 ----
@@ -692,3 +692,9 @@ setup()
 test3()
 teardown()
 ```
+
+----
+
+[Up To Schedule](../../README.md) - Back To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) -
+Forward To [Collaborate](../../version-control/git/collaborate/Readme.md)
+
