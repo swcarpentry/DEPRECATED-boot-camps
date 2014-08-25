@@ -232,7 +232,7 @@ def parseFile(filename):
     textfile = open(filename, 'r')
     data_record = {}
     for line in textfile:
-        # all lines that contain key/value pairs must have at least on colon
+        # all lines that contain key/value pairs must have at least one colon
         if ':' in line:
             (key,value) = extractData(line)
             data_record[key] = value
