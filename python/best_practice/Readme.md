@@ -134,8 +134,8 @@ Which of these are bad choices and why?  Which are reasonable alternatives?
 
 ----
 
-We have chosen meaningful names for each function: `parseFile`, `writeCVSHeader`,
-`writeCVSRow`.  It is often recommended that functions be given names that are
+We have chosen meaningful names for each function: `parseFile`, `writeCSVHeader`,
+`writeCSVRow`.  It is often recommended that functions be given names that are
 verbs, indiciating that they represent action rather than things.
 
 We have used a consistent style that helps the reader distinguish between
