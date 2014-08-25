@@ -5,30 +5,27 @@
 
 **Short Exercises**
 
-*1*. Use the manual page for `ls` to guess what you would expect from
+Use the manual page for `ls` to guess what you would expect from
 using the arguments `-l`, `-t`, and `-r` at the same time.
 
 ***Solution***
 
-This will produce a long listing `-l`, sorted by the time that the
-file last changed `-t`, and in the reverse order `-r`.
+This will produce a long listing (`-l`), sorted by the time that the
+file last changed (`-t`), and in the reverse order (`-r`).
 
 * * * *
 ##Full vs. Relative Paths
 
 **Short Exercise**
 
-Now, list the contents of the /bin directory. Do you see anything
-familiar in there?
+Now, list the contents of a directory of your own (one you know the 
+location of by using the full path (and without using `cd`), so that 
+you are running the command from your current location).
 
 ***Solution***
-```
-ls /bin
-```
 
-In this listing, you might recognize the different colors indicating
-different file types, especially executables.  You might specifically
-recognize that we have programs like 'ls' and 'cp' in this directory.
+Each student will have a different answer, but you'll use `ls` to view 
+the contents of a directory location that begins with `/`.
 
 * * * *
 ##Wild Cards
@@ -38,21 +35,26 @@ recognize that we have programs like 'ls' and 'cp' in this directory.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the files in `/bin` that contain the letter `a`
+1.  List all of the files in `/bin` that contain the letter `a` _or_ the letter `b`
 
-    `ls /bin/*a*`
+    `ls -d ~/boot-camps/shell/data/*a* ~/boot-camps/shell/data/*e*`
 
-2.  List all of the files in `/bin` that contain the letter `a` or the letter `b`
+2.  List all of the files in `/bin` that contain the letter `a` _and_ the letter `b`
 
-    `ls /bin/*a* /bin/*b*`
+    `ls -d ~/boot-camps/shell/data/*a*b* ~/boot-camps/shell/data/*b*a*`
 
 * * * *
 ## Command history
 
 **Short Exercise**
 
-1. Find the line number in your history for the last exercise (listing
+Find the line number in your history for the last exercise (listing
 directories in `~/boot-camps/shell/data`) and reissue that command.
+
+**Solution**
+
+You'll use your own history command number, and re-issue that command with `!` 
+followed by the command number (as indicated in the example just before this exercise).
 
 
 * * * *
@@ -96,7 +98,7 @@ number 4.
 
 ***Solution***
 
-This exercise starts after a learners have already created a file
+This exercise starts after learners have already created a file
 named `all_data` as follows:
 
 ```
@@ -141,8 +143,15 @@ of the operations listed below (except number 2, which does not
 require a `find` command):
 
 *1*.  Find any file whose name is "NOTES" within `data` and delete it 
+*2*. Create a new directory called `cleanddata`.
+*3*. Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`.
+(Hint: Remember the wildcard. If you mess up, you can just delete the 
+contents of cleaneddata, and try again.)
+*4*. Rename all of the files to ensure that they end in `.txt`. 
+(Note: it is okay for certain files to end in `.txt.txt`, as some 
+already end with `.txt`.)
 
-***Solution***
+1. ***Solution***
 One solution is to use find with its -exec argument:
 
 ```
@@ -173,7 +182,7 @@ mkdir cleaneddata
 ```
 
 * * * *
-*3*.  Move all of the files within `data` to the `cleaneddata` directory
+*3*.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata` directory.
 
 ***Solution***
 
@@ -181,8 +190,17 @@ mkdir cleaneddata
 mv */* cleaneddata
 ```
 
-Will move all the files (*) in each directory (*/) into the director cleaneddata.
+Will move all the files (`*`) in each directory (`*/`) into `cleaneddata`.
 
+* * * *
+*4*. Rename all of the files to ensure that they end in `.txt`. 
+(Note: it is okay for certain files to end in `.txt.txt`, as some 
+already end with `.txt`.)
+
+***Solution***
+```
+find cleaneddata -type f -exec mv {} {}.txt \;
+```
 
 * * * *
 
