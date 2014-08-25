@@ -394,7 +394,7 @@ You may be wondering how this works. Start by using `help(range)` to see
 what the range function does.
 
 ```
-range()?
+range?
 ```
 
     Help on built-in function range in module __builtin__:
