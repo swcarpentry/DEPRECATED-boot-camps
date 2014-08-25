@@ -350,3 +350,7 @@ Take the time to do a little [background
 reading](http://www.siam.org/news/news.php?id=2064&goback=.gde_112393_member_232769759).
 There are arguments for and against sharing your code. Why would you,
 personally, choose to do so or not?
+
+----
+
+[Up To Schedule](../../../README.md) - Back To [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)

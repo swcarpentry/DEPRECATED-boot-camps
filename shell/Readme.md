@@ -717,3 +717,8 @@ search for files which do not match a certain name.
 * * * * 
 
 Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)
+
+----
+
+[Up To Schedule](../README.md) -
+Forward To [Let the Computer Do the Work](automation/Readme.md)
