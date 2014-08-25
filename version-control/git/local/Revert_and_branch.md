@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
 
 ----
 
@@ -215,4 +215,4 @@ PROMPT_COMMAND=color_my_prompt
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Planning for Mistakes](../../../python/testing/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)

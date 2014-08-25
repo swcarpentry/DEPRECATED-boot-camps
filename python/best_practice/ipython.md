@@ -1,6 +1,6 @@
 
 # iPython Intro
-[Up To Schedule](../../README.md) - Return To [Write Code for People](../writing_code_for_people/Readme.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#motivating-example)
 * * * * *
 
 
@@ -57,8 +57,7 @@ In [2]:
 ### Pasting
 
 Unfortunately pasting depends on your operating system and ssh program.  In
-general, for multi-line pasting, you should either use the `%autocall` feature
-or the `%cpaste` feature of iPython.
+general, for multi-line pasting, you should use the `%cpaste` feature of iPython.
 
 #### Windows
 
@@ -265,15 +264,6 @@ i >= j  # i is greater than or equal to j : False
 i != j  # i is not equal to j : True
 ```
 
-However, python has other equivalence test statements that are fairly
-unique to python. To check whether an object is contained in a list :
-
-```python 
-beatle = "John"
-beatles = ["George", "Ringo", "John", "Paul"]
-print(beatle in beatles)     # is John one of the beatles? : TRUE
-print("Katy" not in beatles) # this is also TRUE. 
-```
 
 Conditionals (`if` statements) are also really easy to use in python. Take
 a look at the following example:
@@ -475,5 +465,5 @@ for n in range(1,10):
 
 - - - - 
 
-Back to [Write Code for People](../writing_code_for_people/Readme.md)
+Back to [Write Code for People](Readme.md#motivating-example)
 

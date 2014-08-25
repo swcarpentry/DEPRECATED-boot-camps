@@ -45,8 +45,7 @@ Click with the right mouse button over the window and then "Paste".
 
 The code should paste and execute in iPython.
 
-In general, for multi-line pasting, you should either use the `%autocall`
-feature or the `%cpaste` feature of iPython.
+In general, for multi-line pasting, you should use the `%cpaste` feature of iPython.
 
 # Python Modules
 

@@ -207,3 +207,7 @@ protocol. [Here](http://git-scm.com/book/en/Git-on-the-Server-The-Protocols#The-
 a great, short explanation of how to do that. GitHub's cloning protocol is
 pretty simple, and described on the [Fork help
 page](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
+
+----
+
+[Up To Schedule](../../../README.md) - Back To [Github and Remote Version Control](../github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)

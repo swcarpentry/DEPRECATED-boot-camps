@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#step-1-start-at-the-top)
 
 - - - - 
 
@@ -40,4 +40,4 @@ command-line or interpreter where you will run the script.
 
 ----
 
-[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#step-1-start-at-the-top)

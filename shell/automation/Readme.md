@@ -414,3 +414,8 @@ You may wish to look into the below topics/tools to become even more advanced in
 **ln**
 
 **regular expressions**
+
+----
+
+[Up To Schedule](../../README.md) -
+Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/best_practice/Readme.md)

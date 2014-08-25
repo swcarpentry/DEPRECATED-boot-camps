@@ -43,8 +43,8 @@ Day 1
 | 12:30-1:30   | Lunch                                   |              |
 | 1:30-2:30    | [Write Code for People I](python/best_practice/Readme.md) | Paul Wilson |
 | 2:30-2:45    | Break                                   |              |
-| 2:45-4:00    | [Write Code for People II](python/best_practice/Readme.md) | Paul Wilson |
-| 4:00-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Karl Broman |
+| 2:45-3:45    | [Write Code for People II](python/best_practice/Readme.md) | Paul Wilson |
+| 3:45-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Karl Broman |
 
 Day 2
 =======
