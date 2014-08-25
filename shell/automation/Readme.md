@@ -263,7 +263,7 @@ directory you'd like to analyze.
 
 Create an executable script called `smallestrange` in the `data`
 directory, that is similar to the `smallest` script, but prints the
-file containing the line with the smallest "Range" value. Use the commands
+line with the smallest "Range" value. Use the commands
 `grep`, `sort`, and `head` to do this.
 
 * * * * 
