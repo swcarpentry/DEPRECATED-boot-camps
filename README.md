@@ -30,6 +30,10 @@ You will need to bring a laptop to all sessions of the bootcamp.
 Before you arrive, please
 [follow the instructions to install python and other software](setup/README.md).
 
+Pre-Camp Survey
+-----------
+Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry Bootcamp on August 25-26.
+
 Day 1
 =======
 
