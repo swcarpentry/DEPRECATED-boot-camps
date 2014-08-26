@@ -128,6 +128,63 @@ To explore the actual changes:
 
     $ git diff upstream/master
 
+
+## git rebase vs git merge: Insert changes that have happened on the remote
+
+To incorporate upstream changes from the original master repository (in this
+case UW-Madison-ACI/simplestats) into your local working copy, you must do
+more than simply `fetch` the changes.  After fetching the changes, your local
+repo know about the upstream changes, but hasn't combined them with any local
+changes you may have already made.  There are two mechanisms for doing this,
+with slightly different behavior.
+
+The role of git is to keep track of little bundles of change (each commit).
+In theory, it doesn't matter in what order these changes are applied, it
+should end up with the same version of the files.  In practice, however, you
+may want to take some control of this.  In particular, when you are combining
+upstream changes into a branch where you are making local changes, it is
+almost always better to **insert** all the upstream changes before your local
+changes, using `rebase`.  This takes each of your commits, since the point at
+which the two branches began to differ, and replays them at the end of the
+upstream branch.  If there are conflicts, you will be notified and asked to
+review them manually.
+
+By contract, `merge` takes each commit from the upstream branch, since the
+point at which the two branches began to differ, and replays them at the end
+of your branch.  Again, if there are conflicts, you will be notified and asked
+to review them manually.
+
+There are lots of details to consider when choosing between `rebase` and
+`merge`, but the simplest guidelines are:
+
+* **rebase** when incorporating changes from an authoritative upstream
+  repository
+* **merge** when incorporating changes from a feature branch or collabortor
+
+The process of rebasing/merging may result in conflicts, so pay
+attention. This is where version control is both at its most powerful and its
+most complicated.
+
+### Exercise : Fetch and Rebase the Contents of Our GitHub Repository
+
+This exercise is meant to represent the general work flow you should use to
+update your fork. Let's say that you come in and sit down in the morning, you've
+gotten your coffee (or tea) and you're ready to get started. However, someone
+from your research group has added something to the project you're working on,
+and you need to add it into your work to keep up to date. I'll add a comment,
+then let's get started!
+
+Step 1 : Fetch the recent remote repository history
+
+    $ git fetch upstream
+
+Step 2 : Merge the master branch
+
+    $ git checkout master
+    $ git rebase upstream/master
+
+Step 3 : Check out what happened by browsing the directory.
+
 ## git pull : Pull = Fetch + Merge
 
 The command **git pull** is the same as executing **git fetch** followed
