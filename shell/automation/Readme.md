@@ -308,12 +308,8 @@ yet another way to go to your home directory:
 
 You can also define your own variables.  If you are always needing to
 go to the same directory for your work, you could store it's path as a
-variable.  Change to your home directory and try:
-
-    DATADIR="~/boot-camps/shell/data"
-    cd $DATADIR
-
-You can also use one variable as part of the definition to another:
+variable. And not that you can use one variable as part of the
+definition of another.  Change to your home directory and try:
 
     DATADIR="$HOME/boot-camps/shell/data"
     cd $DATADIR
@@ -376,7 +372,11 @@ you logout and come back.  Thankfully, we can turn to a script to make
 that happen.  The most common script is one that is invoked every time
 you login.  When using the bash shell it is called the `.bashrc` file.
 
-Go to your home directory and open the `.bashrc` file:
+(On a Mac, it's called `.bash_profile`. Actually, the truth is a bit
+more complicated; see [this discussion](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html).)
+
+Go to your home directory and open the `.bashrc` file (on a Mac, use
+`.bash_profile` instead of `.bashrc`):
 
     nano .bashrc
 
