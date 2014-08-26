@@ -248,6 +248,30 @@ assert_is_instance(a, b)
 
 ## Short Exercise
 
+### Quick aside:
+
+Be careful with division in Python, there's a gotcha!
+
+```
+In [1]: 3 / 2
+Out[1]: 1
+
+In [2]: 3.0 / 2
+Out[2]: 1.5
+```
+
+You can explicitly change the *type* of an object or variable in Python:
+
+```
+In [1]: float(3)
+Out[1]: 3.0
+
+In [2]: num = 4
+
+In [3]: float(num)
+Out[3]: 4.0
+```
+
 1. Change the two tests to use `assert_equal` and run with nosetests.
 2. Fix the `mean()` function to resolve the test
 
