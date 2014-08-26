@@ -308,12 +308,8 @@ yet another way to go to your home directory:
 
 You can also define your own variables.  If you are always needing to
 go to the same directory for your work, you could store it's path as a
-variable.  Change to your home directory and try:
-
-    DATADIR="~/boot-camps/shell/data"
-    cd $DATADIR
-
-You can also use one variable as part of the definition to another:
+variable. And not that you can use one variable as part of the
+definition of another.  Change to your home directory and try:
 
     DATADIR="$HOME/boot-camps/shell/data"
     cd $DATADIR
