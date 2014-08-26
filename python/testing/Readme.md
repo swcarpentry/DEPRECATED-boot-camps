@@ -223,6 +223,10 @@ the tests and just use our existing `test_stat.py` file like this:
 
     nosetests test_stat.py
 
+Or from IPython:
+
+    In [1]: !nosetests test_stats.py
+
 We get a little more information, but still not that helpful.
 
 **Practice using git:** Commit this change to the repository
