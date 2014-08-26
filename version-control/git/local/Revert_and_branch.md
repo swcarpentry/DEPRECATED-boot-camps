@@ -59,7 +59,7 @@ $ git add README.md
 $ git status
 ```
 
-**Step 3**: Unstage the file with `git reset`. `HEAD` refers to the
+**Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
   most commit to the repository.
 
 ```
@@ -158,6 +158,40 @@ Note that, just as you should use `git rm` rather than `rm` for
 removing files, you should use `git mv` rather than `mv` for moving or
 renaming files.
 
+
+## Don't include _everything_ in the repository: the `.gitignore` file.
+
+You probably don't want to include _every_ file in your project
+directory as part of your git repository.
+
+- Your editor may automatically create backup files (`*.bak` or `*~`)
+- Very large primary data files that don't change
+- Compiled code (`*.o`, `*.so`, `*.exe`)
+- Files that are derived from your code (for example,
+  figures/graphs/images)
+
+If you never add them to your repository (with `git add`), then they
+won't be tracked, but they'll show up in the output from `git status`,
+which can be a bother.
+
+To tell git that you to ignore a set of files (and so not mention them
+in the status output), create a `.gitignore` file in the root of your
+project directory. This should be a plain text file with file or
+directory names; you can also use wildcards, like `*.bak` or `*.o`.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
+
+**Step 1**: Create a subdirectory `Data`. Put a few data files there,
+  or use `touch` to create a few files there.
+
+**Step 2**: Use `git status`.
+
+**Step 3**: Create a `.gitignore` file to tell git to ignore those
+  data files.
+
+**Step 4**: Use `git status` again.
+
+**Step 5**: Add and commit the `.gitignore` file
 
 
 
