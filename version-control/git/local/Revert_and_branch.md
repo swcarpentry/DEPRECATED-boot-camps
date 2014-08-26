@@ -164,7 +164,7 @@ renaming files.
 You probably don't want to include _every_ file in your project
 directory as part of your git repository.
 
-- Your editor may automatically create backup files (`*.bak` or `*~`)
+- Backup files automatically created by your editor (`*.bak` or `*~`)
 - Very large primary data files that don't change
 - Compiled code (`*.o`, `*.so`, `*.exe`)
 - Files that are derived from your code (for example,
@@ -174,10 +174,11 @@ If you never add them to your repository (with `git add`), then they
 won't be tracked, but they'll show up in the output from `git status`,
 which can be a bother.
 
-To tell git that you to ignore a set of files (and so not mention them
+To tell git to ignore a set of files (and so not mention them
 in the status output), create a `.gitignore` file in the root of your
 project directory. This should be a plain text file with file or
 directory names; you can also use wildcards, like `*.bak` or `*.o`.
+If you include a directory name, all files in that directory will be ignored.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
 
