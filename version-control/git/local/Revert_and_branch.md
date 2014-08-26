@@ -2,8 +2,7 @@
 
 ----
 
-# Make Incremental Changes II: Reverting and branching in git
-
+# Make Incremental Changes II: Reverting and branching (and a bit more) in git
 
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
 Hari Krishna Narayanan, and Matthew Gidden**
@@ -22,8 +21,6 @@ directory. Here are the basic commands, discussed
 - `git add`: Add a new file to the repository, or stage the changes
   to a file.
   
-- `git rm`: Remove a file from the repository.
-
 - `git commit`: Commit the changes (adding, modifying, or removing
   files).
   
@@ -39,6 +36,164 @@ directory. Here are the basic commands, discussed
 **Step 2**: Add and commit your changes.
 
 **Step 3**: Study some of those differences as well as the repository log.
+
+
+## Unstaging a staged file: `git reset`
+
+There are a number of ways that you may accidentally stage a file that
+you don't want to commit.  Use `git reset` to unstage a file.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
+
+**Step 1**: Make a change to the `README.md` file and stage the change.
+
+```
+$ nano README.md
+$ git add README.md
+```
+
+**Step 2**: Check the status of the repository, to see that the file
+  has been staged.
+
+```
+$ git status
+```
+
+**Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
+  most commit to the repository.
+
+```
+$ git reset HEAD README.md
+```
+
+**Step 4**: Check the status again.
+
+```
+$ git status
+```
+
+## Discarding unstaged modifications: `git checkout`
+
+If you've made changes to a file and want to just scrap those changes
+and go back to the last committed version of the file, use `git
+checkout`.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
+
+**Step 1**: Check the status of the repository, and look at your
+  unstaged changes.
+  
+```
+$ git status
+$ git diff
+```
+
+**Step 2**: Discard the changes.
+
+```
+$ git checkout README.md
+```
+
+**Step 3**: Look at the status of things again.
+
+```
+$ git status
+$ git diff
+```
+
+## Removing files: `git rm`
+
+If you want to remove a file from your repository, use `git rm`.
+Note that past versions of the file will remain in the repository history.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git rm`
+
+**Step 1**: Create a file, and add and commit it to the repository.
+
+```
+$ nano READYOU.md
+$ git add READYOU.md
+$ git commit -m "Add READYOU.md file"
+```
+
+**Step 2**: Remove the file from the repository.
+
+```
+$ git rm READYOU.md
+```
+
+**Step 3**: Check the status.
+
+```
+$ git status
+```
+
+**Step 4**: Commit the change (removing the file).
+
+```
+$ git commit -m "Remove READYOU.md"
+```
+
+**Step 5**: Check the status again.
+
+```
+$ git status
+```
+
+What happens if you delete a file in the shell without `git rm`? Try deleting
+`README.md` with `rm` rather than `git rm`.
+
+```
+$ rm README.md
+```
+
+What does `git status` say?  Oops! How can you recover this important
+file?
+
+```
+$ git checkout README.md
+```
+
+Note that, just as you should use `git rm` rather than `rm` for
+removing files, you should use `git mv` rather than `mv` for moving or
+renaming files.
+
+
+## Don't include _everything_ in the repository: the `.gitignore` file.
+
+You probably don't want to include _every_ file in your project
+directory as part of your git repository.
+
+- Backup files automatically created by your editor (`*.bak` or `*~`)
+- Very large primary data files that don't change
+- Compiled code (`*.o`, `*.so`, `*.exe`)
+- Files that are derived from your code (for example,
+  figures/graphs/images)
+
+If you never add them to your repository (with `git add`), then they
+won't be tracked, but they'll show up in the output from `git status`,
+which can be a bother.
+
+To tell git to ignore a set of files (and so not mention them
+in the status output), create a `.gitignore` file in the root of your
+project directory. This should be a plain text file with file or
+directory names; you can also use wildcards, like `*.bak` or `*.o`.
+If you include a directory name, all files in that directory will be ignored.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
+
+**Step 1**: Create a subdirectory `Data`. Put a few data files there,
+  or use `touch` to create a few files there.
+
+**Step 2**: Use `git status`.
+
+**Step 3**: Create a `.gitignore` file to tell git to ignore those
+  data files.
+
+**Step 4**: Use `git status` again.
+
+**Step 5**: Add and commit the `.gitignore` file
+
 
 
 ## `git revert`: the promised "undo" button
