@@ -371,7 +371,9 @@ Alas, none of those changes to variables or aliases will be there when
 you logout and come back.  Thankfully, we can turn to a script to make
 that happen.  The most common script is one that is invoked every time
 you login.  When using the bash shell it is called the `.bashrc` file.
-(On a Mac, it's called `.bash_profile`).
+
+(On a Mac, it's called `.bash_profile`. Actually, the truth is a bit
+more complicated; see [this discussion](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html).)
 
 Go to your home directory and open the `.bashrc` file (on a Mac, use
 `.bash_profile` instead of `.bashrc`):
