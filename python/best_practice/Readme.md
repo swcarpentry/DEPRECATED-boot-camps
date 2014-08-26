@@ -421,6 +421,24 @@ def writeCSVRow(column_labels,data_record,csv_separator):
     print csv_separator.join(row)
 ```
 
+## Step 5: Run your script
+
+To run this script you can either call it from the command line or from within
+the ipython interpreter, with an argument list made up of many of the original
+data files.
+
+From the command line:
+
+```
+python text2csv.py ../../shell/data/Bert/*
+```
+
+From the iPython interpreter:
+
+```
+In  [12]: %run text2csv.py ../../shell/data/Bert/*
+```
+
 
 ##Writing Code for People summary
 
