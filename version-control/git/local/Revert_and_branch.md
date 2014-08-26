@@ -60,7 +60,7 @@ $ git status
 ```
 
 **Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
-  most commit to the repository.
+  most recent commit to the repository.
 
 ```
 $ git reset HEAD README.md
