@@ -159,7 +159,7 @@ There are lots of details to consider when choosing between `rebase` and
 
 * **rebase** when incorporating changes from an authoritative upstream
   repository
-* **merge** when incorporating changes from a feature branch or collabortor
+* **merge** when incorporating changes from a feature branch or collaborator
 
 The process of rebasing/merging may result in conflicts, so pay
 attention. This is where version control is both at its most powerful and its

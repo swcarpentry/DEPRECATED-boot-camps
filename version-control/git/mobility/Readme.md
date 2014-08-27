@@ -109,7 +109,7 @@ internet. In fact, you don't even **need** access to the internet. Once your
 repository is up to date, you can do all your editing and committing without
 being online. Once you have a connection again, you can push your changes.
 
-And now let's update our work machine to also be synced agaisnt our github
+And now let's update our work machine to also be synced against our github
 repository.
 
     $ cd ~/work/simplestats
