@@ -32,7 +32,7 @@ Before you arrive, please
 
 Pre-Camp Survey
 -----------
-Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry Bootcamp on August 25-26.
+Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry Bootcamp on January 13-16.
 
 Day 1
 =======
