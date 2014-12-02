@@ -4,10 +4,10 @@ UW-Madison Software Carpentry Boot Camp
 =======================================
 Welcome!
 
-August 25-26, 2014
+January 13-16
 -------------------
 
-3rd Floor Teaching Lab, Discovery Building
+Location TBD
 ------------------
 
 This repository contains the course material for the Software
@@ -32,7 +32,7 @@ Before you arrive, please
 
 Pre-Camp Survey
 -----------
-Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry Bootcamp on August 25-26.
+Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry Bootcamp on January 13-16.
 
 Day 1
 =======
@@ -40,8 +40,8 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           |   All        |
-| 9:00-9:15    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-08-04-Davidson/BestPractices.pdf?raw=true) | Paul Wilson |
-| 9:15-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren Michael |
+| 9:00-9:15    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-08-04-Davidson/BestPractices.pdf?raw=true) |  |
+| 9:15-10:45   | [Introducing the Shell](shell/Readme.md)| |
 | 10:45-11:00  | Break                                   |              |
 | 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) |    |
 
@@ -51,25 +51,30 @@ Day 2
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 9:00-10:00   | [Write Code for People I](python/best_practice/Readme.md) |  |
-| 2:30-2:45    | Break                                   |              |
-| 2:45-3:45    | [Write Code for People II](python/best_practice/Readme.md) | Paul Wilson |
-| 3:45-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Karl Broman |
+| 10:30-10:45    | Break                                   |              |
+| 10:45-11:45    | [Write Code for People II](python/best_practice/Readme.md) |  |
+| 11:45-12:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | |
 
-Day 2
+Day 3
 =======
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 9:00-9:45    | [Don't Repeat Yourself (or Others)](python/best_practice/dont_repeat_yourself.md) | Paul Wilson  |
-| 9:45-10:45   | [Make Incremental Changes II](version-control/git/local/Revert_and_branch.md) | Karl Broman  |
+| 9:00-9:45    | [Don't Repeat Yourself (or Others)](python/best_practice/dont_repeat_yourself.md) |   |
+| 9:45-10:45   | [Make Incremental Changes II](version-control/git/local/Revert_and_branch.md) |   |
 | 10:45-11:00  | Break					 | 		|
-| 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Matt Gidden |
-| 12:00- 1:00  | Lunch					 |		|
-| 1:00-2:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Matt Gidden |
-| 2:00-2:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden |
-| 2:30-2:45    | Break                                   |      	|
-| 2:45-4:00    | [Collaborate](version-control/git/collaborate/Readme.md) | Matt Gidden |
-| 3:00-4:00    | Best Practices Summary and Discussion	 |   All	|
+| 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) |  |
+
+Day 4
+======
+
+| Time         | Topic                                   | Instructor   |
+| ------------ | --------------------------------------- |--------------|
+| 9:00-10:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) |  |
+| 10:00-10:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) |  |
+| 10:30-10:45    | Break                                   |      	|
+| 10:45-12:00    | [Collaborate](version-control/git/collaborate/Readme.md) |  |
+| 12:00-1:00    | Best Practices Summary and Discussion	 |   All	|
 
 Coincidence?
 ============
