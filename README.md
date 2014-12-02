@@ -43,9 +43,14 @@ Day 1
 | 9:00-9:15    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-08-04-Davidson/BestPractices.pdf?raw=true) | Paul Wilson |
 | 9:15-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren Michael |
 | 10:45-11:00  | Break                                   |              |
-| 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) | Daijiang Li |
-| 12:30-1:30   | Lunch                                   |              |
-| 1:30-2:30    | [Write Code for People I](python/best_practice/Readme.md) | Paul Wilson |
+| 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) |    |
+
+Day 2
+=======
+
+| Time         | Topic                                   | Instructor   |
+| ------------ | --------------------------------------- |--------------|
+| 9:00-10:00   | [Write Code for People I](python/best_practice/Readme.md) |  |
 | 2:30-2:45    | Break                                   |              |
 | 2:45-3:45    | [Write Code for People II](python/best_practice/Readme.md) | Paul Wilson |
 | 3:45-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Karl Broman |
