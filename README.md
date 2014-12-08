@@ -1,6 +1,6 @@
 ![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-UW-Madison Software Carpentry Boot Camp
+UW-Madison Software Carpentry Workshop
 =======================================
 Welcome!
 
@@ -11,13 +11,13 @@ Location TBD
 ------------------
 
 This repository contains the course material for the Software
-Carpentry boot camp hosted by UW-Madison's 
+Carpentry workshop hosted by UW-Madison's 
 [Advanced Computing Infrastructure (ACI) initiative](https://aci.wisc.edu) for researchers at the UW-Madison.
 
 Schedule
 -----------
 
-This bootcamp has been structured around the concepts put forth in the
+This workshop has been structured around the concepts put forth in the
 recent paper "[Best Practices for Scientific Computing](http://www.plosbiology.org/article/info%3Adoi%2F10.1371%2Fjournal.pbio.1001745)" by G. Wilson,
 et al (at the top of this repository). In so doing, the sessions names 
 have been chosen to correspond
@@ -26,13 +26,13 @@ with some of the most important practices to start early in the research process
 Setup and Preparation
 -----------
 
-You will need to bring a laptop to all sessions of the bootcamp.
+You will need to bring a laptop to all sessions of the workshop.
 Before you arrive, please
 [follow the instructions to install python and other software](setup/README.md).
 
 Pre-Camp Survey
 -----------
-Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry Bootcamp on January 13-16.
+Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry workshop on January 13-16.
 
 Day 1
 =======
