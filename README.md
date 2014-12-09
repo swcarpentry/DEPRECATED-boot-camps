@@ -7,7 +7,7 @@ Welcome!
 January 13-16
 -------------------
 
-Location TBD
+3rd Floor Teaching Lab, Discovery Building, UW-Madison Campus
 ------------------
 
 This repository contains the course material for the Software
