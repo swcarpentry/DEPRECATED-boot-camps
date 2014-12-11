@@ -12,7 +12,7 @@ January 13-16
 
 This repository contains the course material for the Software
 Carpentry workshop hosted by UW-Madison's 
-[Advanced Computing Infrastructure (ACI) initiative](https://aci.wisc.edu) for researchers at the UW-Madison.
+[Advanced Computing Initiative (ACI)](https://aci.wisc.edu) for researchers at the UW-Madison.
 
 Schedule
 -----------
