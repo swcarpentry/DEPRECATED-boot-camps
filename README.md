@@ -14,6 +14,26 @@ This repository contains the course material for the Software
 Carpentry workshop hosted by UW-Madison's 
 [Advanced Computing Initiative (ACI)](https://aci.wisc.edu) for researchers at the UW-Madison.
 
+Setup and Preparation
+-----------
+
+You will need to bring a laptop to all sessions of the workshop. It is strongly encouraged 
+that participants already have a basic understanding of programming concepts, like loops, 
+conditionals, and arrays. Before you arrive, please 
+[follow the instructions to install python and other software](setup/README.md).
+
+Registration
+-----------
+
+Please see our workshop advertisement page for [registration](http://uw-madison-aci.github.io/2015-01-13-wisc/).
+
+
+<!--
+Pre-Camp Survey
+-----------
+Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1vfTp6Z8jAZBau1P1SfHOjlYk023KlVk92yp0p-xx63Q/viewform), if you are in physical attendance at our Software Carpentry workshop on January 13-16.
+-->
+
 Schedule
 -----------
 
@@ -22,17 +42,6 @@ recent paper "[Best Practices for Scientific Computing](http://www.plosbiology.o
 et al (at the top of this repository). In so doing, the sessions names 
 have been chosen to correspond
 with some of the most important practices to start early in the research process.
-
-Setup and Preparation
------------
-
-You will need to bring a laptop to all sessions of the workshop.
-Before you arrive, please
-[follow the instructions to install python and other software](setup/README.md).
-
-Pre-Camp Survey
------------
-Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1qVqOzryfwywtdLqupN1TQlF99dk9tn1_MrINoe_JuUU/viewform), if you are in physical attendance at our Software Carpentry workshop on January 13-16.
 
 Day 1
 =======
@@ -74,7 +83,7 @@ Day 4
 | 9:00-10:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Matt Gidden, Steve Goldstein |
 | 10:00-10:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden, Steve Goldstein |
 | 10:30-10:45    | Break                                   |      	|
-| 10:45-12:00    | [Collaborate](version-control/git/collaborate/Readme.md) | matt Gidden, Steve Goldstein |
+| 10:45-12:00    | [Collaborate](version-control/git/collaborate/Readme.md) | Matt Gidden, Steve Goldstein |
 | 12:00-1:00    | Best Practices Summary and Discussion	 |   All	|
 
 Coincidence?
