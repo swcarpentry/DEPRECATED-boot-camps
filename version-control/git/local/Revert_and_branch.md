@@ -12,7 +12,7 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 We use git to keep track of changes to the files in a particular
 directory. Here are the basic commands, discussed
-[yesterday](Readme.md).
+[previously](Readme.md).
 
 - `git init`: Initialize a directory as a git repository.
 
