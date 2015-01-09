@@ -204,10 +204,12 @@ revert your code to a previous version.
 
 You can use `git log` and `git diff` to explore your history and
 determine which version you are interested in.  Choose a version and
-note the *hash* for that version. (Let's assume it's `abc456`).  **NOTE**:
-the version you choose will be the changes you wish to remove, not the
-final point that you want to reach.  In this case, you will remove the
-changes made in `abc456`, rather than "rolling back" to `abc456`.
+note the *hash* for that version. (Let's assume it's `abc456`).
+
+**NOTE**: the version you choose will be the changes you wish to
+remove, not the final point that you want to reach.  In this case, you
+will remove the changes made in `abc456`, rather than "rolling back"
+to `abc456`.
 
      git revert abc456
 
