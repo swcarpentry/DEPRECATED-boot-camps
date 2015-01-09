@@ -95,7 +95,7 @@ nothing to commit (create/copy files and use "git add" to track)
 ```
 
 This says that nothing much is going on.
-We will talk about _branches_ tomorrow.
+We will talk about _branches_ later.
 
 
 ## Adding a File To Version Control: `git add`
