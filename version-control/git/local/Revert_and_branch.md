@@ -1,13 +1,13 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Make Incremental Changes I](../../../version-control/git/local/Readme.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
 
 ----
 
 # Make Incremental Changes II: Reverting and branching (and a bit more) in git
 
-**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
+**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
-    
+
 ## Refresher on the basics of git
 
 We use git to keep track of changes to the files in a particular
