@@ -420,6 +420,7 @@ Notice that the second number in a slice should be selected carefully.  You can 
 * What does `current_list[-3:]` give?
 
 * What does `voltage_list[::2]` mean?
+
 ----
 
 ### Append and Extend
@@ -543,7 +544,7 @@ In [17]: data_list = ["experiment: current vs. voltage",
 
 ```
 
-We've got strings, ints, floats, and even other lists in there. While this is a perfectly valid thing to do in a list, it's often not a good idea for a number of reasons:
+We've got strings, ints, floats, and even other lists in there. While this is a perfectly valid thing to do in a list, it's often not best practice for a number of reasons:
 * the association between the name (e.g. "run", "temperature", etc) and the data (47, 372.756) is implied but not guaranteed,
 * lists imply that the order is important which is not the case here, and
 * it is common to act on each member of a list with the same operation
