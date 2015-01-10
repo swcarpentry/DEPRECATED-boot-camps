@@ -112,7 +112,7 @@ spaces between variables and operators (say, `a + b` rather than `a+b`) can
 also make your code a lot easier to read.
 
 ----
-![Exercise](../../../pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../common/pics/exercise.jpg) **Short Exercise**
 
 Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
 
@@ -159,7 +159,7 @@ for cities in all_cities :
 ```
 
 ----
-![Exercise](../../../pics/exercise.jpg) **Use Your Knowledge**
+![Exercise](../../../common/pics/exercise.jpg) **Use Your Knowledge**
 
 Can you think of a better use of compound data types for this example?
 
@@ -240,7 +240,7 @@ print(sign)
 ```
 
 ----
-![Exercise](../../../pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../common/pics/exercise.jpg) **Short Exercise**
 
 Write an if statement that prints whether x is even or odd.
 
@@ -368,7 +368,7 @@ print areacodes # Print the answer
 ```
 
 ----
-![Exercise](../../../pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../common/pics/exercise.jpg) **Short Exercise**
 
 Use a loop to print the area codes and number of occurences in one line.
 Remember how we previously looped through a dictionary using `iteritems`.
@@ -482,7 +482,7 @@ print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', '
 ```
 
 ----
-![Exercise](../../../pics/exercise.jpg) **Exercise: Calculate GC content of DNA**
+![Exercise](../../../common/pics/exercise.jpg) **Exercise: Calculate GC content of DNA**
 
 Because the binding strength of guanine (G) to cytosine (C) is different from
 the binding strength of adenine (A) to thymine (T) (and many other
@@ -537,7 +537,7 @@ Also remember that the same best practices that apply to naming variables
 apply to function names.  Make them meaningful.  Some style guides suggest that function names should always be verbs and variable names should always be nouns.
 
 ----
-![Exercise](../../../pics/exercise.jpg) 
+![Exercise](../../../common/pics/exercise.jpg) 
 **Short exercise: Write a function to calculate GC content of DNA**
 
 Make a function that calculate the GC content of a given DNA sequence. For the more advanced participants, make your function able to handle sequences of mixed case (see the third test case).
