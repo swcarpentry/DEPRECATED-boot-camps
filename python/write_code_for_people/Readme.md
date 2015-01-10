@@ -29,11 +29,11 @@ After a brief introduction to iPython, we'll focus on the following importnat be
    * When to add comments
    * Appropriate data type
    * Effective and efficient compound data types
-   * Conditional statements *PPHW check this for best practice*
 
 2. How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
 
    * Using loops to repeat certain tasks locally
+   * Conditional statements *PPHW check this for best practice*
    * Writing functions to repeat tasks globally
    * Using other poeple's modules to avoid reinventing the wheel
    * Writing modules to allow others to avoid reinventing the wheel
@@ -102,6 +102,32 @@ In [16]: voltage = 4 # Input to the circuit   <- better; says what this voltage
 Think of a task in your own work where you might use python.  List 4 quantities that would be represented by variables and suggest meaningful variable names for them.
 
 ----
+
+## Avoiding Magic Numbers (and Magic Strings)
+
+There are frequently times when a number is needed only once in an equation and it may be convenient to avoid the use of a variable.
+
+```
+In [17]: weight = mass * 9.81
+```
+
+However, this number may be confusion in the future to you or another reader.  You could add a comment:
+
+```
+In [18]: weight = mass * 9.81  # multiply the mass by the acceleration due to gravity
+```
+
+This, however, is a nearly trivial comment that makes the code a little messy for readers.  The best choice is to define a variable for this constant:
+
+```
+In [19]: gravity = 9.81
+In [20]: weight = mass * gravity
+```
+
+This option has three important advantages:
+1. it is very readable,
+2. the `gravity` variable can be reused consistently elsewhere, if necessary, and
+3. if you do use it elsewhere it can be changed consistently in only one place.
 
 ## Intro to Types and Dynamic Typing
 
