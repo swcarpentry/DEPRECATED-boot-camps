@@ -320,6 +320,14 @@ Out[57]: (float, float, float)
 
 Importantly, this explicit choice of type communicates important information to you and other readers of your code.
 
+----
+![Exercise](../../common/pics/exercise.jpg) **Short Exercise**
+
+For the variables you thought of in the last exercise, describe which type they should be.
+
+----
+
+
 ## Introduction to Compound Data Types
 
 Most languages offer compount data types of some kind (arrays, vectors, lists, matrices, maps, sets, etc.) and would not be very useful without them!  Python is no different, and much of its value comes from the ease of using them. The main two are lists and dictionaries, but I'll mention sets and tuples as well. 
