@@ -4,10 +4,15 @@
 
 **Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
-We will  continue with one of the most important principles of programming: "Don't repeat yourself". 
-We will see how instead of copying and pasting statements with slight modifications we can use loops.
-Then we will learn how functions allow us to pack sections of code into reusable parts.
-We will finish with a lot of interesting and sometime challenging examples and exercises.
+We will continue with one of the most important principles of programming:
+"Don't repeat yourself".  We will see how instead of copying and pasting
+statements with slight modifications we can use loops.  Adding conditionals
+allows a loop to do slightly different things each time. Then we will learn
+how functions allow us to pack sections of code into reusable parts.  Finally,
+we'll see how to use modules that are a collection of related functions and
+how to make our modules so we can reuse functions across different projects.
+We will finish with a lot of interesting and sometime challenging examples and
+exercises.
 
 Pasting into iPython
 ====================
@@ -19,7 +24,7 @@ To paste text from another application (i.e. these lecture notes) into
 iPython :
 
 1.  select text from the wiki
-2.  copy with **ctrl+c**
+2.  copy with <kbd>Ctrl</kbd>+<kbd>c</kbd> (or <kbd>⌘</kbd>+<kbd>c</kbd> on Mac OSX)
 3.  unfortunately pasting depends on your operating system and ssh program:
 
 #### Windows
@@ -31,7 +36,7 @@ Click with the right mouse button over the window.
 Click with the right mouse button over the window and then "Paste".
 
 #### Mac OSX
-Press cmd+C.
+Press  <kbd>⌘</kbd>+<kbd>v</kbd>.
 
 #### Linux
 Click with the right mouse button over the window and then "Paste".
@@ -40,14 +45,159 @@ Click with the right mouse button over the window and then "Paste".
 The code should paste and execute in iPython.
 
 If you also type %autocall to turn autocall OFF, you may be able to
-paste with **ctrl+v** though this won't work with all iPython builds.
+paste with <kbd>Ctrl</kbd>+<kbd>v</kbd> though this won't work with all iPython builds.
 
+For Loops
+=========
+
+`For` loops in python operate a little differently from other languages.
+Let's start with a simple example which prints all of the numbers from 0
+to 9:
+
+```python
+for i in range(10):
+    print i
+
+print "That's all"
+```
+
+You may be wondering how this works. Start by using `help(range)` to see
+what the range function does.
+
+```
+range()?
+```
+
+    Help on built-in function range in module __builtin__:
+
+    range(...)
+        range([start,] stop[, step]) -> list of integers
+
+        Return a list containing an arithmetic progression of integers.
+        range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+        When step is given, it specifies the increment (or decrement).
+        For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+        These are exactly the valid indices for a list of 4 elements.
+
+`Range` is a function that returns a list containing a sequence of
+integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The `for`
+loop then simply iterates over that list, setting `i` to each value.
+
+## Indentation
+
+Other than the range function, the behavior of this code snippet should be
+pretty clear, but there is something peculiar. How does Python know where the
+`for` loop ends?  Why doesn't it print "That's all" 10 times?  Other
+languages, like FORTRAN, MatLab, and C/C++ all have some way of delimiting
+blocks of code.
+
+For example, in MatLab you begin an for loop with the word `for`
+and you end it with `end`. In C/C++ you delimit code blocks with curly
+braces.
+
+Python uses *white space* — in this case, *indentation,* to group lines of
+code. In this case, there are four spaces at the beginning of the line
+following the `for` statement. This is not just to make things look pretty - it
+tells Python what the body of the `for`-loop is.
+
+Marking blocks of code is a fundamental part of a language. In C, you'll see
+curly braces everywhere. In Python, you'll see indentation everywhere. It's
+how you (and the computer) know what your code means.
+
+White space and indentation are important to make code readable by people.  In
+most languages indentation is optional and often results in poor habits.
+Since it is required in python, this readability imposted by the language
+itself.  Little things like putting blank lines in "sane" places, and putting
+spaces between variables and operators (say, `a + b` rather than `a+b`) can
+also make your code a lot easier to read.
+
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
+
+Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
+
+-----
+
+For Loops with Lists and Dictionaries
+=====================================
+
+With `range`, we learned that `for` loops in python are really used to
+iterate over sequences of things (they can be used for much more, but
+for now this definition will do). Try entering the following to see what
+happens:
+
+```python
+for c in ["one", 2, "three", 4, "five"]:
+    print c
+```
+
+this is equivalent to:
+
+```python
+c = ["one", 2, "three", 4, "five"]
+for i in range(len(c)):
+    print c[i]
+```
+
+However, notice how much more readable the first one is!
+
+With a list, then, it's clear that we can use the `in` keyword to
+indicate a list of things. What about a nested loops around a list of
+lists?
+
+```python
+italy_cities = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+argentina_cities = ["Mendoza", "Buenos Aires", "Patagonia"]
+india_cities = ["Ahmedabad", "Kolkata", "Chennai", "Jaipur", "Surat"]
+us_cities = ["Chicago", "Austin", "New York", "San Fran"]
+all_cities = [italy_cities, argentina_cities, india_cities, us_cities]
+nationnames = ["italy", "argentina", "india", "us"]
+for cities in all_cities :
+    print nationnames[all_cities.index(cities)] + ": "
+    for city in cities :
+        print "  " + city 
+```
+
+----
+![Exercise](pics/exercise.jpg) **Use Your Knowledge**
+
+Can you think of a better use of compound data types for this example?
+
+-----
+
+Of course, this information is better stored in a dictionary, isn't it?
+The data makes more sense if the keys were the nation names and the
+values were lists of cities. Importantly, python has given us a tool
+specifically for dictionary looping.
+
+The syntax for looping through the keys and values of a dictionary is :
+
+    for key, value in dictionary.iteritems():
+
+Importantly, you don't have to use the words key and value. That's just
+what will fill those variables. Here, we rewrite the previous loop using
+this clever syntax.
+
+```python
+all_cities = {}  # make an empty dictionary
+all_cities['italy']     = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
+all_cities['argentina'] = ["Mendoza", "Buenos Aires", "Patagonia"]
+all_cities['india']     = ["Ahmedabad", "Kolkata", "Chennai", "Jaipur", "Surat"]
+all_cities['us']        = ["Chicago", "Austin", "New York", "San Fran"]
+for nation, cities in all_cities.iteritems() :
+    print nation + " : "
+    for city in cities :
+        print "  " + city 
+```
 
 ## Conditionals
 
-A conditional (`if` statement) is some statement that in general says :
-"When some boolean is true, do the following. Elsewise, do this other
-thing."
+So far our loops always do the same thing each time we pass through, but often
+that is not the case.  There is often a condition we would like to check, and
+then have some different behavior.
+
+A conditional (`if` statement) is some statement that in general says : "When
+some boolean is true, do the following. Elsewise, do this other thing."
 
 Many equivalence test statements exist in Python that are similar in
 other languages:
@@ -81,194 +231,22 @@ i = 4
 sign = "zero"
 if i < 0:
     sign = "negative"
-
 elif i > 0:
     sign = "positive"
-
 else:
     print("Sign must be zero")
     print("Have a nice day")
-
 print(sign)
 ```
 
-The behavior of this code snippet should be pretty clear, but there is
-something peculiar. How does Python know where the if-statement ends?
-Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code.
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
 
-For example, in MatLab you begin an if statement with the word `if`
-and you end it with `end if`. In C/C++ you delimit code blocks with curly
-braces.
-
-Python uses *white space* — in this case, *indentation,* to group lines of code. In this case, there are four spaces at the beginning of the line following the `if` statement. This is not just to make things look pretty - it
-tells Python what the body of the `if`-statement is.
-
-Marking blocks of code is a fundamental part of a language. In C, you'll see curly braces everywhere. In Python, you'll see indentation everywhere. It's how you (and the computer) know what your code means.
-
-Other white space in Python (and most other languages) is only for people. Little things like putting blank lines in "sane" places, and putting spaces between variables and operators (say, `a + b` rather than `a+b`) can make your code a lot easier to read.
-
-**Exercise**
 Write an if statement that prints whether x is even or odd.
 
 Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
 
-
-
-While Loops
-===========
-
-Let's start by looking at `while` loops since they function like while
-loops in many other languages. The example below takes a list of
-integers and computes the product of each number in the list up to the
--1 element.
-
-A `while` loop will repeat the instructions within itself until the
-conditional that defines it is no longer true.
-
-```python
-mult = 1
-sequence = [1, 5, 7, 9, 3, -1, 5, 3]
-while sequence[0] != -1:
-    mult = mult * sequence[0]
-    sequence.pop(0)
-
-print mult
-```
-
-Some new syntax has been introduced in this example.
-
--   On line 4, we compute the product of the elements just to make this
-    more interesting.
-
--   On line 5, we use list.pop() to remove the first element of
-    the list, shifting every element down one.
-    Let's verify this with sequence.pop?
-
-**Watch Out**
-
-Since a `while` loop will continue until its conditional is no longer
-true, a **poorly formed** while loop might repeat forever. For example :
-
-```python
-i=1
-print "Well, there's egg and bacon, egg and spam, egg bacon and"
-while i == 1:
-  print "spam "
-print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..."
-```
-
-Since the variable `i` never changes within the while loop, we can
-expect that the conditional, `i=1` will remain true forever and the
-while loop will just go round and round, as if this restaurant offered
-nothing but spam. (If you try this at home, please note that one way to
-interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
-
-
-For Loops
-=========
-
-`For` loops in python operate a little differently from other languages.
-Let's start with a simple example which prints all of the numbers from 0
-to 9:
-
-```python
-for i in range(10):
-    print i
-```
-
-You may be wondering how this works. Start by using `help(range)` to see
-what the range function does.
-
-```
-range()?
-```
-
-    Help on built-in function range in module __builtin__:
-
-    range(...)
-        range([start,] stop[, step]) -> list of integers
-
-        Return a list containing an arithmetic progression of integers.
-        range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
-        When step is given, it specifies the increment (or decrement).
-        For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
-        These are exactly the valid indices for a list of 4 elements.
-
-`Range` is a function that returns a list containing a sequence of
-integers. So, `range(10)` returns the list [0,1,2,3,4,5,6,7,8,9]. The `for`
-loop then simply iterates over that list, setting `i` to each value.
-
-* * * *
-**Exercise**
-
-Using a loop, calculate the factorial of 6 (the product of all positive integers up to and including 6).
-
-* * * *
-
-For Loops with Lists and Dictionaries
-=====================================
-
-With `range`, we learned that `for` loops in python are really used to
-iterate over sequences of things (they can be used for much more, but
-for now this definition will do). Try entering the following to see what
-happens:
-
-```python
-for c in ["one", 2, "three", 4, "five"]:
-    print c
-```
-
-this is equivalent to:
-
-```python
-c = ["one", 2, "three", 4, "five"]
-for i in range(len(c)):
-    print c[i]
-```
-
-With a list, then, it's clear that we can use the `in` keyword to
-indicate a list of things. What about a nested loops around a list of
-lists?
-
-```python
-italy_cities = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-argentina_cities = ["Mendoza", "Buenos Aires", "Patagonia"]
-india_cities = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-us_cities = ["Chicago", "Austin", "New York", "San Fran"]
-all_cities = [italy_cities, argentina_cities, india_cities, us_cities]
-nationnames = ["italy","argentina", "india", "us"]
-for cities in all_cities :
-    print nationnames[all_cities.index(cities)] + ": "
-    for city in cities :
-        print "  " + city 
-```
-
-
-Of course, this information is better stored in a dictionary, isn't it?
-The data makes more sense if the keys were the nation names and the
-values were lists of cities. Importantly, python has given us a tool
-specifically for dictionary looping.
-
-The syntax for looping through the keys and values of a dictionary is :
-
-    for key, value in dictionary.iteritems():
-
-Importantly, you don't have to use the words key and value. That's just
-what will fill those variables. Here, we rewrite the previous loop using
-this clever syntax.
-
-```python
-italy_cities = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-argentina_cities = ["Mendoza", "Buenos Aires", "Patagonia"]
-india_cities = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-us_cities = ["Chicago", "Austin", "New York", "San Fran"]
-nations = {"italy":italy_cities, "argentina":argentina_cities, "india":india_cities, "us":us_cities}
-for nation, cities in nations.iteritems() :
-    print nation + " : "
-    for city in cities :
-        print "  " + city 
-```
+----
 
 break, continue, and else
 =========================
@@ -278,9 +256,9 @@ avoid infinite loops by cutting off loops when they're clearly going
 nowhere.
 
 ```python
-reasonable = 5
+dont_print = 5
 for n in range(1,10):
-    if n == reasonable :
+    if n == dont_print :
         break
     print n
 ```
@@ -289,9 +267,9 @@ Something you might want to do instead of breaking is to continue to the
 next iteration of a loop, giving up on the current one..
 
 ```python
-reasonable = 5
+dont_print = 5
 for n in range(1,10):
-    if n == reasonable :
+    if n == dont_print :
         continue
     print n
 ```
@@ -305,10 +283,10 @@ subset of the names we will treat differently.
 
 ```python
 knights = {"Sir Belvedere":"the Wise", 
-         "Sir Lancelot":"the Brave", 
-         "Sir Galahad":"the Pure", 
-         "Sir Robin":"the Brave", 
-         "The Black Knight":"John Cleese"} # create a dict with names and titles
+           "Sir Lancelot":"the Brave", 
+           "Sir Galahad":"the Pure", 
+           "Sir Robin":"the Brave", 
+           "The Black Knight":"John Cleese"} # create a dict with names and titles
 favorites = knights.keys()      # create a list of favorites with all the knights
 favorites.remove("Sir Robin") # change favorites to include all but one.
 print knights
@@ -349,12 +327,12 @@ We've seen a lot so far. Let's work through a slightly lengthier example
 together. I'll use some of the concepts we already saw and introduce a
 few new concepts. To run the example, you'll need to locate a short file
 containing phone numbers. The file can be found in your 
-repository within the phonenums directory and is called phonenums.txt. 
+repository within the phonenums directory and is called `phonenums.txt`. 
 Now we have to move iPython to that directory so it can find the
 phonenums.txt file. You navigate within iPython in the same way that you
 navigate in the shell, by entering "cd [path]" .
 
-Let's look at the phonenums.txt file.
+Let's look at the `phonenums.txt` file.
 We can type shell commands into iPython by prefacing them with '!'
 '!nano phonenums.txt'
 
@@ -370,13 +348,13 @@ We see a list of phonenumbers. We want to count how many are in each areacode.
 
 This example opens a text file containing a list of phone numbers. The
 phone numbers are in the format \#\#\#-\#\#\#-\#\#\#\#, one to a line.
-The example code loops through each line in the file and counts the
-number of times each area code appears. The answer is stored in a
-dictionary, where the area code is the key and the number of times it
-occurs is the value.
+
+Now let's write some code that loops through each line in the file and counts
+the number of times each area code appears. The answer is stored in a
+dictionary, where the area code is the key and the number of times it occurs
+is the value.
 
 ```python
-
 areacodes = {} # Create an empty dictionary
 f = open("phonenums.txt") # Open the text file
 for line in f: # iterate through the text file, one line at a time (think of the file as a list of lines)
@@ -389,8 +367,8 @@ for line in f: # iterate through the text file, one line at a time (think of the
 print areacodes # Print the answer
 ```
 
-* * * *
-**Short Exercise**
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
 
 Use a loop to print the area codes and number of occurences in one line.
 Remember how we previously looped through a dictionary using `iteritems`.
@@ -402,8 +380,65 @@ Your output should look like this:
     608 8
     773 3
 
-* * * *
+----
 
+
+While Loops
+===========
+
+One feature of a `for` loop is that you need to know exactly how many times
+you'll go through the loop before you begin.  Often, we'd like to keep looping
+until some condition changes, but we don't know *a priori* how many iterations
+that will take.  For this we have the `while` loop.
+
+They function like while loops in many other languages. The example below
+takes a list of integers and computes the product of each number in the list
+up to the -1 element.
+
+A `while` loop will repeat the instructions within itself until the
+conditional that defines it is no longer true.
+
+```python
+mult = 1
+sequence = [1, 5, 7, 9, 3, -1, 5, 3]
+while sequence[0] != -1:
+    mult = mult * sequence[0]
+    sequence.pop(0)
+print mult
+```
+
+Some new syntax has been introduced in this example.
+
+-   On line 4, we compute the product of the elements just to make this
+    more interesting.
+
+-   On line 5, we use list.pop() to remove the first element of
+    the list, shifting every element down one.
+    Let's verify this with sequence.pop?
+
+**Watch Out**
+
+Since a `while` loop will continue until its conditional is no longer true, a
+**poorly formed** while loop might repeat forever.  If this happens, you can
+interrupt it with <kbd>Ctrl</kbd>+<kbd>C</kbd> (or <kbd>⌘</kbd>+<kbd>C</kbd>
+on Mac OSX).
+
+For example :
+
+```python
+i=1
+print "Well, there's egg and bacon, egg and spam, egg bacon and"
+while i == 1:
+  print "spam "
+print "or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots..."
+```
+
+Since the variable `i` never changes within the while loop, we can
+expect that the conditional, `i=1` will remain true forever and the
+while loop will just go round and round, as if this restaurant offered
+nothing but spam. 
+
+In general, the logic for finishing a `while` loop at the right time can be more challenging that just counting the number of elements in a list for a `for` loop.  Be careful to test your code carefully to make sure that it is ending when you want it to, and not too early or too late.  Being off by just one iteration of the loop is a common mistake and can be hard to debug.
 
 # Python Functions and Modules
 
@@ -432,7 +467,8 @@ useful for reading data into Python.
 ```python
 # Find the start codon of a gene
 dna = 'CTGTTGACATGCATTCACGCTACGCTAGCT'
-dna.find('ATG')
+start_codon = 'ATG'
+dna.find(start_codon)
 
 # parsing a line from a comma-delimted file
 lotto_numbers = '4,8,15,16,23,42\n'
@@ -445,8 +481,8 @@ answer = '=H=&!dr=a=nk!c=~ff&&!be=f~r&=!i=t!w=as!c=~~l.='
 print answer.replace('=', '').replace('&', 'e').replace('~', 'o').replace('!', ' ')
 ```
 
-* * * *
-**Short Exercise: Calculate GC content of DNA**
+----
+![Exercise](pics/exercise.jpg) **Exercise: Calculate GC content of DNA**
 
 Because the binding strength of guanine (G) to cytosine (C) is different from
 the binding strength of adenine (A) to thymine (T) (and many other
@@ -468,12 +504,17 @@ Check your work:
 round(gc, ndigits = 2) == .47
 ```
 
-* * * *
+----
 
 
 ##Creating your own functions!##
 
-When there is not an available function to perform a task, you can write your own functions.
+When there is not an available function to perform a task, you can write your own functions.  There are a number of reasons to write functions to accomplish a given task:
+
+* keep the cognitive burden low by only requiring the reader to process a small amount of code at a time
+* perform the task in multiple places without cutting and pasting
+* ensure that the task is performed the same way in all of those places
+* enable testing (coming tomorrow) of small units of your code
 
 ```python
 def square(x):
@@ -492,7 +533,11 @@ hello('afternoon', 'Software Carpentry')
 
 The description right below the function name is called a docstring. For best practices on composing docstrings, read [PEP 257 -- Docstring Conventions](http://www.python.org/dev/peps/pep-0257/).
 
-* * * *
+Also remember that the same best practices that apply to naming variables
+apply to function names.  Make them meaningful.  Some style guides suggest that function names should always be verbs and variable names should always be nouns.
+
+----
+![Exercise](pics/exercise.jpg) 
 **Short exercise: Write a function to calculate GC content of DNA**
 
 Make a function that calculate the GC content of a given DNA sequence. For the more advanced participants, make your function able to handle sequences of mixed case (see the third test case).
@@ -529,7 +574,7 @@ print dir(math) # See a list of everything in the math module
 help(math) # Get help information for the math module
 ```
 
-It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the import statement that can be used to make your life easier. Let's take a look at an example:
+It is not very difficult to use modules - you just have to know the module name and import it. There are a few variations on the `import` statement that can be used to make your life easier.  Let's take a look at an example:
 
 ```python
 
@@ -551,6 +596,14 @@ reset                 # Clear everything
 import math as m      # Same as import math, except we are renaming the module m
 print m.sin(3)        # This is really handy if you have module names that are long
 ```
+
+The main reason for these different variations is to allow you to find a balance between convenience and so-called name collisions.
+
+The strictest form is the last one (`import math as m`).  It ensures that the functions imported from `math` never collide with others, but requires you to type `m.` before every one when you use it.  Some also see it as a benefit to be constantly reminded which module the function came from by this `m.`
+
+Slightly less strict is the second one (`from math import sin`).  It saves the trouble of typing the `m.` each time but adds the risk that you import something that overwrites another method of the same name.  The risk is mitigated by only importing those things that you need, but requires you to think of this ahead of time.
+
+The laziest form is the first one (`from math import *`).  It allows you to use any function from the `math` without thinking of all the things you need.  However, this gives the maximum risk of having functions that collide with functions from other modules.
 
 If you intend to use python in your workflow, it is a good idea to skim the standard library documentation at the main Python documentation site, [docs.python.org](http://docs.python.org) to get a general idea of the capabilities of python "out of the box".
 
