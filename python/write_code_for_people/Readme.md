@@ -97,7 +97,7 @@ In [16]: voltage = 4 # Input to the circuit   <- better; says what this voltage
 ```
 
 ----
-![Exercise](pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../pics/exercise.jpg) **Short Exercise**
 
 Think of a task in your own work where you might use python.  List 4 quantities that would be represented by variables and suggest meaningful variable names for them.
 
@@ -404,7 +404,7 @@ and so on.
 Notice that the second number in a slice should be selected carefully.  You can think of it as the index of the first element that is NOT included in the slice.
 
 ----
-![Exercise](pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../pics/exercise.jpg) **Short Exercise**
 
 * What is the difference between the following?
    * `voltage_list[0:0]`
@@ -456,7 +456,7 @@ Out[15]: [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 ```
 
 ----
-![Exercise](pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../pics/exercise.jpg) **Short Exercise**
 
 Make a new list:
 
@@ -519,7 +519,7 @@ Out[2]: tuple
 You can slice and index the tuple exactly like you would a list, but you cannot append or extend it.
 
 ----
-![Exercise](pics/exercise.jpg) **Short Exercise**
+![Exercise](../../../pics/exercise.jpg) **Short Exercise**
 
 Display the second element of a tuple with two different slices.
 
