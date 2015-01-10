@@ -60,7 +60,7 @@ Day 2
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 9:00-10:30   | [Write Code for People I](python/best_practice/Readme.md) | Paul Wilson |
+| 9:00-10:30   | [Write Code for People I](python/write_code_for_people/Readme.md) | Paul Wilson |
 | 10:30-10:45    | Break                                   |              |
 | 10:45-11:45    | [Write Code for People II](python/best_practice/Readme.md) | Paul Wilson |
 | 11:45-12:30    | [Don't Repeat Yourself (or Others)](python/best_practice/dont_repeat_yourself.md) | Danielle Nielsen |
