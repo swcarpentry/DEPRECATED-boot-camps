@@ -43,6 +43,78 @@ If you also type %autocall to turn autocall OFF, you may be able to
 paste with **ctrl+v** though this won't work with all iPython builds.
 
 
+## Conditionals
+
+A conditional (`if` statement) is some statement that in general says :
+"When some boolean is true, do the following. Elsewise, do this other
+thing."
+
+Many equivalence test statements exist in Python that are similar in
+other languages:
+
+```python
+i = 1
+j = 2
+i == j  # i is equal to j : False
+i < j   # i is less than j : True
+i <= j  # i is less than or equal to j : True
+i > j   # i is greater than j : False
+i >= j  # i is greater than or equal to j : False
+i != j  # i is not equal to j : True
+```
+
+However, python has other equivalence test statements that are fairly
+unique to python. To check whether an object is contained in a list :
+
+```python 
+beatle = "John"
+beatles = ["George", "Ringo", "John", "Paul"]
+print(beatle in beatles)     # is John one of the beatles? : TRUE
+print("Katy" not in beatles) # this is also TRUE. 
+```
+
+Conditionals (`if` statements) are also really easy to use in python. Take
+a look at the following example:
+
+```python
+i = 4
+sign = "zero"
+if i < 0:
+    sign = "negative"
+
+elif i > 0:
+    sign = "positive"
+
+else:
+    print("Sign must be zero")
+    print("Have a nice day")
+
+print(sign)
+```
+
+The behavior of this code snippet should be pretty clear, but there is
+something peculiar. How does Python know where the if-statement ends?
+Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
+delimiting blocks of code.
+
+For example, in MatLab you begin an if statement with the word `if`
+and you end it with `end if`. In C/C++ you delimit code blocks with curly
+braces.
+
+Python uses *white space* — in this case, *indentation,* to group lines of code. In this case, there are four spaces at the beginning of the line following the `if` statement. This is not just to make things look pretty - it
+tells Python what the body of the `if`-statement is.
+
+Marking blocks of code is a fundamental part of a language. In C, you'll see curly braces everywhere. In Python, you'll see indentation everywhere. It's how you (and the computer) know what your code means.
+
+Other white space in Python (and most other languages) is only for people. Little things like putting blank lines in "sane" places, and putting spaces between variables and operators (say, `a + b` rather than `a+b`) can make your code a lot easier to read.
+
+**Exercise**
+Write an if statement that prints whether x is even or odd.
+
+Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
+
+
+
 While Loops
 ===========
 

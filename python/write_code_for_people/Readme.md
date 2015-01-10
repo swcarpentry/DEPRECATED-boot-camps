@@ -7,55 +7,36 @@
 * * * * *
 
 
-**Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
+**Based on Lecture Materials By: Nate Vack, Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
 R. Smith, Will Trimble, and many more**
 
-This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython.  I expect this lecture to be interactive, so stop me at any point if you have questions. 
+This lecture usess the python scripting language as a mechanism to discuss the best practices in writing software.  Since we can't assume that you all know python, we'll be teaching a little python along the way.  Specifically, we will be using the iPython interpretter, which adds a few bells & whistles to make it easier to get up to speed.  I expect this lecture to be interactive, so stop me at any point if you have questions.
 
-This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the iPython interpreter (to a lesser extent). The iPython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'll continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
-
-Here is the reference material.
+Importantly, this is **not** meant to be a comprehensive lesson in using python or iPython.  Therefore, we've included some reference material where you can get more information.
 
 * [Dive into Python](http://www.diveintopython.net/toc/index.html)
 * [Software Carpentry's Python Lectures](http://software-carpentry.org/4_0/python/)
 * [IPython: A System for Interactive Scientific Computing](http://dx.doi.org/10.1109/MCSE.2007.53)
 * [How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 
-Once we briefly deal with iPython, I'll cover python in the following order:
-
 ## What We'll Cover
 
-We'll focus on two overarching concepts that are important to any programming language: 
+After a brief introduction to iPython, we'll focus on the following importnat best practices.
 
-1) How to write code for people. That is code that is readable and understandable to others in your group and most importantly to your future self 3 months or 3 years down the road.
+1. How to write code for people. That is code that is readable and understandable to others in your group and most importantly to your future self 3 months or 3 years down the road.  This best practice is based largely in making the right choices on a number of topics:
 
-2) How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
+   * Meaningful variable names
+   * When to add comments
+   * Appropriate data type
+   * Effective and efficient compound data types
+   * Conditional statements *PPHW check this for best practice*
 
-### iPython Intro
-* iPython
+2. How to not repeat yourself. How to reuse your code with loops and functions. And how to eventually build modules, collections of functions, you and others can use in all your codes. And how to use other people's modules.
 
-### Lesson 1 (Write Code for People)
-* Print statements
-* Variables
-* Integers
-* Floats
-* Strings
-* Types
-* Type Coercion
-* Basic Operations: add numbers, concatenate strings, basic data type functionality
-* List
-* Dictionary 
-* Tuple
-* Conditional (if) statements
-
-### Lesson 2 (Don't Repeat Yourself)
-* For Loops
-* While Loops
-* Iteration
-* Methods
-* Reading & Writing Files
-* Modules
-
+   * Using loops to repeat certain tasks locally
+   * Writing functions to repeat tasks globally
+   * Using other poeple's modules to avoid reinventing the wheel
+   * Writing modules to allow others to avoid reinventing the wheel
 
 ## iPython
 
@@ -63,18 +44,15 @@ Please follow the link to the [iPython Intro](../ipython/Readme.md).
 
 ## Back to Write Code for People
 
-This lesson will introduce the basics of the python programming language while stressing how to make readable code, code for people. As we introduce variables we will discuss how to name them, when to comment and which comments are useful. As we introduce types we will discuss how type choice can be influenced by code readability considerations. The above readability considerations are to a certain degree universal to all programming, regardless of language. Finally, we introduce conditionals, such as `if` statements; we will see what an important role white space plays in python and how it can improve readability.
+Remember that the purpose of this lesson is to understand how to make readable code, code for people!  It will be easy to think of this as simple an introduction to the basics of the python scripting language, but resist this urge.  Fortunately, you may also learn some python along the way.
 
-But first: let's introduce you to python.
-
-## Variables
-
+## Intro to Variables
 
 All programming languages have variables, and python is no different. To create a variable, just name it and set it with the equals sign. One important caveat: variable names can only contain letters, numbers, and the underscore character. Let's set a variable.
 
 ```
-In [1]: first_name = "Cliff"
-In [2]: last_name = "Rodgers"
+In [1]: first_name = "Paul"
+In [2]: last_name = "Wilson"
 ```
 
 We can glue strings together with the + operator. Computers don't understand context.
@@ -82,13 +60,13 @@ We can glue strings together with the + operator. Computers don't understand con
 ```
 In [3]: full_name = first_name + last_name
 In [4]: print(full_name)
-Out[4]: 'CliffRodgers'
+Out[4]: 'PaulWilson'
 ```
 
 ***Exercise***
 Can you add the extra space between my last and first name?
 
-## Naming Your Variables
+## Choosing Meaningful Variable Names
 
 Which of these variable names are good?
 
@@ -104,11 +82,11 @@ Variable names should be:
 * Meaningful (to those who are going to read the code)
 * Short enough so you don't misstype them
 
-Variable name choice is important; a well-named variable is self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments. Remember that context matters a lot: in some cases, you'll want to spell out `voltage` or even `input_voltage`. In other cases, `v` is a shorthand that everyone will understand.
+**Variable name choice is important**; a well-named variable is self-explanatory without comments and will make your code easier to read as the reader will not have to look up the comments. Remember that context matters a lot: in some cases, you'll want to spell out `voltage` or even `input_voltage`. In other cases, `v` is a shorthand that everyone will understand.
 
-It's also important to choose a naming convention for your whole project, and get the people working on it to agree. Mixing `batteryVoltage` and `capacitor_value` in one place makes code hard to read.
+It's also important to choose a naming convention for your whole project, and get the people working on it to agree. Mixing `batteryVoltage` (CamelCase) and `capacitor_value` (pothole) in one place makes code hard to read.
 
-## Writing Comments For People
+## Writing Comments For People
 
 Above, you may have noticed the `#` character, which denotes a comment in python. Comments should describe meaning but not what the statement is doing.
 
@@ -118,7 +96,14 @@ In [15]: voltage = 4 # set the voltage to 4   <- well, duh
 In [16]: voltage = 4 # Input to the circuit   <- better; says what this voltage means
 ```
 
-## Types and Dynamic Typing
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
+
+Think of a task in your own work where you might use python.  List 4 quantities that would be represented by variables and suggest meaningful variable names for them.
+
+----
+
+## Intro to Types and Dynamic Typing
 
 Like in most programming languages, things in python are *typed* — the *type* refers to the type of data and what you can do with it. For example, you can do different things with strings and numbers. Numbers can have decimal components or not, and so on. You can see the type of a variable with the `type` command.
 
@@ -154,7 +139,7 @@ In [10]: type(voltage)
 Out[10]: int
 ```
 
-It's an `int`, which is an integer — a number with no decimal component. Let's assign a value of 2.7 (which has a decimal part) to voltage. What happens to the type?
+It's an `int`, which is an integer — a number with no decimal component. Let's assign a value of 2.7 (which has a decimal part) to `voltage`. What happens to the type?
 
 ```
 In [11]: voltage = 2.7
@@ -163,7 +148,7 @@ In [12]: type(voltage)
 Out[12]: float
 ```
 
-Neat! That's a `float`, which does have a decimal part. You can assign a string to the variable voltage in the same way:
+Neat! That's a `float`, which does have a decimal part. You can assign a string to the variable `voltage` in the same way:
 
 ```python
 In [13]: voltage = "2.7 volts"
@@ -181,7 +166,7 @@ In [15]: voltage = 2
 Choosing an appropriate variable type is not just a practical concern; it can also have an effect on code readability. Is this number used for calculations or only in print statements?
 
 
-## On Being Precise With floats and ints
+## Choosing Your Type Explicitly With floats and ints
 
 Again, the following may seem esoteric and pedantic, but it is very important. So bear with me.
 
@@ -242,7 +227,7 @@ Out[38]: (int, int, int)
 
 So we got a value of three for the sum, which also happens to be an integer. Any operation between two integers is another integer. Makes sense.
 
-So what about the case where a is an integer and b is a float?
+So what about the case where `a` is an integer and `b` is a float?
 
 ```
 In [39]: a = 1
@@ -307,32 +292,26 @@ In [57]: type(a), type(b), type(c)
 Out[57]: (float, float, float)
 ```
 
-## Compound Data Types: Lists, Dictionaries, Sets, and Tuples
+Importantly, this explicit choice of type communicates important information to you and other readers of your code.
 
-Python would be a fairly useless language if it weren't for the compound
-data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. 
+## Introduction to Compound Data Types
+
+Most languages offer compount data types of some kind (arrays, vectors, lists, matrices, maps, sets, etc.) and would not be very useful without them!  Python is no different, and much of its value comes from the ease of using them. The main two are lists and dictionaries, but I'll mention sets and tuples as well. 
 
 ## Lists
 
-A list is an ordered, indexable collection of data. Let's say you have
+A `list` is an ordered, indexable collection of data. Let's say you have
 collected some current and voltage data that looks like this:
 
-```
-voltage:
--2.0
--1.0
-0.0
-1.0
-2.0
+|  voltage | current |
+|----------|---------|
+|  -2.0    |  -1.0   |
+|  -1.0    |  -0.5   |
+|   0.0    |   0.0   |
+|   1.0    |   0.5   |
+|   2.0    |   1.0   |
+|----------|---------|
 
-current:
--1.0
--0.5
-0.0
-0.5
-1.0
-```
 
 So you could put that data into lists like
 
@@ -342,7 +321,7 @@ In [1]: voltage_list = [-2.0, -1.0, 0.0, 1.0, 2.0]
 In [2]: current_list = [-1.0, -0.5, 0.0, 0.5, 1.0]
 ```
 
-obviously voltage_list is of type list:
+obviously `voltage_list` is of type `list`:
 
 ```
 In [3]: type(voltage_list)
@@ -350,7 +329,7 @@ Out[3]: list
 ```
 
 Python lists have the charming (annoying?) feature that they are indexed
-from zero. Therefore, to find the value of the first item in voltage_list:
+from zero. Therefore, to find the value of the first item in `voltage_list`:
 
 ```
 In [4]: voltage_list[0]
@@ -365,7 +344,7 @@ Out[5]: 0.0
 ```
 
 Lists can be indexed from the back using a negative index. The last item of
-current_list
+`current_list`
 
 ```
 In [6]: current_list[-1]
@@ -380,7 +359,7 @@ Out[7]: 0.5
 ```
 
 You can "slice" items from within a list. Let's say we wanted the second
-through fourth items from voltage_list
+through fourth items from `voltage_list`
 
 ```
 In [8]: voltage_list[1:4]
@@ -396,8 +375,20 @@ Out[9]: [0.0, 1.0, 2.0]
 
 and so on.
 
-***Exercise***
-What does voltage_list[::2] mean?
+Notice that the second number in a slice should be selected carefully.  You can think of it as the index of the first element that is NOT included in the slice.
+
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
+
+* What is the difference between the following?
+   * `voltage_list[0:0]`
+   * `voltage_list[0:1]`
+   * `voltage_list[:1]`
+
+* What does `current_list[-3:]` give?
+
+* What does `voltage_list[::2]` mean?
+----
 
 ### Append and Extend
 
@@ -410,17 +401,14 @@ In [10] dir(list)
 One useful method is append. Lets say we want to stick the following data
 on the end of both our lists.
 
-```
-voltage:
-3.0
-4.0
+|  voltage | current |
+|----------|---------|
+|   3.0    |   1.5   |
+|   4.0    |   2.0   |
+|----------|---------|
 
-current:
-1.5
-2.0
-```
 
-If you want to append items to the end of a list, use the append method.
+If you want to append items to the end of a list, use the `append` method.
 
 ```
 In [11]: voltage_list.append(3.)
@@ -432,7 +420,7 @@ Out[13]: [-2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
 ```
 
 You can see how that approach might be tedious in certain cases. If you
-want to concatenate a list onto the end of another one, use extend.
+want to concatenate a list onto the end of another one, use `extend`.
 
 ```
 In [14]: current_list.extend([1.5, 2.0])
@@ -441,29 +429,21 @@ In [15]: current_list
 Out[15]: [-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
 ```
 
-### Length of Lists
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
 
-Sometimes you want to know how many items are in a list. Use the len command.
-
-```
-In [16]: len(voltage_list)
-Out[16]: 7
-```
-
-### Heterogeneous Data
-
-Lists can contain hetergeneous data.
+Make a new list:
 
 ```
-In [17]: data_list = ["experiment: current vs. voltage",
-                      "run", 47,
-                      "temperature", 372.756,
-                      "current", [-1.0, -0.5, 0.0, 0.5, 1.0],
-                      "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
-
+In [16]: exercise_list = [1,1,2,3,5,8]
 ```
 
-We've got strings, ints, floats, and even other lists in there. While this is a perfectly valid thing to do in a list, it's often not a good idea. Generally, you want to be able to run the same operation on every element of a list. If you want to put different kinds of things in a list structure, you often want to use something called a *tuple,* which we'll talk about in a minute.
+What is the difference between the following?
+ * `exercise_list.append([13,21,34])`
+ * `exercise_list.extend([13,21,34])`
+
+----
+
 
 ## Assigning Variables to Other Variables
 
@@ -500,7 +480,7 @@ There's a ton more to know about lists, but let's press on. [Dive into Python](h
 ## Tuples
 
 Tuples are another of python's basic compound data types that are almost
-like lists. The difference is that a tuple is immutable; once you set the
+like lists. The difference is that a tuple is **immutable**; once you set the
 data in it, the tuple cannot be changed. You define a tuple as follows.
 
 ```
@@ -510,33 +490,40 @@ In [2]: type(tup)
 Out[2]: tuple
 ```
 
-You can slice and index the tuple exactly like you would a list.
+You can slice and index the tuple exactly like you would a list, but you cannot append or extend it.
 
-### Why Use Tuples
+----
+![Exercise](pics/exercise.jpg) **Short Exercise**
 
-Tuples can emphasize intent in two ways. First, you can't easily change the items in a tuple, so if you want to specify that a list shouldn't change, a tuple is a great way to indicate that. Second, in a tuple, the order of the items is usually more significant: you might do something like:
-
-```
-In [1]: person_data = ('Nate', 35, 'njvack@wisc.edu')
-In [2]: name = person_data[0]
-```
-
-... though in practice, you'll more often use a `dictionary` for something like this.
-
-***Exercise***
 Display the second element of a tuple with two different slices.
+
+----
+
+### Heterogeneous Data
+
+Lists and Tuples can contain hetergeneous data.
+
+```
+In [17]: data_list = ["experiment: current vs. voltage",
+                      "run", 47,
+                      "temperature", 372.756,
+                      "current", [-1.0, -0.5, 0.0, 0.5, 1.0],
+                      "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
+
+```
+
+We've got strings, ints, floats, and even other lists in there. While this is a perfectly valid thing to do in a list, it's often not a good idea for a number of reasons:
+* the association between the name (e.g. "run", "temperature", etc) and the data (47, 372.756) is implied but not guaranteed,
+* lists imply that the order is important which is not the case here, and
+* it is common to act on each member of a list with the same operation
+
+Fortunately, python has dictionaries for exactly this purpose!
 
 ## Dictionaries
 
-Recall our variable data_list which contained our current-voltage data
-and also some metadata. We were able to store the data as a list, but
-clearly the list type is not the optimal choice for a data model. The
-dictionary is a much better choice.
+Our variable `data_list` contained our current-voltage data and also some metadata. We were able to store the data as a list, but clearly the list type is not the optimal choice for a data model. The dictionary is a much better choice.
 
-A python dictionary is a collection of key, value pairs. The key is a
-way to name the data, and the value is the data itself.  Here's a way
-to create a dictionary that contains all the data in our data.dat file
-in a more sensible way than a list.
+A python dictionary is a collection of key, value pairs. The key is a way to name the data, and the value is the data itself.  Here's a way to create a dictionary that contains all the data in our data.dat file in a more sensible way than a list.
 
 ```
 In [7] data_dict = {"experiment": "current vs. voltage", \
@@ -579,7 +566,7 @@ In [12]: data_dict["temperature"] = 3275.39
 You can also add new keys to the dictionary.
 
 ```
-In [13]: data_dict["user"] = "F. C. Rodgers"
+In [13]: data_dict["user"] = "P.P.H. Wilson"
 ```
 
 Dictionaries, like strings, lists, and all the rest, have built-in methods.
@@ -599,7 +586,7 @@ Out[15]:
  3275.39,
  [-1.0, -0.5, 0.0, 0.5, 1.0],
  'current vs. voltage',
- 'F. C. Rodgers',
+ 'P.P.H. Wilson',
  [-2.0, -1.0, 0.0, 1.0, 2.0]]
 ```
 
@@ -612,22 +599,21 @@ is true about a list: they can contain complex data types.
 Since tuples are immutable, they can be used as keys for dictionaries.
 Lists are mutable, and therefore cannot.
 
-When you architect software in python, most data will end up looking either
-like a list or a dictionary. These two data types are very important in
-python and you'll end up using them all the time.
+When you architect software in python, most data will end up looking either like a list or a dictionary. These two data types are very important in python and you'll end up using them all the time.  **Most importantly, choosing the correct data type will make a big difference in the readability of your code!**
 
 ## Sets
 
-Most introductory python courses do not go over sets this early (or at
-all), and in the interest of time we're no different. The python set
-type is a useful data type similar to the idea of a mathematical set:
-it is an unordered collection of unique things.
+The python set type is a useful data type similar to the idea of a
+mathematical set: it is an unordered collection of unique things.
 
 Consider the following examples if you're interested in the useful
 sorts of things you can do with python sets:
 
 ```
-In [3] fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+In [3]: fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
+
+In [4]: fruit
+Out[4]: {'apple', 'banana', 'pear'}
 ```
 
 Since sets contain only unique items, there's only one banana in the set
@@ -648,75 +634,34 @@ Out[6]: set(['apple', 'peach'])
 
 You can check out more info using the help docs. The important thing here isn't that sets exist or what exactly they can do, but the main concept: different types of data can do different things easily. Choosing your data types well will both make your code clearer and simpler to write.
 
-## Conditionals
 
-A conditional (`if` statement) is some statement that in general says :
-"When some boolean is true, do the following. Elsewise, do this other
-thing."
+### Length of Compound Data Types
 
-Many equivalence test statements exist in Python that are similar in
-other languages:
+Sometimes you want to know how many items are in a compound data type. Use the `len` command.
 
-```python
-i = 1
-j = 2
-i == j  # i is equal to j : False
-i < j   # i is less than j : True
-i <= j  # i is less than or equal to j : True
-i > j   # i is greater than j : False
-i >= j  # i is greater than or equal to j : False
-i != j  # i is not equal to j : True
+```
+In [16]: len(voltage_list)
+Out[16]: 7
+
+In [17]: len(data_dict)
+Out[17]: 6
+
+In [18]: len(set.intersectin(first_bowl, second_bowl))
+Out[18]: 2
 ```
 
-However, python has other equivalence test statements that are fairly
-unique to python. To check whether an object is contained in a list :
+## Choosing Effective and Efficient Compound Data Types
 
-```python 
-beatle = "John"
-beatles = ["George", "Ringo", "John", "Paul"]
-print(beatle in beatles)     # is John one of the beatles? : TRUE
-print("Katy" not in beatles) # this is also TRUE. 
-```
+Remember that we discussed these compound data types because the choice of data type can make a big difference in the ability for others (and you in 3 months) to understand your code.  You should consider some of the following questions when considering your choice of data type.
 
-Conditionals (`if` statements) are also really easy to use in python. Take
-a look at the following example:
+1. Does a compound data type make more sense than multiple variables?
 
-```python
-i = 4
-sign = "zero"
-if i < 0:
-    sign = "negative"
+2. Is the order of the elements important? (probably need a list)
 
-elif i > 0:
-    sign = "positive"
+3. Is the data immutable? (probably want a tuple)
 
-else:
-    print("Sign must be zero")
-    print("Have a nice day")
+4. Is the data named with keys and values?  (probably want a dictionary)
 
-print(sign)
-```
-
-The behavior of this code snippet should be pretty clear, but there is
-something peculiar. How does Python know where the if-statement ends?
-Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code.
-
-For example, in MatLab you begin an if statement with the word `if`
-and you end it with `end if`. In C/C++ you delimit code blocks with curly
-braces.
-
-Python uses *white space* — in this case, *indentation,* to group lines of code. In this case, there are four spaces at the beginning of the line following the `if` statement. This is not just to make things look pretty - it
-tells Python what the body of the `if`-statement is.
-
-Marking blocks of code is a fundamental part of a language. In C, you'll see curly braces everywhere. In Python, you'll see indentation everywhere. It's how you (and the computer) know what your code means.
-
-Other white space in Python (and most other languages) is only for people. Little things like putting blank lines in "sane" places, and putting spaces between variables and operators (say, `a + b` rather than `a+b`) can make your code a lot easier to read.
-
-**Exercise**
-Write an if statement that prints whether x is even or odd.
-
-Hint: Try out what the "%" operator. What does 10 % 5 and 10 % 6 return?
 
 ##Writing Code for People summary
 
