@@ -332,9 +332,8 @@ Now we have to move iPython to that directory so it can find the
 phonenums.txt file. You navigate within iPython in the same way that you
 navigate in the shell, by entering "cd [path]" .
 
-Let's look at the `phonenums.txt` file.
-We can type shell commands into iPython by prefacing them with '!'
-'!nano phonenums.txt'
+Let's look at the `phonenums.txt` file.  We can type shell commands into
+iPython by prefacing them with '!', e.g. `!nano phonenums.txt`
 
 Let's use a simple loop on the file:
 ```python
@@ -599,6 +598,8 @@ print m.sin(3)        # This is really handy if you have module names that are l
 
 The main reason for these different variations is to allow you to find a balance between convenience and so-called name collisions.
 
+### Best Practice for Importing Modules
+
 The strictest form is the last one (`import math as m`).  It ensures that the functions imported from `math` never collide with others, but requires you to type `m.` before every one when you use it.  Some also see it as a benefit to be constantly reminded which module the function came from by this `m.`
 
 Slightly less strict is the second one (`from math import sin`).  It saves the trouble of typing the `m.` each time but adds the risk that you import something that overwrites another method of the same name.  The risk is mitigated by only importing those things that you need, but requires you to think of this ahead of time.
@@ -701,7 +702,8 @@ def sum(a, axis=None, dtype=None, out=None, keepdims=False):
 We see a nice docstring seperating into several sections. A short description of the function is given, then all the input parameters are listed, then the outputs, there are some notes and examples. 
 Please note the docstring is longer than the code. And there are few comments in the actual code.
 
-* * * *
+----
+![Exercise](../../common/pics/exercise.jpg) 
 **Short exercise: Make a module**
 
 We have written a number of short functions. Collect these in a text file with an extension ".py", for example, "myFunctions.py". Test out the different import methods listed above. You may want to reset the iPython session between imports in the same way as the examples.
@@ -714,7 +716,7 @@ import myFunctions as myFun
 reload(myFun)
 ```
 
-* * * *
+----
 
 
 
@@ -726,7 +728,8 @@ From [xkcd](http://www.xkcd.com)
  
 Now that you can write your own functions, you too will experience the dilemma of deciding whether to spend the extra time to make your code more general, and therefore more easily reused in the future.
 
-* * * *
+----
+![Exercise](../../common/pics/exercise.jpg) 
 **Short exercise: Write a function to calculate content fraction of DNA**
 
 One common pattern is to generalize an existing function to work over a wider class of inputs. Try this by generalizing the `calculate_gc` function above to a new function, `calculate_dna_fraction` that computes the fraction for an arbitrary list of DNA bases. Add this to your own module file. Remember to `reload` the module after adding or modifying the python file. (This function will be more complicated than previous functions, so writing it interactively within iPython will not work as well.)
@@ -757,7 +760,7 @@ print calculate_dna_fraction(test_x, '')
 print calculate_dna_fraction(test_x, 2.0)
 ```
 
-* * * *
+----
 
 
 ##Longer exercise: Reading Cochlear implant into Python##
