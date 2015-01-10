@@ -344,8 +344,6 @@ collected some current and voltage data that looks like this:
 |   0.0    |   0.0   |
 |   1.0    |   0.5   |
 |   2.0    |   1.0   |
-|----------|---------|
-
 
 So you could put that data into lists like
 
@@ -439,7 +437,6 @@ on the end of both our lists.
 |----------|---------|
 |   3.0    |   1.5   |
 |   4.0    |   2.0   |
-|----------|---------|
 
 
 If you want to append items to the end of a list, use the `append` method.
