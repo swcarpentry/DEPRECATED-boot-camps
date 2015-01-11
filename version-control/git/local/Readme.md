@@ -9,11 +9,6 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 ## Motivation
 
-You may have experienced some of the frustrations captured by PhD
-Comics below.
-
-!["Final".doc](http://www.phdcomics.com/comics/archive/phd101212s.gif)
-
 See [motivation.pdf](motivation.pdf?raw=true).
 
 ## Introduction
