@@ -492,7 +492,7 @@ We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
 The easiest way to examine a file is to just print out all of the
-contents using the program `cat`. Enter the following command:
+contents using the program `cat`. For example, enter the following command:
 
     cat ex_data.txt
 
@@ -504,6 +504,8 @@ as standard output. If you enter:
 It will print out the contents of `ex_data.txt` twice. `cat` just
 takes a list of file names and writes out their contents one after another (this
 is where the name comes from, `cat` is short for "concatenate"). 
+
+Want to see what our `hello` program contains?
 
 * * * *
 **Short Exercises**
@@ -703,11 +705,11 @@ also use the *pipe* (`|`) more after the break.
 Let's clean up this data! Navigate to the `data` directory. Use a single 
 `find` command to perform the below exercises. Number 2 does not require `find`:
 
-1.  Find any file whose name is "NOTES" within `data` and its subdirectories, and delete it 
+1.  Create a new directory called `cleaneddata`
 
-2.  Create a new directory called `cleaneddata`
+2.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
 
-3.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
+3.  Find any file whose name is "NOTES" within `cleaneddata` and its subdirectories, and delete it. 
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
     it is okay for certain files to end in `.txt.txt`, as some already end with `.txt`.)
