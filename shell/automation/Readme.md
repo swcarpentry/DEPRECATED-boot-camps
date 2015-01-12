@@ -267,8 +267,7 @@ To work with the information, pipe it through
     set | less
 
 Now you will see a long list of variables that are already set. Some
-of these are built-in to the bash shell, others are set by the system
-administrator for all users.
+of these are built-in to the bash shell, others are set for all users.
 
 Some important variables you can expect to see:
 
@@ -286,7 +285,7 @@ yet another way to go to your home directory:
 
 You can also define your own variables.  If you are always needing to
 go to the same directory for your work, you could store it's path as a
-variable. And not that you can use one variable as part of the
+variable. Note that you can use one variable as part of the
 definition of another.  Change to your home directory and try:
 
     DATADIR="$HOME/boot-camps/shell/data"
@@ -295,10 +294,6 @@ definition of another.  Change to your home directory and try:
 Let's make a directory for your data in the `$DATADIR`:
 
     mkdir $DATADIR/$USER
-
-and then add another variable:
-
-    MYDATADIR="$DATADIR/$USER"
 
 ##Example: The bash prompt
 In `bash`, the prompt that you see at the beginning of each line is
@@ -342,19 +337,23 @@ function as the `smallest` script that we made earlier.  If you enter:
 you will have created a new command `my_smallest` that will be
 available in any directory.
 
+Want to know how to make *color* your terminal?
+
+    alias ls='ls -G'
 
 # Startup Scripts
 
-Alas, none of those changes to variables or aliases will be there when
-you logout and come back.  Thankfully, we can turn to a script to make
-that happen.  The most common script is one that is invoked every time
-you login.  When using the bash shell it is called the `.bashrc` file.
+Alas, none of those changes to variables or aliases will be there *when
+you logout and come back*.  Thankfully, we can turn to a script to make
+that happen.  The most common script is one that is already invoked every 
+time you login (if it already exists).  When using the bash shell it is 
+called the `.bashrc` file. 
 
 (On a Mac, it's called `.bash_profile`. Actually, the truth is a bit
 more complicated; see [this discussion](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html).)
 
 Go to your home directory and open the `.bashrc` file (on a Mac, use
-`.bash_profile` instead of `.bashrc`):
+`.bash_profile`, which you'll have to create the first time):
 
     nano .bashrc
 
@@ -362,12 +361,12 @@ At the end of this file, add the new variables and prompts that we
 defined above:
 
     export DATADIR="$HOME/boot-camps/shell/data"
-    export MYDATADIR="$DATADIR/$USER"
     export PS1="[\u@\h \w]\$ "
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
+    alias ls='ls -G'
 
-These variables should then be available to you in the future. On a server, 
-these variables would be available even after you log out and log back in. Many 
+After exiting the shell and then opening a new session, these variables 
+should be available to you in the future. Many 
 experienced users will gradually build up a long list of
 important variables and aliases for tasks they do frequently.
 
