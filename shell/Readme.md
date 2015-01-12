@@ -244,7 +244,7 @@ navigate amongst them.
 * * * *
 **Short Exercise**
 
-Now, list the contents of a directory of your own, by using the full
+List the contents of a directory of your own, by using the full
 path (and without using `cd`, so that you are running the command 
 from your current location).
 
@@ -333,12 +333,16 @@ directory. Now try this command:
 
     ls *1
 
-This lists every file that ends with a `1`. This command:
+This lists every file that ends with a `1`. This command
+
+    ls 04**
+    
+lists every file that begins with `04`. This command
 
     ls *4*1
 
 lists every file in the current directory whose name contains the
-number `4`, and ends with the number `1` (so it has also 
+number `4` *and* ends with the number `1` (so it has also 
 established that `4` must be before `1` in the filename). There are four such files:
 `0241`, `0341`, `0431`, and `0481`.
 
@@ -365,8 +369,8 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the directories in `~/boot-camps/shell/data` that contain the letter `a` or the letter `e` (including files that may contain both). Hint: `ls -d` will list directories and not files.
-2.  List all of the directories in `~/boot-camps/shell/data` that contain the letter `a` *AND* the letter `e`.
+1.  List all of the files in `/bin` that contain the letter `a` or the letter `b` (including files that may contain both). 
+2.  List all of the directories in `/bin` that contain the letter `a` *AND* the letter `b`.
 
 * * * *
 
@@ -424,7 +428,7 @@ then you could repeat command #260 by simply entering:
 **Short Exercise**
 
 1. Find the line number in your history for the last exercise (listing
-directories in `~/boot-camps/shell/data`) and reissue that command.
+directories in `/bin`) and reissue that command.
 
 * * * * 
 
@@ -438,7 +442,7 @@ can use `which`. For example:
 
     which rm
 
-will return `/bin/rm` on unix-based computers. Thus, we can see that `rm` is a program that sits inside of the `/bin` directory. Now enter:
+will return `/bin/rm`. Thus, we can see that `rm` is a program that sits inside of the `/bin` directory. Now enter:
 
     which find
 
