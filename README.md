@@ -50,9 +50,9 @@ Day 1
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           |   All        |
 | 9:00-9:15    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-08-04-Davidson/BestPractices.pdf?raw=true) | Paul Wilson |
-| 9:15-10:45   | [Introducing the Shell](shell/Readme.md)|  Lauren Michael |
-| 10:45-11:00  | Break                                   |              |
-| 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) | Lauren Michael |
+| 9:15-11:00   | [Introducing the Shell](shell/Readme.md)|  Lauren Michael |
+| 11:00-11:15  | Break                                   |              |
+| 11:15-1:00  | [Let the Computer Do the Work](shell/automation/Readme.md) | Lauren Michael |
 | 
 
 Day 2
