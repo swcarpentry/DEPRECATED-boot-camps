@@ -244,7 +244,7 @@ navigate amongst them.
 * * * *
 **Short Exercise**
 
-Now, list the contents of a directory of your own, by using the full
+List the contents of a directory of your own, by using the full
 path (and without using `cd`, so that you are running the command 
 from your current location).
 
@@ -333,12 +333,16 @@ directory. Now try this command:
 
     ls *1
 
-This lists every file that ends with a `1`. This command:
+This lists every file that ends with a `1`. This command
+
+    ls 04**
+    
+lists every file that begins with `04`. This command
 
     ls *4*1
 
 lists every file in the current directory whose name contains the
-number `4`, and ends with the number `1` (so it has also 
+number `4` *and* ends with the number `1` (so it has also 
 established that `4` must be before `1` in the filename). There are four such files:
 `0241`, `0341`, `0431`, and `0481`.
 
@@ -365,8 +369,8 @@ between these two things.
 Do each of the following using a single `ls` command without
 navigating to a different directory.
 
-1.  List all of the directories in `~/boot-camps/shell/data` that contain the letter `a` or the letter `e` (including files that may contain both). Hint: `ls -d` will list directories and not files.
-2.  List all of the directories in `~/boot-camps/shell/data` that contain the letter `a` *AND* the letter `e`.
+1.  List all of the files in `/bin` that contain the letter `a` or the letter `b` (including files that may contain both). 
+2.  List all of the directories in `/bin` that contain the letter `a` *AND* the letter `b`.
 
 * * * *
 
@@ -424,7 +428,7 @@ then you could repeat command #260 by simply entering:
 **Short Exercise**
 
 1. Find the line number in your history for the last exercise (listing
-directories in `~/boot-camps/shell/data`) and reissue that command.
+directories in `/bin`) and reissue that command.
 
 * * * * 
 
@@ -438,7 +442,7 @@ can use `which`. For example:
 
     which rm
 
-will return `/bin/rm` on unix-based computers. Thus, we can see that `rm` is a program that sits inside of the `/bin` directory. Now enter:
+will return `/bin/rm`. Thus, we can see that `rm` is a program that sits inside of the `/bin` directory. Now enter:
 
     which find
 
@@ -488,7 +492,7 @@ We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
 The easiest way to examine a file is to just print out all of the
-contents using the program `cat`. Enter the following command:
+contents using the program `cat`. For example, enter the following command:
 
     cat ex_data.txt
 
@@ -500,6 +504,8 @@ as standard output. If you enter:
 It will print out the contents of `ex_data.txt` twice. `cat` just
 takes a list of file names and writes out their contents one after another (this
 is where the name comes from, `cat` is short for "concatenate"). 
+
+Want to see what our `hello` program contains?
 
 * * * *
 **Short Exercises**
@@ -582,8 +588,8 @@ exists.
 Use `>>`, to append the contents of all of the files whose names
 contain the number 4 in the directory `~/boot-camps/shell/data/gerdal` 
 to the existing `all_data` file. Thus, when you are done, `all_data`
-should contain all of the experiment data from Bert AND any
-experimental data file from gerdal with filenames that contain the
+should contain all of the experiment data from `Bert` *AND* any
+experimental data file from `gerdal` with filenames that contain the
 number 4.
 
 * * * *
@@ -630,8 +636,8 @@ the backup file now:
 Do the following:
 
 1.  Rename the `all_data_IMPORTANT` file back to `all_data`.
-2.  Create a directory in the `data` directory called `foo`
-3.  Then, *copy* the `all_data` file into `foo`
+2.  Create a directory in the `data` directory called `foo`.
+3.  Then, *copy* the `all_data` file into `foo`.
 
 * * * *
 
@@ -699,11 +705,11 @@ also use the *pipe* (`|`) more after the break.
 Let's clean up this data! Navigate to the `data` directory. Use a single 
 `find` command to perform the below exercises. Number 2 does not require `find`:
 
-1.  Find any file whose name is "NOTES" within `data` and its subdirectories, and delete it 
+1.  Create a new directory called `cleaneddata`
 
-2.  Create a new directory called `cleaneddata`
+2.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
 
-3.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
+3.  Find any file whose name is "NOTES" within `cleaneddata` and its subdirectories, and delete it. 
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
     it is okay for certain files to end in `.txt.txt`, as some already end with `.txt`.)
