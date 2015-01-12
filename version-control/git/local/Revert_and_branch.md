@@ -1,18 +1,18 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Make Incremental Changes I](../../../version-control/git/local/Readme.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
 
 ----
 
 # Make Incremental Changes II: Reverting and branching (and a bit more) in git
 
-**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri 
+**Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
-    
+
 ## Refresher on the basics of git
 
 We use git to keep track of changes to the files in a particular
 directory. Here are the basic commands, discussed
-[yesterday](Readme.md).
+[previously](Readme.md).
 
 - `git init`: Initialize a directory as a git repository.
 
@@ -204,10 +204,12 @@ revert your code to a previous version.
 
 You can use `git log` and `git diff` to explore your history and
 determine which version you are interested in.  Choose a version and
-note the *hash* for that version. (Let's assume it's `abc456`).  **NOTE**:
-the version you choose will be the changes you wish to remove, not the
-final point that you want to reach.  In this case, you will remove the
-changes made in `abc456`, rather than "rolling back" to `abc456`.
+note the *hash* for that version. (Let's assume it's `abc456`).
+
+**NOTE**: the version you choose will be the changes you wish to
+remove, not the final point that you want to reach.  In this case, you
+will remove the changes made in `abc456`, rather than "rolling back"
+to `abc456`.
 
      git revert abc456
 
@@ -370,4 +372,4 @@ PROMPT_COMMAND=color_my_prompt
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Make Incremental Changes I](../../../version-control/git/local/Readme.md)  - Forward To [Plan for Mistakes](../../../python/testing/Readme.md)

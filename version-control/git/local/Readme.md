@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Write Code for People](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md) - Forward to [Make Incremental Changes II](../../../version-control/git/local/Revert_and_branch.md)
 
 ----
 
@@ -90,7 +90,7 @@ nothing to commit (create/copy files and use "git add" to track)
 ```
 
 This says that nothing much is going on.
-We will talk about _branches_ tomorrow.
+We will talk about _branches_ later.
 
 
 ## Adding a File To Version Control: `git add`
@@ -276,4 +276,4 @@ There are some useful flags for this command, such as
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Write Code for People](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md) - Forward to [Make Incremental Changes II](../../../version-control/git/local/Revert_and_branch.md)
