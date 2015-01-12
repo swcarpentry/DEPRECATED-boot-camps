@@ -46,7 +46,7 @@ For each of the files indicated, `wc` has printed a line with three
 numbers. The first is the number of lines in that file. The second is
 the number of words. Finally, the total number of characters is
 indicated. The final line contains this information summed over all of
-the files. Thus, there were 10449 characters in total. 
+the files. Thus, there were 10449 characters in total (11098 on Windows). 
 
 Remember that the `Bert/*` and `gerdal/*4*` files were merged
 into the `all_data` file. So, we should see that `all_data` contains
@@ -55,7 +55,7 @@ the same number of characters:
     wc all_data
 
 Every character in the file takes up one byte of disk space. Thus, the
-size of the file in bytes should also be 10449. Let's confirm this:
+size of the file in bytes should also be 10449 (Windows: 11098). Let's confirm this:
 
     ls -l all_data
 
