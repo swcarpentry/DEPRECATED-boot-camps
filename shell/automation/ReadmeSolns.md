@@ -28,7 +28,7 @@ wc -L all_data
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it and make a new file called Sorted.
+name to the file and then sort the output into a new file called `Sorted`.
 
 **Solution**
 
@@ -42,13 +42,13 @@ Diane
 Charles
 ```
 
-To add to the your name to file
+To add your name to the file:
 
 ```
 echo Lauren >> toBeSorted
 ```
 
-The file can be sorted into a new file with
+The file can be sorted into a new file with:
 
 ```
 sort toBeSorted > Sorted
