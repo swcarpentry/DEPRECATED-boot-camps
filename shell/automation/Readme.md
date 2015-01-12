@@ -70,7 +70,7 @@ Figure out how to get `wc` to print the length of the longest line in
 
 * * * *
 
-# The awesome power of the Pipe
+## The awesome power of the Pipe
 
 Suppose I wanted to only see the total number of lines, words, and 
 characters across the files `Bert/*` and `gerdal/*4*`. I don't want to
@@ -114,9 +114,9 @@ Well, the `|` character feeds output from the first program (to the left of
 the `|`) as input to the second program on the right. Therefor, you can 
 string all sorts of commands together using the pipe. 
 
-The philosophy behind these command line programs is that none of them
-really do anything all that impressive. BUT when you start *chaining them together*, 
-you can do some really powerful things really
+The philosophy behind the command line programs we're learning in the shell
+is that none of them really do anything all that impressive. BUT when you 
+start *chaining them together*, you can do some really powerful things really
 efficiently. If you want to be proficient at using the shell, you must
 learn to become proficient with the pipe and redirection operators:
 `|`, `>`, `>>`.
@@ -124,7 +124,8 @@ learn to become proficient with the pipe and redirection operators:
 
 ### A sorting example
 
-Let's create a file with some words to sort for the next example. We
+There is another useful program for working with files called `sort`. 
+Let's create a file with some words to *sort* for the next example. We
 want to create a file which contains the following names:
 
     Bob
@@ -155,7 +156,7 @@ Notice that the names are now printed in alphabetical order.
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it and make a new file called `Sorted`.
+name to the file and then sort the contents into a new file called `Sorted`.
 
 * * * *
 
