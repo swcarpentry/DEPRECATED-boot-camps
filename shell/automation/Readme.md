@@ -70,7 +70,7 @@ Figure out how to get `wc` to print the length of the longest line in
 
 * * * *
 
-# The awesome power of the Pipe
+## The awesome power of the Pipe
 
 Suppose I wanted to only see the total number of lines, words, and 
 characters across the files `Bert/*` and `gerdal/*4*`. I don't want to
@@ -108,38 +108,15 @@ command:
     wc Bert/* gerdal/*4* | tail -n 1
 
 This will print only the total number of lines, words, and characters 
-across all of these files. What is happening here? Well, `tail`, like
-many command line programs will read from the *standard input* when it
-is not given any files to operate on. In this case, it will just sit
-there waiting for input. That input can come from the user's keyboard, 
-from a file, *or from another program* via the pipe. Try this:
+across all of these files. What is happening here?
 
-    tail -n 2
-
-Notice that your cursor just sits there blinking. Tail is waiting for
-data to come in. Now type:
-
-    French
-    fries
-    are
-    good
-
-then <kbd>CONTROL</kbd>+<kbd>d</kbd>. You should see the lines:
-
-    are
-    good
-
-printed back at you. The <kbd>CONTROL</kbd>+<kbd>d</kbd> keyboard shortcut inserts an
-*end-of-file* character. It is sort of the standard way of telling the
-program "I'm done entering data". 
-
-The `|` character feeds output from the first program (to the left of 
+Well, the `|` character feeds output from the first program (to the left of 
 the `|`) as input to the second program on the right. Therefor, you can 
 string all sorts of commands together using the pipe. 
 
-The philosophy behind these command line programs is that none of them
-really do anything all that impressive. BUT when you start *chaining them together*, 
-you can do some really powerful things really
+The philosophy behind the command line programs we're learning in the shell
+is that none of them really do anything all that impressive. BUT when you 
+start *chaining them together*, you can do some really powerful things really
 efficiently. If you want to be proficient at using the shell, you must
 learn to become proficient with the pipe and redirection operators:
 `|`, `>`, `>>`.
@@ -147,7 +124,8 @@ learn to become proficient with the pipe and redirection operators:
 
 ### A sorting example
 
-Let's create a file with some words to sort for the next example. We
+There is another useful program for working with files called `sort`. 
+Let's create a file with some words to *sort* for the next example. We
 want to create a file which contains the following names:
 
     Bob
@@ -178,7 +156,7 @@ Notice that the names are now printed in alphabetical order.
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your
-name to the file, then sort it and make a new file called `Sorted`.
+name to the file and then sort the contents into a new file called `Sorted`.
 
 * * * *
 
@@ -289,8 +267,7 @@ To work with the information, pipe it through
     set | less
 
 Now you will see a long list of variables that are already set. Some
-of these are built-in to the bash shell, others are set by the system
-administrator for all users.
+of these are built-in to the bash shell, others are set for all users.
 
 Some important variables you can expect to see:
 
@@ -308,7 +285,7 @@ yet another way to go to your home directory:
 
 You can also define your own variables.  If you are always needing to
 go to the same directory for your work, you could store it's path as a
-variable. And not that you can use one variable as part of the
+variable. Note that you can use one variable as part of the
 definition of another.  Change to your home directory and try:
 
     DATADIR="$HOME/boot-camps/shell/data"
@@ -317,10 +294,6 @@ definition of another.  Change to your home directory and try:
 Let's make a directory for your data in the `$DATADIR`:
 
     mkdir $DATADIR/$USER
-
-and then add another variable:
-
-    MYDATADIR="$DATADIR/$USER"
 
 ##Example: The bash prompt
 In `bash`, the prompt that you see at the beginning of each line is
@@ -364,19 +337,23 @@ function as the `smallest` script that we made earlier.  If you enter:
 you will have created a new command `my_smallest` that will be
 available in any directory.
 
+Want to know how to make *color* your terminal?
+
+    alias ls='ls -G'
 
 # Startup Scripts
 
-Alas, none of those changes to variables or aliases will be there when
-you logout and come back.  Thankfully, we can turn to a script to make
-that happen.  The most common script is one that is invoked every time
-you login.  When using the bash shell it is called the `.bashrc` file.
+Alas, none of those changes to variables or aliases will be there *when
+you logout and come back*.  Thankfully, we can turn to a script to make
+that happen.  The most common script is one that is already invoked every 
+time you login (if it already exists).  When using the bash shell it is 
+called the `.bashrc` file. 
 
 (On a Mac, it's called `.bash_profile`. Actually, the truth is a bit
 more complicated; see [this discussion](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html).)
 
 Go to your home directory and open the `.bashrc` file (on a Mac, use
-`.bash_profile` instead of `.bashrc`):
+`.bash_profile`, which you'll have to create the first time):
 
     nano .bashrc
 
@@ -384,12 +361,12 @@ At the end of this file, add the new variables and prompts that we
 defined above:
 
     export DATADIR="$HOME/boot-camps/shell/data"
-    export MYDATADIR="$DATADIR/$USER"
     export PS1="[\u@\h \w]\$ "
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
+    alias ls='ls -G'
 
-These variables should then be available to you in the future. On a server, 
-these variables would be available even after you log out and log back in. Many 
+After exiting the shell and then opening a new session, these variables 
+should be available to you in the future. Many 
 experienced users will gradually build up a long list of
 important variables and aliases for tasks they do frequently.
 
