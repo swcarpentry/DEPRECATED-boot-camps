@@ -1,5 +1,5 @@
 [Up To Schedule](../../README.md) -
-Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/best_practice/Readme.md)
+Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/write_code_for_people/Readme.md)
 
 # Let the Computer Do the Work: Automating Workflows
 
@@ -418,4 +418,4 @@ You may wish to look into the below topics/tools to become even more advanced in
 ----
 
 [Up To Schedule](../../README.md) -
-Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/best_practice/Readme.md)
+Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/write_code_for_people/Readme.md)

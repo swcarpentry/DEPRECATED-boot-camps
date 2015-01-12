@@ -1,6 +1,6 @@
 
 # iPython Intro
-[Up To Schedule](../../README.md) - Back To [Write Code for People](../writing_code_for_people/Readme.md)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#motivating-example)
 * * * * *
 
 
@@ -14,7 +14,7 @@ You can run python commands in a handful of ways; you can create executable scri
 Lets give the built-in interpreter a spin just this once:
 
 ```
-frodgers@acibootcamp ~ $ python27
+frodgers@acibootcamp ~ $ python
 Enthought Python Distribution -- www.enthought.com
 Version: 7.3-2 (64-bit)
 
@@ -29,14 +29,14 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-frodgers@acibootcamp ~ $ python27 ~/boot-camps/python/ipython/hello.py 
+frodgers@acibootcamp ~ $ python ~/boot-camps/python/best_practice/hello.py 
 hello world
 ```
 
 iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out:
 
 ```
-frodgers@acibootcamp ~ $ ipython27
+frodgers@acibootcamp ~ $ ipython
 Enthought Python Distribution -- www.enthought.com
 
 Python 2.7.3 |EPD 7.3-2 (64-bit)| (default, Apr 11 2012, 17:52:16) 
@@ -56,15 +56,18 @@ In [2]:
 
 ### Pasting
 
-Unfortunately pasting depends on your operating system and ssh program:
+Unfortunately pasting depends on your operating system and ssh program.  In
+general, for multi-line pasting, you should use the `%cpaste` feature of iPython.
 
 #### Windows
 
+##### Git Bash
+
+When in the iPython interpreter, the easiest way to paste is with the right
+mouse button over the window, choosing "Paste".
+
 ##### Putty
 Click with the right mouse button over the window.
-
-##### Bitvise SSH
-Click with the right mouse button over the window and then "Paste".
 
 #### Mac OSX
 Press <kbd>⌘</kbd>+<kbd>V</kbd>.
@@ -74,16 +77,20 @@ Click with the right mouse button over the window and then "Paste".
 
 ### History
 
-iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd> keys, you can access the history. Try it now.
+iPython has a history. If you press the <kbd>up</kbd> and <kbd>down</kbd>
+keys, you can access the history. Try it now.
 
 ### Tab Completion
 
-iPython also has tab completion of previous commands. Try typing "pr" and then hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
+iPython also has tab completion of previous commands. Try typing "pr" and then
+hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
 
 ### Getting Help
 
 iPython has some nice help features.
-If you wanted to see all the built-in commands available for something, use the dir command.
+
+If you wanted to see all the built-in commands available for something, use
+the dir command.
 
 ```
 In [2]: dir(__builtin__)
@@ -100,123 +107,9 @@ In [2]: dir(__builtin__)
  'Exception',
  'False',
  'FloatingPointError',
- 'FutureWarning',
- 'GeneratorExit',
- 'IOError',
- 'ImportError',
- 'ImportWarning',
- 'IndentationError',
- 'IndexError',
- 'KeyError',
- 'KeyboardInterrupt',
- 'LookupError',
- 'MemoryError',
- 'NameError',
- 'None',
- 'NotImplemented',
- 'NotImplementedError',
- 'OSError',
- 'OverflowError',
- 'PendingDeprecationWarning',
- 'ReferenceError',
- 'RuntimeError',
- 'RuntimeWarning',
- 'StandardError',
- 'StopIteration',
- 'SyntaxError',
- 'SyntaxWarning',
- 'SystemError',
- 'SystemExit',
- 'TabError',
- 'True',
- 'TypeError',
- 'UnboundLocalError',
- 'UnicodeDecodeError',
- 'UnicodeEncodeError',
- 'UnicodeError',
- 'UnicodeTranslateError',
- 'UnicodeWarning',
- 'UserWarning',
- 'ValueError',
- 'Warning',
- 'WindowsError',
- 'ZeroDivisionError',
- '__IPYTHON__',
- '__IPYTHON__active',
- '__debug__',
- '__doc__',
- '__import__',
- '__name__',
- '__package__',
- 'abs',
- 'all',
- 'any',
- 'apply',
- 'basestring',
- 'bin',
- 'bool',
- 'buffer',
- 'bytearray',
- 'bytes',
- 'callable',
- 'chr',
- 'classmethod',
- 'cmp',
- 'coerce',
- 'compile',
- 'complex',
- 'copyright',
- 'credits',
- 'delattr',
- 'dict',
- 'dir',
- 'divmod',
- 'dreload',
- 'enumerate',
- 'eval',
- 'execfile',
- 'file',
- 'filter',
- 'float',
- 'format',
- 'frozenset',
- 'get_ipython',
- 'getattr',
- 'globals',
- 'hasattr',
- 'hash',
- 'help',
- 'hex',
- 'id',
- 'input',
- 'int',
- 'intern',
- 'isinstance',
- 'issubclass',
- 'iter',
- 'len',
- 'license',
- 'list',
- 'locals',
- 'long',
- 'map',
- 'max',
- 'memoryview',
- 'min',
- 'next',
- 'object',
- 'oct',
- 'open',
- 'ord',
- 'pow',
- 'print',
- 'property',
- 'range',
- 'raw_input',
- 'reduce',
- 'reload',
- 'repr',
- 'reversed',
+
+ ....
+
  'round',
  'set',
  'setattr',
@@ -259,42 +152,9 @@ In [6]: dir(str)
  '__len__',
  '__lt__',
  '__mod__',
- '__mul__',
- '__ne__',
- '__new__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__rmod__',
- '__rmul__',
- '__setattr__',
- '__sizeof__',
- '__str__',
- '__subclasshook__',
- '_formatter_field_name_split',
- '_formatter_parser',
- 'capitalize',
- 'center',
- 'count',
- 'decode',
- 'encode',
- 'endswith',
- 'expandtabs',
- 'find',
- 'format',
- 'index',
- 'isalnum',
- 'isalpha',
- 'isdigit',
- 'islower',
- 'isspace',
- 'istitle',
- 'isupper',
- 'join',
- 'ljust',
- 'lower',
- 'lstrip',
- 'partition',
+
+ ...
+ 
  'replace',
  'rfind',
  'rindex',
@@ -333,16 +193,20 @@ In [8]: "Hello world".swapcase()
 Out[8]: 'hELLO WORLD'
 ```
 
-***Excercise***
+----
+
+![Exercise](../../common/pics/exercise.jpg) **Exercise**
+
 Can you find with help of the ? which function turns "Hello world" into "HELLO WORLD"?
 
+----
 
 ### Executing code in files
 
 If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so:
 
 ```
-In [9] %run ~/boot-camps/python/ipython/hello.py
+In [9] %run ~/boot-camps/python/best_practice/hello.py
 ```
 
 ### Clearing iPython
@@ -354,5 +218,9 @@ In [10] reset
 Once deleted, variables cannot be recovered. Proceed (y/[n])?
 ```
 
-Back to [Write Code for People](../writing_code_for_people/Readme.md)
+
+
+- - - - 
+
+Back to [Write Code for People](Readme.md#motivating-example)
 
