@@ -588,8 +588,8 @@ exists.
 Use `>>`, to append the contents of all of the files whose names
 contain the number 4 in the directory `~/boot-camps/shell/data/gerdal` 
 to the existing `all_data` file. Thus, when you are done, `all_data`
-should contain all of the experiment data from Bert AND any
-experimental data file from gerdal with filenames that contain the
+should contain all of the experiment data from `Bert` *AND* any
+experimental data file from `gerdal` with filenames that contain the
 number 4.
 
 * * * *
@@ -636,8 +636,8 @@ the backup file now:
 Do the following:
 
 1.  Rename the `all_data_IMPORTANT` file back to `all_data`.
-2.  Create a directory in the `data` directory called `foo`
-3.  Then, *copy* the `all_data` file into `foo`
+2.  Create a directory in the `data` directory called `foo`.
+3.  Then, *copy* the `all_data` file into `foo`.
 
 * * * *
 
