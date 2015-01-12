@@ -12,19 +12,6 @@ grep Subject THOMAS/* jamesm/*
 ```
 
 * * * *
-
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`.
-
-**Solution**
-```
-wc -L all_data
-```
-
-* * * *
-
 **Short Exercise**
 
 Use the `echo` command and the append operator, `>>`, to append your

@@ -98,12 +98,11 @@ which should be pre-installed.
 
 #### Git
 
-Install Git for Mac by downloading and running
+Install Git for Mac 10.8 (Mavericks or newer) by downloading and running
 [the installer](http://git-scm.com/downloads).  For older
-versions of OS X (10.5-10.7) use the most recent available
-installer [available
-here](https://code.google.com/p/git-osx-installer/downloads/list). Use the Leopard installer for 10.5 and the Snow Leopard
-installer for 10.6-10.7.
+versions of OS X (10.6-10.8, before Mavericks) use the most recent available
+installer for Snow Leopard [available
+here](http://sourceforge.net/projects/git-osx-installer/files/).
 
 #### Python
 
