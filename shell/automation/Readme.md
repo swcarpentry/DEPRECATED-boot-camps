@@ -62,14 +62,6 @@ size of the file in bytes should also be 10449. Let's confirm this:
 Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
-* * * *
-**Short Exercise**
-
-Figure out how to get `wc` to print the length of the longest line in
-`all_data`. (Hint: Where will the list of options for `wc` be?)
-
-* * * *
-
 ## The awesome power of the Pipe
 
 Suppose I wanted to only see the total number of lines, words, and 
@@ -122,7 +114,7 @@ learn to become proficient with the pipe and redirection operators:
 `|`, `>`, `>>`.
 
 
-### A sorting example
+## A sorting example
 
 There is another useful program for working with files called `sort`. 
 Let's create a file with some words to *sort* for the next example. We
