@@ -108,32 +108,9 @@ command:
     wc Bert/* gerdal/*4* | tail -n 1
 
 This will print only the total number of lines, words, and characters 
-across all of these files. What is happening here? Well, `tail`, like
-many command line programs will read from the *standard input* when it
-is not given any files to operate on. In this case, it will just sit
-there waiting for input. That input can come from the user's keyboard, 
-from a file, *or from another program* via the pipe. Try this:
+across all of these files. What is happening here?
 
-    tail -n 2
-
-Notice that your cursor just sits there blinking. Tail is waiting for
-data to come in. Now type:
-
-    French
-    fries
-    are
-    good
-
-then <kbd>CONTROL</kbd>+<kbd>d</kbd>. You should see the lines:
-
-    are
-    good
-
-printed back at you. The <kbd>CONTROL</kbd>+<kbd>d</kbd> keyboard shortcut inserts an
-*end-of-file* character. It is sort of the standard way of telling the
-program "I'm done entering data". 
-
-The `|` character feeds output from the first program (to the left of 
+Well, the `|` character feeds output from the first program (to the left of 
 the `|`) as input to the second program on the right. Therefor, you can 
 string all sorts of commands together using the pipe. 
 
