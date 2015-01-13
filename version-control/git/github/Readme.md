@@ -44,8 +44,38 @@ you want an
 
 ## git remote : Steps for Forking a Repository
 
+
+<!--  Define forking if this is the first mention of it.
+For example from https://help.github.com/articles/fork-a-repo/
+
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+or 
+
+From https://github.com/octocat/Spoon-Knife
+
+Creating a fork is producing a personal copy of someone else's project. A fork acts as a bridge between the original repository and your personal copy. You can submit Pull Requests to help make other people's projects better by offering your changes to the original project. Forking is at the core of social coding at GitHub.
+
+-->
+
+
 A key step to interacting with an online repository that you have forked
-is adding the original as a remote repository. By adding the remote
+is adding the original as a remote repository. 
+
+<!--
+
+This isn't clear.  The reader does not yet know what "adding the original as a remote repository" means. 
+
+I think this needs to be explicit, like: 
+1. Forking creates a copy of the repo on the servers.
+2. Cloning makes a local copy of that repo on your computer.
+
+That local copy is connected to your fork.  Now you need to connect that fork 
+to the original repository.  Here are the steps...
+
+-->
+
+By adding the remote
 repository, you inform git of a new option for fetching updates and
 pushing commits.
 
@@ -96,14 +126,17 @@ Step 3 : Add a connection to the common repository :
     upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
     upstream        https://github.com/UW-Madison-ACI/simplestats (push)
 
+<!-- This is an aside.  Maybe it should be labeled "Naming convention" and in 
+smaller font.
+-->
 All repositories that are clones begin with a remote called `origin`.  The most
 common convention is clone from your own fork (`origin`) and add a remote to the
 common repository as `upstream`.
 
 ## git fetch : Fetching the contents of a remote
 
-Now that you have alerted your repository to the presence of others, it
-is able to pull in updates from those repositories. In this case, if you
+Now that you have connected your repository to the "upstream" original, it
+is able to pull in updates from that repository. In this case, if you
 want your master branch to track updates in the original simplestats
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.

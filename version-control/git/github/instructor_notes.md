@@ -1,5 +1,13 @@
 # git/GitHub
 
+<!-- 
+
+This file looks like needs to be updated to correspond to the current order of the 
+curriculum.   We now introduce github after "local", "Make Incremental Changes 
+I and II."  This introduces github at the beginning.
+
+-->
+
 The goal of this lesson is to introduce the students to [git][] via
 collaboration on [GitHub][].
 
@@ -44,7 +52,6 @@ stand-in if you have nowhere to draw.*
 ## Basics
 
 ### Local Basics
-
 **IMPORTANT:** Make sure you tell people *not* to make their own local changes,
 that will make things really complicated later when people pull. Alternatively,
 you can go ahead and let them do whatever they like and use it as a teaching
