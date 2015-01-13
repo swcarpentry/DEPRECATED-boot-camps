@@ -371,7 +371,7 @@ Do each of the following using a single `ls` command without
 navigating to a different directory.
 
 1.  List all of the files in `/bin` that contain the letter `a` or the letter `b` (including files that may contain both). 
-2.  List all of the directories in `/bin` that contain the letter `a` *AND* the letter `b`.
+2.  List all of the files in `/bin` that contain the letter `a` *AND* the letter `b`.
 
 * * * *
 
