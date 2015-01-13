@@ -154,7 +154,8 @@ know what the options are to particular commands?
 
 Most commonly-used shell programs have a manual. Unix-based (Mac and Linux) 
 users can access the manual using the `man` program. Windows users may not 
-have the `man` program, but can use Linux man pages online: http://www.linuxmanpages.com/ 
+have the `man` program, but can use Linux man pages online, using this link 
+(http://man.he.net/) or just doing a google search.   
 On Mac or Linux, try entering:
 
     man ls
