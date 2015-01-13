@@ -51,7 +51,7 @@ by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
 command:
 
-    git clone -b 2014-08-25 https://github.com/UW-Madison-ACI/boot-camps.git
+    git clone -b 2015-01-13 https://github.com/UW-Madison-ACI/boot-camps.git
 
 This command will grab all of the data needed for this workshop from our central GitHub repository. 
 (We will talk about the `git` command later in the workshop.)
