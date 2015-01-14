@@ -451,4 +451,4 @@ difference in code readability and types are important in conveying intent.
 
 [Up To Schedule](../../README.md) -
 Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) -
-Forward To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md)
+Forward To [Don't Repeat Yourself (or Others)](../../python/best_practice/dont_repeat_yourself.md)
