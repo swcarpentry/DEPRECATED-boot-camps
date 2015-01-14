@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md) - Forward to [Make Incremental Changes II](../../../version-control/git/local/Revert_and_branch.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/dont_repeat_yourself/Readme.md) - Forward to [Make Incremental Changes II](../../../version-control/git/local/Revert_and_branch.md)
 
 ----
 
@@ -276,4 +276,4 @@ There are some useful flags for this command, such as
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/best_practice/dont_repeat_yourself.md) - Forward to [Make Incremental Changes II](../../../version-control/git/local/Revert_and_branch.md)
+[Up To Schedule](../../../README.md) - Back To [Don't Repeat Yourself (or Others)](../../../python/dont_repeat_yourself/Readme.md) - Forward to [Make Incremental Changes II](../../../version-control/git/local/Revert_and_branch.md)
