@@ -42,14 +42,8 @@ Let's start by making a laptop and work directory.
 
 ### Setting Up the "Work" Repository
 
-
-Ok, so now we have an (empty) bare repository. 
-
-<!-- the git init --bare command is in the aside below.  So we don't actually have a bare repo.  It looks like  "git clone" command superceded an earlier 
-version that created a bare repo. -->
-
-Let's clone it on our "work
-computer"! You'll find the repository is named properly.
+Let's clone it on our "work computer". You'll find the repository is named
+properly.
 
     $ cd ~/work
     $ git clone https://github.com/YOU/simplestats.git
@@ -99,7 +93,7 @@ Let's investigate what's inside.
     $ ls -a
     .  ..  .git  README.md  report.tex stats.py  test_stats.py
 
-Ok, awesome! We were able to checkout the updated version of the repository.
+Ok, awesome, we were able to checkout the updated version of the repository.
 
 Let's try making one set of changes. We'll add some content to the report
 
@@ -123,36 +117,23 @@ repository.
     $ tail report.tex
     this is one fancy report
 
-Perfect! Work and laptop are synced again!
+Work and laptop are synced again!
+
+#### Aside: Version-Control Best Practices
 
 At this point, you're fully set up to work in a best-practice, version-control
-work flow. Experience shows that it's best to work in branches
-
-<!-- what branch?  master or create a new branch?  -->
- 
-to make sure the
-master branch stays up-to-date with your server's (origin's) master
-branch.
-
-<!-- This is confusing.  Is this suggesting that you keep the master branches synced?   How does this advice relate to the previous clause in the sentence about working in branches?  -->
-
-
-	
- This stuff may not be intuitive when you're first starting out, though,
-so just play around and get used to the general work flow for now. You'll get
-better at it over time.
+work flow. Experience shows that it's best to work in branches (i.e., other than
+master) to make sure the master branch stays up-to-date with your server's
+(origin's) master branch. This stuff may not be intuitive when you're first
+starting out, though, so just play around and get used to the general work flow
+for now. You'll get better at it over time.
 
 #### Aside: Latex and the Limits of the Version Control Workflow
 
 Have you ever struggled with formatting Word's equations, chapters,
 bibliography, etc.? [Latex](http://www.latex-project.org/) works wonders with
-that. Here's a great graph taken from John Cook's
-[website](http://www.johndcook.com/blog/2008/04/03/microsoft-word-and-latex/)
-that explains the difference.
-
-<!-- Actually, John Cook copied the graphic from Marko Pinteric 
-	http://www.pinteric.com/miktex.html
--->
+that. Here's a great graph taken from Marko Pinteric's
+[website](http://www.pinteric.com/miktex.html) that explains the difference.
 
 ![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
 
@@ -217,8 +198,7 @@ bare repository!
 Why use a bare repository? The answer is that non-bare repositories don't always
 play nice together, and it turns out it helps to have a single, base repository
 that's "always right". You can get a more detailed answer
-[here](http://gitolite.com/concepts/bare.html).
-<!-- broken link -->
+[here](http://www.gitguys.com/topics/shared-repositories-should-be-bare-repositories/).
 
 #### More than One Way to Clone
 
