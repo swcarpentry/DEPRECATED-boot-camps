@@ -63,7 +63,7 @@ repositories such as the original one **upstream** from your fork, others that
 may be **parallel** to your fork, and so on.
 
 We'll be continuing our testing exercises using GitHub as the online repository,
-so you'll need to start off by getting a copy of that repository to work on!
+so you'll need to start off by getting a copy of that repository to work on.
 
 ### Exercise : Fork Our GitHub Repository
 
@@ -184,7 +184,7 @@ update your fork. Let's say that you come in and sit down in the morning, you've
 gotten your coffee (or tea) and you're ready to get started. However, someone
 from your research group has added something to the project you're working on,
 and you need to add it into your work to keep up to date. I'll add a comment,
-then let's get started!
+then let's get started.
 
 Step 1 : Fetch the recent remote repository history
 
