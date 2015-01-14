@@ -42,7 +42,13 @@ Let's start by making a laptop and work directory.
 
 ### Setting Up the "Work" Repository
 
-Ok, so now we have an (empty) bare repository. Let's clone it on our "work
+
+Ok, so now we have an (empty) bare repository. 
+
+<!-- the git init --bare command is in the aside below.  So we don't actually have a bare repo.  It looks like  "git clone" command superceded an earlier 
+version that created a bare repo. -->
+
+Let's clone it on our "work
 computer"! You'll find the repository is named properly.
 
     $ cd ~/work
@@ -60,12 +66,12 @@ gander at that remote.
     origin  https://github.com/YOU/simplestats.git (fetch)
     origin  https://github.com/YOU/simplestats.git (push)
 
-Let's do some work in a branch,
+Let's do some work in a branch.
 
     $ git branch report
     $ git checkout report
 
-Go ahead an add a file and commit it,
+Go ahead an add a file and commit it.
 
     $ touch report.tex
     $ git add report.tex
@@ -102,7 +108,7 @@ Let's try making one set of changes. We'll add some content to the report
     $ git commit -m "added some content to the report"
     $ git push origin report
 
-So now the home machine is synced against the repository that's on the
+So now the home machine is synced with the repository that's on the
 server. Any time you're doing work, as long as you **commit and push** the work
 you're doing, it will be available to you anywhere you have access to the
 internet. In fact, you don't even **need** access to the internet. Once your
@@ -120,9 +126,19 @@ repository.
 Perfect! Work and laptop are synced again!
 
 At this point, you're fully set up to work in a best-practice, version-control
-work flow. Experience shows that its best to work in branches to make sure the
+work flow. Experience shows that it's best to work in branches
+
+<!-- what branch?  master or create a new branch?  -->
+ 
+to make sure the
 master branch stays up-to-date with your server's (origin's) master
-branch. This stuff may not be intuitive when you're first starting out, though,
+branch.
+
+<!-- This is confusing.  Is this suggesting that you keep the master branches synced?   How does this advice relate to the previous clause in the sentence about working in branches?  -->
+
+
+	
+ This stuff may not be intuitive when you're first starting out, though,
 so just play around and get used to the general work flow for now. You'll get
 better at it over time.
 
@@ -133,6 +149,10 @@ bibliography, etc.? [Latex](http://www.latex-project.org/) works wonders with
 that. Here's a great graph taken from John Cook's
 [website](http://www.johndcook.com/blog/2008/04/03/microsoft-word-and-latex/)
 that explains the difference.
+
+<!-- Actually, John Cook copied the graphic from Marko Pinteric 
+	http://www.pinteric.com/miktex.html
+-->
 
 ![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
 
@@ -198,6 +218,7 @@ Why use a bare repository? The answer is that non-bare repositories don't always
 play nice together, and it turns out it helps to have a single, base repository
 that's "always right". You can get a more detailed answer
 [here](http://gitolite.com/concepts/bare.html).
+<!-- broken link -->
 
 #### More than One Way to Clone
 
