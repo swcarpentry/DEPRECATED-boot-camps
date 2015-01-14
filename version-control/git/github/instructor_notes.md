@@ -2,9 +2,7 @@
 
 <!-- 
 
-This file looks like needs to be updated to correspond to the current order of the 
-curriculum.   We now introduce github after "local", "Make Incremental Changes 
-I and II."  This introduces github at the beginning.
+These notes are known to be out of date with the current ACI workflow.
 
 -->
 
