@@ -1,34 +1,19 @@
 # Solutions to exercises in Write Code for People I
 
 * * * *
-##Python Modules
+##Intro to Variables
 
 **Short Exercises**
 
-In the script we wrote to convert text files to CSV, we used the `sys` module. 
-Use the iPython interpreter to learn more about the `sys` module and what it does.  
-What is `sys.argv` and why did we only use the last n-1 elements? What is `sys.stdout`?
+Can you add the extra space between my last and first name?
 
 ***Solution***
+```
+In [3]: full_name = first_name + ' ' + last_name
+In [4]: print(full_name)
+Out[4]: 'PaulWilson'
+```
 
-
-* * * *
-##The python CSV Module
-
-**Short Exercise**
-
-Think of a task in your own work where you might use python. List 4 
-quantities that would be represented by variables and suggest 
-meaningful variable names for them.
-
-***Solution***
-
-* * * *
-##Data Operations
-
-**Short Exercise**
-
-***Solution***
 
 * * * *
 ## Lists
