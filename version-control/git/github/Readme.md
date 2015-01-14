@@ -44,20 +44,15 @@ you want an
 
 ## git remote : Steps for Forking a Repository
 
+From [Github](https://github.com/octocat/Spoon-Knife):
 
-<!--  Define forking if this is the first mention of it.
-For example from https://help.github.com/articles/fork-a-repo/
-
-A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
-
-or 
-
-From https://github.com/octocat/Spoon-Knife
-
-Creating a fork is producing a personal copy of someone else's project. A fork acts as a bridge between the original repository and your personal copy. You can submit Pull Requests to help make other people's projects better by offering your changes to the original project. Forking is at the core of social coding at GitHub.
-
--->
-
+--
+> Creating a fork is producing a personal copy of someone else's project. A fork
+acts as a bridge between the original repository and your personal copy. You can
+submit Pull Requests to help make other people's projects better by offering
+your changes to the original project. Forking is at the core of social coding at
+GitHub.
+--
 
 A key step to interacting with an online repository that you have forked
 is adding the original as a remote repository. 
