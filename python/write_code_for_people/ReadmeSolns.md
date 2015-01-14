@@ -51,7 +51,8 @@ meaningful variable names for them.
    * returns a list containing the first value
    * returns a list containing the first value
    
-```In [7]: voltage_list[0:0]
+```
+In [7]: voltage_list[0:0]
 Out[7]: []
 
 In [8]: voltage_list[0:1]
