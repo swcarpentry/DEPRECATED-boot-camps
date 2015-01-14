@@ -47,6 +47,13 @@ The code should paste and execute in iPython.
 If you also type %autocall to turn autocall OFF, you may be able to
 paste with <kbd>Ctrl</kbd>+<kbd>v</kbd> though this won't work with all iPython builds.
 
+
+Using Multiple Windows
+======================
+
+Another helpful strategy will be to paste this content into a separate file and then run that file.  It is generally easiest to do this with [multiple terminal windows](../dont_repeat_yourself/using_multiple_windows.md).
+
+
 For Loops
 =========
 

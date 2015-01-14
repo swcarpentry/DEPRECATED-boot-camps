@@ -29,7 +29,7 @@ Hello World
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line:
 
 ```
-frodgers@acibootcamp ~ $ python ~/boot-camps/python/best_practice/hello.py 
+frodgers@acibootcamp ~ $ python ~/boot-camps/python/ipython/hello.py 
 hello world
 ```
 
@@ -90,7 +90,7 @@ hit the <kbd>tab</kbd> key. What if you type "pri" followed by <kbd>tab</kbd>?
 iPython has some nice help features.
 
 If you wanted to see all the built-in commands available for something, use
-the dir command.
+the `dir` command.
 
 ```
 In [2]: dir(__builtin__)
@@ -128,7 +128,7 @@ In [2]: dir(__builtin__)
  'zip']
 ```
 
-str is the python name for strings.
+`str` is the python name for strings.
 Let's say we want to know what you can do with strings in python. We can type dir(str)
 
 ```
@@ -174,7 +174,7 @@ In [6]: dir(str)
 ```
 
 Let's look up what some of these functions do.
-? displays more information about each datatype/ function. Let's try str.swapcase?.
+`?` displays more information about each datatype/ function. Let's try `str.swapcase?`.
 
 ```
 In [7]: str.swapcase?
@@ -206,7 +206,7 @@ Can you find with help of the ? which function turns "Hello world" into "HELLO W
 If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so:
 
 ```
-In [9] %run ~/boot-camps/python/best_practice/hello.py
+In [9] %run ~/boot-camps/python/ipython/hello.py
 ```
 
 ### Clearing iPython

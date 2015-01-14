@@ -31,8 +31,11 @@ command-line or interpreter where you will run the script.
 1. Open two terminal windows
 2. Arrange them on the screen so that one takes the left half and the other
    takes the right half of your screen.
-3. Open a text editor in one terminal
-4. Open the iPython interpreter in the other terminal
+3. In both terminals, navigate to `~/boot-camps/python`
+4. Open a text editor (`nano`) in one terminal
+5. Open the iPython interpreter in the other terminal
+6. In the text editor, type a single line: `print "Hello World!"` and save it as `window1.py`
+7. In the iPython interpreter, type `%run window1.py`
 
 **Bonus:** In most operating systems there is a quick way to switch between
   these two windows using the keyboard.  <kbd>Alt</kbd>+<kbd>Tab</kbd> works
