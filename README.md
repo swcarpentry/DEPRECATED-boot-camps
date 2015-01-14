@@ -62,8 +62,8 @@ Day 2
 | ------------ | --------------------------------------- |--------------|
 | 9:00-10:30   | [Write Code for People I](python/write_code_for_people/Readme.md) | Paul Wilson |
 | 10:30-10:45    | Break                                   |              |
-| 10:45-11:45    | [Write Code for People II](python/best_practice/Readme.md) | Paul Wilson |
-| 11:45-12:30    | [Don't Repeat Yourself (or Others)](python/best_practice/dont_repeat_yourself.md) | Danielle Nielsen |
+| 10:45-11:45    | [Don't Repeat Yourself (or Others) I](python/dont_repeat_yourself/Readme.md) | Paul Wilson |
+| 11:45-12:30    | [Don't Repeat Yourself (or Others) II](python/dont_repeat_yourself/Readme.md) | Danielle Nielsen |
 
 Day 3
 =======
