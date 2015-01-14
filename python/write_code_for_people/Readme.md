@@ -700,4 +700,10 @@ Remember that we discussed these compound data types because the choice of data 
 We learned some basics of python and saw that variable type, name, comments and white space affect more than just code functionality, they affect the readability for others and your future self.
 Variable names can make a huge difference in code readability and types are important in conveying intent. 
 
+* * * * 
+
+Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)
+
+----
+
 [Up To Schedule](../../README.md) - Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) - Forward To [Don't Repeat Yourself](../dont_repeat_yourself/Readme.md)
