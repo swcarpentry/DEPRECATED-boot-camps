@@ -1,5 +1,11 @@
 # git/GitHub
 
+<!-- 
+
+These notes are known to be out of date with the current ACI workflow.
+
+-->
+
 The goal of this lesson is to introduce the students to [git][] via
 collaboration on [GitHub][].
 
@@ -44,7 +50,6 @@ stand-in if you have nowhere to draw.*
 ## Basics
 
 ### Local Basics
-
 **IMPORTANT:** Make sure you tell people *not* to make their own local changes,
 that will make things really complicated later when people pull. Alternatively,
 you can go ahead and let them do whatever they like and use it as a teaching

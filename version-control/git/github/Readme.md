@@ -44,17 +44,26 @@ you want an
 
 ## git remote : Steps for Forking a Repository
 
-A key step to interacting with an online repository that you have forked
-is adding the original as a remote repository. By adding the remote
-repository, you inform git of a new option for fetching updates and
-pushing commits.
+From [Github](https://github.com/octocat/Spoon-Knife):
 
-The **git remote** command allows you to add, name, rename, list, and
-delete repositories such as the original one **upstream** from your
-fork, others that may be **parallel** to your fork, and so on.
+> Creating a fork is producing a personal copy of someone else's project. A fork
+> acts as a bridge between the original repository and your personal copy. You can
+> submit Pull Requests to help make other people's projects better by offering
+> your changes to the original project. Forking is at the core of social coding at
+> GitHub.
+
+So, **forking** a repository on Github gives you a copy of that repository in
+your Github account. **cloning** a repository gives you a copy of that
+repository on your **local** machine. In order to connect your local copy and
+the versions on Github, we tell your local copy that they exist, via **git
+remote**.
+
+The **git remote** command allows you to add, name, rename, list, and delete
+repositories such as the original one **upstream** from your fork, others that
+may be **parallel** to your fork, and so on.
 
 We'll be continuing our testing exercises using GitHub as the online repository,
-so you'll need to start off by getting a copy of that repository to work on!
+so you'll need to start off by getting a copy of that repository to work on.
 
 ### Exercise : Fork Our GitHub Repository
 
@@ -96,14 +105,17 @@ Step 3 : Add a connection to the common repository :
     upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
     upstream        https://github.com/UW-Madison-ACI/simplestats (push)
 
-All repositories that are clones begin with a remote called `origin`.  The most
-common convention is clone from your own fork (`origin`) and add a remote to the
-common repository as `upstream`.
+### Remote Naming Conventions
+
+All repositories that are clones begin with a remote called `origin`, by
+default.  The most common convention is clone from your own fork (`origin`). If
+your fork is based on someone else's project (e.g., your research group's), you
+should then add that repository as a remote named `upstream`.
 
 ## git fetch : Fetching the contents of a remote
 
-Now that you have alerted your repository to the presence of others, it
-is able to pull in updates from those repositories. In this case, if you
+Now that you have connected your repository to the "upstream" original, it
+is able to pull in updates from that repository. In this case, if you
 want your master branch to track updates in the original simplestats
 repository, you simply **git fetch** that repository into the master
 branch of your current repository.
@@ -172,7 +184,7 @@ update your fork. Let's say that you come in and sit down in the morning, you've
 gotten your coffee (or tea) and you're ready to get started. However, someone
 from your research group has added something to the project you're working on,
 and you need to add it into your work to keep up to date. I'll add a comment,
-then let's get started!
+then let's get started.
 
 Step 1 : Fetch the recent remote repository history
 
