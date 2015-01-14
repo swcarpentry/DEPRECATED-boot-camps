@@ -248,7 +248,8 @@ import csv
 csv_writer = csv.DictWriter(sys.stdout, delimiter=',', fieldnames=column_labels)
 
 csv_writer.writeheader()
-csv_writer.writerows(all_data)
+for data_record in all_data:
+    csv_writer.writerow(data_record)
 ```
 
 ![Exercise](pics/exercise.jpg) **Try it now!**
