@@ -46,12 +46,12 @@ you want an
 
 From [Github](https://github.com/octocat/Spoon-Knife):
 
---
-> Creating a fork is producing a personal copy of someone else's project. A fork
-acts as a bridge between the original repository and your personal copy. You can
-submit Pull Requests to help make other people's projects better by offering
-your changes to the original project. Forking is at the core of social coding at
-GitHub.
+-- 
+> Creating a fork is producing a personal copy of someone else's project. A
+fork acts as a bridge between the original repository and your personal
+copy. You can submit Pull Requests to help make other people's projects better
+by offering your changes to the original project. Forking is at the core of
+social coding at GitHub.  
 --
 
 A key step to interacting with an online repository that you have forked
