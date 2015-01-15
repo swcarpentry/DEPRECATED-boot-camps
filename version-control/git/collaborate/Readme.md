@@ -17,6 +17,12 @@ Let's start off by relocating back to the original simplestats repository.
 
     $ cd ~/simplestats
 
+Like good SWC followers, we'll be working in a branch, called `median`.
+
+    $ git fetch upstream
+    $ git checkout median
+    $ git push origin median
+
 ### Exercise : Get set up
 
 Step 1 : Group up in pairs
@@ -46,20 +52,6 @@ and Alpha would type
     beta            https://github.com/beta/simplestats (push)
     $ git fetch beta
 
-Let's say that Beta is interested in adding a feature to the code that Beta and
-Alpha are working on. Let's look at a `median()` function.
-
-```python
-def median(vals):
-    vals.sort()
-    length = len(vals)
-    index = length / 2
-    if length % 2 == 0:
-       return mean([vals[index], vals[index - 1]])
-    else:
-       return vals[index]
-```
-
 ## Pull Requests : Sending Your Collaborators an Update 
 
 From GitHub's [website](https://help.github.com/articles/using-pull-requests), a
@@ -73,31 +65,34 @@ discuss potential modifications, and even push follow-up commits if necessary.
 
 For Beta:
 
-Step 1 : Start a new feature branch, named median (you could do this in single
-```git checkout -b median``` command)
+Step 1 : Modify the stats.py module to add the median function (shown below).
 
-    $ git branch median
-    $ git checkout median
+```python
+def median(vals):
+    vals.sort()
+    length = len(vals)
+    index = length / 2
+    if length % 2 == 0:
+       return mean([vals[index], vals[index - 1]])
+    else:
+       return vals[index]
+```
 
-Step 2 : Modify the stats.py module to add the median function (and maybe a test
-if you're feeling up to it!). Add your ``median()`` function between the
-``mean()`` and ``mode()`` functions.
-
-Step 3 : Commit your changes
+Step 2 : Commit your changes
 
     $ git add stats.py
     $ git commit -m "I added a median function!"
 
-Step 4 : Update your remote
+Step 3 : Update your remote
 
     $ git push origin median
 
-Step 5 : Issue a Pull Request
+Step 4 : Issue a Pull Request to Alpha's `median` branch
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as **alpha/simplestats**, the base as **master**, the 
-    head fork as **beta/simplestats**, and the compare as **median**
+  - choose the base fork as **alpha/simplestats**, the base branch as **median**, the 
+    head fork as **beta/simplestats**, and the compare branch as **median**
   - write a descriptive message and send it off!
 
 For Alpha:
@@ -113,17 +108,9 @@ Step 2 : Merge the pull request using the merge button
 Step 3 : Update your local repository.  At this point, all the changes exist
 **only** on the remote repository.
 
-    $ git checkout master 
+    $ git checkout median 
     $ git fetch origin
-    $ git rebase origin/master
-
-For Beta:
-
-Step 5 : Update your local repository
-
-    $ git checkout master 
-    $ git fetch alpha
-    $ git rebase alpha/master
+    $ git merge origin/median
 
 ### Exercise : Swap Roles
 
