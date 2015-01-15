@@ -220,7 +220,7 @@ your own `origin`, the general, best-practice workflow is as follows:
 
     $ git checkout master 
     $ git fetch upstream         # get upstream updates to your machine
-    $ git merge upstream master  # get your local master branch up-to-date
+    $ git merge upstream/master  # get your local master branch up-to-date
     $ git push origin master     # get your remote master branch up-to-date
     $ git checkout feature      
     $ git rebase upstream/master # put all your feature commits *on top* of the updates
