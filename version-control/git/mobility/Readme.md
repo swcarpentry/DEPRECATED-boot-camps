@@ -42,8 +42,8 @@ Let's start by making a laptop and work directory.
 
 ### Setting Up the "Work" Repository
 
-Ok, so now we have an (empty) bare repository. Let's clone it on our "work
-computer"! You'll find the repository is named properly.
+Let's clone it on our "work computer". You'll find the repository is named
+properly.
 
     $ cd ~/work
     $ git clone https://github.com/YOU/simplestats.git
@@ -60,12 +60,12 @@ gander at that remote.
     origin  https://github.com/YOU/simplestats.git (fetch)
     origin  https://github.com/YOU/simplestats.git (push)
 
-Let's do some work in a branch,
+Let's do some work in a branch.
 
     $ git branch report
     $ git checkout report
 
-Go ahead an add a file and commit it,
+Go ahead an add a file and commit it.
 
     $ touch report.tex
     $ git add report.tex
@@ -93,7 +93,7 @@ Let's investigate what's inside.
     $ ls -a
     .  ..  .git  README.md  report.tex stats.py  test_stats.py
 
-Ok, awesome! We were able to checkout the updated version of the repository.
+Ok, awesome, we were able to checkout the updated version of the repository.
 
 Let's try making one set of changes. We'll add some content to the report
 
@@ -102,7 +102,7 @@ Let's try making one set of changes. We'll add some content to the report
     $ git commit -m "added some content to the report"
     $ git push origin report
 
-So now the home machine is synced against the repository that's on the
+So now the home machine is synced with the repository that's on the
 server. Any time you're doing work, as long as you **commit and push** the work
 you're doing, it will be available to you anywhere you have access to the
 internet. In fact, you don't even **need** access to the internet. Once your
@@ -117,28 +117,29 @@ repository.
     $ tail report.tex
     this is one fancy report
 
-Perfect! Work and laptop are synced again!
+Work and laptop are synced again!
+
+#### Aside: Version-Control Best Practices
 
 At this point, you're fully set up to work in a best-practice, version-control
-work flow. Experience shows that its best to work in branches to make sure the
-master branch stays up-to-date with your server's (origin's) master
-branch. This stuff may not be intuitive when you're first starting out, though,
-so just play around and get used to the general work flow for now. You'll get
-better at it over time.
+work flow. Experience shows that it's best to work in branches (i.e., other than
+master) to make sure the master branch stays up-to-date with your server's
+(origin's) master branch. This stuff may not be intuitive when you're first
+starting out, though, so just play around and get used to the general work flow
+for now. You'll get better at it over time.
 
 #### Aside: Latex and the Limits of the Version Control Workflow
 
 Have you ever struggled with formatting Word's equations, chapters,
 bibliography, etc.? [Latex](http://www.latex-project.org/) works wonders with
-that. Here's a great graph taken from John Cook's
-[website](http://www.johndcook.com/blog/2008/04/03/microsoft-word-and-latex/)
-that explains the difference.
+that. Here's a great graph taken from Marko Pinteric's
+[website](http://www.pinteric.com/miktex.html) that explains the difference.
 
 ![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
 
 With the advent of Google Drive, it's often as easy to use that tool if a
 document is simple enough, i.e., on the left side of the curve (where Word is
-easier than Latex). Note that Google Docs is version controlled as well!
+easier than Latex). Note that Google Docs is version controlled as well.
 
 Furthermore, simply **imagine** having to write something as complicated as a
 prelim or thesis using Word. You'd spend as much time formatting the thing as
@@ -146,13 +147,13 @@ you do actually writing the content. In other words, it's worth the (smallish)
 headache of getting used to Latex in order to use it for bigger
 documents. There's even a [Wisconsin Thesis
 Template](https://github.com/willb/wi-thesis-template)! That's right, you'd have
-to do **0** work to correctly format your thesis. How ridiculous is that!
+to do **0** work to correctly format your thesis. 
 
 Finally, and this is pure aesthetics, Latex looks **good**. Have you ever read a
 paper and thought "wow, those equations look great"? It's likely written in
 Latex. Plus, once you write your first paper, you have all the infrastructure to
 write the next one. You can literally copy the files into a different directory
-and rewrite content. Super simple!
+and rewrite content. Super simple.
 
 Latex works great with the workflow described here because it's text-based. You
 are literally altering text files, so there's **nothing else** going on behind
@@ -189,15 +190,13 @@ this, and you can safely ignore it.
 A bare repository is meant to simply **store** your files. It actually stores
 the contents of the .git directory that you see in all normal repositories. It's
 generally not meant to be touched by a human's hands, and is designed to
-communicate through git with other non-bare repositories. 
-
-In fact, when you initialize a new repository on GitHub, GitHub's version is a
-bare repository! 
+communicate through git with other non-bare repositories. In fact, when you
+initialize a new repository on GitHub, GitHub's version is a bare repository.
 
 Why use a bare repository? The answer is that non-bare repositories don't always
 play nice together, and it turns out it helps to have a single, base repository
 that's "always right". You can get a more detailed answer
-[here](http://gitolite.com/concepts/bare.html).
+[here](http://www.gitguys.com/topics/shared-repositories-should-be-bare-repositories/).
 
 #### More than One Way to Clone
 
