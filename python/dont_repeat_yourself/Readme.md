@@ -856,10 +856,15 @@ def transcribe(seq):
 Check your work:
 
 ```python
-transcribe('ATGC') == 'UACG'
+print transcribe('ATGC') == 'UACG'
 
-transcribe('ATGCAGTCAGTGCAGTCAGT') == 'UACGUCAGUCACGUCAGUCA'
+print transcribe('ATGCAGTCAGTGCAGTCAGT') == 'UACGUCAGUCACGUCAGUCA'
 ```
 
+* * * * 
+
+Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)
+
+----
 
 [Up To Schedule](../../README.md) - Back To [Write Code for People](../writing_code_for_people/Readme.md) - Forward to [Make Incremental Changes](../../version-control/git/local/Readme.md)
