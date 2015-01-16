@@ -17,7 +17,11 @@ Let's start off by relocating back to the original simplestats repository.
 
     $ cd ~/simplestats
 
-Like good SWC followers, we'll be working in a branch, called `median`.
+To put this in more realistic terms, imagine that the upstream branch
+(UW-Madison-ACI) is managed by your PI and the alpha and beta branches are
+students working on a project, tasked with implementing some stats
+functions. Like good SWC followers, we'll be working in a branch, called
+`median`.
 
     $ git fetch upstream
     $ git checkout median
@@ -176,18 +180,12 @@ Step 5 : Update your local repository
 
 This is the trickiest part of version control, so let's take it very carefully.
 
-Remember that there are actually three remotes that have a relationship in this
-example: upstream, alpha, and beta. To put this in more realistic terms, imagine
-that the upstream branch is managed by your PI or another manager and the alpha
-and beta branches are students working on a project. All of you have a copy of
-stats.py, but Alpha and Beta have made changes to that file in sync with each
-other. What happens if the PI (upstream) also makes changes on the same lines? A
-dreaded conflict...
-
-Now, I'll assume the roll of PI. Let's say that I know there's a series of
-functions we want to add to our simplestats module. Instead of waiting around
-for my grad students to finish their work, I've chosen to add some basic
-function signatures, e.g., 
+Alpha and Beta have made changes to that file in sync with each other. What
+happens if the PI (upstream) also makes changes on the same lines? A dreaded
+conflict... Now, I'll assume the roll of PI. Let's say that I know there's a
+series of functions we want to add to our simplestats module. Instead of waiting
+around for my grad students to finish their work, I've chosen to add some basic
+function signatures, e.g.,
 
 ```python
 def median(vals):
