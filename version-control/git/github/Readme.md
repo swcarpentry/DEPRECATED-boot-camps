@@ -141,7 +141,44 @@ To explore the actual changes:
     $ git diff upstream/master
 
 
-## git rebase vs git merge: Insert changes that have happened on the remote
+## git pull : Pull = Fetch + Merge
+
+The command **git pull** is the same as executing **git fetch** followed
+by **git merge**. Though it is not recommend for cases in which there
+are many branches to consider, the pull command is shorter and simpler
+than fetching and merging as it automates the branch matching.
+Specifically, to perform the same task as we did in the previous
+exercise, the pull command would be :
+
+    $ git pull origin
+    Already up-to-date.
+
+When there have been remote changes, the pull will apply those changes
+to your local branch, unless there are conflicts with your local
+changes.
+
+## git push : Sending Your Commits to Remote Repositories
+
+The **git push** command pushes commits in a local working copy to a
+remote repository. The syntax is git push [remote] [local branch].
+Before pushing, a developer should always pull (or fetch + merge), so
+that there is an opportunity to resolve conflicts before pushing to the
+remote. 
+
+## Exercise: Update your remote to an upstream change
+
+Assume that your lab group collectively works on a project (like `simplestats`),
+and someone has updated the `master` branch (we can simulate that by a helper
+doing an update -- helpers?).
+
+It is now your job to: 
+
+* get the upstream changes
+* check what files have changed and how
+* apply them to your local repository
+* apply them to your fork
+
+## Aside: git rebase vs git merge
 
 To incorporate upstream changes from the original master repository (in this
 case UW-Madison-ACI/simplestats) into your local working copy, you must do
@@ -177,61 +214,17 @@ The process of rebasing/merging may result in conflicts, so pay
 attention. This is where version control is both at its most powerful and its
 most complicated.
 
-### Exercise : Fetch and Rebase the Contents of Our GitHub Repository
+Assuming that you have a `master` branch that you are keeping in-sync with an
+`upstream` remote and a `feature` branch that you are keeping up-to-date with
+your own `origin`, the general, best-practice workflow is as follows:
 
-This exercise is meant to represent the general work flow you should use to
-update your fork. Let's say that you come in and sit down in the morning, you've
-gotten your coffee (or tea) and you're ready to get started. However, someone
-from your research group has added something to the project you're working on,
-and you need to add it into your work to keep up to date. I'll add a comment,
-then let's get started.
-
-Step 1 : Fetch the recent remote repository history
-
-    $ git fetch upstream
-
-Step 2 : Merge the master branch
-
-    $ git checkout master
-    $ git rebase upstream/master
-
-Step 3 : Check out what happened by browsing the directory.
-
-## git pull : Pull = Fetch + Merge
-
-The command **git pull** is the same as executing **git fetch** followed
-by **git merge**. Though it is not recommend for cases in which there
-are many branches to consider, the pull command is shorter and simpler
-than fetching and merging as it automates the branch matching.
-Specifically, to perform the same task as we did in the previous
-exercise, the pull command would be :
-
-    $ git pull origin
-    Already up-to-date.
-
-When there have been remote changes, the pull will apply those changes
-to your local branch, unless there are conflicts with your local
-changes.
-
-## git push : Sending Your Commits to Remote Repositories
-
-The **git push** command pushes commits in a local working copy to a
-remote repository. The syntax is git push [remote] [local branch].
-Before pushing, a developer should always pull (or fetch + merge), so
-that there is an opportunity to resolve conflicts before pushing to the
-remote. 
-
-## Exercise: Update your remote to an upstream change
-
-Assume that your lab group collectively works on a project (like `simplestats`),
-and someone has updated the `master` branch (we can simulate that by a helper
-doing an update -- helpers?).
-
-It is now your job to: 
-
-* get the upstream changes
-* apply them to your local repository
-* apply them to your fork
+    $ git checkout master 
+    $ git fetch upstream         # get upstream updates to your machine
+    $ git merge upstream/master  # get your local master branch up-to-date
+    $ git push origin master     # get your remote master branch up-to-date
+    $ git checkout feature      
+    $ git rebase upstream/master # put all your feature commits *on top* of the updates
+    $ git push -f origin master  # forcibly update your remote feature branch
 
 ----
 
