@@ -168,62 +168,47 @@ This is the trickiest part of version control, so let's take it very carefully.
 
 Alpha and Beta have made changes to that file in sync with each other. What
 happens if the PI (upstream) also makes changes on the same lines? A dreaded
-conflict... Now, I'll assume the roll of PI. Let's say that I know there's a
-series of functions we want to add to our simplestats module. Instead of waiting
-around for my grad students to finish their work, I've chosen to add some basic
-function signatures, e.g.,
+conflict... 
 
-```python
-def median(vals):
-    pass
-```
-
-I'll add this to stats.py and push it to the upstream repository. Sadly,
-this addition overlaps with your recent median addition. It is standard in using
-version control for the person or group who is working on the *feature* to
-remain up-to-date with the upstream branch. With git, this is easy to do (and is
-one of its strengths vs. centralized version control systems like SVN).
+Now, I will assume the roll of PI.  Instead of waiting around for my grad
+students to finish their work, let's say that I decided to take my own stab at
+the median function (implemented poorly..). I'll add something to stats.py and
+push it to the upstream repository. Sadly, this addition overlaps with your
+recent median addition.
 
 ### Exercise : Experience a Conflict
 
 Step 1 : Experience the Conflict
 
     $ git fetch upstream
-    $ git rebase upstream/master
-    First, rewinding head to replay your work on top of it...
-    Applying: added a conflicting change
-    Using index info to reconstruct a base tree...
-    M	stats.py
-    Falling back to patching base and 3-way merge...
-    Auto-merging stats.py
+    $ git merge upstream/median
+    remote: Counting objects: 2, done.
+    remote: Total 2 (delta 0), reused 0 (delta 0)
+    Unpacking objects: 100% (2/2), done.
+    From git@github.com:UW-Madison-ACI
+    d063879..90fbb5e  median     -> upstream/median
+    Auto-merging stats.py	     
     CONFLICT (content): Merge conflict in stats.py
-    Failed to merge in the changes.
-    Patch failed at 0001 added a conflicting change
-    The copy of the patch that failed is found in:
-       /home/YOU/simplestats/.git/rebase-apply/patch
-
-    When you have resolved this problem, run "git rebase --continue".
-    If you prefer to skip this patch, run "git rebase --skip" instead.
-    To check out the original branch and stop rebasing, run "git rebase --abort".
-
+    Automatic merge failed; fix conflicts and then commit the result.
+    
 ## Resolving Conflicts
 
 Now what?
 
-Git has paused the rebase. You can see this with the ``git status`` command.
+Git has paused the merge. You can see this with the ``git status`` command.
+    
+    On branch median
+    Your branch and 'upstream/median' have diverged,
+    and have 1 and 1 different commit each, respectively.
+    (use "git pull" to merge the remote branch into yours)
 
-    # HEAD detached at c23f1e4
-    # You are currently rebasing branch 'test_change2' on 'c23f1e4'.
-    #   (fix conflicts and then run "git rebase --continue")
-    #   (use "git rebase --skip" to skip this patch)
-    #   (use "git rebase --abort" to check out the original branch)
-    #
-    # Unmerged paths:
-    #   (use "git reset HEAD <file>..." to unstage)
-    #   (use "git add <file>..." to mark resolution)
-    #
-    #	both modified:      stats.py
-    no changes added to commit (use "git add" and/or "git commit -a")
+    You have unmerged paths.
+    (fix conflicts and run "git commit")
+
+    Unmerged paths:
+    (use "git add <file>..." to mark resolution)
+
+    both modified:      stats.py
 
 If you open your stats.py file, you'll notice that git has added some strange
 characters to it. Specifically, you'll see something like:
@@ -235,8 +220,7 @@ characters to it. Specifically, you'll see something like:
     >>>>>>> upstream:stats.py
 
 Now, your job is to determine how the code *should* look. For this example, that
-means you should replace the PI's ```median``` function with yours, and keep the
-PI's ```median``` placeholder below it.
+means you should replace the PI's ```median``` function with yours.
 
 ### Exercise : Resolve a Conflict
 
@@ -247,7 +231,7 @@ PI's changes included.
 Step 2 : Add the updated version and commit
 
     $ git add stats.py
-    $ git rebase --continue
+    $ git commit -m "Updated from PI's commit"
 
 ## A GitHub Tour
 
