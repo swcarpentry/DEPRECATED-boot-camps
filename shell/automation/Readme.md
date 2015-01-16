@@ -322,7 +322,7 @@ function as the `smallest` script that we made earlier.  If you enter:
 you will have created a new command `my_smallest` that will be
 available in any directory.
 
-Want to know how to make *color* your terminal? (The below works for 
+Want to know how to *color* your `ls` output? (The below works for 
 Windows Git Bash, Mac, and *most* 'flavors' of Linux, but you can also 
 search online for other color options pertaining to your computer's 
 operating system and shell type.)
