@@ -17,6 +17,16 @@ Let's start off by relocating back to the original simplestats repository.
 
     $ cd ~/simplestats
 
+To put this in more realistic terms, imagine that the upstream repository
+(UW-Madison-ACI) is managed by your PI and the alpha and beta forks are students
+working on a project, tasked with implementing some stats functions. Like good
+SWC followers, we'll be working in a branch, called `median`, which I will now
+create. Once I have, update your local copies and remotes:
+
+    $ git fetch upstream
+    $ git checkout median
+    $ git push origin median
+
 ### Exercise : Get set up
 
 Step 1 : Group up in pairs
@@ -46,20 +56,6 @@ and Alpha would type
     beta            https://github.com/beta/simplestats (push)
     $ git fetch beta
 
-Let's say that Beta is interested in adding a feature to the code that Beta and
-Alpha are working on. Let's look at a `median()` function.
-
-```python
-def median(vals):
-    vals.sort()
-    length = len(vals)
-    index = length / 2
-    if length % 2 == 0:
-       return mean([vals[index], vals[index - 1]])
-    else:
-       return vals[index]
-```
-
 ## Pull Requests : Sending Your Collaborators an Update 
 
 From GitHub's [website](https://help.github.com/articles/using-pull-requests), a
@@ -73,32 +69,35 @@ discuss potential modifications, and even push follow-up commits if necessary.
 
 For Beta:
 
-Step 1 : Start a new feature branch, named median (you could do this in single
-```git checkout -b median``` command)
+Step 1 : Modify the stats.py module to add the median function (shown below).
 
-    $ git branch median
-    $ git checkout median
+```python
+def median(vals):
+    vals.sort()
+    z = len(vals)
+    index = z / 2
+    if z % 2 == 0:
+       return mean([vals[index], vals[index - 1]])
+    else:
+       return vals[index]
+```
 
-Step 2 : Modify the stats.py module to add the median function (and maybe a test
-if you're feeling up to it!). Add your ``median()`` function between the
-``mean()`` and ``mode()`` functions.
-
-Step 3 : Commit your changes
+Step 2 : Commit your changes
 
     $ git add stats.py
-    $ git commit -m "I added a median function!"
+    $ git commit -m "I added a median function."
 
-Step 4 : Update your remote
+Step 3 : Update your remote
 
     $ git push origin median
 
-Step 5 : Issue a Pull Request
+Step 4 : Issue a Pull Request to Alpha's `median` branch
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as **alpha/simplestats**, the base as **master**, the 
-    head fork as **beta/simplestats**, and the compare as **median**
-  - write a descriptive message and send it off!
+  - choose the base fork as **alpha/simplestats**, the base branch as **median**, the 
+    head fork as **beta/simplestats**, and the compare branch as **median**
+  - write a descriptive message and send it off.
 
 For Alpha:
 
@@ -106,24 +105,16 @@ Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Beta can always 
-    update their version of commits during a pull request!
+    update their version of commits during a pull request.
 
 Step 2 : Merge the pull request using the merge button
 
 Step 3 : Update your local repository.  At this point, all the changes exist
 **only** on the remote repository.
 
-    $ git checkout master 
+    $ git checkout median 
     $ git fetch origin
-    $ git rebase origin/master
-
-For Beta:
-
-Step 5 : Update your local repository
-
-    $ git checkout master 
-    $ git fetch alpha
-    $ git rebase alpha/master
+    $ git merge origin/median
 
 ### Exercise : Swap Roles
 
@@ -133,33 +124,27 @@ add some tests to the median function.
 
 For Alpha:
 
-Step 1 : Start a new feature branch, named median-tests (you could do this in
-single ```git checkout -b median-tests``` command)
-
-    $ git branch median-tests
-    $ git checkout median-tests
-
-Step 2 : Modify the test_stats.py module to add tests for the median
+Step 1 : Modify the test_stats.py module to add tests for the median
 function.
 
 Now continue the exercise as was done previously with roles swapped.
 
-Step 3 : Commit your changes
+Step 2 : Commit your changes
 
     $ git add test_stats.py
-    $ git commit -m "I added tests to the median function!"
+    $ git commit -m "I added tests to the median function."
 
-Step 4 : Update your remote
+Step 3 : Update your remote
 
-    $ git push origin median-tests
+    $ git push origin median
 
-Step 5 : Issue a Pull Request
+Step 4 : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as **beta/simplestats**, the base as **master**, the 
-    head fork as **alpha/simplestats**, and the compare as **median-tests**
-  - write a descriptive message and send it off!
+  - choose the base fork as **beta/simplestats**, the base as **median**, the 
+    head fork as **alpha/simplestats**, and the compare as **median**
+  - write a descriptive message and send it off.
 
 For Beta:
 
@@ -167,92 +152,63 @@ Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Alpha can always 
-    update their version of commits during a pull request!
+    update their version of commits during a pull request.
 
 Step 2 : Merge the pull request using the merge button
 
 Step 3 : Update your local repository
 
-    $ git checkout master 
+    $ git checkout median
     $ git fetch origin
-    $ git rebase origin/master
-
-For Alpha:
-
-Step 5 : Update your local repository
-
-    $ git checkout master 
-    $ git fetch beta
-    $ git rebase beta/master
+    $ git rebase origin/median
 
 ## git rebase/merge : Conflicts
 
 This is the trickiest part of version control, so let's take it very carefully.
 
-Remember that there are actually three remotes that have a relationship in this
-example: upstream, alpha, and beta. To put this in more realistic terms, imagine
-that the upstream branch is managed by your PI or another manager and the alpha
-and beta branches are students working on a project. All of you have a copy of
-stats.py, but Alpha and Beta have made changes to that file in sync with each
-other. What happens if the PI (upstream) also makes changes on the same lines? A
-dreaded conflict...
+Alpha and Beta have made changes to that file in sync with each other. What
+happens if the PI (upstream) also makes changes on the same lines? A dreaded
+conflict... 
 
-Now, I'll assume the roll of PI. Let's say that I know there's a series of
-functions we want to add to our simplestats module. Instead of waiting around
-for my grad students to finish their work, I've chosen to add some basic
-function signatures, e.g., 
-
-```python
-def median(vals):
-    pass
-```
-
-I'll add this to stats.py and push it to the upstream repository. Sadly,
-this addition overlaps with your recent median addition. It is standard in using
-version control for the person or group who is working on the *feature* to
-remain up-to-date with the upstream branch. With git, this is easy to do (and is
-one of its strengths vs. centralized version control systems like SVN).
+Now, I will assume the roll of PI.  Instead of waiting around for my grad
+students to finish their work, let's say that I decided to take my own stab at
+the median function (implemented poorly..). I'll add something to stats.py and
+push it to the upstream repository. Sadly, this addition overlaps with your
+recent median addition.
 
 ### Exercise : Experience a Conflict
 
 Step 1 : Experience the Conflict
 
     $ git fetch upstream
-    $ git rebase upstream/master
-    First, rewinding head to replay your work on top of it...
-    Applying: added a conflicting change
-    Using index info to reconstruct a base tree...
-    M	stats.py
-    Falling back to patching base and 3-way merge...
-    Auto-merging stats.py
+    $ git merge upstream/median
+    remote: Counting objects: 2, done.
+    remote: Total 2 (delta 0), reused 0 (delta 0)
+    Unpacking objects: 100% (2/2), done.
+    From git@github.com:UW-Madison-ACI
+    d063879..90fbb5e  median     -> upstream/median
+    Auto-merging stats.py	     
     CONFLICT (content): Merge conflict in stats.py
-    Failed to merge in the changes.
-    Patch failed at 0001 added a conflicting change
-    The copy of the patch that failed is found in:
-       /home/YOU/simplestats/.git/rebase-apply/patch
-
-    When you have resolved this problem, run "git rebase --continue".
-    If you prefer to skip this patch, run "git rebase --skip" instead.
-    To check out the original branch and stop rebasing, run "git rebase --abort".
-
+    Automatic merge failed; fix conflicts and then commit the result.
+    
 ## Resolving Conflicts
 
 Now what?
 
-Git has paused the rebase. You can see this with the ``git status`` command.
+Git has paused the merge. You can see this with the ``git status`` command.
+    
+    On branch median
+    Your branch and 'upstream/median' have diverged,
+    and have 1 and 1 different commit each, respectively.
+    (use "git pull" to merge the remote branch into yours)
 
-    # HEAD detached at c23f1e4
-    # You are currently rebasing branch 'test_change2' on 'c23f1e4'.
-    #   (fix conflicts and then run "git rebase --continue")
-    #   (use "git rebase --skip" to skip this patch)
-    #   (use "git rebase --abort" to check out the original branch)
-    #
-    # Unmerged paths:
-    #   (use "git reset HEAD <file>..." to unstage)
-    #   (use "git add <file>..." to mark resolution)
-    #
-    #	both modified:      stats.py
-    no changes added to commit (use "git add" and/or "git commit -a")
+    You have unmerged paths.
+    (fix conflicts and run "git commit")
+
+    Unmerged paths:
+    (use "git add <file>..." to mark resolution)
+
+    both modified:      stats.py
 
 If you open your stats.py file, you'll notice that git has added some strange
 characters to it. Specifically, you'll see something like:
@@ -264,8 +220,7 @@ characters to it. Specifically, you'll see something like:
     >>>>>>> upstream:stats.py
 
 Now, your job is to determine how the code *should* look. For this example, that
-means you should replace the PI's ```median``` function with yours, and keep the
-PI's ```median``` placeholder below it.
+means you should replace the PI's ```median``` function with yours.
 
 ### Exercise : Resolve a Conflict
 
@@ -276,7 +231,8 @@ PI's changes included.
 Step 2 : Add the updated version and commit
 
     $ git add stats.py
-    $ git rebase --continue
+    $ git commit -m "Updated from PI's commit"
+    $ git push origin median
 
 ## A GitHub Tour
 
