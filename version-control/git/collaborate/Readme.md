@@ -74,9 +74,9 @@ Step 1 : Modify the stats.py module to add the median function (shown below).
 ```python
 def median(vals):
     vals.sort()
-    length = len(vals)
-    index = length / 2
-    if length % 2 == 0:
+    z = len(vals)
+    index = z / 2
+    if z % 2 == 0:
        return mean([vals[index], vals[index - 1]])
     else:
        return vals[index]
