@@ -232,6 +232,7 @@ Step 2 : Add the updated version and commit
 
     $ git add stats.py
     $ git commit -m "Updated from PI's commit"
+    $ git push origin median
 
 ## A GitHub Tour
 
