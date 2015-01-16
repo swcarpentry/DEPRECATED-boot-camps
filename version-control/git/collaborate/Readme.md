@@ -85,7 +85,7 @@ def median(vals):
 Step 2 : Commit your changes
 
     $ git add stats.py
-    $ git commit -m "I added a median function!"
+    $ git commit -m "I added a median function."
 
 Step 3 : Update your remote
 
@@ -97,7 +97,7 @@ Step 4 : Issue a Pull Request to Alpha's `median` branch
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
   - choose the base fork as **alpha/simplestats**, the base branch as **median**, the 
     head fork as **beta/simplestats**, and the compare branch as **median**
-  - write a descriptive message and send it off!
+  - write a descriptive message and send it off.
 
 For Alpha:
 
@@ -105,7 +105,7 @@ Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Beta can always 
-    update their version of commits during a pull request!
+    update their version of commits during a pull request.
 
 Step 2 : Merge the pull request using the merge button
 
@@ -138,7 +138,7 @@ Now continue the exercise as was done previously with roles swapped.
 Step 3 : Commit your changes
 
     $ git add test_stats.py
-    $ git commit -m "I added tests to the median function!"
+    $ git commit -m "I added tests to the median function."
 
 Step 4 : Update your remote
 
@@ -150,7 +150,7 @@ Step 5 : Issue a Pull Request
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
   - choose the base fork as **beta/simplestats**, the base as **master**, the 
     head fork as **alpha/simplestats**, and the compare as **median-tests**
-  - write a descriptive message and send it off!
+  - write a descriptive message and send it off.
 
 For Beta:
 
@@ -158,7 +158,7 @@ Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Alpha can always 
-    update their version of commits during a pull request!
+    update their version of commits during a pull request.
 
 Step 2 : Merge the pull request using the merge button
 
