@@ -79,8 +79,8 @@ Day 4
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 9:00-10:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Matt Gidden, Steve Goldstein |
-| 10:00-10:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden, Steve Goldstein |
+| 9:00-10:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Steve Goldstein |
+| 10:00-10:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden |
 | 10:30-10:45    | Break                                   |      	|
 | 10:45-12:00    | [Collaborate](version-control/git/collaborate/Readme.md) | Matt Gidden, Steve Goldstein |
 | 12:00-1:00    | Best Practices Summary and Discussion	 |   All	|
