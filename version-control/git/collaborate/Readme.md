@@ -17,11 +17,11 @@ Let's start off by relocating back to the original simplestats repository.
 
     $ cd ~/simplestats
 
-To put this in more realistic terms, imagine that the upstream branch
-(UW-Madison-ACI) is managed by your PI and the alpha and beta branches are
-students working on a project, tasked with implementing some stats
-functions. Like good SWC followers, we'll be working in a branch, called
-`median`.
+To put this in more realistic terms, imagine that the upstream repository
+(UW-Madison-ACI) is managed by your PI and the alpha and beta forks are students
+working on a project, tasked with implementing some stats functions. Like good
+SWC followers, we'll be working in a branch, called `median`, which I will now
+create. Once I have, update your local copies and remotes:
 
     $ git fetch upstream
     $ git checkout median
