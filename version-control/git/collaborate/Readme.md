@@ -160,9 +160,9 @@ Step 3 : Update your local repository
 
     $ git checkout median
     $ git fetch origin
-    $ git rebase origin/median
+    $ git merge origin/median
 
-## git rebase/merge : Conflicts
+## git merge : Conflicts
 
 This is the trickiest part of version control, so let's take it very carefully.
 
