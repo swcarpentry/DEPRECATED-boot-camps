@@ -124,32 +124,26 @@ add some tests to the median function.
 
 For Alpha:
 
-Step 1 : Start a new feature branch, named median-tests (you could do this in
-single ```git checkout -b median-tests``` command)
-
-    $ git branch median-tests
-    $ git checkout median-tests
-
-Step 2 : Modify the test_stats.py module to add tests for the median
+Step 1 : Modify the test_stats.py module to add tests for the median
 function.
 
 Now continue the exercise as was done previously with roles swapped.
 
-Step 3 : Commit your changes
+Step 2 : Commit your changes
 
     $ git add test_stats.py
     $ git commit -m "I added tests to the median function."
 
-Step 4 : Update your remote
+Step 3 : Update your remote
 
-    $ git push origin median-tests
+    $ git push origin median
 
-Step 5 : Issue a Pull Request
+Step 4 : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as **beta/simplestats**, the base as **master**, the 
-    head fork as **alpha/simplestats**, and the compare as **median-tests**
+  - choose the base fork as **beta/simplestats**, the base as **median**, the 
+    head fork as **alpha/simplestats**, and the compare as **median**
   - write a descriptive message and send it off.
 
 For Beta:
@@ -164,17 +158,9 @@ Step 2 : Merge the pull request using the merge button
 
 Step 3 : Update your local repository
 
-    $ git checkout master 
+    $ git checkout median
     $ git fetch origin
-    $ git rebase origin/master
-
-For Alpha:
-
-Step 5 : Update your local repository
-
-    $ git checkout master 
-    $ git fetch beta
-    $ git rebase beta/master
+    $ git rebase origin/median
 
 ## git rebase/merge : Conflicts
 
