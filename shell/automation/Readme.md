@@ -268,7 +268,8 @@ Some important variables you can expect to see:
 | HOME     | the full path to your home directory |
 | HOSTNAME | the name of this computer |
 | SHELL    | the full path to your current shell command |
-| USER     | your user name |
+| USER     | your user name (Linux, Mac) |
+| USERNAME | your user name (Windows) |
 
 You can use these variables in your commands.  For example, this is
 yet another way to go to your home directory:
@@ -277,8 +278,9 @@ yet another way to go to your home directory:
 
 You can also define your own variables.  If you are always needing to
 go to the same directory for your work, you could store it's path as a
-variable. Note that you can use one variable as part of the
-definition of another.  Change to your home directory and try:
+variable so that you don't have to type out (and remember!) the whole 
+path every time. Note that you can use one variable as part of the
+definition of another. For example, `cd` to your home directory and try:
 
     DATADIR="$HOME/boot-camps/shell/data"
     cd $DATADIR
@@ -297,31 +299,22 @@ and then update it to show a longer path relative to your home:
 
     PS1="[\u@\h \w]\$ "
 
-When you define a variable, it is only available in this current shell
-process.  If you spawn a new shell from this one, the variables will be
-back to the default set.  After changing your prompt, as above, start
-a new shell:
+An important note: When you define a variable on the command line, as 
+we did just above, it is only available in this current shell process. 
+If you later spawn a new shell from this one, or close this shell 
+and open a new one later, you won't have the changes you made in this 
+shell process. (Feel free to test this yourself by opening a second 
+shell process!)
 
-    bash
-
-and notice that the prompt is now the same as the original one.  Let's
-exit that shell and see how to keep those changes.
-
-    exit
-
-You can make variables available to processes that are spawned from
-this shell with the `export` command:
-
-    export PS1="[\u@\h \w]\$ "
-
-Now launch a new shell and confirm that the prompt has changed, and
-exit that shell again.
+Later, we'll cover one way to have the default variable values set to 
+something else (like our new value for PS1, above), whenever you open
+a new shell process on *this* computer.
 
 # Aliases
 
-Another way to avoid having to retype commands is to use an **alias**.
-Most shells allow you to define an alias so that it is available
-to use in that shell.  Let's define an alias to perform the same
+Another way to avoid having to retype paths and commands is to use an 
+**alias**. Most shells allow you to define an alias so that it is available
+to use in the current shell process.  Let's define an alias to perform the same
 function as the `smallest` script that we made earlier.  If you enter:
 
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
@@ -329,38 +322,45 @@ function as the `smallest` script that we made earlier.  If you enter:
 you will have created a new command `my_smallest` that will be
 available in any directory.
 
-Want to know how to make *color* your terminal?
+Want to know how to make *color* your terminal? (The below works for 
+Windows Git Bash, Mac, and *most* 'flavors' of Linux, but you can also 
+search online for other color options pertaining to your computer's 
+operating system and shell type.)
 
     alias ls='ls -G'
 
 # Startup Scripts
 
-Alas, none of those changes to variables or aliases will be there *when
-you logout and come back*.  Thankfully, we can turn to a script to make
-that happen.  The most common script is one that is already invoked every 
-time you login (if it already exists).  When using the bash shell it is 
-called the `.bashrc` file. 
+Alas, none of the changes to variables or aliases will be there *when
+you logout and come back*, as we described above.  Thankfully, we can 
+turn to a script to make that happen.  The most common script is one 
+that is already invoked every time you login (if it already exists). 
+When using the bash shell it is called the `.bashrc` file. 
 
 (On a Mac, it's called `.bash_profile`. Actually, the truth is a bit
 more complicated; see [this discussion](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html).)
 
 Go to your home directory and open the `.bashrc` file (on a Mac, use
-`.bash_profile`, which you'll have to create the first time):
+`.bash_profile`, which you'll have to create if it doesn't already exist):
 
     nano .bashrc
 
-At the end of this file, add the new variables and prompts that we
-defined above:
+At the end of this file, add any of the new variables and prompts that we
+defined above, if you WANT them on your computer.
 
     export DATADIR="$HOME/boot-camps/shell/data"
     export PS1="[\u@\h \w]\$ "
     alias my_smallest='wc * | sort -k 3 -n | head -n 1'
     alias ls='ls -G'
 
-After exiting the shell and then opening a new session, these variables 
-should be available to you in the future. Many 
-experienced users will gradually build up a long list of
-important variables and aliases for tasks they do frequently.
+After exiting the shell and then opening a new session, these variables
+should be available to you in the future. Many experienced users will 
+gradually build up a long list of important variables and aliases for 
+tasks they do frequently.
+
+You can *always* remove regain the defaults by just removing these lines 
+from the same startup script (.bashrc; or .bash_profile for Mac), which 
+is always in your home directory.
 
 
 * * * * 
