@@ -1,7 +1,13 @@
 ![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-UW-Madison Software Carpentry Workshop
+UW-Madison Software Carpentry Workshop for the Social Sciences
 =======================================
+
+Co-sponsored by
+-----------
+The Center for Demography and Ecology
+The Department of Sociology
+The Sociology of Gender Brownbag (Femsem)
 
 June 3-4, 2015
 -------------------
@@ -11,7 +17,8 @@ June 3-4, 2015
 
 This repository contains the course material for the Software
 Carpentry workshop hosted by UW-Madison's 
-[Advanced Computing Initiative (ACI)](https://aci.wisc.edu) for researchers at the UW-Madison.
+[Advanced Computing Initiative (ACI)](https://aci.wisc.edu) for researchers in the Social Sciences
+at the UW-Madison.
 
 Setup and Preparation
 -----------
