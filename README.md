@@ -2,9 +2,8 @@
 
 UW-Madison Software Carpentry Workshop
 =======================================
-Welcome!
 
-Jun 3-4
+June 3-4, 2015
 -------------------
 
 3rd Floor Teaching Lab, Discovery Building, UW-Madison Campus
