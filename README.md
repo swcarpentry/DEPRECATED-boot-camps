@@ -5,9 +5,9 @@ UW-Madison Software Carpentry Workshop for the Social Sciences
 
 Co-sponsored by
 -----------
-The Center for Demography and Ecology
-The Department of Sociology
-The Sociology of Gender Brownbag (Femsem)
+* The Center for Demography and Ecology
+* The Department of Sociology
+* The Sociology of Gender Brownbag (Femsem)
 
 June 3-4, 2015
 -------------------
