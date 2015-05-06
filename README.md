@@ -56,7 +56,7 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           |   All        |
-| 9:00-9:15    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-08-04-Davidson/BestPractices.pdf?raw=true) | Karl |
+| 9:00-9:15    | If it's not reproducible, is it still science?	 | Karl |
 | 9:15-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren |
 | 10:45-11:00  | Break                                   |              |
 | 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) | Lauren |
