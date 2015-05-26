@@ -1,0 +1,9 @@
+# 
+Reported: Sat Sep 12 10:37:12 2015
+ID: 264
+Age: 55
+Gender: M
+State of residence: Connecticut
+Income: 34200
+Education: 10
+Hours per week: 32
