@@ -1,5 +1,5 @@
 
-# iPython Intro
+# IPython Intro
 [Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#motivating-example)
 * * * * *
 
