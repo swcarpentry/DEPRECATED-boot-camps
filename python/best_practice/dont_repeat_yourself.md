@@ -18,10 +18,10 @@ yourself.  We've also already discussed the use of functions.  In this lesson,
 we'll explore how to use other people's modules, and how to package pieces of
 your code together into reusable modules.
 
-## Reminder: Pasting into iPython
+## Reminder: Pasting into IPython
 
 To paste text from another application (i.e. these lecture notes) into
-iPython :
+IPython :
 
 1.  select text from the website
 2.  copy with <kbd>cntl</kbd>+<kbd>C</kbd> (or <kbd>⌘</kbd>+<kbd>C</kbd> on Mac OSX)
@@ -31,7 +31,7 @@ iPython :
 
 ##### Git Bash
 
-When in the iPython interpreter, the easiest way to paste is with the right
+When in the IPython interpreter, the easiest way to paste is with the right
 mouse button over the window, choosing "Paste".
 
 ##### Putty
@@ -43,9 +43,9 @@ Press <kbd>⌘</kbd>+<kbd>V</kbd>.
 #### Linux
 Click with the right mouse button over the window and then "Paste".
 
-The code should paste and execute in iPython.
+The code should paste and execute in IPython.
 
-In general, for multi-line pasting, you should use the `%cpaste` feature of iPython.
+In general, for multi-line pasting, you should use the `%cpaste` feature of IPython.
 
 # Python Modules
 
@@ -88,93 +88,53 @@ print m.sin(3)        # This is really handy if you have module names that are l
 
 If you intend to use python in your workflow, it is a good idea to skim the standard library documentation at the main Python documentation site, [docs.python.org](http://docs.python.org) to get a general idea of the capabilities of python "out of the box".
 
-Let's take a look at some nice docstrings:
+Let's take a look at a nice docstring for a [pandas](http://pandas.pydata.org/) DataFrame. Pandas is a Python data analysis toolkit, and the DataFrame is its main data type. It's equivalent to a single rectangular dataset which you'd see in many other statistical packages.
 
 ```python
-import numpy
-numpy.sum??
+import pandas
+pandas.DataFrame?
 
-Type:       function
-String Form:<function sum at 0x0000000002D1C5F8>
-File:       c:\anaconda\lib\site-packages\numpy\core\fromnumeric.py
-Definition: numpy.sum(a, axis=None, dtype=None, out=None, keepdims=False)
-Source:
-def sum(a, axis=None, dtype=None, out=None, keepdims=False):
+Type:            type
+String form:     <class 'pandas.core.frame.DataFrame'>
+File:            //anaconda/lib/python2.7/site-packages/pandas/core/frame.py
+Init definition: pandas.DataFrame(self, data=None, index=None, columns=None, dtype=None, copy=False)
+Docstring:
+Two-dimensional size-mutable, potentially heterogeneous tabular data
+structure with labeled axes (rows and columns). Arithmetic operations
+align on both row and column labels. Can be thought of as a dict-like
+container for Series objects. The primary pandas data structure
+
     """
-    Sum of array elements over a given axis.
-
     Parameters
     ----------
-    a : array_like
-        Elements to sum.
-    axis : None or int or tuple of ints, optional
-        Axis or axes along which a sum is performed.
-        The default (`axis` = `None`) is perform a sum over all
-        the dimensions of the input array. `axis` may be negative, in
-        which case it counts from the last to the first axis.
-
-        .. versionadded:: 1.7.0
-
-        If this is a tuple of ints, a sum is performed on multiple
-        axes, instead of a single axis or all the axes as before.
-    dtype : dtype, optional
-        The type of the returned array and of the accumulator in which
-        the elements are summed.  By default, the dtype of `a` is used.
-        An exception is when `a` has an integer type with less precision
-        than the default platform integer.  In that case, the default
-        platform integer is used instead.
-    out : ndarray, optional
-        Array into which the output is placed.  By default, a new array is
-        created.  If `out` is given, it must be of the appropriate shape
-        (the shape of `a` with `axis` removed, i.e.,
-        ``numpy.delete(a.shape, axis)``).  Its type is preserved. See
-        `doc.ufuncs` (Section "Output arguments") for more details.
-    keepdims : bool, optional
-        If this is set to True, the axes which are reduced are left
-        in the result as dimensions with size one. With this option,
-        the result will broadcast correctly against the original `arr`.
-
-    Returns
-    -------
-    sum_along_axis : ndarray
-        An array with the same shape as `a`, with the specified
-        axis removed.   If `a` is a 0-d array, or if `axis` is None, a scalar
-        is returned.  If an output array is specified, a reference to
-        `out` is returned.
-
-    See Also
-    --------
-    ndarray.sum : Equivalent method.
-
-    cumsum : Cumulative sum of array elements.
-
-    trapz : Integration of array values using the composite trapezoidal rule.
-
-    mean, average
-
-    Notes
-    -----
-    Arithmetic is modular when using integer types, and no error is
-    raised on overflow.
+    data : numpy ndarray (structured or homogeneous), dict, or DataFrame
+        Dict can contain Series, arrays, constants, or list-like objects
+    index : Index or array-like
+        Index to use for resulting frame. Will default to np.arange(n) if
+        no indexing information part of input data and no index provided
+    columns : Index or array-like
+        Column labels to use for resulting frame. Will default to
+        np.arange(n) if no column labels are provided
+    dtype : dtype, default None
+        Data type to force, otherwise infer
+    copy : boolean, default False
+        Copy data from inputs. Only affects DataFrame / 2d ndarray input
 
     Examples
     --------
-    >>> np.sum([0.5, 1.5])
-    2.0
-    >>> np.sum([0.5, 0.7, 0.2, 1.5], dtype=np.int32)
-    1
-    >>> np.sum([[0, 1], [0, 5]])
-    6
-    >>> np.sum([[0, 1], [0, 5]], axis=0)
-    array([0, 6])
-    >>> np.sum([[0, 1], [0, 5]], axis=1)
-    array([1, 5])
+    >>> d = {'col1': ts1, 'col2': ts2}
+    >>> df = DataFrame(data=d, index=index)
+    >>> df2 = DataFrame(np.random.randn(10, 5))
+    >>> df3 = DataFrame(np.random.randn(10, 5),
+    ...                 columns=['a', 'b', 'c', 'd', 'e'])
 
-    If the accumulator is too small, overflow occurs:
-
-    >>> np.ones(128, dtype=np.int8).sum(dtype=np.int8)
-    -128
-
+    See also
+    --------
+    DataFrame.from_records : constructor from tuples, also record arrays
+    DataFrame.from_dict : from dicts of Series, arrays, or dicts
+    DataFrame.from_csv : from CSV files
+    DataFrame.from_items : from sequence of (key, value) pairs
+    pandas.read_csv, pandas.read_table, pandas.read_clipboard
     """
 
 ```
@@ -185,7 +145,7 @@ Please note the docstring is longer than the code. And there are few comments in
 * * * *
 ![Exercise](pics/exercise.jpg) **Short exercise: Learn about sys**
 
-In the script we wrote to convert text files to CSV, we used the `sys` module.  Use the iPython interpreter to learn more about the `sys` module and what it does.  What is `sys.argv` and why did we only use the last n-1 elements? What is `sys.stdout`?
+In the script we wrote to convert text files to CSV, we used the `sys` module.  Use the IPython interpreter to learn more about the `sys` module and what it does.  What is `sys.argv` and why did we only use the last n-1 elements? What is `sys.stdout`?
 
 * * * *
 
@@ -272,9 +232,9 @@ from `extractData()` we'll:
 
 # Writing Your Own Module
 
-For our set of cochlear implant data, we may now be interested in performing
+For our set of survey data, we may now be interested in performing
 some simple statistical analysis of the results.  For example, we may want to
-know the mean value of the `Volume` data from all the subjects.
+know the mean value of the `Income` data from all the subjects.
 
 Since we know that taking the mean value of many numbers (and other
 statistics) is something we may want to do in many different projects in the
@@ -299,7 +259,7 @@ We can now use this module in our original script.
 
 ![Exercise](pics/exercise.jpg) **Exercise:**
 
-1. Add some lines to the original script to get a list with only the `Volume` data.
+1. Add some lines to the original script to get a list with only the `Income` data.
 2. Use this `mean()` function to calculate the mean of those numbers.
 
 * * * *
