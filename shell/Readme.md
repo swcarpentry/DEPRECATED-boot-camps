@@ -285,48 +285,41 @@ To summarize, while you are in the `shell` directory, the commands
 `ls ~`, `ls ~/.`, and `ls ../../` all do exactly the
 same thing. *Or* you could use the full path, too.
 
-## Introducing our data set: Cochlear Implants
+## Introducing our sample data set: Event Survey Data
 
-A cochlear implant is a small electronic device that is surgically
-implanted in the inner ear to give deaf people a sense of
-hearing. More than a quarter of a million people have them, but there
-is still no widely-accepted benchmark to measure their effectiveness.
-In order to establish a baseline for such a benchmark, our supervisor
-got teenagers with CIs to listen to audio files on their computer and
-report:
+At a recent event, a group of university students collected 
+demographic information from attendees in order to draw conclusions
+about the make-up of the crowd. For example, the students recorded
+the following information after interviewing each individual:
 
-1.  the quietest sound they could hear
-2.  the lowest and highest tones they could hear
-3.  the narrowest range of frequencies they could discriminate
+1.  Age
+2.  Gender
+3.  State of residence
+4.  Income
+5.  Education Level (on a standardized scale)
+6.  Hours worked per week
 
-To participate, subjects attended our laboratory and one of our lab
-techs played an audio sample, and recorded their data - when they
-first heard the sound, or first heard a difference in the sound.  Each
-set of test results were written out to a text file, with one set per file.
-Each participant has a unique subject ID, and a made-up subject name.
-Each experiment has a unique experiment ID. The experiment has
-collected 351 files so far.
-
-The data is a bit of a mess! There are inconsistent file names, there
-are extraneous "NOTES" files that we'd like to get rid of, and the
-data is spread across many directories. We are going to use shell
+Unfortunately, the data is a bit of a mess! There are inconsistent 
+file names, there are extraneous "NOTES" files that we'd like to get 
+rid of, and the data is spread across different directories corresponding 
+to each student that collected it. We are going to use shell
 commands to get this data into shape. By the end we would like to:
 
-1.  Put all of the data into one directory called "cleaneddata"
+1.  Get rid of the extraneous "NOTES" files.
 
-2.  Have all of the data files in there, and ensure that every file
+2.  Put all of the data into one directory called "cleaneddata"
+
+3.  Have all of the data files in there, and ensure that every file
     has a ".txt" extension
 
-3.  Get rid of the extraneous "NOTES" files
-
-If we can get through this example in the available time, we will move
+After we get through this example, we will move
 on to more advanced shell topics...
 
 ## Wild cards
 
 Navigate to the `~/boot-camps/shell/data/THOMAS` directory. This
-directory contains our hearing test data for THOMAS. If we type `ls`,
-we will see that there are a bunch of files which are just four digit
+directory contains our data collected by THOMAS. If we type `ls`,
+we will see that there are a bunch of files which are just four-digit
 numbers. By default, `ls` lists all of the files in a given
 directory. The `*` character is a shortcut for "everything". Thus, if
 you enter `ls *`, you will see all of the contents of a given
@@ -336,30 +329,30 @@ directory. Now try this command:
 
 This lists every file that ends with a `1`. This command
 
-    ls 04**
+    ls 02**
     
-lists every file that begins with `04`. This command
+lists every file that begins with `02`. This command
 
-    ls *4*1
+    ls *2*8
 
 lists every file in the current directory whose name contains the
-number `4` *and* ends with the number `1` (so it has also 
-established that `4` must be before `1` in the filename). There are four such files:
-`0241`, `0341`, `0431`, and `0481`.
+number `2` *and* ends with the number `8` (so it has also 
+established that `4` must be before `1` in the filename). There are three such files:
+`0208`, `0288`, and `0298`.
 
 So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for filenames
 that match the given pattern. Using the wildcard does *NOT* 
-exclude cases where there are no characters between `4` and `1`, as the 
+exclude cases where there are no characters between `2` and `8`, as the 
 wildcard includes cases where there are *any* number of characters
 in place of the `*` character, even if there are zero characters. 
 
 In this case, it identified four such
-files. Then, it replaced the `*4*1` with the list of files, separated
+files. Then, it replaced the `*2*8` with the list of files, separated
 by spaces. In other words, the two commands:
 
-    ls *4*1
-    ls 0241 0341 0431 0481
+    ls *2*8
+    ls 0208 0288 0298
 
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
@@ -568,13 +561,13 @@ in the study. Navigate to the `Bert` subdirectory in `data`. There
 are a bunch of text files which contain experimental data
 results. Lets print them all:
 
-    cat au*
+    cat su*
 
 Now enter the following command:
 
-    cat au* > ../all_data
+    cat su* > ../all_data
 
-This tells the shell to take the output from the `cat au*` command and
+This tells the shell to take the output from the `cat su*` command and
 redirect it into a new file called `../all_data`. To verify that this
 worked, examine the `all_data` file. If `all_data` had already
 existed, we would have overwritten it because the `>` character tells the shell
@@ -587,10 +580,10 @@ exists.
 **Short Exercise**
 
 Use `>>`, to append the contents of all of the files whose names
-contain the number 4 in the directory `~/boot-camps/shell/data/gerdal` 
+contain the number 4 in the directory `~/boot-camps/shell/data/THOMAS` 
 to the existing `all_data` file. Thus, when you are done, `all_data`
 should contain all of the experiment data from `Bert` *AND* any
-experimental data file from `gerdal` with filenames that contain the
+experimental data file from `THOMAS` with filenames that contain the
 number 4.
 
 * * * *
@@ -673,7 +666,7 @@ This tells `find` to locate only files. Now try these commands:
 The `find` command can acquire a list of files and perform some
 operation on each file. Try this command out:
 
-    find . -type f -exec grep Volume {} \;
+    find . -type f -exec grep Income {} \;
 
 This command finds every file within and below the current directory, 
 and then searches each file for a line which contains the word "Volume". 
@@ -704,7 +697,7 @@ also use the *pipe* (`|`) more after the break.
 **Exercises**
 
 Let's clean up this data! Navigate to the `data` directory. Use a single 
-`find` command to perform the below exercises. Number 2 does not require `find`:
+`find` command to perform the below exercises. Number 1 does not require `find`:
 
 1.  Create a new directory called `cleaneddata`
 
