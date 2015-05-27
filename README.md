@@ -1,10 +1,15 @@
 ![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-UW-Madison Software Carpentry Workshop
+UW-Madison Software Carpentry Workshop for the Social Sciences
 =======================================
-Welcome!
 
-January 13-16
+Co-sponsored by
+-----------
+* The Center for Demography and Ecology
+* The Department of Sociology
+* The Sociology of Gender Brownbag (Femsem)
+
+June 3-4, 2015
 -------------------
 
 3rd Floor Teaching Lab, Discovery Building, UW-Madison Campus
@@ -12,7 +17,8 @@ January 13-16
 
 This repository contains the course material for the Software
 Carpentry workshop hosted by UW-Madison's 
-[Advanced Computing Initiative (ACI)](https://aci.wisc.edu) for researchers at the UW-Madison.
+[Advanced Computing Initiative (ACI)](https://aci.wisc.edu) for researchers in the Social Sciences
+at the UW-Madison.
 
 Setup and Preparation
 -----------
@@ -25,7 +31,7 @@ conditionals, and arrays. Before you arrive, please
 Registration
 -----------
 
-Please see our workshop advertisement page for [registration](http://uw-madison-aci.github.io/2015-01-13-wisc/).
+Please see our workshop advertisement page for [registration](http://uw-madison-aci.github.io/2015-06-03-wisc/).
 
 
 <!--
@@ -41,7 +47,8 @@ This workshop has been structured around the concepts put forth in the
 recent paper "[Best Practices for Scientific Computing](http://www.plosbiology.org/article/info%3Adoi%2F10.1371%2Fjournal.pbio.1001745)" by G. Wilson,
 et al (at the top of this repository). In so doing, the sessions names 
 have been chosen to correspond
-with some of the most important practices to start early in the research process.
+with some of the most important practices to start early in the research process. 
+Please note that this schedule is subject to minor changes by the start of the workshop.
 
 Day 1
 =======
@@ -49,41 +56,31 @@ Day 1
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
 | 8:30-9:00    | Setup & Intro                           |   All        |
-| 9:00-9:15    | [If it's not reproducible, it is still science?](https://github.com/UW-Madison-ACI/boot-camps/blob/2014-08-04-Davidson/BestPractices.pdf?raw=true) | Paul Wilson |
-| 9:15-11:00   | [Introducing the Shell](shell/Readme.md)|  Lauren Michael |
-| 11:00-11:15  | Break                                   |              |
-| 11:15-1:00  | [Let the Computer Do the Work](shell/automation/Readme.md) | Lauren Michael |
-| 
+| 9:00-9:15    | If it's not reproducible, is it still science?	 | Karl |
+| 9:15-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren |
+| 10:45-11:00  | Break                                   |              |
+| 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) | Lauren |
+| 12:30-1:30   | Lunch                                   |              |
+| 1:30-2:30    | [Write Code for People I](python/best_practice/Readme.md) | Alex |
+| 2:30-2:45    | Break                                   |              |
+| 2:45-3:45    | [Write Code for People II](python/best_practice/Readme.md) | Alex |
+| 3:45-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Steve |
 
 Day 2
 =======
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 9:00-10:30   | [Write Code for People I](python/write_code_for_people/Readme.md) | Paul Wilson |
-| 10:30-10:45    | Break                                   |              |
-| 10:45-11:45    | [Don't Repeat Yourself (or Others) I](python/dont_repeat_yourself/Readme.md) | Paul Wilson |
-| 11:45-12:30    | [Don't Repeat Yourself (or Others) II](python/dont_repeat_yourself/Readme.md) | Danielle Nielsen |
-
-Day 3
-=======
-
-| Time         | Topic                                   | Instructor   |
-| ------------ | --------------------------------------- |--------------|
-| 9:00-10:45    | [Make Incremental Changes](version-control/git/local/Readme.md) | Cliff Rodgers  |
+| 9:00-9:45    | [Don't Repeat Yourself (or Others)](python/best_practice/dont_repeat_yourself.md) | Alex  |
+| 9:45-10:45   | [Make Incremental Changes II](version-control/git/local/Revert_and_branch.md) | Christina  |
 | 10:45-11:00  | Break					 | 		|
-| 11:00-12:30  | [Plan for Mistakes](python/testing/Readme.md) | Paul Wilson |
-
-Day 4
-======
-
-| Time         | Topic                                   | Instructor   |
-| ------------ | --------------------------------------- |--------------|
-| 9:00-10:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Steve Goldstein |
-| 10:00-10:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Matt Gidden |
-| 10:30-10:45    | Break                                   |      	|
-| 10:45-12:00    | [Collaborate](version-control/git/collaborate/Readme.md) | Matt Gidden, Steve Goldstein |
-| 12:00-1:00    | Best Practices Summary and Discussion	 |   All	|
+| 11:00-12:00  | [Plan for Mistakes](python/testing/Readme.md) | Christina |
+| 12:00- 1:00  | Lunch					 |		|
+| 1:00-2:00    | [Make Changes from Anywhere (GitHub)](version-control/git/github/Readme.md) | Steve |
+| 2:00-2:30    | [Work and Home (or Being Mobile)](version-control/git/mobility/Readme.md) | Steve |
+| 2:30-2:45    | Break                                   |      	|
+| 2:45-3:15    | [Collaborate](version-control/git/collaborate/Readme.md) | Christina |
+| 3:15-4:30    | Best Practices Summary and Discussion	 |   All	|
 
 Coincidence?
 ============
