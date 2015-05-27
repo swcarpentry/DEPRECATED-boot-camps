@@ -1,9 +1,0 @@
-# 
-Reported: Sun Jul 26 11:38:21 2015
-ID: 203
-Age: 41
-Gender: M
-State of residence: Washington
-Income: 42300
-Education: 16
-Hours per week: 47

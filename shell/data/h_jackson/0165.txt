@@ -1,9 +1,0 @@
-# 
-Reported: Sun Sep 6 12:15:44 2015
-ID: 165
-Age: 40
-Gender: M
-State of residence: Montana
-Income: 113300
-Education: 17
-Hours per week: 34

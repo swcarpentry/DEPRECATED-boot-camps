@@ -1,9 +1,0 @@
-# 
-Reported: Fri Aug 14 13:58:53 2015
-ID: 324
-Age: 56
-Gender: F
-State of residence: Utah
-Income: 39100
-Education: 12
-Hours per week: 45

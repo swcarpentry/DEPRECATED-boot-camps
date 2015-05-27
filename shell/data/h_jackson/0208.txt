@@ -1,9 +1,0 @@
-# 
-Reported: Sun Sep 27 15:46:18 2015
-ID: 208
-Age: 41
-Gender: M
-State of residence: Florida
-Income: 104800
-Education: 7
-Hours per week: 49

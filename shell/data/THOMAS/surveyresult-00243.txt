@@ -1,9 +1,0 @@
-# 
-Reported: Sun May 10 14:40:19 2015
-ID: 243
-Age: 53
-Gender: F
-State of residence: Mississippi
-Income: 113700
-Education: 6
-Hours per week: 30

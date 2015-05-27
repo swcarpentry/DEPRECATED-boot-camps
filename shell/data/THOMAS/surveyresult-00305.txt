@@ -1,9 +1,0 @@
-# 
-Reported: Tue Jun 2 08:53:03 2015
-ID: 305
-Age: 23
-Gender: F
-State of residence: Hawaii
-Income: 18800
-Education: 8
-Hours per week: 48

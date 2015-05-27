@@ -1,9 +1,0 @@
-# 
-Reported: Thu Sep 24 13:24:04 2015
-ID: 194
-Age: 26
-Gender: F
-State of residence: West Virginia
-Income: 67000
-Education: 15
-Hours per week: 51

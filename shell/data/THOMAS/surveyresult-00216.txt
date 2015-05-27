@@ -1,9 +1,0 @@
-# 
-Reported: Fri Jun 5 12:11:05 2015
-ID: 216
-Age: 67
-Gender: F
-State of residence: Idaho
-Income: 98200
-Education: 11
-Hours per week: 17

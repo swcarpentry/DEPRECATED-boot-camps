@@ -1,9 +1,0 @@
-# 
-Reported: Thu Jun 11 08:05:16 2015
-ID: 271
-Age: 41
-Gender: M
-State of residence: Maine
-Income: 124800
-Education: 2
-Hours per week: 62

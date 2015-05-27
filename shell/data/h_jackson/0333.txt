@@ -1,9 +1,0 @@
-# 
-Reported: Tue May 5 12:09:21 2015
-ID: 333
-Age: 85
-Gender: M
-State of residence: Delaware
-Income: 55300
-Education: 11
-Hours per week: 30

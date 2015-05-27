@@ -1,9 +1,0 @@
-# 
-Reported: Sun Jul 26 16:04:48 2015
-ID: 309
-Age: 23
-Gender: F
-State of residence: South Dakota
-Income: 13900
-Education: 14
-Hours per week: 59

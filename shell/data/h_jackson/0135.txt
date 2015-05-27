@@ -1,9 +1,0 @@
-# 
-Reported: Fri May 29 10:08:13 2015
-ID: 135
-Age: 42
-Gender: F
-State of residence: Illinois
-Income: 49600
-Education: 5
-Hours per week: 33

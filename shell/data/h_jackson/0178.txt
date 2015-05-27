@@ -1,9 +1,0 @@
-# 
-Reported: Thu Jun 18 10:08:12 2015
-ID: 178
-Age: 46
-Gender: F
-State of residence: Oregon
-Income: 58300
-Education: 9
-Hours per week: 47

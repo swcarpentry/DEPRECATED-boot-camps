@@ -1,9 +1,0 @@
-# 
-Reported: Wed Jul 15 14:51:27 2015
-ID: 180
-Age: 55
-Gender: M
-State of residence: South Dakota
-Income: 3000
-Education: 1
-Hours per week: 36

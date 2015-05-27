@@ -1,9 +1,0 @@
-# 
-Reported: Sat Sep 5 12:54:39 2015
-ID: 266
-Age: 34
-Gender: M
-State of residence: North Dakota
-Income: 500
-Education: 10
-Hours per week: 62

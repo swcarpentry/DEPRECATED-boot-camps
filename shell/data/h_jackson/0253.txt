@@ -1,9 +1,0 @@
-# 
-Reported: Sat Sep 5 14:56:20 2015
-ID: 253
-Age: 51
-Gender: M
-State of residence: North Carolina
-Income: 34200
-Education: 6
-Hours per week: 31

@@ -1,9 +1,0 @@
-# 
-Reported: Fri Sep 11 15:27:44 2015
-ID: 278
-Age: 53
-Gender: F
-State of residence: Pennsylvania
-Income: 25700
-Education: 6
-Hours per week: 35

@@ -1,9 +1,9 @@
-# Example data file
-Reported: Wed Oct 12 10:22:55 2011
-Subject: appaloosa123
-Year/month of birth: 1994/12
-Sex: M # options are 'MFN', where 'N' is "not given"
-CI type: 4 # integer in the range 1..25
-Volume: 3
-Range: 7
-Discrimination: 2
+# 
+Reported: Mon Aug 10 12:37:22 2015
+ID: 000
+Age: 41
+Gender: M
+State of residence: Pennsylvania
+Income: 71000
+Education: 12
+Hours per week: 37

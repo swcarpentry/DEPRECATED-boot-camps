@@ -1,9 +1,0 @@
-# 
-Reported: Mon Jul 6 09:40:03 2015
-ID: 280
-Age: 26
-Gender: M
-State of residence: Ohio
-Income: 3500
-Education: 9
-Hours per week: 51

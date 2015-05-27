@@ -1,9 +1,0 @@
-# 
-Reported: Fri Aug 21 12:42:20 2015
-ID: 355
-Age: 51
-Gender: M
-State of residence: New Mexico
-Income: 23200
-Education: 12
-Hours per week: 53

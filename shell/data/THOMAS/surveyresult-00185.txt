@@ -1,9 +1,0 @@
-# 
-Reported: Fri Sep 18 08:02:23 2015
-ID: 185
-Age: 40
-Gender: M
-State of residence: Pennsylvania
-Income: 8000
-Education: 15
-Hours per week: 53

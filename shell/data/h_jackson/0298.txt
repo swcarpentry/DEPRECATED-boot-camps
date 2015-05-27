@@ -1,9 +1,0 @@
-# 
-Reported: Sun Sep 13 16:03:31 2015
-ID: 298
-Age: 51
-Gender: M
-State of residence: Nevada
-Income: 115000
-Education: 9
-Hours per week: 53

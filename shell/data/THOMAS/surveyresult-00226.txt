@@ -1,9 +1,0 @@
-# 
-Reported: Thu May 14 10:55:06 2015
-ID: 226
-Age: 79
-Gender: F
-State of residence: Virginia
-Income: 51900
-Education: 4
-Hours per week: 42

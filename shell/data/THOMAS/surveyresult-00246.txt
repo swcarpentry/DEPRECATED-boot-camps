@@ -1,9 +1,0 @@
-# 
-Reported: Sun Sep 13 08:14:58 2015
-ID: 246
-Age: 42
-Gender: F
-State of residence: Wyoming
-Income: 39500
-Education: 20
-Hours per week: 29

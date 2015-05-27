@@ -1,9 +1,0 @@
-# 
-Reported: Tue Jun 16 14:18:22 2015
-ID: 151
-Age: 79
-Gender: M
-State of residence: South Carolina
-Income: 20300
-Education: 6
-Hours per week: 32

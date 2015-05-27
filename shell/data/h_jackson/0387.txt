@@ -1,9 +1,0 @@
-# 
-Reported: Tue Aug 11 08:16:42 2015
-ID: 387
-Age: 66
-Gender: F
-State of residence: Nebraska
-Income: 83000
-Education: 12
-Hours per week: 41

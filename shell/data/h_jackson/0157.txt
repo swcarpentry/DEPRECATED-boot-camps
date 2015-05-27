@@ -1,9 +1,0 @@
-# 
-Reported: Tue May 12 12:29:43 2015
-ID: 157
-Age: 72
-Gender: M
-State of residence: Wyoming
-Income: 77900
-Education: 4
-Hours per week: 38

@@ -1,9 +1,0 @@
-# 
-Reported: Mon May 4 14:54:52 2015
-ID: 270
-Age: 23
-Gender: F
-State of residence: Alabama
-Income: 81400
-Education: 3
-Hours per week: 27

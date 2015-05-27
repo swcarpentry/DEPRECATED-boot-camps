@@ -1,9 +1,0 @@
-# 
-Reported: Thu May 21 10:45:46 2015
-ID: 161
-Age: 59
-Gender: F
-State of residence: Colorado
-Income: 4500
-Education: 5
-Hours per week: 24

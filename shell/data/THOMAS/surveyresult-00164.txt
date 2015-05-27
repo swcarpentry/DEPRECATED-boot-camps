@@ -1,9 +1,0 @@
-# 
-Reported: Wed Sep 2 14:15:01 2015
-ID: 164
-Age: 67
-Gender: M
-State of residence: New Hampshire
-Income: 27000
-Education: 7
-Hours per week: 59

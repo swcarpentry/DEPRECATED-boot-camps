@@ -1,9 +1,0 @@
-# 
-Reported: Wed Sep 23 16:33:56 2015
-ID: 307
-Age: 35
-Gender: F
-State of residence: Tennessee
-Income: 67500
-Education: 8
-Hours per week: 41

@@ -1,9 +1,0 @@
-# 
-Reported: Mon Jul 27 11:39:55 2015
-ID: 329
-Age: 72
-Gender: F
-State of residence: Alaska
-Income: 600
-Education: 10
-Hours per week: 41

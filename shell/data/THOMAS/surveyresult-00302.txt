@@ -1,9 +1,0 @@
-# 
-Reported: Mon Jun 29 14:51:51 2015
-ID: 302
-Age: 69
-Gender: F
-State of residence: Missouri
-Income: 47800
-Education: 9
-Hours per week: 26

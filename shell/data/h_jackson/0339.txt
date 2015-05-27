@@ -1,9 +1,0 @@
-# 
-Reported: Thu Jun 25 13:54:05 2015
-ID: 339
-Age: 35
-Gender: M
-State of residence: Arkansas
-Income: 61100
-Education: 10
-Hours per week: 44

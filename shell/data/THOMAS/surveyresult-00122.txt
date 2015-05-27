@@ -1,9 +1,0 @@
-# 
-Reported: Tue Sep 22 10:02:16 2015
-ID: 122
-Age: 52
-Gender: M
-State of residence: Oregon
-Income: 5700
-Education: 8
-Hours per week: 55

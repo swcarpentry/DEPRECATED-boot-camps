@@ -1,9 +1,0 @@
-# 
-Reported: Wed Sep 2 16:30:30 2015
-ID: 237
-Age: 52
-Gender: F
-State of residence: Hawaii
-Income: 40100
-Education: 12
-Hours per week: 14

@@ -1,9 +1,0 @@
-# 
-Reported: Wed Jun 3 10:10:41 2015
-ID: 124
-Age: 29
-Gender: M
-State of residence: New Jersey
-Income: 9400
-Education: 9
-Hours per week: 53

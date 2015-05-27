@@ -1,9 +1,0 @@
-# 
-Reported: Wed Jul 15 09:57:19 2015
-ID: 204
-Age: 38
-Gender: M
-State of residence: Colorado
-Income: 54000
-Education: 10
-Hours per week: 48

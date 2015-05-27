@@ -1,9 +1,0 @@
-# 
-Reported: Sun Aug 2 09:11:38 2015
-ID: 376
-Age: 85
-Gender: F
-State of residence: New Jersey
-Income: 110500
-Education: 7
-Hours per week: 37

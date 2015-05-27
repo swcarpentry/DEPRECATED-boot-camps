@@ -1,9 +1,0 @@
-# 
-Reported: Fri May 8 13:49:18 2015
-ID: 364
-Age: 64
-Gender: F
-State of residence: Ohio
-Income: 32800
-Education: 12
-Hours per week: 43

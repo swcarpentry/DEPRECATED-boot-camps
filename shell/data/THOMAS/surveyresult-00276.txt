@@ -1,9 +1,0 @@
-# 
-Reported: Mon Jul 13 15:26:54 2015
-ID: 276
-Age: 31
-Gender: F
-State of residence: Louisiana
-Income: 8000
-Education: 7
-Hours per week: 44

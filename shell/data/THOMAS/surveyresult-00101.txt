@@ -1,9 +1,0 @@
-# 
-Reported: Tue Sep 1 10:46:37 2015
-ID: 101
-Age: 53
-Gender: F
-State of residence: Massachusetts
-Income: 7400
-Education: 11
-Hours per week: 44

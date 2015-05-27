@@ -1,9 +1,0 @@
-# 
-Reported: Thu May 7 14:29:08 2015
-ID: 222
-Age: 32
-Gender: M
-State of residence: Tennessee
-Income: 95100
-Education: 13
-Hours per week: 40

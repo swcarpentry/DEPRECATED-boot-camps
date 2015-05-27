@@ -1,9 +1,0 @@
-# 
-Reported: Tue Sep 29 14:59:18 2015
-ID: 201
-Age: 26
-Gender: F
-State of residence: New Jersey
-Income: 34200
-Education: 5
-Hours per week: 38

@@ -1,9 +1,0 @@
-# 
-Reported: Wed May 6 13:23:25 2015
-ID: 295
-Age: 77
-Gender: M
-State of residence: Vermont
-Income: 27900
-Education: 6
-Hours per week: 33

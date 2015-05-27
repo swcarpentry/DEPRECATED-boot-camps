@@ -1,9 +1,0 @@
-# 
-Reported: Fri May 15 08:35:32 2015
-ID: 147
-Age: 73
-Gender: M
-State of residence: Ohio
-Income: 74300
-Education: 3
-Hours per week: 39

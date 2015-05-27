@@ -1,9 +1,0 @@
-# 
-Reported: Fri Sep 11 16:42:55 2015
-ID: 241
-Age: 36
-Gender: F
-State of residence: Oklahoma
-Income: 60100
-Education: 11
-Hours per week: 43

@@ -1,9 +1,0 @@
-# 
-Reported: Fri Jul 3 13:06:05 2015
-ID: 261
-Age: 36
-Gender: M
-State of residence: Kentucky
-Income: 22700
-Education: 10
-Hours per week: 40

@@ -1,9 +1,0 @@
-# 
-Reported: Sun Sep 20 13:14:23 2015
-ID: 323
-Age: 47
-Gender: F
-State of residence: Arizona
-Income: 88000
-Education: 4
-Hours per week: 29

@@ -1,9 +1,0 @@
-# 
-Reported: Sat Jun 13 08:32:56 2015
-ID: 186
-Age: 48
-Gender: F
-State of residence: Kansas
-Income: 46100
-Education: 11
-Hours per week: 31
