@@ -1,0 +1,9 @@
+# 
+Reported: Mon Jul 6 15:47:14 2015
+ID: 319
+Age: 31
+Gender: F
+State of residence: Minnesota
+Income: 52700
+Education: 4
+Hours per week: 43
