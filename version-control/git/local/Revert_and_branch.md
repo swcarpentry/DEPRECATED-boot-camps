@@ -7,7 +7,6 @@
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
-
 ## Refresher on the basics of git
 
 We use git to keep track of changes to the files in a particular
@@ -31,11 +30,46 @@ directory. Here are the basic commands, discussed
 ### ![Exercise](pics/exercise.jpg) Exercise: Refresh your understanding of git
  
 **Step 1**: Go back to your `~/simplestats` repository. Make a change to the
-`README.md` file, or create a new file.
+`README.md` file, or create a new file.  
 
 **Step 2**: Add and commit your changes.
 
 **Step 3**: Study some of those differences as well as the repository log.
+
+## Don't include _everything_ in the repository: the `.gitignore` file.
+
+You probably don't want to include _every_ file in your project
+directory as part of your git repository.
+
+- Backup files automatically created by your editor (`*.bak` or `*~`)
+- Very large primary data files that don't change
+- Compiled code (`*.pyc`, `*.o`, `*.so`, `*.exe`)
+- Files that are derived from your code (for example,
+  figures/graphs/images)
+
+If you never add them to your repository (with `git add`), then they
+won't be tracked, but they'll show up in the output from `git status`,
+which can be a bother.
+
+To tell git to ignore a set of files (and so not mention them
+in the status output), create a `.gitignore` file in the root of your
+project directory. This should be a plain text file with file or
+directory names; you can also use wildcards, like `*.bak` or `*.o`.
+If you include a directory name, all files in that directory will be ignored.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
+
+**Step 1**: Create a subdirectory `Data`. Put a few data files there,
+  or use `touch` to create a few files there.
+
+**Step 2**: Use `git status`.
+
+**Step 3**: Create a `.gitignore` file to tell git to ignore those
+  data files.
+
+**Step 4**: Use `git status` again.
+
+**Step 5**: Add and commit the `.gitignore` file
 
 ## Removing files: `git rm`
 
@@ -83,52 +117,65 @@ What happens if you delete a file in the shell without `git rm`? Try deleting
 $ rm README.md
 ```
 
-What does `git status` say?  Oops! How can you recover this important
-file?
-
-```
-$ git checkout README.md
-```
+What does `git status` say?  Oops!  Luckily our next section is about 
+recovering lost files.  
 
 Note that, just as you should use `git rm` rather than `rm` for
 removing files, you should use `git mv` rather than `mv` for moving or
 renaming files.
 
+## Discarding unstaged modifications: `git checkout`
 
-## Don't include _everything_ in the repository: the `.gitignore` file.
+If you've made changes to a file and want to just scrap those changes
+and go back to the last committed version of the file, use `git
+checkout`.
 
-You probably don't want to include _every_ file in your project
-directory as part of your git repository.
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
 
-- Backup files automatically created by your editor (`*.bak` or `*~`)
-- Very large primary data files that don't change
-- Compiled code (`*.pyc`, `*.o`, `*.so`, `*.exe`)
-- Files that are derived from your code (for example,
-  figures/graphs/images)
+**Step 1**: Check the status of the repository, and look at your
+  unstaged changes.
+  
+```
+$ git status
+$ git diff
+```
 
-If you never add them to your repository (with `git add`), then they
-won't be tracked, but they'll show up in the output from `git status`,
-which can be a bother.
+**Step 2**: Discard the changes.
 
-To tell git to ignore a set of files (and so not mention them
-in the status output), create a `.gitignore` file in the root of your
-project directory. This should be a plain text file with file or
-directory names; you can also use wildcards, like `*.bak` or `*.o`.
-If you include a directory name, all files in that directory will be ignored.
+```
+$ git checkout README.md
+```
 
-### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
+**Step 3**: Look at the status of things again.
 
-**Step 1**: Create a subdirectory `Data`. Put a few data files there,
-  or use `touch` to create a few files there.
+```
+$ git status
+$ git diff
+```
 
-**Step 2**: Use `git status`.
+We can use `git checkout` not only to switch to the latest version 
+of a file, but any version that we have committed.  
 
-**Step 3**: Create a `.gitignore` file to tell git to ignore those
-  data files.
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
 
-**Step 4**: Use `git status` again.
+**Step 1**: Find the commit where you added the "READYOU.md" file
+  
+```
+$ git log
+```
 
-**Step 5**: Add and commit the `.gitignore` file
+**Step 2**: Using that commit value, recover the original file.  
+
+```
+$ git checkout <commit> READYOU.md
+```
+
+**Step 3**: Look at the contents of your directory, and the status of files in git.  
+
+```
+$ ls
+$ git status
+```
 
 ## Unstaging a staged file: `git reset`
 
@@ -161,60 +208,6 @@ $ git reset HEAD README.md
 **Step 4**: Check the status again.
 
 ```
-$ git status
-```
-
-## Discarding unstaged modifications: `git checkout`
-
-If you've made changes to a file and want to just scrap those changes
-and go back to the last committed version of the file, use `git
-checkout`.
-
-### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
-
-**Step 1**: Check the status of the repository, and look at your
-  unstaged changes.
-  
-```
-$ git status
-$ git diff
-```
-
-**Step 2**: Discard the changes.
-
-```
-$ git checkout README.md
-```
-
-**Step 3**: Look at the status of things again.
-
-```
-$ git status
-$ git diff
-```
-
-We can use `git checkout` not only to switch to the latest version 
-of a file, but any version that we have committed - even files that 
-we have since deleted.  
-
-### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
-
-**Step 1**: Find the commit where you added the "READYOU.md" file
-  
-```
-$ git log
-```
-
-**Step 2**: Using that commit value, recover the original file.  
-
-```
-$ git checkout <commit> READYOU.md
-```
-
-**Step 3**: Look at the contents of your directory, and the status of files in git.  
-
-```
-$ ls
 $ git status
 ```
 
