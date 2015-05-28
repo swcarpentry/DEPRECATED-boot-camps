@@ -669,7 +669,7 @@ operation on each file. Try this command out:
     find . -type f -exec grep Income {} \;
 
 This command finds every file within and below the current directory, 
-and then searches each file for a line which contains the word "Volume". 
+and then searches each file for a line which contains the word "Income". 
 How does it do this? The `-exec` argument allow `find` to run to the 
 program `grep`, multiple times, such that each file name is inserted 
 whenever the `{}` occurs (as an argument to `grep`. The trailing `\;` is used to terminate the
@@ -685,7 +685,7 @@ The above command is slow, because it is calling a new instance
 of `grep` for each item the `find` returns. A faster way to repeat 
 the same task is to use the `xargs` command:
 
-    find . -type f -print | xargs grep Volume
+    find . -type f -print | xargs grep Income
 
 `find` generates a list of all the files we are interested in, 
 then we *pipe* (`|`) them to `xargs`. `xargs` takes the items given to it 
