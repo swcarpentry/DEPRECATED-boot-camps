@@ -8,7 +8,7 @@ line of every file in `THOMAS` and `jamesm`.
 
 **Solution**
 ```
-grep Subject THOMAS/* jamesm/*
+grep Income THOMAS/* jamesm/*
 ```
 
 * * * *
@@ -82,45 +82,45 @@ and then we can take the first of those lines:
 * * * * 
 **Short Exercise**
 
-Create an executable script called `smallestrange` in the `data`
+Create an executable script called `smallestage` in the `data`
 directory, that is similar to the `smallest` script, but prints the
-file containing the file with the smallest Range. Use the commands
+file containing the file with the smallest Age. Use the commands
 `grep`, `sort`, and `tail` to do this.
 
 **Solution**
 
 We can experiment on the command line to find the right commands.
-Starting with the command to just get all the "Range" data:
+Starting with the command to just get all the "Age" data:
 
-    grep Range *
+    grep Age *
 
-will search for the word "Range" in all the files (*).
+will search for the word "Age" in all the files (*).
 
 Next we can sort this numerically based on the numerical value of the
-range, found in the 2nd column:
+Age, found in the 2nd column:
 
-    grep Range * | sort -n -k 2
+    grep Age * | sort -n -k 2
 
-The smallest range will be the first item in that list:
+The smallest age will be the first item in that list:
 
-    grep Range * | sort -n -k 2 | head -n 1
+    grep Age * | sort -n -k 2 | head -n 1
 
-Now that we've found this line, we can put it in a script to help us
-reuse this with less typing and be less error prone.
+Now that we've found this command, we can put it in a script to help us
+reuse it with less typing, and we'll be less error prone.
 
 We create a new file by opening it with nano
 
-    nano smallestrange
+    nano smallestage
 
 and putting in the following lines:
 
     #!/bin/bash
-    grep Range * | sort -n -k 2 | head -n 1
+    grep Age * | sort -n -k 2 | head -n 1
 
 The first line tells the shell what program to use to run this script.
 
 After exiting the editor (Control-X) we can make it executable:
 
-    chmod a+x smallestrange
+    chmod a+x smallestage
 
 * * * * 

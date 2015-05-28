@@ -95,10 +95,10 @@ cat data/THOMAS/*
 **Short Exercise**
 
 Use `>>`, to append the contents of all of the files whose names
-contain the number 4 in the directory `/home/<username>/boot-camps/shell/data/gerdal` 
+contain the number 4 in the directory `/home/<username>/boot-camps/shell/data/h_jackson` 
 to the existing `all_data` file. Thus, when you are done, `all_data`
 should contain all of the experiment data from `Bert` *AND* any
-experimental data file from `gerdal` with filenames that contain the
+experimental data file from `h_jackson` with filenames that contain the
 number 4.
 
 ***Solution***
@@ -111,10 +111,10 @@ cat Bert/* > all_data
 ```
 
 To now add the data from the files with a 4 in the name in the
-`gerdal` directory:
+`h_jackson` directory:
 
 ```
-cat gerdal/*4* >> all_data
+cat h_jackson/*4* >> all_data
 ```
 
 * * * * 
@@ -143,16 +143,15 @@ cp all_data foo/.
 
 **Exercises**
 
-Navigate to the `data` directory. Use one `find` command to perform each
-of the operations listed below (except number 2, which does not
-require a `find` command):
+Navigate to the `data` directory. Use a single `find` command to perform each of the below exercises (aside from exercise 1, 
+which does not require `find`):
 
-*1*. Create a new directory called `cleaneddata`.
-*2*. Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`.
+1. Create a new directory called `cleaneddata`.
+2. Copy all of the files within the subdirectories of `data` into `cleaneddata`.
 (Hint: Remember the wildcard. If you mess up, you can just delete the 
 contents of cleaneddata, and try again.)
-*3*.  Find any file whose name is "NOTES" within `cleaneddata` and delete it 
-*4*. Rename all of the files to ensure that they end in `.txt`. 
+3. Find any files in `cleaneddata` containing "NOTES" in the name, and then delete them.
+4. Rename all of the files to ensure that they end in `.txt`. 
 (Note: it is okay for certain files to end in `.txt.txt`, as some 
 already end with `.txt`.)
 
@@ -166,38 +165,35 @@ mkdir cleaneddata
 ```
 
 * * * *
-*2*.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata` directory.
+*2*.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`.
 
 ***Solution***
 
 ```
-cp */* cleaneddata
+find . -type f -exec cp {} cleaneddata \;
 ```
 
-Will copy all the files (`*`) in each directory (`*/`) into `cleaneddata`.
+You can first just run the `find . -type f` portion, which will let you know you're selecting the 
+correct files. Note that piping to `xargs` in this case woudl not work. Can you think of why you 
+get output like the below:
+```
+cp: cleaneddata/data_103.DATA and ./cleaneddata/data_103.DATA are identical (not copied)
+```
+Hint: It has to do with the order by which find processes output through the commands following `-exec`.
 
 * * * *
-3. Find any file whose name is "NOTES" within `cleaneddata` and its subdirectories, and delete it.
+*3*. Find any files in `cleaneddata` containing "NOTES" in the name, and then delete them.
+
 ***Solution***
-One solution is to use find with its -exec argument:
 
+There are two options, here, You can either use `-exec`:
 ```
-find cleaneddata -name "*NOTES*" -exec rm {} \;
+find cleaneddata -name *NOTES* -exec rm {} \;
 ```
-
-This will find all files in the hierarchy beginning with the current
-directory (.), with a name containing the word NOTES, and execute the
-remove (rm) command on each {}.
-
-Another solution is to use find and pipe the results to xargs:
-
+or pipe to `xargs`:
 ```
-find cleaneddata -name "*NOTES*" | xargs rm
+find cleaneddata -name *NOTES* | xargs rm
 ```
-
-This is similar but instead of using find to run the rm command, it
-passes all of the results of find as if they were command line
-arguments for rm.
 
 * * * *
 *4*. Rename all of the files to ensure that they end in `.txt`. 
@@ -210,4 +206,3 @@ find cleaneddata -type f -exec mv {} {}.txt \;
 ```
 
 * * * *
-
