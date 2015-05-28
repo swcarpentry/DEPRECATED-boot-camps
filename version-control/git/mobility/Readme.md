@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Github and Remote Version Control](../github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Make Changes from Anywhere (GitHub)](../github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
 
 # Mobility: Using Version Control at Work and Home
 
@@ -209,4 +209,4 @@ page](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Github and Remote Version Control](../github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Make Changes from Anywhere (GitHub)](../github/Readme.md) - Forward To [Collaborate](../collaborate/Readme.md)
