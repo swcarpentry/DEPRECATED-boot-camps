@@ -61,9 +61,9 @@ Day 1
 | 10:45-11:00  | Break                                   |              |
 | 11:00-12:30  | [Let the Computer Do the Work](shell/automation/Readme.md) | Lauren |
 | 12:30-1:30   | Lunch                                   |              |
-| 1:30-2:30    | [Write Code for People I](python/best_practice/Readme.md) | Alex |
+| 1:30-2:30    | [Write Code for People](python/best_practice/Readme.md) | Alex |
 | 2:30-2:45    | Break                                   |              |
-| 2:45-3:45    | [Write Code for People II](python/best_practice/Readme.md) | Alex |
+| 2:45-3:45    | [Write Code for People (cont.)](python/best_practice/Readme.md) | Alex |
 | 3:45-4:30    | [Make Incremental Changes I](version-control/git/local/Readme.md) | Steve |
 
 Day 2
