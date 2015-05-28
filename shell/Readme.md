@@ -251,7 +251,7 @@ from your current location).
 
 * * * * 
 
-# Saving time with shortcuts, wild cards, and tab completion
+# 2. Saving time with shortcuts, wild cards, and tab completion
 
 ## Shortcuts
 
@@ -387,7 +387,7 @@ are *multiple* directories in the home directory which start with
 `s`. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices. 
 
-# Command History
+# 3. Command History
 
 You can easily access previous commands.  Hit the up arrow.  
 Hit it again.  You can step backwards through your command history. 
@@ -426,7 +426,7 @@ directories in `/bin`) and reissue that command.
 
 * * * * 
 
-# Which program?
+# 4. Which program?
 
 Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
 that exist on the computer (or that come along with Git Bash, for Windows 
@@ -480,7 +480,7 @@ to that program. You can run `hello` equally well by specifying:
 
     ~/boot-camps/shell/hello
 
-# Working with Files
+# 5. Working with Files
 
 We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
@@ -513,7 +513,7 @@ Want to see what our `hello` program contains?
 
 * * * *
 
-##Viewing file contents with `less`
+## Viewing file contents with `less`
 
 `cat` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, `less`, is useful for this
@@ -679,7 +679,7 @@ We'll talk a bit more
 about grep after the break, but you'll use the `{}` trick in the 
 exercises below.
 
-## BONUS Topic: Using xargs to pass information to another program
+## Also: Using xargs to pass information to another program
 
 The above command is slow, because it is calling a new instance
 of `grep` for each item the `find` returns. A faster way to repeat 
@@ -697,8 +697,7 @@ also use the *pipe* (`|`) more after the break.
 **Exercises**
 
 Let's clean up this data! Navigate to the `data` directory. Use a single 
-`find` command to perform each of the below exercises (aside from exercise
-#1, which does not require `find`):
+`find` command to perform each of the below exercises (aside from exercise 1, which does not require `find`):
 
 1.  Create a new directory called `cleaneddata`.
 
