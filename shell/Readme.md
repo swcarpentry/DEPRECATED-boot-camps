@@ -44,11 +44,11 @@ To open a terminal on a Mac or Linux computer, just single click on the
 "Terminal" icon on the Desktop (or in Applications). For Windows, open 
 the Git Bash program you installed for the bootcamp.
 
-## The Example: Manipulating Experimental Data Files
+## The Example: Manipulating Data Files
 
 We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data from a hearing test. To get
-the data for this test, you will need internet access. Just enter the
+by manipulating some survey data collected for a projct. To get
+the data, you will need internet access. Just enter the
 command:
 
     git clone -b 2015-01-13 https://github.com/UW-Madison-ACI/boot-camps.git
@@ -251,7 +251,7 @@ from your current location).
 
 * * * * 
 
-# Saving time with shortcuts, wild cards, and tab completion
+# 2. Saving time with shortcuts, wild cards, and tab completion
 
 ## Shortcuts
 
@@ -333,26 +333,26 @@ This lists every file that ends with a `1`. This command
     
 lists every file that begins with `02`. This command
 
-    ls *2*8
+    ls *1*7
 
 lists every file in the current directory whose name contains the
-number `2` *and* ends with the number `8` (so it has also 
-established that `4` must be before `1` in the filename). There are three such files:
-`0208`, `0288`, and `0298`.
+number `1` *and* ends with the number `7` (so it has also 
+established that `1` must be before `7` in the filename). There are three such files:
+`0147`, `0157`, `0187` and `0317`.
 
 So how does this actually work? Well...when the shell (bash) sees a
 word that contains the `*` character, it automatically looks for filenames
 that match the given pattern. Using the wildcard does *NOT* 
-exclude cases where there are no characters between `2` and `8`, as the 
+exclude cases where there are no characters between `1` and `7`, as the 
 wildcard includes cases where there are *any* number of characters
 in place of the `*` character, even if there are zero characters. 
 
 In this case, it identified four such
-files. Then, it replaced the `*2*8` with the list of files, separated
+files. Then, it replaced the `*1*7` with the list of files, separated
 by spaces. In other words, the two commands:
 
-    ls *2*8
-    ls 0208 0288 0298
+    ls *1*7
+    ls 0147 0157 0187 0317
 
 are exactly identical. The `ls` command cannot tell the difference
 between these two things.
@@ -387,7 +387,7 @@ are *multiple* directories in the home directory which start with
 `s`. Thus, the shell does not know which one to fill in. When you hit
 tab again, the shell will list the possible choices. 
 
-# Command History
+# 3. Command History
 
 You can easily access previous commands.  Hit the up arrow.  
 Hit it again.  You can step backwards through your command history. 
@@ -426,7 +426,7 @@ directories in `/bin`) and reissue that command.
 
 * * * * 
 
-# Which program?
+# 4. Which program?
 
 Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
 that exist on the computer (or that come along with Git Bash, for Windows 
@@ -480,7 +480,7 @@ to that program. You can run `hello` equally well by specifying:
 
     ~/boot-camps/shell/hello
 
-# Working with Files
+# 5. Working with Files
 
 We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
@@ -513,7 +513,7 @@ Want to see what our `hello` program contains?
 
 * * * *
 
-##Viewing file contents with `less`
+## Viewing file contents with `less`
 
 `cat` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, `less`, is useful for this
@@ -554,11 +554,11 @@ using "/" and use all other less commands as well!
 
 ## Redirection
 
-Let's turn to the experimental data from the hearing tests that we
+Let's turn to the survey data that we
 began with. This data is located in the `~/boot-camps/shell/data`
 directory. Each subdirectory corresponds to a particular participant
 in the study. Navigate to the `Bert` subdirectory in `data`. There
-are a bunch of text files which contain experimental data
+are a bunch of data files which contain Bert's collected survey
 results. Lets print them all:
 
     cat su*
@@ -582,8 +582,8 @@ exists.
 Use `>>`, to append the contents of all of the files whose names
 contain the number 4 in the directory `~/boot-camps/shell/data/THOMAS` 
 to the existing `all_data` file. Thus, when you are done, `all_data`
-should contain all of the experiment data from `Bert` *AND* any
-experimental data file from `THOMAS` with filenames that contain the
+should contain all of the survey data from `Bert` *AND* any
+survey data file from `THOMAS` with filenames that contain the
 number 4.
 
 * * * *
@@ -592,8 +592,8 @@ number 4.
 ## Creating, moving, copying, and removing
 
 We first created a file called `all_data` using the redirection operator
-`>`. This file is critical - it's our analysis results - so we want to
-make copies so that the data is backed up.
+`>`. Let's say that this file is critical - it's our analysis results - 
+so we want to make copies so that the data is backed up.
 Let's copy the file using the `cp` command. The `cp`
 command backs up the file. Navigate to the `data` directory and enter:
 
@@ -679,7 +679,7 @@ We'll talk a bit more
 about grep after the break, but you'll use the `{}` trick in the 
 exercises below.
 
-## BONUS Topic: Using xargs to pass information to another program
+## Also: Using xargs to pass information to another program
 
 The above command is slow, because it is calling a new instance
 of `grep` for each item the `find` returns. A faster way to repeat 
@@ -697,13 +697,14 @@ also use the *pipe* (`|`) more after the break.
 **Exercises**
 
 Let's clean up this data! Navigate to the `data` directory. Use a single 
-`find` command to perform the below exercises. Number 1 does not require `find`:
+`find` command to perform each of the below exercises (aside from exercise 1, which does not require `find`):
 
-1.  Create a new directory called `cleaneddata`
+1.  Create a new directory called `cleaneddata`.
 
-2.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`. (Hint: remember the wildcard. If you mess up, you can just delete the contents of cleaneddata, and try again.)
+2.  Copy all of the files within the subdirectories of `data` into `cleaneddata`, 
+not including the directories, themselves.
 
-3.  Find any file whose name is "NOTES" within `cleaneddata` and its subdirectories, and delete it. 
+3.  Find any files in `cleaneddata` containing "NOTES" in the name, and then delete them.
 
 4.  Rename all of the files to ensure that they end in `.txt` (note:
     it is okay for certain files to end in `.txt.txt`, as some already end with `.txt`.)
