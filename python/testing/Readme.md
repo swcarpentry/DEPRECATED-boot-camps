@@ -1,5 +1,5 @@
 [Up To Schedule](../../README.md) - Back To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) -
-Forward To [Github and Remote Version Control](../../version-control/git/github/Readme.md)
+Forward To [Make Changes from Anywhere (GitHub)](../../version-control/git/github/Readme.md)
 
 # Plan for Mistakes (or: Testing)
 ----
@@ -724,4 +724,4 @@ teardown()
 ----
 
 [Up To Schedule](../../README.md) - Back To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md) -
-Forward To [Github and Remote Version Control](../../version-control/git/github/Readme.md)
+Forward To [Make Changes from Anywhere (GitHub)](../../version-control/git/github/Readme.md)
