@@ -178,54 +178,6 @@ It is now your job to:
 * apply them to your local repository
 * apply them to your fork
 
-## Aside: git rebase vs git merge
-
-To incorporate upstream changes from the original master repository (in this
-case UW-Madison-ACI/simplestats) into your local working copy, you must do
-more than simply `fetch` the changes.  After fetching the changes, your local
-repo know about the upstream changes, but hasn't combined them with any local
-changes you may have already made.  There are two mechanisms for doing this,
-with slightly different behavior.
-
-The role of git is to keep track of little bundles of change (each commit).
-In theory, it doesn't matter in what order these changes are applied, it
-should end up with the same version of the files.  In practice, however, you
-may want to take some control of this.  In particular, when you are combining
-upstream changes into a branch where you are making local changes, it is
-almost always better to **insert** all the upstream changes before your local
-changes, using `rebase`.  This takes each of your commits, since the point at
-which the two branches began to differ, and replays them at the end of the
-upstream branch.  If there are conflicts, you will be notified and asked to
-review them manually.
-
-By contract, `merge` takes each commit from the upstream branch, since the
-point at which the two branches began to differ, and replays them at the end
-of your branch.  Again, if there are conflicts, you will be notified and asked
-to review them manually.
-
-There are lots of details to consider when choosing between `rebase` and
-`merge`, but the simplest guidelines are:
-
-* **rebase** when incorporating changes from an authoritative upstream
-  repository
-* **merge** when incorporating changes from a feature branch or collaborator
-
-The process of rebasing/merging may result in conflicts, so pay
-attention. This is where version control is both at its most powerful and its
-most complicated.
-
-Assuming that you have a `master` branch that you are keeping in-sync with an
-`upstream` remote and a `feature` branch that you are keeping up-to-date with
-your own `origin`, the general, best-practice workflow is as follows:
-
-    $ git checkout master 
-    $ git fetch upstream         # get upstream updates to your machine
-    $ git merge upstream/master  # get your local master branch up-to-date
-    $ git push origin master     # get your remote master branch up-to-date
-    $ git checkout feature      
-    $ git rebase upstream/master # put all your feature commits *on top* of the updates
-    $ git push -f origin master  # forcibly update your remote feature branch
-
 ----
 
 [Up To Schedule](../../../README.md) - Back To
