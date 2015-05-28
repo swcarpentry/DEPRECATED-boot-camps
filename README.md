@@ -55,7 +55,7 @@ Day 1
 
 | Time         | Topic                                   | Instructor   |
 | ------------ | --------------------------------------- |--------------|
-| 8:30-9:00    | [Setup](https://github.com/UW-Madison-ACI/boot-camps/blob/2015-06-03/setup/README.md) & Intro                           |   All        |
+| 8:30-9:00    | [Setup](setup/README.md) & Intro                           |   All        |
 | 9:00-9:15    | If it's not reproducible, is it still science?	 | Karl |
 | 9:15-10:45   | [Introducing the Shell](shell/Readme.md)| Lauren |
 | 10:45-11:00  | Break                                   |              |
