@@ -1,6 +1,6 @@
 [Up To Schedule](../../README.md) - 
 Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) -
-Forward To [Don't Repeat Yourself (or Others)](../../python/best_practice/dont_repeat_yourself.md)
+Forward To [Make Incremental Changes I](../../version-control/git/local/Readme.md)
 
 - - - -
 
@@ -19,7 +19,7 @@ yourself"*.
 These concepts are important and apply to any language.  For today's lecture,
 we'll use python as the language, but you use a different language, you should
 think about how you would use these practices in your language.  In
-particular, we will use the [iPython interpreter](ipython.md), a
+particular, we will use the [IPython interpreter](../../python/ipython/Readme.md), a
 version of python with some added features.
 
 At the same time, this exercise will demonstrate one way to think about
@@ -36,7 +36,7 @@ For more on python, consider the following reference material.
 
 ## Motivating Example
 
-For this lecture, we will return to the simulated cochlear implant data that
+For this lecture, we will return to the simulated survey data that
 we used in the lecture on using the shell.  This data was in many different
 files, each distributed over many different directories.  One of the exercises
 was to place all of those files in a single directory named `cleandata` and
@@ -62,7 +62,7 @@ file in a spreadsheet.  Imagine the effort of making a spreadsheet from this
 set of more than 350 files.  Although spreadsheets are frequently NOT the best
 way to process data, they are probably something with which you are familiar.
 
-**Pro-tip:** [Using two windows](using_multiple_windows.md) will make it much
+**Pro-tip:** [Using two windows](dont_repeat_yourself/using_multiple_windows.md) will make it much
   easier to follow this exercise.
 
 ## Step 1: Start at the top
@@ -195,8 +195,8 @@ Add these lines above the others in your script:
 ```python
 import sys
 filelist = sys.argv[1:]
-column_labels = ("Subject","Reported","Year/month of birth",
-                "Sex","CI type","Volume","Range","Discrimination")
+column_labels = ("ID","Reported","Age","Gender",
+                "State of Residence","Income","Education","Hours per week")
 all_data = []
 ```
 
@@ -358,7 +358,7 @@ def extractData(line):
 
 ### Getting help on new functions
 
-One of the features of iPython is it's ability to show you help of a function,
+One of the features of IPython is it's ability to show you help of a function,
 typically in the form of its docstring.  You can learn more about the
 `strip()` and `split()` string functions:
 
@@ -424,7 +424,7 @@ def writeCSVRow(column_labels,data_record,csv_separator):
 ## Step 5: Run your script
 
 To run this script you can either call it from the command line or from within
-the ipython interpreter, with an argument list made up of many of the original
+the IPython interpreter, with an argument list made up of many of the original
 data files.
 
 From the command line:
@@ -451,4 +451,4 @@ difference in code readability and types are important in conveying intent.
 
 [Up To Schedule](../../README.md) -
 Back To [Let the Computer Do the Work](../../shell/automation/Readme.md) -
-Forward To [Don't Repeat Yourself (or Others)](../../python/best_practice/dont_repeat_yourself.md)
+Forward To [Make Incremental Changes I](../../version-control/git/local/Readme.md)
