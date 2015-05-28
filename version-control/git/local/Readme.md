@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Write Code for People II](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Write Code for People](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md)
 
 ----
 
@@ -276,4 +276,4 @@ There are some useful flags for this command, such as
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Write Code for People II](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md)
+[Up To Schedule](../../../README.md) - Back To [Write Code for People](../../../python/best_practice/Readme.md) - Forward to [Don't Repeat Yourself](../../../python/dont_repeat_yourself/Readme.md)
