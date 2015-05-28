@@ -143,16 +143,15 @@ cp all_data foo/.
 
 **Exercises**
 
-Navigate to the `data` directory. Use a single 
-`find` command to perform each of the below exercises (aside from exercise
-#1, which does not require `find`):
+Navigate to the `data` directory. Use a single `find` command to perform each of the below exercises (aside from exercise 1, 
+which does not require `find`):
 
-*1*. Create a new directory called `cleaneddata`.
-*2*. Copy all of the files within the subdirectories of `data` into `cleaneddata`.
+1. Create a new directory called `cleaneddata`.
+2. Copy all of the files within the subdirectories of `data` into `cleaneddata`.
 (Hint: Remember the wildcard. If you mess up, you can just delete the 
 contents of cleaneddata, and try again.)
-*3*. Find any files in `cleaneddata` containing "NOTES" in the name, and then delete them.
-*4*. Rename all of the files to ensure that they end in `.txt`. 
+3. Find any files in `cleaneddata` containing "NOTES" in the name, and then delete them.
+4. Rename all of the files to ensure that they end in `.txt`. 
 (Note: it is okay for certain files to end in `.txt.txt`, as some 
 already end with `.txt`.)
 
@@ -166,7 +165,7 @@ mkdir cleaneddata
 ```
 
 * * * *
-*2*.  Copy all of the files (only) within the subdirectories of `data` into `AllClean` directory.
+*2*.  Copy all of the files (only) within the subdirectories of `data` into `cleaneddata`.
 
 ***Solution***
 
