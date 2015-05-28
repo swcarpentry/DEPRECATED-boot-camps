@@ -37,70 +37,6 @@ directory. Here are the basic commands, discussed
 
 **Step 3**: Study some of those differences as well as the repository log.
 
-
-## Unstaging a staged file: `git reset`
-
-There are a number of ways that you may accidentally stage a file that
-you don't want to commit.  Use `git reset` to unstage a file.
-
-### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
-
-**Step 1**: Make a change to the `README.md` file and stage the change.
-
-```
-$ nano README.md
-$ git add README.md
-```
-
-**Step 2**: Check the status of the repository, to see that the file
-  has been staged.
-
-```
-$ git status
-```
-
-**Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
-  most recent commit to the repository.
-
-```
-$ git reset HEAD README.md
-```
-
-**Step 4**: Check the status again.
-
-```
-$ git status
-```
-
-## Discarding unstaged modifications: `git checkout`
-
-If you've made changes to a file and want to just scrap those changes
-and go back to the last committed version of the file, use `git
-checkout`.
-
-### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
-
-**Step 1**: Check the status of the repository, and look at your
-  unstaged changes.
-  
-```
-$ git status
-$ git diff
-```
-
-**Step 2**: Discard the changes.
-
-```
-$ git checkout README.md
-```
-
-**Step 3**: Look at the status of things again.
-
-```
-$ git status
-$ git diff
-```
-
 ## Removing files: `git rm`
 
 If you want to remove a file from your repository, use `git rm`.
@@ -194,7 +130,93 @@ If you include a directory name, all files in that directory will be ignored.
 
 **Step 5**: Add and commit the `.gitignore` file
 
+## Unstaging a staged file: `git reset`
 
+There are a number of ways that you may accidentally stage a file that
+you don't want to commit.  Use `git reset` to unstage a file.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
+
+**Step 1**: Make a change to the `README.md` file and stage the change.
+
+```
+$ nano README.md
+$ git add README.md
+```
+
+**Step 2**: Check the status of the repository, to see that the file
+  has been staged.
+
+```
+$ git status
+```
+
+**Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
+  most recent commit to the repository.
+
+```
+$ git reset HEAD README.md
+```
+
+**Step 4**: Check the status again.
+
+```
+$ git status
+```
+
+## Discarding unstaged modifications: `git checkout`
+
+If you've made changes to a file and want to just scrap those changes
+and go back to the last committed version of the file, use `git
+checkout`.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
+
+**Step 1**: Check the status of the repository, and look at your
+  unstaged changes.
+  
+```
+$ git status
+$ git diff
+```
+
+**Step 2**: Discard the changes.
+
+```
+$ git checkout README.md
+```
+
+**Step 3**: Look at the status of things again.
+
+```
+$ git status
+$ git diff
+```
+
+We can use `git checkout` not only to switch to the latest version 
+of a file, but any version that we have committed - even files that 
+we have since deleted.  
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
+
+**Step 1**: Find the commit where you added the "READYOU.md" file
+  
+```
+$ git log
+```
+
+**Step 2**: Using that commit value, recover the original file.  
+
+```
+$ git checkout <commit> READYOU.md
+```
+
+**Step 3**: Look at the contents of your directory, and the status of files in git.  
+
+```
+$ ls
+$ git status
+```
 
 ## `git revert`: the promised "undo" button
 
@@ -227,7 +249,6 @@ prohibition in removing pages from a lab notebook.
 3. Change 2 of the 5 files and commit them.
 4. Undo the changes in step 3.
 5. Print out the last entry in the log.
-
 
 
 ## `git branch`: Listing, Creating, and Deleting Branches
@@ -296,6 +317,7 @@ $ git commit -m "Adding a first version of stats.py."
 1. Use the list's `sort()` method to implement the `median()` function. (The
 median is either the middle value of an odd set of numbers *or* the `mean()` of
 the middle two values of an even set of numbers.)
+
 2. Commit the changed file to your repository.
 
 ## `git merge`: Merging Branches
