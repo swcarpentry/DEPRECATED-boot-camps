@@ -66,7 +66,7 @@ In this exercise, "Beta" will be making changes and submitting a pull request
 to Alpha's repository, "Alpha" will be reviewing the pull request and merging 
 it into their own remote (and then local) repository.  
 
-<div>
+<div style="background-color:blue;">
 For Beta:
 
 Step 1 : Modify the stats.py module to add the median function (shown below).
