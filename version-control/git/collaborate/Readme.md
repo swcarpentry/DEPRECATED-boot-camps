@@ -63,14 +63,14 @@ discuss potential modifications, and even push follow-up commits if necessary.
 ### Exercise : Issue a Pull Request and Review it
 
 In this exercise, "Beta" will be making changes and submitting a pull request 
-to Alpha's repository, "Alpha" will be reviewing the pull request and merging 
-it into their own remote (and then local) repository.  
+to Alpha's repository, and "Alpha" will be reviewing the pull request and merging 
+it into their own remote (and then local) repository.  In the following instructions
+Beta will be performing Steps 1-4 (while Alpha waits and observes), and then 
+Alpha will continue with Steps 5-7 (while Beta observes).  
 
-<div style="background-color:#e0ffff">
+#### For Beta (submitting the pull request)
 
-For Beta:
-
-Step 1 : Modify the stats.py module to add the median function (shown below).
+**Step 1** : Modify the stats.py module to add the median function (shown below).
 
 ```python
 def median(vals):
@@ -83,16 +83,16 @@ def median(vals):
        return vals[index]
 ```
 
-Step 2 : Commit your changes
+**Step 2** : Commit your changes
 
     $ git add stats.py
     $ git commit -m "I added a median function."
 
-Step 3 : Update your remote
+**Step 3** : Update your remote
 
     $ git push origin median
 
-Step 4 : Issue a Pull Request to Alpha's `median` branch
+**Step 4** : Issue a Pull Request to Alpha's `median` branch
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
@@ -100,19 +100,17 @@ Step 4 : Issue a Pull Request to Alpha's `median` branch
     head fork as **beta/simplestats**, and the compare branch as **median**
   - write a descriptive message and send it off.
 
-</div>
+#### For Alpha (after Beta has finished and submitted the pull request)
 
-For Alpha:
-
-Step 1 : Review the pull request
+**Step 5** : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Beta can always 
     update their version of commits during a pull request.
 
-Step 2 : Merge the pull request using the merge button
+**Step 6** : Merge the pull request using the merge button
 
-Step 3 : Update your local repository.  At this point, all the changes exist
+**Step 7** : Update your local repository.  At this point, all the changes exist
 **only** on the remote repository.
 
     $ git checkout median 
@@ -123,25 +121,25 @@ Step 3 : Update your local repository.  At this point, all the changes exist
 
 Ok, so we've successfully issued a pull request and merged the updated code
 base. Let's swap the roles of pull requester and reviewer. This time, Alpha will
-add some tests to the median function.
+add some tests to the median function, submit a pull request and Beta will 
+review the pull request.  Alpha will follow steps 1-4, and Beta will wait 
+until they finish, then follow steps 5-7.  
 
-For Alpha:
+####For Alpha (submitting the pull request):
 
-Step 1 : Modify the test_stats.py module to add tests for the median
+**Step 1** : Modify the test_stats.py module to add tests for the median
 function.
 
-Now continue the exercise as was done previously with roles swapped.
-
-Step 2 : Commit your changes
+**Step 2** : Commit your changes
 
     $ git add test_stats.py
     $ git commit -m "I added tests to the median function."
 
-Step 3 : Update your remote
+**Step 3** : Update your remote
 
     $ git push origin median
 
-Step 4 : Issue a Pull Request
+**Step 4** : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
@@ -149,17 +147,17 @@ Step 4 : Issue a Pull Request
     head fork as **alpha/simplestats**, and the compare as **median**
   - write a descriptive message and send it off.
 
-For Beta:
+####For Beta (after Alpha has finished and submitted the pull request)
 
-Step 1 : Review the pull request
+**Step 5** : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Alpha can always 
     update their version of commits during a pull request.
 
-Step 2 : Merge the pull request using the merge button
+**Step 6** : Merge the pull request using the merge button
 
-Step 3 : Update your local repository
+**Step 7** : Update your local repository
 
     $ git checkout median
     $ git fetch origin
