@@ -29,10 +29,10 @@ create. Once I have, update your local copies and remotes:
 
 ### Exercise : Get set up
 
-Step 1 : Group up in pairs and decide who will be "Alpha" and who will 
+**Step 1** : Group up in pairs and decide who will be "Alpha" and who will 
 be "Beta" for this exercise.  
 
-Step 2 : Each of you should add your partner as a remote and check 
+**Step 2** : Each of you should add your partner as a remote and check 
 to make sure you're connected.  Using this command: 
 
     $ git remote add <partner> https://github.com/<partner>/simplestats
@@ -179,7 +179,7 @@ recent median addition.
 
 ### Exercise : Experience a Conflict
 
-Step 1 : Experience the Conflict
+**Step 1** : Experience the Conflict
 
     $ git fetch upstream
     $ git merge upstream/median
@@ -225,11 +225,11 @@ means you should replace the PI's ```median``` function with yours.
 
 ### Exercise : Resolve a Conflict
 
-Step 1 : Resolve the conflict by editing your stats.py file. It should
+**Step 1** : Resolve the conflict by editing your stats.py file. It should
 run as expected and should look exactly like your version, but with the
 PI's changes included.
 
-Step 2 : Add the updated version and commit
+**Step 2** : Add the updated version and commit
 
     $ git add stats.py
     $ git commit -m "Updated from PI's commit"
