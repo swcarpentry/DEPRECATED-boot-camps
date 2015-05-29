@@ -66,7 +66,8 @@ In this exercise, "Beta" will be making changes and submitting a pull request
 to Alpha's repository, "Alpha" will be reviewing the pull request and merging 
 it into their own remote (and then local) repository.  
 
-<div style="background-color:blue;">
+<div style="background-color:#e0ffff">
+
 For Beta:
 
 Step 1 : Modify the stats.py module to add the median function (shown below).
@@ -98,6 +99,7 @@ Step 4 : Issue a Pull Request to Alpha's `median` branch
   - choose the base fork as **alpha/simplestats**, the base branch as **median**, the 
     head fork as **beta/simplestats**, and the compare branch as **median**
   - write a descriptive message and send it off.
+
 </div>
 
 For Alpha:
