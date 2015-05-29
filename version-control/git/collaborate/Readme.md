@@ -29,32 +29,27 @@ create. Once I have, update your local copies and remotes:
 
 ### Exercise : Get set up
 
-Step 1 : Group up in pairs
+Step 1 : Group up in pairs and decide who will be "Alpha" and who will 
+be "Beta" for this exercise.  
 
-Step 2 : Add your collaborator as a remote and check to make sure you're
-connected, e.g., Beta would type the following
+Step 2 : Each of you should add your partner as a remote and check 
+to make sure you're connected.  Using this command: 
 
-    $ git remote add alpha https://github.com/alpha/simplestats
+    $ git remote add <partner> https://github.com/<partner>/simplestats
+
+where you have filled in `<partner>` with your partner's GitHub username, 
+will add your partner's repository as a remote.  To check that it worked, run:  
+
     $ git remote -v
-    origin  https://github.com/YOU/simplestats (fetch)
-    origin  https://github.com/YOU/simplestats (push)
+    origin  https://github.com/<YOU>/simplestats (fetch)
+    origin  https://github.com/<YOU>/simplestats (push)
     upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
     upstream        https://github.com/UW-Madison-ACI/simplestats (push)
-    alpha           https://github.com/alpha/simplestats (fetch)
-    alpha           https://github.com/alpha/simplestats (push)
-    $ git fetch alpha
+    <partner>       https://github.com/<partner>/simplestats (fetch)
+    <partner>       https://github.com/<partner>/simplestats (push)
+    $ git fetch <partner>
 
-and Alpha would type
-
-    $ git remote add beta https://github.com/beta/simplestats
-    $ git remote -v
-    origin  https://github.com/YOU/simplestats (fetch)
-    origin  https://github.com/YOU/simplestats (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
-    beta            https://github.com/beta/simplestats (fetch)
-    beta            https://github.com/beta/simplestats (push)
-    $ git fetch beta
+Again, substituting your partner's GitHub username for `<partner>`.  
 
 ## Pull Requests : Sending Your Collaborators an Update 
 
@@ -67,6 +62,11 @@ discuss potential modifications, and even push follow-up commits if necessary.
 
 ### Exercise : Issue a Pull Request and Review it
 
+In this exercise, "Beta" will be making changes and submitting a pull request 
+to Alpha's repository, "Alpha" will be reviewing the pull request and merging 
+it into their own remote (and then local) repository.  
+
+<div>
 For Beta:
 
 Step 1 : Modify the stats.py module to add the median function (shown below).
@@ -98,6 +98,7 @@ Step 4 : Issue a Pull Request to Alpha's `median` branch
   - choose the base fork as **alpha/simplestats**, the base branch as **median**, the 
     head fork as **beta/simplestats**, and the compare branch as **median**
   - write a descriptive message and send it off.
+</div>
 
 For Alpha:
 
