@@ -10,8 +10,7 @@ This section will outline an exercise to get your feet wet in using some of
 GitHub's features. We'll be continuing our work on testing as an example.
 
 For the rest of this section, I'll assume that there are two collaborators,
-Alpha and Beta. I'll assume that they have super-easy GitHub names, and that
-their repositories are at github.com/alpha and github.com/beta.
+Alpha and Beta. 
 
 Let's start off by relocating back to the original simplestats repository.
 
@@ -32,13 +31,15 @@ create. Once I have, update your local copies and remotes:
 **Step 1** : Group up in pairs and decide who will be "Alpha" and who will 
 be "Beta" for this exercise.  
 
-**Step 2** : Each of you should add your partner as a remote and check 
-to make sure you're connected.  Using this command: 
+**Step 2** : Each of you should add your partner's `simplestats` repository 
+on GitHub as a remote and check 
+to make sure you're connected.  To add your partner's repository, use the 
+following command: 
 
     $ git remote add <partner> https://github.com/<partner>/simplestats
 
-where you have filled in `<partner>` with your partner's GitHub username, 
-will add your partner's repository as a remote.  To check that it worked, run:  
+where you have filled in `<partner>` with your partner's GitHub username.  
+To check that it worked, run:  
 
     $ git remote -v
     origin  https://github.com/<YOU>/simplestats (fetch)
@@ -49,7 +50,7 @@ will add your partner's repository as a remote.  To check that it worked, run:
     <partner>       https://github.com/<partner>/simplestats (push)
     $ git fetch <partner>
 
-Again, substituting your partner's GitHub username for `<partner>`.  
+Again, substitute your partner's GitHub username for `<partner>`.  
 
 ## Pull Requests : Sending Your Collaborators an Update 
 
