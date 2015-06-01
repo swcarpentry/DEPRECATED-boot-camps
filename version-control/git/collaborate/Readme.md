@@ -10,8 +10,7 @@ This section will outline an exercise to get your feet wet in using some of
 GitHub's features. We'll be continuing our work on testing as an example.
 
 For the rest of this section, I'll assume that there are two collaborators,
-Alpha and Beta. I'll assume that they have super-easy GitHub names, and that
-their repositories are at github.com/alpha and github.com/beta.
+Alpha and Beta. 
 
 Let's start off by relocating back to the original simplestats repository.
 
@@ -29,32 +28,29 @@ create. Once I have, update your local copies and remotes:
 
 ### Exercise : Get set up
 
-Step 1 : Group up in pairs
+**Step 1** : Group up in pairs and decide who will be "Alpha" and who will 
+be "Beta" for this exercise.  
 
-Step 2 : Add your collaborator as a remote and check to make sure you're
-connected, e.g., Beta would type the following
+**Step 2** : Each of you should add your partner's `simplestats` repository 
+on GitHub as a remote and check 
+to make sure you're connected.  To add your partner's repository, use the 
+following command: 
 
-    $ git remote add alpha https://github.com/alpha/simplestats
+    $ git remote add <partner> https://github.com/<partner>/simplestats
+
+where you have filled in `<partner>` with your partner's GitHub username.  
+To check that it worked, run:  
+
     $ git remote -v
-    origin  https://github.com/YOU/simplestats (fetch)
-    origin  https://github.com/YOU/simplestats (push)
+    origin  https://github.com/<YOU>/simplestats (fetch)
+    origin  https://github.com/<YOU>/simplestats (push)
     upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
     upstream        https://github.com/UW-Madison-ACI/simplestats (push)
-    alpha           https://github.com/alpha/simplestats (fetch)
-    alpha           https://github.com/alpha/simplestats (push)
-    $ git fetch alpha
+    <partner>       https://github.com/<partner>/simplestats (fetch)
+    <partner>       https://github.com/<partner>/simplestats (push)
+    $ git fetch <partner>
 
-and Alpha would type
-
-    $ git remote add beta https://github.com/beta/simplestats
-    $ git remote -v
-    origin  https://github.com/YOU/simplestats (fetch)
-    origin  https://github.com/YOU/simplestats (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
-    beta            https://github.com/beta/simplestats (fetch)
-    beta            https://github.com/beta/simplestats (push)
-    $ git fetch beta
+Again, substitute your partner's GitHub username for `<partner>`.  
 
 ## Pull Requests : Sending Your Collaborators an Update 
 
@@ -67,9 +63,15 @@ discuss potential modifications, and even push follow-up commits if necessary.
 
 ### Exercise : Issue a Pull Request and Review it
 
-For Beta:
+In this exercise, "Beta" will be making changes and submitting a pull request 
+to Alpha's repository, and "Alpha" will be reviewing the pull request and merging 
+it into their own remote (and then local) repository.  In the following instructions
+Beta will be performing Steps 1-4 (while Alpha waits and observes), and then 
+Alpha will continue with Steps 5-7 (while Beta observes).  
 
-Step 1 : Modify the stats.py module to add the median function (shown below).
+#### For Beta (submitting the pull request)
+
+**Step 1** : Modify the stats.py module to add the median function (shown below).
 
 ```python
 def median(vals):
@@ -82,16 +84,16 @@ def median(vals):
        return vals[index]
 ```
 
-Step 2 : Commit your changes
+**Step 2** : Commit your changes
 
     $ git add stats.py
     $ git commit -m "I added a median function."
 
-Step 3 : Update your remote
+**Step 3** : Update your remote
 
     $ git push origin median
 
-Step 4 : Issue a Pull Request to Alpha's `median` branch
+**Step 4** : Issue a Pull Request to Alpha's `median` branch
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
@@ -99,17 +101,17 @@ Step 4 : Issue a Pull Request to Alpha's `median` branch
     head fork as **beta/simplestats**, and the compare branch as **median**
   - write a descriptive message and send it off.
 
-For Alpha:
+#### For Alpha (after Beta has finished and submitted the pull request)
 
-Step 1 : Review the pull request
+**Step 5** : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Beta can always 
     update their version of commits during a pull request.
 
-Step 2 : Merge the pull request using the merge button
+**Step 6** : Merge the pull request using the merge button
 
-Step 3 : Update your local repository.  At this point, all the changes exist
+**Step 7** : Update your local repository.  At this point, all the changes exist
 **only** on the remote repository.
 
     $ git checkout median 
@@ -120,25 +122,25 @@ Step 3 : Update your local repository.  At this point, all the changes exist
 
 Ok, so we've successfully issued a pull request and merged the updated code
 base. Let's swap the roles of pull requester and reviewer. This time, Alpha will
-add some tests to the median function.
+add some tests to the median function, submit a pull request and Beta will 
+review the pull request.  Alpha will follow steps 1-4, and Beta will wait 
+until they finish, then follow steps 5-7.  
 
-For Alpha:
+####For Alpha (submitting the pull request):
 
-Step 1 : Modify the test_stats.py module to add tests for the median
+**Step 1** : Modify the test_stats.py module to add tests for the median
 function.
 
-Now continue the exercise as was done previously with roles swapped.
-
-Step 2 : Commit your changes
+**Step 2** : Commit your changes
 
     $ git add test_stats.py
     $ git commit -m "I added tests to the median function."
 
-Step 3 : Update your remote
+**Step 3** : Update your remote
 
     $ git push origin median
 
-Step 4 : Issue a Pull Request
+**Step 4** : Issue a Pull Request
 
   - Go to your remote's page (github.com/beta/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
@@ -146,17 +148,17 @@ Step 4 : Issue a Pull Request
     head fork as **alpha/simplestats**, and the compare as **median**
   - write a descriptive message and send it off.
 
-For Beta:
+####For Beta (after Alpha has finished and submitted the pull request)
 
-Step 1 : Review the pull request
+**Step 5** : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Alpha can always 
     update their version of commits during a pull request.
 
-Step 2 : Merge the pull request using the merge button
+**Step 6** : Merge the pull request using the merge button
 
-Step 3 : Update your local repository
+**Step 7** : Update your local repository
 
     $ git checkout median
     $ git fetch origin
@@ -178,7 +180,7 @@ recent median addition.
 
 ### Exercise : Experience a Conflict
 
-Step 1 : Experience the Conflict
+**Step 1** : Experience the Conflict
 
     $ git fetch upstream
     $ git merge upstream/median
@@ -224,11 +226,11 @@ means you should replace the PI's ```median``` function with yours.
 
 ### Exercise : Resolve a Conflict
 
-Step 1 : Resolve the conflict by editing your stats.py file. It should
+**Step 1** : Resolve the conflict by editing your stats.py file. It should
 run as expected and should look exactly like your version, but with the
 PI's changes included.
 
-Step 2 : Add the updated version and commit
+**Step 2** : Add the updated version and commit
 
     $ git add stats.py
     $ git commit -m "Updated from PI's commit"
