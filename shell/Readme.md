@@ -337,7 +337,7 @@ lists every file that begins with `02`. This command
 
 lists every file in the current directory whose name contains the
 number `1` *and* ends with the number `7` (so it has also 
-established that `1` must be before `7` in the filename). There are three such files:
+established that `1` must be before `7` in the filename). There are four such files:
 `0147`, `0157`, `0187` and `0317`.
 
 So how does this actually work? Well...when the shell (bash) sees a
