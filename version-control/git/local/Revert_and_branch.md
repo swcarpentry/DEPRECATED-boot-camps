@@ -7,7 +7,6 @@
 **Based on materials by Katy Huff, Anthony Scopatz, Joshua R. Smith, Sri
 Hari Krishna Narayanan, and Matthew Gidden**
 
-
 ## Refresher on the basics of git
 
 We use git to keep track of changes to the files in a particular
@@ -31,75 +30,46 @@ directory. Here are the basic commands, discussed
 ### ![Exercise](pics/exercise.jpg) Exercise: Refresh your understanding of git
  
 **Step 1**: Go back to your `~/simplestats` repository. Make a change to the
-`README.md` file, or create a new file.
+`README.md` file, or create a new file.  
 
 **Step 2**: Add and commit your changes.
 
 **Step 3**: Study some of those differences as well as the repository log.
 
+## Don't include _everything_ in the repository: the `.gitignore` file.
 
-## Unstaging a staged file: `git reset`
+You probably don't want to include _every_ file in your project
+directory as part of your git repository.
 
-There are a number of ways that you may accidentally stage a file that
-you don't want to commit.  Use `git reset` to unstage a file.
+- Backup files automatically created by your editor (`*.bak` or `*~`)
+- Very large primary data files that don't change
+- Compiled code (`*.pyc`, `*.o`, `*.so`, `*.exe`)
+- Files that are derived from your code (for example,
+  figures/graphs/images)
 
-### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
+If you never add them to your repository (with `git add`), then they
+won't be tracked, but they'll show up in the output from `git status`,
+which can be a bother.
 
-**Step 1**: Make a change to the `README.md` file and stage the change.
+To tell git to ignore a set of files (and so not mention them
+in the status output), create a `.gitignore` file in the root of your
+project directory. This should be a plain text file with file or
+directory names; you can also use wildcards, like `*.bak` or `*.o`.
+If you include a directory name, all files in that directory will be ignored.
 
-```
-$ nano README.md
-$ git add README.md
-```
+### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
 
-**Step 2**: Check the status of the repository, to see that the file
-  has been staged.
+**Step 1**: Create a subdirectory `Data`. Put a few data files there,
+  or use `touch` to create a few files there.
 
-```
-$ git status
-```
+**Step 2**: Use `git status`.
 
-**Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
-  most recent commit to the repository.
+**Step 3**: Create a `.gitignore` file to tell git to ignore those
+  data files.
 
-```
-$ git reset HEAD README.md
-```
+**Step 4**: Use `git status` again.
 
-**Step 4**: Check the status again.
-
-```
-$ git status
-```
-
-## Discarding unstaged modifications: `git checkout`
-
-If you've made changes to a file and want to just scrap those changes
-and go back to the last committed version of the file, use `git
-checkout`.
-
-### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
-
-**Step 1**: Check the status of the repository, and look at your
-  unstaged changes.
-  
-```
-$ git status
-$ git diff
-```
-
-**Step 2**: Discard the changes.
-
-```
-$ git checkout README.md
-```
-
-**Step 3**: Look at the status of things again.
-
-```
-$ git status
-$ git diff
-```
+**Step 5**: Add and commit the `.gitignore` file
 
 ## Removing files: `git rm`
 
@@ -147,54 +117,108 @@ What happens if you delete a file in the shell without `git rm`? Try deleting
 $ rm README.md
 ```
 
-What does `git status` say?  Oops! How can you recover this important
-file?
+What does `git status` say?  Luckily our next section is about 
+recovering lost files.  
+
+> Note that, just as you should use `git rm` rather than `rm` for
+> removing files, you should use `git mv` rather than `mv` for moving or
+> renaming files.
+
+## Discarding unstaged modifications: `git checkout`
+
+If you've made changes to a file and want to just scrap those changes
+and go back to the last committed version of the file, use `git
+checkout`.
+
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
+
+**Step 1**: Check the status of the repository, and look at your
+  unstaged changes (in this case, deletion).
+  
+```
+$ git status
+$ git diff
+```
+
+**Step 2**: Discard the changes.
 
 ```
 $ git checkout README.md
 ```
 
-Note that, just as you should use `git rm` rather than `rm` for
-removing files, you should use `git mv` rather than `mv` for moving or
-renaming files.
+**Step 3**: Look at the status of things again.
 
+```
+$ git status
+$ git diff
+```
 
-## Don't include _everything_ in the repository: the `.gitignore` file.
+We can use `git checkout` not only to switch to the latest version 
+of a file, but any version that we have committed.  
 
-You probably don't want to include _every_ file in your project
-directory as part of your git repository.
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git checkout`
 
-- Backup files automatically created by your editor (`*.bak` or `*~`)
-- Very large primary data files that don't change
-- Compiled code (`*.pyc`, `*.o`, `*.so`, `*.exe`)
-- Files that are derived from your code (for example,
-  figures/graphs/images)
+**Step 1**: Find the commit where you added the "READYOU.md" file
+  
+```
+$ git log
+```
 
-If you never add them to your repository (with `git add`), then they
-won't be tracked, but they'll show up in the output from `git status`,
-which can be a bother.
+**Step 2**: Using the first few characters of the appropriate commit value, 
+recover the original "READYOU.md" file.  
 
-To tell git to ignore a set of files (and so not mention them
-in the status output), create a `.gitignore` file in the root of your
-project directory. This should be a plain text file with file or
-directory names; you can also use wildcards, like `*.bak` or `*.o`.
-If you include a directory name, all files in that directory will be ignored.
+```
+$ git checkout <commit> READYOU.md
+```
 
-### ![Exercise](pics/exercise.jpg) Exercise: Create a `.gitignore` file
+**Step 3**: Look at the contents of your directory, and the status of files in git.  
 
-**Step 1**: Create a subdirectory `Data`. Put a few data files there,
-  or use `touch` to create a few files there.
+```
+$ ls
+$ git status
+```
 
-**Step 2**: Use `git status`.
+## Unstaging a staged file: `git reset`
 
-**Step 3**: Create a `.gitignore` file to tell git to ignore those
-  data files.
+There are a number of ways that you may accidentally stage a file that
+you don't want to commit.  Use `git reset` to unstage a file.
 
-**Step 4**: Use `git status` again.
+### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git reset`
 
-**Step 5**: Add and commit the `.gitignore` file
+**Step 1**: Make a change to the `README.md` file and stage the change.
 
+```
+$ nano README.md
+$ git add README.md
+```
 
+**Step 2**: Check the status of the repository, to see that the file
+  has been staged.
+
+```
+$ git status
+```
+
+**Step 3**: Unstage the file with `git reset`; `HEAD` refers to the
+  most recent commit to the repository.
+
+```
+$ git reset HEAD README.md
+```
+
+**Step 4**: Check the status again.
+
+```
+$ git status
+```
+
+Before going on, let's re-add our `README.md` file and commit it, along
+with the `READYOU.md` file.  
+
+```
+$ git add README.md
+$ git commit -m "adding README changes, re-introducing READYOU"
+```
 
 ## `git revert`: the promised "undo" button
 
@@ -221,14 +245,20 @@ prohibition in removing pages from a lab notebook.
 
 ### ![Exercise](pics/exercise.jpg) Exercise: Practice using `git revert`
 
-1. Create 5 files in your directory with one line of content in each
-   file.
-2. Commit the files to the repository.
-3. Change 2 of the 5 files and commit them.
-4. Undo the changes in step 3.
-5. Print out the last entry in the log.
+**Step 1**: Find the commit value for the last commit using `git log`.  
 
+```
+$ git log
+```
 
+**Step 2**: Revert the changes from the last commit.  
+
+```
+git revert <commit>
+```
+
+`revert` will open our text editor to write a commit message.  You can 
+change the default message or just save it as is.  
 
 ## `git branch`: Listing, Creating, and Deleting Branches
 
@@ -296,6 +326,7 @@ $ git commit -m "Adding a first version of stats.py."
 1. Use the list's `sort()` method to implement the `median()` function. (The
 median is either the middle value of an odd set of numbers *or* the `mean()` of
 the middle two values of an even set of numbers.)
+
 2. Commit the changed file to your repository.
 
 ## `git merge`: Merging Branches
@@ -369,6 +400,9 @@ PROMPT_COMMAND=color_my_prompt
 
 * [git book](http://git-scm.com/book)
 * [git game](http://pcottle.github.io/learnGitBranching/index.html)
+* [tutorial on undoing changes](https://www.atlassian.com/git/tutorials/undoing-changes)
+* [tutorial on reset/revert](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+* [tutorial on branching](https://www.atlassian.com/git/tutorials/using-branches)
 
 ----
 
