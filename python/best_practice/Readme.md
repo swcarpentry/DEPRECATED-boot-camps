@@ -196,7 +196,7 @@ Add these lines above the others in your script:
 import sys
 filelist = sys.argv[1:]
 column_labels = ("ID","Reported","Age","Gender",
-                "State of Residence","Income","Education","Hours per week")
+                "State of residence","Income","Education","Hours per week")
 all_data = []
 ```
 
