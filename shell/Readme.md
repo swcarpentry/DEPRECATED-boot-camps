@@ -51,7 +51,7 @@ by manipulating some survey data collected for a projct. To get
 the data, you will need internet access. Just enter the
 command:
 
-    git clone -b 2015-01-13 https://github.com/UW-Madison-ACI/boot-camps.git
+    git clone -b 2015-06-03 https://github.com/UW-Madison-ACI/boot-camps.git
 
 This command will grab all of the data needed for this workshop from our central GitHub repository. 
 (We will talk about the `git` command later in the workshop.)
