@@ -605,7 +605,7 @@ space, then the directory name:
 
     mkdir backup
 
-This makes a directory with your username in the directory `backup`.
+This makes a directory called `backup` in the current directory, `data`.
 
 Now `all_data_backup` has been created as a copy of `all_data`. We can
 move files and directories around using the command `mv`. Enter this command:
