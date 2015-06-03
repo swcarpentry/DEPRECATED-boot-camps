@@ -40,7 +40,7 @@ Pre-Camp Survey
 Please fill out the [Pre-Camp Survey](https://docs.google.com/forms/d/1vfTp6Z8jAZBau1P1SfHOjlYk023KlVk92yp0p-xx63Q/viewform), if you are in physical attendance at our Software Carpentry workshop on January 13-16.
 -->
 
-Schedule
+<a name="schedule"></a>Schedule
 -----------
 
 This workshop has been structured around the concepts put forth in the

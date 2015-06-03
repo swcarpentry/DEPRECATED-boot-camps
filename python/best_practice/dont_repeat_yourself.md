@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) -
+[Up To Schedule](../../README.md#schedule) -
 Back To [Make Incremental Changes I](../../version-control/git/local/Readme.md) - 
 Forward To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md)
 
@@ -282,6 +282,6 @@ and therefore more easily reused in the future.
 
 - - - -
 
-[Up To Schedule](../../README.md) -
+[Up To Schedule](../../README.md#schedule) -
 Back To [Make Incremental Changes I](../../version-control/git/local/Readme.md) - 
 Forward To [Make Incremental Changes II](../../version-control/git/local/Revert_and_branch.md)

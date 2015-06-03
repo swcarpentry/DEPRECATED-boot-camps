@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) -
+[Up To Schedule](../../README.md#schedule) -
 Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/best_practice/Readme.md)
 
 # Let the Computer Do the Work: Automating Workflows
@@ -391,5 +391,5 @@ tutorials for some of them.:
 
 ----
 
-[Up To Schedule](../../README.md) -
+[Up To Schedule](../../README.md#schedule) -
 Back To [Introduction to the Shell](../Readme.md) - Forward To [Write Code for People](../../python/best_practice/Readme.md)

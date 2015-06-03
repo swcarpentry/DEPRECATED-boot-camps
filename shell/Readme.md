@@ -1,4 +1,4 @@
-[Up To Schedule](../README.md) -
+[Up To Schedule](../README.md#schedule) -
 Forward To [Let the Computer Do the Work](automation/Readme.md)
 
 # Introduction to The Shell
@@ -721,5 +721,5 @@ Jump to look at the [solutions to all the exercises.](ReadmeSolns.md)
 
 ----
 
-[Up To Schedule](../README.md) -
+[Up To Schedule](../README.md#schedule) -
 Forward To [Let the Computer Do the Work](automation/Readme.md)

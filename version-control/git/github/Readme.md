@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To
+[Up To Schedule](../../../README.md#schedule) - Back To
 [Plan for Mistakes](../../../python/testing/Readme.md) - Forward To
 [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
 
@@ -180,6 +180,6 @@ It is now your job to:
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To
+[Up To Schedule](../../../README.md#schedule) - Back To
 [Plan for Mistakes](../../../python/testing/Readme.md) - Forward To
 [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
