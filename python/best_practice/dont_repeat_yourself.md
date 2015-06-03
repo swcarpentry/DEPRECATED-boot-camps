@@ -88,7 +88,7 @@ print m.sin(3)        # This is really handy if you have module names that are l
 
 If you intend to use python in your workflow, it is a good idea to skim the standard library documentation at the main Python documentation site, [docs.python.org](http://docs.python.org) to get a general idea of the capabilities of python "out of the box".
 
-Let's take a look at a nice docstring for a [pandas](http://pandas.pydata.org/) DataFrame. Pandas is a Python data analysis toolkit, and the DataFrame is its main data type. It's equivalent to a single rectangular dataset which you'd see in many other statistical packages.
+Let's take a look at a nice docstring for a [pandas](http://pandas.pydata.org/) DataFrame. Pandas is a Python data analysis toolkit, and the DataFrame is its main data type. It's equivalent to a single rectangular dataset which you'd see in many other statistical packages. For more on pandas, check out this [tutorial](http://pandas.pydata.org/pandas-docs/stable/10min.html).
 
 ```python
 import pandas
