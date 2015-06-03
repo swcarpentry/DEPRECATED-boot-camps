@@ -2,7 +2,7 @@
 [Plan for Mistakes](../../../python/testing/Readme.md) - Forward To
 [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
 
-# Github and Remote Version Control
+# Make Changes from Anywhere (Github)
 ----
 
 **Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
