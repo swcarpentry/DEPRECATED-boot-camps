@@ -1,4 +1,4 @@
-[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#step-1-start-at-the-top)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](../best_practice/Readme.md#step-1-start-at-the-top)
 
 - - - - 
 
@@ -26,7 +26,7 @@ command-line or interpreter where you will run the script.
 
 ----
 
-### ![Exercise](pics/exercise.jpg) Short Exercise
+### ![Exercise](../best_practice/pics/exercise.jpg) Short Exercise
 
 1. Open two terminal windows
 2. Arrange them on the screen so that one takes the left half and the other
@@ -43,4 +43,4 @@ command-line or interpreter where you will run the script.
 
 ----
 
-[Up To Schedule](../../README.md) - Return To [Write Code for People](Readme.md#step-1-start-at-the-top)
+[Up To Schedule](../../README.md) - Return To [Write Code for People](../best_practice/Readme.md#step-1-start-at-the-top)
