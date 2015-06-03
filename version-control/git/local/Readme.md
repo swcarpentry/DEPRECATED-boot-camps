@@ -9,7 +9,7 @@ Hari Krishna Narayanan, and Matthew Gidden**
 
 ## Motivation
 
-See [motivation.pdf](motivation.pdf?raw=true).
+See [motivation.pdf](motivation.pdf).
 
 ## Introduction
 
