@@ -1,4 +1,4 @@
-[Up To Schedule](../../../README.md) - Back To [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
+[Up To Schedule](../../../README.md#schedule) - Back To [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
 
 # Collaboration : An exercise in GitHub and Testing
 ----
@@ -311,4 +311,4 @@ personally, choose to do so or not?
 
 ----
 
-[Up To Schedule](../../../README.md) - Back To [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
+[Up To Schedule](../../../README.md#schedule) - Back To [Mobility: Using Version Control at Work and Home](../mobility/Readme.md)
