@@ -39,7 +39,7 @@ For more on python, consider the following reference material.
 For this lecture, we will return to the simulated survey data that
 we used in the lecture on using the shell.  This data was in many different
 files, each distributed over many different directories.  One of the exercises
-was to place all of those files in a single directory named `cleandata` and
+was to place all of those files in a single directory named `cleaneddata` and
 give them all the same extension.
 
 However, all those data in different files does not make it easy for us use
@@ -62,7 +62,7 @@ file in a spreadsheet.  Imagine the effort of making a spreadsheet from this
 set of more than 350 files.  Although spreadsheets are frequently NOT the best
 way to process data, they are probably something with which you are familiar.
 
-**Pro-tip:** [Using two windows](dont_repeat_yourself/using_multiple_windows.md) will make it much
+**Pro-tip:** [Using two windows](../dont_repeat_yourself/using_multiple_windows.md) will make it much
   easier to follow this exercise.
 
 ## Step 1: Start at the top
