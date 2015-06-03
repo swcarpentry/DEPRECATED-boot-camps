@@ -130,7 +130,7 @@ The newest test fails, but we don't get much explanation of why it fails.
 **Practice using git:** Commit this change to the repository
 
     git add stats.py
-    git commit -m "Added a floating point test, but if fails"
+    git commit -m "Added a floating point test, but it fails"
 
 # Separating Tests
 
@@ -359,7 +359,7 @@ def mean(vals):
 ```
 **Practice using git:** Commit this change to the repository
 
-    git add test_stats.py
+    git add stats.py
     git commit -m "Added extra error message for TypeError."
 
 
@@ -480,7 +480,7 @@ def std(vals):
 **Practice using git:** Since this works again, commit the change to the repository
 
     git add stats.py test_stats.py
-    git commit -m "Added moore tests for std() and updated function so that is passes all tests."
+    git commit -m "Added more tests for std() and updated function so that is passes all tests."
 
 However, this function still fails whenever vals has more than two elements or
 the first element is not zero. Time for more tests!
