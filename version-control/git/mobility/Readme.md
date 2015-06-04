@@ -15,8 +15,8 @@ activities).
 The workflow in this section describes three repository locations - a server, a
 work computer, and a home (laptop) computer. The server will host the "base"
 repository, and the server can live anywhere you have a connection to. For
-example, you could use your GitHub repository (described in the [Github and
-Remote Version Control](../git-and-github/Readme.md) section) as the server. If
+example, you could use your GitHub repository (described in the 
+[Make Changes from Anywhere (GitHub)](../github/Readme.md) section) as the server. If
 you have access to a server on campus (e.g., server.uni.edu), you can host your
 repository there (and it's private!).
 
@@ -128,37 +128,6 @@ master) to make sure the master branch stays up-to-date with your server's
 starting out, though, so just play around and get used to the general work flow
 for now. You'll get better at it over time.
 
-#### Aside: Latex and the Limits of the Version Control Workflow
-
-Have you ever struggled with formatting Word's equations, chapters,
-bibliography, etc.? [Latex](http://www.latex-project.org/) works wonders with
-that. Here's a great graph taken from Marko Pinteric's
-[website](http://www.pinteric.com/miktex.html) that explains the difference.
-
-![wordvlatex](https://raw.github.com/gidden/boot-camps/mobility/version-control/git/mobility/wordvslatex.gif "Word vs. Latex")
-
-With the advent of Google Drive, it's often as easy to use that tool if a
-document is simple enough, i.e., on the left side of the curve (where Word is
-easier than Latex). Note that Google Docs is version controlled as well.
-
-Furthermore, simply **imagine** having to write something as complicated as a
-prelim or thesis using Word. You'd spend as much time formatting the thing as
-you do actually writing the content. In other words, it's worth the (smallish)
-headache of getting used to Latex in order to use it for bigger
-documents. There's even a [Wisconsin Thesis
-Template](https://github.com/willb/wi-thesis-template)! That's right, you'd have
-to do **0** work to correctly format your thesis. 
-
-Finally, and this is pure aesthetics, Latex looks **good**. Have you ever read a
-paper and thought "wow, those equations look great"? It's likely written in
-Latex. Plus, once you write your first paper, you have all the infrastructure to
-write the next one. You can literally copy the files into a different directory
-and rewrite content. Super simple.
-
-Latex works great with the workflow described here because it's text-based. You
-are literally altering text files, so there's **nothing else** going on behind
-the scenes. Word files, etc., have lot's going on under the hood, and so are
-poor candidates for version control. 
 
 #### Aside: Setting Up a "Base" Repository
 
