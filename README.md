@@ -1,3 +1,1 @@
-This repository is no longer being updated.  Please use the 'bc' repo
-at https://github.com/swcarpentry/bc as a starting point for new
-bootcamp web pages.
+DEPRECATED: this repository is no longer being updated. Please see http://software-carpentry.org/lessons/ for a list of currently-active repositories.
